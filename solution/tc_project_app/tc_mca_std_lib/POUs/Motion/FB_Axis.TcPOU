@@ -42,20 +42,6 @@ VAR
     fbWriteParameter: MC_WriteParameter;
     stMcStatusWriteParameter: ST_McStatus;
 
-    fbGearIn: MC_GearIn;
-    stMcStatusGearIn: ST_McStatus;
-
-    fbGearOut: MC_GearOut;
-    stMcStatusGearOut: ST_McStatus;
-
-    stMasterAxis: ST_GearAxis := (nIndex := 1, fRatio := 0);
-    nSlaveAxesIndex: UINT;
-    nAxisIndex: UINT;
-    nMultiMastersAxesIndex: UINT;
-
-    fbGearInMultiMaster: MC_GearInMultiMaster;
-    stMcStatusGearInMultiMaster: ST_McStatus;
-
     //Variables for holding limits during homing
     bWaitForStopAfterLimitHit: BOOL := FALSE;
     fbRemovePowerTimer: TOF;
@@ -137,100 +123,8 @@ astMcStatus[6] := ADR(stMcStatusMoveRelative);
 astMcStatus[7] := ADR(stMcStatusMoveVelocity);
 astMcStatus[8] := ADR(stMcStatusMoveModulo);
 astMcStatus[9] := ADR(stMcStatusHome);
-astMcStatus[10] := ADR(stMcStatusGearInMultiMaster);
-astMcStatus[11] := ADR(stMcStatusGearOut);
 astMcStatus[12] := ADR(stMcStatusReadParameter);
 astMcStatus[13] := ADR(stMcStatusWriteParameter);
-]]></ST>
-      </Implementation>
-    </Method>
-    <Method Name="mControl_GearInMultiMaster" Id="{84e0c1c6-290e-43dc-a4d7-42efdf8dec13}" FolderPath="Control Methods\">
-      <Declaration><![CDATA[METHOD mControl_GearInMultiMaster : ST_McStatus
-]]></Declaration>
-      <Implementation>
-        <ST><![CDATA[
-fbGearInMultiMaster.Options.AdvancedSlaveDynamics := TRUE;
-fbGearInMultiMaster.Options.SyncMode := E_GearInMultiMasterSyncMode.POSSYNC2;
-IF _stAxis.stControl.eCommand = E_MotionFunctions.eGearInMultiMaster THEN
-    fbGearInMultiMaster.Enable := _stAxis.stControl.bExecute;
-END_IF
-
-IF _stAxis.stControl.eCommand = E_MotionFunctions.eGearInMultiMaster AND _stAxis.stControl.bExecute AND NOT _stAxis.Axis.Status.Coupled THEN
-    //Latch master references
-    FOR nMultiMastersAxesIndex := 1 TO nMULTI_MASTER_MAX_AXES DO
-        IF _stAxis.stConfig.astMultiMasterAxis[nMultiMastersAxesIndex].nIndex > 0 AND _stAxis.stConfig.astMultiMasterAxis[nMultiMastersAxesIndex].nIndex <= GVL_APP.nAXIS_NUM THEN
-            _stAxis.stConfig.astMultiMasterAxisLatched[nMultiMastersAxesIndex].nIndex := _stAxis.stConfig.astMultiMasterAxis[nMultiMastersAxesIndex].nIndex;
-        END_IF
-    END_FOR
-    //Latch gear ratios
-    FOR nMultiMastersAxesIndex := 1 TO nMULTI_MASTER_MAX_AXES DO
-        _stAxis.stConfig.astMultiMasterAxisLatched[nMultiMastersAxesIndex].fRatio := _stAxis.stConfig.astMultiMasterAxis[nMultiMastersAxesIndex].fRatio;
-    END_FOR
-    //Transfer gear ratios to FB
-    fbGearInMultiMaster.GearRatio1 := _stAxis.stConfig.astMultiMasterAxisLatched[1].fRatio;
-    fbGearInMultiMaster.GearRatio2 := _stAxis.stConfig.astMultiMasterAxisLatched[2].fRatio;
-    fbGearInMultiMaster.GearRatio3 := _stAxis.stConfig.astMultiMasterAxisLatched[3].fRatio;
-    fbGearInMultiMaster.GearRatio4 := _stAxis.stConfig.astMultiMasterAxisLatched[4].fRatio;
-    fbGearInMultiMaster.Enable := TRUE;
-END_IF
-
-fbGearInMultiMaster(Slave := _stAxis.Axis,
-    Master1 := GVL.astAxes[_stAxis.stConfig.astMultiMasterAxisLatched[1].nIndex].Axis,
-    Master2 := GVL.astAxes[_stAxis.stConfig.astMultiMasterAxisLatched[2].nIndex].Axis,
-    Master3 := GVL.astAxes[_stAxis.stConfig.astMultiMasterAxisLatched[3].nIndex].Axis,
-    Master4 := GVL.astAxes[_stAxis.stConfig.astMultiMasterAxisLatched[4].nIndex].Axis);
-fbGearInMultiMaster.Enable:= FALSE;
-
-IF fbGearInMultiMaster.InGear THEN
-    mStatus_MultiGearing();
-END_IF
-
-IF fbGearInMultiMaster.Error THEN
-    fbGearInMultiMaster.Enable := FALSE;
-END_IF
-
-mControl_GearInMultiMaster.Active := fbGearInMultiMaster.Active;
-mControl_GearInMultiMaster.Done := fbGearInMultiMaster.InGear;
-mControl_GearInMultiMaster.Busy := fbGearInMultiMaster.Busy;
-mControl_GearInMultiMaster.Error := fbGearInMultiMaster.Error;
-mControl_GearInMultiMaster.ErrorID := fbGearInMultiMaster.ErrorID;
-mControl_GearInMultiMaster.CommandAborted := fbGearInMultiMaster.CommandAborted;
-
-IF fbGearInMultiMaster.Error THEN
-    _stAxis.stError.nGearInMultiMasterErrorID := fbGearInMultiMaster.ErrorID; //Set the error
-END_IF
-]]></ST>
-      </Implementation>
-    </Method>
-    <Method Name="mControl_GearOut" Id="{e17b3c6b-453e-4e45-8575-7c153f6ee550}" FolderPath="Control Methods\">
-      <Declaration><![CDATA[METHOD mControl_GearOut : ST_McStatus
-]]></Declaration>
-      <Implementation>
-        <ST><![CDATA[
-IF _stAxis.stControl.eCommand = E_MotionFunctions.eGearOut THEN
-    fbGearOut.Execute := _stAxis.stControl.bExecute;
-END_IF
-
-fbGearOut(Slave := _stAxis.Axis);
-fbGearOut.Execute := FALSE;
-
-//Clear ratios from single and multi master gearing
-IF fbGearOut.Done THEN
-    //Clear slave ratio from master axis slave array
-    mStatus_MultiGearing();
-    FOR nSlaveAxesIndex := 1 TO GVL_APP.nAXIS_NUM DO
-        GVL.astAxes[nSlaveAxesIndex].stConfig.afMultiSlaveAxisRatio[GVL.iAxis] := nNO_GEARING;
-    END_FOR
-END_IF
-
-mControl_GearOut.Done := fbGearOut.Done;
-mControl_GearOut.Busy := fbGearOut.Busy;
-mControl_GearOut.Error := fbGearOut.Error;
-mControl_GearOut.ErrorID := fbGearOut.ErrorID;
-
-IF fbGearOut.Error THEN
-    _stAxis.stError.nGearOutErrorID := fbGearOut.ErrorID; //Set the error
-END_IF
 ]]></ST>
       </Implementation>
     </Method>
@@ -296,13 +190,6 @@ _stAxis.stStatus.bBwEnabled := _stAxis.stInputs.bLimitBwd;
 _stAxis.stStatus.bInterlockedFwd := _stAxis.stControl.bInterlockFwd;
 _stAxis.stStatus.bInterlockedBwd := _stAxis.stControl.bInterlockBwd;
 
-//Multimaster limit linking
-FOR nAxisIndex := 1 TO GVL_APP.nAXIS_NUM DO
-    IF (_stAxis.stConfig.afMultiSlaveAxisRatio[nAxisIndex] <> 0) THEN
-        _stAxis.stStatus.bFwEnabled := _stAxis.stStatus.bFwEnabled AND SEL(_stAxis.stConfig.afMultiSlaveAxisRatio[nAxisIndex] > 0, GVL.astAxes[nAxisIndex].stStatus.bBwEnabled, GVL.astAxes[nAxisIndex].stStatus.bFwEnabled);
-        _stAxis.stStatus.bBwEnabled := _stAxis.stStatus.bBwEnabled AND SEL(_stAxis.stConfig.afMultiSlaveAxisRatio[nAxisIndex] > 0, GVL.astAxes[nAxisIndex].stStatus.bFwEnabled, GVL.astAxes[nAxisIndex].stStatus.bBwEnabled);
-    END_IF
-END_FOR
 ]]></ST>
       </Implementation>
     </Method>
@@ -950,41 +837,6 @@ END_IF
 ]]></ST>
       </Implementation>
     </Method>
-    <Method Name="mStatus_MultiGearing" Id="{fa93e914-182a-42d5-a8d7-635a159cd60b}" FolderPath="Status Methods\">
-      <Declaration><![CDATA[METHOD mStatus_MultiGearing : BOOL
-]]></Declaration>
-      <Implementation>
-        <ST><![CDATA[
-IF _stAxis.Axis.Status.Coupled AND _stAxis.Axis.PlcToNc.GearRatio1 <> 0 AND _stAxis.stConfig.astMultiMasterAxisLatched[1].nIndex <> 0 THEN
-    GVL.astAxes[_stAxis.stConfig.astMultiMasterAxisLatched[1].nIndex].stConfig.afMultiSlaveAxisRatio[GVL.iAxis] := _stAxis.Axis.PlcToNc.GearRatio1;
-    _stAxis.stStatus.bCoupledGear1 := TRUE;
-ELSE
-    _stAxis.stStatus.bCoupledGear1 := FALSE;
-END_IF
-
-IF _stAxis.Axis.Status.Coupled AND _stAxis.Axis.PlcToNc.GearRatio2 <> 0 AND _stAxis.stConfig.astMultiMasterAxisLatched[2].nIndex <> 0 THEN
-    GVL.astAxes[_stAxis.stConfig.astMultiMasterAxisLatched[2].nIndex].stConfig.afMultiSlaveAxisRatio[GVL.iAxis] := _stAxis.Axis.PlcToNc.GearRatio2;
-    _stAxis.stStatus.bCoupledGear2 := TRUE;
-ELSE
-    _stAxis.stStatus.bCoupledGear2 := FALSE;
-END_IF
-
-IF _stAxis.Axis.Status.Coupled AND _stAxis.Axis.PlcToNc.GearRatio3 <> 0 AND _stAxis.stConfig.astMultiMasterAxisLatched[3].nIndex <> 0 THEN
-    GVL.astAxes[_stAxis.stConfig.astMultiMasterAxisLatched[3].nIndex].stConfig.afMultiSlaveAxisRatio[GVL.iAxis] := _stAxis.Axis.PlcToNc.GearRatio3;
-    _stAxis.stStatus.bCoupledGear3 := TRUE;
-ELSE
-    _stAxis.stStatus.bCoupledGear3 := FALSE;
-END_IF
-
-IF _stAxis.Axis.Status.Coupled AND _stAxis.Axis.PlcToNc.GearRatio4 <> 0 AND _stAxis.stConfig.astMultiMasterAxisLatched[4].nIndex <> 0 THEN
-    GVL.astAxes[_stAxis.stConfig.astMultiMasterAxisLatched[4].nIndex].stConfig.afMultiSlaveAxisRatio[GVL.iAxis] := _stAxis.Axis.PlcToNc.GearRatio4;
-    _stAxis.stStatus.bCoupledGear4 := TRUE;
-ELSE
-    _stAxis.stStatus.bCoupledGear4 := FALSE;
-END_IF
-]]></ST>
-      </Implementation>
-    </Method>
     <Method Name="mStatus_NewCommand" Id="{6ed1ba41-9399-4e86-b361-f208438f212a}" FolderPath="Status Methods\">
       <Declaration><![CDATA[METHOD mStatus_NewCommand : BOOL
 VAR
@@ -1039,9 +891,6 @@ stMcStatusMoveRelative := mMove_MoveRelative();
 stMcStatusMoveModulo := mMove_MoveModulo();
 stMcStatusMoveVelocity := mMove_MoveVelocity();
 
-stMcStatusGearInMultiMaster := mControl_GearInMultiMaster();
-stMcStatusGearOut := mControl_GearOut();
-
 stMcStatusHome := mControl_Home();
 
 mStatus_NewCommand();
@@ -1085,15 +934,8 @@ END_VAR
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.FB_init">
-      <LineId Id="3" Count="14" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mControl_GearInMultiMaster">
-      <LineId Id="3" Count="50" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mControl_GearOut">
-      <LineId Id="3" Count="24" />
+      <LineId Id="3" Count="10" />
+      <LineId Id="16" Count="1" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mControl_Home">
@@ -1105,7 +947,7 @@ END_VAR
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mControl_LimitLinking">
-      <LineId Id="3" Count="12" />
+      <LineId Id="3" Count="5" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mControl_Power">
@@ -1180,16 +1022,13 @@ END_VAR
       <LineId Id="3" Count="12" />
       <LineId Id="2" Count="0" />
     </LineIds>
-    <LineIds Name="FB_Axis.mStatus_MultiGearing">
-      <LineId Id="3" Count="27" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
     <LineIds Name="FB_Axis.mStatus_NewCommand">
       <LineId Id="3" Count="20" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.Run">
-      <LineId Id="4" Count="31" />
+      <LineId Id="4" Count="17" />
+      <LineId Id="25" Count="10" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.stAxis.Get">

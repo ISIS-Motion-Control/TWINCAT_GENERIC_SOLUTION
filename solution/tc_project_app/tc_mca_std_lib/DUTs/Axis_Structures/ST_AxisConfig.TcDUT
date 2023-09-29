@@ -30,11 +30,6 @@ STRUCT
     tDetectionVelocityTime: TIME; // Time for detecting the velocity undershoot when driving against the fixed stop.
     fLagLimit: LREAL; // Position lag value which, if exceeded, leads to detection of driving against the fixed stop.
 
-    //Multi master axis parameters
-    astMultiMasterAxis: ARRAY [1..4] OF ST_GearAxis;
-    astMultiMasterAxisLatched: ARRAY [1..4] OF ST_GearAxis; //A kind of readback since one doesn't exist in AXIS_REF
-    afMultiSlaveAxisRatio: ARRAY [1..GVL_APP.nAXIS_NUM] OF LREAL;
-
     // Read only MC parameters
     bReadMcParametersValid: BOOL:= FALSE;
     bReadMcParametersError: BOOL:= FALSE;
