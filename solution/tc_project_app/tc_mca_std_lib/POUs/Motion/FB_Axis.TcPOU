@@ -82,7 +82,8 @@ VAR
 	
 	fbMoveInProgressFTrig : F_TRIG;
 	fbMoveInProgressEndTimer : TON;
-	
+	fbNewMoveRTrig : R_TRIG;
+	bStartOfMove : BOOL;
 	bEndOfMove : BOOL;
 
 END_VAR
@@ -155,10 +156,16 @@ IF _stAxis.stControl.bOverrideReadyToMove THEN
 ELSE
 	_stAxis.stStatus.bReadyToMove := _stAxis.stStatus.bEnabled;
 END_IF
+
 IF fbMoveInProgressFTrig.Q THEN
 	//start end move timer
 	bEndOfMove:= TRUE;
 END_IF
+IF bStartOfMove THEN
+	bEndOfMove:= FALSE;
+	bStartOfMove:= FALSE;
+END_IF
+
 fbMoveInProgressEndTimer(IN:= bEndOfMove,PT:= _stAxis.stControl.tMoveFinishedDelay);
 
 //If we want autoenabledisable
@@ -173,6 +180,19 @@ IF _stAxis.stControl.bAutoEnableDisable THEN
 	END_IF
 END_IF
 
+IF _stAxis.Axis.Status.Moving THEN
+	_stAxis.stStatus.bMoveInProgress := TRUE;
+END_IF
+
+IF _stAxis.Axis.Status.NotMoving THEN
+	_stAxis.stStatus.bMoveInProgress := FALSE;
+END_IF
+
+fbNewMoveRTrig(CLK:= _stAxis.stStatus.bMoveInProgress);
+IF fbNewMoveRTrig.Q THEN
+	bStartOfMove:= TRUE;
+END_IF
+fbMoveInProgressFTrig(CLK:= _stAxis.stStatus.bMoveInProgress);
 //No move requested and no move in progress
 ]]></ST>
       </Implementation>
@@ -391,10 +411,15 @@ END_IF
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[IF _stAxis.stControl.eCommand = E_MotionFunctions.eMoveModulo THEN
-    fbMoveModulo.Execute := _stAxis.stControl.bExecute;
-    IF fbMoveModulo.Execute AND fbMoveModulo.Busy THEN
-        fbMoveModulo2.Execute := TRUE;
-    END_IF
+	IF _stAxis.stStatus.bReadyToMove THEN
+		fbMoveModulo.Execute := _stAxis.stStatus.bMoveRequested;
+		IF _stAxis.stStatus.bMoveRequested THEN
+			_stAxis.stStatus.bMoveRequested := FALSE;
+		END_IF
+    	IF fbMoveModulo.Execute AND fbMoveAbsolute.Busy THEN
+        	fbMoveModulo2.Execute := TRUE;
+    	END_IF
+	END_IF    
 END_IF
 
 // Parameters
@@ -445,7 +470,12 @@ END_IF
       <Implementation>
         <ST><![CDATA[
 IF _stAxis.stControl.eCommand = E_MotionFunctions.eMoveRelative THEN
-    fbMoveRelative.Execute := _stAxis.stControl.bExecute;
+	IF _stAxis.stStatus.bReadyToMove THEN
+		fbMoveRelative.Execute := _stAxis.stStatus.bMoveRequested;
+		IF _stAxis.stStatus.bMoveRequested THEN
+			_stAxis.stStatus.bMoveRequested := FALSE;
+		END_IF
+	END_IF
 END_IF
 
 fbMoveRelative.Distance := _stAxis.stControl.fPosition;
@@ -475,7 +505,12 @@ END_IF
       <Implementation>
         <ST><![CDATA[
 IF _stAxis.stControl.eCommand = E_MotionFunctions.eMoveVelocity THEN
-    fbMoveVelocity.Execute := _stAxis.stControl.bExecute;
+	IF _stAxis.stStatus.bReadyToMove THEN
+		fbMoveVelocity.Execute := _stAxis.stStatus.bMoveRequested;
+		IF _stAxis.stStatus.bMoveRequested THEN
+			_stAxis.stStatus.bMoveRequested := FALSE;
+		END_IF
+	END_IF
 END_IF
 
 fbMoveVelocity.Direction := SEL(_stAxis.stControl.fVelocity < 0, MC_Positive_Direction, MC_Negative_Direction);
@@ -849,8 +884,8 @@ END_FOR
 
 fbErrorRTrig(CLK := tmpError);
 
-IF _stAxis.Axis.Status.ErrorStop THEN
-    _stAxis.stStatus.bError := _stAxis.Axis.Status.ErrorStop;
+IF _stAxis.Axis.Status.ErrorStop OR _stAxis.Axis.Status.Error THEN
+    _stAxis.stStatus.bError := _stAxis.Axis.Status.ErrorStop OR _stAxis.Axis.Status.Error;
     _stAxis.stStatus.nErrorID := _stAxis.Axis.Status.ErrorID;//NC Error ID
 ELSIF fbErrorRTrig.Q THEN
         //For each mcStatus
@@ -886,23 +921,6 @@ IF fbInVelocityFTrig.Q THEN
     _stAxis.stStatus.bInVelocity := FALSE;
 END_IF
 ]]></ST>
-      </Implementation>
-    </Method>
-    <Method Name="mStatus_MoveInProgress" Id="{34d2bdc8-5e25-4090-a0c8-7df96c1f6819}" FolderPath="Status Methods\">
-      <Declaration><![CDATA[METHOD mStatus_MoveInProgress : BOOL
-VAR_INPUT
-END_VAR
-]]></Declaration>
-      <Implementation>
-        <ST><![CDATA[IF _stAxis.Axis.Status.Moving THEN
-	_stAxis.stStatus.bMoveInProgress := TRUE;
-END_IF
-
-IF _stAxis.Axis.Status.NotMoving THEN
-	_stAxis.stStatus.bMoveInProgress := FALSE;
-END_IF
-
-fbMoveInProgressFTrig(CLK:= _stAxis.stStatus.bMoveInProgress);]]></ST>
       </Implementation>
     </Method>
     <Method Name="mStatus_NewCommand" Id="{6ed1ba41-9399-4e86-b361-f208438f212a}" FolderPath="Status Methods\">
@@ -966,7 +984,7 @@ mStatus_Error();
 mStatus_InVelocity();
 mStatus_CommandAborted();
 _stAxis.stStatus.bBusy := mStatus_Busy();
-mStatus_MoveInProgress();
+
 
 EndOfCycle();
 ]]></ST>
@@ -1018,10 +1036,15 @@ END_VAR
       <LineId Id="32" Count="0" />
       <LineId Id="30" Count="0" />
       <LineId Id="28" Count="0" />
+      <LineId Id="48" Count="0" />
       <LineId Id="42" Count="0" />
       <LineId Id="44" Count="0" />
       <LineId Id="46" Count="0" />
       <LineId Id="45" Count="0" />
+      <LineId Id="50" Count="1" />
+      <LineId Id="53" Count="0" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="49" Count="0" />
       <LineId Id="43" Count="0" />
       <LineId Id="14" Count="1" />
       <LineId Id="5" Count="0" />
@@ -1031,6 +1054,7 @@ END_VAR
       <LineId Id="47" Count="0" />
       <LineId Id="39" Count="0" />
       <LineId Id="7" Count="0" />
+      <LineId Id="54" Count="12" />
       <LineId Id="38" Count="0" />
       <LineId Id="35" Count="0" />
       <LineId Id="37" Count="0" />
@@ -1071,15 +1095,24 @@ END_VAR
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mMove_MoveModulo">
-      <LineId Id="3" Count="45" />
+      <LineId Id="52" Count="9" />
+      <LineId Id="51" Count="0" />
+      <LineId Id="9" Count="39" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mMove_MoveRelative">
-      <LineId Id="3" Count="22" />
+      <LineId Id="3" Count="1" />
+      <LineId Id="28" Count="3" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="6" Count="19" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mMove_MoveVelocity">
-      <LineId Id="3" Count="22" />
+      <LineId Id="3" Count="1" />
+      <LineId Id="29" Count="4" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="6" Count="19" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mMove_Stop">
@@ -1132,14 +1165,6 @@ END_VAR
     <LineIds Name="FB_Axis.mStatus_InVelocity">
       <LineId Id="3" Count="12" />
       <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mStatus_MoveInProgress">
-      <LineId Id="5" Count="2" />
-      <LineId Id="9" Count="0" />
-      <LineId Id="8" Count="0" />
-      <LineId Id="10" Count="1" />
-      <LineId Id="13" Count="0" />
-      <LineId Id="12" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mStatus_NewCommand">
       <LineId Id="3" Count="11" />
