@@ -132,7 +132,7 @@ astMcStatus[13] := ADR(stMcStatusWriteParameter);
       <Declaration><![CDATA[METHOD mControl_Home : ST_McStatus
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[IF _stAxis.stConfig.eHomeSeq = E_HomingRoutines.eNoHoming THEN
+        <ST><![CDATA[IF _stAxis.stHomingConfig.eHomeSeq = E_HomingRoutines.eNoHoming THEN
     _stAxis.stStatus.bHomed := TRUE;
 END_IF
 
@@ -141,9 +141,9 @@ IF _stAxis.stControl.eCommand = E_MotionFunctions.eHome THEN
 END_IF
 
 
-fbHome.eHomeSeq := _stAxis.stConfig.eHomeSeq;
-fbHome.fHomePosition := _stAxis.stConfig.fHomePosition;
-fbHome.fHomeFinishDistance := _stAxis.stConfig.fHomeFinishDistance;
+fbHome.eHomeSeq := _stAxis.stHomingConfig.eHomeSeq;
+fbHome.fHomePosition := _stAxis.stHomingConfig.fHomePosition;
+fbHome.fHomeFinishDistance := _stAxis.stHomingConfig.fHomeFinishDistance;
 fbHome(
     Axis := _stAxis.Axis,
     bLimitBwd := _stAxis.stInputs.bLimitBwd,
@@ -197,11 +197,7 @@ _stAxis.stStatus.bInterlockedBwd := _stAxis.stControl.bInterlockBwd;
       <Declaration><![CDATA[METHOD mControl_Power : ST_McStatus
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[IF _stAxis.stStatus.bHighTempAxisDisabled THEN
-    fbPower.Enable := FALSE;
-ELSE
-fbPower.Enable := _stAxis.stControl.bEnable;
-END_IF
+        <ST><![CDATA[fbPower.Enable := _stAxis.stControl.bEnable;
 
 fbPower.Enable_Negative := (_stAxis.stStatus.bBwEnabled OR bWaitForStopAfterLimitHit) AND NOT _stAxis.stStatus.bInterlockedBwd;
 fbPower.Enable_Positive := (_stAxis.stStatus.bFwEnabled OR bWaitForStopAfterLimitHit) AND NOT _stAxis.stStatus.bInterlockedFwd;
@@ -525,13 +521,13 @@ fbReadHomingVelToCam(Axis := _stAxis.Axis,
                         Enable := TRUE,
                         ReadMode := READMODE_CYCLIC,
                         ParameterNumber := E_AxisParameters.AxisVelocityToCam,
-                        Value => _stAxis.stConfig.fHomingVelToCam);
+                        Value => _stAxis.stHomingConfig.fHomingVelToCam);
 //Homing velocity from Cam
 fbReadHomingVelFromCam(Axis := _stAxis.Axis,
                         Enable := TRUE,
                         ReadMode := READMODE_CYCLIC,
                         ParameterNumber := E_AxisParameters.AxisVelocityFromCam,
-                        Value => _stAxis.stConfig.fHomingVelFromCam);
+                        Value => _stAxis.stHomingConfig.fHomingVelFromCam);
 //Max velocity
 fbReadAxisVeloMax(Axis := _stAxis.Axis,
                         Enable := TRUE,
@@ -716,14 +712,14 @@ ELSE
     _stAxis.stStatus.fActPosition := _stAxis.Axis.NcToPlc.ActPos;
 END_IF
 
-_stAxis.stStatus.bGeared := _stAxis.Axis.Status.Coupled;
+
 _stAxis.stStatus.bHomed := _stAxis.Axis.Status.Homed;
 _stAxis.stStatus.bMoving := _stAxis.Axis.Status.Moving;
 _stAxis.stStatus.fActVelocity := _stAxis.Axis.NcToPlc.ActVelo;
 _stAxis.stStatus.bMovingForward := _stAxis.Axis.Status.PositiveDirection;
 _stAxis.stStatus.bMovingBackward := _stAxis.Axis.Status.NegativeDirection;
 _stAxis.stStatus.bInTargetPosition := _stAxis.Axis.Status.InTargetPosition;
-_stAxis.stStatus.bEnabled := NOT(_stAxis.Axis.Status.Disabled);
+_stAxis.stStatus.bEnabled := NOT(_stAxis.Axis.Status.Disabled);	//This is crap
 ]]></ST>
       </Implementation>
     </Method>
@@ -951,7 +947,8 @@ END_VAR
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mControl_Power">
-      <LineId Id="3" Count="16" />
+      <LineId Id="6" Count="0" />
+      <LineId Id="8" Count="11" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mControl_Reset">

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <GVL Name="GVL_AxisNames" Id="{ac2d037b-2b8c-41f4-8d85-bcb635f10da5}">
+    <Declaration><![CDATA[VAR_GLOBAL
+	//AXIS_1 : UINT := 1;
+	//AXIS_2 : UINT := 2;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <GVL Name="GVL_UnitStrings" Id="{b941d280-eea1-4685-b21f-5e664ab0285f}">
+    <Declaration><![CDATA[VAR_GLOBAL CONSTANT
+	UNIT_mm : STRING := 'mm';
+	UNIT_degree : STRING := 'deg';
+	UNIT_radians : STRING := 'rad';
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

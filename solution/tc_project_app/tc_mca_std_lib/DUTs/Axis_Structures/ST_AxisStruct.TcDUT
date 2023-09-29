@@ -9,6 +9,7 @@ STRUCT
     stError: ST_AxisError;
     stInputs: ST_AxisInputs;
     stDescription: ST_AxisDescription;
+	stHomingConfig : ST_AxisHomingConfig;
     //The NC axis link to the hardware that is controlling
     Axis: AXIS_REF;
 END_STRUCT
