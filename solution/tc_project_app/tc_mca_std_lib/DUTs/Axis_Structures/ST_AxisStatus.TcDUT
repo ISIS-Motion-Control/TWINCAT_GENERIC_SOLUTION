@@ -29,8 +29,8 @@ STRUCT
     bError: BOOL; //Motion function block has produced error (NC drive not necessarily in error state)
     nErrorID: UDINT; //Last motion function block errorID or NC errorID
 	
-	
-	
+	bReadyToMove : BOOL;
+	bMoveRequested : BOOL;
 	bMoveInProgress : BOOL;
 END_STRUCT
 END_TYPE
