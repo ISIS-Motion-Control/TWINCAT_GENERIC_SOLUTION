@@ -231,41 +231,6 @@
               </l>
             </o>
             <o>
-              <v n="TextID">"bGeared"</v>
-              <v n="TextDefault">"In Gear"</v>
-              <l n="LanguageTexts" t="ArrayList" cet="String">
-                <v></v>
-              </l>
-            </o>
-            <o>
-              <v n="TextID">"masterGear"</v>
-              <v n="TextDefault">"Master Axis"</v>
-              <l n="LanguageTexts" t="ArrayList" cet="String">
-                <v></v>
-              </l>
-            </o>
-            <o>
-              <v n="TextID">"gearRatio"</v>
-              <v n="TextDefault">"Gear Ratio"</v>
-              <l n="LanguageTexts" t="ArrayList" cet="String">
-                <v></v>
-              </l>
-            </o>
-            <o>
-              <v n="TextID">"gearIn"</v>
-              <v n="TextDefault">"Gear In"</v>
-              <l n="LanguageTexts" t="ArrayList" cet="String">
-                <v></v>
-              </l>
-            </o>
-            <o>
-              <v n="TextID">"gearOut"</v>
-              <v n="TextDefault">"Gear Out"</v>
-              <l n="LanguageTexts" t="ArrayList" cet="String">
-                <v></v>
-              </l>
-            </o>
-            <o>
               <v n="TextID">"eHomeToLimit_Bwd"</v>
               <v n="TextDefault">"Bwd Limit"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
