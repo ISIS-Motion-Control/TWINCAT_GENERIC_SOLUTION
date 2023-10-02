@@ -163,9 +163,6 @@
     <Compile Include="tc_mca_std_lib\Unused ESS Work\ST_MonitoringAlarm.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="tc_mca_std_lib\VISUs\languageSupport.TcTLO">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="tc_mca_std_lib\VISUs\MainVisu.TcVIS">
       <SubType>Code</SubType>
       <DependentUpon>Visualization Manager.TcVMO</DependentUpon>

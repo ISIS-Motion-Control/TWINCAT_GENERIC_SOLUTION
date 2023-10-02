@@ -32,6 +32,10 @@ STRUCT
 	bReadyToMove : BOOL;
 	bMoveRequested : BOOL;
 	bMoveInProgress : BOOL;
+	
+	SPGEnabled : BOOL;
+	
+	messageString : STRING;
 END_STRUCT
 END_TYPE
 ]]></Declaration>

@@ -201,6 +201,11 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"1198"</v>
+              <v n="TextDefault">"Disable SPG"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"986"</v>
               <v n="TextDefault">"ehomeDirect"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -208,6 +213,16 @@
             <o>
               <v n="TextID">"350"</v>
               <v n="TextDefault">"eHomeDirect"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"302"</v>
+              <v n="TextDefault">"eHomeToBlock_Bwd"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"1049"</v>
+              <v n="TextDefault">"eHomeToBlock_Fwd"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
@@ -271,6 +286,11 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"303"</v>
+              <v n="TextDefault">"Enable SPG"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"109"</v>
               <v n="TextDefault">"English"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -293,6 +313,11 @@
             <o>
               <v n="TextID">"768"</v>
               <v n="TextDefault">"eWriteParameter"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"534"</v>
+              <v n="TextDefault">"ExtSPG Enabled"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>

@@ -91,6 +91,10 @@ VAR
 	fbNewMoveRTrig : R_TRIG;
 	bStartOfMove : BOOL;
 	bEndOfMove : BOOL;
+	
+	bSpgEnableReq : BOOL;
+	bSpgDisableReq : BOOL;
+	spgDisableCommand : BOOL;
 
 END_VAR
 VAR CONSTANT
@@ -198,7 +202,7 @@ fbNewMoveRTrig(CLK:= _stAxis.stStatus.bMoveInProgress);
 IF fbNewMoveRTrig.Q THEN
 	bStartOfMove:= TRUE;
 END_IF
-fbMoveInProgressFTrig(CLK:= _stAxis.stStatus.bMoveInProgress);
+fbMoveInProgressFTrig(CLK:= _stAxis.stStatus.bMoveInProgress OR spgDisableCommand);
 //No move requested and no move in progress
 ]]></ST>
       </Implementation>
@@ -210,13 +214,34 @@ END_VAR
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[IF _stAxis.stSpg.DisableSPG THEN
-	fbEnableSPG.Execute := TRUE;
+	//fbEnableSPG.Execute := TRUE;
+	bSpgDisableReq := TRUE;
 END_IF
 
+IF _stAxis.stStatus.bEnabled = FALSE AND bSpgDisableReq THEN
+	_stAxis.stStatus.messageString:= 'Axis is disabled';
+	bSpgDisableReq:= FALSE;
+END_IF
+
+IF _stAxis.stStatus.SPGEnabled = FALSE AND bSpgDisableReq THEN
+	stAxis.stStatus.messageString:= 'Axis is not in ExtSPG mode';
+	bSpgDisableReq:= FALSE;
+END_IF
+
+
+
+
+
+fbDisableSPG.Execute:= bSpgDisableReq;
 fbDisableSPG(Axis:= _stAxis.Axis);
+IF _stAxis.stControl.bAutoEnableDisable THEN
+	spgDisableCommand := fbDisableSPG.Done;
+END_IF
 
 _stAxis.stSpg.DisableSPG:= FALSE;
-fbDisableSPG.Execute := FALSE;]]></ST>
+fbDisableSPG.Execute := FALSE;
+
+]]></ST>
       </Implementation>
     </Method>
     <Method Name="mControl_EnableSPG" Id="{a6eecb35-1a59-4fa3-82fb-c93d668235db}" FolderPath="Control Methods\">
@@ -226,7 +251,23 @@ END_VAR
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[IF _stAxis.stSpg.EnableSPG THEN
-	fbEnableSPG.Execute := TRUE;
+	//fbEnableSPG.Execute := TRUE;
+	bSpgEnableReq := TRUE;
+END_IF
+
+IF _stAxis.stControl.bAutoEnableDisable = FALSE AND _stAxis.stStatus.bEnabled = FALSE AND bSpgEnableReq THEN
+	_stAxis.stStatus.messageString:= 'Axis must be enabled before enabling ExtSPG';
+	bSpgEnableReq:= FALSE;
+END_IF
+
+IF _stAxis.stControl.bAutoEnableDisable  AND _stAxis.stStatus.bEnabled = FALSE AND bSpgEnableReq = TRUE THEN
+	_stAxis.stControl.bEnable:= TRUE;
+END_IF
+
+
+IF _stAxis.stStatus.bEnabled THEN
+	fbEnableSPG.Execute := bSpgEnableReq;
+	bSpgEnableReq := FALSE;
 END_IF
 
 fbEnableSPG(Axis:= _stAxis.Axis);
@@ -886,7 +927,7 @@ _stAxis.stStatus.bInTargetPosition := _stAxis.Axis.Status.InTargetPosition;
 //_stAxis.stStatus.bEnabled := _stAxis.Axis.Status.Operational;
 _stAxis.stStatus.bEnabled := NOT(_stAxis.Axis.Status.Disabled);	//This is crap but I don't know a better way
 
-_stAxis.stSpg.SPGEnabled := _stAxis.Axis.Status.ExtSetPointGenEnabled;
+_stAxis.stStatus.SPGEnabled := _stAxis.Axis.Status.ExtSetPointGenEnabled;
 
 
 ]]></ST>
@@ -1143,12 +1184,41 @@ END_VAR
       <LineId Id="37" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mControl_DisableSPG">
-      <LineId Id="6" Count="6" />
+      <LineId Id="24" Count="8" />
+      <LineId Id="48" Count="0" />
+      <LineId Id="47" Count="0" />
+      <LineId Id="49" Count="0" />
+      <LineId Id="51" Count="0" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="36" Count="2" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="53" Count="0" />
+      <LineId Id="57" Count="0" />
+      <LineId Id="55" Count="0" />
+      <LineId Id="45" Count="1" />
+      <LineId Id="16" Count="1" />
       <LineId Id="5" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mControl_EnableSPG">
       <LineId Id="5" Count="0" />
-      <LineId Id="9" Count="1" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="30" Count="2" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="22" Count="1" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="27" Count="0" />
       <LineId Id="12" Count="0" />
       <LineId Id="11" Count="0" />
       <LineId Id="14" Count="0" />
