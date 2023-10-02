@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <DUT Name="ST_AxisSPG" Id="{b96f012e-5f38-4967-a2b5-c315a5e92e2d}">
+    <Declaration><![CDATA[TYPE ST_AxisSPG :
+STRUCT
+	EnableSPG : BOOL;
+	DisableSPG : BOOL;
+	SPGEnabled : BOOL;
+	
+	Position : LREAL;
+	Velocity : LREAL;
+	VelocityStandstillThreshold : LREAL := 0; //Can be zero
+	Acceleration : LREAL;
+	Direction : DINT;
+	OverrideDirection : BOOL := FALSE; //TRUE for manual direction feed otherwise calculated in FB_AXIS
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

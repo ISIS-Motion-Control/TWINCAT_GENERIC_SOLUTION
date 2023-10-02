@@ -32,6 +32,12 @@ VAR
     fbMoveModulo: MC_MoveModulo;
     fbMoveModulo2: MC_MoveModulo;
     stMcStatusMoveModulo: ST_McStatus;
+	
+	fbEnableSPG : MC_ExtSetPointGenEnable;
+	stMcStatusEnableSPG : ST_McStatus;
+	fbDisableSPG : MC_ExtSetPointGenDisable;
+	stMcStatusDisableSPG : ST_McStatus;
+	
 
     fbHome: FB_Homing;
     stMcStatusHome: ST_McStatus;
@@ -195,6 +201,75 @@ END_IF
 fbMoveInProgressFTrig(CLK:= _stAxis.stStatus.bMoveInProgress);
 //No move requested and no move in progress
 ]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mControl_DisableSPG" Id="{f7c5f83c-597e-487b-a5d6-3936cabd6380}" FolderPath="Control Methods\">
+      <Declaration><![CDATA[METHOD mControl_DisableSPG : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF _stAxis.stSpg.DisableSPG THEN
+	fbEnableSPG.Execute := TRUE;
+END_IF
+
+fbDisableSPG(Axis:= _stAxis.Axis);
+
+_stAxis.stSpg.DisableSPG:= FALSE;
+fbDisableSPG.Execute := FALSE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mControl_EnableSPG" Id="{a6eecb35-1a59-4fa3-82fb-c93d668235db}" FolderPath="Control Methods\">
+      <Declaration><![CDATA[METHOD mControl_EnableSPG : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF _stAxis.stSpg.EnableSPG THEN
+	fbEnableSPG.Execute := TRUE;
+END_IF
+
+fbEnableSPG(Axis:= _stAxis.Axis);
+
+_stAxis.stSpg.EnableSPG:= FALSE;
+fbEnableSPG.Execute := FALSE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mControl_FeedSPG" Id="{9a0df975-bf74-4a0e-8b96-15bd528af38d}" FolderPath="Control Methods\">
+      <Declaration><![CDATA[METHOD mControl_FeedSPG : BOOL
+VAR_INPUT
+END_VAR
+
+VAR
+	DirectionInternal : DINT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[(* 
+Direction 1 = Forward
+Direction -1 = Backward
+Direction 0 = Standstill
+*)
+
+IF _stAxis.stSpg.OverrideDirection THEN
+	DirectionInternal:= _stAxis.stSpg.Direction;
+ELSE
+	//Direction calculation logic
+	IF _stAxis.stSpg.Velocity > ABS(_stAxis.stSpg.VelocityStandstillThreshold) THEN
+		DirectionInternal := 1;
+	ELSIF _stAxis.stSpg.Velocity < -ABS(_stAxis.stSpg.VelocityStandstillThreshold) THEN
+		DirectionInternal := -1;
+	ELSE
+		DirectionInternal := 0;
+	END_IF
+END_IF
+
+MC_ExtSetPointGenFeed(
+	Axis:= _stAxis.Axis, 
+	Position:= _stAxis.stSpg.Position,
+	Velocity:= _stAxis.stSpg.Velocity,
+	Acceleration:= _stAxis.stSpg.Acceleration,
+	Direction:= _stAxis.stSpg.Direction);]]></ST>
       </Implementation>
     </Method>
     <Method Name="mControl_Home" Id="{1c89166c-d22b-4ec1-832b-29e319ac35a4}" FolderPath="Control Methods\">
@@ -809,7 +884,11 @@ _stAxis.stStatus.bMovingForward := _stAxis.Axis.Status.PositiveDirection;
 _stAxis.stStatus.bMovingBackward := _stAxis.Axis.Status.NegativeDirection;
 _stAxis.stStatus.bInTargetPosition := _stAxis.Axis.Status.InTargetPosition;
 //_stAxis.stStatus.bEnabled := _stAxis.Axis.Status.Operational;
-_stAxis.stStatus.bEnabled := NOT(_stAxis.Axis.Status.Disabled);	//This is crap
+_stAxis.stStatus.bEnabled := NOT(_stAxis.Axis.Status.Disabled);	//This is crap but I don't know a better way
+
+_stAxis.stSpg.SPGEnabled := _stAxis.Axis.Status.ExtSetPointGenEnabled;
+
+
 ]]></ST>
       </Implementation>
     </Method>
@@ -967,6 +1046,10 @@ mControl_LimitLinking();
 stMcStatusPower := mControl_Power();
 mControl_AutoEnableDisable();
 
+mControl_EnableSPG();
+mControl_DisableSPG();
+mControl_FeedSPG();
+
 stMcStatusHalt := mMove_Halt();
 stMcStatusStop := mMove_Stop();
 stMcStatusReset := mControl_Reset();
@@ -1059,6 +1142,34 @@ END_VAR
       <LineId Id="35" Count="0" />
       <LineId Id="37" Count="0" />
     </LineIds>
+    <LineIds Name="FB_Axis.mControl_DisableSPG">
+      <LineId Id="6" Count="6" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mControl_EnableSPG">
+      <LineId Id="5" Count="0" />
+      <LineId Id="9" Count="1" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="15" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mControl_FeedSPG">
+      <LineId Id="6" Count="0" />
+      <LineId Id="14" Count="3" />
+      <LineId Id="7" Count="1" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="20" Count="1" />
+      <LineId Id="27" Count="2" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="32" Count="1" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="34" Count="4" />
+    </LineIds>
     <LineIds Name="FB_Axis.mControl_Home">
       <LineId Id="3" Count="28" />
       <LineId Id="2" Count="0" />
@@ -1144,6 +1255,10 @@ END_VAR
       <LineId Id="11" Count="6" />
       <LineId Id="20" Count="0" />
       <LineId Id="18" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="21" Count="0" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mStatus_Busy">
@@ -1174,6 +1289,9 @@ END_VAR
     <LineIds Name="FB_Axis.Run">
       <LineId Id="4" Count="8" />
       <LineId Id="37" Count="0" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="39" Count="0" />
+      <LineId Id="41" Count="1" />
       <LineId Id="13" Count="8" />
       <LineId Id="25" Count="8" />
       <LineId Id="38" Count="0" />
