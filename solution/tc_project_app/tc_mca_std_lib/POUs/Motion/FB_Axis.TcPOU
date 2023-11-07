@@ -157,7 +157,13 @@ IF _stAxis.stControl.eCommand = E_MotionFunctions.eMoveAbsolute OR
 	_stAxis.stControl.eCommand = E_MotionFunctions.eMoveVelocity OR
 	_stAxis.stControl.eCommand = E_MotionFunctions.eHome THEN
 	IF _stAxis.stControl.bExecute AND _stAxis.stStatus.bMoveRequested = FALSE THEN
- 	_stAxis.stStatus.bMoveRequested := TRUE;
+		//new logic here to stop commands queuing with axes disabled if not meant to autoenable/disable
+ 		IF _stAxis.stStatus.bEnabled = FALSE AND _stAxis.stControl.bAutoEnableDisable = FALSE THEN
+			_stAxis.stStatus.bMoveRequested := FALSE;
+		ELSE
+			_stAxis.stStatus.bMoveRequested := TRUE;
+		END_IF
+		//_stAxis.stStatus.bMoveRequested := TRUE;
 	END_IF	
 END_IF
 
@@ -1152,7 +1158,14 @@ END_VAR
       <LineId Id="12" Count="0" />
       <LineId Id="16" Count="1" />
       <LineId Id="19" Count="0" />
-      <LineId Id="21" Count="4" />
+      <LineId Id="21" Count="2" />
+      <LineId Id="70" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="72" Count="0" />
+      <LineId Id="74" Count="1" />
+      <LineId Id="73" Count="0" />
+      <LineId Id="71" Count="0" />
+      <LineId Id="25" Count="0" />
       <LineId Id="18" Count="0" />
       <LineId Id="26" Count="0" />
       <LineId Id="13" Count="0" />

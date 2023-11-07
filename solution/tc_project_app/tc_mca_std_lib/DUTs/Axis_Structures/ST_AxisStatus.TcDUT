@@ -35,7 +35,10 @@ STRUCT
 	
 	SPGEnabled : BOOL;
 	
-	messageString : STRING;
+	
+	messageString : STRING; //FB_Axis Execution messages
+	appMessageString : STRING; //Message string reserved for application specific functionality
+	errorString : STRING; //NC Converted values as a lookup table (but translated
 END_STRUCT
 END_TYPE
 ]]></Declaration>
