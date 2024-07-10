@@ -13,15 +13,13 @@
     iPneumaticAxis: UINT := 1; //Index for for loops while going through pneumatic axes
     fbGetCurTaskIndex: GETCURTASKINDEX;
     bLocalMode: BOOL;
+	astAxesPersistent: ARRAY [1..GVL_APP.nAXIS_NUM] OF ST_AxisPersistent;
 END_VAR
 
 VAR_GLOBAL CONSTANT
     nMAX_AXIS_NAME: UINT := 32;
 END_VAR
 
-VAR_GLOBAL RETAIN
-    astAxesPersistent: ARRAY [1..GVL_APP.nAXIS_NUM] OF ST_AxisPersistent;
-END_VAR
 ]]></Declaration>
   </GVL>
 </TcPlcObject>

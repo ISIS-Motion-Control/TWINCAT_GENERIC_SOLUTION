@@ -963,43 +963,9 @@ External Setpoint Generation:
 				</Relation>
 			</Relations>
 		</DataType>
-		<DataType>
-			<Name GUID="{97CE1110-9B25-97D1-B1F3-F65F66782D0C}" AutoDeleteType="true">ST_AxisPersistent</Name>
-			<BitSize>192</BitSize>
-			<SubItem>
-				<Name>fPositionAtShutdown</Name>
-				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
-				<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-				<BitSize>64</BitSize>
-				<BitOffs>0</BitOffs>
-			</SubItem>
-			<SubItem>
-				<Name>fEncoderBiasAtShutdown</Name>
-				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
-				<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-				<BitSize>64</BitSize>
-				<BitOffs>64</BitOffs>
-			</SubItem>
-			<SubItem>
-				<Name>bMovingAtShutdown</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
-				<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-				<BitSize>8</BitSize>
-				<BitOffs>128</BitOffs>
-			</SubItem>
-		</DataType>
-		<DataType>
-			<Name IecBaseType="true">ARRAY [1..1] OF ST_AxisPersistent</Name>
-			<BitSize>192</BitSize>
-			<BaseType GUID="{97CE1110-9B25-97D1-B1F3-F65F66782D0C}">ST_AxisPersistent</BaseType>
-			<ArrayInfo>
-				<LBound>1</LBound>
-				<Elements>1</Elements>
-			</ArrayInfo>
-		</DataType>
 	</DataTypes>
 	<Project GUID="{FB261665-FD20-4BF2-97F8-2854C82B752D}" Name="tc_project_app" PrjFilePath="..\..\tc_project_app\tc_project_app.plcproj" TmcFilePath="..\..\tc_project_app\tc_project_app.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="tc_project_app\tc_project_app.tmc" TmcHash="{1048F21A-6C8F-0E40-D333-49F5A8198720}">
+		<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="tc_project_app\tc_project_app.tmc" TmcHash="{ABDA233E-DA78-9537-9265-54AEE78DF159}">
 			<Name>tc_project_app Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
@@ -1036,8 +1002,21 @@ External Setpoint Generation:
 			<Vars VarGrpType="8" AreaNo="4">
 				<Name>PlcTask Retains</Name>
 				<Var>
-					<Name>GVL.astAxesPersistent</Name>
-					<Type GUID="{5161B8CD-387D-1950-38F0-C721AB4BB8F0}">ARRAY [1..1] OF ST_AxisPersistent</Type>
+					<Name>GVL.astAxesPersistent[1].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[1].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[1].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
 					<InOut>7</InOut>
 				</Var>
 			</Vars>
@@ -1060,6 +1039,14 @@ External Setpoint Generation:
 	</Project>
 	<Mappings>
 		<OwnerA Name="tc_project_app Instance">
+			<OwnerB Name="TIID^Device 2 (NOV-DP-RAM)^Box 3 (Retain Handler)">
+				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[1].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[1].bMovingAtShutdown_[0]" AutoLink="true" PeerAutoLink="true"/>
+				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[1].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[1].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
+				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[1].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[1].fEncoderBiasAtShutdown_[0]" AutoLink="true" PeerAutoLink="true"/>
+				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[1].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[1].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
+				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[1].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[1].fPositionAtShutdown_[0]" AutoLink="true" PeerAutoLink="true"/>
+				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[1].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[1].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
+			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 1">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[1].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
 				<Link VarA="PlcTask Outputs^GVL.astAxes[1].Axis.PlcToNc" VarB="Inputs^FromPlc"/>

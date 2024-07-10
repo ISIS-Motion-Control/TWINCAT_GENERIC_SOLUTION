@@ -27,17 +27,39 @@ VAR
 	fbSetPosition : MC_SetPosition;
 	encPosition AT %Q* : DINT;
 	
+	testInt1 : INT:=5;
+	testInt2 : INT:=2;
+	testReal : LREAL :=6.2;
+	
+	
+	bCylinder : BOOL;
+	bExtendedLimit : BOOL;
+	bRetractedLimit : BOOL;
+	tOnExtend : TON;
+	tOnRetract : TON;
+	
 END_VAR
 
 VAR PERSISTENT
-    bRestoreOnStartup: BOOL;
+    bRestoreOnStartup: BOOL := TRUE;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[POSITION_RECOVERY();
 PROG();
 AXES();
-fbSetPosition(Axis:= astAxes[1].Axis);]]></ST>
+fbSetPosition(Axis:= astAxes[1].Axis);
+
+tOnExtend.IN := NOT bCylinder;
+tOnExtend.PT := T#250MS;
+tOnExtend();
+bExtendedLimit:= NOT tOnExtend.Q;
+
+tOnRetract.IN :=  bCylinder;
+tOnRetract.PT := T#250MS;
+tOnRetract();
+bRetractedLimit:= NOT tOnRetract.Q;
+]]></ST>
     </Implementation>
     <Folder Name="POSITION_RECOVERY" Id="{3561f6ef-e145-4ed3-9839-f17334bd2d97}" />
     <Action Name="AXES" Id="{7eb32732-9b53-4934-8cd9-20ba971dd8ff}">
@@ -141,11 +163,14 @@ GVL.fbGetCurTaskIndex();
 //INCREMENTAL (singleturn absolute)=4;
 //ABSOLUTE SINGLETURN RANGE (with single overflow)=5;
 
-
-IF bRestoreOnStartup AND eGlobalSUpsState = eSUPS_PowerOK THEN
-    bRestoreOnStartup := FALSE;
-    bRestoreExecute := TRUE;
+IF NOT bPositionRestoreDone THEN
+	bRestoreExecute := TRUE;
 END_IF
+
+//IF bRestoreOnStartup AND eGlobalSUpsState = eSUPS_PowerOK THEN
+//    bRestoreOnStartup := FALSE;
+//    bRestoreExecute := TRUE;
+//END_IF
 
 //Upon startup bPositionRestoreDone will be set to FALSE, after successfully completing the following code it will be set TRUE
 //and should stay TRUE for the rest of the time the PLC is operational, thus this routine should only be completed once.
@@ -296,6 +321,14 @@ END_FOR
     <LineIds Name="MAIN">
       <LineId Id="3" Count="2" />
       <LineId Id="2" Count="0" />
+      <LineId Id="46" Count="0" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="48" Count="1" />
+      <LineId Id="59" Count="0" />
+      <LineId Id="56" Count="2" />
+      <LineId Id="55" Count="0" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="50" Count="0" />
     </LineIds>
     <LineIds Name="MAIN.AXES">
       <LineId Id="2" Count="20" />
@@ -314,7 +347,11 @@ END_FOR
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="MAIN.RESTORE_POSITIONS">
-      <LineId Id="2" Count="147" />
+      <LineId Id="2" Count="16" />
+      <LineId Id="150" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="151" Count="1" />
+      <LineId Id="20" Count="129" />
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="MAIN.STORE_PERSISTENT">

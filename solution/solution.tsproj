@@ -19,7 +19,6 @@
 			<Project File="tc_project_app.xti"/>
 		</Plc>
 		<Io>
-			<Device File="Device 1 (EtherCAT).xti" Id="1"/>
 			<Device File="Device 2 (NOV-DP-RAM).xti" Id="2"/>
 		</Io>
 	</Project>
