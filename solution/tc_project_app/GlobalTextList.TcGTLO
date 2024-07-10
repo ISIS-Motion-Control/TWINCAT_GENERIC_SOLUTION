@@ -561,6 +561,11 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"615"</v>
+              <v n="TextDefault">"Set Position"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"611"</v>
               <v n="TextDefault">"shomeDirect"</v>
               <l n="LanguageTexts" t="ArrayList" />

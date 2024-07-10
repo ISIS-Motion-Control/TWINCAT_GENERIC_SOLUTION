@@ -9,6 +9,7 @@ TYPE E_MotionFunctions :
     eMoveRelative := 1,
     eMoveVelocity := 2, //Continous moving at a set velocity once bExecute goes high
     eMoveModulo := 3, //Move for 360 deg rotation, see Beckhoff docs
+	eSetPosition := 4,
 
     eHome := 10, //Run the homing routine for the axis
     eWriteParameter := 50, //Writes the set value to the set parameter once bExecute goes high

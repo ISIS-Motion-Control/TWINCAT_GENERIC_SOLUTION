@@ -17,6 +17,7 @@ STRUCT
     nStopErrorID: UDINT;
     nGearInMultiMasterErrorID: UDINT;
     nGearOutErrorID: UDINT;
+	nSetPositionErrorID : UDINT;
     fbWriteParameterErrorId: UDINT;
     fbReadParameterErrorId: UDINT;
 //Error from the NC
@@ -26,4 +27,3 @@ END_TYPE
 ]]></Declaration>
   </DUT>
 </TcPlcObject>
-

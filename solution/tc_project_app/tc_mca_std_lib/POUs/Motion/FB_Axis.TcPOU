@@ -47,6 +47,9 @@ VAR
 
     fbWriteParameter: MC_WriteParameter;
     stMcStatusWriteParameter: ST_McStatus;
+	
+	fbSetPosition: MC_SetPosition;
+	stMcStatusSetPosition: ST_McStatus;
 
     //Variables for holding limits during homing
     bWaitForStopAfterLimitHit: BOOL := FALSE;
@@ -100,7 +103,7 @@ END_VAR
 VAR CONSTANT
     nRATIO_DENOMINATOR_DEFAULT: UINT := 1;
     nNO_GEARING: UINT := 0;
-    nMCSTATUS_ARRAY_SIZE: UINT := 11;
+    nMCSTATUS_ARRAY_SIZE: UINT := 12;
     nMULTI_MASTER_MAX_AXES: UINT := 4;
 END_VAR
 ]]></Declaration>
@@ -139,8 +142,10 @@ astMcStatus[6] := ADR(stMcStatusMoveRelative);
 astMcStatus[7] := ADR(stMcStatusMoveVelocity);
 astMcStatus[8] := ADR(stMcStatusMoveModulo);
 astMcStatus[9] := ADR(stMcStatusHome);
-astMcStatus[10] := ADR(stMcStatusReadParameter);
-astMcStatus[11] := ADR(stMcStatusWriteParameter);
+astMcStatus[10] := ADR(stMcStatusSetPosition);
+astMcStatus[11] := ADR(stMcStatusReadParameter);
+astMcStatus[12] := ADR(stMcStatusWriteParameter);
+
 ]]></ST>
       </Implementation>
     </Method>
@@ -656,7 +661,30 @@ END_IF
 ]]></ST>
       </Implementation>
     </Method>
-    <Method Name="mMove_Stop" Id="{a3229fc2-dc64-4fe5-81ae-939492dc7b8a}" FolderPath="Move Methods\">
+    <Method Name="mMove_SetPosition" Id="{a3229fc2-dc64-4fe5-81ae-939492dc7b8a}" FolderPath="Move Methods\">
+      <Declaration><![CDATA[METHOD mMove_SetPosition : ST_McStatus]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF _stAxis.stControl.eCommand = E_MotionFunctions.eSetPosition THEN
+	fbSetPosition.Execute:= _stAxis.stControl.bExecute;
+END_IF
+
+fbSetPosition.Position:= _stAxis.stControl.fPosition;
+fbSetPosition.Options.ClearPositionLag:= TRUE;
+
+fbSetPosition(Axis := _stAxis.Axis);
+fbSetPosition.Execute:= FALSE;
+
+mMove_SetPosition.Busy := fbSetPosition.Busy;
+mMove_SetPosition.Error := fbSetPosition.Error;
+mMove_SetPosition.ErrorID := fbSetPosition.ErrorID;
+mMove_SetPosition.Done := fbSetPosition.Done;
+
+IF fbSetPosition.Error THEN
+    _stAxis.stError.nSetPositionErrorID := fbSetPosition.ErrorID; //Set the error
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mMove_Stop" Id="{a18a9f6e-fb69-4d76-adaa-ce297aeac612}" FolderPath="Move Methods\">
       <Declaration><![CDATA[METHOD mMove_Stop : ST_McStatus
 ]]></Declaration>
       <Implementation>
@@ -948,7 +976,7 @@ END_VAR
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[
-FOR i := 5 TO 9 DO
+FOR i := 5 TO 10 DO
     tmpBusy := astMcStatus[i]^.Busy OR tmpBusy;
 END_FOR
 mStatus_Busy := tmpBusy;
@@ -984,7 +1012,7 @@ END_VAR
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[
-FOR i := 5 TO 9 DO
+FOR i := 5 TO 10 DO
     tmpDone := astMcStatus[i]^.Done OR tmpDone;
 END_FOR
 //fbDoneRTrig(CLK:= mStatus_Done());
@@ -1068,6 +1096,7 @@ IF fbExecuteRTrig.Q THEN
             E_MotionFunctions.eMoveRelative,
             E_MotionFunctions.eMoveVelocity,
             E_MotionFunctions.eMoveModulo,
+			E_MotionFunctions.eSetPosition,
             E_MotionFunctions.eHome :
                 _stAxis.stStatus.nErrorID := 0;
             E_MotionFunctions.eWriteParameter,
@@ -1100,6 +1129,7 @@ mControl_FeedSPG();
 stMcStatusHalt := mMove_Halt();
 stMcStatusStop := mMove_Stop();
 stMcStatusReset := mControl_Reset();
+stMcStatusSetPosition := mMove_SetPosition();
 
 stMcStatusMoveAbsolute := mMove_MoveAbsolute();
 stMcStatusMoveRelative := mMove_MoveRelative();
@@ -1151,7 +1181,9 @@ END_VAR
     </LineIds>
     <LineIds Name="FB_Axis.FB_init">
       <LineId Id="3" Count="10" />
+      <LineId Id="24" Count="0" />
       <LineId Id="16" Count="1" />
+      <LineId Id="23" Count="0" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mControl_AutoEnableDisable">
@@ -1309,6 +1341,17 @@ END_VAR
       <LineId Id="6" Count="19" />
       <LineId Id="2" Count="0" />
     </LineIds>
+    <LineIds Name="FB_Axis.mMove_SetPosition">
+      <LineId Id="35" Count="0" />
+      <LineId Id="41" Count="2" />
+      <LineId Id="47" Count="0" />
+      <LineId Id="63" Count="0" />
+      <LineId Id="48" Count="2" />
+      <LineId Id="53" Count="3" />
+      <LineId Id="62" Count="0" />
+      <LineId Id="58" Count="2" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
     <LineIds Name="FB_Axis.mMove_Stop">
       <LineId Id="4" Count="20" />
       <LineId Id="2" Count="0" />
@@ -1366,6 +1409,7 @@ END_VAR
     </LineIds>
     <LineIds Name="FB_Axis.mStatus_NewCommand">
       <LineId Id="3" Count="11" />
+      <LineId Id="28" Count="0" />
       <LineId Id="17" Count="6" />
       <LineId Id="2" Count="0" />
     </LineIds>
@@ -1375,7 +1419,9 @@ END_VAR
       <LineId Id="40" Count="0" />
       <LineId Id="39" Count="0" />
       <LineId Id="41" Count="1" />
-      <LineId Id="13" Count="8" />
+      <LineId Id="13" Count="3" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="17" Count="4" />
       <LineId Id="25" Count="8" />
       <LineId Id="38" Count="0" />
       <LineId Id="34" Count="1" />

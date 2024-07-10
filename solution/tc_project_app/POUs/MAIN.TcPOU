@@ -15,6 +15,8 @@ VAR
     eStartUp: (eColdStart, eReadAxisFeedbackType, eCheckReadDone, eExecuteRestore, eCheckRestore, eFinishRestore);
     bPositionRestoreDone: BOOL := FALSE;
     bRestoreExecute: BOOL := FALSE;
+	restoreCounter : UINT:=0;
+	restoreCounterMax: UINT:=10;
     bExecuteReadEncRefSys: BOOL := FALSE;
     nRetry: INT;
     iAxes: UINT; //index for for loops in Position recovery actions
@@ -23,20 +25,8 @@ VAR
     afbReadPositionBias: ARRAY [1..GVL_APP.nAXIS_NUM] OF MC_ReadParameter;
     afbWritePositionBias: ARRAY [1..GVL_APP.nAXIS_NUM] OF MC_WriteParameter;
     fbGetDeviceIdentification: FB_GetDeviceIdentificationEx;
+		
 	
-	fbSetPosition : MC_SetPosition;
-	encPosition AT %Q* : DINT;
-	
-	testInt1 : INT:=5;
-	testInt2 : INT:=2;
-	testReal : LREAL :=6.2;
-	
-	
-	bCylinder : BOOL;
-	bExtendedLimit : BOOL;
-	bRetractedLimit : BOOL;
-	tOnExtend : TON;
-	tOnRetract : TON;
 	
 END_VAR
 
@@ -250,6 +240,7 @@ IF bRestoreExecute AND NOT bPositionRestoreDone THEN
                     RETURN;
                 END_IF
             END_FOR
+			restoreCounter:= restoreCounter+1;
             eStartUp := eCheckRestore;
 
 
@@ -257,6 +248,10 @@ IF bRestoreExecute AND NOT bPositionRestoreDone THEN
             //Check the set position and write enocder BIAS fbs are finished
             //Nothing actually happens if the restore is not done, the code just returns from here each cycle and the
             //bPositionRestoreDone will never get set to TRUE and will take up cycle time
+			IF restoreCounter>restoreCounterMax THEN
+				eStartUp:= eFinishRestore;
+				RETURN;
+			END_IF
             eStartUp:= eFinishRestore;
 			FOR iAxes := 1 TO GVL_APP.nAXIS_NUM DO
 				
@@ -352,7 +347,14 @@ END_FOR
       <LineId Id="154" Count="2" />
       <LineId Id="92" Count="0" />
       <LineId Id="95" Count="2" />
-      <LineId Id="101" Count="13" />
+      <LineId Id="101" Count="5" />
+      <LineId Id="168" Count="0" />
+      <LineId Id="107" Count="6" />
+      <LineId Id="167" Count="0" />
+      <LineId Id="169" Count="0" />
+      <LineId Id="171" Count="0" />
+      <LineId Id="170" Count="0" />
+      <LineId Id="114" Count="0" />
       <LineId Id="166" Count="0" />
       <LineId Id="165" Count="0" />
       <LineId Id="115" Count="0" />

@@ -6,41 +6,41 @@
 		<Vars VarGrpType="8">
 			<Name>Retains</Name>
 			<Var NotLinkable="true">
-				<Name>GVL.astAxesPersistent[1].fPositionAtShutdown_[0]</Name>
+				<Name>GVL.astAxesPersistent[1].fPositionAtShutdown_[852]</Name>
 				<Type>LREAL</Type>
 				<InOut>7</InOut>
 				<UserHandle>33620032</UserHandle>
 			</Var>
 			<Var NotLinkable="true">
-				<Name>GVL.astAxesPersistent[1].fPositionAtShutdown_[852]</Name>
+				<Name>GVL.astAxesPersistent[1].fPositionAtShutdown_[0]</Name>
 				<Type>LREAL</Type>
 				<BitOffs>64</BitOffs>
 				<InOut>7</InOut>
 				<UserHandle>33620032</UserHandle>
 			</Var>
 			<Var NotLinkable="true">
-				<Name>GVL.astAxesPersistent[1].fEncoderBiasAtShutdown_[0]</Name>
+				<Name>GVL.astAxesPersistent[1].fEncoderBiasAtShutdown_[852]</Name>
 				<Type>LREAL</Type>
 				<BitOffs>128</BitOffs>
 				<InOut>7</InOut>
 				<UserHandle>33620032</UserHandle>
 			</Var>
 			<Var NotLinkable="true">
-				<Name>GVL.astAxesPersistent[1].fEncoderBiasAtShutdown_[852]</Name>
+				<Name>GVL.astAxesPersistent[1].fEncoderBiasAtShutdown_[0]</Name>
 				<Type>LREAL</Type>
 				<BitOffs>192</BitOffs>
 				<InOut>7</InOut>
 				<UserHandle>33620032</UserHandle>
 			</Var>
 			<Var NotLinkable="true">
-				<Name>GVL.astAxesPersistent[1].bMovingAtShutdown_[0]</Name>
+				<Name>GVL.astAxesPersistent[1].bMovingAtShutdown_[852]</Name>
 				<Type>BOOL</Type>
 				<BitOffs>256</BitOffs>
 				<InOut>7</InOut>
 				<UserHandle>33620032</UserHandle>
 			</Var>
 			<Var NotLinkable="true">
-				<Name>GVL.astAxesPersistent[1].bMovingAtShutdown_[852]</Name>
+				<Name>GVL.astAxesPersistent[1].bMovingAtShutdown_[0]</Name>
 				<Type>BOOL</Type>
 				<BitOffs>264</BitOffs>
 				<InOut>7</InOut>
