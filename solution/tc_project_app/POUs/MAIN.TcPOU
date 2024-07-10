@@ -45,20 +45,19 @@ VAR PERSISTENT
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[POSITION_RECOVERY();
+      <ST><![CDATA[//POSITION_RECOVERY();
+RESTORE_POSITIONS();
+
+IF bPositionRestoreDone THEN
+	STORE_PERSISTENT();
+END_IF
+
+
 PROG();
 AXES();
-fbSetPosition(Axis:= astAxes[1].Axis);
 
-tOnExtend.IN := NOT bCylinder;
-tOnExtend.PT := T#250MS;
-tOnExtend();
-bExtendedLimit:= NOT tOnExtend.Q;
 
-tOnRetract.IN :=  bCylinder;
-tOnRetract.PT := T#250MS;
-tOnRetract();
-bRetractedLimit:= NOT tOnRetract.Q;
+
 ]]></ST>
     </Implementation>
     <Folder Name="POSITION_RECOVERY" Id="{3561f6ef-e145-4ed3-9839-f17334bd2d97}" />
@@ -140,7 +139,7 @@ GVL.fbGetCurTaskIndex();
 
 //Application program calls
 //Application_Template();
-]]></ST>
+AXIS_1();]]></ST>
       </Implementation>
     </Action>
     <Action Name="RESTORE_POSITIONS" Id="{0c7ee537-7bd9-4833-b428-c17cbb57e893}" FolderPath="POSITION_RECOVERY\">
@@ -238,16 +237,14 @@ IF bRestoreExecute AND NOT bPositionRestoreDone THEN
            FOR iAxes := 1 TO GVL_APP.nAXIS_NUM DO
                 IF GVL.astAxes[iAxes].stConfig.eRestorePosition = E_RestorePosition.eRestoreWithoutHome THEN
                     //Restore position value for incremental encoders
-                    IF NOT astAxesPersistent[iAxes].bMovingAtShutdown AND
-                    (afbReadEncRefSys[iAxes].Value = 0 OR
-                     afbReadEncRefSys[iAxes].Value = 2 OR
-                     afbReadEncRefSys[iAxes].Value = 4) THEN
-                       afbSetPosition[iAxes].Execute := TRUE;
-                    //Restore encoder position BIAS for absolute encoders
-                    ELSIF afbReadEncRefSys[iAxes].Value = 1 OR
+                    IF afbReadEncRefSys[iAxes].Value = 1 OR
                     afbReadEncRefSys[iAxes].Value = 3 OR
                     afbReadEncRefSys[iAxes].Value = 5 THEN
                        afbWritePositionBias[iAxes].Execute := TRUE;
+					ELSIF NOT astAxesPersistent[iAxes].bMovingAtShutdown THEN
+                       afbSetPosition[iAxes].Execute := TRUE;
+                    //Restore encoder position BIAS for absolute encoders
+                    
                     END_IF
                 ELSE
                     RETURN;
@@ -260,18 +257,11 @@ IF bRestoreExecute AND NOT bPositionRestoreDone THEN
             //Check the set position and write enocder BIAS fbs are finished
             //Nothing actually happens if the restore is not done, the code just returns from here each cycle and the
             //bPositionRestoreDone will never get set to TRUE and will take up cycle time
-            FOR iAxes := 1 TO GVL_APP.nAXIS_NUM DO
+            eStartUp:= eFinishRestore;
+			FOR iAxes := 1 TO GVL_APP.nAXIS_NUM DO
+				
                 IF GVL.astAxes[iAxes].stConfig.eRestorePosition = E_RestorePosition.eRestoreWithoutHome THEN
-                    IF NOT astAxesPersistent[iAxes].bMovingAtShutdown AND
-                    (afbReadEncRefSys[iAxes].Value = 0 OR
-                     afbReadEncRefSys[iAxes].Value = 2 OR
-                     afbReadEncRefSys[iAxes].Value = 4) THEN
-                        IF NOT afbSetPosition[iAxes].Done THEN
-                            afbSetPosition[iAxes].Execute := FALSE;
-                            eStartUp := eExecuteRestore;
-                            RETURN;
-                        END_IF
-                     ELSIF afbReadEncRefSys[iAxes].Value = 1 OR
+                    IF afbReadEncRefSys[iAxes].Value = 1 OR
                      afbReadEncRefSys[iAxes].Value = 3 OR
                      afbReadEncRefSys[iAxes].Value = 5 THEN
                         IF NOT afbWritePositionBias[iAxes].Done THEN
@@ -279,12 +269,17 @@ IF bRestoreExecute AND NOT bPositionRestoreDone THEN
                             eStartUp := eExecuteRestore;
                             RETURN;
                         END_IF
+					ELSIF NOT astAxesPersistent[iAxes].bMovingAtShutdown THEN 
+                        IF NOT afbSetPosition[iAxes].Done THEN
+                            afbSetPosition[iAxes].Execute := FALSE;
+                            eStartUp := eExecuteRestore;
+                            RETURN;
+                        END_IF
+                     
                     END_IF
-                ELSE
-                    RETURN;
                 END_IF
             END_FOR
-            eStartUp :=  eFinishRestore;
+            
 
         eFinishRestore:
             //Remove execute = TRUE for afbRestorePosition and fbWritePositionBias
@@ -319,15 +314,17 @@ END_FOR
       </Implementation>
     </Action>
     <LineIds Name="MAIN">
-      <LineId Id="3" Count="2" />
+      <LineId Id="3" Count="0" />
+      <LineId Id="106" Count="0" />
+      <LineId Id="108" Count="0" />
+      <LineId Id="107" Count="0" />
+      <LineId Id="111" Count="0" />
+      <LineId Id="110" Count="0" />
+      <LineId Id="104" Count="1" />
+      <LineId Id="4" Count="1" />
+      <LineId Id="102" Count="0" />
       <LineId Id="2" Count="0" />
       <LineId Id="46" Count="0" />
-      <LineId Id="45" Count="0" />
-      <LineId Id="48" Count="1" />
-      <LineId Id="59" Count="0" />
-      <LineId Id="56" Count="2" />
-      <LineId Id="55" Count="0" />
-      <LineId Id="52" Count="0" />
       <LineId Id="50" Count="0" />
     </LineIds>
     <LineIds Name="MAIN.AXES">
@@ -351,7 +348,19 @@ END_FOR
       <LineId Id="150" Count="0" />
       <LineId Id="19" Count="0" />
       <LineId Id="151" Count="1" />
-      <LineId Id="20" Count="129" />
+      <LineId Id="20" Count="71" />
+      <LineId Id="154" Count="2" />
+      <LineId Id="92" Count="0" />
+      <LineId Id="95" Count="2" />
+      <LineId Id="101" Count="13" />
+      <LineId Id="166" Count="0" />
+      <LineId Id="165" Count="0" />
+      <LineId Id="115" Count="0" />
+      <LineId Id="158" Count="6" />
+      <LineId Id="116" Count="0" />
+      <LineId Id="119" Count="5" />
+      <LineId Id="132" Count="1" />
+      <LineId Id="136" Count="13" />
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="MAIN.STORE_PERSISTENT">

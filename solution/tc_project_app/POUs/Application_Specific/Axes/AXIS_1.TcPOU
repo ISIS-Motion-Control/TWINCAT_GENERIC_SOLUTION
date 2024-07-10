@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="AXIS_1" Id="{a91ca9eb-6cf6-44ae-b18e-e212bef47c21}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM AXIS_1
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[GVL.astAxes[1].stConfig.eRestorePosition:=1;]]></ST>
+    </Implementation>
+    <LineIds Name="AXIS_1">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

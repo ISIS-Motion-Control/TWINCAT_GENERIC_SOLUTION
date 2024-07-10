@@ -35,6 +35,8 @@ STRUCT
 	
 	SPGEnabled : BOOL;
 	
+	bPositionRestored : BOOL;
+	
 	
 	messageString : STRING; //FB_Axis Execution messages
 	appMessageString : STRING; //Message string reserved for application specific functionality
