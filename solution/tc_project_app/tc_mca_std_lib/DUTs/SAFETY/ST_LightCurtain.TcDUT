@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.13">
+  <DUT Name="ST_LightCurtain" Id="{91cade4e-30d2-4bd6-98a6-790bb384083a}">
+    <Declaration><![CDATA[TYPE ST_LightCurtain :
+STRUCT
+	bHealthy : BOOL;
+	bError : BOOL;
+	iZone : INT;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

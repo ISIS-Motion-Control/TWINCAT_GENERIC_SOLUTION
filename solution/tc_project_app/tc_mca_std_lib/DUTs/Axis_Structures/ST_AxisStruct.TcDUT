@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.13">
   <DUT Name="ST_AxisStruct" Id="{9732127f-85ab-48d1-a591-d13402fe3665}">
     <Declaration><![CDATA[TYPE ST_AxisStruct :
 STRUCT
@@ -13,6 +13,7 @@ STRUCT
 	stSpg : ST_AxisSPG;
     //The NC axis link to the hardware that is controlling
     Axis: AXIS_REF;
+	stSafety : ST_AxisSafety;
 END_STRUCT
 END_TYPE
 ]]></Declaration>

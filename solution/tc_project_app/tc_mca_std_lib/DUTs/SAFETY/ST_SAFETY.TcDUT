@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.13">
+  <DUT Name="ST_SAFETY" Id="{a664e0ec-721d-4145-9970-683d4ca63556}">
+    <Declaration><![CDATA[TYPE ST_SAFETY :
+STRUCT
+	astEstops : ARRAY[1..GVL_SAFETY.nESTOP_NUM] OF ST_EStop;
+	astLightCurtains : ARRAY[1..GVL_SAFETY.nLIGHTCURTAIN_NUM] OF ST_LightCurtain;
+	
+	astSafetyZone : ARRAY[1..GVL_SAFETY.nSAFETYZONE_NUM] OF ST_SafetyZone;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.13">
+  <DUT Name="ST_EStop" Id="{a7626ee5-7ddf-445b-b59a-20184a745dcb}">
+    <Declaration><![CDATA[TYPE ST_EStop :
+STRUCT
+	bHealthy : BOOL; //fed from twinsafe
+	bError : BOOL; //fed from twinsafe
+	iZone : INT; //defined in PLC logic
+	sName : STRING; //defined in PLC logic
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

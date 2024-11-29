@@ -1,8 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.13">
   <POU Name="MAIN" Id="{33eb6f49-7781-4211-a70b-87ada6d80cb7}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
+	safetyStruct : ST_SAFETY;
+
     sVersion: STRING := '1.0.0';
     aIAxes: ARRAY [1..GVL_APP.nAXIS_NUM] OF I_Axis;
     afbAxes: ARRAY [1..GVL_APP.nAXIS_NUM] OF FB_Axis;
@@ -35,7 +37,8 @@ VAR PERSISTENT
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[//POSITION_RECOVERY();
+      <ST><![CDATA[SAFETY();
+//POSITION_RECOVERY();
 RESTORE_POSITIONS();
 
 IF bPositionRestoreDone THEN
@@ -289,6 +292,17 @@ END_IF
 ]]></ST>
       </Implementation>
     </Action>
+    <Action Name="SAFETY" Id="{5a4fec45-23eb-4a0a-86a2-984423657534}">
+      <Implementation>
+        <ST><![CDATA[//CUSTOM CODE FOR SAFETY SETUP - NAMING DEVICES, NUMBERING AND NAMING ZONES
+safetyStruct.astEstops[1].iZone:=1;
+safetyStruct.astEstops[1].sName:='ClocheRight';
+
+
+
+]]></ST>
+      </Implementation>
+    </Action>
     <Action Name="STORE_PERSISTENT" Id="{cb5c9254-2e5f-47b1-9baa-10e728a961b0}" FolderPath="POSITION_RECOVERY\">
       <Implementation>
         <ST><![CDATA[FOR iAxes := 1 TO GVL_APP.nAXIS_NUM DO
@@ -309,6 +323,7 @@ END_FOR
       </Implementation>
     </Action>
     <LineIds Name="MAIN">
+      <LineId Id="144" Count="0" />
       <LineId Id="3" Count="0" />
       <LineId Id="106" Count="0" />
       <LineId Id="108" Count="0" />
@@ -364,6 +379,13 @@ END_FOR
       <LineId Id="132" Count="1" />
       <LineId Id="136" Count="13" />
       <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="MAIN.SAFETY">
+      <LineId Id="1" Count="0" />
+      <LineId Id="3" Count="0" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="4" Count="2" />
+      <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="MAIN.STORE_PERSISTENT">
       <LineId Id="2" Count="13" />
