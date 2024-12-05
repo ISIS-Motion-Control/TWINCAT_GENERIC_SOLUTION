@@ -6,10 +6,33 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[GVL.astAxes[1].stConfig.eRestorePosition:=1;]]></ST>
+      <ST><![CDATA[//Initial parameters of an Axis
+(*IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
+    //Axis description for EPICS PV
+    GVL.astAxes[1].stDescription.sAxisName := 'MotorApplication1';
+    GVL.astAxes[1].stDescription.eUnit := E_AxisEngUnit.eMeter;
+    GVL.astAxes[1].stDescription.nPrefix := -3;
+
+    //Initial default values:
+    GVL.astAxes[1].stConfig.eHomeSeq := 0;
+    GVL.astAxes[1].stConfig.fHomePosition := 0.0;
+    GVL.astAxes[1].stConfig.fHomeFinishDistance := 0.0;
+    GVL.astAxes[1].stConfig.eRestorePosition := E_RestorePosition.eRestoreWithoutHome;
+END_IF*)
+
+//Define ACTIONS() or write exclusive code for an specific axis.
+(*Eg. Stop when temperature reaches certain values, reduce speed if  a signal is activated, etc.
+Eg. GVL.astAxes[x].stControl.bInterlockFwd := NOT bInterlockFwdOK;*)
+GVL.astAxes[1].stConfig.eRestorePosition:=1;
+
+]]></ST>
     </Implementation>
     <LineIds Name="AXIS_1">
+      <LineId Id="10" Count="15" />
+      <LineId Id="9" Count="0" />
       <LineId Id="5" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="26" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

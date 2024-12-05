@@ -1,14 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
-  <GVL Name="GVL_APP" Id="{8fe9690c-7907-432e-bedb-6fc99b5ce255}">
+  <GVL Name="GVL_Safety" Id="{77e096dc-056c-4248-bab4-5cc16df9938e}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
-VAR_GLOBAL
-END_VAR
-
 VAR_GLOBAL CONSTANT
-    nAXIS_NUM: UINT := 2;
-    nPNEUMATIC_AXIS_NUM: UINT := 0;
-END_VAR
-]]></Declaration>
+	nSAFETY_OUTPUTS: UINT := 0; //do these break with a 0 value?
+	nSAFETY_DEVICES: UINT := 1;
+END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

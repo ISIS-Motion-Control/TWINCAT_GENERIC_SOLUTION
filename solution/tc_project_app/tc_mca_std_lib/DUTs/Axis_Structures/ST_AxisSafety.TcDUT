@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <DUT Name="ST_AxisSafety" Id="{eb178369-94a0-495a-8130-25faecb698cc}">
+    <Declaration><![CDATA[TYPE ST_AxisSafety :
+STRUCT
+	bTripped : BOOL;
+	bSpeedLimited : BOOL;
+	bLocalOnly : BOOL;
+	//Just ideas of axis specific info
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

@@ -1107,11 +1107,31 @@ END_IF
 ]]></ST>
       </Implementation>
     </Method>
+    <Method Name="mStatus_Safety" Id="{860d1221-2042-4d18-8b35-4c53a145d166}" FolderPath="Status Methods\">
+      <Declaration><![CDATA[METHOD mStatus_Safety : BOOL
+VAR
+	iterator : UINT := 1;
+	bTrippedPH : BOOL := FALSE;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF GVL_Safety.nSAFETY_OUTPUTS>0 THEN
+	FOR iterator := 1 TO GVL_Safety.nSAFETY_OUTPUTS DO
+		IF stSafetyData.aSafetyOuputs[iterator].abLinkedAxes[GVL.iAxis] THEN
+			bTrippedPH := bTrippedPH OR stSafetyData.aSafetyOuputs[iterator].bTripped;
+		END_IF
+	END_FOR
+END_IF
+
+_stAxis.stSafety.bTripped := bTrippedPH;]]></ST>
+      </Implementation>
+    </Method>
     <Method Name="Run" Id="{0f9d0da9-4c05-41a7-9d5e-d5541fa7ecc6}">
       <Declaration><![CDATA[METHOD Run : BOOL
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[mStatus_AxisStatus();
+        <ST><![CDATA[mStatus_Safety();
+mStatus_AxisStatus();
 mParameters_ReadNc();
 mParameters_Init();
 stMcStatusReadParameter := mParameters_ReadParameter();
@@ -1413,7 +1433,17 @@ END_VAR
       <LineId Id="17" Count="6" />
       <LineId Id="2" Count="0" />
     </LineIds>
+    <LineIds Name="FB_Axis.mStatus_Safety">
+      <LineId Id="5" Count="1" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="12" Count="1" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="14" Count="0" />
+    </LineIds>
     <LineIds Name="FB_Axis.Run">
+      <LineId Id="46" Count="0" />
       <LineId Id="4" Count="8" />
       <LineId Id="37" Count="0" />
       <LineId Id="40" Count="0" />

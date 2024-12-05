@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <DUT Name="E_SafetyDevices" Id="{72d52ea4-f3a5-44d3-90ea-6039c1b5e5ee}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+//Just examples
+TYPE E_SafetyDevices :
+(
+	EmergencyStop := 0,
+	LightCurtain := 1,
+	Bumpstrip := 2,
+	Misc := 9
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

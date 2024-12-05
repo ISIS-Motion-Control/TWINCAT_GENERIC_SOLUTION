@@ -30,6 +30,10 @@
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
+    <Compile Include="GVLs\GVL_Safety.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
@@ -67,6 +71,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="tc_mca_std_lib\DUTs\Axis_Structures\ST_AxisPersistent.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tc_mca_std_lib\DUTs\Axis_Structures\ST_AxisSafety.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="tc_mca_std_lib\DUTs\Axis_Structures\ST_AxisSPG.TcDUT">
@@ -124,6 +131,18 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="tc_mca_std_lib\DUTs\E_MotionFunctions.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tc_mca_std_lib\DUTs\Safety Status\E_SafetyDevices.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tc_mca_std_lib\DUTs\Safety Status\ST_SafetyData.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tc_mca_std_lib\DUTs\Safety Status\ST_SafetyDevice.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tc_mca_std_lib\DUTs\Safety Status\ST_SafetyOutput.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="tc_mca_std_lib\DUTs\ST_McStatus.TcDUT">
@@ -191,6 +210,7 @@
     <Folder Include="POUs\Application_Specific\Applications" />
     <Folder Include="POUs\Application_Specific\Axes" />
     <Folder Include="tc_mca_std_lib\DUTs\Axis_Structures" />
+    <Folder Include="tc_mca_std_lib\DUTs\Safety Status" />
     <Folder Include="tc_mca_std_lib\DUTs\Pneumatics" />
     <Folder Include="POUs\Application_Specific\Applications" />
     <Folder Include="POUs\Application_Specific\Axes" />

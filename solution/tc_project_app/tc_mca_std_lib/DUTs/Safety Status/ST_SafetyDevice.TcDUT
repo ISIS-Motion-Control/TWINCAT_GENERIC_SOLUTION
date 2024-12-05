@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <DUT Name="ST_SafetyDevice" Id="{f9394306-9cec-48f4-9768-cc9a986a30ff}">
+    <Declaration><![CDATA[TYPE ST_SafetyDevice :
+STRUCT
+	eDeviceType : E_SafetyDevices; //Device type descriptor, could be used for HMI generation (e.g. all estops together or graphics applied automatically)
+	sName : STRING;
+	bHealthy : BOOL;
+	bError : BOOL; //fault bit for the device?
+	
+	//Anything else? Location? Retained var for actuations?
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

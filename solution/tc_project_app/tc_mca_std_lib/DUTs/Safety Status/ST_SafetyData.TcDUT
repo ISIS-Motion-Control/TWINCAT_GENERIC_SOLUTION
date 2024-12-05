@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <DUT Name="ST_SafetyData" Id="{a789b0db-cb16-428f-becb-4ec322949747}">
+    <Declaration><![CDATA[TYPE ST_SafetyData :
+STRUCT
+	bResetPressed : BOOL; //Read only implementation
+	sBannerMessage : STRING(255); // Max string length
+	bStopAllMotion : BOOL; //Command bool to IBEX to initiate a non-ss1 stop on galil axes
+	
+	aSafetyOuputs : ARRAY[1..GVL_Safety.nSAFETY_OUTPUTS] OF ST_SafetyOutput;
+	
+	aSafetyDevices : ARRAY[1..GVL_Safety.nSAFETY_DEVICES] OF ST_SafetyDevice;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>
