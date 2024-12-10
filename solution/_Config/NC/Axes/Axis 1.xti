@@ -1409,7 +1409,7 @@ External Setpoint Generation:
 	<Axis Id="1" CreateSymbols="true" AxisType="1">
 		<Name>__FILENAME__</Name>
 		<AxisPara>
-			<Dynamic Acceleration="5" Deceleration="5" Jerk="250"/>
+			<Dynamic Acceleration="60" Deceleration="60" Jerk="250"/>
 			<Velo SlowManual="20" FastManual="40"/>
 			<TargetPosControl Range="0.5"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>

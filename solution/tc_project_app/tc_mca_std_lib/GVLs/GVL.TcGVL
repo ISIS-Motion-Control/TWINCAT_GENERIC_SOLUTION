@@ -15,7 +15,7 @@
     bLocalMode: BOOL;
 	astAxesPersistent: ARRAY [1..GVL_APP.nAXIS_NUM] OF ST_AxisPersistent;
 	
-	stSafetyData : ST_SafetyData;
+	stSafetyData2 : ST_SafetyData;
 END_VAR
 
 VAR_GLOBAL CONSTANT
