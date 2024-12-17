@@ -1112,13 +1112,18 @@ END_IF
 VAR
 	iterator : UINT := 1;
 	bTrippedPH : BOOL := FALSE;
+	nested_iterator : UINT :=1;
 END_VAR
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[IF GVL_Safety.nSAFETY_OUTPUTS>0 THEN
-	FOR iterator := 1 TO GVL_Safety.nSAFETY_OUTPUTS DO
-		IF stSafetyData.aSafetyOuputs[iterator].abLinkedAxes[GVL.iAxis] THEN
-			bTrippedPH := bTrippedPH OR stSafetyData.aSafetyOuputs[iterator].bTripped;
+	FOR iterator := 1 TO GVL_Safety.nSAFETY_OUTPUT_GROUPS DO
+		IF stSafetyData.aSafetyOutputGroups[iterator].iGroupNumber = GVL.astAxes[1].stSafety.iSafetyOutputGroup THEN
+			FOR nested_iterator := 1 TO GVL_Safety.nSAFETY_OUTPUTS DO	
+				IF stSafetyData.aSafetyOutputGroups[iterator].aSafetyOuputs[iterator] := TRUE THEN
+					bTrippedPH := bTrippedPH OR stSafetyData.aSafetyOuputs[iterator].bTripped;
+				END_IF
+			END_FOR
 		END_IF
 	END_FOR
 END_IF
@@ -1435,8 +1440,12 @@ END_VAR
     </LineIds>
     <LineIds Name="FB_Axis.mStatus_Safety">
       <LineId Id="5" Count="1" />
+      <LineId Id="21" Count="0" />
       <LineId Id="9" Count="0" />
+      <LineId Id="23" Count="0" />
       <LineId Id="12" Count="1" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="22" Count="0" />
       <LineId Id="10" Count="0" />
       <LineId Id="7" Count="0" />
       <LineId Id="15" Count="0" />

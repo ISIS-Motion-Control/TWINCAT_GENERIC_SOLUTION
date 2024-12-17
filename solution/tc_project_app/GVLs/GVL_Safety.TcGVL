@@ -5,6 +5,7 @@
 VAR_GLOBAL CONSTANT
 	nSAFETY_OUTPUTS: UINT := 0; //do these break with a 0 value?
 	nSAFETY_DEVICES: UINT := 1;
+	nSAFETY_OUTPUT_GROUPS: UINT := 1;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

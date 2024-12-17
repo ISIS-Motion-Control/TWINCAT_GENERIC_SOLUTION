@@ -45,6 +45,7 @@ END_IF
 
 PROG();
 AXES();
+GROUPS();
 
 
 
@@ -103,6 +104,53 @@ ELSIF eGlobalSUpsState <> eSUPS_PowerOK THEN
     RETURN;
 END_IF
 ]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="GROUPS" Id="{f1f573b4-5f4c-4114-a423-a5d67740b035}">
+      <Implementation>
+        <ST><![CDATA[stSafetyData.aSafetyOutputGroups[1].iGroupNumber := 1;
+stSafetyData.aSafetyOutputGroups[1].aSafetyOuputs[1] := TRUE;
+stSafetyData.aSafetyOutputGroups[1].aSafetyOuputs[2] := TRUE;
+stSafetyData.aSafetyOutputGroups[1].aSafetyOuputs[3] := TRUE;
+stSafetyData.aSafetyOutputGroups[1].aSafetyOuputs[4] := TRUE;
+stSafetyData.aSafetyOutputGroups[1].aSafetyOuputs[5] := TRUE;
+stSafetyData.aSafetyOutputGroups[1].aSafetyOuputs[6] := TRUE;
+stSafetyData.aSafetyOutputGroups[1].aSafetyOuputs[7] := TRUE;
+stSafetyData.aSafetyOutputGroups[1].aSafetyOuputs[8] := TRUE;
+stSafetyData.aSafetyOutputGroups[1].aSafetyOuputs[9] := TRUE;
+
+stSafetyData.aSafetyOutputGroups[2].iGroupNumber := 2;
+stSafetyData.aSafetyOutputGroups[2].aSafetyOuputs[1] := TRUE;
+stSafetyData.aSafetyOutputGroups[2].aSafetyOuputs[2] := TRUE;
+stSafetyData.aSafetyOutputGroups[2].aSafetyOuputs[3] := TRUE;
+stSafetyData.aSafetyOutputGroups[2].aSafetyOuputs[4] := TRUE;
+stSafetyData.aSafetyOutputGroups[2].aSafetyOuputs[5] := TRUE;
+stSafetyData.aSafetyOutputGroups[2].aSafetyOuputs[6] := TRUE;
+stSafetyData.aSafetyOutputGroups[2].aSafetyOuputs[7] := FALSE;
+stSafetyData.aSafetyOutputGroups[2].aSafetyOuputs[8] := FALSE;
+stSafetyData.aSafetyOutputGroups[2].aSafetyOuputs[9] := FALSE;
+
+stSafetyData.aSafetyOutputGroups[3].iGroupNumber := 3;
+stSafetyData.aSafetyOutputGroups[3].aSafetyOuputs[1] := TRUE;
+stSafetyData.aSafetyOutputGroups[3].aSafetyOuputs[2] := FALSE;
+stSafetyData.aSafetyOutputGroups[3].aSafetyOuputs[3] := FALSE;
+stSafetyData.aSafetyOutputGroups[3].aSafetyOuputs[4] := FALSE;
+stSafetyData.aSafetyOutputGroups[3].aSafetyOuputs[5] := FALSE;
+stSafetyData.aSafetyOutputGroups[3].aSafetyOuputs[6] := FALSE;
+stSafetyData.aSafetyOutputGroups[3].aSafetyOuputs[7] := FALSE;
+stSafetyData.aSafetyOutputGroups[3].aSafetyOuputs[8] := FALSE;
+stSafetyData.aSafetyOutputGroups[3].aSafetyOuputs[9] := TRUE;
+
+stSafetyData.aSafetyOutputGroups[4].iGroupNumber := 4;
+stSafetyData.aSafetyOutputGroups[4].aSafetyOuputs[1] := FALSE;
+stSafetyData.aSafetyOutputGroups[4].aSafetyOuputs[2] := FALSE;
+stSafetyData.aSafetyOutputGroups[4].aSafetyOuputs[3] := TRUE;
+stSafetyData.aSafetyOutputGroups[4].aSafetyOuputs[4] := TRUE;
+stSafetyData.aSafetyOutputGroups[4].aSafetyOuputs[5] := TRUE;
+stSafetyData.aSafetyOutputGroups[4].aSafetyOuputs[6] := TRUE;
+stSafetyData.aSafetyOutputGroups[4].aSafetyOuputs[7] := TRUE;
+stSafetyData.aSafetyOutputGroups[4].aSafetyOuputs[8] := TRUE;
+stSafetyData.aSafetyOutputGroups[4].aSafetyOuputs[9] := TRUE;]]></ST>
       </Implementation>
     </Action>
     <Action Name="POSITION_RECOVERY" Id="{28e203b7-aea5-42d0-980d-12a6841f9d22}" FolderPath="POSITION_RECOVERY\">
@@ -317,6 +365,7 @@ END_FOR
       <LineId Id="110" Count="0" />
       <LineId Id="104" Count="1" />
       <LineId Id="4" Count="1" />
+      <LineId Id="144" Count="0" />
       <LineId Id="102" Count="0" />
       <LineId Id="2" Count="0" />
       <LineId Id="46" Count="0" />
@@ -329,6 +378,16 @@ END_FOR
     <LineIds Name="MAIN.CHECK_UPS">
       <LineId Id="2" Count="22" />
       <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="MAIN.GROUPS">
+      <LineId Id="24" Count="0" />
+      <LineId Id="15" Count="8" />
+      <LineId Id="25" Count="10" />
+      <LineId Id="46" Count="9" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="67" Count="0" />
+      <LineId Id="58" Count="8" />
+      <LineId Id="56" Count="0" />
     </LineIds>
     <LineIds Name="MAIN.POSITION_RECOVERY">
       <LineId Id="2" Count="4" />

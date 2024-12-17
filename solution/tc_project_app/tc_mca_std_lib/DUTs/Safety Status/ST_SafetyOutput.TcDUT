@@ -6,6 +6,7 @@ STRUCT
 	abLinkedAxes : ARRAY[1..GVL_APP.nAXIS_NUM] OF BOOL; //boolean array for all axes
 	sName : STRING; //Name descriptor for the safety output
 	bTripped : BOOL;
+	iSafetyOutputGroup : INT;
 	
 	//Correct terminology? What else is needed?
 END_STRUCT

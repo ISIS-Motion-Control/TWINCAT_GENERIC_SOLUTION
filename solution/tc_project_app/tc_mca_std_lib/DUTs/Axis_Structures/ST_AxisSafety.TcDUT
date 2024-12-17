@@ -6,6 +6,7 @@ STRUCT
 	bTripped : BOOL;
 	bSpeedLimited : BOOL;
 	bLocalOnly : BOOL;
+	iSafetyOutputGroup: INT;
 	//Just ideas of axis specific info
 END_STRUCT
 END_TYPE

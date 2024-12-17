@@ -18,7 +18,17 @@ END_VAR
     GVL.astAxes[1].stConfig.fHomePosition := 0.0;
     GVL.astAxes[1].stConfig.fHomeFinishDistance := 0.0;
     GVL.astAxes[1].stConfig.eRestorePosition := E_RestorePosition.eRestoreWithoutHome;
+	
 END_IF*)
+stSafetyData.aSafetyOuputs[1].abLinkedAxes[1] := TRUE;
+stSafetyData.aSafetyOuputs[2].abLinkedAxes[1] := TRUE;
+stSafetyData.aSafetyOuputs[3].abLinkedAxes[1] := TRUE;
+stSafetyData.aSafetyOuputs[4].abLinkedAxes[1] := TRUE;
+stSafetyData.aSafetyOuputs[5].abLinkedAxes[1] := TRUE;
+stSafetyData.aSafetyOuputs[6].abLinkedAxes[1] := TRUE;
+stSafetyData.aSafetyOuputs[7].abLinkedAxes[1] := TRUE;
+stSafetyData.aSafetyOuputs[8].abLinkedAxes[1] := TRUE;
+stSafetyData.aSafetyOuputs[9].abLinkedAxes[1] := TRUE;
 
 //Define ACTIONS() or write exclusive code for an specific axis.
 (*Eg. Stop when temperature reaches certain values, reduce speed if  a signal is activated, etc.
@@ -28,7 +38,11 @@ GVL.astAxes[1].stConfig.eRestorePosition:=1;
 ]]></ST>
     </Implementation>
     <LineIds Name="AXIS_1">
-      <LineId Id="10" Count="15" />
+      <LineId Id="10" Count="11" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="34" Count="9" />
+      <LineId Id="24" Count="1" />
       <LineId Id="9" Count="0" />
       <LineId Id="5" Count="0" />
       <LineId Id="27" Count="0" />

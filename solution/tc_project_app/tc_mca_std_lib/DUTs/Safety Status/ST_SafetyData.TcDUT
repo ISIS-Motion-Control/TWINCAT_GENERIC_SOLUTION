@@ -8,7 +8,7 @@ STRUCT
 	bStopAllMotion : BOOL; //Command bool to IBEX to initiate a non-ss1 stop on galil axes
 	
 	aSafetyOuputs : ARRAY[1..GVL_Safety.nSAFETY_OUTPUTS] OF ST_SafetyOutput;
-	
+	aSafetyOutputGroups : ARRAY[1..GVL_Safety.nSAFETY_OUTPUT_GROUPS] OF ST_SafetyOutputGroup;
 	aSafetyDevices : ARRAY[1..GVL_Safety.nSAFETY_DEVICES] OF ST_SafetyDevice;
 END_STRUCT
 END_TYPE
