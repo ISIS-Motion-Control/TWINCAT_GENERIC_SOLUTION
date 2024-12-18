@@ -1120,8 +1120,8 @@ END_VAR
 	FOR iterator := 1 TO GVL_Safety.nSAFETY_OUTPUT_GROUPS DO
 		IF stSafetyData.aSafetyOutputGroups[iterator].iGroupNumber = GVL.astAxes[1].stSafety.iSafetyOutputGroup THEN
 			FOR nested_iterator := 1 TO GVL_Safety.nSAFETY_OUTPUTS DO	
-				IF stSafetyData.aSafetyOutputGroups[iterator].aSafetyOuputs[iterator] := TRUE THEN
-					bTrippedPH := bTrippedPH OR stSafetyData.aSafetyOuputs[iterator].bTripped;
+				IF stSafetyData.aSafetyOutputGroups[iterator].aSafetyOuputs[nested_iterator] := TRUE THEN
+					bTrippedPH := bTrippedPH OR stSafetyData.aSafetyOuputs[nested_iterator].bTripped;
 				END_IF
 			END_FOR
 		END_IF

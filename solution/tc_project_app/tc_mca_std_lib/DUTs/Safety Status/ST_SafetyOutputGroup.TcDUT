@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <DUT Name="ST_SafetyOutputGroup" Id="{f4256feb-14ff-44b1-bf30-19175d40816f}">
+    <Declaration><![CDATA[TYPE ST_SafetyOutputGroup :
+STRUCT
+	iGroupNumber : INT;
+	aSafetyOuputs : ARRAY[1..GVL_Safety.nSAFETY_OUTPUTS] OF ST_SafetyOutput;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

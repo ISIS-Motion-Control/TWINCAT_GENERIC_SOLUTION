@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Refactors>
+  <Renames>
+    <RenamedType>
+      <Type guid="d715dd87-94fb-4bf4-bbc4-64918503c6ee">ST_OUTPUTGROUP</Type>
+      <From>ST_OutputGroup</From>
+      <To>ST_SafetyOutputGroup</To>
+    </RenamedType>
+  </Renames>
+</Refactors>
