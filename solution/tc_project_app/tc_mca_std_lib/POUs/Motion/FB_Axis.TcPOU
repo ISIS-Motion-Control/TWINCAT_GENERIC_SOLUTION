@@ -1110,21 +1110,25 @@ END_IF
     <Method Name="mStatus_Safety" Id="{860d1221-2042-4d18-8b35-4c53a145d166}" FolderPath="Status Methods\">
       <Declaration><![CDATA[METHOD mStatus_Safety : BOOL
 VAR
-	iterator : UINT := 1;
-	bTrippedPH : BOOL := FALSE;
-	nested_iterator : UINT :=1;
+	iGroupIterator : UINT := 1;
+	iOutputIterator : UINT :=1;
+	iAxisIterator : UINT :=1;
+	bTrippedPH : BOOL := FALSE; //I think this should be axis specific?
+	
 END_VAR
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[IF GVL_Safety.nSAFETY_OUTPUTS>0 THEN
-	FOR iterator := 1 TO GVL_Safety.nSAFETY_OUTPUT_GROUPS DO
-		IF stSafetyData.aSafetyOutputGroups[iterator].iGroupNumber = GVL.astAxes[1].stSafety.iSafetyOutputGroup THEN
-			FOR nested_iterator := 1 TO GVL_Safety.nSAFETY_OUTPUTS DO	
-				IF stSafetyData.aSafetyOutputGroups[iterator].aSafetyOuputs[nested_iterator] := TRUE THEN
-					bTrippedPH := bTrippedPH OR stSafetyData.aSafetyOuputs[nested_iterator].bTripped;
-				END_IF
-			END_FOR
-		END_IF
+	FOR iGroupIterator := 1 TO GVL_Safety.nSAFETY_OUTPUT_GROUPS DO
+		FOR iAxisIterator := 1 TO GVL_APP.nAXIS_NUM DO
+			IF stSafetyData.aSafetyOutputGroups[iGroupIterator].iGroupNumber = GVL.astAxes[iAxisIterator].stSafety.iSafetyOutputGroup THEN
+				FOR iOutputIterator := 1 TO GVL_Safety.nSAFETY_OUTPUTS DO	
+					IF stSafetyData.aSafetyOutputGroups[iGroupIterator].aSafetyOuputs[iOutputIterator] := TRUE THEN
+						bTrippedPH := bTrippedPH OR stSafetyData.aSafetyOuputs[iOutputIterator].bTripped;
+					END_IF
+				END_FOR
+			END_IF
+		END_FOR
 	END_FOR
 END_IF
 
@@ -1440,12 +1444,14 @@ END_VAR
     </LineIds>
     <LineIds Name="FB_Axis.mStatus_Safety">
       <LineId Id="5" Count="1" />
+      <LineId Id="34" Count="0" />
       <LineId Id="21" Count="0" />
       <LineId Id="9" Count="0" />
       <LineId Id="23" Count="0" />
       <LineId Id="12" Count="1" />
       <LineId Id="25" Count="0" />
       <LineId Id="22" Count="0" />
+      <LineId Id="35" Count="0" />
       <LineId Id="10" Count="0" />
       <LineId Id="7" Count="0" />
       <LineId Id="15" Count="0" />

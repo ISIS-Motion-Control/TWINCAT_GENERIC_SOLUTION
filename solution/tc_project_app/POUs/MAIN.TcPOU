@@ -117,7 +117,7 @@ stSafetyData.aSafetyOutputGroups[1].aSafetyOuputs[5] := TRUE;
 stSafetyData.aSafetyOutputGroups[1].aSafetyOuputs[6] := TRUE;
 stSafetyData.aSafetyOutputGroups[1].aSafetyOuputs[7] := TRUE;
 stSafetyData.aSafetyOutputGroups[1].aSafetyOuputs[8] := TRUE;
-stSafetyData.aSafetyOutputGroups[1].aSafetyOuputs[9] := TRUE;
+
 
 stSafetyData.aSafetyOutputGroups[2].iGroupNumber := 2;
 stSafetyData.aSafetyOutputGroups[2].aSafetyOuputs[1] := TRUE;
@@ -128,7 +128,7 @@ stSafetyData.aSafetyOutputGroups[2].aSafetyOuputs[5] := TRUE;
 stSafetyData.aSafetyOutputGroups[2].aSafetyOuputs[6] := TRUE;
 stSafetyData.aSafetyOutputGroups[2].aSafetyOuputs[7] := FALSE;
 stSafetyData.aSafetyOutputGroups[2].aSafetyOuputs[8] := FALSE;
-stSafetyData.aSafetyOutputGroups[2].aSafetyOuputs[9] := FALSE;
+
 
 stSafetyData.aSafetyOutputGroups[3].iGroupNumber := 3;
 stSafetyData.aSafetyOutputGroups[3].aSafetyOuputs[1] := TRUE;
@@ -139,18 +139,9 @@ stSafetyData.aSafetyOutputGroups[3].aSafetyOuputs[5] := FALSE;
 stSafetyData.aSafetyOutputGroups[3].aSafetyOuputs[6] := FALSE;
 stSafetyData.aSafetyOutputGroups[3].aSafetyOuputs[7] := FALSE;
 stSafetyData.aSafetyOutputGroups[3].aSafetyOuputs[8] := FALSE;
-stSafetyData.aSafetyOutputGroups[3].aSafetyOuputs[9] := TRUE;
 
-stSafetyData.aSafetyOutputGroups[4].iGroupNumber := 4;
-stSafetyData.aSafetyOutputGroups[4].aSafetyOuputs[1] := FALSE;
-stSafetyData.aSafetyOutputGroups[4].aSafetyOuputs[2] := FALSE;
-stSafetyData.aSafetyOutputGroups[4].aSafetyOuputs[3] := TRUE;
-stSafetyData.aSafetyOutputGroups[4].aSafetyOuputs[4] := TRUE;
-stSafetyData.aSafetyOutputGroups[4].aSafetyOuputs[5] := TRUE;
-stSafetyData.aSafetyOutputGroups[4].aSafetyOuputs[6] := TRUE;
-stSafetyData.aSafetyOutputGroups[4].aSafetyOuputs[7] := TRUE;
-stSafetyData.aSafetyOutputGroups[4].aSafetyOuputs[8] := TRUE;
-stSafetyData.aSafetyOutputGroups[4].aSafetyOuputs[9] := TRUE;]]></ST>
+
+]]></ST>
       </Implementation>
     </Action>
     <Action Name="POSITION_RECOVERY" Id="{28e203b7-aea5-42d0-980d-12a6841f9d22}" FolderPath="POSITION_RECOVERY\">
@@ -381,12 +372,9 @@ END_FOR
     </LineIds>
     <LineIds Name="MAIN.GROUPS">
       <LineId Id="24" Count="0" />
-      <LineId Id="15" Count="8" />
-      <LineId Id="25" Count="10" />
-      <LineId Id="46" Count="9" />
-      <LineId Id="45" Count="0" />
-      <LineId Id="67" Count="0" />
-      <LineId Id="58" Count="8" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="82" Count="29" />
+      <LineId Id="121" Count="0" />
       <LineId Id="56" Count="0" />
     </LineIds>
     <LineIds Name="MAIN.POSITION_RECOVERY">

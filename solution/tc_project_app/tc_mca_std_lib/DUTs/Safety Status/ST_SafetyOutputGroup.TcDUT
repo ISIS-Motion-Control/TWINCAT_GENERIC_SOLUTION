@@ -4,7 +4,7 @@
     <Declaration><![CDATA[TYPE ST_SafetyOutputGroup :
 STRUCT
 	iGroupNumber : INT;
-	aSafetyOuputs : ARRAY[1..GVL_Safety.nSAFETY_OUTPUTS] OF ST_SafetyOutput;
+	aSafetyOuputs : ARRAY[1..GVL_Safety.nSAFETY_OUTPUTS] OF BOOL;
 END_STRUCT
 END_TYPE
 ]]></Declaration>
