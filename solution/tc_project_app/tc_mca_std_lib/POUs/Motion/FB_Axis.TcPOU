@@ -181,6 +181,7 @@ END_IF
 IF fbMoveInProgressFTrig.Q THEN
 	//start end move timer
 	bEndOfMove:= TRUE;
+	_stAxis.stControl.bExtReadyToMove:= FALSE;
 END_IF
 IF bStartOfMove THEN
 	bEndOfMove:= FALSE;
@@ -1208,7 +1209,7 @@ END_VAR
       <LineId Id="48" Count="0" />
       <LineId Id="42" Count="0" />
       <LineId Id="44" Count="0" />
-      <LineId Id="46" Count="0" />
+      <LineId Id="79" Count="1" />
       <LineId Id="45" Count="0" />
       <LineId Id="50" Count="1" />
       <LineId Id="53" Count="0" />

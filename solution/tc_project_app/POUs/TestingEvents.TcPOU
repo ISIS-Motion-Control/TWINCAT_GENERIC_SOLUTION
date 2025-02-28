@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="TestingEvents" Id="{a26af1e2-89c2-42bc-b830-9454228f9dcd}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM TestingEvents
+VAR
+	bIsInitalized : BOOL;
+    fbMessage : FB_TcMessage;
+    bSendMessage : BOOL;
+	
+	bIsAlarmInit : BOOL;
+	fbAlarm : FB_TcAlarm;
+	bRaiseAlarm : BOOL;
+	bClearAlarm : BOOL;
+	bConfirmAlarm : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF NOT bIsInitalized THEN
+    bIsInitalized := TRUE;
+    fbMessage.CreateEx(TC_Events.MyEvents.Start, 0);
+END_IF
+
+IF bSendMessage THEN
+    bSendMessage := FALSE;
+    fbMessage.Send(0); //Current timestamp
+END_IF
+
+IF NOT bIsAlarmInit THEN
+	bIsAlarmInit := TRUE;
+	fbAlarm.CreateEx(TC_Events.MyEvents.Stop, TRUE, 0);
+END_IF
+
+IF bRaiseAlarm THEN
+	bRaiseAlarm := FALSE;
+	fbAlarm.ipArguments.Clear().AddString('The axis that is running');
+	fbAlarm.Raise(0);
+END_IF
+
+IF bConfirmAlarm THEN
+    bConfirmAlarm := FALSE;
+    fbAlarm.Confirm(0);
+END_IF
+
+IF bClearAlarm THEN
+    bClearAlarm := FALSE;
+    fbAlarm.Clear(0, FALSE);
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="TestingEvents">
+      <LineId Id="9" Count="2" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="13" Count="3" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="37" Count="3" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="42" Count="3" />
+      <LineId Id="41" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
