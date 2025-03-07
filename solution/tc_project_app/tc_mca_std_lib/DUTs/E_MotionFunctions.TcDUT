@@ -7,8 +7,8 @@ TYPE E_MotionFunctions :
 (
     eMoveAbsolute := 0,
     eMoveRelative := 1,
-    eMoveVelocity := 2, //Continous moving at a set velocity once bExecute goes high
-    eMoveModulo := 3, //Move for 360 deg rotation, see Beckhoff docs
+    eMoveVelocity := 3, //Continous moving at a set velocity once bExecute goes high
+    eMoveModulo := 2, //Move for 360 deg rotation, see Beckhoff docs
 	eSetPosition := 4,
 
     eHome := 10, //Run the homing routine for the axis
