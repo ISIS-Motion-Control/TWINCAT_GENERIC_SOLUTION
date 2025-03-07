@@ -965,7 +965,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{FB261665-FD20-4BF2-97F8-2854C82B752D}" Name="tc_project_app" PrjFilePath="..\..\tc_project_app\tc_project_app.plcproj" TmcFilePath="..\..\tc_project_app\tc_project_app.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="tc_project_app\tc_project_app.tmc" TmcHash="{CBA468FB-5D24-A169-B85C-644302A202AC}">
+		<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="tc_project_app\tc_project_app.tmc" TmcHash="{36C68777-302A-C91A-14D7-5F3EA9D04E12}">
 			<Name>tc_project_app Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
@@ -990,10 +990,6 @@ External Setpoint Generation:
 			</Vars>
 			<Vars VarGrpType="2" AreaNo="1">
 				<Name>PlcTask Outputs</Name>
-				<Var>
-					<Name>MAIN.encPosition</Name>
-					<Type>DINT</Type>
-				</Var>
 				<Var>
 					<Name>GVL.astAxes[1].Axis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
@@ -1020,6 +1016,13 @@ External Setpoint Generation:
 					<InOut>7</InOut>
 				</Var>
 			</Vars>
+			<UnrestoredVarLinks ImportTime="2025-02-28T14:46:00">
+				<OwnerA Name="OutputSrc" Prefix="TIPC^tc_project_app^tc_project_app Instance" Type="2">
+					<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 1">
+						<Link VarA="MAIN.encPosition" TypeA="DINT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000009}" VarB="Enc^Inputs^In^nDataIn1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+				</OwnerA>
+			</UnrestoredVarLinks>
 			<RetainDataMapping AreaNo="4" OTCID="#x03020003"/>
 			<Contexts>
 				<Context>
@@ -1039,18 +1042,9 @@ External Setpoint Generation:
 	</Project>
 	<Mappings>
 		<OwnerA Name="tc_project_app Instance">
-			<OwnerB Name="TIID^Device 2 (NOV-DP-RAM)^Box 3 (Retain Handler)">
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[1].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[1].bMovingAtShutdown_[0]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[1].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[1].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[1].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[1].fEncoderBiasAtShutdown_[0]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[1].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[1].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[1].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[1].fPositionAtShutdown_[0]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[1].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[1].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 1">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[1].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
 				<Link VarA="PlcTask Outputs^GVL.astAxes[1].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-				<Link VarA="PlcTask Outputs^MAIN.encPosition" VarB="Enc^Inputs^In^nDataIn1"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>
