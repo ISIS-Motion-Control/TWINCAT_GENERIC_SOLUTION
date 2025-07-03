@@ -422,10 +422,12 @@ END_VAR
 fbReset(Axis := _stAxis.Axis);
 IF fbReset.Done THEN
     _stAxis.stStatus.bError := FALSE;
+	_stAxis.stStatus.bMcError := FALSE;
     FOR i := 1 TO nMCSTATUS_ARRAY_SIZE DO
-        //If there's an error present propagate
+        //Clear all the errors
         _stAxis.stStatus.nErrorID := 0;
     END_FOR
+	_stAxis.stStatus.nMcErrorID := 0;
 END_IF
 
 mControl_Reset.Busy := fbReset.Busy;
@@ -1039,15 +1041,20 @@ END_FOR
 
 fbErrorRTrig(CLK := tmpError);
 
+//Check if NC is in error state and propogate
 IF _stAxis.Axis.Status.ErrorStop OR _stAxis.Axis.Status.Error THEN
     _stAxis.stStatus.bError := _stAxis.Axis.Status.ErrorStop OR _stAxis.Axis.Status.Error;
     _stAxis.stStatus.nErrorID := _stAxis.Axis.Status.ErrorID;//NC Error ID
-ELSIF fbErrorRTrig.Q THEN
+END_IF
+
+
+IF fbErrorRTrig.Q THEN
         //For each mcStatus
         FOR i := 1 TO nMCSTATUS_ARRAY_SIZE DO
             //If there's an error present propagate
             IF astMcStatus[i]^.ErrorID <> 0 THEN
-                _stAxis.stStatus.nErrorID := astMcStatus[i]^.ErrorID;
+				_stAxis.stStatus.bMcError := TRUE;
+                _stAxis.stStatus.nMcErrorID := astMcStatus[i]^.ErrorID;
             END_IF
         END_FOR
 END_IF
@@ -1304,7 +1311,11 @@ END_VAR
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mControl_Reset">
-      <LineId Id="3" Count="23" />
+      <LineId Id="3" Count="4" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="8" Count="3" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="12" Count="14" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mMove_Halt">
@@ -1401,7 +1412,16 @@ END_VAR
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mStatus_Error">
-      <LineId Id="3" Count="18" />
+      <LineId Id="3" Count="5" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="9" Count="3" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="14" Count="3" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="18" Count="3" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mStatus_InVelocity">
