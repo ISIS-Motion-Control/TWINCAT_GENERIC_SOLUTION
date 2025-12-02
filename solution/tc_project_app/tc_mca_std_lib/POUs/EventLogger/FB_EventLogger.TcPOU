@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="FB_EventLogger" Id="{13cca840-2172-4297-8a51-4d13ae189792}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_EventLogger
+VAR
+	eWriteState : (FILE_OPEN_TRIGGER, FILE_OPEN, WAIT_FOR_EVENT, WRITE_EVENT_TRIGGER, WRITE_EVENT, FILE_CLOSE_TRIGGER, FILE_CLOSE, ERROR, FILE_RESET);
+	aEventBuffer : ARRAY [0..NUMBER_OF_BYTES_FOR_ALL_ST_EVENT] OF BYTE;
+	fbMemRingBuffer : FB_MemRingBuffer;
+	iNumberOfEventsInBuffer : UDINT;
+	
+	
+	fbFileOpen : FB_FileOpen := (sPathName := 'c:\Events.log', nMode := FOPEN_MODEAPPEND OR FOPEN_MODETEXT);
+	fbFileClose : FB_FileClose;
+	fbFilePuts : FB_FilePuts;
+	stEventWrittenToFile : ST_Event;
+	CsvString : T_MaxString;
+	
+	stLastReadEvent : ST_Event;
+	bEventToReadError : BOOL;
+	E_WRITE_EVENT: INT;
+	
+	fbMessage : FB_TcMessage;
+	fbAlarm : FB_TcAlarm;
+END_VAR
+VAR CONSTANT
+	BYTE_SIZE_OF_ST_EVENT : UDINT := SIZEOF(ST_Event);
+	MAX_NUMBER_OF_ST_EVENTS : UDINT := 30;
+	NUMBER_OF_BYTES_FOR_ALL_ST_EVENT : UDINT := BYTE_SIZE_OF_ST_EVENT * MAX_NUMBER_OF_ST_EVENTS;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[CASE eWriteState OF
+	FILE_OPEN_TRIGGER:
+		fbFileOpen(bExecute := TRUE);
+		eWriteState := FILE_OPEN;
+		
+	FILE_OPEN:
+		fbFileOpen(bExecute := FALSE);
+		IF fbFileOpen.bError THEN
+			eWriteState := ERROR;
+		ELSIF NOT fbFileOpen.bBusy AND fbFileOpen.hFile <> 0 THEN
+			eWriteState := WAIT_FOR_EVENT;
+		END_IF
+	
+	WAIT_FOR_EVENT:
+		IF iNumberOfEventsInBuffer <> 0 THEN
+			eWriteState := WRITE_EVENT_TRIGGER;
+		END_IF
+	
+	WRITE_EVENT_TRIGGER:
+		GetAndRemoveEventFromBuffer(stEvent := stLastReadEvent, bError => bEventToReadError);
+		CsvString := CreateSringAsCSV(stEvent := stLastReadEvent);
+		fbFilePuts(bExecute := TRUE, sLine := CsvString, hFile := fbFileOpen.hFile);
+		CreateLoggedEvent();
+		eWriteState := WRITE_EVENT;
+		
+	WRITE_EVENT:
+		fbFilePuts(bExecute := FALSE);
+		IF fbFilePuts.bError THEN
+			eWriteState := ERROR;
+		ELSIF NOT fbFilePuts.bBusy THEN
+			SendLoggedEvent();
+			eWriteState := FILE_CLOSE_TRIGGER;
+		END_IF
+	FILE_CLOSE_TRIGGER:
+		fbFileClose(bExecute := TRUE, hFile := fbFileOpen.hFile);
+		eWriteState := FILE_CLOSE;
+		
+	FILE_CLOSE:
+		fbFileClose(bExecute := FALSE);
+		IF fbFileClose.bError THEN
+			eWriteState := ERROR;
+		ELSIF NOT fbFileClose.bBusy THEN
+			eWriteState := FILE_RESET;
+		END_IF
+		
+	FILE_RESET:
+        fbFileClose(bExecute := FALSE);
+        fbFileOpen(bExecute := FALSE);
+        fbFilePuts(bExecute := FALSE);
+		eWriteState := FILE_OPEN_TRIGGER;
+	ERROR:
+	//Do Nothing
+END_CASE]]></ST>
+    </Implementation>
+    <Method Name="AddEventToBuffer" Id="{71493c06-b823-4cca-973b-fda85aabb52a}">
+      <Declaration><![CDATA[(* Returns true if add was succesful, false if failed *)
+METHOD PUBLIC AddEventToBuffer : BOOL
+VAR_INPUT
+	stEvent : REFERENCE TO ST_Event;
+END_VAR
+VAR_OUTPUT
+	bError : BOOL;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fbMemRingBuffer.A_AddTail(pWrite := ADR(stEvent), cbWrite := SIZEOF(stEvent), pBuffer := ADR(aEventBuffer), cbBuffer := SIZEOF(aEventBuffer), cbSize => iNumberOfEventsInBuffer);
+bError := NOT fbMemRingBuffer.bOk;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="AddTimeStampToEvent" Id="{f6910c86-46cc-45a5-9260-b749a44b397e}">
+      <Declaration><![CDATA[METHOD AddTimeStampToEvent : BOOL
+VAR_INPUT
+	dtTimeStamp : REFERENCE TO DATE_AND_TIME;
+END_VAR
+VAR
+	fbLocalSystemTime : FB_LocalSystemTime := (dwCycle := 5, dwOpt := 1);
+	stLocalTime : TIMESTRUCT;
+	bRunning : BOOL := FALSE;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[WHILE NOT bRunning DO
+	fbLocalSystemTime(bEnable := TRUE, systemTime => stLocalTime , bValid => bRunning);
+END_WHILE
+
+dtTimestamp := SYSTEMTIME_TO_DT(TIMESTR := stLocalTime);
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="ClearLoggedEvents" Id="{516a79b0-486c-4c28-b96d-a65a6d57e5a1}">
+      <Declaration><![CDATA[METHOD ClearLoggedEvents : BOOL
+VAR_INPUT
+END_VAR
+VAR
+	fbTcEventLogger : FB_TcEventLogger;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fbTcEventLogger.ClearLoggedEvents(0);]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="CreateLoggedEvent" Id="{fffac546-1740-465f-b426-6e81d53df01f}">
+      <Declaration><![CDATA[METHOD CreateLoggedEvent : BOOL
+VAR_INPUT
+END_VAR
+VAR
+	fbSourceInfo : FB_TcSourceInfo;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fbSourceInfo.Clear();
+fbSourceInfo.sName := stLastReadEvent.sSourceName;
+
+IF stLastReadEvent.eEventType = E_EventType.Message THEN
+	fbMessage.Create(eventClass := 	TC_Events.MyEvents.Motor.uuidEventClass, nEventId := stLastReadEvent.nEventIdentity, eSeverity := stLastReadEvent.eEventSeverity, fbSourceInfo);
+	fbMessage.ipArguments.Clear().AddString(stLastReadEvent.sEventText);	
+END_IF
+
+IF stLastReadEvent.eEventType = E_EventType.Alarm THEN
+	fbAlarm.Create(eventClass := 	TC_Events.MyEvents.Motor.uuidEventClass, nEventId := stLastReadEvent.nEventIdentity, eSeverity := stLastReadEvent.eEventSeverity, TRUE, fbSourceInfo);
+	fbAlarm.ipArguments.Clear().AddString(stLastReadEvent.sEventText);	
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="CreateSringAsCSV" Id="{286d943d-fde2-4e6e-8de6-9d021f08c706}">
+      <Declaration><![CDATA[METHOD CreateSringAsCSV : T_MaxString
+VAR_INPUT
+	stEvent: REFERENCE TO ST_Event;
+END_VAR
+VAR
+	TempString : T_MaxString;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[TempString := TO_STRING(stEvent.eEventType);
+TempString := CONCAT(STR1 := TempString, STR2 := TO_STRING(stEvent.eEventSeverity));
+TempString := CONCAT(STR1 := TempString, STR2 := ',');
+TempString := CONCAT(STR1 := TempString, STR2 := TO_STRING(stEvent.nEventIdentity));
+TempString := CONCAT(STR1 := TempString, STR2 := ',');
+TempString := CONCAT(STR1 := TempString, STR2 := stEvent.sEventText);
+TempString := CONCAT(STR1 := TempString, STR2 := ',');
+TempString := CONCAT(STR1 := TempString, STR2 := TO_STRING(stEvent.dtTimestamp));
+TempString := CONCAT(STR1 := TempString, STR2 := '$n');
+
+CreateSringAsCSV := TempString;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="GetAndRemoveEventFromBuffer" Id="{187f7aac-4353-4b59-8688-d75a30e980c6}">
+      <Declaration><![CDATA[METHOD GetAndRemoveEventFromBuffer : BOOL
+VAR_INPUT
+	stEvent : REFERENCE TO ST_Event;
+END_VAR
+VAR_OUTPUT
+	bError : BOOL;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fbMemRingBuffer.A_RemoveHead(pRead := ADR(stEvent), cbRead := SIZEOF(stEvent), pBuffer := ADR(aEventBuffer), cbBuffer := SIZEOF(aEventBuffer), cbSize => iNumberOfEventsInBuffer);
+bError := NOT fbMemRingBuffer.bOk;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="SendLoggedEvent" Id="{65c95308-7aa7-4c89-9e9e-9e14e7c13e5b}">
+      <Declaration><![CDATA[METHOD SendLoggedEvent : BOOL
+VAR_INPUT
+END_VAR
+
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF stLastReadEvent.eEventType = E_EventType.Message THEN
+	fbMessage.Send(0);	
+END_IF
+
+IF stLastReadEvent.eEventType = E_EventType.Alarm THEN
+    fbAlarm.Raise(0);
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_EventLogger">
+      <LineId Id="35" Count="51" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_EventLogger.AddEventToBuffer">
+      <LineId Id="14" Count="0" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_EventLogger.AddTimeStampToEvent">
+      <LineId Id="14" Count="4" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_EventLogger.ClearLoggedEvents">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_EventLogger.CreateLoggedEvent">
+      <LineId Id="12" Count="10" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_EventLogger.CreateSringAsCSV">
+      <LineId Id="13" Count="9" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_EventLogger.GetAndRemoveEventFromBuffer">
+      <LineId Id="13" Count="0" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_EventLogger.SendLoggedEvent">
+      <LineId Id="10" Count="5" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
