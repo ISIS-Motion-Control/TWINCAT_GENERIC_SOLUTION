@@ -140,12 +140,12 @@ END_VAR
 fbSourceInfo.sName := stLastReadEvent.sSourceName;
 
 IF stLastReadEvent.eEventType = E_EventType.Message THEN
-	fbMessage.Create(eventClass := 	TC_Events.MyEvents.Motor.uuidEventClass, nEventId := stLastReadEvent.nEventIdentity, eSeverity := stLastReadEvent.eEventSeverity, fbSourceInfo);
+	fbMessage.Create(eventClass := 	TC_Events.DiagnosticEvents.Motor.uuidEventClass, nEventId := stLastReadEvent.nEventIdentity, eSeverity := stLastReadEvent.eEventSeverity, fbSourceInfo);
 	fbMessage.ipArguments.Clear().AddString(stLastReadEvent.sEventText);	
 END_IF
 
 IF stLastReadEvent.eEventType = E_EventType.Alarm THEN
-	fbAlarm.Create(eventClass := 	TC_Events.MyEvents.Motor.uuidEventClass, nEventId := stLastReadEvent.nEventIdentity, eSeverity := stLastReadEvent.eEventSeverity, TRUE, fbSourceInfo);
+	fbAlarm.Create(eventClass := 	TC_Events.DiagnosticEvents.Motor.uuidEventClass, nEventId := stLastReadEvent.nEventIdentity, eSeverity := stLastReadEvent.eEventSeverity, TRUE, fbSourceInfo);
 	fbAlarm.ipArguments.Clear().AddString(stLastReadEvent.sEventText);	
 END_IF]]></ST>
       </Implementation>
@@ -185,6 +185,21 @@ END_VAR
       <Implementation>
         <ST><![CDATA[fbMemRingBuffer.A_RemoveHead(pRead := ADR(stEvent), cbRead := SIZEOF(stEvent), pBuffer := ADR(aEventBuffer), cbBuffer := SIZEOF(aEventBuffer), cbSize => iNumberOfEventsInBuffer);
 bError := NOT fbMemRingBuffer.bOk;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="PopulateSTEvent" Id="{5133dc7b-489e-4527-b477-3928fcf4c6ce}">
+      <Declaration><![CDATA[METHOD PopulateSTEvent : BOOL
+VAR_INPUT
+	stEventToAdd : ST_Event;
+END_VAR
+VAR
+	bEventToAddError : BOOL;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[AddTimeStampToEvent(stEventToAdd.dtTimestamp);
+AddEventToBuffer(stEvent := stEventToAdd, bError => bEventToAddError);
+
+RETURN(bEventToAddError);]]></ST>
       </Implementation>
     </Method>
     <Method Name="SendLoggedEvent" Id="{65c95308-7aa7-4c89-9e9e-9e14e7c13e5b}">
@@ -228,6 +243,11 @@ END_IF]]></ST>
     </LineIds>
     <LineIds Name="FB_EventLogger.GetAndRemoveEventFromBuffer">
       <LineId Id="13" Count="0" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_EventLogger.PopulateSTEvent">
+      <LineId Id="8" Count="0" />
+      <LineId Id="16" Count="1" />
       <LineId Id="5" Count="0" />
     </LineIds>
     <LineIds Name="FB_EventLogger.SendLoggedEvent">

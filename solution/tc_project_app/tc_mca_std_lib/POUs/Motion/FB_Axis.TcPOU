@@ -38,7 +38,11 @@ VAR
 	fbDisableSPG : MC_ExtSetPointGenDisable;
 	stMcStatusDisableSPG : ST_McStatus;
 	
-
+	//Event Logger
+	fbEventLogger : FB_EventLogger;
+	stEvent : ST_Event;
+	fbEventLogRTrig : R_TRIG;
+	
     fbHome: FB_Homing;
     stMcStatusHome: ST_McStatus;
 
@@ -1031,6 +1035,9 @@ END_IF
 VAR
     i: UINT;
     tmpError: BOOL;
+
+
+	bAxisError : BOOL;
 END_VAR
 ]]></Declaration>
       <Implementation>
@@ -1039,13 +1046,28 @@ FOR i := 1 TO nMCSTATUS_ARRAY_SIZE DO
     tmpError := astMcStatus[i]^.Error OR tmpError;
 END_FOR
 
+bAxisError := _stAxis.Axis.Status.ErrorStop OR _stAxis.Axis.Status.Error;
+
 fbErrorRTrig(CLK := tmpError);
+fbEventLogRTrig(CLK := bAxisError);
 
 //Check if NC is in error state and propogate
 IF _stAxis.Axis.Status.ErrorStop OR _stAxis.Axis.Status.Error THEN
     _stAxis.stStatus.bError := _stAxis.Axis.Status.ErrorStop OR _stAxis.Axis.Status.Error;
     _stAxis.stStatus.nErrorID := _stAxis.Axis.Status.ErrorID;//NC Error ID
+	//LOG EVENT
+	IF fbEventLogRTrig.Q = TRUE THEN
+		stEvent.eEventType := E_EventType.Alarm;
+		stEvent.eEventSeverity := TcEventSeverity.Error;
+		stEvent.nEventIdentity := 1;
+		stEvent.sEventText := CONCAT(
+		CONCAT('Axis ', TO_STRING(iAxis)),
+		CONCAT(' Error ID: ', TO_STRING(_stAxis.stStatus.nErrorID)));
+		fbEventLogger.PopulateSTEvent(stEventToAdd := stEvent);	
+	END_IF
+
 END_IF
+
 
 
 IF fbErrorRTrig.Q THEN
@@ -1055,6 +1077,14 @@ IF fbErrorRTrig.Q THEN
             IF astMcStatus[i]^.ErrorID <> 0 THEN
 				_stAxis.stStatus.bMcError := TRUE;
                 _stAxis.stStatus.nMcErrorID := astMcStatus[i]^.ErrorID;
+				//LOG EVENT
+				stEvent.eEventType := E_EventType.Message;
+				stEvent.eEventSeverity := TcEventSeverity.Info;
+				stEvent.nEventIdentity := 1;
+				stEvent.sEventText := CONCAT(
+				CONCAT('Axis ', TO_STRING(iAxis)),
+				CONCAT(' Error ID: ', TO_STRING(_stAxis.stStatus.nMcErrorID)));
+				fbEventLogger.PopulateSTEvent(stEventToAdd := stEvent);
             END_IF
         END_FOR
 END_IF
@@ -1153,6 +1183,8 @@ mStatus_InVelocity();
 mStatus_CommandAborted();
 _stAxis.stStatus.bBusy := mStatus_Busy();
 
+
+fbEventLogger();
 
 EndOfCycle();
 ]]></ST>
@@ -1412,16 +1444,29 @@ END_VAR
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mStatus_Error">
-      <LineId Id="3" Count="5" />
+      <LineId Id="3" Count="3" />
+      <LineId Id="105" Count="1" />
+      <LineId Id="7" Count="1" />
+      <LineId Id="103" Count="0" />
       <LineId Id="31" Count="0" />
       <LineId Id="9" Count="3" />
+      <LineId Id="43" Count="0" />
+      <LineId Id="73" Count="0" />
+      <LineId Id="76" Count="5" />
+      <LineId Id="74" Count="1" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="61" Count="0" />
+      <LineId Id="87" Count="0" />
       <LineId Id="28" Count="0" />
-      <LineId Id="32" Count="0" />
       <LineId Id="30" Count="0" />
       <LineId Id="29" Count="0" />
       <LineId Id="14" Count="3" />
       <LineId Id="33" Count="0" />
-      <LineId Id="18" Count="3" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="60" Count="0" />
+      <LineId Id="66" Count="5" />
+      <LineId Id="64" Count="0" />
+      <LineId Id="19" Count="2" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mStatus_InVelocity">
@@ -1444,6 +1489,7 @@ END_VAR
       <LineId Id="44" Count="0" />
       <LineId Id="17" Count="4" />
       <LineId Id="25" Count="8" />
+      <LineId Id="46" Count="1" />
       <LineId Id="38" Count="0" />
       <LineId Id="34" Count="1" />
       <LineId Id="2" Count="0" />
