@@ -1038,6 +1038,7 @@ VAR
 
 
 	bAxisError : BOOL;
+	bBothErrorSignalsOn : BOOL;
 END_VAR
 ]]></Declaration>
       <Implementation>
@@ -1051,12 +1052,16 @@ bAxisError := _stAxis.Axis.Status.ErrorStop OR _stAxis.Axis.Status.Error;
 fbErrorRTrig(CLK := tmpError);
 fbEventLogRTrig(CLK := bAxisError);
 
+IF fbErrorRTrig.Q = TRUE AND fbEventLogRTrig.Q = TRUE THEN
+	bBothErrorSignalsOn := TRUE;
+END_IF
+
 //Check if NC is in error state and propogate
 IF _stAxis.Axis.Status.ErrorStop OR _stAxis.Axis.Status.Error THEN
     _stAxis.stStatus.bError := _stAxis.Axis.Status.ErrorStop OR _stAxis.Axis.Status.Error;
     _stAxis.stStatus.nErrorID := _stAxis.Axis.Status.ErrorID;//NC Error ID
 	//LOG EVENT
-	IF fbEventLogRTrig.Q = TRUE THEN
+	IF fbEventLogRTrig.Q = TRUE AND NOT bBothErrorSignalsOn THEN
 		stEvent.eEventType := E_EventType.Alarm;
 		stEvent.eEventSeverity := TcEventSeverity.Error;
 		stEvent.nEventIdentity := 1;
@@ -1448,6 +1453,9 @@ END_VAR
       <LineId Id="105" Count="1" />
       <LineId Id="7" Count="1" />
       <LineId Id="103" Count="0" />
+      <LineId Id="116" Count="0" />
+      <LineId Id="115" Count="0" />
+      <LineId Id="117" Count="1" />
       <LineId Id="31" Count="0" />
       <LineId Id="9" Count="3" />
       <LineId Id="43" Count="0" />
