@@ -35,5 +35,9 @@ ELSIF fTemperatureValue >= fMaxTemperature THEN
 END_IF
 ]]></ST>
     </Implementation>
+    <LineIds Name="FB_AxisTemperature">
+      <LineId Id="3" Count="16" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>
