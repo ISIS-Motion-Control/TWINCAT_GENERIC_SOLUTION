@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <DUT Name="ST_AxisGroupDescription" Id="{38fa0151-2a96-43c9-99b3-0118e0ccb3d1}">
+    <Declaration><![CDATA[TYPE ST_AxisGroupDescription :
+STRUCT
+	sGroupName : STRING(nMAX_AXIS_GROUP_NAME);
+	iAxesInGroup : INT;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>
