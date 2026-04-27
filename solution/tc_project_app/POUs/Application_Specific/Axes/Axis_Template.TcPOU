@@ -8,27 +8,41 @@ VAR
 
 //Hardware interlocks
     //bInterlockFwdOK AT %I*: BOOL;
+	
+//Set which number axis this is from the enum	
+	//iAxisNumber : INT := E_AxisNames.NONE;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[//Initial parameters of an Axis
-(*IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
-    //Axis description for EPICS PV
-    GVL.astAxes[1].stDescription.sAxisName := 'MotorApplication1';
-    GVL.astAxes[1].stDescription.eUnit := E_AxisEngUnit.eMeter;
-    GVL.astAxes[1].stDescription.nPrefix := -3;
-
+(*
+IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
     //Initial default values:
-    GVL.astAxes[1].stConfig.eHomeSeq := 0;
-    GVL.astAxes[1].stConfig.fHomePosition := 0.0;
-    GVL.astAxes[1].stConfig.fHomeFinishDistance := 0.0;
-    GVL.astAxes[1].stConfig.eRestorePosition := E_RestorePosition.eRestoreWithoutHome;
-END_IF*)
+    GVL.astAxes[iAxisNumber].stHomingConfig.eHomeSeq := 1 ;
+    GVL.astAxes[iAxisNumber].stHomingConfig.fHomePosition := 0.0;
+    GVL.astAxes[iAxisNumber].stHomingConfig.fHomeFinishDistance := 0.0;
+    GVL.astAxes[iAxisNumber].stConfig.eRestorePosition := E_RestorePosition.eRestoreWithoutHome;
+	GVL.astAxes[iAxisNumber].stControl.bAutoEnableDisable := TRUE;
+	//Set which group this axis belongs to
+	GVL.astAxes[iAxisNumber].stDescription.iGroupNumber := 1;
+END_IF
+*)
+
+
 
 //Define ACTIONS() or write exclusive code for an specific axis.
 (*Eg. Stop when temperature reaches certain values, reduce speed if  a signal is activated, etc.
 Eg. GVL.astAxes[x].stControl.bInterlockFwd := NOT bInterlockFwdOK;*)
 ]]></ST>
     </Implementation>
+    <LineIds Name="Axis_Template">
+      <LineId Id="31" Count="0" />
+      <LineId Id="46" Count="0" />
+      <LineId Id="32" Count="9" />
+      <LineId Id="47" Count="0" />
+      <LineId Id="29" Count="1" />
+      <LineId Id="16" Count="3" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

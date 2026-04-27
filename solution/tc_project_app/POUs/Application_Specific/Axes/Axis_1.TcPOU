@@ -8,20 +8,24 @@ VAR
 
 //Hardware interlocks
     //bInterlockFwdOK AT %I*: BOOL;
+	
+	iAxisNumber : INT := E_AxisNames.NONE;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[//Initial parameters of an Axis
 IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
-    //Axis description for EPICS PV
-    GVL.astAxes[1].stDescription.sAxisName := 'MotorApplication1';
-
     //Initial default values:
-    GVL.astAxes[1].stHomingConfig.eHomeSeq := 1 ;
-    GVL.astAxes[1].stHomingConfig.fHomePosition := 0.0;
-    GVL.astAxes[1].stHomingConfig.fHomeFinishDistance := 0.0;
-    GVL.astAxes[1].stConfig.eRestorePosition := E_RestorePosition.eRestoreWithoutHome;
+    GVL.astAxes[iAxisNumber].stHomingConfig.eHomeSeq := 1 ;
+    GVL.astAxes[iAxisNumber].stHomingConfig.fHomePosition := 0.0;
+    GVL.astAxes[iAxisNumber].stHomingConfig.fHomeFinishDistance := 0.0;
+    GVL.astAxes[iAxisNumber].stConfig.eRestorePosition := E_RestorePosition.eRestoreWithoutHome;
+	GVL.astAxes[iAxisNumber].stControl.bAutoEnableDisable := TRUE;
+	//Set which group this axis belongs to
+	GVL.astAxes[iAxisNumber].stDescription.iGroupNumber := 1;
 END_IF
+
+
 
 //Define ACTIONS() or write exclusive code for an specific axis.
 (*Eg. Stop when temperature reaches certain values, reduce speed if  a signal is activated, etc.
@@ -29,8 +33,13 @@ Eg. GVL.astAxes[x].stControl.bInterlockFwd := NOT bInterlockFwdOK;*)
 ]]></ST>
     </Implementation>
     <LineIds Name="Axis_1">
-      <LineId Id="3" Count="3" />
-      <LineId Id="9" Count="10" />
+      <LineId Id="3" Count="1" />
+      <LineId Id="10" Count="4" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="41" Count="1" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="28" Count="1" />
+      <LineId Id="16" Count="3" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>

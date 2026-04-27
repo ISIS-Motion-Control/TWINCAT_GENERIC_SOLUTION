@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="Group_Template" Id="{d96a96f7-3990-4cce-8452-f53b9c3154ba}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Group_Template
+VAR
+	//iSetGroupNumber : INT := 1; //SET THIS TO THE NUMBER FOR THIS GROUP
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//Sample code for defining groups by iterating through each axis on startup and adding all matching axis to this array
+(*
+IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
+	GVL.iAxesGroupIndex := 1;
+	FOR GVL.iAxis := 1 TO GVL_APP.nAXIS_NUM DO
+		IF astAxes[GVL.iAxis].stDescription.iGroupNumber = iSetGroupNumber THEN
+			GVL.astAxesGroup[iSetGroupNumber].aAxesInGroup[GVL.iAxesGroupIndex] := UINT_TO_INT(GVL.iAxis);
+			GVL.iAxesGroupIndex := GVL.iAxesGroupIndex + 1;
+		END_IF
+	END_FOR
+	GVL.astAxesGroup[iSetGroupNumber].stDescription.iAxesInGroup := GVL.iAxesGroupIndex -1;
+END_IF
+*)]]></ST>
+    </Implementation>
+    <LineIds Name="Group_Template">
+      <LineId Id="6" Count="0" />
+      <LineId Id="8" Count="10" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

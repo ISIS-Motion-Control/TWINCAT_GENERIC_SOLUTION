@@ -48,6 +48,12 @@
     <Compile Include="POUs\Application_Specific\Axes\Pneumatics_Template.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Application_Specific\Groups\GROUP_1.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Application_Specific\Groups\Group_Template.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -217,6 +223,7 @@
     <Folder Include="POUs\Application_Specific" />
     <Folder Include="POUs\Application_Specific\Applications" />
     <Folder Include="POUs\Application_Specific\Axes" />
+    <Folder Include="POUs\Application_Specific\Groups" />
     <Folder Include="tc_mca_std_lib\DUTs\Axis_Structures" />
     <Folder Include="tc_mca_std_lib\DUTs\Event_Logger_DUTs" />
     <Folder Include="tc_mca_std_lib\DUTs\Axis_Group_Structures" />
