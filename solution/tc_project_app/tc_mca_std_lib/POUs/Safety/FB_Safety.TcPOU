@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="FB_Safety" Id="{951d67ed-7884-467d-be2d-67c25b0a9587}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Safety IMPLEMENTS I_Safety
+VAR
+	_stSafety : REFERENCE TO ST_SafetyStruct;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Run" Id="{64e083b8-15a1-49da-b210-79c547f94fed}">
+      <Declaration><![CDATA[METHOD Run : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="stSafety" Id="{1d719c29-c6b2-49f9-9c4a-ba307de1077a}">
+      <Declaration><![CDATA[PROPERTY stSafety : REFERENCE TO ST_SafetyStruct]]></Declaration>
+      <Get Name="Get" Id="{19f5aa76-9bd4-477d-97c9-e2ed42174ee8}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[stSafety REF= _stSafety;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{00da6228-5bf2-4ec4-b02d-2a822a9ffc63}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[_stSafety REF= stSafety;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <LineIds Name="FB_Safety">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Safety.Run">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Safety.stSafety.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Safety.stSafety.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

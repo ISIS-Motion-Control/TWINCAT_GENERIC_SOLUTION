@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <DUT Name="ST_SafetyStruct" Id="{7c5f61b6-e1b0-4bb3-b2ef-1fe163d532c2}">
+    <Declaration><![CDATA[TYPE ST_SafetyStruct :
+STRUCT
+	stSafetyStatus : ST_SafetyStatus;
+	stSafetyDescription : ST_SafetyDescription;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <Itf Name="I_Safety" Id="{2877aa5d-dc39-4451-b88e-d80e2abb8ffa}">
+    <Declaration><![CDATA[INTERFACE I_Safety
+]]></Declaration>
+    <Method Name="Run" Id="{676a53f5-f790-48f9-bc75-81545fd166b8}">
+      <Declaration><![CDATA[METHOD Run : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Property Name="stSafety" Id="{f8f4336a-7009-4369-a2dd-03e68da56c08}">
+      <Declaration><![CDATA[PROPERTY stSafety : REFERENCE TO ST_SafetyStruct]]></Declaration>
+      <Get Name="Get" Id="{411d0718-7472-477f-b424-9db778e52990}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{4186a198-fc93-4606-a2ef-6950e72727a7}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+  </Itf>
+</TcPlcObject>

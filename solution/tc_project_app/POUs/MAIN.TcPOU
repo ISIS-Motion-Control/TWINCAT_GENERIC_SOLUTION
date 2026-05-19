@@ -6,6 +6,8 @@ VAR
     sVersion: STRING := '1.0.0';
     aIAxes: ARRAY [1..GVL_APP.nAXIS_NUM] OF I_Axis;
     afbAxes: ARRAY [1..GVL_APP.nAXIS_NUM] OF FB_Axis;
+	aISafety: ARRAY [1..GVL_APP.nSAFETY_NUM] OF I_Safety;
+	afbSafety: ARRAY [1..GVL_APP.nSAFETY_NUM] OF FB_Safety;
     afbPneumaticAxes: ARRAY [1..GVL_APP.nPNEUMATIC_AXIS_NUM] OF FB_PneumaticAxis;
     hmiAxisSelection: INT := 1; //Not possible to use local hmi variables for array indexes
     hmiPneumaticAxisSelection: INT := 1;
@@ -301,6 +303,27 @@ END_IF
 ]]></ST>
       </Implementation>
     </Action>
+    <Action Name="SAFETY" Id="{54c1d7d9-4cc5-4099-8c99-7400b13aa18b}">
+      <Implementation>
+        <ST><![CDATA[//First cycle, assign FB_axis to interface array
+IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
+    FOR GVL.iSafety := 1 TO GVL_APP.nSAFETY_NUM DO
+        aISafety[GVL.iSafety] := afbSafety[GVL.iSafety];
+    END_FOR
+    //Custom safety types defined and linked to aiSafety here
+      //FB_CustomSafety extends FB_Safety
+        //aISafety[x] := fbCustomSafety;
+
+END_IF
+
+//Execute FB_Safety logic if there is any
+FOR GVL.iSafety := 1 TO GVL_APP.nSAFETY_NUM DO
+    aISafety[GVL.iSafety].Run();
+END_FOR
+
+]]></ST>
+      </Implementation>
+    </Action>
     <Action Name="STORE_PERSISTENT" Id="{cb5c9254-2e5f-47b1-9baa-10e728a961b0}" FolderPath="POSITION_RECOVERY\">
       <Implementation>
         <ST><![CDATA[FOR iAxes := 1 TO GVL_APP.nAXIS_NUM DO
@@ -341,7 +364,9 @@ END_FOR
       <LineId Id="50" Count="0" />
     </LineIds>
     <LineIds Name="MAIN.AXES">
-      <LineId Id="2" Count="20" />
+      <LineId Id="2" Count="7" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="11" Count="11" />
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="MAIN.CHECK_UPS">
@@ -380,6 +405,16 @@ END_FOR
       <LineId Id="119" Count="5" />
       <LineId Id="132" Count="1" />
       <LineId Id="136" Count="13" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="MAIN.SAFETY">
+      <LineId Id="2" Count="2" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="27" Count="1" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="11" Count="6" />
+      <LineId Id="22" Count="0" />
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="MAIN.STORE_PERSISTENT">

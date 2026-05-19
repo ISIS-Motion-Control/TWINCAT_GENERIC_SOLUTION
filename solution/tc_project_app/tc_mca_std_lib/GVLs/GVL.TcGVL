@@ -10,6 +10,7 @@
     astAxes: ARRAY [1..GVL_APP.nAXIS_NUM] OF ST_AxisStruct; //Array of ST_AxisStruct for holding axis parameters and controls
     astPneumaticAxes: ARRAY [1..GVL_APP.nPNEUMATIC_AXIS_NUM] OF ST_PneumaticAxisStruct; //Array of ST_PneumaticAxisStruct for holding pneumatic axis parameters and controls
     iAxis: UINT; //Index for for loops while going through axes
+	iSafety: UINT; //Index for loops while going through safety devices
     iPneumaticAxis: UINT := 1; //Index for for loops while going through pneumatic axes
     fbGetCurTaskIndex: GETCURTASKINDEX;
     bLocalMode: BOOL;
@@ -18,6 +19,8 @@ END_VAR
 
 VAR_GLOBAL CONSTANT
     nMAX_AXIS_NAME: UINT := 32;
+	nMAX_SAFETY_NAME: UINT := 32;
+	nMAX_LOCATION_NAME: UINT := 32;
 END_VAR
 
 ]]></Declaration>
