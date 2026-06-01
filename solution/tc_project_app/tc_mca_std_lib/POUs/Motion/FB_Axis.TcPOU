@@ -671,7 +671,7 @@ END_IF
 	fbSetPosition.Execute:= _stAxis.stControl.bExecute;
 END_IF
 
-fbSetPosition.Position:= _stAxis.stControl.fPosition;
+fbSetPosition.Position:= _stAxis.stControl.fSetPosition;
 fbSetPosition.Options.ClearPositionLag:= TRUE;
 
 fbSetPosition(Axis := _stAxis.Axis);
