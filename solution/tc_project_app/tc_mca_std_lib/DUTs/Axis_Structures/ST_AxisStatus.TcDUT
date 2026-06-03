@@ -26,12 +26,23 @@ STRUCT
 
 
     fActVelocity: LREAL; //Actual velocity
-    bError: BOOL; //Motion function block has produced error (NC drive not necessarily in error state)
-    nErrorID: UDINT; //Last motion function block errorID or NC errorID
+    bError: BOOL; //Reserved for NC error states that actually block motion
+	bMcError : BOOL; //Reserved for errors generated for MC PLC function blocks
+    nErrorID: UDINT; //NC errorID
+	nMcErrorID: UDINT;//Last motion function block errorID
 	
-	
-	
+	bReadyToMove : BOOL;
+	bMoveRequested : BOOL;
 	bMoveInProgress : BOOL;
+	
+	SPGEnabled : BOOL;
+	
+	bPositionRestored : BOOL;
+	
+	
+	messageString : STRING; //FB_Axis Execution messages
+	appMessageString : STRING; //Message string reserved for application specific functionality
+	errorString : STRING; //NC Converted values as a lookup table (but translated
 END_STRUCT
 END_TYPE
 ]]></Declaration>

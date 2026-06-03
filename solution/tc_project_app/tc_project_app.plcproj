@@ -26,6 +26,10 @@
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
+    <Compile Include="GVLs\GVL_AxisNames.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
@@ -37,10 +41,6 @@
     </Compile>
     <Compile Include="POUs\Application_Specific\Axes\Pneumatics_Template.TcPOU">
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Application_Specific\GVL_AxisNames.TcGVL">
-      <SubType>Code</SubType>
-      <LinkAlways>true</LinkAlways>
     </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
@@ -64,6 +64,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="tc_mca_std_lib\DUTs\Axis_Structures\ST_AxisPersistent.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tc_mca_std_lib\DUTs\Axis_Structures\ST_AxisSPG.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="tc_mca_std_lib\DUTs\Axis_Structures\ST_AxisStatus.TcDUT">
@@ -139,6 +142,9 @@
     <Compile Include="tc_mca_std_lib\POUs\Motion\FB_SlitPairV2.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="tc_mca_std_lib\POUs\Motion\FB_SlitPairV3.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="tc_mca_std_lib\POUs\Motion\Homing\FB_Homing.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -158,9 +164,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="tc_mca_std_lib\Unused ESS Work\ST_MonitoringAlarm.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="tc_mca_std_lib\VISUs\languageSupport.TcTLO">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="tc_mca_std_lib\VISUs\MainVisu.TcVIS">

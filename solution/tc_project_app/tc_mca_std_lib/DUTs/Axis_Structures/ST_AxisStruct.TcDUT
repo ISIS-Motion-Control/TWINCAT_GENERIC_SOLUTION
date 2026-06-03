@@ -10,6 +10,7 @@ STRUCT
     stInputs: ST_AxisInputs;
     stDescription: ST_AxisDescription;
 	stHomingConfig : ST_AxisHomingConfig;
+	stSpg : ST_AxisSPG;
     //The NC axis link to the hardware that is controlling
     Axis: AXIS_REF;
 END_STRUCT

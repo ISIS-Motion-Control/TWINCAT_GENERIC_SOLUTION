@@ -32,6 +32,12 @@ VAR
     fbMoveModulo: MC_MoveModulo;
     fbMoveModulo2: MC_MoveModulo;
     stMcStatusMoveModulo: ST_McStatus;
+	
+	fbEnableSPG : MC_ExtSetPointGenEnable;
+	stMcStatusEnableSPG : ST_McStatus;
+	fbDisableSPG : MC_ExtSetPointGenDisable;
+	stMcStatusDisableSPG : ST_McStatus;
+	
 
     fbHome: FB_Homing;
     stMcStatusHome: ST_McStatus;
@@ -41,6 +47,9 @@ VAR
 
     fbWriteParameter: MC_WriteParameter;
     stMcStatusWriteParameter: ST_McStatus;
+	
+	fbSetPosition: MC_SetPosition;
+	stMcStatusSetPosition: ST_McStatus;
 
     //Variables for holding limits during homing
     bWaitForStopAfterLimitHit: BOOL := FALSE;
@@ -79,12 +88,22 @@ VAR
     fbAbsMovDyn2RiseEdge: R_TRIG;
     fbModMovDyn1RiseEdge: R_TRIG;
     fbModMovDyn2RiseEdge: R_TRIG;
+	
+	fbMoveInProgressFTrig : F_TRIG;
+	fbMoveInProgressEndTimer : TON;
+	fbNewMoveRTrig : R_TRIG;
+	bStartOfMove : BOOL;
+	bEndOfMove : BOOL;
+	
+	bSpgEnableReq : BOOL;
+	bSpgDisableReq : BOOL;
+	spgDisableCommand : BOOL;
 
 END_VAR
 VAR CONSTANT
     nRATIO_DENOMINATOR_DEFAULT: UINT := 1;
     nNO_GEARING: UINT := 0;
-    nMCSTATUS_ARRAY_SIZE: UINT := 13;
+    nMCSTATUS_ARRAY_SIZE: UINT := 12;
     nMULTI_MASTER_MAX_AXES: UINT := 4;
 END_VAR
 ]]></Declaration>
@@ -123,9 +142,187 @@ astMcStatus[6] := ADR(stMcStatusMoveRelative);
 astMcStatus[7] := ADR(stMcStatusMoveVelocity);
 astMcStatus[8] := ADR(stMcStatusMoveModulo);
 astMcStatus[9] := ADR(stMcStatusHome);
-astMcStatus[12] := ADR(stMcStatusReadParameter);
-astMcStatus[13] := ADR(stMcStatusWriteParameter);
+astMcStatus[10] := ADR(stMcStatusSetPosition);
+astMcStatus[11] := ADR(stMcStatusReadParameter);
+astMcStatus[12] := ADR(stMcStatusWriteParameter);
+
 ]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mControl_AutoEnableDisable" Id="{87d5ef7a-9282-4d58-b60b-9b9aca814fc0}" FolderPath="Control Methods\">
+      <Declaration><![CDATA[METHOD mControl_AutoEnableDisable : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[//Has a move been requested?
+IF _stAxis.stControl.eCommand = E_MotionFunctions.eMoveAbsolute OR 
+	_stAxis.stControl.eCommand = E_MotionFunctions.eMoveModulo OR
+	_stAxis.stControl.eCommand = E_MotionFunctions.eMoveRelative OR
+	_stAxis.stControl.eCommand = E_MotionFunctions.eMoveVelocity OR
+	_stAxis.stControl.eCommand = E_MotionFunctions.eHome THEN
+	IF _stAxis.stControl.bExecute AND _stAxis.stStatus.bMoveRequested = FALSE THEN
+		//new logic here to stop commands queuing with axes disabled if not meant to autoenable/disable
+ 		IF _stAxis.stStatus.bEnabled = FALSE AND _stAxis.stControl.bAutoEnableDisable = FALSE THEN
+			_stAxis.stStatus.bMoveRequested := FALSE;
+		ELSE
+			_stAxis.stStatus.bMoveRequested := TRUE;
+		END_IF
+		//_stAxis.stStatus.bMoveRequested := TRUE;
+	END_IF	
+END_IF
+
+IF _stAxis.stControl.bOverrideReadyToMove THEN
+	_stAxis.stStatus.bReadyToMove := _stAxis.stControl.bExtReadyToMove;
+ELSE
+	_stAxis.stStatus.bReadyToMove := _stAxis.stStatus.bEnabled;
+END_IF
+
+IF fbMoveInProgressFTrig.Q THEN
+	//start end move timer
+	bEndOfMove:= TRUE;
+	_stAxis.stControl.bExtReadyToMove:= FALSE;
+END_IF
+IF bStartOfMove THEN
+	bEndOfMove:= FALSE;
+	bStartOfMove:= FALSE;
+END_IF
+
+fbMoveInProgressEndTimer(IN:= bEndOfMove,PT:= _stAxis.stControl.tMoveFinishedDelay);
+
+//If we want autoenabledisable
+IF _stAxis.stControl.bAutoEnableDisable THEN
+	//and a move has been requested and we are not enabled
+	IF _stAxis.stStatus.bMoveRequested AND _stAxis.stStatus.bEnabled = FALSE THEN
+		_stAxis.stControl.bEnable:= TRUE;
+	END_IF
+	IF _stAxis.stStatus.bMoveRequested = FALSE AND fbMoveInProgressEndTimer.Q THEN
+	_stAxis.stControl.bEnable:= FALSE;
+	bEndOfMove := FALSE;
+	END_IF
+END_IF
+
+IF _stAxis.Axis.Status.Moving THEN
+	_stAxis.stStatus.bMoveInProgress := TRUE;
+END_IF
+
+IF _stAxis.Axis.Status.NotMoving THEN
+	_stAxis.stStatus.bMoveInProgress := FALSE;
+END_IF
+
+fbNewMoveRTrig(CLK:= _stAxis.stStatus.bMoveInProgress);
+IF fbNewMoveRTrig.Q THEN
+	bStartOfMove:= TRUE;
+END_IF
+fbMoveInProgressFTrig(CLK:= _stAxis.stStatus.bMoveInProgress OR spgDisableCommand);
+//No move requested and no move in progress
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mControl_DisableSPG" Id="{f7c5f83c-597e-487b-a5d6-3936cabd6380}" FolderPath="Control Methods\">
+      <Declaration><![CDATA[METHOD mControl_DisableSPG : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF _stAxis.stSpg.DisableSPG THEN
+	//fbEnableSPG.Execute := TRUE;
+	bSpgDisableReq := TRUE;
+END_IF
+
+IF _stAxis.stStatus.bEnabled = FALSE AND bSpgDisableReq THEN
+	_stAxis.stStatus.messageString:= 'Axis is disabled';
+	bSpgDisableReq:= FALSE;
+END_IF
+
+IF _stAxis.stStatus.SPGEnabled = FALSE AND bSpgDisableReq THEN
+	stAxis.stStatus.messageString:= 'Axis is not in ExtSPG mode';
+	bSpgDisableReq:= FALSE;
+END_IF
+
+
+
+
+
+fbDisableSPG.Execute:= bSpgDisableReq;
+fbDisableSPG(Axis:= _stAxis.Axis);
+IF _stAxis.stControl.bAutoEnableDisable THEN
+	spgDisableCommand := fbDisableSPG.Done;
+END_IF
+
+_stAxis.stSpg.DisableSPG:= FALSE;
+fbDisableSPG.Execute := FALSE;
+
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mControl_EnableSPG" Id="{a6eecb35-1a59-4fa3-82fb-c93d668235db}" FolderPath="Control Methods\">
+      <Declaration><![CDATA[METHOD mControl_EnableSPG : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF _stAxis.stSpg.EnableSPG THEN
+	//fbEnableSPG.Execute := TRUE;
+	bSpgEnableReq := TRUE;
+END_IF
+
+IF _stAxis.stControl.bAutoEnableDisable = FALSE AND _stAxis.stStatus.bEnabled = FALSE AND bSpgEnableReq THEN
+	_stAxis.stStatus.messageString:= 'Axis must be enabled before enabling ExtSPG';
+	bSpgEnableReq:= FALSE;
+END_IF
+
+IF _stAxis.stControl.bAutoEnableDisable  AND _stAxis.stStatus.bEnabled = FALSE AND bSpgEnableReq = TRUE THEN
+	_stAxis.stControl.bEnable:= TRUE;
+END_IF
+
+
+IF _stAxis.stStatus.bEnabled THEN
+	fbEnableSPG.Execute := bSpgEnableReq;
+	bSpgEnableReq := FALSE;
+END_IF
+
+fbEnableSPG(Axis:= _stAxis.Axis);
+
+_stAxis.stSpg.EnableSPG:= FALSE;
+fbEnableSPG.Execute := FALSE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mControl_FeedSPG" Id="{9a0df975-bf74-4a0e-8b96-15bd528af38d}" FolderPath="Control Methods\">
+      <Declaration><![CDATA[METHOD mControl_FeedSPG : BOOL
+VAR_INPUT
+END_VAR
+
+VAR
+	DirectionInternal : DINT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[(* 
+Direction 1 = Forward
+Direction -1 = Backward
+Direction 0 = Standstill
+*)
+
+IF _stAxis.stSpg.OverrideDirection THEN
+	DirectionInternal:= _stAxis.stSpg.Direction;
+ELSE
+	//Direction calculation logic
+	IF _stAxis.stSpg.Velocity > ABS(_stAxis.stSpg.VelocityStandstillThreshold) THEN
+		DirectionInternal := 1;
+	ELSIF _stAxis.stSpg.Velocity < -ABS(_stAxis.stSpg.VelocityStandstillThreshold) THEN
+		DirectionInternal := -1;
+	ELSE
+		DirectionInternal := 0;
+	END_IF
+END_IF
+
+MC_ExtSetPointGenFeed(
+	Axis:= _stAxis.Axis, 
+	Position:= _stAxis.stSpg.Position,
+	Velocity:= _stAxis.stSpg.Velocity,
+	Acceleration:= _stAxis.stSpg.Acceleration,
+	Direction:= _stAxis.stSpg.Direction);]]></ST>
       </Implementation>
     </Method>
     <Method Name="mControl_Home" Id="{1c89166c-d22b-4ec1-832b-29e319ac35a4}" FolderPath="Control Methods\">
@@ -185,8 +382,8 @@ END_IF
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[
-_stAxis.stStatus.bFwEnabled := _stAxis.stInputs.bLimitFwd; //Moved to linking code. Should not say enabled if not enabled
-_stAxis.stStatus.bBwEnabled := _stAxis.stInputs.bLimitBwd;
+_stAxis.stStatus.bFwEnabled := _stAxis.stInputs.bLimitFwd OR _stAxis.stControl.bOverrideLimits; 
+_stAxis.stStatus.bBwEnabled := _stAxis.stInputs.bLimitBwd OR _stAxis.stControl.bOverrideLimits;
 _stAxis.stStatus.bInterlockedFwd := _stAxis.stControl.bInterlockFwd;
 _stAxis.stStatus.bInterlockedBwd := _stAxis.stControl.bInterlockBwd;
 
@@ -225,10 +422,12 @@ END_VAR
 fbReset(Axis := _stAxis.Axis);
 IF fbReset.Done THEN
     _stAxis.stStatus.bError := FALSE;
+	_stAxis.stStatus.bMcError := FALSE;
     FOR i := 1 TO nMCSTATUS_ARRAY_SIZE DO
-        //If there's an error present propagate
+        //Clear all the errors
         _stAxis.stStatus.nErrorID := 0;
     END_FOR
+	_stAxis.stStatus.nMcErrorID := 0;
 END_IF
 
 mControl_Reset.Busy := fbReset.Busy;
@@ -251,8 +450,7 @@ END_IF
       <Declaration><![CDATA[METHOD mMove_Halt : ST_McStatus
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[
-fbHalt.Deceleration := _stAxis.stControl.fDeceleration;
+        <ST><![CDATA[fbHalt.Deceleration := _stAxis.stControl.fDeceleration;
 fbHalt.Execute := _stAxis.stControl.bHalt;
 
 fbHalt(Axis := _stAxis.Axis);
@@ -281,10 +479,15 @@ END_IF
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[IF _stAxis.stControl.eCommand = E_MotionFunctions.eMoveAbsolute THEN
-    fbMoveAbsolute.Execute := _stAxis.stControl.bExecute;
-    IF fbMoveAbsolute.Execute AND fbMoveAbsolute.Busy THEN
-        fbMoveAbsolute2.Execute := TRUE;
-    END_IF
+	IF _stAxis.stStatus.bReadyToMove THEN
+		fbMoveAbsolute.Execute := _stAxis.stStatus.bMoveRequested;
+		IF _stAxis.stStatus.bMoveRequested THEN
+			_stAxis.stStatus.bMoveRequested := FALSE;
+		END_IF
+    	IF fbMoveAbsolute.Execute AND fbMoveAbsolute.Busy THEN
+        	fbMoveAbsolute2.Execute := TRUE;
+    	END_IF
+	END_IF    
 END_IF
 
 // Parameters
@@ -338,10 +541,15 @@ END_IF
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[IF _stAxis.stControl.eCommand = E_MotionFunctions.eMoveModulo THEN
-    fbMoveModulo.Execute := _stAxis.stControl.bExecute;
-    IF fbMoveModulo.Execute AND fbMoveModulo.Busy THEN
-        fbMoveModulo2.Execute := TRUE;
-    END_IF
+	IF _stAxis.stStatus.bReadyToMove THEN
+		fbMoveModulo.Execute := _stAxis.stStatus.bMoveRequested;
+		IF _stAxis.stStatus.bMoveRequested THEN
+			_stAxis.stStatus.bMoveRequested := FALSE;
+		END_IF
+    	IF fbMoveModulo.Execute AND fbMoveAbsolute.Busy THEN
+        	fbMoveModulo2.Execute := TRUE;
+    	END_IF
+	END_IF    
 END_IF
 
 // Parameters
@@ -392,7 +600,12 @@ END_IF
       <Implementation>
         <ST><![CDATA[
 IF _stAxis.stControl.eCommand = E_MotionFunctions.eMoveRelative THEN
-    fbMoveRelative.Execute := _stAxis.stControl.bExecute;
+	IF _stAxis.stStatus.bReadyToMove THEN
+		fbMoveRelative.Execute := _stAxis.stStatus.bMoveRequested;
+		IF _stAxis.stStatus.bMoveRequested THEN
+			_stAxis.stStatus.bMoveRequested := FALSE;
+		END_IF
+	END_IF
 END_IF
 
 fbMoveRelative.Distance := _stAxis.stControl.fPosition;
@@ -422,7 +635,12 @@ END_IF
       <Implementation>
         <ST><![CDATA[
 IF _stAxis.stControl.eCommand = E_MotionFunctions.eMoveVelocity THEN
-    fbMoveVelocity.Execute := _stAxis.stControl.bExecute;
+	IF _stAxis.stStatus.bReadyToMove THEN
+		fbMoveVelocity.Execute := _stAxis.stStatus.bMoveRequested;
+		IF _stAxis.stStatus.bMoveRequested THEN
+			_stAxis.stStatus.bMoveRequested := FALSE;
+		END_IF
+	END_IF
 END_IF
 
 fbMoveVelocity.Direction := SEL(_stAxis.stControl.fVelocity < 0, MC_Positive_Direction, MC_Negative_Direction);
@@ -446,12 +664,34 @@ END_IF
 ]]></ST>
       </Implementation>
     </Method>
-    <Method Name="mMove_Stop" Id="{a3229fc2-dc64-4fe5-81ae-939492dc7b8a}" FolderPath="Move Methods\">
+    <Method Name="mMove_SetPosition" Id="{a3229fc2-dc64-4fe5-81ae-939492dc7b8a}" FolderPath="Move Methods\">
+      <Declaration><![CDATA[METHOD mMove_SetPosition : ST_McStatus]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF _stAxis.stControl.eCommand = E_MotionFunctions.eSetPosition THEN
+	fbSetPosition.Execute:= _stAxis.stControl.bExecute;
+END_IF
+
+fbSetPosition.Position:= _stAxis.stControl.fSetPosition;
+fbSetPosition.Options.ClearPositionLag:= TRUE;
+
+fbSetPosition(Axis := _stAxis.Axis);
+fbSetPosition.Execute:= FALSE;
+
+mMove_SetPosition.Busy := fbSetPosition.Busy;
+mMove_SetPosition.Error := fbSetPosition.Error;
+mMove_SetPosition.ErrorID := fbSetPosition.ErrorID;
+mMove_SetPosition.Done := fbSetPosition.Done;
+
+IF fbSetPosition.Error THEN
+    _stAxis.stError.nSetPositionErrorID := fbSetPosition.ErrorID; //Set the error
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mMove_Stop" Id="{a18a9f6e-fb69-4d76-adaa-ce297aeac612}" FolderPath="Move Methods\">
       <Declaration><![CDATA[METHOD mMove_Stop : ST_McStatus
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[
-fbStop.Deceleration := _stAxis.stControl.fDeceleration;
+        <ST><![CDATA[fbStop.Deceleration := _stAxis.stControl.fDeceleration;
 fbStop.Execute := _stAxis.stControl.bStop;
 
 fbStop(Axis := _stAxis.Axis);
@@ -479,7 +719,10 @@ END_IF
       <Declaration><![CDATA[METHOD mParameters_Init : BOOL
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[
+        <ST><![CDATA[IF _stAxis.stControl.bReinitialiseNcParameters THEN
+	_stAxis.stStatus.bAxisInitialized := FALSE;
+	_stAxis.stControl.bReinitialiseNcParameters := FALSE;
+END_IF
 IF _stAxis.stConfig.bReadMcParametersValid AND NOT _stAxis.stStatus.bAxisInitialized THEN
     _stAxis.stControl.fAcceleration := _stAxis.stConfig.fDefaultAcc;
     _stAxis.stControl.fDeceleration := _stAxis.stConfig.fDefaultDec;
@@ -712,14 +955,18 @@ ELSE
     _stAxis.stStatus.fActPosition := _stAxis.Axis.NcToPlc.ActPos;
 END_IF
 
-
 _stAxis.stStatus.bHomed := _stAxis.Axis.Status.Homed;
 _stAxis.stStatus.bMoving := _stAxis.Axis.Status.Moving;
 _stAxis.stStatus.fActVelocity := _stAxis.Axis.NcToPlc.ActVelo;
 _stAxis.stStatus.bMovingForward := _stAxis.Axis.Status.PositiveDirection;
 _stAxis.stStatus.bMovingBackward := _stAxis.Axis.Status.NegativeDirection;
 _stAxis.stStatus.bInTargetPosition := _stAxis.Axis.Status.InTargetPosition;
-_stAxis.stStatus.bEnabled := NOT(_stAxis.Axis.Status.Disabled);	//This is crap
+//_stAxis.stStatus.bEnabled := _stAxis.Axis.Status.Operational;
+_stAxis.stStatus.bEnabled := NOT(_stAxis.Axis.Status.Disabled);	//This is crap but I don't know a better way
+
+_stAxis.stStatus.SPGEnabled := _stAxis.Axis.Status.ExtSetPointGenEnabled;
+
+
 ]]></ST>
       </Implementation>
     </Method>
@@ -732,7 +979,7 @@ END_VAR
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[
-FOR i := 5 TO nMCSTATUS_ARRAY_SIZE DO
+FOR i := 5 TO 10 DO
     tmpBusy := astMcStatus[i]^.Busy OR tmpBusy;
 END_FOR
 mStatus_Busy := tmpBusy;
@@ -748,7 +995,7 @@ END_VAR
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[
-FOR i := 5 TO nMCSTATUS_ARRAY_SIZE DO
+FOR i := 5 TO 9 DO
     tmpCmdAborted := astMcStatus[i]^.CommandAborted OR tmpCmdAborted;
 END_FOR
 
@@ -768,7 +1015,7 @@ END_VAR
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[
-FOR i := 5 TO nMCSTATUS_ARRAY_SIZE DO
+FOR i := 5 TO 10 DO
     tmpDone := astMcStatus[i]^.Done OR tmpDone;
 END_FOR
 //fbDoneRTrig(CLK:= mStatus_Done());
@@ -794,15 +1041,20 @@ END_FOR
 
 fbErrorRTrig(CLK := tmpError);
 
-IF _stAxis.Axis.Status.ErrorStop THEN
-    _stAxis.stStatus.bError := _stAxis.Axis.Status.ErrorStop;
+//Check if NC is in error state and propogate
+IF _stAxis.Axis.Status.ErrorStop OR _stAxis.Axis.Status.Error THEN
+    _stAxis.stStatus.bError := _stAxis.Axis.Status.ErrorStop OR _stAxis.Axis.Status.Error;
     _stAxis.stStatus.nErrorID := _stAxis.Axis.Status.ErrorID;//NC Error ID
-ELSIF fbErrorRTrig.Q THEN
+END_IF
+
+
+IF fbErrorRTrig.Q THEN
         //For each mcStatus
         FOR i := 1 TO nMCSTATUS_ARRAY_SIZE DO
             //If there's an error present propagate
             IF astMcStatus[i]^.ErrorID <> 0 THEN
-                _stAxis.stStatus.nErrorID := astMcStatus[i]^.ErrorID;
+				_stAxis.stStatus.bMcError := TRUE;
+                _stAxis.stStatus.nMcErrorID := astMcStatus[i]^.ErrorID;
             END_IF
         END_FOR
 END_IF
@@ -852,8 +1104,7 @@ IF fbExecuteRTrig.Q THEN
             E_MotionFunctions.eMoveRelative,
             E_MotionFunctions.eMoveVelocity,
             E_MotionFunctions.eMoveModulo,
-            E_MotionFunctions.eGearInMultiMaster,
-            E_MotionFunctions.eGearOut,
+			E_MotionFunctions.eSetPosition,
             E_MotionFunctions.eHome :
                 _stAxis.stStatus.nErrorID := 0;
             E_MotionFunctions.eWriteParameter,
@@ -877,10 +1128,16 @@ stMcStatusWriteParameter := mParameters_WriteParameter();
 mControl_LimitHitTimer();
 mControl_LimitLinking();
 stMcStatusPower := mControl_Power();
+mControl_AutoEnableDisable();
+
+mControl_EnableSPG();
+mControl_DisableSPG();
+mControl_FeedSPG();
 
 stMcStatusHalt := mMove_Halt();
 stMcStatusStop := mMove_Stop();
 stMcStatusReset := mControl_Reset();
+stMcStatusSetPosition := mMove_SetPosition();
 
 stMcStatusMoveAbsolute := mMove_MoveAbsolute();
 stMcStatusMoveRelative := mMove_MoveRelative();
@@ -895,6 +1152,7 @@ mStatus_Error();
 mStatus_InVelocity();
 mStatus_CommandAborted();
 _stAxis.stStatus.bBusy := mStatus_Busy();
+
 
 EndOfCycle();
 ]]></ST>
@@ -931,8 +1189,109 @@ END_VAR
     </LineIds>
     <LineIds Name="FB_Axis.FB_init">
       <LineId Id="3" Count="10" />
+      <LineId Id="24" Count="0" />
       <LineId Id="16" Count="1" />
+      <LineId Id="23" Count="0" />
       <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mControl_AutoEnableDisable">
+      <LineId Id="12" Count="0" />
+      <LineId Id="16" Count="1" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="21" Count="2" />
+      <LineId Id="70" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="72" Count="0" />
+      <LineId Id="74" Count="1" />
+      <LineId Id="73" Count="0" />
+      <LineId Id="71" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="48" Count="0" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="79" Count="1" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="50" Count="1" />
+      <LineId Id="53" Count="0" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="49" Count="0" />
+      <LineId Id="43" Count="0" />
+      <LineId Id="14" Count="1" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="9" Count="2" />
+      <LineId Id="40" Count="1" />
+      <LineId Id="47" Count="0" />
+      <LineId Id="39" Count="0" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="54" Count="12" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="37" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mControl_DisableSPG">
+      <LineId Id="24" Count="8" />
+      <LineId Id="48" Count="0" />
+      <LineId Id="47" Count="0" />
+      <LineId Id="49" Count="0" />
+      <LineId Id="51" Count="0" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="36" Count="2" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="53" Count="0" />
+      <LineId Id="57" Count="0" />
+      <LineId Id="55" Count="0" />
+      <LineId Id="45" Count="1" />
+      <LineId Id="16" Count="1" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mControl_EnableSPG">
+      <LineId Id="5" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="30" Count="2" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="22" Count="1" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="15" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mControl_FeedSPG">
+      <LineId Id="6" Count="0" />
+      <LineId Id="14" Count="3" />
+      <LineId Id="7" Count="1" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="20" Count="1" />
+      <LineId Id="27" Count="2" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="32" Count="1" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="34" Count="4" />
     </LineIds>
     <LineIds Name="FB_Axis.mControl_Home">
       <LineId Id="3" Count="28" />
@@ -952,35 +1311,69 @@ END_VAR
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mControl_Reset">
-      <LineId Id="3" Count="23" />
+      <LineId Id="3" Count="4" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="8" Count="3" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="12" Count="14" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mMove_Halt">
-      <LineId Id="3" Count="21" />
+      <LineId Id="4" Count="20" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mMove_MoveAbsolute">
-      <LineId Id="3" Count="49" />
+      <LineId Id="3" Count="0" />
+      <LineId Id="54" Count="0" />
+      <LineId Id="57" Count="0" />
+      <LineId Id="60" Count="2" />
+      <LineId Id="58" Count="1" />
+      <LineId Id="55" Count="1" />
+      <LineId Id="8" Count="44" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mMove_MoveModulo">
-      <LineId Id="3" Count="45" />
+      <LineId Id="52" Count="9" />
+      <LineId Id="51" Count="0" />
+      <LineId Id="9" Count="39" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mMove_MoveRelative">
-      <LineId Id="3" Count="22" />
+      <LineId Id="3" Count="1" />
+      <LineId Id="28" Count="3" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="6" Count="19" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mMove_MoveVelocity">
-      <LineId Id="3" Count="22" />
+      <LineId Id="3" Count="1" />
+      <LineId Id="29" Count="4" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="6" Count="19" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mMove_SetPosition">
+      <LineId Id="35" Count="0" />
+      <LineId Id="41" Count="2" />
+      <LineId Id="47" Count="0" />
+      <LineId Id="63" Count="0" />
+      <LineId Id="48" Count="2" />
+      <LineId Id="53" Count="3" />
+      <LineId Id="62" Count="0" />
+      <LineId Id="58" Count="2" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mMove_Stop">
-      <LineId Id="3" Count="21" />
+      <LineId Id="4" Count="20" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mParameters_Init">
-      <LineId Id="3" Count="10" />
+      <LineId Id="3" Count="0" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="4" Count="9" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mParameters_ReadNc">
@@ -996,7 +1389,14 @@ END_VAR
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mStatus_AxisStatus">
-      <LineId Id="3" Count="15" />
+      <LineId Id="3" Count="6" />
+      <LineId Id="11" Count="6" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="21" Count="0" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mStatus_Busy">
@@ -1012,7 +1412,16 @@ END_VAR
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mStatus_Error">
-      <LineId Id="3" Count="18" />
+      <LineId Id="3" Count="5" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="9" Count="3" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="14" Count="3" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="18" Count="3" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mStatus_InVelocity">
@@ -1020,12 +1429,23 @@ END_VAR
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.mStatus_NewCommand">
-      <LineId Id="3" Count="20" />
+      <LineId Id="3" Count="11" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="17" Count="6" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.Run">
-      <LineId Id="4" Count="17" />
-      <LineId Id="25" Count="10" />
+      <LineId Id="4" Count="8" />
+      <LineId Id="37" Count="0" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="39" Count="0" />
+      <LineId Id="41" Count="1" />
+      <LineId Id="13" Count="3" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="17" Count="4" />
+      <LineId Id="25" Count="8" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="34" Count="1" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.stAxis.Get">
