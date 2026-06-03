@@ -5,7 +5,8 @@
 {attribute 'to_string'}
 TYPE E_AxisNames :
 (
-	None := 0
+	None := 0,
+	Axis_1 := 1
 );
 END_TYPE
 ]]></Declaration>

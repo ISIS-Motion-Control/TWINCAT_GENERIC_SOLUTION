@@ -27,10 +27,7 @@ VAR
     fbGetDeviceIdentification: FB_GetDeviceIdentificationEx;
 		
 	
-	bTest : BOOL;
-	stEvent : ST_Event;
-	fbEventLogger : FB_EventLogger;
-	bEventToAddError : BOOL;
+
 	
 END_VAR
 
@@ -62,7 +59,6 @@ END_IF
 
 PROG();
 AXES();
-fbEventLogger();
 
 
 
@@ -144,6 +140,7 @@ GVL.fbGetCurTaskIndex();
 //Axes initial parameters and program
 //Axis_Template();
 Axis_1();
+Group_1();
 //Pneumatics_Template();
 
 //Application program calls
@@ -341,7 +338,6 @@ END_FOR
       <LineId Id="110" Count="0" />
       <LineId Id="104" Count="1" />
       <LineId Id="4" Count="1" />
-      <LineId Id="213" Count="0" />
       <LineId Id="102" Count="0" />
       <LineId Id="2" Count="0" />
       <LineId Id="46" Count="0" />
@@ -361,7 +357,7 @@ END_FOR
     </LineIds>
     <LineIds Name="MAIN.PROG">
       <LineId Id="2" Count="7" />
-      <LineId Id="15" Count="0" />
+      <LineId Id="15" Count="1" />
       <LineId Id="10" Count="3" />
     </LineIds>
     <LineIds Name="MAIN.RESTORE_POSITIONS">
