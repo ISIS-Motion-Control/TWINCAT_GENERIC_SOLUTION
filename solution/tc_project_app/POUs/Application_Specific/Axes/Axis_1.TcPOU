@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
-  <POU Name="Axis_Template" Id="{1a43acb4-bd2e-4637-97fb-9976d47292b6}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM Axis_Template
+  <POU Name="Axis_1" Id="{9b6828f9-a82a-412e-8426-d13ab35b9a80}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Axis_1
 VAR
 //Outputs: Power for Limit switches, Home Sensors, etc.
     //bPowerSwitchesAxis1 AT %Q*: BOOL:= TRUE;
@@ -9,13 +9,11 @@ VAR
 //Hardware interlocks
     //bInterlockFwdOK AT %I*: BOOL;
 	
-//Set which number axis this is from the enum	
-	//iAxisNumber : INT := E_AxisNames.NONE;
+	iAxisNumber : INT := E_AxisNames.NONE;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[//Initial parameters of an Axis
-(*
 IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
     //Initial default values:
     GVL.astAxes[iAxisNumber].stHomingConfig.eHomeSeq := 1 ;
@@ -26,7 +24,6 @@ IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
 	//Set which group this axis belongs to
 	GVL.astAxes[iAxisNumber].stDescription.iGroupNumber := 1;
 END_IF
-*)
 
 
 
@@ -35,12 +32,13 @@ END_IF
 Eg. GVL.astAxes[x].stControl.bInterlockFwd := NOT bInterlockFwdOK;*)
 ]]></ST>
     </Implementation>
-    <LineIds Name="Axis_Template">
-      <LineId Id="31" Count="0" />
-      <LineId Id="46" Count="0" />
-      <LineId Id="32" Count="9" />
-      <LineId Id="47" Count="0" />
-      <LineId Id="29" Count="1" />
+    <LineIds Name="Axis_1">
+      <LineId Id="3" Count="1" />
+      <LineId Id="10" Count="4" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="41" Count="1" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="28" Count="1" />
       <LineId Id="16" Count="3" />
       <LineId Id="2" Count="0" />
     </LineIds>

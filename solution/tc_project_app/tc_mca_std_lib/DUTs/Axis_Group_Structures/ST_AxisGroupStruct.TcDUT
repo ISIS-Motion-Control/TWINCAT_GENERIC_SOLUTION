@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <DUT Name="ST_AxisGroupStruct" Id="{623eb686-c91b-4bdc-aecc-77175e7142b2}">
+    <Declaration><![CDATA[TYPE ST_AxisGroupStruct :
+STRUCT
+	aAxesInGroup : ARRAY[1..GVL.nMAX_AXES_PER_GROUP] OF INT :=[GVL.nMAX_AXES_PER_GROUP(0)];
+	stDescription : ST_AxisGroupDescription;
+	stFlag : ST_AxisGroupFlag;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

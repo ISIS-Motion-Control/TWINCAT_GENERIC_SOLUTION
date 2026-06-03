@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="FB_AxisGroups" Id="{3d34cf0c-94a1-435c-a681-8b8d3300efd6}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_AxisGroups
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	_stAxisGroup: REFERENCE TO ST_AxisGroupStruct;
+	iGroupedAxis : INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="mStatus_GroupEnabled" Id="{6497340e-04cd-4c6c-b84a-9262b3cfb20a}">
+      <Declaration><![CDATA[METHOD mStatus_GroupEnabled : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[_stAxisGroup.stFlag.iDisabled := 0;
+_stAxisGroup.stFlag.bDisabledFlag := FALSE;
+_stAxisGroup.stFlag.iNumberOfAxisDisabled := 0;
+FOR iGroupedAxis := 1 TO GVL.nMAX_AXES_PER_GROUP DO
+	IF _stAxisGroup.aAxesInGroup[iGroupedAxis] = 0 THEN
+		IF _stAxisGroup.stFlag.iDisabled <> 0 THEN
+			_stAxisGroup.stFlag.bDisabledFlag := TRUE;	
+		END_IF
+		RETURN;
+	END_IF
+	_stAxisGroup.stFlag.iDisabled := _stAxisGroup.stFlag.iDisabled + BOOL_TO_INT(NOT astAxes[_stAxisGroup.aAxesInGroup[iGroupedAxis]].stStatus.bEnabled) * iGroupedAxis;
+	_stAxisGroup.stFlag.iNumberOfAxisDisabled := _stAxisGroup.stFlag.iNumberOfAxisDisabled + BOOL_TO_INT(NOT astAxes[_stAxisGroup.aAxesInGroup[iGroupedAxis]].stStatus.bEnabled);
+END_FOR]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mStatus_GroupError" Id="{fee155b1-4d8e-4a2a-af48-41dce12c5c37}">
+      <Declaration><![CDATA[METHOD mStatus_GroupError : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[_stAxisGroup.stFlag.iError := 0;
+_stAxisGroup.stFlag.bErrorFlag := FALSE;
+_stAxisGroup.stFlag.iNumberOfAxisInError := 0; 
+
+FOR iGroupedAxis := 1 TO GVL.nMAX_AXES_PER_GROUP DO
+	IF _stAxisGroup.aAxesInGroup[iGroupedAxis] = 0 THEN
+		IF _stAxisGroup.stFlag.iError <> 0 THEN
+			_stAxisGroup.stFlag.bErrorFlag := TRUE;
+		END_IF
+		RETURN;
+	END_IF
+	_stAxisGroup.stFlag.iError := _stAxisGroup.stFlag.iError + BOOL_TO_INT(astAxes[_stAxisGroup.aAxesInGroup[iGroupedAxis]].stStatus.bError) * (100 + iGroupedAxis);
+	_stAxisGroup.stFlag.iNumberOfAxisInError := _stAxisGroup.stFlag.iNumberOfAxisInError + BOOL_TO_INT(astAxes[_stAxisGroup.aAxesInGroup[iGroupedAxis]].stStatus.bError);
+END_FOR]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mStatus_GroupState" Id="{ac5aa7c0-cdbe-4a70-9534-676d39efbaa7}">
+      <Declaration><![CDATA[METHOD mStatus_GroupState : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[_stAxisGroup.stFlag.iState := _stAxisGroup.stFlag.iDisabled + _stAxisGroup.stFlag.iError;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Run" Id="{1f8f2b5c-38ba-47df-a074-81ee7eecc5fd}">
+      <Declaration><![CDATA[METHOD Run : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[mStatus_GroupEnabled();
+mStatus_GroupError();
+mStatus_GroupState();]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="stAxisGroup" Id="{09889def-20eb-4fe2-9b02-3e045fae4d3b}">
+      <Declaration><![CDATA[PROPERTY stAxisGroup : REFERENCE TO ST_AxisGroupStruct]]></Declaration>
+      <Get Name="Get" Id="{c34f8397-af38-407f-8435-195eb63bbcfc}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[stAxisGroup REF= _stAxisGroup;
+]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{07562d57-b69c-4492-b5f7-7067c20a4c32}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[_stAxisGroup REF= stAxisGroup;
+]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <LineIds Name="FB_AxisGroups">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_AxisGroups.mStatus_GroupEnabled">
+      <LineId Id="6" Count="12" />
+    </LineIds>
+    <LineIds Name="FB_AxisGroups.mStatus_GroupError">
+      <LineId Id="6" Count="13" />
+    </LineIds>
+    <LineIds Name="FB_AxisGroups.mStatus_GroupState">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_AxisGroups.Run">
+      <LineId Id="6" Count="1" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_AxisGroups.stAxisGroup.Get">
+      <LineId Id="5" Count="0" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_AxisGroups.stAxisGroup.Set">
+      <LineId Id="5" Count="0" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

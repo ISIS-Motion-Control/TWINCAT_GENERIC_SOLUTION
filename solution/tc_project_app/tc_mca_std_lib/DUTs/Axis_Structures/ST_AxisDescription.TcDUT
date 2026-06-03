@@ -4,6 +4,7 @@
     <Declaration><![CDATA[TYPE ST_AxisDescription :
 STRUCT
     sAxisName : STRING(nMAX_AXIS_NAME);
+	iGroupNumber : INT;
     sUnits : STRING := UNIT_mm;
 END_STRUCT
 END_TYPE

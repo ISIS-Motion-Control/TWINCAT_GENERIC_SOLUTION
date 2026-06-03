@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <DUT Name="E_EventIDs" Id="{fb131b2a-133e-43df-bcda-6dd200534bb4}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+{attribute 'to_string'}
+
+TYPE E_EventIDs :
+(
+	Motor := 0,
+	Safety := 1
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>
