@@ -7,8 +7,7 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[//Sample code for defining groups by iterating through each axis on startup and adding all matching axis to this array
-
+      <ST><![CDATA[
 IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
 	GVL.iAxesGroupIndex := 1;
 	FOR GVL.iAxis := 1 TO GVL_APP.nAXIS_NUM DO
@@ -22,7 +21,6 @@ END_IF
 ]]></ST>
     </Implementation>
     <LineIds Name="GROUP_1">
-      <LineId Id="21" Count="0" />
       <LineId Id="20" Count="0" />
       <LineId Id="6" Count="9" />
       <LineId Id="5" Count="0" />

@@ -11,6 +11,8 @@ VAR
 	
 //Set which number axis this is from the enum	
 	//iAxisNumber : INT := E_AxisNames.NONE;
+//Set which group this axis belongs to
+	//iGroupNumber : INT := 1;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -23,8 +25,7 @@ IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
     GVL.astAxes[iAxisNumber].stHomingConfig.fHomeFinishDistance := 0.0;
     GVL.astAxes[iAxisNumber].stConfig.eRestorePosition := E_RestorePosition.eRestoreWithoutHome;
 	GVL.astAxes[iAxisNumber].stControl.bAutoEnableDisable := TRUE;
-	//Set which group this axis belongs to
-	GVL.astAxes[iAxisNumber].stDescription.iGroupNumber := 1;
+	GVL.astAxes[iAxisNumber].stDescription.iGroupNumber := iGroupNumber;
 END_IF
 *)
 
@@ -38,7 +39,8 @@ Eg. GVL.astAxes[x].stControl.bInterlockFwd := NOT bInterlockFwdOK;*)
     <LineIds Name="Axis_Template">
       <LineId Id="31" Count="0" />
       <LineId Id="46" Count="0" />
-      <LineId Id="32" Count="9" />
+      <LineId Id="32" Count="6" />
+      <LineId Id="40" Count="1" />
       <LineId Id="47" Count="0" />
       <LineId Id="29" Count="1" />
       <LineId Id="16" Count="3" />
