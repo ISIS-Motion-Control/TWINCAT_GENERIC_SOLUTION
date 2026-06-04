@@ -60,6 +60,7 @@ END_IF
 
 PROG();
 AXES();
+SAFETY();
 
 
 
@@ -139,11 +140,14 @@ GVL.fbGetCurTaskIndex();
 //Create as many programs in that folder as axes and applications you have or need
 
 //Axes initial parameters and program
-//Axis_Template();
+Axis_Template();
 //Pneumatics_Template();
 
 //Application program calls
-//Application_Template();]]></ST>
+//Application_Template();
+
+//Safety initial parameters and program
+Safety_Template();]]></ST>
       </Implementation>
     </Action>
     <Action Name="RESTORE_POSITIONS" Id="{0c7ee537-7bd9-4833-b428-c17cbb57e893}" FolderPath="POSITION_RECOVERY\">
@@ -308,6 +312,7 @@ END_IF
         <ST><![CDATA[//First cycle, assign FB_axis to interface array
 IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
     FOR GVL.iSafety := 1 TO GVL_APP.nSAFETY_NUM DO
+		afbSafety[GVL.iSafety].stSafety REF= astSafety[GVL.iSafety];
         aISafety[GVL.iSafety] := afbSafety[GVL.iSafety];
     END_FOR
     //Custom safety types defined and linked to aiSafety here
@@ -358,6 +363,7 @@ END_FOR
       <LineId Id="110" Count="0" />
       <LineId Id="104" Count="1" />
       <LineId Id="4" Count="1" />
+      <LineId Id="192" Count="0" />
       <LineId Id="102" Count="0" />
       <LineId Id="2" Count="0" />
       <LineId Id="46" Count="0" />
@@ -379,6 +385,9 @@ END_FOR
     </LineIds>
     <LineIds Name="MAIN.PROG">
       <LineId Id="2" Count="11" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="16" Count="0" />
     </LineIds>
     <LineIds Name="MAIN.RESTORE_POSITIONS">
       <LineId Id="2" Count="16" />
@@ -409,6 +418,7 @@ END_FOR
     </LineIds>
     <LineIds Name="MAIN.SAFETY">
       <LineId Id="2" Count="2" />
+      <LineId Id="29" Count="0" />
       <LineId Id="24" Count="0" />
       <LineId Id="7" Count="0" />
       <LineId Id="27" Count="1" />
