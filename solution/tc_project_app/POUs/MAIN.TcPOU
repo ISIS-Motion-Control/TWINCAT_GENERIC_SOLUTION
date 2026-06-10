@@ -25,7 +25,7 @@ VAR
     afbReadPositionBias: ARRAY [1..GVL_APP.nAXIS_NUM] OF MC_ReadParameter;
     afbWritePositionBias: ARRAY [1..GVL_APP.nAXIS_NUM] OF MC_WriteParameter;
     fbGetDeviceIdentification: FB_GetDeviceIdentificationEx;
-		
+	
 	
 	
 END_VAR
@@ -59,7 +59,7 @@ END_IF
 PROG();
 AXES();
 
-
+	
 
 ]]></ST>
     </Implementation>
@@ -335,7 +335,7 @@ END_FOR
       <LineId Id="110" Count="0" />
       <LineId Id="104" Count="1" />
       <LineId Id="4" Count="1" />
-      <LineId Id="102" Count="0" />
+      <LineId Id="196" Count="0" />
       <LineId Id="2" Count="0" />
       <LineId Id="46" Count="0" />
       <LineId Id="50" Count="0" />

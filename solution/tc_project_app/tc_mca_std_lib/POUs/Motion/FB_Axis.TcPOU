@@ -47,6 +47,10 @@ VAR
 
     fbWriteParameter: MC_WriteParameter;
     stMcStatusWriteParameter: ST_McStatus;
+	fbWriteSWLimitMax: MC_WriteBoolParameter;
+	fbWriteSWLimitMin: MC_WriteBoolParameter;
+	stMcStatusWriteSWLimits : ST_McStatus;
+
 	
 	fbSetPosition: MC_SetPosition;
 	stMcStatusSetPosition: ST_McStatus;
@@ -103,7 +107,7 @@ END_VAR
 VAR CONSTANT
     nRATIO_DENOMINATOR_DEFAULT: UINT := 1;
     nNO_GEARING: UINT := 0;
-    nMCSTATUS_ARRAY_SIZE: UINT := 12;
+    nMCSTATUS_ARRAY_SIZE: UINT := 13;
     nMULTI_MASTER_MAX_AXES: UINT := 4;
 END_VAR
 ]]></Declaration>
@@ -145,7 +149,7 @@ astMcStatus[9] := ADR(stMcStatusHome);
 astMcStatus[10] := ADR(stMcStatusSetPosition);
 astMcStatus[11] := ADR(stMcStatusReadParameter);
 astMcStatus[12] := ADR(stMcStatusWriteParameter);
-
+astMcStatus[13] := ADR(stMcStatusWriteSWLimits);
 ]]></ST>
       </Implementation>
     </Method>
@@ -943,6 +947,36 @@ END_IF
 ]]></ST>
       </Implementation>
     </Method>
+    <Method Name="mParameters_WriteSWLimits" Id="{de9ac42b-265f-45b4-ba6e-912b88996dd5}" FolderPath="Parameter Methods\">
+      <Declaration><![CDATA[METHOD mParameters_WriteSWLimits : ST_McStatus
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF _stAxis.stControl.eCommand = E_MotionFunctions.eWriteToggleSWLimits THEN
+    fbWriteSWLimitMax.Execute := _stAxis.stControl.bExecute;
+	fbWriteSWLimitMin.Execute := _stAxis.stControl.bExecute;
+END_IF
+
+fbWriteSWLimitMax.ParameterNumber := E_AxisParameters.EnableLimitForward;
+fbWriteSWLimitMax.Value := _stAxis.stConfig.fWriteAxisBoolParameter;
+fbWriteSWLimitMin.ParameterNumber := E_AxisParameters.EnableLimitBackward;
+fbWriteSWLimitMin.Value := _stAxis.stConfig.fWriteAxisBoolParameter;
+
+fbWriteSWLimitMax(Axis := _stAxis.Axis);
+fbWriteSWLimitMax.Execute := FALSE;
+fbWriteSWLimitMin(Axis := _stAxis.Axis);
+fbWriteSWLimitMin.Execute := FALSE;
+
+mParameters_WriteSWLimits.Busy := fbWriteSWLimitMax.Busy OR fbWriteSWLimitMin.Busy;
+mParameters_WriteSWLimits.Done := fbWriteSWLimitMax.Done OR fbWriteSWLimitMin.Done;
+mParameters_WriteSWLimits.Error := fbWriteSWLimitMax.Error OR fbWriteSWLimitMin.Error;
+mParameters_WriteSWLimits.ErrorID := fbWriteSWLimitMax.ErrorID OR fbWriteSWLimitMin.ErrorID;
+
+IF fbWriteSWLimitMax.Error OR fbWriteSWLimitMin.Error THEN
+    _stAxis.stError.fbWriteParameterErrorId := fbWriteSWLimitMax.ErrorID OR fbWriteSWLimitMin.ErrorID; 
+END_IF
+]]></ST>
+      </Implementation>
+    </Method>
     <Method Name="mStatus_AxisStatus" Id="{9429fa18-dacb-4b5a-8f14-87d9e5dbf769}" FolderPath="Status Methods\">
       <Declaration><![CDATA[METHOD mStatus_AxisStatus : BOOL
 ]]></Declaration>
@@ -1124,6 +1158,7 @@ mParameters_ReadNc();
 mParameters_Init();
 stMcStatusReadParameter := mParameters_ReadParameter();
 stMcStatusWriteParameter := mParameters_WriteParameter();
+stMcStatusWriteSWLimits := mParameters_WriteSWLimits();
 
 mControl_LimitHitTimer();
 mControl_LimitLinking();
@@ -1388,6 +1423,10 @@ END_VAR
       <LineId Id="3" Count="18" />
       <LineId Id="2" Count="0" />
     </LineIds>
+    <LineIds Name="FB_Axis.mParameters_WriteSWLimits">
+      <LineId Id="6" Count="22" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
     <LineIds Name="FB_Axis.mStatus_AxisStatus">
       <LineId Id="3" Count="6" />
       <LineId Id="11" Count="6" />
@@ -1435,7 +1474,9 @@ END_VAR
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Axis.Run">
-      <LineId Id="4" Count="8" />
+      <LineId Id="4" Count="4" />
+      <LineId Id="46" Count="0" />
+      <LineId Id="9" Count="3" />
       <LineId Id="37" Count="0" />
       <LineId Id="40" Count="0" />
       <LineId Id="39" Count="0" />
