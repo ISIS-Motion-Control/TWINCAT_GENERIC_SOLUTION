@@ -27,6 +27,10 @@ VAR
     fbGetDeviceIdentification: FB_GetDeviceIdentificationEx;
 		
 	
+	bTest : BOOL;
+	stEvent : ST_Event;
+	fbEventLogger : FB_EventLogger;
+	bEventToAddError : BOOL;
 	
 END_VAR
 
@@ -58,6 +62,7 @@ END_IF
 
 PROG();
 AXES();
+fbEventLogger();
 
 
 
@@ -335,6 +340,7 @@ END_FOR
       <LineId Id="110" Count="0" />
       <LineId Id="104" Count="1" />
       <LineId Id="4" Count="1" />
+      <LineId Id="213" Count="0" />
       <LineId Id="102" Count="0" />
       <LineId Id="2" Count="0" />
       <LineId Id="46" Count="0" />
