@@ -61,6 +61,7 @@ END_VAR]]></Declaration>
 			SendLoggedEvent();
 			eWriteState := FILE_CLOSE_TRIGGER;
 		END_IF
+		
 	FILE_CLOSE_TRIGGER:
 		fbFileClose(bExecute := TRUE, hFile := fbFileOpen.hFile);
 		eWriteState := FILE_CLOSE;
@@ -78,6 +79,7 @@ END_VAR]]></Declaration>
         fbFileOpen(bExecute := FALSE);
         fbFilePuts(bExecute := FALSE);
 		eWriteState := FILE_OPEN_TRIGGER;
+		
 	ERROR:
 	//Do Nothing
 END_CASE]]></ST>
@@ -219,7 +221,11 @@ END_IF]]></ST>
       </Implementation>
     </Method>
     <LineIds Name="FB_EventLogger">
-      <LineId Id="35" Count="51" />
+      <LineId Id="35" Count="32" />
+      <LineId Id="112" Count="0" />
+      <LineId Id="68" Count="16" />
+      <LineId Id="113" Count="0" />
+      <LineId Id="85" Count="1" />
       <LineId Id="9" Count="0" />
     </LineIds>
     <LineIds Name="FB_EventLogger.AddEventToBuffer">
