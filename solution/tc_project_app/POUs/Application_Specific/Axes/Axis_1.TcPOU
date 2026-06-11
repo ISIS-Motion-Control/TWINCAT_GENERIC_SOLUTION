@@ -9,7 +9,7 @@ VAR
 //Hardware interlocks
     //bInterlockFwdOK AT %I*: BOOL;
 	
-	iAxisNumber : INT := E_AxisNames.Axis_1;
+	iAxisNumber : INT := 1;
 	iGroupNumber : INT := 1;
 END_VAR
 ]]></Declaration>

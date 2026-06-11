@@ -10,7 +10,7 @@ VAR
     //bInterlockFwdOK AT %I*: BOOL;
 	
 //Set which number axis this is from the enum	
-	//iAxisNumber : INT := E_AxisNames.NONE;
+	//iAxisNumber : INT := 1;
 //Set which group this axis belongs to
 	//iGroupNumber : INT := 1;
 END_VAR

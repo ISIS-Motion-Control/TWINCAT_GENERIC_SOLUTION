@@ -19,9 +19,6 @@
     <GenerateTpy>false</GenerateTpy>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="DUTs\E_AxisNames.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="GlobalTextList.TcGTLO">
       <SubType>Code</SubType>
     </Compile>
