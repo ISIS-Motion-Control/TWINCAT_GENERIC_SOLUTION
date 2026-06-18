@@ -9,6 +9,7 @@ VAR_GLOBAL CONSTANT
     nAXIS_NUM: UINT := 1;
 	nAXIS_GROUPS_NUM: INT := 1;
     nPNEUMATIC_AXIS_NUM: UINT := 0;
+	nSAFETY_NUM: UINT := 1;
 END_VAR
 ]]></Declaration>
   </GVL>

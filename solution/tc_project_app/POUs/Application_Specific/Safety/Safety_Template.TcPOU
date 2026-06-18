@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="Safety_Template" Id="{3c734c42-54fb-4db2-a966-7fb15fcc6c35}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Safety_Template
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//Define parameters of safety device
+(*IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
+	astSafety[1].stSafetyDescription.sSafetyName := 'Light Curtain 1';
+	astSafety[1].stSafetyDescription.sLocation := 'Up stream';
+	astSafety[1].stSafetyDescription.eSafetyType := E_SafetyType.eSingleChannel;
+END_IF*)]]></ST>
+    </Implementation>
+    <LineIds Name="Safety_Template">
+      <LineId Id="8" Count="0" />
+      <LineId Id="6" Count="1" />
+      <LineId Id="11" Count="1" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

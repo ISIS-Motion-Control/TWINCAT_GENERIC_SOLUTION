@@ -8,10 +8,12 @@
     nVersionMinor: UINT := 2; // Minor Version
     nVersionPatch: UINT := 0; // Patch level
     astAxes: ARRAY [1..GVL_APP.nAXIS_NUM] OF ST_AxisStruct; //Array of ST_AxisStruct for holding axis parameters and controls
+	astSafety: ARRAY [1..GVL_APP.nSAFETY_NUM] OF ST_SafetyStruct; //Array of ST_SafetyStruct for holding safety device parameters and controls
     astPneumaticAxes: ARRAY [1..GVL_APP.nPNEUMATIC_AXIS_NUM] OF ST_PneumaticAxisStruct; //Array of ST_PneumaticAxisStruct for holding pneumatic axis parameters and controls
     iAxis: UINT; //Index for for loops while going through axes
-	iGroup: INT;
-    iPneumaticAxis: UINT := 1; //Index for for loops while going through pneumatic axes
+	iSafety: UINT; //Index for loops while going through safety devices
+    iGroup: INT;
+	iPneumaticAxis: UINT := 1; //Index for for loops while going through pneumatic axes
     fbGetCurTaskIndex: GETCURTASKINDEX;
     bLocalMode: BOOL;
 	astAxesPersistent: ARRAY [1..GVL_APP.nAXIS_NUM] OF ST_AxisPersistent;
@@ -22,7 +24,8 @@ END_VAR
 VAR_GLOBAL CONSTANT
     nMAX_AXIS_NAME: UINT := 32;
     nMAX_AXIS_GROUP_NAME: UINT := 32;
-	nMAX_AXES_PER_GROUP: INT := 9;
+	nMAX_AXES_PER_GROUP: INT := 9;	nMAX_SAFETY_NAME: UINT := 32;
+	nMAX_LOCATION_NAME: UINT := 32;
 END_VAR
 
 ]]></Declaration>

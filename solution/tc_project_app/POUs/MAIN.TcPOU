@@ -6,6 +6,8 @@ VAR
     sVersion: STRING := '1.0.0';
     aIAxes: ARRAY [1..GVL_APP.nAXIS_NUM] OF I_Axis;
     afbAxes: ARRAY [1..GVL_APP.nAXIS_NUM] OF FB_Axis;
+	aISafety: ARRAY [1..GVL_APP.nSAFETY_NUM] OF I_Safety;
+	afbSafety: ARRAY [1..GVL_APP.nSAFETY_NUM] OF FB_Safety;
     afbPneumaticAxes: ARRAY [1..GVL_APP.nPNEUMATIC_AXIS_NUM] OF FB_PneumaticAxis;
     hmiAxisSelection: INT := 1; //Not possible to use local hmi variables for array indexes
     hmiPneumaticAxisSelection: INT := 1;
@@ -25,10 +27,10 @@ VAR
     afbReadPositionBias: ARRAY [1..GVL_APP.nAXIS_NUM] OF MC_ReadParameter;
     afbWritePositionBias: ARRAY [1..GVL_APP.nAXIS_NUM] OF MC_WriteParameter;
     fbGetDeviceIdentification: FB_GetDeviceIdentificationEx;
-		
-	
 
-	
+
+
+
 END_VAR
 
 VAR PERSISTENT
@@ -39,13 +41,13 @@ END_VAR
       <ST><![CDATA[//POSITION_RECOVERY();
 RESTORE_POSITIONS();
 
-IF astAxes[1].stStatus.fActPosition>250 THEN
+IF astAxes[1].stStatus.fActPosition>100 THEN
 	astAxes[1].stInputs.bLimitFwd := FALSE;
 ELSE
 	astAxes[1].stInputs.bLimitFwd := TRUE;
 END_IF
 
-IF astAxes[1].stStatus.fActPosition<-250 THEN
+IF astAxes[1].stStatus.fActPosition<-100 THEN
 	astAxes[1].stInputs.bLimitBwd := FALSE;
 ELSE
 	astAxes[1].stInputs.bLimitBwd := TRUE;
@@ -59,6 +61,7 @@ END_IF
 
 PROG();
 AXES();
+SAFETY();
 
 
 
@@ -138,13 +141,16 @@ GVL.fbGetCurTaskIndex();
 //Create as many programs in that folder as axes and applications you have or need
 
 //Axes initial parameters and program
-//Axis_Template();
+Axis_Template();
 Axis_1();
 Group_1();
 //Pneumatics_Template();
 
 //Application program calls
-//Application_Template();]]></ST>
+//Application_Template();
+
+//Safety initial parameters and program
+Safety_Template();]]></ST>
       </Implementation>
     </Action>
     <Action Name="RESTORE_POSITIONS" Id="{0c7ee537-7bd9-4833-b428-c17cbb57e893}" FolderPath="POSITION_RECOVERY\">
@@ -249,7 +255,7 @@ IF bRestoreExecute AND NOT bPositionRestoreDone THEN
 					ELSIF NOT astAxesPersistent[iAxes].bMovingAtShutdown THEN
                        afbSetPosition[iAxes].Execute := TRUE;
                     //Restore encoder position BIAS for absolute encoders
-                    
+
                     END_IF
                 ELSE
                     RETURN;
@@ -269,7 +275,7 @@ IF bRestoreExecute AND NOT bPositionRestoreDone THEN
 			END_IF
             eStartUp:= eFinishRestore;
 			FOR iAxes := 1 TO GVL_APP.nAXIS_NUM DO
-				
+
                 IF GVL.astAxes[iAxes].stConfig.eRestorePosition = E_RestorePosition.eRestoreWithoutHome THEN
                     IF afbReadEncRefSys[iAxes].Value = 1 OR
                      afbReadEncRefSys[iAxes].Value = 3 OR
@@ -279,17 +285,17 @@ IF bRestoreExecute AND NOT bPositionRestoreDone THEN
                             eStartUp := eExecuteRestore;
                             RETURN;
                         END_IF
-					ELSIF NOT astAxesPersistent[iAxes].bMovingAtShutdown THEN 
+					ELSIF NOT astAxesPersistent[iAxes].bMovingAtShutdown THEN
                         IF NOT afbSetPosition[iAxes].Done THEN
                             afbSetPosition[iAxes].Execute := FALSE;
                             eStartUp := eExecuteRestore;
                             RETURN;
                         END_IF
-                     
+
                     END_IF
                 END_IF
             END_FOR
-            
+
 
         eFinishRestore:
             //Remove execute = TRUE for afbRestorePosition and fbWritePositionBias
@@ -301,6 +307,28 @@ IF bRestoreExecute AND NOT bPositionRestoreDone THEN
             END_FOR
     END_CASE
 END_IF
+]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="SAFETY" Id="{54c1d7d9-4cc5-4099-8c99-7400b13aa18b}">
+      <Implementation>
+        <ST><![CDATA[//First cycle, assign FB_axis to interface array
+IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
+    FOR GVL.iSafety := 1 TO GVL_APP.nSAFETY_NUM DO
+		afbSafety[GVL.iSafety].stSafety REF= astSafety[GVL.iSafety];
+        aISafety[GVL.iSafety] := afbSafety[GVL.iSafety];
+    END_FOR
+    //Custom safety types defined and linked to aiSafety here
+      //FB_CustomSafety extends FB_Safety
+        //aISafety[x] := fbCustomSafety;
+
+END_IF
+
+//Execute FB_Safety logic if there is any
+FOR GVL.iSafety := 1 TO GVL_APP.nSAFETY_NUM DO
+    aISafety[GVL.iSafety].Run();
+END_FOR
+
 ]]></ST>
       </Implementation>
     </Action>
@@ -338,13 +366,16 @@ END_FOR
       <LineId Id="110" Count="0" />
       <LineId Id="104" Count="1" />
       <LineId Id="4" Count="1" />
+      <LineId Id="192" Count="0" />
       <LineId Id="102" Count="0" />
       <LineId Id="2" Count="0" />
       <LineId Id="46" Count="0" />
       <LineId Id="50" Count="0" />
     </LineIds>
     <LineIds Name="MAIN.AXES">
-      <LineId Id="2" Count="20" />
+      <LineId Id="2" Count="7" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="11" Count="11" />
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="MAIN.CHECK_UPS">
@@ -359,6 +390,9 @@ END_FOR
       <LineId Id="2" Count="7" />
       <LineId Id="15" Count="1" />
       <LineId Id="10" Count="3" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="16" Count="0" />
     </LineIds>
     <LineIds Name="MAIN.RESTORE_POSITIONS">
       <LineId Id="2" Count="16" />
@@ -385,6 +419,17 @@ END_FOR
       <LineId Id="119" Count="5" />
       <LineId Id="132" Count="1" />
       <LineId Id="136" Count="13" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="MAIN.SAFETY">
+      <LineId Id="2" Count="2" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="27" Count="1" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="11" Count="6" />
+      <LineId Id="22" Count="0" />
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="MAIN.STORE_PERSISTENT">
