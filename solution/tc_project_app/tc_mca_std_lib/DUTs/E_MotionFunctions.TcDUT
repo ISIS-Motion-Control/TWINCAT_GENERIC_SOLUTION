@@ -13,7 +13,8 @@ TYPE E_MotionFunctions :
 
     eHome := 10, //Run the homing routine for the axis
     eWriteParameter := 50, //Writes the set value to the set parameter once bExecute goes high
-    eReadParameter := 60 //Reads a single Parameter
+    eReadParameter := 60, //Reads a single Parameter
+	eWriteToggleSWLimits := 70
 ) := eHome; //Home is the default behaviour of the axis.
 END_TYPE
 

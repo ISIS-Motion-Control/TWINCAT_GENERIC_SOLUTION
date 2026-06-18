@@ -14,6 +14,7 @@ STRUCT
 
     //Read and Write parameters
     eAxisParameters: E_AxisParameters; //Enumeration of axis parameters
+	fWriteAxisBoolParameter: BOOL; //The Bool value to be writen to eAxisParameterNumber
     fWriteAxisParameter: LREAL; //The value to be writen to eAxisParameterNumber
     fReadAxisParameter: LREAL; //Read the current value of the selected eAxisParameterNumber
 
