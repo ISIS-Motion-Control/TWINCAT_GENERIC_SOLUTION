@@ -99,6 +99,7 @@ VAR
 	bSpgDisableReq : BOOL;
 	spgDisableCommand : BOOL;
 
+	iNameCharacterIndex : int;
 END_VAR
 VAR CONSTANT
     nRATIO_DENOMINATOR_DEFAULT: UINT := 1;
@@ -1085,6 +1086,26 @@ END_IF
 ]]></ST>
       </Implementation>
     </Method>
+    <Method Name="mStatus_Name" Id="{6ae39dde-2265-4ec3-ac0a-27f0cb268fe4}" FolderPath="Status Methods\">
+      <Declaration><![CDATA[METHOD mStatus_Name : BOOL
+VAR
+	eAxisNames : E_AxisNames;
+	sAxisName : STRING;
+	sSpace : STRING := ' ';
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[eAxisNames := TO_INT(GVL.iAxis);
+sAxisName := TO_STRING(eAxisNames);
+FOR iNameCharacterIndex := 0 TO LEN(sAxisName) DO
+	IF  F_ToCHR(sAxisName[iNameCharacterIndex]) = '_' THEN
+		sAxisName[iNameCharacterIndex] := sSpace[0];
+	END_IF
+END_FOR
+_stAxis.stDescription.sAxisName := sAxisName;
+]]></ST>
+      </Implementation>
+    </Method>
     <Method Name="mStatus_NewCommand" Id="{6ed1ba41-9399-4e86-b361-f208438f212a}" FolderPath="Status Methods\">
       <Declaration><![CDATA[METHOD mStatus_NewCommand : BOOL
 VAR
@@ -1152,6 +1173,10 @@ mStatus_Error();
 mStatus_InVelocity();
 mStatus_CommandAborted();
 _stAxis.stStatus.bBusy := mStatus_Busy();
+
+IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
+	mStatus_Name();
+END_IF
 
 
 EndOfCycle();
@@ -1428,6 +1453,10 @@ END_VAR
       <LineId Id="3" Count="12" />
       <LineId Id="2" Count="0" />
     </LineIds>
+    <LineIds Name="FB_Axis.mStatus_Name">
+      <LineId Id="12" Count="7" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
     <LineIds Name="FB_Axis.mStatus_NewCommand">
       <LineId Id="3" Count="11" />
       <LineId Id="28" Count="0" />
@@ -1445,6 +1474,8 @@ END_VAR
       <LineId Id="17" Count="4" />
       <LineId Id="25" Count="8" />
       <LineId Id="38" Count="0" />
+      <LineId Id="47" Count="2" />
+      <LineId Id="46" Count="0" />
       <LineId Id="34" Count="1" />
       <LineId Id="2" Count="0" />
     </LineIds>
