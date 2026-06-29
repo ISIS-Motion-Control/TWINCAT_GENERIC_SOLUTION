@@ -1523,6 +1523,8 @@ END_VAR
       <LineId Id="46" Count="0" />
       <LineId Id="51" Count="2" />
       <LineId Id="38" Count="0" />
+      <LineId Id="47" Count="2" />
+      <LineId Id="46" Count="0" />
       <LineId Id="34" Count="1" />
       <LineId Id="2" Count="0" />
     </LineIds>
