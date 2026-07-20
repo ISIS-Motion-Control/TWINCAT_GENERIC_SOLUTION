@@ -6,7 +6,7 @@
     <ProjectGuid>{fb261665-fd20-4bf2-97f8-2854c82b752d}</ProjectGuid>
     <SubObjectsSortedByName>True</SubObjectsSortedByName>
     <Name>tc_project_app</Name>
-    <ProgramVersion>3.1.4023.0</ProgramVersion>
+    <ProgramVersion>3.1.4026.24</ProgramVersion>
     <Application>{047dee04-c246-47b2-8ccc-a15e36987c43}</Application>
     <TypeSystem>{ae4eb5ee-6030-47a6-bf35-5a6afd9efeeb}</TypeSystem>
     <Implicit_Task_Info>{5ef19bd0-aca2-493f-b2a1-89e363647697}</Implicit_Task_Info>
@@ -360,35 +360,14 @@
     <PlaceholderResolution Include="CmpApp">
       <Resolution>CmpApp, * (System)</Resolution>
     </PlaceholderResolution>
-    <PlaceholderResolution Include="CmpBitmapPool">
-      <Resolution>CmpBitmapPool, * (System)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="CmpDynamicText">
-      <Resolution>CmpDynamicText, * (System)</Resolution>
-    </PlaceholderResolution>
     <PlaceholderResolution Include="CmpEventMgr">
       <Resolution>CmpEventMgr, * (System)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="CmpLog">
-      <Resolution>CmpLog, * (System)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="CmpSchedule">
       <Resolution>CmpSchedule, * (System)</Resolution>
     </PlaceholderResolution>
-    <PlaceholderResolution Include="CmpTargetVisu">
-      <Resolution>CmpTargetVisu, * (System)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="CmpVisuHandler">
-      <Resolution>CmpVisuHandler, * (System)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="Collections">
-      <Resolution>Collections, * (System)</Resolution>
-    </PlaceholderResolution>
     <PlaceholderResolution Include="Component Manager">
       <Resolution>Component Manager, * (System)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="FloatingPointUtils">
-      <Resolution>FloatingPointUtils, * (System)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Standard">
       <Resolution>Tc2_Standard, * (Beckhoff Automation GmbH)</Resolution>
@@ -410,15 +389,6 @@
     </PlaceholderResolution>
     <PlaceholderResolution Include="SysMem">
       <Resolution>SysMem, * (System)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="SysProcess">
-      <Resolution>SysProcess, * (System)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="SysShm">
-      <Resolution>SysShm, * (System)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="SysTarget">
-      <Resolution>SysTarget, * (System)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="System_VisuElemBase">
       <Resolution>VisuElemBase, * (System)</Resolution>
@@ -459,23 +429,11 @@
     <PlaceholderResolution Include="SysTimeRtc">
       <Resolution>SysTimeRtc, * (System)</Resolution>
     </PlaceholderResolution>
-    <PlaceholderResolution Include="Tc2_Drive">
-      <Resolution>Tc2_Drive, * (Beckhoff Automation GmbH)</Resolution>
-    </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_EtherCAT">
       <Resolution>Tc2_EtherCAT, * (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
-    <PlaceholderResolution Include="Tc2_IoFunctions">
-      <Resolution>Tc2_IoFunctions, * (Beckhoff Automation GmbH)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="Tc2_Math">
-      <Resolution>Tc2_Math, * (Beckhoff Automation GmbH)</Resolution>
-    </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_MC2">
-      <Resolution>Tc2_MC2, 3.3.48.0 (Beckhoff Automation GmbH)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="Tc2_MC2_Drive">
-      <Resolution>Tc2_MC2_Drive, 3.3.26.0 (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc2_MC2, * (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_Standard">
       <Resolution>Tc2_Standard, * (Beckhoff Automation GmbH)</Resolution>
@@ -490,13 +448,10 @@
       <Resolution>Tc2_Utilities, * (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc3_MC2_AdvancedHoming">
-      <Resolution>Tc3_MC2_AdvancedHoming, 3.0.15.0 (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc3_MC2_AdvancedHoming, * (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc3_Module">
       <Resolution>Tc3_Module, * (Beckhoff Automation GmbH)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="Util">
-      <Resolution>Util, * (System)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="VisuDialogs">
       <Resolution>VisuDialogs, * (System)</Resolution>
