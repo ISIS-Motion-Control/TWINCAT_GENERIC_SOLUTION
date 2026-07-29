@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <DUT Name="ST_DeviceDualChannelInput" Id="{cc03fe1e-d454-4ce1-a498-053b340fcb9d}">
+    <Declaration><![CDATA[TYPE ST_DeviceDualChannelInput :
+STRUCT
+	//monitored device
+	stSafetyDescription : ST_SafetyDescription;
+	Ch1 AT %I* : BIT;
+	Ch2 AT %I* : BIT;
+	inError AT %I* : BOOL;
+	Output AT %I* : BOOL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

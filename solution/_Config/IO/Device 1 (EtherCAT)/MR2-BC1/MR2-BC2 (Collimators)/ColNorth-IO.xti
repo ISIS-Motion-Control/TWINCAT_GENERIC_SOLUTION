@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.24" ClassName="CFlbTermDef" SubType="9099">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-002000000005}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..4] OF BIT</Name>
+			<BitSize>5</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>5</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-002000000001}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..0] OF BIT</Name>
+			<BitSize>1</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>1</Elements>
+			</ArrayInfo>
+		</DataType>
+	</DataTypes>
+	<ImageDatas>
+		<ImageData Id="1000">424de6000000000000007600000028000000100000000e000000010004000000000070000000c30e0000c30e000010000000100000000000ff00ff00ff00ff000000ffff000000ff000000ffff0000008000800080008000000080800000008000000080800080808000c0c0c000ffffff00000000001111111111111111fffffffffffffffffcfcfcfcfffff44ff4f4f4f4fffff44ffffffffffffffffffffffffffffffffffcfcfcfcfffff44ff4f4f4f4fffff44fffffffffffffffff55555511111111115555551111111111555555111111111155555511111111115555551111111111</ImageData>
+	</ImageDatas>
+	<Box Id="76" BoxType="9099" BoxFlags="#x00000020">
+		<Name>__FILENAME__</Name>
+		<ImageId>1000</ImageId>
+		<EtherCAT SlaveType="2" PdiType="#x0605" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="35" FoeType="1" VendorId="#x00000002" ProductCode="#x07184052" RevisionNo="#x00100003" InfoDataAddr="true" TimeoutMailbox2="2000" PortPhys="17" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EP1816-0003 16 Ch. Dig. Input 24V, 10µs, 10-Pole Plug Connector" Desc="EP1816-0003">
+			<SyncMan>001080002600010001000000800000018000001026010000</SyncMan>
+			<SyncMan>001180002200010002000000800000018000001122010000</SyncMan>
+			<SyncMan>001200000400000003000000000000000000001204000000</SyncMan>
+			<SyncMan>001904002000010004000000000000000400001920010000</SyncMan>
+			<Fmmu>0000000000000000001900010100000002000000000000000000000000000000</Fmmu>
+			<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
+			<BootStrapData>0010f400f410f400</BootStrapData>
+			<SuTask>#x02010040</SuTask>
+			<DcMode>53796e6368726f6e0000000000000000534d2d53796e6368726f6e000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</DcMode>
+			<DcMode>4443000000000000000000000000000044432d53796e6368726f6e0000000000000000000000000000000000000000000000000000000000409c0000000000070100000000000000000000000000000000000000000000000000000000000000</DcMode>
+			<DcMode>4443494e00000000000000000000000044432d53796e6368726f6e2028696e70757420626173656429000000000000000000000000000000409c0000000000070100000000000000000001000000000000000000000000000000000000000000</DcMode>
+			<Pdo Name="DIG Inputs Channel 1" Index="#x1a00" Flags="#x0011" SyncMan="3">
+				<Entry Name="Input 1" Index="#x6000" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Input 2" Index="#x6000" Sub="#x02">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Input 3" Index="#x6000" Sub="#x03">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Input 4" Index="#x6000" Sub="#x04">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Input 5" Index="#x6000" Sub="#x05">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Input 6" Index="#x6000" Sub="#x06">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Input 7" Index="#x6000" Sub="#x07">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Input 8" Index="#x6000" Sub="#x08">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry>
+					<Type GUID="{18071995-0000-0000-0000-002000000005}">ARRAY [0..4] OF BIT</Type>
+				</Entry>
+				<Entry Name="Sync error" Index="#x6000" Sub="#x0e">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry>
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="TxPDO Toggle" Index="#x6000" Sub="#x10">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="DIG Inputs Channel 2" Index="#x1a01" Flags="#x0011" SyncMan="3">
+				<Entry Name="Input 1" Index="#x6010" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Input 2" Index="#x6010" Sub="#x02">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Input 3" Index="#x6010" Sub="#x03">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Input 4" Index="#x6010" Sub="#x04">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Input 5" Index="#x6010" Sub="#x05">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Input 6" Index="#x6010" Sub="#x06">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Input 7" Index="#x6010" Sub="#x07">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Input 8" Index="#x6010" Sub="#x08">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry>
+					<Type GUID="{18071995-0000-0000-0000-002000000005}">ARRAY [0..4] OF BIT</Type>
+				</Entry>
+				<Entry Name="Sync error" Index="#x6010" Sub="#x0e">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry>
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="TxPDO Toggle" Index="#x6010" Sub="#x10">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+			<CoeProfile ProfileNo="18355081"/>
+			<CoeProfile ProfileNo="18355081"/>
+		</EtherCAT>
+	</Box>
+</TcSmItem>

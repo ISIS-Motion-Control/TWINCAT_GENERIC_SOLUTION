@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <DUT Name="ST_SafetyTargetDevice" Id="{172ecd97-0f83-453c-97f0-d35e341dbc38}">
+    <Declaration><![CDATA[TYPE ST_SafetyTargetDevice :
+STRUCT
+	ProjectName : STRING;
+	Device : STRING;
+	SERIAL AT %I* : UDINT;
+	CRC AT %I*: WORD;
+	RUN AT %Q* : BOOL;
+	Global_RUN : BOOL:= TRUE;
+	ERROR_ACK AT %Q* : BOOL;
+	Global_ERROR_ACK : BOOL:= TRUE;
+	aSafetyGroups : ARRAY [1..10] OF ST_SafetyGroup;
+	
+	
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

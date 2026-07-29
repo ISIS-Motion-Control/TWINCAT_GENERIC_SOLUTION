@@ -983,7 +983,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{FB261665-FD20-4BF2-97F8-2854C82B752D}" Name="tc_project_app" PrjFilePath="..\..\tc_project_app\tc_project_app.plcproj" TmcFilePath="..\..\tc_project_app\tc_project_app.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{ED913470-0472-F5D2-250B-515DFF58398E}" TmcPath="tc_project_app\tc_project_app.tmc">
+		<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{A57F80F9-929B-DADC-A05F-3A3A003DBED6}" TmcPath="tc_project_app\tc_project_app.tmc">
 			<Name>tc_project_app Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="8" AreaNo="4">
@@ -1006,16 +1006,2283 @@ External Setpoint Generation:
 					<Type>BOOL</Type>
 					<InOut>7</InOut>
 				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[2].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[2].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[2].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[3].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[3].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[3].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[4].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[4].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[4].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[5].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[5].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[5].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[6].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[6].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[6].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[7].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[7].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[7].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[8].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[8].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[8].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[9].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[9].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[9].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[10].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[10].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[10].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[11].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[11].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[11].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[12].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[12].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[12].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[13].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[13].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[13].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[14].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[14].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[14].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[15].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[15].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[15].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[16].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[16].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[16].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[17].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[17].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[17].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[18].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[18].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[18].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[19].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[19].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[19].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[20].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[20].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[20].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[21].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[21].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[21].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[22].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[22].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[22].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[23].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[23].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[23].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[24].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[24].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[24].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[25].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[25].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[25].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[26].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[26].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[26].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[27].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[27].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[27].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[28].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[28].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[28].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[29].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[29].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[29].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[30].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[30].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[30].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[31].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[31].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[31].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[32].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[32].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[32].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[33].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[33].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[33].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[34].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[34].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[34].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[35].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[35].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[35].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[36].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[36].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[36].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[37].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[37].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[37].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[38].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[38].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[38].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[39].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[39].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[39].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[40].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[40].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[40].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[41].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[41].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[41].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[42].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[42].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[42].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[43].fPositionAtShutdown</Name>
+					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[43].fEncoderBiasAtShutdown</Name>
+					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
+					<Type>LREAL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>GVL.astAxesPersistent[43].bMovingAtShutdown</Name>
+					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="2" AreaNo="1">
 				<Name>PlcTask Outputs</Name>
 				<Var>
+					<Name>MAIN.RUN</Name>
+					<Comment><![CDATA[TEMP]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>MAIN.ErrAck</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].RUN</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].ERROR_ACK</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].RUN</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].ERROR_ACK</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].RUN</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].ERROR_ACK</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].RUN</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].ERROR_ACK</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].RUN</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].ERROR_ACK</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].RUN</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].ERROR_ACK</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].RUN</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].ERROR_ACK</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.RUN</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.ERRACK</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.Mute_AccessPoints</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.Mute_PendantEnable</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.Reset_Pendant</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.Mute_SLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB1.Reset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB2.Reset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB3.Reset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB4.Reset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB5.Reset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB6.Reset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB7.Reset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB8.Reset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB9.Reset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB10.Reset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB11.Reset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB12.Reset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB13.Reset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL.astAxes[1].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[2].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[3].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[4].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[5].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[6].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[7].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[8].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[9].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[10].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[11].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[12].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[13].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[14].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[15].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[16].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[17].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[18].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[19].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[20].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[21].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[22].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[23].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[24].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[25].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[26].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[27].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[28].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[29].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[30].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[31].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[32].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[33].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[34].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[35].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[36].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[37].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[38].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[39].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[40].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[41].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[42].Axis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[43].Axis.PlcToNc</Name>
 					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="1">
 				<Name>PlcTask Inputs</Name>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].SERIAL</Name>
+					<Type>UDINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].CRC</Name>
+					<Type>WORD</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[1].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[1].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[2].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[2].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[3].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[3].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[4].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[4].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[5].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[5].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[6].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[6].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[7].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[7].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[8].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[8].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[9].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[9].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[10].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[10].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].SERIAL</Name>
+					<Type>UDINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].CRC</Name>
+					<Type>WORD</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[1].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[1].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[2].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[2].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[3].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[3].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[4].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[4].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[5].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[5].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[6].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[6].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[7].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[7].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[8].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[8].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[9].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[9].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[10].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[10].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].SERIAL</Name>
+					<Type>UDINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].CRC</Name>
+					<Type>WORD</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[1].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[1].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[2].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[2].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[3].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[3].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[4].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[4].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[5].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[5].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[6].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[6].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[7].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[7].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[8].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[8].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[9].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[9].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[10].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[10].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].SERIAL</Name>
+					<Type>UDINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].CRC</Name>
+					<Type>WORD</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[1].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[1].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[2].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[2].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[3].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[3].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[4].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[4].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[5].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[5].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[6].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[6].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[7].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[7].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[8].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[8].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[9].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[9].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[10].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[10].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].SERIAL</Name>
+					<Type>UDINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].CRC</Name>
+					<Type>WORD</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[1].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[1].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[2].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[2].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[3].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[3].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[4].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[4].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[5].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[5].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[6].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[6].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[7].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[7].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[8].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[8].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[9].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[9].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[10].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[10].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].SERIAL</Name>
+					<Type>UDINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].CRC</Name>
+					<Type>WORD</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[1].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[1].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[2].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[2].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[3].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[3].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[4].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[4].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[5].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[5].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[6].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[6].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[7].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[7].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[8].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[8].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[9].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[9].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[10].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[10].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].SERIAL</Name>
+					<Type>UDINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].CRC</Name>
+					<Type>WORD</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[1].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[1].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[2].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[2].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[3].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[3].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[4].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[4].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[5].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[5].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[6].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[6].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[7].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[7].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[8].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[8].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[9].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[9].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[10].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[10].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.PendantEnable.Ch1</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.PendantEnable.Ch2</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.PendantEnable.inError</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.PendantEnable.Output</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SearchAndLock.Ch1</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SearchAndLock.Ch2</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SearchAndLock.inError</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SearchAndLock.Output</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.Hmi_Maintenance.Ch1</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.Hmi_Maintenance.Ch2</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.Hmi_Maintenance.inError</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.Hmi_Maintenance.Output</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.Q1Q2</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.Q3Q4</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SPB1</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SPB2</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.HmiRb</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.HmiLocal</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.HmiNormal</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.Q1</Name>
+					<Comment><![CDATA[out]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.Q2</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.Q3</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.Q4</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SB1</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SB2</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MSS1_1</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MSS1_2</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MSS2_1</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MSS2_2</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MSS3_1</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MSS3_2</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.RCU</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.HmiRbLight</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.HmiTripped</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.HmiMaintenance</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.EstopsHealthy</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.inMode_Maintenance</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.inMode_Local</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MOTION_PERMIT</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.NON_SAMPLE_MOTION_PERMIT</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.EDMErr_NonSampleArea</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.EDMErr_SampleArea</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.HMI_ErrorAckButton</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.inMode_Normal</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.inMode_SearchedAndLocked</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SampleAreaSearched_Downstream</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SampleAreaSearched_Upstream</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.AccessPointCrossed</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.AccessPointsMuted</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.PendantMuted</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.PendantResetReq</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SLS_Muted</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.STOP_ALL_MOTION</Name>
+					<Comment><![CDATA[signal from the sto control to send a stop command]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB1.Status</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB2.Status</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB3.Status</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB4.Status</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB5.Status</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB6.Status</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB7.Status</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB8.Status</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB9.Status</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB10.Status</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB11.Status</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB12.Status</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB13.Status</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MS1.Ch1</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MS1.Ch2</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MS1.inError</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MS1.Output</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MS2.Ch1</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MS2.Ch2</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MS2.inError</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MS2.Output</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MS3.Ch1</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MS3.Ch2</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MS3.inError</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MS3.Output</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MS4.Ch1</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MS4.Ch2</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MS4.inError</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MS4.Output</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MS5.Ch1</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MS5.Ch2</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MS5.inError</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MS5.Output</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MS6.Ch1</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MS6.Ch2</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MS6.inError</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MS6.Output</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MS7.Ch1</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MS7.Ch2</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MS7.inError</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MS7.Output</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.LC1.Ch1</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.LC1.Ch2</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.LC1.inError</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.LC1.Output</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.LC2.Ch1</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.LC2.Ch2</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.LC2.inError</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.LC2.Output</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.LC3.Ch1</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.LC3.Ch2</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.LC3.inError</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.LC3.Output</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.GS1.Ch1</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.GS1.Ch2</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.GS1.inError</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.GS1.Output</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[1].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
 				<Var>
 					<Name>GVL.astAxes[1].stInputs.bLimitFwd</Name>
 					<Type>BOOL</Type>
@@ -1031,6 +3298,888 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>GVL.astAxes[1].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[2].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[2].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[2].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[2].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[2].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[3].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[3].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[3].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[3].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[3].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[4].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[4].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[4].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[4].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[4].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[5].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[5].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[5].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[5].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[5].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[6].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[6].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[6].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[6].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[6].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[7].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[7].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[7].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[7].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[7].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[8].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[8].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[8].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[8].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[8].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[9].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[9].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[9].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[9].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[9].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[10].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[10].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[10].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[10].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[10].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[11].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[11].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[11].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[11].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[11].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[12].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[12].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[12].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[12].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[12].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[13].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[13].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[13].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[13].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[13].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[14].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[14].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[14].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[14].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[14].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[15].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[15].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[15].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[15].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[15].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[16].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[16].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[16].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[16].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[16].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[17].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[17].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[17].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[17].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[17].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[18].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[18].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[18].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[18].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[18].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[19].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[19].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[19].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[19].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[19].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[20].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[20].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[20].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[20].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[20].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[21].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[21].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[21].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[21].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[21].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[22].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[22].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[22].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[22].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[22].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[23].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[23].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[23].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[23].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[23].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[24].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[24].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[24].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[24].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[24].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[25].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[25].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[25].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[25].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[25].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[26].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[26].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[26].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[26].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[26].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[27].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[27].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[27].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[27].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[27].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[28].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[28].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[28].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[28].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[28].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[29].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[29].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[29].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[29].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[29].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[30].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[30].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[30].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[30].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[30].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[31].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[31].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[31].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[31].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[31].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[32].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[32].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[32].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[32].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[32].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[33].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[33].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[33].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[33].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[33].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[34].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[34].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[34].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[34].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[34].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[35].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[35].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[35].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[35].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[35].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[36].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[36].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[36].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[36].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[36].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[37].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[37].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[37].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[37].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[37].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[38].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[38].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[38].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[38].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[38].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[39].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[39].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[39].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[39].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[39].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[40].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[40].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[40].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[40].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[40].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[41].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[41].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[41].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[41].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[41].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[42].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[42].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[42].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[42].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[42].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[43].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[43].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[43].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[43].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[43].Axis.NcToPlc</Name>
 					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 				</Var>
 			</Vars>
@@ -1061,6 +4210,273 @@ External Setpoint Generation:
 	</Project>
 	<Mappings>
 		<OwnerA Name="tc_project_app Instance">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-BC2 (Collimators)^ColNorthX">
+				<Link VarA="PlcTask Inputs^GVL.astAxes[18].stInputs.bLimitBwd" VarB="DI Inputs^Input 2" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[18].stInputs.bLimitFwd" VarB="DI Inputs^Input 1" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[4].CRC" VarB="Module 1 (SAFETY)^SAFETY Device Info Data^Project CRC"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[4].SERIAL" VarB="Module 1 (SAFETY)^SAFETY Device Info Data^Serial Number"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[4].aSafetyGroups[1].DIAG" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Input Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[4].aSafetyGroups[1].STATE" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Input Info Data^State"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[4].aSafetyGroups[2].DIAG" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_STO_SS1_ErrorHandling Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[4].aSafetyGroups[2].STATE" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_STO_SS1_ErrorHandling Info Data^State"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[4].aSafetyGroups[3].DIAG" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Output Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[4].aSafetyGroups[3].STATE" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Output Info Data^State"/>
+				<Link VarA="PlcTask Outputs^SAFETY.ERRACK" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^Standard In Var 3" Size="1"/>
+				<Link VarA="PlcTask Outputs^SAFETY.RUN" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^Standard In Var 2" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-BC2 (Collimators)^ColNorthY">
+				<Link VarA="PlcTask Inputs^GVL.astAxes[19].stInputs.bLimitBwd" VarB="DI Inputs^Input 1" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[19].stInputs.bLimitFwd" VarB="DI Inputs^Input 2" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[5].CRC" VarB="Module 1 (SAFETY)^SAFETY Device Info Data^Project CRC"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[5].SERIAL" VarB="Module 1 (SAFETY)^SAFETY Device Info Data^Serial Number"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[5].aSafetyGroups[1].DIAG" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Input Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[5].aSafetyGroups[1].STATE" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Input Info Data^State"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[5].aSafetyGroups[2].DIAG" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_STO_SS1_ErrorHandling Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[5].aSafetyGroups[2].STATE" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_STO_SS1_ErrorHandling Info Data^State"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[5].aSafetyGroups[3].DIAG" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Output Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[5].aSafetyGroups[3].STATE" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Output Info Data^State"/>
+				<Link VarA="PlcTask Outputs^SAFETY.ERRACK" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^Standard In Var 3" Size="1"/>
+				<Link VarA="PlcTask Outputs^SAFETY.RUN" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^Standard In Var 2" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-BC2 (Collimators)^ColSouthX">
+				<Link VarA="PlcTask Inputs^GVL.astAxes[20].stInputs.bLimitBwd" VarB="DI Inputs^Input 1" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[20].stInputs.bLimitFwd" VarB="DI Inputs^Input 2" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[6].CRC" VarB="Module 1 (SAFETY)^SAFETY Device Info Data^Project CRC"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[6].SERIAL" VarB="Module 1 (SAFETY)^SAFETY Device Info Data^Serial Number"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[6].aSafetyGroups[1].DIAG" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Input Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[6].aSafetyGroups[1].STATE" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Input Info Data^State"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[6].aSafetyGroups[2].DIAG" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_STO_SS1_ErrorHandling Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[6].aSafetyGroups[2].STATE" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_STO_SS1_ErrorHandling Info Data^State"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[6].aSafetyGroups[3].DIAG" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Output Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[6].aSafetyGroups[3].STATE" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Output Info Data^State"/>
+				<Link VarA="PlcTask Outputs^SAFETY.ERRACK" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^Standard In Var 3" Size="1"/>
+				<Link VarA="PlcTask Outputs^SAFETY.RUN" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^Standard In Var 2" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-BC2 (Collimators)^ColSouthY">
+				<Link VarA="PlcTask Inputs^GVL.astAxes[21].stInputs.bLimitBwd" VarB="DI Inputs^Input 2" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[21].stInputs.bLimitFwd" VarB="DI Inputs^Input 1" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[7].CRC" VarB="Module 1 (SAFETY)^SAFETY Device Info Data^Project CRC"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[7].SERIAL" VarB="Module 1 (SAFETY)^SAFETY Device Info Data^Serial Number"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[7].aSafetyGroups[1].DIAG" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Input Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[7].aSafetyGroups[1].STATE" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Input Info Data^State"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[7].aSafetyGroups[2].DIAG" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_STO_SS1_ErrorHandling Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[7].aSafetyGroups[2].STATE" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_STO_SS1_ErrorHandling Info Data^State"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[7].aSafetyGroups[3].DIAG" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Output Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[7].aSafetyGroups[3].STATE" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Output Info Data^State"/>
+				<Link VarA="PlcTask Outputs^SAFETY.ERRACK" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^Standard In Var 3" Size="1"/>
+				<Link VarA="PlcTask Outputs^SAFETY.RUN" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^Standard In Var 2" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^MSR-BC1^MSR-A1">
+				<Link VarA="PlcTask Inputs^GVL.astAxes[18].stStatus.bSTOActive" VarB="StandardInputs^Standard Out Var 90" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[19].stStatus.bSTOActive" VarB="StandardInputs^Standard Out Var 91" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[20].stStatus.bSTOActive" VarB="StandardInputs^Standard Out Var 92" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[21].stStatus.bSTOActive" VarB="StandardInputs^Standard Out Var 93" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.AccessPointCrossed" VarB="StandardInputs^Standard Out Var 27" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.AccessPointsMuted" VarB="StandardInputs^Standard Out Var 54" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.EDMErr_NonSampleArea" VarB="StandardInputs^Standard Out Var 119" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.EDMErr_SampleArea" VarB="StandardInputs^Standard Out Var 120" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.EstopsHealthy" VarB="StandardInputs^Standard Out Var 20" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.GS1.Ch1" VarB="Connection Info Data^Message_70 Info Data^Input Safe Data GS1_OSSD1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.GS1.Ch2" VarB="Connection Info Data^Message_70 Info Data^Input Safe Data GS1_OSSD2"/>
+				<Link VarA="PlcTask Inputs^SAFETY.GS1.Output" VarB="StandardInputs^Standard Out Var 99" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.GS1.inError" VarB="StandardInputs^Standard Out Var 35" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.HmiLocal" VarB="Connection Info Data^Message_75 Info Data^Input Safe Data HMI_ModeLocal_In" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.HmiMaintenance" VarB="Connection Info Data^Message_80 Info Data^Output Safe Data HMI_Maintenance_Out" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.HmiNormal" VarB="Connection Info Data^Message_75 Info Data^Input Safe Data HMI_ModeNormal_In" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.HmiRb" VarB="Connection Info Data^Message_74 Info Data^Input Safe Data HMI_RB_In" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.HmiRbLight" VarB="Connection Info Data^Message_80 Info Data^Output Safe Data HMI_RB_Out" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.HmiTripped" VarB="Connection Info Data^Message_80 Info Data^Output Safe Data HMI_Tripped_Out" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.Hmi_Maintenance.Ch1" VarB="Connection Info Data^Message_75 Info Data^Input Safe Data HMI_ModeMaintenance_In1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.Hmi_Maintenance.Ch2" VarB="Connection Info Data^Message_75 Info Data^Input Safe Data HMI_ModeMaintenance_In2"/>
+				<Link VarA="PlcTask Inputs^SAFETY.Hmi_Maintenance.Output" VarB="StandardInputs^Standard Out Var 100" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.Hmi_Maintenance.inError" VarB="StandardInputs^Standard Out Var 36" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.LC1.Ch1" VarB="Connection Info Data^Message_66 Info Data^Input Safe Data LC1_OSSD1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.LC1.Ch2" VarB="Connection Info Data^Message_66 Info Data^Input Safe Data LC1_OSSD2"/>
+				<Link VarA="PlcTask Inputs^SAFETY.LC1.Output" VarB="StandardInputs^Standard Out Var 101" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.LC1.inError" VarB="StandardInputs^Standard Out Var 32" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.LC2.Ch1" VarB="Connection Info Data^Message_66 Info Data^Input Safe Data LC2_OSSD1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.LC2.Ch2" VarB="Connection Info Data^Message_66 Info Data^Input Safe Data LC2_OSSD2"/>
+				<Link VarA="PlcTask Inputs^SAFETY.LC2.Output" VarB="StandardInputs^Standard Out Var 102" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.LC2.inError" VarB="StandardInputs^Standard Out Var 33" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.LC3.Ch1" VarB="Connection Info Data^Message_70 Info Data^Input Safe Data LC3_OSSD1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.LC3.Ch2" VarB="Connection Info Data^Message_70 Info Data^Input Safe Data LC3_OSSD2"/>
+				<Link VarA="PlcTask Inputs^SAFETY.LC3.Output" VarB="StandardInputs^Standard Out Var 103" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.LC3.inError" VarB="StandardInputs^Standard Out Var 34" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MOTION_PERMIT" VarB="StandardInputs^Standard Out Var 117" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS1.Ch1" VarB="Connection Info Data^Message_67 Info Data^Input Safe Data MS1_In1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS1.Ch2" VarB="Connection Info Data^Message_67 Info Data^Input Safe Data MS1_In2"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS1.Output" VarB="StandardInputs^Standard Out Var 104" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS1.inError" VarB="StandardInputs^Standard Out Var 11" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS2.Ch1" VarB="Connection Info Data^Message_67 Info Data^Input Safe Data MS2_In1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS2.Ch2" VarB="Connection Info Data^Message_67 Info Data^Input Safe Data MS2_In2"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS2.Output" VarB="StandardInputs^Standard Out Var 105" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS2.inError" VarB="StandardInputs^Standard Out Var 12" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS3.Ch1" VarB="Connection Info Data^Message_68 Info Data^Input Safe Data MS3_In1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS3.Ch2" VarB="Connection Info Data^Message_68 Info Data^Input Safe Data MS3_In2"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS3.Output" VarB="StandardInputs^Standard Out Var 106" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS3.inError" VarB="StandardInputs^Standard Out Var 13" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS4.Ch1" VarB="Connection Info Data^Message_68 Info Data^Input Safe Data MS4_In1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS4.Ch2" VarB="Connection Info Data^Message_68 Info Data^Input Safe Data MS4_In2"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS4.Output" VarB="StandardInputs^Standard Out Var 107" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS4.inError" VarB="StandardInputs^Standard Out Var 14" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS5.Ch1" VarB="Connection Info Data^Message_69 Info Data^Input Safe Data MS5_In1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS5.Ch2" VarB="Connection Info Data^Message_69 Info Data^Input Safe Data MS5_In2"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS5.Output" VarB="StandardInputs^Standard Out Var 108" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS5.inError" VarB="StandardInputs^Standard Out Var 15" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS6.Ch1" VarB="Connection Info Data^Message_71 Info Data^Input Safe Data Pendant_MS6_In1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS6.Ch2" VarB="Connection Info Data^Message_71 Info Data^Input Safe Data Pendant_MS6_In2"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS6.Output" VarB="StandardInputs^Standard Out Var 109" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS6.inError" VarB="StandardInputs^Standard Out Var 16" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS7.Ch1" VarB="Connection Info Data^Message_74 Info Data^Input Safe Data HMI_MS7_In1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS7.Ch2" VarB="Connection Info Data^Message_74 Info Data^Input Safe Data HMI_MS7_In2"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS7.Output" VarB="StandardInputs^Standard Out Var 110" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS7.inError" VarB="StandardInputs^Standard Out Var 17" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MSS1_1" VarB="Connection Info Data^Message_78 Info Data^Output Safe Data MSS1_Out1" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MSS1_2" VarB="Connection Info Data^Message_78 Info Data^Output Safe Data MSS1_Out2" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MSS2_1" VarB="Connection Info Data^Message_78 Info Data^Output Safe Data MSS2_Out1" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MSS2_2" VarB="Connection Info Data^Message_78 Info Data^Output Safe Data MSS2_Out2" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MSS3_1" VarB="Connection Info Data^Message_79 Info Data^Output Safe Data MSS3_Out1" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MSS3_2" VarB="Connection Info Data^Message_79 Info Data^Output Safe Data MSS3_Out2" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.NON_SAMPLE_MOTION_PERMIT" VarB="StandardInputs^Standard Out Var 118" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.PendantEnable.Ch1" VarB="Connection Info Data^Message_71 Info Data^Input Safe Data Pendant_Enable_In1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.PendantEnable.Ch2" VarB="Connection Info Data^Message_71 Info Data^Input Safe Data Pendant_Enable_In2"/>
+				<Link VarA="PlcTask Inputs^SAFETY.PendantEnable.Output" VarB="StandardInputs^Standard Out Var 111" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.PendantEnable.inError" VarB="StandardInputs^Standard Out Var 37" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.PendantMuted" VarB="StandardInputs^Standard Out Var 56" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.PendantResetReq" VarB="StandardInputs^Standard Out Var 58" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.Q1" VarB="Connection Info Data^Message_76 Info Data^Output Safe Data Q1_Out" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.Q1Q2" VarB="Connection Info Data^Message_72 Info Data^Input Safe Data Q1_Q2_In" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.Q2" VarB="Connection Info Data^Message_77 Info Data^Output Safe Data Q2_Out" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.Q3" VarB="Connection Info Data^Message_76 Info Data^Output Safe Data Q3_Out" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.Q3Q4" VarB="Connection Info Data^Message_73 Info Data^Input Safe Data Q3_Q4_In" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.Q4" VarB="Connection Info Data^Message_77 Info Data^Output Safe Data Q4_Out" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.RCU" VarB="Connection Info Data^Message_80 Info Data^Output Safe Data RCU_Out" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SB1" VarB="Connection Info Data^Message_76 Info Data^Output Safe Data SB1_Out" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SB2" VarB="Connection Info Data^Message_77 Info Data^Output Safe Data SB2_Out" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SLS_Muted" VarB="StandardInputs^Standard Out Var 46" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SPB1" VarB="Connection Info Data^Message_73 Info Data^Input Safe Data SPB1_In" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SPB2" VarB="Connection Info Data^Message_73 Info Data^Input Safe Data SPB2_In" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.STOP_ALL_MOTION" VarB="StandardInputs^Standard Out Var 59" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].CRC" VarB="Device Info Data^Project CRC"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].SERIAL" VarB="Device Info Data^Serial Number"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[1].DIAG" VarB="TwinSAFE Group Info Data^DecoupleInput Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[1].STATE" VarB="TwinSAFE Group Info Data^DecoupleInput Info Data^State"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[2].DIAG" VarB="TwinSAFE Group Info Data^DeviceMonitoring Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[2].STATE" VarB="TwinSAFE Group Info Data^DeviceMonitoring Info Data^State"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[3].DIAG" VarB="TwinSAFE Group Info Data^ModeSelect Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[3].STATE" VarB="TwinSAFE Group Info Data^ModeSelect Info Data^State"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[4].DIAG" VarB="TwinSAFE Group Info Data^SF1_NormalControl Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[4].STATE" VarB="TwinSAFE Group Info Data^SF1_NormalControl Info Data^State"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[5].DIAG" VarB="TwinSAFE Group Info Data^SF3_LocalControl Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[5].STATE" VarB="TwinSAFE Group Info Data^SF3_LocalControl Info Data^State"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[6].DIAG" VarB="TwinSAFE Group Info Data^MaintenanceSLSMuting Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[6].STATE" VarB="TwinSAFE Group Info Data^MaintenanceSLSMuting Info Data^State"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[7].DIAG" VarB="TwinSAFE Group Info Data^StoAndContactors Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[7].STATE" VarB="TwinSAFE Group Info Data^StoAndContactors Info Data^State"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[8].DIAG" VarB="TwinSAFE Group Info Data^ResetControl Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[8].STATE" VarB="TwinSAFE Group Info Data^ResetControl Info Data^State"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[9].DIAG" VarB="TwinSAFE Group Info Data^DecoupleOutput Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[9].STATE" VarB="TwinSAFE Group Info Data^DecoupleOutput Info Data^State"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SampleAreaSearched_Downstream" VarB="StandardInputs^Standard Out Var 24" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SampleAreaSearched_Upstream" VarB="StandardInputs^Standard Out Var 23" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SearchAndLock.Ch1" VarB="Connection Info Data^Message_72 Info Data^Input Safe Data SL_In1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SearchAndLock.Ch2" VarB="Connection Info Data^Message_72 Info Data^Input Safe Data SL_In2"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SearchAndLock.Output" VarB="StandardInputs^Standard Out Var 112" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SearchAndLock.inError" VarB="StandardInputs^Standard Out Var 38" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.inMode_Local" VarB="StandardInputs^Standard Out Var 115" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.inMode_Maintenance" VarB="StandardInputs^Standard Out Var 116" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.inMode_Normal" VarB="StandardInputs^Standard Out Var 114" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.inMode_SearchedAndLocked" VarB="StandardInputs^Standard Out Var 113" Size="1"/>
+				<Link VarA="PlcTask Outputs^SAFETY.ERRACK" VarB="StandardOutputs^Standard In Var 6" Size="1"/>
+				<Link VarA="PlcTask Outputs^SAFETY.Mute_AccessPoints" VarB="StandardOutputs^Standard In Var 53" Size="1"/>
+				<Link VarA="PlcTask Outputs^SAFETY.Mute_PendantEnable" VarB="StandardOutputs^Standard In Var 55" Size="1"/>
+				<Link VarA="PlcTask Outputs^SAFETY.Mute_SLS" VarB="StandardOutputs^Standard In Var 42" Size="1"/>
+				<Link VarA="PlcTask Outputs^SAFETY.RUN" VarB="StandardOutputs^Standard In Var 7" Size="1"/>
+				<Link VarA="PlcTask Outputs^SAFETY.Reset_Pendant" VarB="StandardOutputs^Standard In Var 57" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^MSR-BC1^MSR-DI1">
+				<Link VarA="PlcTask Inputs^SAFETY.HMI_ErrorAckButton" VarB="Channel 2^Input" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^PLCR-A2^PLCR-DI1">
+				<Link VarA="PlcTask Inputs^PANEL.ECB10.Status" VarB="Channel 4^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^PANEL.ECB2.Status" VarB="Channel 1^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^PANEL.ECB3.Status" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^PANEL.ECB4.Status" VarB="Channel 3^Input" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^PLCR-A2^PLCR-DI2">
+				<Link VarA="PlcTask Inputs^PANEL.ECB1.Status" VarB="Channel 4^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^PANEL.ECB11.Status" VarB="Channel 3^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^PANEL.ECB13.Status" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^PANEL.ECB5.Status" VarB="Channel 1^Input" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^PLCR-A2^PLCR-DI3">
+				<Link VarA="PlcTask Inputs^PANEL.ECB6.Status" VarB="Channel 1^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^PANEL.ECB7.Status" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^PANEL.ECB8.Status" VarB="Channel 3^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^PANEL.ECB9.Status" VarB="Channel 4^Input" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^PLCR-A2^PLCR-DI4">
+				<Link VarA="PlcTask Inputs^PANEL.ECB12.Status" VarB="Channel 2^Input" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^PLCR-A2^PLCR-DO1">
+				<Link VarA="PlcTask Outputs^PANEL.ECB12.Reset" VarB="Channel 6^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^PANEL.ECB13.Reset" VarB="Channel 4^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^PANEL.ECB2.Reset" VarB="Channel 1^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^PANEL.ECB3.Reset" VarB="Channel 2^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^PANEL.ECB4.Reset" VarB="Channel 3^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^PANEL.ECB5.Reset" VarB="Channel 5^Output" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^PLCR-A2^PLCR-DO2">
+				<Link VarA="PlcTask Outputs^PANEL.ECB1.Reset" VarB="Channel 6^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^PANEL.ECB10.Reset" VarB="Channel 2^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^PANEL.ECB11.Reset" VarB="Channel 4^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^PANEL.ECB6.Reset" VarB="Channel 1^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^PANEL.ECB7.Reset" VarB="Channel 3^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^PANEL.ECB8.Reset" VarB="Channel 5^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^PANEL.ECB9.Reset" VarB="Channel 7^Output" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^SVR-G1^SVR-G2 (Sample Height)">
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[2].CRC" VarB="Device (Safety)^Device Info Data^Project CRC"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[2].SERIAL" VarB="Device (Safety)^Device Info Data^Serial Number"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[2].aSafetyGroups[1].DIAG" VarB="Device (Safety)^Group Info Data^ChA_Connection_Input Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[2].aSafetyGroups[1].STATE" VarB="Device (Safety)^Group Info Data^ChA_Connection_Input Info Data^State"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[2].aSafetyGroups[2].DIAG" VarB="Device (Safety)^Group Info Data^ChA_STO_SS1_ErrorHandling Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[2].aSafetyGroups[2].STATE" VarB="Device (Safety)^Group Info Data^ChA_STO_SS1_ErrorHandling Info Data^State"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[2].aSafetyGroups[3].DIAG" VarB="Device (Safety)^Group Info Data^ChA_Connection_Output Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[2].aSafetyGroups[3].STATE" VarB="Device (Safety)^Group Info Data^ChA_Connection_Output Info Data^State"/>
+				<Link VarA="PlcTask Outputs^SAFETY.ERRACK" VarB="Device (Safety)^Standard Outputdata^Standard In Var 3" Size="1"/>
+				<Link VarA="PlcTask Outputs^SAFETY.RUN" VarB="Device (Safety)^Standard Outputdata^Standard In Var 2" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^SVR-G1^SVR-G3 (Sample Rotation)">
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[3].CRC" VarB="Device (Safety)^Device Info Data^Project CRC"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[3].SERIAL" VarB="Device (Safety)^Device Info Data^Serial Number"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[3].aSafetyGroups[1].DIAG" VarB="Device (Safety)^Group Info Data^ChA_Connection_Input Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[3].aSafetyGroups[1].STATE" VarB="Device (Safety)^Group Info Data^ChA_Connection_Input Info Data^State"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[3].aSafetyGroups[2].DIAG" VarB="Device (Safety)^Group Info Data^ChA_SLS_1 Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[3].aSafetyGroups[2].STATE" VarB="Device (Safety)^Group Info Data^ChA_SLS_1 Info Data^State"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[3].aSafetyGroups[3].DIAG" VarB="Device (Safety)^Group Info Data^ChA_STO_SS1_ErrorHandling Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[3].aSafetyGroups[3].STATE" VarB="Device (Safety)^Group Info Data^ChA_STO_SS1_ErrorHandling Info Data^State"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[3].aSafetyGroups[4].DIAG" VarB="Device (Safety)^Group Info Data^ChA_Connection_Output Info Data^Diag"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[3].aSafetyGroups[4].STATE" VarB="Device (Safety)^Group Info Data^ChA_Connection_Output Info Data^State"/>
+				<Link VarA="PlcTask Outputs^SAFETY.ERRACK" VarB="Device (Safety)^Standard Outputdata^Standard In Var 3" Size="1"/>
+				<Link VarA="PlcTask Outputs^SAFETY.RUN" VarB="Device (Safety)^Standard Outputdata^Standard In Var 2" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax18 - ColNorth_X">
+				<Link VarA="PlcTask Inputs^GVL.astAxes[18].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL.astAxes[18].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax19 - ColNorth_Y">
+				<Link VarA="PlcTask Inputs^GVL.astAxes[19].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL.astAxes[19].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax20 - ColSouth_X">
+				<Link VarA="PlcTask Inputs^GVL.astAxes[20].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL.astAxes[20].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax21 - ColSouth_Y">
+				<Link VarA="PlcTask Inputs^GVL.astAxes[21].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL.astAxes[21].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 1">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[1].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
 				<Link VarA="PlcTask Outputs^GVL.astAxes[1].Axis.PlcToNc" VarB="Inputs^FromPlc"/>

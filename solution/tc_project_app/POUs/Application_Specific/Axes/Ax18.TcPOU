@@ -1,16 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
-  <POU Name="Axis_1" Id="{9b6828f9-a82a-412e-8426-d13ab35b9a80}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM Axis_1
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <POU Name="Ax18" Id="{ca3b2145-446e-40f4-b8a3-7e4557d732c1}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Ax18
 VAR
-//Outputs: Power for Limit switches, Home Sensors, etc.
-    //bPowerSwitchesAxis1 AT %Q*: BOOL:= TRUE;
-
-//Hardware interlocks
-    //bInterlockFwdOK AT %I*: BOOL;
+	iAxisNumber : INT := E_AxisNames.Collimator_North_X;
+	iGroupNumber : INT := 3;
 	
-	iAxisNumber : INT := E_AxisNames.Axis_1;
-	iGroupNumber : INT := 1;
+	stoRTrig : R_Trig;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -24,8 +20,13 @@ IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
 	GVL.astAxes[iAxisNumber].stControl.bAutoEnableDisable := TRUE;
 	//Set which group this axis belongs to
 	GVL.astAxes[iAxisNumber].stDescription.iGroupNumber := iGroupNumber;
+	GVL.astAxes[iAxisNumber].Commissioning := TRUE;
 END_IF
 
+stoRTrig(CLK:=GVL.astAxes[iAxisNumber].stStatus.bSTOActive);
+IF stoRTrig.Q THEN
+	GVL.astAxes[iAxisNumber].stControl.bReset:= TRUE;
+END_IF
 
 
 //Define ACTIONS() or write exclusive code for an specific axis.
@@ -33,15 +34,5 @@ END_IF
 Eg. GVL.astAxes[x].stControl.bInterlockFwd := NOT bInterlockFwdOK;*)
 ]]></ST>
     </Implementation>
-    <LineIds Name="Axis_1">
-      <LineId Id="3" Count="1" />
-      <LineId Id="10" Count="4" />
-      <LineId Id="38" Count="0" />
-      <LineId Id="41" Count="1" />
-      <LineId Id="15" Count="0" />
-      <LineId Id="28" Count="1" />
-      <LineId Id="16" Count="3" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

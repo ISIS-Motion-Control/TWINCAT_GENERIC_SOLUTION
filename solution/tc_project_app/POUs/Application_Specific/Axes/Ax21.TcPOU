@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <POU Name="Ax21" Id="{6e3d1538-6e73-48f8-8cf5-450b7422df1a}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Ax21
+VAR
+	iAxisNumber : INT := E_AxisNames.Collimator_South_Y;
+	iGroupNumber : INT := 3;
+	stoRTrig : R_Trig;	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//Initial parameters of an Axis
+IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
+    //Initial default values:
+    GVL.astAxes[iAxisNumber].stHomingConfig.eHomeSeq := 1 ;
+    GVL.astAxes[iAxisNumber].stHomingConfig.fHomePosition := 0.0;
+    GVL.astAxes[iAxisNumber].stHomingConfig.fHomeFinishDistance := 0.0;
+    GVL.astAxes[iAxisNumber].stConfig.eRestorePosition := E_RestorePosition.eRestoreWithoutHome;
+	GVL.astAxes[iAxisNumber].stControl.bAutoEnableDisable := TRUE;
+	//Set which group this axis belongs to
+	GVL.astAxes[iAxisNumber].stDescription.iGroupNumber := iGroupNumber;
+	GVL.astAxes[iAxisNumber].Commissioning := TRUE;
+END_IF
+
+stoRTrig(CLK:=GVL.astAxes[iAxisNumber].stStatus.bSTOActive);
+IF stoRTrig.Q THEN
+	GVL.astAxes[iAxisNumber].stControl.bReset:= TRUE;
+END_IF
+
+
+//Define ACTIONS() or write exclusive code for an specific axis.
+(*Eg. Stop when temperature reaches certain values, reduce speed if  a signal is activated, etc.
+Eg. GVL.astAxes[x].stControl.bInterlockFwd := NOT bInterlockFwdOK;*)
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <POU Name="PANEL" Id="{dc5bfb20-e5f1-4901-9b02-5730934c821c}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PANEL
+VAR
+	ECB1 : ST_ECB:= (Name:= 'MSR', Description:= 'Safety devices');
+	ECB2 : ST_ECB:= (Name:= 'MR1-control', Description:= '24V Axes 1-8'); //MR1
+	ECB3 : ST_ECB:= (Name:= 'MR1-motors', Description:= '48V Axes 1-8'); //MR1
+	ECB4 : ST_ECB:= (Name:= 'MR2-control', Description:= '24V Axes 9-15'); //MR2
+	ECB5 : ST_ECB:= (Name:= 'MR2-motors', Description:= '48V Axes 9-15'); //MR2
+	ECB6 : ST_ECB:= (Name:= 'MR3-control', Description:= '24V Axes 22-29'); //MR3
+	ECB7 : ST_ECB:= (Name:= 'MR3-motors', Description:= '48V Axes 22-29'); //MR3
+	ECB8 : ST_ECB:= (Name:= 'MR4-control', Description:= '24V Axes 30-37'); //MR4
+	ECB9 : ST_ECB:= (Name:= 'MR4-motors', Description:= '48V Axes 30-37'); //MR4
+	ECB10 : ST_ECB:= (Name:= 'MR5-control', Description:= '24V Axes 38-43'); //MR5
+	ECB11 : ST_ECB:= (Name:= 'MR5-motors', Description:= '48V Axes 38-43'); //MR5
+	ECB12 : ST_ECB:= (Name:= 'Coll-control', Description:= 'Collimation axes control'); //COLRail
+	ECB13 : ST_ECB:= (Name:= 'Coll-motors', Description:= 'Collimation axes motor'); //COLRail
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

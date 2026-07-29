@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
   <GlobalTextList Name="GlobalTextList" Id="{c3494959-baa5-4f73-b0cd-9c11912145dd}">
     <XmlArchive>
       <Data>
@@ -68,6 +68,16 @@
             <o>
               <v n="TextID">"110"</v>
               <v n="TextDefault">"AXESMAX"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"1218"</v>
+              <v n="TextDefault">"AXESMAX %d"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"1158"</v>
+              <v n="TextDefault">"AXESMAX %x"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
@@ -198,6 +208,11 @@
             <o>
               <v n="TextID">"786"</v>
               <v n="TextDefault">"Bwd Enable"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"182"</v>
+              <v n="TextDefault">"Datum"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
@@ -503,6 +518,11 @@
             <o>
               <v n="TextID">"112"</v>
               <v n="TextDefault">"moveVelocity"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"713"</v>
+              <v n="TextDefault">"Name: %s"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>

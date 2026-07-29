@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Crc="4199910056" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{19791745-2670-46fb-8fb2-9f4477a8fe80}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TwinCAT3SafePlcProject</RootNamespace>
+    <AssemblyName>TwinCAT3SafePlcProject</AssemblyName>
+    <FileUpgradeFlags />
+    <UpgradeBackupLocation />
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetSystem>EL6900</TargetSystem>
+    <ProgrammingLanguage>Graphical Editor</ProgrammingLanguage>
+    <Worker>bem74844</Worker>
+    <IntProjName>MAIN</IntProjName>
+    <IsNewCreated>false</IsNewCreated>
+    <SPlcProjVersion>1.8.0.0</SPlcProjVersion>
+    <NextSdsId>121</NextSdsId>
+    <SortMode>2</SortMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="CPM_EmergencyStops\Alias Devices\EmergencyStops_Healthy.sds" />
+    <None Include="CPM_EmergencyStops\CPM_EmergencyStops.sal" />
+    <None Include="CPM_EmergencyStops\CPM_EmergencyStops.sal.diagram">
+      <Visible>false</Visible>
+      <DependentUpon>CPM_EmergencyStops\CPM_EmergencyStops.sal</DependentUpon>
+    </None>
+    <None Include="DecoupleInput\Alias Devices\ColSouth_X_FSOE.sds" />
+    <None Include="DecoupleInput\Alias Devices\ColSouth_Y_FSOE.sds" />
+    <None Include="DecoupleInput\Alias Devices\ColNorth_X_FSOE.sds" />
+    <None Include="DecoupleInput\Alias Devices\ColNorth_Y_FSOE.sds" />
+    <None Include="DecoupleInput\Alias Devices\SampleStackHeight_FSOE.sds" />
+    <None Include="DecoupleInput\Alias Devices\ErrorAcknowledgement.sds" />
+    <None Include="DecoupleInput\Alias Devices\MSR-SI1 - Module 1 %28FSOES%29.sds" />
+    <None Include="DecoupleInput\Alias Devices\MSR-SI10 - Module 1 %28FSOES%29.sds" />
+    <None Include="DecoupleInput\Alias Devices\MSR-SI11 - Module 1 %28FSOES%29.sds" />
+    <None Include="DecoupleInput\Alias Devices\MSR-SI2 - Module 1 %28FSOES%29.sds" />
+    <None Include="DecoupleInput\Alias Devices\MSR-SI3 - Module 1 %28FSOES%29.sds" />
+    <None Include="DecoupleInput\Alias Devices\MSR-SI4 - Module 1 %28FSOES%29.sds" />
+    <None Include="DecoupleInput\Alias Devices\MSR-SI5 - Module 1 %28FSOES%29.sds" />
+    <None Include="DecoupleInput\Alias Devices\MSR-SI6 - Module 1 %28FSOES%29.sds" />
+    <None Include="DecoupleInput\Alias Devices\MSR-SI7 - Module 1 %28FSOES%29.sds" />
+    <None Include="DecoupleInput\Alias Devices\MSR-SI8 - Module 1 %28FSOES%29.sds" />
+    <None Include="DecoupleInput\Alias Devices\Run.sds" />
+    <None Include="DecoupleInput\Alias Devices\SampleStackRotation_FSOE.sds" />
+    <None Include="DecoupleInput\DecoupleInput.sal" />
+    <None Include="DecoupleInput\DecoupleInput.sal.diagram">
+      <Visible>false</Visible>
+      <DependentUpon>DecoupleInput\DecoupleInput.sal</DependentUpon>
+    </None>
+    <None Include="DecoupleOutput\Alias Devices\MSR-SO1 - Module 1 %28FSOES%29.sds" />
+    <None Include="DecoupleOutput\Alias Devices\MSR-SO2 - Module 1 %28FSOES%29.sds" />
+    <None Include="DecoupleOutput\Alias Devices\MSR-SO3 - Module 1 %28FSOES%29.sds" />
+    <None Include="DecoupleOutput\Alias Devices\MSR-SO4 - Module 1 %28FSOES%29.sds" />
+    <None Include="DecoupleOutput\Alias Devices\MSR-SO5 - Module 1 %28FSOES%29.sds" />
+    <None Include="DecoupleOutput\DecoupleOutput.sal" />
+    <None Include="DecoupleOutput\DecoupleOutput.sal.diagram">
+      <Visible>false</Visible>
+      <DependentUpon>DecoupleOutput\DecoupleOutput.sal</DependentUpon>
+    </None>
+    <None Include="DeviceMonitoring\Alias Devices\GS1.sds" />
+    <None Include="DeviceMonitoring\Alias Devices\GS1_Error.sds" />
+    <None Include="DeviceMonitoring\Alias Devices\HMI_MaintenanceMode_Error.sds" />
+    <None Include="DeviceMonitoring\Alias Devices\LC1.sds" />
+    <None Include="DeviceMonitoring\Alias Devices\LC1_Error.sds" />
+    <None Include="DeviceMonitoring\Alias Devices\LC2.sds" />
+    <None Include="DeviceMonitoring\Alias Devices\LC2_Error.sds" />
+    <None Include="DeviceMonitoring\Alias Devices\LC3.sds" />
+    <None Include="DeviceMonitoring\Alias Devices\LC3_Error.sds" />
+    <None Include="DeviceMonitoring\Alias Devices\HMI_MaintenanceMode.sds" />
+    <None Include="DeviceMonitoring\Alias Devices\MS1.sds" />
+    <None Include="DeviceMonitoring\Alias Devices\MS1_Error.sds" />
+    <None Include="DeviceMonitoring\Alias Devices\MS2.sds" />
+    <None Include="DeviceMonitoring\Alias Devices\MS2_Error.sds" />
+    <None Include="DeviceMonitoring\Alias Devices\MS3.sds" />
+    <None Include="DeviceMonitoring\Alias Devices\MS3_Error.sds" />
+    <None Include="DeviceMonitoring\Alias Devices\MS4.sds" />
+    <None Include="DeviceMonitoring\Alias Devices\MS4_Error.sds" />
+    <None Include="DeviceMonitoring\Alias Devices\MS5.sds" />
+    <None Include="DeviceMonitoring\Alias Devices\MS5_Error.sds" />
+    <None Include="DeviceMonitoring\Alias Devices\MS6.sds" />
+    <None Include="DeviceMonitoring\Alias Devices\MS6_Error.sds" />
+    <None Include="DeviceMonitoring\Alias Devices\MS7.sds" />
+    <None Include="DeviceMonitoring\Alias Devices\MS7_Error.sds" />
+    <None Include="DeviceMonitoring\Alias Devices\Pendant_Enable.sds" />
+    <None Include="DeviceMonitoring\Alias Devices\Pendant_Enable_Error.sds" />
+    <None Include="DeviceMonitoring\Alias Devices\SearchedAndLocked.sds" />
+    <None Include="DeviceMonitoring\Alias Devices\SearchedAndLocked_Error.sds" />
+    <None Include="DeviceMonitoring\DeviceMonitoring.sal" />
+    <None Include="DeviceMonitoring\DeviceMonitoring.sal.diagram">
+      <Visible>false</Visible>
+      <DependentUpon>DeviceMonitoring\DeviceMonitoring.sal</DependentUpon>
+    </None>
+    <None Include="GVLs\gInput.sgvl" />
+    <None Include="GVLs\gInternal.sgvl" />
+    <None Include="GVLs\gOutput.sgvl" />
+    <None Include="GVLs\gSSRotation.sgvl" />
+    <None Include="GVLs\gSSZ.sgvl" />
+    <None Include="GVLs\gSSHeight.sgvl" />
+    <None Include="GVLs\gCollimation.sgvl" />
+    <None Include="MaintenanceSLSMuting\Alias Devices\SLS_Active.sds" />
+    <None Include="MaintenanceSLSMuting\Alias Devices\Mute_SLS.sds" />
+    <None Include="MaintenanceSLSMuting\Alias Devices\SLS_Muted.sds" />
+    <None Include="MaintenanceSLSMuting\MaintenanceSLSMuting.sal" />
+    <None Include="MaintenanceSLSMuting\MaintenanceSLSMuting.sal.diagram">
+      <Visible>false</Visible>
+      <DependentUpon>MaintenanceSLSMuting\MaintenanceSLSMuting.sal</DependentUpon>
+    </None>
+    <None Include="ModeSelect\Alias Devices\inMode_Local.sds" />
+    <None Include="ModeSelect\Alias Devices\inMode_Maintenance.sds" />
+    <None Include="ModeSelect\Alias Devices\inMode_Normal.sds" />
+    <None Include="ModeSelect\Alias Devices\inMode_SL.sds" />
+    <None Include="ModeSelect\ModeSelect.sal" />
+    <None Include="ModeSelect\ModeSelect.sal.diagram">
+      <Visible>false</Visible>
+      <DependentUpon>ModeSelect\ModeSelect.sal</DependentUpon>
+    </None>
+    <None Include="ResetControl\Alias Devices\ColNorth_X_STO_Active.sds" />
+    <None Include="ResetControl\Alias Devices\ColNorth_Y_STO_Active.sds" />
+    <None Include="ResetControl\Alias Devices\ColSouth_X_STO_Active.sds" />
+    <None Include="ResetControl\Alias Devices\ColSouth_Y_STO_Active.sds" />
+    <None Include="ResetControl\Alias Devices\Height_Reset_Req.sds" />
+    <None Include="ResetControl\Alias Devices\Height_STO_Active.sds" />
+    <None Include="ResetControl\Alias Devices\Rotation_Reset_Req.sds" />
+    <None Include="ResetControl\Alias Devices\Rotation_STO_Active.sds" />
+    <None Include="ResetControl\ResetControl.sal" />
+    <None Include="ResetControl\ResetControl.sal.diagram">
+      <Visible>false</Visible>
+      <DependentUpon>ResetControl\ResetControl.sal</DependentUpon>
+    </None>
+    <None Include="SF1_NormalControl\Alias Devices\DownstreamAreaSearched.sds" />
+    <None Include="SF1_NormalControl\Alias Devices\UpstreamAreaSearched.sds" />
+    <None Include="SF1_NormalControl\SF1_NormalControl.sal" />
+    <None Include="SF1_NormalControl\SF1_NormalControl.sal.diagram">
+      <Visible>false</Visible>
+      <DependentUpon>SF1_NormalControl\SF1_NormalControl.sal</DependentUpon>
+    </None>
+    <None Include="SF3_LocalControl\Alias Devices\AccessPointCrossed.sds" />
+    <None Include="SF3_LocalControl\Alias Devices\AccessPoints_Muted.sds" />
+    <None Include="SF3_LocalControl\Alias Devices\Mute_AccessPoints.sds" />
+    <None Include="SF3_LocalControl\Alias Devices\Mute_PendantEnable.sds" />
+    <None Include="SF3_LocalControl\Alias Devices\PendantEnable_Muted.sds" />
+    <None Include="SF3_LocalControl\Alias Devices\PendantReset.sds" />
+    <None Include="SF3_LocalControl\Alias Devices\PendantResetReq.sds" />
+    <None Include="StoAndContactors\Alias Devices\EDMErr_NonSample.sds" />
+    <None Include="StoAndContactors\Alias Devices\EDMErr_Sample.sds" />
+    <None Include="StoAndContactors\Alias Devices\MotionPermit.sds" />
+    <None Include="StoAndContactors\Alias Devices\NonSampleMotionPermit.sds" />
+    <None Include="StoAndContactors\Alias Devices\StopAllMotion.sds" />
+    <None Include="StoAndContactors\StoAndContactors.sal" />
+    <None Include="StoAndContactors\StoAndContactors.sal.diagram">
+      <Visible>false</Visible>
+      <DependentUpon>StoAndContactors\StoAndContactors.sal</DependentUpon>
+    </None>
+    <None Include="TargetSystemConfig.xml">
+      <Visible>false</Visible>
+    </None>
+    <None Include="SF3_LocalControl\SF3_LocalControl.sal" />
+    <None Include="SF3_LocalControl\SF3_LocalControl.sal.diagram">
+      <Visible>false</Visible>
+      <DependentUpon>SF3_LocalControl\SF3_LocalControl.sal</DependentUpon>
+    </None>
+    <None Include="User FBs\FB_AreaSearched.ufb" />
+    <None Include="User FBs\FB_AreaSearched.ufb.diagram">
+      <Visible>false</Visible>
+      <DependentUpon>User FBs\FB_AreaSearched.ufb</DependentUpon>
+    </None>
+    <None Include="User FBs\FB_InputPulse.ufb" />
+    <None Include="User FBs\FB_InputPulse.ufb.diagram">
+      <Visible>false</Visible>
+      <DependentUpon>User FBs\FB_InputPulse.ufb</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CPM_EmergencyStops" />
+    <Folder Include="CPM_EmergencyStops\Alias Devices" />
+    <Folder Include="DecoupleInput" />
+    <Folder Include="DecoupleInput\Alias Devices" />
+    <Folder Include="DecoupleOutput" />
+    <Folder Include="DecoupleOutput\Alias Devices" />
+    <Folder Include="DeviceMonitoring" />
+    <Folder Include="DeviceMonitoring\Alias Devices" />
+    <Folder Include="GVLs" />
+    <Folder Include="MaintenanceSLSMuting" />
+    <Folder Include="MaintenanceSLSMuting\Alias Devices" />
+    <Folder Include="ModeSelect" />
+    <Folder Include="ModeSelect\Alias Devices" />
+    <Folder Include="ResetControl" />
+    <Folder Include="ResetControl\Alias Devices" />
+    <Folder Include="SF1_NormalControl" />
+    <Folder Include="SF1_NormalControl\Alias Devices" />
+    <Folder Include="SF3_LocalControl" />
+    <Folder Include="SF3_LocalControl\Alias Devices" />
+    <Folder Include="StoAndContactors" />
+    <Folder Include="StoAndContactors\Alias Devices" />
+    <Folder Include="User FBs" />
+  </ItemGroup>
+</Project>

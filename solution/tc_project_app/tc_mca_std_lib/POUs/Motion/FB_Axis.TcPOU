@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
   <POU Name="FB_Axis" Id="{45901cd0-c6d2-4114-b7cf-de832171219f}" SpecialFunc="None">
     <Declaration><![CDATA[//Function block to run a virtual drive with Nc
 FUNCTION_BLOCK FB_Axis IMPLEMENTS I_axis
@@ -400,6 +400,10 @@ _stAxis.stStatus.bInterlockedBwd := _stAxis.stControl.bInterlockBwd;
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[fbPower.Enable := _stAxis.stControl.bEnable;
+IF _stAxis.Commissioning THEN
+	_stAxis.stControl.bInterlockFwd:= NOT(_stAxis.stStatus.bBwEnabled AND _stAxis.stStatus.bFwEnabled);
+	_stAxis.stControl.bInterlockBwd:= NOT(_stAxis.stStatus.bBwEnabled AND _stAxis.stStatus.bFwEnabled);
+END_IF
 
 fbPower.Enable_Negative := (_stAxis.stStatus.bBwEnabled OR bWaitForStopAfterLimitHit) AND NOT _stAxis.stStatus.bInterlockedBwd;
 fbPower.Enable_Positive := (_stAxis.stStatus.bFwEnabled OR bWaitForStopAfterLimitHit) AND NOT _stAxis.stStatus.bInterlockedFwd;
@@ -752,54 +756,73 @@ Another FB is used TO trasnfer default axis parameters TO the stAxisStruct so
 bReadValid is used TO halt that trasnfer UNTIL the parameters have been
 read successfully. It may take a couple OF cycles once the PLC starts up.*)
 
-//Slow jogging Velocity
-fbReadAxisVeloManSlow(Axis := _stAxis.Axis,
+
+IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadAxisVeloManSlow.Valid THEN
+	//Slow jogging Velocity
+	fbReadAxisVeloManSlow(Axis := _stAxis.Axis,
                         Enable := TRUE,
                         ReadMode := READMODE_CYCLIC,
                         ParameterNumber := E_AxisParameters.AxisManualVelocitySlow,
                         Value => _stAxis.stConfig.fVelocityDefaultSlow);
+END_IF
+
+IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadAxisVeloManFast.Valid THEN
 //Fast jogging velocity
 fbReadAxisVeloManFast(Axis := _stAxis.Axis,
                         Enable := TRUE,
                         ReadMode := READMODE_CYCLIC,
                         ParameterNumber := E_AxisParameters.AxisManualVelocityFast,
                         Value => _stAxis.stConfig.fVelocityDefaultFast);
+END_IF
+IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadHomingVelToCam.Valid THEN
 //Homing velocity to Cam
 fbReadHomingVelToCam(Axis := _stAxis.Axis,
                         Enable := TRUE,
                         ReadMode := READMODE_CYCLIC,
                         ParameterNumber := E_AxisParameters.AxisVelocityToCam,
                         Value => _stAxis.stHomingConfig.fHomingVelToCam);
+END_IF
+IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadHomingVelFromCam.Valid THEN
 //Homing velocity from Cam
 fbReadHomingVelFromCam(Axis := _stAxis.Axis,
                         Enable := TRUE,
                         ReadMode := READMODE_CYCLIC,
                         ParameterNumber := E_AxisParameters.AxisVelocityFromCam,
                         Value => _stAxis.stHomingConfig.fHomingVelFromCam);
+END_IF
+IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadAxisVeloMax.Valid THEN
 //Max velocity
 fbReadAxisVeloMax(Axis := _stAxis.Axis,
                         Enable := TRUE,
                         ReadMode := READMODE_CYCLIC,
                         ParameterNumber := E_AxisParameters.AxisMaxVelocity,
                         Value => _stAxis.stConfig.fVeloMax);
+END_IF
+IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadAxisMaxAcc.Valid THEN
 //Max acceleration
 fbReadAxisMaxAcc(Axis := _stAxis.Axis,
                         Enable := TRUE,
                         ReadMode := READMODE_CYCLIC,
                         ParameterNumber := E_AxisParameters.AxisMaximumAcceleration,
                         Value => _stAxis.stConfig.fMaxAcc);
+END_IF
+IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadAxisMaxDec.Valid THEN
 //Max deceleration
 fbReadAxisMaxDec(Axis := _stAxis.Axis,
                         Enable := TRUE,
                         ReadMode := READMODE_CYCLIC,
                         ParameterNumber := E_AxisParameters.AxisMaximumDeceleration,
                         Value => _stAxis.stConfig.fMaxDec);
+END_IF
+IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadAxisAcc.Valid THEN
 //Default acceleration
 fbReadAxisAcc(Axis := _stAxis.Axis,
                         Enable := TRUE,
                         ReadMode := READMODE_CYCLIC,
                         ParameterNumber := E_AxisParameters.AxisDefaultAcceleration,
                         Value => _stAxis.stConfig.fDefaultAcc);
+END_IF
+IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadAxisDec.Valid THEN
 //Default deceleration
 fbReadAxisDec(Axis := _stAxis.Axis,
                         Enable := TRUE,
@@ -807,6 +830,8 @@ fbReadAxisDec(Axis := _stAxis.Axis,
                         ParameterNumber := E_AxisParameters.AxisDefaultDeceleration,
                         Value => _stAxis.stConfig.fDefaultDec);
 
+END_IF
+IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadEnMinSoftPosLimit.Valid THEN
 //Soft limits enabled
 fbReadEnMinSoftPosLimit(Axis := _stAxis.Axis,
                         Enable := TRUE,
@@ -814,24 +839,33 @@ fbReadEnMinSoftPosLimit(Axis := _stAxis.Axis,
                         ParameterNumber := E_AxisParameters.EnableLimitBackward);
 _stAxis.stConfig.bEnMinSoftPosLimit := LREAL_TO_BOOL(fbReadEnMinSoftPosLimit.Value);
 
+END_IF
+IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadEnMaxSoftPosLimit.Valid THEN
 fbReadEnMaxSoftPosLimit(Axis := _stAxis.Axis,
                         Enable := TRUE,
                         ReadMode := READMODE_CYCLIC,
                         ParameterNumber := E_AxisParameters.EnableLimitForward);
 _stAxis.stConfig.bEnMaxSoftPosLimit := LREAL_TO_BOOL(fbReadEnMaxSoftPosLimit.Value);
 
+END_IF
+IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadMinSoftPosLimit.Valid THEN
 //Soft limit values
 fbReadMinSoftPosLimit(Axis := _stAxis.Axis,
                         Enable := TRUE,
                         ReadMode := READMODE_CYCLIC,
                         ParameterNumber := E_AxisParameters.SWLimitBackward,
                         Value => _stAxis.stConfig.fMinSoftPosLimit);
+
+END_IF
+IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadMaxSoftPosLimit.Valid THEN
 fbReadMaxSoftPosLimit(Axis := _stAxis.Axis,
                         Enable := TRUE,
                         ReadMode := READMODE_CYCLIC,
                         ParameterNumber := E_AxisParameters.SWLimitForward,
                         Value => _stAxis.stConfig.fMaxSoftPosLimit);
 
+END_IF
+IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadEnPositionLagMonitoring.Valid THEN
 //Position Lag Monitoring
 fbReadEnPositionLagMonitoring(Axis := _stAxis.Axis,
                         Enable := TRUE,
@@ -839,12 +873,16 @@ fbReadEnPositionLagMonitoring(Axis := _stAxis.Axis,
                         ParameterNumber := E_AxisParameters.EnablePositionLagMonitoring);
 _stAxis.stConfig.bEnPositionLagMonitoring := LREAL_TO_BOOL(fbReadEnPositionLagMonitoring.Value);
 
+END_IF
+IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadAxisMaxPosLagValue.Valid THEN
 fbReadAxisMaxPosLagValue(Axis := _stAxis.Axis,
                         Enable := TRUE,
                         ReadMode := READMODE_CYCLIC,
                         ParameterNumber := E_AxisParameters.MaxPositionLag,
                         Value => _stAxis.stConfig.fMaxPosLagValue);
 
+END_IF
+IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadEnTargetPositionMonitoring.Valid THEN
 // Target Position Monitoring
 fbReadEnTargetPositionMonitoring(Axis := _stAxis.Axis,
                         Enable := TRUE,
@@ -852,12 +890,14 @@ fbReadEnTargetPositionMonitoring(Axis := _stAxis.Axis,
                         ParameterNumber := E_AxisParameters.SWLimitBackward);
 _stAxis.stConfig.bEnTargetPositionMonitoring := LREAL_TO_BOOL(fbReadEnTargetPositionMonitoring.Value);
 
+END_IF
+IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadTargetPositionWindow.Valid THEN
 fbReadTargetPositionWindow(Axis := _stAxis.Axis,
                         Enable := TRUE,
                         ReadMode := READMODE_CYCLIC,
                         ParameterNumber := E_AxisParameters.AxisTargetPositionWindow,
                         Value => _stAxis.stConfig.fTargetPositionWindow);
-
+END_IF
 //All variables are valid
 _stAxis.stConfig.bReadMcParametersValid := FALSE;
 _stAxis.stConfig.bReadMcParametersValid := fbReadAxisVeloManSlow.Valid AND
@@ -1243,298 +1283,5 @@ END_VAR
         </Implementation>
       </Set>
     </Property>
-    <LineIds Name="FB_Axis">
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.EndOfCycle">
-      <LineId Id="3" Count="1" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.FB_init">
-      <LineId Id="3" Count="10" />
-      <LineId Id="24" Count="0" />
-      <LineId Id="16" Count="1" />
-      <LineId Id="23" Count="0" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mControl_AutoEnableDisable">
-      <LineId Id="12" Count="0" />
-      <LineId Id="16" Count="1" />
-      <LineId Id="19" Count="0" />
-      <LineId Id="21" Count="2" />
-      <LineId Id="70" Count="0" />
-      <LineId Id="24" Count="0" />
-      <LineId Id="72" Count="0" />
-      <LineId Id="74" Count="1" />
-      <LineId Id="73" Count="0" />
-      <LineId Id="71" Count="0" />
-      <LineId Id="25" Count="0" />
-      <LineId Id="18" Count="0" />
-      <LineId Id="26" Count="0" />
-      <LineId Id="13" Count="0" />
-      <LineId Id="27" Count="0" />
-      <LineId Id="32" Count="0" />
-      <LineId Id="30" Count="0" />
-      <LineId Id="28" Count="0" />
-      <LineId Id="48" Count="0" />
-      <LineId Id="42" Count="0" />
-      <LineId Id="44" Count="0" />
-      <LineId Id="79" Count="1" />
-      <LineId Id="45" Count="0" />
-      <LineId Id="50" Count="1" />
-      <LineId Id="53" Count="0" />
-      <LineId Id="52" Count="0" />
-      <LineId Id="49" Count="0" />
-      <LineId Id="43" Count="0" />
-      <LineId Id="14" Count="1" />
-      <LineId Id="5" Count="0" />
-      <LineId Id="33" Count="0" />
-      <LineId Id="9" Count="2" />
-      <LineId Id="40" Count="1" />
-      <LineId Id="47" Count="0" />
-      <LineId Id="39" Count="0" />
-      <LineId Id="7" Count="0" />
-      <LineId Id="54" Count="12" />
-      <LineId Id="38" Count="0" />
-      <LineId Id="35" Count="0" />
-      <LineId Id="37" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mControl_DisableSPG">
-      <LineId Id="24" Count="8" />
-      <LineId Id="48" Count="0" />
-      <LineId Id="47" Count="0" />
-      <LineId Id="49" Count="0" />
-      <LineId Id="51" Count="0" />
-      <LineId Id="50" Count="0" />
-      <LineId Id="52" Count="0" />
-      <LineId Id="33" Count="0" />
-      <LineId Id="36" Count="2" />
-      <LineId Id="42" Count="0" />
-      <LineId Id="44" Count="0" />
-      <LineId Id="53" Count="0" />
-      <LineId Id="57" Count="0" />
-      <LineId Id="55" Count="0" />
-      <LineId Id="45" Count="1" />
-      <LineId Id="16" Count="1" />
-      <LineId Id="5" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mControl_EnableSPG">
-      <LineId Id="5" Count="0" />
-      <LineId Id="9" Count="0" />
-      <LineId Id="19" Count="0" />
-      <LineId Id="10" Count="0" />
-      <LineId Id="30" Count="2" />
-      <LineId Id="34" Count="0" />
-      <LineId Id="33" Count="0" />
-      <LineId Id="21" Count="0" />
-      <LineId Id="20" Count="0" />
-      <LineId Id="22" Count="1" />
-      <LineId Id="28" Count="0" />
-      <LineId Id="25" Count="0" />
-      <LineId Id="24" Count="0" />
-      <LineId Id="26" Count="0" />
-      <LineId Id="29" Count="0" />
-      <LineId Id="27" Count="0" />
-      <LineId Id="12" Count="0" />
-      <LineId Id="11" Count="0" />
-      <LineId Id="14" Count="0" />
-      <LineId Id="13" Count="0" />
-      <LineId Id="15" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mControl_FeedSPG">
-      <LineId Id="6" Count="0" />
-      <LineId Id="14" Count="3" />
-      <LineId Id="7" Count="1" />
-      <LineId Id="18" Count="0" />
-      <LineId Id="20" Count="1" />
-      <LineId Id="27" Count="2" />
-      <LineId Id="31" Count="0" />
-      <LineId Id="30" Count="0" />
-      <LineId Id="32" Count="1" />
-      <LineId Id="19" Count="0" />
-      <LineId Id="9" Count="0" />
-      <LineId Id="5" Count="0" />
-      <LineId Id="34" Count="4" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mControl_Home">
-      <LineId Id="3" Count="28" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mControl_LimitHitTimer">
-      <LineId Id="3" Count="8" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mControl_LimitLinking">
-      <LineId Id="3" Count="5" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mControl_Power">
-      <LineId Id="6" Count="0" />
-      <LineId Id="8" Count="11" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mControl_Reset">
-      <LineId Id="3" Count="4" />
-      <LineId Id="31" Count="0" />
-      <LineId Id="8" Count="3" />
-      <LineId Id="32" Count="0" />
-      <LineId Id="12" Count="14" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mMove_Halt">
-      <LineId Id="4" Count="20" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mMove_MoveAbsolute">
-      <LineId Id="3" Count="0" />
-      <LineId Id="54" Count="0" />
-      <LineId Id="57" Count="0" />
-      <LineId Id="60" Count="2" />
-      <LineId Id="58" Count="1" />
-      <LineId Id="55" Count="1" />
-      <LineId Id="8" Count="44" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mMove_MoveModulo">
-      <LineId Id="52" Count="9" />
-      <LineId Id="51" Count="0" />
-      <LineId Id="9" Count="39" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mMove_MoveRelative">
-      <LineId Id="3" Count="1" />
-      <LineId Id="28" Count="3" />
-      <LineId Id="27" Count="0" />
-      <LineId Id="32" Count="0" />
-      <LineId Id="6" Count="19" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mMove_MoveVelocity">
-      <LineId Id="3" Count="1" />
-      <LineId Id="29" Count="4" />
-      <LineId Id="27" Count="0" />
-      <LineId Id="6" Count="19" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mMove_SetPosition">
-      <LineId Id="35" Count="0" />
-      <LineId Id="41" Count="2" />
-      <LineId Id="47" Count="0" />
-      <LineId Id="63" Count="0" />
-      <LineId Id="48" Count="2" />
-      <LineId Id="53" Count="3" />
-      <LineId Id="62" Count="0" />
-      <LineId Id="58" Count="2" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mMove_Stop">
-      <LineId Id="4" Count="20" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mParameters_Init">
-      <LineId Id="3" Count="0" />
-      <LineId Id="15" Count="0" />
-      <LineId Id="17" Count="0" />
-      <LineId Id="16" Count="0" />
-      <LineId Id="4" Count="9" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mParameters_ReadNc">
-      <LineId Id="3" Count="146" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mParameters_ReadParameter">
-      <LineId Id="3" Count="19" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mParameters_WriteParameter">
-      <LineId Id="3" Count="18" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mParameters_WriteSWLimits">
-      <LineId Id="6" Count="22" />
-      <LineId Id="5" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mStatus_AxisStatus">
-      <LineId Id="3" Count="6" />
-      <LineId Id="11" Count="6" />
-      <LineId Id="20" Count="0" />
-      <LineId Id="18" Count="0" />
-      <LineId Id="24" Count="0" />
-      <LineId Id="23" Count="0" />
-      <LineId Id="22" Count="0" />
-      <LineId Id="21" Count="0" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mStatus_Busy">
-      <LineId Id="3" Count="4" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mStatus_CommandAborted">
-      <LineId Id="3" Count="8" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mStatus_Done">
-      <LineId Id="3" Count="8" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mStatus_Error">
-      <LineId Id="3" Count="3" />
-      <LineId Id="106" Count="0" />
-      <LineId Id="7" Count="1" />
-      <LineId Id="31" Count="0" />
-      <LineId Id="9" Count="3" />
-      <LineId Id="61" Count="0" />
-      <LineId Id="87" Count="0" />
-      <LineId Id="28" Count="0" />
-      <LineId Id="30" Count="0" />
-      <LineId Id="29" Count="0" />
-      <LineId Id="14" Count="3" />
-      <LineId Id="33" Count="0" />
-      <LineId Id="18" Count="3" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mStatus_InVelocity">
-      <LineId Id="3" Count="12" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mStatus_Name">
-      <LineId Id="12" Count="7" />
-      <LineId Id="5" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.mStatus_NewCommand">
-      <LineId Id="3" Count="11" />
-      <LineId Id="28" Count="0" />
-      <LineId Id="17" Count="6" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.Run">
-      <LineId Id="4" Count="4" />
-      <LineId Id="46" Count="0" />
-      <LineId Id="9" Count="3" />
-      <LineId Id="37" Count="0" />
-      <LineId Id="40" Count="0" />
-      <LineId Id="39" Count="0" />
-      <LineId Id="41" Count="1" />
-      <LineId Id="13" Count="3" />
-      <LineId Id="44" Count="0" />
-      <LineId Id="17" Count="4" />
-      <LineId Id="25" Count="8" />
-      <LineId Id="46" Count="0" />
-      <LineId Id="51" Count="2" />
-      <LineId Id="38" Count="0" />
-      <LineId Id="47" Count="2" />
-      <LineId Id="46" Count="0" />
-      <LineId Id="34" Count="1" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.stAxis.Get">
-      <LineId Id="3" Count="0" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Axis.stAxis.Set">
-      <LineId Id="3" Count="0" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

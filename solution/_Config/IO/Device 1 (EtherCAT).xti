@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.24" ClassName="CDevEtherCATDef" SubType="111">
+	<Device Id="1" DevType="111" DevFlags="#x0003" AmsPort="28673" AmsNetId="10.1.176.94.2.1" RemoteName="Device 1 (EtherCAT)" InfoImageId="3">
+		<Name>__FILENAME__</Name>
+		<AddressInfo>
+			<Ccat>
+				<Address>-264241152</Address>
+				<Offset>131072</Offset>
+				<Size>8192</Size>
+				<BaseAddr>0</BaseAddr>
+				<BusNo>8</BusNo>
+				<SlotNo>0</SlotNo>
+				<VendorId>5612</VendorId>
+				<DeviceId>20480</DeviceId>
+				<Dma>
+					<Address>0</Address>
+					<Offset>4096</Offset>
+					<Size>12288</Size>
+					<BaseAddr>2</BaseAddr>
+					<RxChn>0</RxChn>
+					<TxChn>1</TxChn>
+				</Dma>
+				<TimeSize>128</TimeSize>
+				<TimeOffs>1024</TimeOffs>
+				<GpioSize>32</GpioSize>
+				<GpioOffs>768</GpioOffs>
+				<EepromSize>64</EepromSize>
+				<EepromOffs>512</EepromOffs>
+				<IntCtrlSize>16</IntCtrlSize>
+				<IntCtrlOffs>640</IntCtrlOffs>
+				<Identification>
+					<Value>1795167326</Value>
+					<Version>1</Version>
+					<Size>256</Size>
+				</Identification>
+			</Ccat>
+		</AddressInfo>
+		<Image Id="2" AddrType="9" ImageType="3">
+			<Name>Image</Name>
+		</Image>
+		<Image Id="4" AddrType="10" ImageType="3">
+			<Name>Image-2</Name>
+		</Image>
+		<Box File="PLCR-A2.xti" Id="1">
+			<EtherCAT PortABoxInfo="#x00ffffff"/>
+		</Box>
+		<Box File="MSR-BC1.xti" Id="10">
+			<EtherCAT PortABoxInfo="#x01000009"/>
+		</Box>
+		<Box File="MR1-BC1.xti" Id="32">
+			<EtherCAT PortABoxInfo="#x0200000a"/>
+		</Box>
+		<Box File="MR2-BC1.xti" Id="52">
+			<EtherCAT PortABoxInfo="#x02000020"/>
+		</Box>
+		<Box File="MR3-BC1.xti" Id="79">
+			<EtherCAT PortABoxInfo="#x02000034"/>
+		</Box>
+		<Box File="MR4-BC1.xti" Id="100">
+			<EtherCAT PortABoxInfo="#x0200004f"/>
+		</Box>
+		<Box File="MR5-BC1.xti" Id="118">
+			<EtherCAT PortABoxInfo="#x02000064"/>
+		</Box>
+		<Box File="SVR-G1.xti" Id="132">
+			<EtherCAT PortABoxInfo="#x02000076"/>
+		</Box>
+		<EtherCAT DcSyncMode="3">
+			<SyncUnit Name="StepperMotion" NoDeleteIfUnused="true"/>
+		</EtherCAT>
+	</Device>
+	<Mappings>
+		<OwnerA>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)">
+				<Link VarA="MR2-BC1^MR2-BC2 (Collimators)^ColNorthX^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^Message_1" VarB="MSR-BC1^MSR-A1^ConnectionInputs^Message_94 TxPDO"/>
+				<Link VarA="MR2-BC1^MR2-BC2 (Collimators)^ColNorthX^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^Message_1" VarB="MSR-BC1^MSR-A1^ConnectionOutputs^Message_94 RxPDO"/>
+				<Link VarA="MR2-BC1^MR2-BC2 (Collimators)^ColNorthY^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^Message_1" VarB="MSR-BC1^MSR-A1^ConnectionInputs^Message_95 TxPDO"/>
+				<Link VarA="MR2-BC1^MR2-BC2 (Collimators)^ColNorthY^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^Message_1" VarB="MSR-BC1^MSR-A1^ConnectionOutputs^Message_95 RxPDO"/>
+				<Link VarA="MR2-BC1^MR2-BC2 (Collimators)^ColSouthX^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^Message_1" VarB="MSR-BC1^MSR-A1^ConnectionInputs^Message_96 TxPDO"/>
+				<Link VarA="MR2-BC1^MR2-BC2 (Collimators)^ColSouthX^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^Message_1" VarB="MSR-BC1^MSR-A1^ConnectionOutputs^Message_96 RxPDO"/>
+				<Link VarA="MR2-BC1^MR2-BC2 (Collimators)^ColSouthY^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^Message_1" VarB="MSR-BC1^MSR-A1^ConnectionInputs^Message_97 TxPDO"/>
+				<Link VarA="MR2-BC1^MR2-BC2 (Collimators)^ColSouthY^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^Message_1" VarB="MSR-BC1^MSR-A1^ConnectionOutputs^Message_97 RxPDO"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionInputs^Message_1 TxPDO" VarB="SVR-G1^SVR-G2 (Sample Height)^Device (Safety)^FSoE Slave Connection 1 Master Message^Message_1"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionInputs^Message_28 TxPDO" VarB="SVR-G1^SVR-G3 (Sample Rotation)^Device (Safety)^FSoE Slave Connection 1 Master Message^Message_1"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionInputs^Message_66 TxPDO" VarB="MSR-BC1^MSR-SI1^Module 1 (FSOES)^RxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionInputs^Message_67 TxPDO" VarB="MSR-BC1^MSR-SI2^Module 1 (FSOES)^RxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionInputs^Message_68 TxPDO" VarB="MSR-BC1^MSR-SI3^Module 1 (FSOES)^RxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionInputs^Message_69 TxPDO" VarB="MSR-BC1^MSR-SI4^Module 1 (FSOES)^RxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionInputs^Message_70 TxPDO" VarB="MSR-BC1^MSR-SI5^Module 1 (FSOES)^RxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionInputs^Message_71 TxPDO" VarB="MSR-BC1^MSR-SI6^Module 1 (FSOES)^RxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionInputs^Message_72 TxPDO" VarB="MSR-BC1^MSR-SI7^Module 1 (FSOES)^RxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionInputs^Message_73 TxPDO" VarB="MSR-BC1^MSR-SI8^Module 1 (FSOES)^RxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionInputs^Message_74 TxPDO" VarB="MSR-BC1^MSR-SI10^Module 1 (FSOES)^RxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionInputs^Message_75 TxPDO" VarB="MSR-BC1^MSR-SI11^Module 1 (FSOES)^RxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionInputs^Message_76 TxPDO" VarB="MSR-BC1^MSR-SO1^Module 1 (FSOES)^RxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionInputs^Message_77 TxPDO" VarB="MSR-BC1^MSR-SO2^Module 1 (FSOES)^RxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionInputs^Message_78 TxPDO" VarB="MSR-BC1^MSR-SO3^Module 1 (FSOES)^RxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionInputs^Message_79 TxPDO" VarB="MSR-BC1^MSR-SO4^Module 1 (FSOES)^RxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionInputs^Message_80 TxPDO" VarB="MSR-BC1^MSR-SO5^Module 1 (FSOES)^RxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionInputs^Message_94 TxPDO" VarB="MR2-BC1^MR2-BC2 (Collimators)^ColNorthX^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^Message_1"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionInputs^Message_95 TxPDO" VarB="MR2-BC1^MR2-BC2 (Collimators)^ColNorthY^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^Message_1"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionInputs^Message_96 TxPDO" VarB="MR2-BC1^MR2-BC2 (Collimators)^ColSouthX^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^Message_1"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionInputs^Message_97 TxPDO" VarB="MR2-BC1^MR2-BC2 (Collimators)^ColSouthY^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^Message_1"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionOutputs^Message_1 RxPDO" VarB="SVR-G1^SVR-G2 (Sample Height)^Device (Safety)^FSoE Slave Connection 1 Slave Message^Message_1"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionOutputs^Message_28 RxPDO" VarB="SVR-G1^SVR-G3 (Sample Rotation)^Device (Safety)^FSoE Slave Connection 1 Slave Message^Message_1"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionOutputs^Message_66 RxPDO" VarB="MSR-BC1^MSR-SI1^Module 1 (FSOES)^TxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionOutputs^Message_67 RxPDO" VarB="MSR-BC1^MSR-SI2^Module 1 (FSOES)^TxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionOutputs^Message_68 RxPDO" VarB="MSR-BC1^MSR-SI3^Module 1 (FSOES)^TxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionOutputs^Message_69 RxPDO" VarB="MSR-BC1^MSR-SI4^Module 1 (FSOES)^TxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionOutputs^Message_70 RxPDO" VarB="MSR-BC1^MSR-SI5^Module 1 (FSOES)^TxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionOutputs^Message_71 RxPDO" VarB="MSR-BC1^MSR-SI6^Module 1 (FSOES)^TxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionOutputs^Message_72 RxPDO" VarB="MSR-BC1^MSR-SI7^Module 1 (FSOES)^TxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionOutputs^Message_73 RxPDO" VarB="MSR-BC1^MSR-SI8^Module 1 (FSOES)^TxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionOutputs^Message_74 RxPDO" VarB="MSR-BC1^MSR-SI10^Module 1 (FSOES)^TxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionOutputs^Message_75 RxPDO" VarB="MSR-BC1^MSR-SI11^Module 1 (FSOES)^TxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionOutputs^Message_76 RxPDO" VarB="MSR-BC1^MSR-SO1^Module 1 (FSOES)^TxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionOutputs^Message_77 RxPDO" VarB="MSR-BC1^MSR-SO2^Module 1 (FSOES)^TxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionOutputs^Message_78 RxPDO" VarB="MSR-BC1^MSR-SO3^Module 1 (FSOES)^TxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionOutputs^Message_79 RxPDO" VarB="MSR-BC1^MSR-SO4^Module 1 (FSOES)^TxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionOutputs^Message_80 RxPDO" VarB="MSR-BC1^MSR-SO5^Module 1 (FSOES)^TxPDO^FSOE"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionOutputs^Message_94 RxPDO" VarB="MR2-BC1^MR2-BC2 (Collimators)^ColNorthX^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^Message_1"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionOutputs^Message_95 RxPDO" VarB="MR2-BC1^MR2-BC2 (Collimators)^ColNorthY^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^Message_1"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionOutputs^Message_96 RxPDO" VarB="MR2-BC1^MR2-BC2 (Collimators)^ColSouthX^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^Message_1"/>
+				<Link VarA="MSR-BC1^MSR-A1^ConnectionOutputs^Message_97 RxPDO" VarB="MR2-BC1^MR2-BC2 (Collimators)^ColSouthY^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^Message_1"/>
+				<Link VarA="MSR-BC1^MSR-SI10^Module 1 (FSOES)^RxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionInputs^Message_74 TxPDO"/>
+				<Link VarA="MSR-BC1^MSR-SI10^Module 1 (FSOES)^TxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionOutputs^Message_74 RxPDO"/>
+				<Link VarA="MSR-BC1^MSR-SI11^Module 1 (FSOES)^RxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionInputs^Message_75 TxPDO"/>
+				<Link VarA="MSR-BC1^MSR-SI11^Module 1 (FSOES)^TxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionOutputs^Message_75 RxPDO"/>
+				<Link VarA="MSR-BC1^MSR-SI1^Module 1 (FSOES)^RxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionInputs^Message_66 TxPDO"/>
+				<Link VarA="MSR-BC1^MSR-SI1^Module 1 (FSOES)^TxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionOutputs^Message_66 RxPDO"/>
+				<Link VarA="MSR-BC1^MSR-SI2^Module 1 (FSOES)^RxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionInputs^Message_67 TxPDO"/>
+				<Link VarA="MSR-BC1^MSR-SI2^Module 1 (FSOES)^TxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionOutputs^Message_67 RxPDO"/>
+				<Link VarA="MSR-BC1^MSR-SI3^Module 1 (FSOES)^RxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionInputs^Message_68 TxPDO"/>
+				<Link VarA="MSR-BC1^MSR-SI3^Module 1 (FSOES)^TxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionOutputs^Message_68 RxPDO"/>
+				<Link VarA="MSR-BC1^MSR-SI4^Module 1 (FSOES)^RxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionInputs^Message_69 TxPDO"/>
+				<Link VarA="MSR-BC1^MSR-SI4^Module 1 (FSOES)^TxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionOutputs^Message_69 RxPDO"/>
+				<Link VarA="MSR-BC1^MSR-SI5^Module 1 (FSOES)^RxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionInputs^Message_70 TxPDO"/>
+				<Link VarA="MSR-BC1^MSR-SI5^Module 1 (FSOES)^TxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionOutputs^Message_70 RxPDO"/>
+				<Link VarA="MSR-BC1^MSR-SI6^Module 1 (FSOES)^RxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionInputs^Message_71 TxPDO"/>
+				<Link VarA="MSR-BC1^MSR-SI6^Module 1 (FSOES)^TxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionOutputs^Message_71 RxPDO"/>
+				<Link VarA="MSR-BC1^MSR-SI7^Module 1 (FSOES)^RxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionInputs^Message_72 TxPDO"/>
+				<Link VarA="MSR-BC1^MSR-SI7^Module 1 (FSOES)^TxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionOutputs^Message_72 RxPDO"/>
+				<Link VarA="MSR-BC1^MSR-SI8^Module 1 (FSOES)^RxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionInputs^Message_73 TxPDO"/>
+				<Link VarA="MSR-BC1^MSR-SI8^Module 1 (FSOES)^TxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionOutputs^Message_73 RxPDO"/>
+				<Link VarA="MSR-BC1^MSR-SO1^Module 1 (FSOES)^RxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionInputs^Message_76 TxPDO"/>
+				<Link VarA="MSR-BC1^MSR-SO1^Module 1 (FSOES)^TxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionOutputs^Message_76 RxPDO"/>
+				<Link VarA="MSR-BC1^MSR-SO2^Module 1 (FSOES)^RxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionInputs^Message_77 TxPDO"/>
+				<Link VarA="MSR-BC1^MSR-SO2^Module 1 (FSOES)^TxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionOutputs^Message_77 RxPDO"/>
+				<Link VarA="MSR-BC1^MSR-SO3^Module 1 (FSOES)^RxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionInputs^Message_78 TxPDO"/>
+				<Link VarA="MSR-BC1^MSR-SO3^Module 1 (FSOES)^TxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionOutputs^Message_78 RxPDO"/>
+				<Link VarA="MSR-BC1^MSR-SO4^Module 1 (FSOES)^RxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionInputs^Message_79 TxPDO"/>
+				<Link VarA="MSR-BC1^MSR-SO4^Module 1 (FSOES)^TxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionOutputs^Message_79 RxPDO"/>
+				<Link VarA="MSR-BC1^MSR-SO5^Module 1 (FSOES)^RxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionInputs^Message_80 TxPDO"/>
+				<Link VarA="MSR-BC1^MSR-SO5^Module 1 (FSOES)^TxPDO^FSOE" VarB="MSR-BC1^MSR-A1^ConnectionOutputs^Message_80 RxPDO"/>
+				<Link VarA="SVR-G1^PSM Controlword for axis^Controlword for axis" VarB="SVR-G1^SVR-G2 (Sample Height)^Device^DeviceMain Outputs^Power supply controlword"/>
+				<Link VarA="SVR-G1^PSM Controlword for axis^Controlword for axis" VarB="SVR-G1^SVR-G3 (Sample Rotation)^Device^DeviceMain Outputs^Power supply controlword"/>
+				<Link VarA="SVR-G1^SVR-G2 (Sample Height)^Device (Safety)^FSoE Slave Connection 1 Master Message^Message_1" VarB="MSR-BC1^MSR-A1^ConnectionInputs^Message_1 TxPDO"/>
+				<Link VarA="SVR-G1^SVR-G2 (Sample Height)^Device (Safety)^FSoE Slave Connection 1 Slave Message^Message_1" VarB="MSR-BC1^MSR-A1^ConnectionOutputs^Message_1 RxPDO"/>
+				<Link VarA="SVR-G1^SVR-G2 (Sample Height)^Device^DeviceMain Outputs^Power supply controlword" VarB="SVR-G1^PSM Controlword for axis^Controlword for axis"/>
+				<Link VarA="SVR-G1^SVR-G3 (Sample Rotation)^Device (Safety)^FSoE Slave Connection 1 Master Message^Message_1" VarB="MSR-BC1^MSR-A1^ConnectionInputs^Message_28 TxPDO"/>
+				<Link VarA="SVR-G1^SVR-G3 (Sample Rotation)^Device (Safety)^FSoE Slave Connection 1 Slave Message^Message_1" VarB="MSR-BC1^MSR-A1^ConnectionOutputs^Message_28 RxPDO"/>
+				<Link VarA="SVR-G1^SVR-G3 (Sample Rotation)^Device^DeviceMain Outputs^Power supply controlword" VarB="SVR-G1^PSM Controlword for axis^Controlword for axis"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
+</TcSmItem>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
   <DUT Name="ST_AxisStatus" Id="{9d7cecb1-beaf-45c1-90df-46de240bc048}">
     <Declaration><![CDATA[TYPE ST_AxisStatus :
 STRUCT
@@ -21,6 +21,7 @@ STRUCT
     bBwEnabled: BOOL; //Negative movement of axis is enabled/disabled
     bInterlockedFwd: BOOL; //Axis interlocked in the postive direction
     bInterlockedBwd: BOOL; //Axis interlocked in the negative direction
+	bSTOActive AT %I*: BOOL;
 
     fActPosition: LREAL; //Actual position value
 

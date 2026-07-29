@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<safetyApplication Crc="3975212648" xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.5.0.0" Id="53ffbf56-551e-4a45-8447-ce8c72f35468" name="" mapState="true" mapDiag="true" groupOrderId="2" passificationAllowed="false" temporaryDeactivationAllowed="false" permamentDeactivationAllowed="false" xmlid="0" analogFBOutputReplacementValues="Zero" verifyAnalogFBInputsIfStart="false" userFbId="00000000-0000-0000-0000-000000000000" xmlns="http://schemas.microsoft.com/dsltools/SafetyApplicationLanguage">
+  <networks>
+    <safetyApplicationHasNetworks Id="c5ad63a0-b41f-43d7-a9e0-3e6ffa2cc282">
+      <Network Id="dac72a21-b0a7-4996-90f7-41fc18a98a59" name="Connection_Output_ChA" networkName="Connection_Output_ChA" intId="1" networkOrderId="0">
+        <functionBlocks>
+          <networkHasFunctionBlocks Id="092f71e2-7ed5-4f68-82b8-facf266b05db">
+            <fBDecouple Id="0d81c60e-fc90-4a43-a04d-fd079248eded" name="Connection_ChA_Output_Byte0" instanceName="Connection_ChA_Output_Byte0" orderOfExecution="1" mapState="false" mapDiag="false" functionName="safeDecouple">
+              <inPorts>
+                <functioBlockHasInPorts Id="9d7e3412-4ce6-40bb-8d66-ccab01887ba2">
+                  <inPort Id="c3faa013-89e2-455e-8a78-ba302727ad9e" name="DecIn1" portName="DecIn1" portNum="3" objectIndex="8" varId="5" filter="2" portDataType="1" maxDeviation="0" resetTime="0">
+                    <fbPortGlobalVariableReferences>
+                      <functionBlockPortHasFbPortGlobalVariableReferences Id="7e1d5be0-6bbc-45bb-a5b4-54d0ddc7def5">
+                        <fbPortGlobalVariableReference Id="a7ff2db8-45fa-4cc7-a3c4-27e5e8e8ef29" variableId="db4575fa-af0d-43d9-9554-a8f9b6e350af" lastKnownPath="ChA.STO_STATE" />
+                      </functionBlockPortHasFbPortGlobalVariableReferences>
+                    </fbPortGlobalVariableReferences>
+                  </inPort>
+                </functioBlockHasInPorts>
+                <functioBlockHasInPorts Id="adf54764-7ed6-47b2-8634-8ffa79f31ce7">
+                  <inPort Id="5516deaf-a121-4eb4-bb1d-017023aae4f5" name="DecIn2" portName="DecIn2" portNum="4" objectIndex="9" varId="6" filter="2" portDataType="1" maxDeviation="0" resetTime="0">
+                    <fbPortGlobalVariableReferences>
+                      <functionBlockPortHasFbPortGlobalVariableReferences Id="8a27aa45-6c55-4188-a2ae-62f41d9304dd">
+                        <fbPortGlobalVariableReference Id="ffd2e57f-11ce-4809-9eee-3336390b7d22" variableId="7dd81a4f-0a9f-4652-99dc-ff0c51968250" lastKnownPath="ChA.ResetPossible" />
+                      </functionBlockPortHasFbPortGlobalVariableReferences>
+                    </fbPortGlobalVariableReferences>
+                  </inPort>
+                </functioBlockHasInPorts>
+                <functioBlockHasInPorts Id="3e628e92-d7f1-4570-8112-6ac8ab31db5b">
+                  <inPort Id="1f800bfd-ae93-4990-8d73-452f1433bbe5" name="DecIn3" portName="DecIn3" portNum="5" objectIndex="10" varId="7" filter="2" portDataType="1" maxDeviation="0" resetTime="0" />
+                </functioBlockHasInPorts>
+                <functioBlockHasInPorts Id="86c0fd07-0c03-437f-825c-821d342ef99f">
+                  <inPort Id="63ac8f4c-dccc-46a9-bf57-81ac0007c5c6" name="DecIn4" portName="DecIn4" portNum="6" objectIndex="11" varId="8" filter="2" portDataType="1" maxDeviation="0" resetTime="0" />
+                </functioBlockHasInPorts>
+                <functioBlockHasInPorts Id="07a69059-341b-4997-9002-04c66752e816">
+                  <inPort Id="abf8b0a0-d5b3-4f87-a2f1-700127ac498c" name="DecIn5" portName="DecIn5" portNum="7" objectIndex="12" varId="9" filter="2" portDataType="1" maxDeviation="0" resetTime="0" />
+                </functioBlockHasInPorts>
+                <functioBlockHasInPorts Id="14f71750-6de8-4bfe-9955-10c514cd4b22">
+                  <inPort Id="b4a57c03-0d92-409a-8648-0428cd0daf8d" name="DecIn6" portName="DecIn6" portNum="8" objectIndex="13" varId="10" filter="2" portDataType="1" maxDeviation="0" resetTime="0" />
+                </functioBlockHasInPorts>
+                <functioBlockHasInPorts Id="4492f9f6-beb9-499e-bf38-efd9387f0f01">
+                  <inPort Id="362c8ace-b0b1-4e80-831f-3210c26ea6f1" name="DecIn7" portName="DecIn7" portNum="9" objectIndex="14" varId="11" filter="2" portDataType="1" maxDeviation="0" resetTime="0" />
+                </functioBlockHasInPorts>
+                <functioBlockHasInPorts Id="187108b4-5bb9-4e84-84e7-1fa109f82971">
+                  <inPort Id="20305fb7-214d-40e2-ab3f-4babdcec8a78" name="DecIn8" portName="DecIn8" portNum="10" objectIndex="15" varId="12" filter="2" portDataType="1" maxDeviation="0" resetTime="0">
+                    <fbPortGlobalVariableReferences>
+                      <functionBlockPortHasFbPortGlobalVariableReferences Id="3f466639-d31f-42f7-a465-e689d74bc592">
+                        <fbPortGlobalVariableReference Id="e568d890-e2c3-4aa3-aad6-a1e875fa0bf2" variableId="a941ad15-aede-47fe-bae5-25840e78fe5d" lastKnownPath="ChA.ResetReq_STATE" />
+                      </functionBlockPortHasFbPortGlobalVariableReferences>
+                    </fbPortGlobalVariableReferences>
+                  </inPort>
+                </functioBlockHasInPorts>
+              </inPorts>
+              <outPorts>
+                <functionBlockHasOutPorts Id="ba9647a7-b795-4994-af9d-5c9e7c9c53a3">
+                  <outPort Id="165619be-a809-4fbb-a3a4-634df1ebceef" name="DecOut1" portName="DecOut1" portNum="3" objectIndex="8" varId="17" filter="7" portDataType="1" replacementValue="0" />
+                </functionBlockHasOutPorts>
+                <functionBlockHasOutPorts Id="5fc0682c-89c2-4697-a512-19f0bb6324cf">
+                  <outPort Id="83099dbe-de3e-4ef6-a404-0edb95ed8bab" name="DecOut2" portName="DecOut2" portNum="4" objectIndex="9" varId="18" filter="7" portDataType="1" replacementValue="0" />
+                </functionBlockHasOutPorts>
+                <functionBlockHasOutPorts Id="e5cdfae6-e013-4907-b923-95c48c925f49">
+                  <outPort Id="f7193128-aa23-4df9-b150-f49477df4917" name="DecOut3" portName="DecOut3" portNum="5" objectIndex="10" varId="19" filter="7" portDataType="1" replacementValue="0" />
+                </functionBlockHasOutPorts>
+                <functionBlockHasOutPorts Id="e2b2bbec-3819-4a5e-93c1-cccc4e04c92d">
+                  <outPort Id="dce77592-6f33-4329-b2d5-c4b2b13fff59" name="DecOut4" portName="DecOut4" portNum="6" objectIndex="11" varId="20" filter="7" portDataType="1" replacementValue="0" />
+                </functionBlockHasOutPorts>
+                <functionBlockHasOutPorts Id="7dbd5421-b577-450d-89cc-60e9bd26302a">
+                  <outPort Id="49d4230e-f339-434b-b83a-23bde590f16b" name="DecOut5" portName="DecOut5" portNum="7" objectIndex="12" varId="21" filter="7" portDataType="1" replacementValue="0" />
+                </functionBlockHasOutPorts>
+                <functionBlockHasOutPorts Id="ee2320df-9932-4bb2-bfd6-b28cfa1cfdab">
+                  <outPort Id="a0a11693-4280-408f-83a9-dbff5162e9c5" name="DecOut6" portName="DecOut6" portNum="8" objectIndex="13" varId="22" filter="7" portDataType="1" replacementValue="0" />
+                </functionBlockHasOutPorts>
+                <functionBlockHasOutPorts Id="5f3e4baf-8a61-44c6-807d-d89b359dd1bc">
+                  <outPort Id="ec67150f-684e-4eb0-b529-b62a882a4f5c" name="DecOut7" portName="DecOut7" portNum="9" objectIndex="14" varId="23" filter="7" portDataType="1" replacementValue="0" />
+                </functionBlockHasOutPorts>
+                <functionBlockHasOutPorts Id="39918bdc-6ccc-41b9-9d66-c7afe46d5b66">
+                  <outPort Id="37b1e0f5-8de4-4627-8606-d2ccf1882519" name="DecOut8" portName="DecOut8" portNum="10" objectIndex="15" varId="24" filter="7" portDataType="1" replacementValue="0" />
+                </functionBlockHasOutPorts>
+              </outPorts>
+            </fBDecouple>
+          </networkHasFunctionBlocks>
+        </functionBlocks>
+      </Network>
+    </safetyApplicationHasNetworks>
+  </networks>
+  <twinSAFEGroupAliasPorts>
+    <safetyApplicationHasTwinSAFEGroupAliasPort Id="b94ff693-7dfd-4472-97df-1ad1e85760e3">
+      <twinSAFEGroupAliasPort Id="9790a084-4ea7-4ff4-b0a9-a42ec59a7570" name="ErrAck" sdsId="0" channelId="0" portName="ErrAck" functionId="0" />
+    </safetyApplicationHasTwinSAFEGroupAliasPort>
+    <safetyApplicationHasTwinSAFEGroupAliasPort Id="845bee23-5892-4369-bf09-9926d56d6161">
+      <twinSAFEGroupAliasPort Id="08945bd2-e460-4ff2-bf14-5f5519539772" name="RunStop" sdsId="0" channelId="0" portName="RunStop" functionId="0" />
+    </safetyApplicationHasTwinSAFEGroupAliasPort>
+    <safetyApplicationHasTwinSAFEGroupAliasPort Id="cdbb2437-bfdf-421b-96e9-8dca81193ab9">
+      <twinSAFEGroupAliasPort Id="9ec84508-a35c-4db3-84e7-874406653f2d" name="ModuleFault" sdsId="0" channelId="0" portName="ModuleFault" functionId="0" />
+    </safetyApplicationHasTwinSAFEGroupAliasPort>
+    <safetyApplicationHasTwinSAFEGroupAliasPort Id="d3459fd9-1ac6-4a25-a929-6e01aae29f0e">
+      <twinSAFEGroupAliasPort Id="573f3651-7bcd-4807-bb45-1009aa64f954" name="FbErr" sdsId="0" channelId="0" portName="FbErr" functionId="0" />
+    </safetyApplicationHasTwinSAFEGroupAliasPort>
+    <safetyApplicationHasTwinSAFEGroupAliasPort Id="08f6d2d7-3f4c-48df-ae98-5e5734499e60">
+      <twinSAFEGroupAliasPort Id="7f8b969a-9211-48d7-b72c-efcb10ee9a3a" name="ComErr" sdsId="0" channelId="0" portName="ComErr" functionId="0" />
+    </safetyApplicationHasTwinSAFEGroupAliasPort>
+    <safetyApplicationHasTwinSAFEGroupAliasPort Id="89f70883-db93-440f-84e7-bae3ef1ac5be">
+      <twinSAFEGroupAliasPort Id="9be2eccd-fc42-440f-b6a4-569f5587fde2" name="OutErr" sdsId="0" channelId="0" portName="OutErr" functionId="0" />
+    </safetyApplicationHasTwinSAFEGroupAliasPort>
+    <safetyApplicationHasTwinSAFEGroupAliasPort Id="58ab7c51-8079-4f40-9606-95560396b351">
+      <twinSAFEGroupAliasPort Id="ec49bd5f-cccd-41ac-89c7-26a96c45e373" name="OtherErr" sdsId="0" channelId="0" portName="OtherErr" functionId="0" />
+    </safetyApplicationHasTwinSAFEGroupAliasPort>
+    <safetyApplicationHasTwinSAFEGroupAliasPort Id="d5435d59-b714-44b3-9295-29ff37aa0549">
+      <twinSAFEGroupAliasPort Id="5bc8f6e6-53b1-41d6-a5b5-50a7e1d10b0f" name="ComStartup" sdsId="0" channelId="0" portName="ComStartup" functionId="0" />
+    </safetyApplicationHasTwinSAFEGroupAliasPort>
+    <safetyApplicationHasTwinSAFEGroupAliasPort Id="0b28f561-1f93-44a2-9c68-0194f8ae8494">
+      <twinSAFEGroupAliasPort Id="62b66f3e-71df-4b3b-9019-c7f49686311b" name="FbDeactive" sdsId="0" channelId="0" portName="FbDeactive" functionId="0" />
+    </safetyApplicationHasTwinSAFEGroupAliasPort>
+    <safetyApplicationHasTwinSAFEGroupAliasPort Id="86c43abc-d234-4340-a9a8-aefc7a6906f4">
+      <twinSAFEGroupAliasPort Id="c0f6eb61-5b1b-4359-85ba-6be1b241b448" name="FbRun" sdsId="0" channelId="0" portName="FbRun" functionId="0" />
+    </safetyApplicationHasTwinSAFEGroupAliasPort>
+    <safetyApplicationHasTwinSAFEGroupAliasPort Id="a983bf31-2e0a-4457-a703-3dfe69d094d1">
+      <twinSAFEGroupAliasPort Id="50e8d6ef-7833-422e-9065-fb9226467ac0" name="InRun" sdsId="0" channelId="0" portName="InRun" functionId="0" />
+    </safetyApplicationHasTwinSAFEGroupAliasPort>
+  </twinSAFEGroupAliasPorts>
+  <variables>
+    <safetyApplicationHasVariables Id="693856f6-6ec8-40c0-818f-5f34b8c5f05f">
+      <variable Id="95f0da0e-e1a1-4a3f-aff5-e60434f1e53d" name="GroupPort_ErrAck" isLocal="false">
+        <sourceUsages>
+          <variableHasSourceUsages Id="a5f55f0f-541e-41ef-ac8d-400de575122f">
+            <variableUsages Id="b05a22ac-6077-43dc-890d-3e9e0fea756f">
+              <usages>
+                <variableUsagesHasUsages Id="d6fb6533-bf2c-4304-812a-4f092d092154">
+                  <aliasDeviceIoUsage Id="eff6600b-7007-49ed-85d7-e6ea11194a3f" sdsId="3" channelId="1" functionId="1131179973" />
+                </variableUsagesHasUsages>
+              </usages>
+            </variableUsages>
+          </variableHasSourceUsages>
+        </sourceUsages>
+        <targetUsages>
+          <variableHasTargetUsages Id="7e0361b0-8029-4951-8e17-353ac9fffe7e">
+            <variableUsages Id="2742e376-db07-43b7-a66e-8213706c6b6a">
+              <usages>
+                <variableUsagesHasUsages Id="7da435db-b1ef-4b69-9c7b-a1cafdfd30c9">
+                  <groupPortUsage Id="2b242cd5-1856-47b9-abb8-71928deff9d6">
+                    <twinSAFEGroupAliasPort>
+                      <groupPortUsageReferencesTwinSAFEGroupAliasPort Id="38cfadd7-abf2-4974-93ae-3d1049f28e49">
+                        <twinSAFEGroupAliasPortMoniker name="//ErrAck" />
+                      </groupPortUsageReferencesTwinSAFEGroupAliasPort>
+                    </twinSAFEGroupAliasPort>
+                  </groupPortUsage>
+                </variableUsagesHasUsages>
+              </usages>
+            </variableUsages>
+          </variableHasTargetUsages>
+        </targetUsages>
+      </variable>
+    </safetyApplicationHasVariables>
+    <safetyApplicationHasVariables Id="6b9cd94a-a520-4d5f-8339-431f1d1c1d00">
+      <variable Id="8bc75f57-af52-4a59-a41d-fdc0d6fe701c" name="GroupPort_Run" isLocal="false">
+        <sourceUsages>
+          <variableHasSourceUsages Id="20fccac8-579d-47d6-8bd7-863c97b0f046">
+            <variableUsages Id="8677b132-0b09-4d10-a91b-52a9cc3643de">
+              <usages>
+                <variableUsagesHasUsages Id="4e89822f-fae2-4a6b-b2b3-53c92e230064">
+                  <aliasDeviceIoUsage Id="3ea00cfd-c694-4dd0-8a00-5a12cd1b3831" sdsId="2" channelId="1" functionId="1131179973" />
+                </variableUsagesHasUsages>
+              </usages>
+            </variableUsages>
+          </variableHasSourceUsages>
+        </sourceUsages>
+        <targetUsages>
+          <variableHasTargetUsages Id="f32b3803-766d-45b8-a1db-3633ac00f953">
+            <variableUsages Id="778ac296-02e2-409d-b82c-9037e9a3777b">
+              <usages>
+                <variableUsagesHasUsages Id="439a44d1-e8e4-433a-ab92-15baa25c3c2a">
+                  <groupPortUsage Id="68f4dde8-80ef-4c3a-9906-d7aace42185e">
+                    <twinSAFEGroupAliasPort>
+                      <groupPortUsageReferencesTwinSAFEGroupAliasPort Id="ca192e3a-f58a-4211-ba93-d4a28374d59a">
+                        <twinSAFEGroupAliasPortMoniker name="//RunStop" />
+                      </groupPortUsageReferencesTwinSAFEGroupAliasPort>
+                    </twinSAFEGroupAliasPort>
+                  </groupPortUsage>
+                </variableUsagesHasUsages>
+              </usages>
+            </variableUsages>
+          </variableHasTargetUsages>
+        </targetUsages>
+      </variable>
+    </safetyApplicationHasVariables>
+    <safetyApplicationHasVariables Id="3d1449f8-8f56-4658-92b1-1a0c4d05b384">
+      <variable Id="deb3f7e0-3e5a-47b6-9b69-f7607b5db161" name="STO_active_ChA" isLocal="false">
+        <sourceUsages>
+          <variableHasSourceUsages Id="32e82978-10c7-409f-a0f4-32e4f059f3fc">
+            <variableUsages Id="824d7018-5bb9-44a6-bab8-d796534c106d">
+              <usages>
+                <variableUsagesHasUsages Id="d586e078-4874-4944-90f8-8e8d6993138d">
+                  <fbPortUsage Id="e3d8198e-abe1-4d77-a47b-1a51bacf10bf">
+                    <functionBlockPort>
+                      <fbPortUsageReferencesFunctionBlockPort Id="863ed5e7-b258-4c96-b413-b73c607d25d1">
+                        <outPortMoniker name="//Connection_Output_ChA/Connection_ChA_Output_Byte0/DecOut1" />
+                      </fbPortUsageReferencesFunctionBlockPort>
+                    </functionBlockPort>
+                  </fbPortUsage>
+                </variableUsagesHasUsages>
+              </usages>
+            </variableUsages>
+          </variableHasSourceUsages>
+        </sourceUsages>
+        <targetUsages>
+          <variableHasTargetUsages Id="e181ce9c-a1e4-4ca5-9b49-6de8c8cc3195">
+            <variableUsages Id="41474c4e-76d1-4739-b5ca-7ba4bd8ae50f">
+              <usages>
+                <variableUsagesHasUsages Id="bfd1d47c-ba63-4d2e-a5fd-6ebb407d1f81">
+                  <aliasDeviceIoUsage Id="6777b0ab-ea64-4bc3-b5e4-fe5b2c97ffa4" sdsId="1" channelId="1" functionId="-865114196" />
+                </variableUsagesHasUsages>
+              </usages>
+            </variableUsages>
+          </variableHasTargetUsages>
+        </targetUsages>
+      </variable>
+    </safetyApplicationHasVariables>
+    <safetyApplicationHasVariables Id="b484599b-f4dd-4f81-8184-40261af03d67">
+      <variable Id="e40d9b06-a775-46f7-a4a0-3d6651debc06" name="Error_AckReq_ChA" isLocal="false">
+        <sourceUsages>
+          <variableHasSourceUsages Id="b5b5b2aa-1090-4045-a4a7-b6631c26374e">
+            <variableUsages Id="953d8174-fe3f-4520-8d42-f51f4afbd643">
+              <usages>
+                <variableUsagesHasUsages Id="5ec8ccd6-3a18-4b04-aabf-c3d903bf3b2f">
+                  <fbPortUsage Id="1144a21d-15f5-409b-a888-1ad85b95e50a">
+                    <functionBlockPort>
+                      <fbPortUsageReferencesFunctionBlockPort Id="24b7526b-be85-469d-9735-96d3cbe6ed4e">
+                        <outPortMoniker name="//Connection_Output_ChA/Connection_ChA_Output_Byte0/DecOut8" />
+                      </fbPortUsageReferencesFunctionBlockPort>
+                    </functionBlockPort>
+                  </fbPortUsage>
+                </variableUsagesHasUsages>
+              </usages>
+            </variableUsages>
+          </variableHasSourceUsages>
+        </sourceUsages>
+        <targetUsages>
+          <variableHasTargetUsages Id="4c07a261-5ecb-4137-8f2d-ed2f79f0a7c3">
+            <variableUsages Id="5463288c-1742-4c6a-8b14-9539c0ff3ed0">
+              <usages>
+                <variableUsagesHasUsages Id="62d397df-2965-4820-9a75-61f8130dcd79">
+                  <aliasDeviceIoUsage Id="994353c8-cdff-45f8-8d92-a3cd10761675" sdsId="1" channelId="8" functionId="385635145" />
+                </variableUsagesHasUsages>
+              </usages>
+            </variableUsages>
+          </variableHasTargetUsages>
+        </targetUsages>
+      </variable>
+    </safetyApplicationHasVariables>
+    <safetyApplicationHasVariables Id="13c13268-487e-4648-ad10-fe45ba1082c9">
+      <variable Id="290ccda5-5a5f-4828-a960-9072acc57b8b" name="ResetPossible" isLocal="false">
+        <sourceUsages>
+          <variableHasSourceUsages Id="8af9b929-5dcc-4c53-8739-13ba5a154312">
+            <variableUsages Id="acee82c4-647e-4dfc-8a9d-e5c9e13916c2">
+              <usages>
+                <variableUsagesHasUsages Id="b4b1568d-9a5f-47ac-bcb6-d24a9611d2a2">
+                  <fbPortUsage Id="7a7f30e0-102b-44b1-8db3-49382b598a88">
+                    <functionBlockPort>
+                      <fbPortUsageReferencesFunctionBlockPort Id="771b0ee9-139e-4d77-8ebb-fecb57480129">
+                        <outPortMoniker name="//Connection_Output_ChA/Connection_ChA_Output_Byte0/DecOut2" />
+                      </fbPortUsageReferencesFunctionBlockPort>
+                    </functionBlockPort>
+                  </fbPortUsage>
+                </variableUsagesHasUsages>
+              </usages>
+            </variableUsages>
+          </variableHasSourceUsages>
+        </sourceUsages>
+        <targetUsages>
+          <variableHasTargetUsages Id="77987014-e826-48dc-a08a-c28cf84fb2a7">
+            <variableUsages Id="d5161a2d-1b5e-469c-8def-0f5b723f8099">
+              <usages>
+                <variableUsagesHasUsages Id="bf7f403b-2ddd-4226-9ec5-87462b50723f">
+                  <aliasDeviceIoUsage Id="9cddd9fa-a4cf-4c9d-866a-6c3467cea0d4" sdsId="1" channelId="9" functionId="1485581724" />
+                </variableUsagesHasUsages>
+              </usages>
+            </variableUsages>
+          </variableHasTargetUsages>
+        </targetUsages>
+      </variable>
+    </safetyApplicationHasVariables>
+  </variables>
+</safetyApplication>

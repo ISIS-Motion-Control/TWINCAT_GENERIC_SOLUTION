@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\tc_mca_std_lib\\VISUs\\MainVisu.TcVIS||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}",
+      "RelativeMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|solutionrelative:solution\\tc_project_app\\tc_mca_std_lib\\VISUs\\MainVisu.TcVIS||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDB1F68C-CBA9-4F07-BA3A-5C6D36468DCA}|..\\..\\..\\IMAT TwinSAFE Testing\\IMAT-TwinSAFE-Development\\Drive Manager\\Drive Manager.tcdmproj|C:\\Users\\bem74844\\Documents\\IMAT TwinSAFE Testing\\IMAT-TwinSAFE-Development\\Drive Manager\\SVR-G1\\SVR-G2 (Sample Height).tcdmdrv#Ch A (AM8053-0K20-0000)||{405D096B-2B1C-4128-BCC4-9C0DD01098CB}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\tc_mca_std_lib\\DUTs\\Safety_Structures\\ST_DeviceDualChannelInput.TcDUT||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}",
+      "RelativeMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|solutionrelative:solution\\tc_project_app\\tc_mca_std_lib\\DUTs\\Safety_Structures\\ST_DeviceDualChannelInput.TcDUT||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\POUs\\SAFETY.TcPOU||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}",
+      "RelativeMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|solutionrelative:solution\\tc_project_app\\POUs\\SAFETY.TcPOU||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 178,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Ch A@SVR-G2 (Sample Height)",
+              "DocumentMoniker": "C:\\Users\\bem74844\\Documents\\IMAT TwinSAFE Testing\\IMAT-TwinSAFE-Development\\Drive Manager\\SVR-G1\\SVR-G2 (Sample Height).tcdmdrv#Ch A (AM8053-0K20-0000)",
+              "RelativeDocumentMoniker": "..\\..\\..\\IMAT TwinSAFE Testing\\IMAT-TwinSAFE-Development\\Drive Manager\\SVR-G1\\SVR-G2 (Sample Height).tcdmdrv#Ch A (AM8053-0K20-0000)",
+              "ToolTip": "C:\\Users\\bem74844\\Documents\\IMAT TwinSAFE Testing\\IMAT-TwinSAFE-Development\\Drive Manager\\SVR-G1\\SVR-G2 (Sample Height).tcdmdrv#Ch A (AM8053-0K20-0000)",
+              "RelativeToolTip": "..\\..\\..\\IMAT TwinSAFE Testing\\IMAT-TwinSAFE-Development\\Drive Manager\\SVR-G1\\SVR-G2 (Sample Height).tcdmdrv#Ch A (AM8053-0K20-0000)",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-07-29T13:01:40.837Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{94c070b9-db0b-4415-9311-bac4eef266f5}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "cfe50c00-acc8-425a-8366-f938e7144ecc",
+        "Display": 1,
+        "X": 256,
+        "Y": 77,
+        "Width": 1843,
+        "Height": 543,
+        "WindowState": 2
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ST_DeviceDualChannelInput",
+              "DocumentMoniker": "C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\tc_mca_std_lib\\DUTs\\Safety_Structures\\ST_DeviceDualChannelInput.TcDUT",
+              "RelativeDocumentMoniker": "solution\\tc_project_app\\tc_mca_std_lib\\DUTs\\Safety_Structures\\ST_DeviceDualChannelInput.TcDUT",
+              "ToolTip": "ST_DeviceDualChannelInput [solution.tc_project_app]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-07-28T14:31:01.681Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SAFETY",
+              "DocumentMoniker": "C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\POUs\\SAFETY.TcPOU",
+              "RelativeDocumentMoniker": "solution\\tc_project_app\\POUs\\SAFETY.TcPOU",
+              "ToolTip": "SAFETY [solution.tc_project_app]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-07-28T14:21:43.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainVisu",
+              "DocumentMoniker": "C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\tc_mca_std_lib\\VISUs\\MainVisu.TcVIS",
+              "RelativeDocumentMoniker": "solution\\tc_project_app\\tc_mca_std_lib\\VISUs\\MainVisu.TcVIS",
+              "ToolTip": "MainVisu [solution.tc_project_app]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-07-29T12:58:02.064Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<safetyApplication Crc="610298408" xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.5.0.0" Id="f77dfd9f-4db2-4c9d-827e-6e9cdedfbaa4" name="" mapState="false" mapDiag="false" groupOrderId="0" passificationAllowed="false" temporaryDeactivationAllowed="false" permamentDeactivationAllowed="false" xmlid="0" analogFBOutputReplacementValues="Zero" verifyAnalogFBInputsIfStart="false" userFbId="f77dfd9f-4db2-4c9d-827e-6e9cdedfbaa4" xmlns="http://schemas.microsoft.com/dsltools/SafetyApplicationLanguage">
+  <networks>
+    <safetyApplicationHasNetworks Id="3d9b5964-bec4-449c-872c-3fe43a93614e">
+      <Network Id="34797469-aadc-4f11-994d-187fe612322e" name="Network1" networkName="InputPulse" intId="1" networkOrderId="0">
+        <functionBlocks>
+          <networkHasFunctionBlocks Id="737b4b00-213e-4d08-b6a1-c39830deb142">
+            <fBTon Id="0ea5f012-267c-4ffd-a199-04e84bffaab3" name="FBTon1" instanceName="FBTon1" orderOfExecution="1" mapState="false" mapDiag="false" functionName="safeTon">
+              <inPorts>
+                <functioBlockHasInPorts Id="e58523b7-93e6-4f4b-a253-9af5594381ef">
+                  <inPort Id="221f5144-5213-4ca2-890f-522370eefe64" name="TonIn" portName="TonIn" portNum="2" objectIndex="8" varId="1" filter="2" portDataType="1" channelInterface="Activated" deactivate1="Break Contact (NC)" maxDeviation="0" resetTime="0" />
+                </functioBlockHasInPorts>
+              </inPorts>
+              <outPorts>
+                <functionBlockHasOutPorts Id="d1bb0e1c-78ea-4399-bdad-60dda50a75e3">
+                  <outPort Id="249fcf2b-41b5-4b76-9ff6-ea8b2e9b649f" name="TonOut" portName="TonOut" portNum="4" objectIndex="1" varId="4" filter="6" portDataType="1" replacementValue="0">
+                    <targetFunctionBlockPorts>
+                      <wiredLink Id="4129754f-4a6a-49c5-9f92-18f9e4fbb167">
+                        <inPortMoniker name="//Network1/FBXor1/Xor1In1" />
+                      </wiredLink>
+                    </targetFunctionBlockPorts>
+                  </outPort>
+                </functionBlockHasOutPorts>
+              </outPorts>
+              <parameterPorts>
+                <functionBlockHasParamPorts Id="cf2bd0df-4a70-4945-bad3-7187c8959dd3">
+                  <parameterPort Id="802c0721-2902-4c56-959d-2081c4e092ec" name="Delay Time (s)" portName="Delay Time (s)" portNum="4" objectIndex="0" varId="0" filter="0" portDataType="0" timing="0.1" userFbPortName="Delay Time (s)" useInUserFb="true" />
+                </functionBlockHasParamPorts>
+              </parameterPorts>
+            </fBTon>
+          </networkHasFunctionBlocks>
+          <networkHasFunctionBlocks Id="783e3e2e-a6be-49d9-8d62-af8c5b2adf67">
+            <fBXor Id="54fee12c-7ce9-46b4-bede-a99b6eff7c3c" name="FBXor1" instanceName="FBXor1" orderOfExecution="2" mapState="false" mapDiag="false" functionName="safeXor">
+              <inPorts>
+                <functioBlockHasInPorts Id="f079ce14-01b9-4a15-b2c8-b0c1976f6859">
+                  <inPort Id="001aac75-0bb5-4b74-becf-ce1a4bedbe03" name="Xor1In1" portName="Xor1In1" portNum="2" objectIndex="0" varId="1" filter="3" portDataType="1" channelInterface="Single-Channel Both Activated" deactivate1="Break Contact (NC)" deactivate2="Break Contact (NC)" maxDeviation="0" resetTime="0" />
+                </functioBlockHasInPorts>
+                <functioBlockHasInPorts Id="e35d2312-7d43-40f9-8df3-6310e3153fe6">
+                  <inPort Id="daddbd55-6a45-4da8-afaf-478654a15cfe" name="Xor2In1" portName="Xor2In1" portNum="3" objectIndex="8" varId="2" filter="2" portDataType="1" channelInterface="Both Deactivated" maxDeviation="0" resetTime="0" />
+                </functioBlockHasInPorts>
+                <functioBlockHasInPorts Id="d205d8f4-5ed9-40cf-ad72-ecf54553e321">
+                  <inPort Id="d3f19d21-6289-45be-b171-48c9ffbc62bd" name="Xor1In2" portName="Xor1In2" portNum="4" objectIndex="1" varId="3" filter="2" portDataType="1" channelInterface="Both Deactivated" maxDeviation="0" resetTime="0" />
+                </functioBlockHasInPorts>
+                <functioBlockHasInPorts Id="a735e4ac-bbd5-43e8-8789-2f1890c18124">
+                  <inPort Id="3375380b-edec-471f-9576-32ae394a44fe" name="Xor2In2" portName="Xor2In2" portNum="5" objectIndex="9" varId="4" filter="2" portDataType="1" channelInterface="Both Deactivated" maxDeviation="0" resetTime="0" />
+                </functioBlockHasInPorts>
+                <functioBlockHasInPorts Id="a39d13cc-e442-4d99-bfc6-fb6d4e1600de">
+                  <inPort Id="8c18d799-9b56-424e-8e30-a6c33420e072" name="Xor1In3" portName="Xor1In3" portNum="6" objectIndex="2" varId="5" filter="2" portDataType="1" channelInterface="Both Deactivated" maxDeviation="0" resetTime="0" />
+                </functioBlockHasInPorts>
+                <functioBlockHasInPorts Id="e84ffc78-30dc-4671-815d-db1841da1ac3">
+                  <inPort Id="a35cd490-4896-49bd-b8b5-3aa40dd1b5d9" name="Xor2In3" portName="Xor2In3" portNum="7" objectIndex="10" varId="6" filter="2" portDataType="1" channelInterface="Both Deactivated" maxDeviation="0" resetTime="0" />
+                </functioBlockHasInPorts>
+                <functioBlockHasInPorts Id="79b9ecfa-ef56-457c-a7da-819aef98f82a">
+                  <inPort Id="063a4b30-d962-4df9-ba3a-45fa294822f2" name="Xor1In4" portName="Xor1In4" portNum="8" objectIndex="3" varId="7" filter="2" portDataType="1" channelInterface="Both Deactivated" maxDeviation="0" resetTime="0" />
+                </functioBlockHasInPorts>
+                <functioBlockHasInPorts Id="b2bf6d3c-5e02-49de-bc45-6a9407176be9">
+                  <inPort Id="d2b27cc4-f973-4b67-b89b-eb51ee7f1fb7" name="Xor2In4" portName="Xor2In4" portNum="9" objectIndex="11" varId="8" filter="2" portDataType="1" channelInterface="Both Deactivated" maxDeviation="0" resetTime="0" />
+                </functioBlockHasInPorts>
+                <functioBlockHasInPorts Id="769f4f2b-44d0-4059-84d0-042d508276e0">
+                  <inPort Id="b1465495-b2e7-4ad2-8f6e-2bfb8214cca7" name="Xor1In5" portName="Xor1In5" portNum="10" objectIndex="4" varId="9" filter="3" portDataType="1" channelInterface="Both Deactivated" maxDeviation="0" resetTime="0" />
+                </functioBlockHasInPorts>
+                <functioBlockHasInPorts Id="b3076d99-9c92-4101-b988-dc44c6bc37fe">
+                  <inPort Id="65eec7aa-1f1b-4215-8e29-5f15ef86163e" name="Xor2In5" portName="Xor2In5" portNum="11" objectIndex="12" varId="10" filter="2" portDataType="1" channelInterface="Both Deactivated" maxDeviation="0" resetTime="0" />
+                </functioBlockHasInPorts>
+                <functioBlockHasInPorts Id="534d146d-642e-4e72-92e6-6a13a93b4831">
+                  <inPort Id="a110b979-a83b-48a6-8021-4f43ca11b93f" name="Xor1In6" portName="Xor1In6" portNum="12" objectIndex="5" varId="11" filter="2" portDataType="1" channelInterface="Both Deactivated" maxDeviation="0" resetTime="0" />
+                </functioBlockHasInPorts>
+                <functioBlockHasInPorts Id="fc31a0d9-27fa-43d8-9ed3-cad24340cad8">
+                  <inPort Id="71f7fa4b-32a3-4131-8df8-7831ac5d539f" name="Xor2In6" portName="Xor2In6" portNum="13" objectIndex="13" varId="12" filter="2" portDataType="1" channelInterface="Both Deactivated" maxDeviation="0" resetTime="0" />
+                </functioBlockHasInPorts>
+                <functioBlockHasInPorts Id="1c844c38-4b69-4677-b33b-c7f3b3df69d4">
+                  <inPort Id="322ceb64-3fb1-4a31-b851-fce34d31c435" name="Xor1In7" portName="Xor1In7" portNum="14" objectIndex="6" varId="13" filter="2" portDataType="1" channelInterface="Both Deactivated" maxDeviation="0" resetTime="0" />
+                </functioBlockHasInPorts>
+                <functioBlockHasInPorts Id="43b6a00b-b5af-40d3-8c1a-a91a0a3b23d0">
+                  <inPort Id="3bc11c83-704f-43ae-bc2e-a311d03b88d4" name="Xor2In7" portName="Xor2In7" portNum="15" objectIndex="14" varId="14" filter="2" portDataType="1" channelInterface="Both Deactivated" maxDeviation="0" resetTime="0" />
+                </functioBlockHasInPorts>
+                <functioBlockHasInPorts Id="450ee9ff-b812-422c-b5ea-d5cda6e8360d">
+                  <inPort Id="53b4b860-7f36-424d-860b-563a21228d8f" name="Xor1In8" portName="Xor1In8" portNum="16" objectIndex="7" varId="15" filter="2" portDataType="1" channelInterface="Both Deactivated" maxDeviation="0" resetTime="0" />
+                </functioBlockHasInPorts>
+                <functioBlockHasInPorts Id="dcc5a050-35c7-4dea-94a5-33b3017e155c">
+                  <inPort Id="9bbc0a03-b2ba-4696-ab3a-8837c60bd13b" name="Xor2In8" portName="Xor2In8" portNum="17" objectIndex="15" varId="16" filter="2" portDataType="1" channelInterface="Both Deactivated" maxDeviation="0" resetTime="0" />
+                </functioBlockHasInPorts>
+              </inPorts>
+              <outPorts>
+                <functionBlockHasOutPorts Id="f6903855-4fd2-4b24-b4b1-a307b4254172">
+                  <outPort Id="a87ce239-16c6-4b9d-abc7-394ab22f9b48" name="XorOut1" portName="XorOut1" portNum="3" objectIndex="8" varId="17" filter="7" portDataType="1" replacementValue="0" />
+                </functionBlockHasOutPorts>
+                <functionBlockHasOutPorts Id="0c491f91-b8eb-4f9d-b46c-d03834dc9a4c">
+                  <outPort Id="767e8ca9-598b-46dd-a7ff-bbbed0e23d0b" name="XorOut2" portName="XorOut2" portNum="5" objectIndex="9" varId="18" filter="7" portDataType="1" replacementValue="0" />
+                </functionBlockHasOutPorts>
+                <functionBlockHasOutPorts Id="c52f0b67-ec59-40b5-8757-876fe2436909">
+                  <outPort Id="734ab9bd-d228-4025-9e81-554780d5da2c" name="XorOut3" portName="XorOut3" portNum="7" objectIndex="10" varId="19" filter="7" portDataType="1" replacementValue="0" />
+                </functionBlockHasOutPorts>
+                <functionBlockHasOutPorts Id="e6190598-d720-4ec8-83c6-898fe686f236">
+                  <outPort Id="5852eb1b-c14a-4ec4-858e-2c46684939b4" name="XorOut4" portName="XorOut4" portNum="9" objectIndex="11" varId="20" filter="7" portDataType="1" replacementValue="0" />
+                </functionBlockHasOutPorts>
+                <functionBlockHasOutPorts Id="e1f705b3-228d-44fb-a271-d23aa1fd96da">
+                  <outPort Id="d732e738-ba00-4910-917a-79069db39054" name="XorOut5" portName="XorOut5" portNum="11" objectIndex="12" varId="21" filter="7" portDataType="1" replacementValue="0" />
+                </functionBlockHasOutPorts>
+                <functionBlockHasOutPorts Id="fcbb5b38-0735-41d4-960a-aa60c04de030">
+                  <outPort Id="ac466c2e-5143-41ae-9fa0-62e49dffec57" name="XorOut6" portName="XorOut6" portNum="13" objectIndex="13" varId="22" filter="7" portDataType="1" replacementValue="0" />
+                </functionBlockHasOutPorts>
+                <functionBlockHasOutPorts Id="20bb65c6-67fc-4e21-80ba-8b7425c87abd">
+                  <outPort Id="41612d7e-cbb3-41ff-be20-55c27fd2b61b" name="XorOut7" portName="XorOut7" portNum="15" objectIndex="14" varId="23" filter="7" portDataType="1" replacementValue="0" />
+                </functionBlockHasOutPorts>
+                <functionBlockHasOutPorts Id="fa471868-e86f-44ec-9899-a93d163a94a4">
+                  <outPort Id="ef565d9a-84ca-4cd5-bebd-9b1ada73a762" name="XorOut8" portName="XorOut8" portNum="17" objectIndex="15" varId="24" filter="7" portDataType="1" replacementValue="0" />
+                </functionBlockHasOutPorts>
+              </outPorts>
+            </fBXor>
+          </networkHasFunctionBlocks>
+        </functionBlocks>
+      </Network>
+    </safetyApplicationHasNetworks>
+  </networks>
+  <variables>
+    <safetyApplicationHasVariables Id="540de69c-2e38-4c1b-8a40-a76025e62698">
+      <variable Id="f950c470-b917-4fae-8dfe-41f60413f38d" name="inputSignal" isLocal="false">
+        <sourceUsages>
+          <variableHasSourceUsages Id="33601a20-4632-4dc3-8b1a-fffc8d6ea085">
+            <variableUsages Id="0bd11cbd-8e23-498b-a0ac-1744949fc965" />
+          </variableHasSourceUsages>
+        </sourceUsages>
+        <targetUsages>
+          <variableHasTargetUsages Id="6f22fc37-996f-41ea-be91-18ea88f6992c">
+            <variableUsages Id="2ad404e0-559c-448c-af9d-b8e644555c19">
+              <usages>
+                <variableUsagesHasUsages Id="a067985e-556c-42d4-bb6d-9a57f6653867">
+                  <fbPortUsage Id="04865823-d288-4056-ac08-f20526c6666f">
+                    <functionBlockPort>
+                      <fbPortUsageReferencesFunctionBlockPort Id="ddc3706e-3198-4a3d-90e5-c3aac19ad73e">
+                        <inPortMoniker name="//Network1/FBTon1/TonIn" />
+                      </fbPortUsageReferencesFunctionBlockPort>
+                    </functionBlockPort>
+                  </fbPortUsage>
+                </variableUsagesHasUsages>
+                <variableUsagesHasUsages Id="31126605-de8a-4fe6-acf5-fbea2b146f09">
+                  <fbPortUsage Id="ebca7484-855b-49f3-97f8-6b448e1712ed">
+                    <functionBlockPort>
+                      <fbPortUsageReferencesFunctionBlockPort Id="66d34813-146e-47c2-b0c2-834c877eb43b">
+                        <inPortMoniker name="//Network1/FBXor1/Xor2In1" />
+                      </fbPortUsageReferencesFunctionBlockPort>
+                    </functionBlockPort>
+                  </fbPortUsage>
+                </variableUsagesHasUsages>
+              </usages>
+            </variableUsages>
+          </variableHasTargetUsages>
+        </targetUsages>
+      </variable>
+    </safetyApplicationHasVariables>
+    <safetyApplicationHasVariables Id="90498654-458e-4dc5-b03b-4cb26f4155df">
+      <variable Id="850dbf5b-2b63-459c-afba-553dac020fea" name="pulsedInputSignal" isLocal="false">
+        <sourceUsages>
+          <variableHasSourceUsages Id="26a47cb0-bce1-44d4-bf23-9806bf6d8d99">
+            <variableUsages Id="f7f2afbe-1c09-48bb-b41e-561959e0ee41">
+              <usages>
+                <variableUsagesHasUsages Id="0fde94af-3594-4f57-8b0a-2962c481b516">
+                  <fbPortUsage Id="0c9623cd-7da7-4427-bcbf-48ad142935ef">
+                    <functionBlockPort>
+                      <fbPortUsageReferencesFunctionBlockPort Id="c2f0a5bc-a081-4bf6-8787-51ff16751600">
+                        <outPortMoniker name="//Network1/FBXor1/XorOut1" />
+                      </fbPortUsageReferencesFunctionBlockPort>
+                    </functionBlockPort>
+                  </fbPortUsage>
+                </variableUsagesHasUsages>
+              </usages>
+            </variableUsages>
+          </variableHasSourceUsages>
+        </sourceUsages>
+        <targetUsages>
+          <variableHasTargetUsages Id="326d6ac1-259f-4c20-86d3-218ca4292c63">
+            <variableUsages Id="4fbe7caf-556b-4a94-93ca-6a83a71a41d2" />
+          </variableHasTargetUsages>
+        </targetUsages>
+      </variable>
+    </safetyApplicationHasVariables>
+  </variables>
+</safetyApplication>

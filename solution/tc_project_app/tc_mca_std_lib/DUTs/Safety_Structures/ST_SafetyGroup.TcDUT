@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <DUT Name="ST_SafetyGroup" Id="{362ded0f-2a2c-410f-a16f-11ea1b263a6d}">
+    <Declaration><![CDATA[TYPE ST_SafetyGroup :
+STRUCT
+	Connected : BOOL:= FALSE; //User to set
+	STATE AT %I* : USINT; //1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr
+	DIAG AT %I* : USINT;//0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr
+	
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
   <Visu Name="MainVisu" Id="{98c8ae72-e756-4d11-b6a5-5914882e2424}">
     <XmlArchive>
       <Data>
         <o xml:space="preserve" t="VisualObject">
           <n n="LastVisuLanguageModelEntry" />
-          <v n="UniqueIdGenerator">"13"</v>
+          <v n="UniqueIdGenerator">"62"</v>
           <o n="VisualElemList" t="VisualElemList">
             <l n="VisualElementList" t="VisualElemCollection" cet="GenericVisualElem">
               <o>
@@ -115,6 +115,7 @@
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -197,6 +198,10 @@
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">467</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -305,6 +310,7 @@
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -387,6 +393,10 @@
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">354</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -507,6 +517,7 @@
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -584,6 +595,10 @@
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">406</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -686,6 +701,7 @@
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -756,7 +772,7 @@
                     <v n="VisualElementIdentifier">"GenElemInst_459"</v>
                     <n n="VisualElementOfflinePaintCommands" />
                     <n n="VisualElementFrameInformation" />
-                    <d n="VisualElementInputActions" t="Hashtable" ckt="String" cvt="IInputAction[]">
+                    <d n="VisualElementInputActions" t="Hashtable" ckt="String" cvt="STSnippetInputAction[]">
                       <v>OnMouseClick</v>
                       <a cet="STSnippetInputAction">
                         <o>
@@ -771,6 +787,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">454</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -873,6 +893,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -959,6 +980,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">462</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                 </l>
                 <n n="VisualElementDescription" />
@@ -1079,6 +1104,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -1132,6 +1158,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">381</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -1243,6 +1273,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -1325,6 +1356,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">0</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -1451,6 +1486,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -1500,6 +1536,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">431</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -1626,6 +1666,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -1679,6 +1720,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">433</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -1787,6 +1832,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -1856,6 +1902,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">39</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -1947,6 +1997,14 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="Id">2496894244L</v>
                           <v n="Value">""</v>
                         </o>
+                        <o>
+                          <v n="Id">550940142L</v>
+                          <v n="Value">0</v>
+                        </o>
+                        <o>
+                          <v n="Id">1473355128L</v>
+                          <v n="Value">0</v>
+                        </o>
                       </l>
                     </o>
                     <v n="VisualElementName">"PushSwitchLed"</v>
@@ -1962,6 +2020,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">35</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -2053,6 +2115,14 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="Id">2496894244L</v>
                           <v n="Value">""</v>
                         </o>
+                        <o>
+                          <v n="Id">550940142L</v>
+                          <v n="Value">0</v>
+                        </o>
+                        <o>
+                          <v n="Id">1473355128L</v>
+                          <v n="Value">0</v>
+                        </o>
                       </l>
                     </o>
                     <v n="VisualElementName">"PushSwitchLed"</v>
@@ -2068,6 +2138,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">37</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -2188,6 +2262,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -2249,6 +2324,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">6</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -2357,6 +2436,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -2426,6 +2506,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">45</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -2517,6 +2601,14 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="Id">2496894244L</v>
                           <v n="Value">""</v>
                         </o>
+                        <o>
+                          <v n="Id">550940142L</v>
+                          <v n="Value">0</v>
+                        </o>
+                        <o>
+                          <v n="Id">1473355128L</v>
+                          <v n="Value">0</v>
+                        </o>
                       </l>
                     </o>
                     <v n="VisualElementName">"PowerSwitch"</v>
@@ -2532,6 +2624,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">33</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -2623,6 +2719,14 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="Id">2496894244L</v>
                           <v n="Value">""</v>
                         </o>
+                        <o>
+                          <v n="Id">550940142L</v>
+                          <v n="Value">0</v>
+                        </o>
+                        <o>
+                          <v n="Id">1473355128L</v>
+                          <v n="Value">0</v>
+                        </o>
                       </l>
                     </o>
                     <v n="VisualElementName">"PushSwitchLed"</v>
@@ -2638,6 +2742,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">423</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -2729,6 +2837,14 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="Id">2496894244L</v>
                           <v n="Value">""</v>
                         </o>
+                        <o>
+                          <v n="Id">550940142L</v>
+                          <v n="Value">0</v>
+                        </o>
+                        <o>
+                          <v n="Id">1473355128L</v>
+                          <v n="Value">0</v>
+                        </o>
                       </l>
                     </o>
                     <v n="VisualElementName">"PushSwitchLed"</v>
@@ -2744,6 +2860,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">425</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -2852,6 +2972,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -2921,6 +3042,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">443</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -3029,6 +3154,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -3098,6 +3224,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">447</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -3206,6 +3336,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -3275,6 +3406,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">449</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -3383,6 +3518,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -3452,6 +3588,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">451</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                 </l>
                 <n n="VisualElementDescription" />
@@ -3572,6 +3712,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -3625,6 +3766,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">31</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -3718,7 +3863,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
-                      <v n="Value">231</v>
+                      <v n="Value">189</v>
                     </o>
                     <o>
                       <v n="Id">2134141914L</v>
@@ -3733,6 +3878,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -3753,7 +3899,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     </o>
                     <o>
                       <v n="Id">390574330L</v>
-                      <v n="Value">"AXESMAX"</v>
+                      <v n="Value">"AXESMAX %d"</v>
                     </o>
                     <o>
                       <v n="Id">2597686782L</v>
@@ -3785,7 +3931,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     </o>
                     <o>
                       <v n="Id">823443203L</v>
-                      <v n="Value">"110"</v>
+                      <v n="Value">"1218"</v>
                     </o>
                   </l>
                 </o>
@@ -3802,6 +3948,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">9</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -3904,6 +4054,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -3989,6 +4140,10 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">107</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -4091,6 +4246,7 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -4176,6 +4332,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">115</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -4278,6 +4438,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -4363,6 +4524,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">117</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -4465,6 +4630,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -4550,6 +4716,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">119</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" cet="ComplexInput">
@@ -4667,6 +4837,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -4744,6 +4915,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">123</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -4846,6 +5021,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -4917,19 +5093,19 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <n n="VisualElementOfflinePaintCommands" />
                 <n n="VisualElementFrameInformation" />
                 <d n="VisualElementInputActions" t="Hashtable" ckt="String" cvt="STSnippetInputAction[]">
+                  <v>OnMouseClick</v>
+                  <a cet="STSnippetInputAction">
+                    <o>
+                      <v n="STSnippet">"
+"</v>
+                    </o>
+                  </a>
                   <v>OnMouseDown</v>
                   <a cet="STSnippetInputAction">
                     <o>
                       <v n="STSnippet">"GVL.astAxes[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eMoveVelocity;
 GVL.astAxes[Main.hmiAxisSelection].stControl.fVelocity:=-ABS(GVL.astAxes[Main.hmiAxisSelection].stControl.fJogVelocity)
 GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
-                    </o>
-                  </a>
-                  <v>OnMouseClick</v>
-                  <a cet="STSnippetInputAction">
-                    <o>
-                      <v n="STSnippet">"
-"</v>
                     </o>
                   </a>
                   <v>OnMouseUp</v>
@@ -4945,6 +5121,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">125</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -5047,6 +5227,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -5118,19 +5299,19 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                 <n n="VisualElementOfflinePaintCommands" />
                 <n n="VisualElementFrameInformation" />
                 <d n="VisualElementInputActions" t="Hashtable" ckt="String" cvt="STSnippetInputAction[]">
+                  <v>OnMouseClick</v>
+                  <a cet="STSnippetInputAction">
+                    <o>
+                      <v n="STSnippet">"
+"</v>
+                    </o>
+                  </a>
                   <v>OnMouseDown</v>
                   <a cet="STSnippetInputAction">
                     <o>
                       <v n="STSnippet">"GVL.astAxes[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eMoveVelocity;
 GVL.astAxes[Main.hmiAxisSelection].stControl.fVelocity:=ABS(GVL.astAxes[Main.hmiAxisSelection].stControl.fJogVelocity)
 GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
-                    </o>
-                  </a>
-                  <v>OnMouseClick</v>
-                  <a cet="STSnippetInputAction">
-                    <o>
-                      <v n="STSnippet">"
-"</v>
                     </o>
                   </a>
                   <v>OnMouseUp</v>
@@ -5146,6 +5327,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">127</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -5257,6 +5442,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -5339,6 +5525,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">131</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -5447,6 +5637,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -5516,6 +5707,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">68</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -5622,6 +5817,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -5675,6 +5871,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">70</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -5754,6 +5954,14 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                           <v n="Id">3719097617L</v>
                           <v n="Value">0</v>
                         </o>
+                        <o>
+                          <v n="Id">550940142L</v>
+                          <v n="Value">0</v>
+                        </o>
+                        <o>
+                          <v n="Id">1473355128L</v>
+                          <v n="Value">0</v>
+                        </o>
                       </l>
                     </o>
                     <v n="VisualElementName">"Lamp1"</v>
@@ -5769,6 +5977,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">66</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -5877,6 +6089,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -5946,6 +6159,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">88</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -6048,6 +6265,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -6133,6 +6351,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">121</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                 </l>
                 <n n="VisualElementDescription" />
@@ -6253,6 +6475,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -6306,6 +6529,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">129</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -6417,6 +6644,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -6499,6 +6727,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">134</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -6578,6 +6810,14 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                           <v n="Id">3719097617L</v>
                           <v n="Value">0</v>
                         </o>
+                        <o>
+                          <v n="Id">550940142L</v>
+                          <v n="Value">0</v>
+                        </o>
+                        <o>
+                          <v n="Id">1473355128L</v>
+                          <v n="Value">0</v>
+                        </o>
                       </l>
                     </o>
                     <v n="VisualElementName">"Lamp1"</v>
@@ -6593,6 +6833,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">50</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -6701,6 +6945,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -6770,6 +7015,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">72</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -6849,6 +7098,14 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                           <v n="Id">3719097617L</v>
                           <v n="Value">0</v>
                         </o>
+                        <o>
+                          <v n="Id">550940142L</v>
+                          <v n="Value">0</v>
+                        </o>
+                        <o>
+                          <v n="Id">1473355128L</v>
+                          <v n="Value">0</v>
+                        </o>
                       </l>
                     </o>
                     <v n="VisualElementName">"Lamp1"</v>
@@ -6864,6 +7121,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">52</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -6972,6 +7233,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -7041,6 +7303,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">74</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -7149,6 +7415,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -7218,6 +7485,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">76</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -7297,6 +7568,14 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                           <v n="Id">3719097617L</v>
                           <v n="Value">0</v>
                         </o>
+                        <o>
+                          <v n="Id">550940142L</v>
+                          <v n="Value">0</v>
+                        </o>
+                        <o>
+                          <v n="Id">1473355128L</v>
+                          <v n="Value">0</v>
+                        </o>
                       </l>
                     </o>
                     <v n="VisualElementName">"Lamp1"</v>
@@ -7312,6 +7591,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">56</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -7420,6 +7703,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -7489,6 +7773,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">78</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -7568,6 +7856,14 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                           <v n="Id">3719097617L</v>
                           <v n="Value">0</v>
                         </o>
+                        <o>
+                          <v n="Id">550940142L</v>
+                          <v n="Value">0</v>
+                        </o>
+                        <o>
+                          <v n="Id">1473355128L</v>
+                          <v n="Value">0</v>
+                        </o>
                       </l>
                     </o>
                     <v n="VisualElementName">"Lamp1"</v>
@@ -7583,6 +7879,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">60</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -7691,6 +7991,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -7760,6 +8061,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">82</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -7839,6 +8144,14 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                           <v n="Id">3719097617L</v>
                           <v n="Value">0</v>
                         </o>
+                        <o>
+                          <v n="Id">550940142L</v>
+                          <v n="Value">0</v>
+                        </o>
+                        <o>
+                          <v n="Id">1473355128L</v>
+                          <v n="Value">0</v>
+                        </o>
                       </l>
                     </o>
                     <v n="VisualElementName">"Lamp1"</v>
@@ -7854,6 +8167,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">62</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -7933,6 +8250,14 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                           <v n="Id">3719097617L</v>
                           <v n="Value">0</v>
                         </o>
+                        <o>
+                          <v n="Id">550940142L</v>
+                          <v n="Value">0</v>
+                        </o>
+                        <o>
+                          <v n="Id">1473355128L</v>
+                          <v n="Value">0</v>
+                        </o>
                       </l>
                     </o>
                     <v n="VisualElementName">"Lamp1"</v>
@@ -7948,6 +8273,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">64</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -8056,6 +8385,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -8125,6 +8455,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">84</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -8233,6 +8567,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -8302,6 +8637,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">86</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -8381,6 +8720,14 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                           <v n="Id">3719097617L</v>
                           <v n="Value">0</v>
                         </o>
+                        <o>
+                          <v n="Id">550940142L</v>
+                          <v n="Value">0</v>
+                        </o>
+                        <o>
+                          <v n="Id">1473355128L</v>
+                          <v n="Value">0</v>
+                        </o>
                       </l>
                     </o>
                     <v n="VisualElementName">"Lamp1"</v>
@@ -8396,6 +8743,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">384</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -8465,7 +8816,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                         </o>
                         <o>
                           <v n="Id">743958181L</v>
-                          <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stStatus.bInVelocity"</v>
+                          <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stInputs.bHomeSensor"</v>
                         </o>
                         <o>
                           <v n="Id">2597686782L</v>
@@ -8473,6 +8824,14 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                         </o>
                         <o>
                           <v n="Id">3719097617L</v>
+                          <v n="Value">0</v>
+                        </o>
+                        <o>
+                          <v n="Id">550940142L</v>
+                          <v n="Value">0</v>
+                        </o>
+                        <o>
+                          <v n="Id">1473355128L</v>
                           <v n="Value">0</v>
                         </o>
                       </l>
@@ -8490,6 +8849,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">457</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                 </l>
                 <n n="VisualElementDescription" />
@@ -8610,6 +8973,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -8663,6 +9027,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">132</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -8774,6 +9142,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -8856,6 +9225,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">145</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -8964,6 +9337,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -9033,6 +9407,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">90</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -9139,6 +9517,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -9215,6 +9594,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">92</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -9323,6 +9706,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -9392,6 +9776,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">94</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -9498,6 +9886,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -9574,6 +9963,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">96</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -9682,6 +10075,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -9751,6 +10145,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">98</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -9857,6 +10255,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -9933,6 +10332,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">100</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -10041,6 +10444,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -10110,6 +10514,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">102</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -10216,6 +10624,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -10292,6 +10701,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">104</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -10398,6 +10811,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -10451,6 +10865,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">16</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -10559,6 +10977,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -10628,6 +11047,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">18</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -10736,6 +11159,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -10805,6 +11229,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">47</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -10911,6 +11339,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -10964,6 +11393,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">49</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                 </l>
                 <n n="VisualElementDescription" />
@@ -11084,6 +11517,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -11137,6 +11571,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">141</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -11239,6 +11677,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -11325,6 +11764,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">182</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -11427,6 +11870,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -11513,6 +11957,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">184</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -11615,6 +12063,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -11701,6 +12150,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">281</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -11803,6 +12256,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -11889,6 +12343,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">283</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -11991,6 +12449,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -12077,6 +12536,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">285</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -12179,6 +12642,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -12265,6 +12729,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">289</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -12367,6 +12835,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -12453,6 +12922,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">291</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -12559,6 +13032,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -12635,6 +13109,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">293</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -12737,6 +13215,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -12823,6 +13302,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">304</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -12925,6 +13408,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -13011,6 +13495,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">306</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -13117,6 +13605,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -13197,6 +13686,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">309</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -13305,6 +13798,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -13374,6 +13868,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">314</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -13482,6 +13980,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -13551,6 +14050,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">312</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -13660,6 +14163,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                               <v n="ExplicitColor">-16777216</v>
                               <v n="CanonicalName">"Font-Standard"</v>
                               <v n="FontName">"Arial"</v>
+                              <v n="DisplayName">""</v>
                               <v n="FontSize">12</v>
                               <v n="ScriptIdentification">0</v>
                               <v n="DoubleFontSize" t="Double">0</v>
@@ -13737,6 +14241,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">408</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                   <o>
                     <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -13816,6 +14324,14 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="Id">3719097617L</v>
                           <v n="Value">0</v>
                         </o>
+                        <o>
+                          <v n="Id">550940142L</v>
+                          <v n="Value">0</v>
+                        </o>
+                        <o>
+                          <v n="Id">1473355128L</v>
+                          <v n="Value">0</v>
+                        </o>
                       </l>
                     </o>
                     <v n="VisualElementName">"Lamp1"</v>
@@ -13831,6 +14347,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     <d n="SubElements" t="Hashtable" />
                     <v n="VisualElementId">410</v>
                     <l n="UserManagementAccessRights" t="ArrayList" />
+                    <v n="AnimationDuration">"0"</v>
+                    <v n="BringToForeground">""</v>
+                    <v n="ElementVersion" t="Byte">0</v>
+                    <n n="TabOrder" />
                   </o>
                 </l>
                 <n n="VisualElementDescription" />
@@ -13943,6 +14463,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -13992,6 +14513,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">412</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -14100,6 +14625,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -14182,6 +14708,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">387</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -14284,6 +14814,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -14369,6 +14900,10 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">389</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -14475,6 +15010,7 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -14571,6 +15107,10 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">391</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -14679,6 +15219,7 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -14748,6 +15289,10 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">393</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -14854,6 +15399,7 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -14930,6 +15476,10 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">395</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -15036,6 +15586,7 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -15112,6 +15663,10 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">397</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -15220,6 +15775,7 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -15289,6 +15845,10 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">399</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -15395,6 +15955,7 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -15476,6 +16037,10 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">1</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -15596,6 +16161,7 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -15678,6 +16244,10 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">2</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -15786,6 +16356,7 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -15806,7 +16377,7 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     </o>
                     <o>
                       <v n="Id">390574330L</v>
-                      <v n="Value">"bInVelocity"</v>
+                      <v n="Value">"Datum"</v>
                     </o>
                     <o>
                       <v n="Id">2597686782L</v>
@@ -15838,7 +16409,7 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     </o>
                     <o>
                       <v n="Id">823443203L</v>
-                      <v n="Value">"512"</v>
+                      <v n="Value">"182"</v>
                     </o>
                   </l>
                 </o>
@@ -15855,6 +16426,10 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">459</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -15957,6 +16532,7 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -16043,6 +16619,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">464</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -16151,6 +16731,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -16220,6 +16801,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">471</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -16299,6 +16884,14 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                       <v n="Id">3719097617L</v>
                       <v n="Value">0</v>
                     </o>
+                    <o>
+                      <v n="Id">550940142L</v>
+                      <v n="Value">0</v>
+                    </o>
+                    <o>
+                      <v n="Id">1473355128L</v>
+                      <v n="Value">0</v>
+                    </o>
                   </l>
                 </o>
                 <v n="VisualElementName">"Lamp1"</v>
@@ -16314,6 +16907,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">469</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -16416,6 +17013,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -16501,6 +17099,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">473</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -16603,6 +17205,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -16688,6 +17291,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">475</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -16790,6 +17397,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                           <v n="ExplicitColor">-16777216</v>
                           <v n="CanonicalName">"Font-Standard"</v>
                           <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
                           <v n="FontSize">12</v>
                           <v n="ScriptIdentification">0</v>
                           <v n="DoubleFontSize" t="Double">0</v>
@@ -16875,6 +17483,493 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">478</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
+              </o>
+              <o>
+                <a n="ConfiguredComplexInputs" et="ComplexInput" />
+                <l n="Elements" t="ArrayList" />
+                <n n="VisualElementDescription" />
+                <o n="VisualElemMemberList" t="VisualElemMemberList">
+                  <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
+                    <o>
+                      <v n="Id">571893170L</v>
+                      <v n="Value">""</v>
+                    </o>
+                    <o>
+                      <v n="Id">494569607L</v>
+                      <l n="Value" t="ArrayList" cet="NamedStyleColor">
+                        <o>
+                          <v n="Color">-2830136</v>
+                          <v n="CanonicalName">"Element-Frame-Color"</v>
+                        </o>
+                      </l>
+                    </o>
+                    <o>
+                      <v n="Id">2812299069L</v>
+                      <l n="Value" t="ArrayList" cet="NamedStyleColor">
+                        <o>
+                          <v n="Color">-1</v>
+                          <v n="CanonicalName">"Element-Fill-Color"</v>
+                        </o>
+                      </l>
+                    </o>
+                    <o>
+                      <v n="Id">135947015L</v>
+                      <l n="Value" t="ArrayList" cet="NamedStyleColor">
+                        <o>
+                          <v n="Color">-65536</v>
+                          <v n="CanonicalName">"Element-Alarm-Frame-Color"</v>
+                        </o>
+                      </l>
+                    </o>
+                    <o>
+                      <v n="Id">493260384L</v>
+                      <l n="Value" t="ArrayList" cet="NamedStyleColor">
+                        <o>
+                          <v n="Color">-12337</v>
+                          <v n="CanonicalName">"Element-Alarm-Fill-Color"</v>
+                        </o>
+                      </l>
+                    </o>
+                    <o>
+                      <v n="Id">2340015797L</v>
+                      <v n="Value">"LEFT"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2565699834L</v>
+                      <v n="Value">"VCENTER"</v>
+                    </o>
+                    <o>
+                      <v n="Id">4134387352L</v>
+                      <v n="Value">"NONE"</v>
+                    </o>
+                    <o>
+                      <v n="Id">1603690730L</v>
+                      <v n="Value">"Arial"</v>
+                    </o>
+                    <o>
+                      <v n="Id">4253639993L</v>
+                      <v n="Value" t="Int16">12</v>
+                    </o>
+                    <o>
+                      <v n="Id">2729990903L</v>
+                      <v n="Value">0U</v>
+                    </o>
+                    <o>
+                      <v n="Id">1213979116L</v>
+                      <v n="Value">0U</v>
+                    </o>
+                    <o>
+                      <v n="Id">3488306084L</v>
+                      <v n="Value">4278190080U</v>
+                    </o>
+                    <o>
+                      <v n="Id">1999528970L</v>
+                      <v n="Value">"&lt;toggle/tap variable&gt;"</v>
+                    </o>
+                    <o>
+                      <v n="Id">1649127785L</v>
+                      <v n="Value">241</v>
+                    </o>
+                    <o>
+                      <v n="Id">357335551L</v>
+                      <v n="Value">12</v>
+                    </o>
+                    <o>
+                      <v n="Id">2422045748L</v>
+                      <v n="Value">189</v>
+                    </o>
+                    <o>
+                      <v n="Id">2134141914L</v>
+                      <v n="Value">30</v>
+                    </o>
+                    <o>
+                      <v n="Id">3729828405L</v>
+                      <l n="Value" t="ArrayList" cet="NamedStyleFont">
+                        <o>
+                          <v n="FontStyle">0</v>
+                          <v n="AdditionalFontStyle" t="UInt16">0</v>
+                          <v n="ExplicitColor">-16777216</v>
+                          <v n="CanonicalName">"Font-Standard"</v>
+                          <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
+                          <v n="FontSize">12</v>
+                          <v n="ScriptIdentification">0</v>
+                          <v n="DoubleFontSize" t="Double">0</v>
+                          <o n="NamedColor" t="NamedStyleColor">
+                            <v n="Color">-16777216</v>
+                            <v n="CanonicalName">"Font-Default-Color"</v>
+                          </o>
+                        </o>
+                      </l>
+                    </o>
+                    <o>
+                      <v n="Id">1337389588L</v>
+                      <v n="Value">"NONE"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2678395525L</v>
+                      <v n="Value" t="Int16">0</v>
+                    </o>
+                    <o>
+                      <v n="Id">390574330L</v>
+                      <v n="Value">"Name: %s"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2597686782L</v>
+                      <v n="Value">false</v>
+                    </o>
+                    <o>
+                      <v n="Id">2477733581L</v>
+                      <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stDescription.sAxisName"</v>
+                    </o>
+                    <o>
+                      <v n="Id">1782330054L</v>
+                      <v n="Value">"BS_HOLLOW"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2827249010L</v>
+                      <v n="Value">"PS_HOLLOW"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2114174855L</v>
+                      <v n="Value">""languageSupport""</v>
+                    </o>
+                    <o>
+                      <v n="Id">3774423699L</v>
+                      <v n="Value">""axesAvailable""</v>
+                    </o>
+                    <o>
+                      <v n="Id">3719097617L</v>
+                      <v n="Value">0</v>
+                    </o>
+                    <o>
+                      <v n="Id">823443203L</v>
+                      <v n="Value">"713"</v>
+                    </o>
+                  </l>
+                </o>
+                <v n="VisualElementName">"Textfield"</v>
+                <v n="VisualElementTypeName">"VisuFbElemTextfield"</v>
+                <v n="VisualElementIsRectangle">true</v>
+                <v n="VisualElementIdentifier">"GenElemInst_485"</v>
+                <n n="VisualElementOfflinePaintCommands" />
+                <n n="VisualElementFrameInformation" />
+                <d n="VisualElementInputActions" t="Hashtable" />
+                <v n="VisualElementIdentification">{90b61002-45a3-4db6-9ac1-f2e98b39c3cf}</v>
+                <v n="VisualElementOwningObjectGuid">{98c8ae72-e756-4d11-b6a5-5914882e2424}</v>
+                <a n="LMGuids" et="Guid" />
+                <d n="SubElements" t="Hashtable" />
+                <v n="VisualElementId">485</v>
+                <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
+              </o>
+              <o>
+                <a n="ConfiguredComplexInputs" et="ComplexInput" />
+                <l n="Elements" t="ArrayList" />
+                <n n="VisualElementDescription" />
+                <o n="VisualElemMemberList" t="VisualElemMemberList">
+                  <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
+                    <o>
+                      <v n="Id">571893170L</v>
+                      <v n="Value">""</v>
+                    </o>
+                    <o>
+                      <v n="Id">1931512087L</v>
+                      <v n="Value">"TOGGLE"</v>
+                    </o>
+                    <o>
+                      <v n="Id">300685745L</v>
+                      <v n="Value">false</v>
+                    </o>
+                    <o>
+                      <v n="Id">2812299069L</v>
+                      <v n="Value">4294967295U</v>
+                    </o>
+                    <o>
+                      <v n="Id">494569607L</v>
+                      <v n="Value">4278190080U</v>
+                    </o>
+                    <o>
+                      <v n="Id">3719097617L</v>
+                      <v n="Value">0</v>
+                    </o>
+                    <o>
+                      <v n="Id">1649127785L</v>
+                      <v n="Value">762</v>
+                    </o>
+                    <o>
+                      <v n="Id">357335551L</v>
+                      <v n="Value">367</v>
+                    </o>
+                    <o>
+                      <v n="Id">2422045748L</v>
+                      <v n="Value">70</v>
+                    </o>
+                    <o>
+                      <v n="Id">2134141914L</v>
+                      <v n="Value">70</v>
+                    </o>
+                    <o>
+                      <v n="Id">4062784938L</v>
+                      <v n="Value">"Element-Switch-DipSwitch-Gray"</v>
+                    </o>
+                    <o>
+                      <v n="Id">550940142L</v>
+                      <v n="Value">797</v>
+                    </o>
+                    <o>
+                      <v n="Id">1473355128L</v>
+                      <v n="Value">402</v>
+                    </o>
+                    <o>
+                      <v n="Id">493260384L</v>
+                      <v n="Value">4294967295U</v>
+                    </o>
+                    <o>
+                      <v n="Id">135947015L</v>
+                      <v n="Value">4278190080U</v>
+                    </o>
+                    <o>
+                      <v n="Id">2678395525L</v>
+                      <v n="Value">1U</v>
+                    </o>
+                    <o>
+                      <v n="Id">2340015797L</v>
+                      <v n="Value">"HCENTER"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2565699834L</v>
+                      <v n="Value">"VCENTER"</v>
+                    </o>
+                    <o>
+                      <v n="Id">296037572L</v>
+                      <v n="Value">""</v>
+                    </o>
+                    <o>
+                      <v n="Id">390574330L</v>
+                      <v n="Value">""</v>
+                    </o>
+                    <o>
+                      <v n="Id">743958181L</v>
+                      <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].Commissioning"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2597686782L</v>
+                      <v n="Value">false</v>
+                    </o>
+                  </l>
+                </o>
+                <v n="VisualElementName">"DipSwitch"</v>
+                <v n="VisualElementTypeName">"VisuFbElemDipSwitch"</v>
+                <v n="VisualElementIsRectangle">true</v>
+                <v n="VisualElementIdentifier">"GenElemInst_487"</v>
+                <n n="VisualElementOfflinePaintCommands" />
+                <n n="VisualElementFrameInformation" />
+                <d n="VisualElementInputActions" t="Hashtable" />
+                <v n="VisualElementIdentification">{26b66770-3d39-4c88-afea-c31f3fbb7bb9}</v>
+                <v n="VisualElementOwningObjectGuid">{98c8ae72-e756-4d11-b6a5-5914882e2424}</v>
+                <a n="LMGuids" et="Guid" />
+                <d n="SubElements" t="Hashtable" />
+                <v n="VisualElementId">487</v>
+                <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">1</v>
+                <n n="TabOrder" />
+              </o>
+              <o>
+                <a n="ConfiguredComplexInputs" et="ComplexInput" />
+                <l n="Elements" t="ArrayList" />
+                <n n="VisualElementDescription" />
+                <o n="VisualElemMemberList" t="VisualElemMemberList">
+                  <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
+                    <o>
+                      <v n="Id">571893170L</v>
+                      <v n="Value">""</v>
+                    </o>
+                    <o>
+                      <v n="Id">494569607L</v>
+                      <o n="Value" t="NamedStyleColor">
+                        <v n="Color">-2830136</v>
+                        <v n="CanonicalName">"Element-Frame-Color"</v>
+                      </o>
+                    </o>
+                    <o>
+                      <v n="Id">2812299069L</v>
+                      <l n="Value" t="ArrayList" cet="NamedStyleColor">
+                        <o>
+                          <v n="Color">-1</v>
+                          <v n="CanonicalName">"Element-Fill-Color"</v>
+                        </o>
+                      </l>
+                    </o>
+                    <o>
+                      <v n="Id">135947015L</v>
+                      <l n="Value" t="ArrayList" cet="NamedStyleColor">
+                        <o>
+                          <v n="Color">-65536</v>
+                          <v n="CanonicalName">"Element-Alarm-Frame-Color"</v>
+                        </o>
+                      </l>
+                    </o>
+                    <o>
+                      <v n="Id">493260384L</v>
+                      <l n="Value" t="ArrayList" cet="NamedStyleColor">
+                        <o>
+                          <v n="Color">-12337</v>
+                          <v n="CanonicalName">"Element-Alarm-Fill-Color"</v>
+                        </o>
+                      </l>
+                    </o>
+                    <o>
+                      <v n="Id">2340015797L</v>
+                      <v n="Value">"HCENTER"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2565699834L</v>
+                      <v n="Value">"VCENTER"</v>
+                    </o>
+                    <o>
+                      <v n="Id">4134387352L</v>
+                      <v n="Value">"NONE"</v>
+                    </o>
+                    <o>
+                      <v n="Id">1603690730L</v>
+                      <v n="Value">"Arial"</v>
+                    </o>
+                    <o>
+                      <v n="Id">4253639993L</v>
+                      <v n="Value" t="Int16">12</v>
+                    </o>
+                    <o>
+                      <v n="Id">2729990903L</v>
+                      <v n="Value">0U</v>
+                    </o>
+                    <o>
+                      <v n="Id">1213979116L</v>
+                      <v n="Value">0U</v>
+                    </o>
+                    <o>
+                      <v n="Id">3488306084L</v>
+                      <v n="Value">4278190080U</v>
+                    </o>
+                    <o>
+                      <v n="Id">1999528970L</v>
+                      <v n="Value">"&lt;toggle/tap variable&gt;"</v>
+                    </o>
+                    <o>
+                      <v n="Id">1649127785L</v>
+                      <v n="Value">984</v>
+                    </o>
+                    <o>
+                      <v n="Id">357335551L</v>
+                      <v n="Value">307</v>
+                    </o>
+                    <o>
+                      <v n="Id">2422045748L</v>
+                      <v n="Value">70</v>
+                    </o>
+                    <o>
+                      <v n="Id">2134141914L</v>
+                      <v n="Value">30</v>
+                    </o>
+                    <o>
+                      <v n="Id">3729828405L</v>
+                      <l n="Value" t="ArrayList" cet="NamedStyleFont">
+                        <o>
+                          <v n="FontStyle">0</v>
+                          <v n="AdditionalFontStyle" t="UInt16">0</v>
+                          <v n="ExplicitColor">-16777216</v>
+                          <v n="CanonicalName">"Font-Standard"</v>
+                          <v n="FontName">"Arial"</v>
+                          <v n="DisplayName">""</v>
+                          <v n="FontSize">12</v>
+                          <v n="ScriptIdentification">0</v>
+                          <v n="DoubleFontSize" t="Double">0</v>
+                          <o n="NamedColor" t="NamedStyleColor">
+                            <v n="Color">-16777216</v>
+                            <v n="CanonicalName">"Font-Default-Color"</v>
+                          </o>
+                        </o>
+                      </l>
+                    </o>
+                    <o>
+                      <v n="Id">1337389588L</v>
+                      <v n="Value">"RAISED"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2678395525L</v>
+                      <v n="Value">1U</v>
+                    </o>
+                    <o>
+                      <v n="Id">390574330L</v>
+                      <v n="Value">"%2.2f"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2477733581L</v>
+                      <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stControl.fSetPosition"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2597686782L</v>
+                      <v n="Value">false</v>
+                    </o>
+                    <o>
+                      <v n="Id">3719097617L</v>
+                      <v n="Value">0</v>
+                    </o>
+                    <o>
+                      <v n="Id">2496894244L</v>
+                      <v n="Value">""</v>
+                    </o>
+                    <o>
+                      <v n="Id">823443203L</v>
+                      <v n="Value">"951"</v>
+                    </o>
+                  </l>
+                </o>
+                <v n="VisualElementName">"Textfield"</v>
+                <v n="VisualElementTypeName">"VisuFbElemTextfield"</v>
+                <v n="VisualElementIsRectangle">true</v>
+                <v n="VisualElementIdentifier">"GenElemInst_488"</v>
+                <n n="VisualElementOfflinePaintCommands" />
+                <n n="VisualElementFrameInformation" />
+                <d n="VisualElementInputActions" t="Hashtable" ckt="String" cvt="IInputAction[]">
+                  <v>OnMouseClick</v>
+                  <a cet="InputBoxInputAction">
+                    <o>
+                      <v n="InputBoxVariable">"GVL.astAxes[MAIN.hmiAxisSelection].stControl.fSetPosition"</v>
+                      <v n="InputType">"Default"</v>
+                      <v n="InputBoxMin">""</v>
+                      <v n="InputBoxMax">""</v>
+                      <v n="InputBoxDialogTitle">""</v>
+                      <v n="Password">false</v>
+                      <v n="UseTextOutputVariable">false</v>
+                      <v n="TextOutputVariableInitialized">true</v>
+                      <v n="OtherVarConversion">""</v>
+                      <v n="Format">""</v>
+                      <v n="DialogPosition" t="DialogPositionSetting">UseGlobalSetting</v>
+                      <v n="DialogXPos">""</v>
+                      <v n="DialogYPos">""</v>
+                    </o>
+                  </a>
+                </d>
+                <v n="VisualElementIdentification">{64e858fa-ba9e-4d42-9d93-95509891eb0e}</v>
+                <v n="VisualElementOwningObjectGuid">{98c8ae72-e756-4d11-b6a5-5914882e2424}</v>
+                <a n="LMGuids" et="Guid" />
+                <d n="SubElements" t="Hashtable" />
+                <v n="VisualElementId">489</v>
+                <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
               </o>
             </l>
             <v n="BackgroundBitmapId">""</v>
@@ -16888,82 +17983,101 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
               <v n="BgUseColor">-5186307</v>
               <v n="BgUseGradient">false</v>
             </o>
+            <v n="AllElementsHaveDynamicVisibility">false</v>
           </o>
           <o n="GeneratedLMMDescriptions" t="GeneratedLanguageModelEntriesData">
             <o n="GeneratedVisuFbDescription" t="GenericFbDescription">
               <d n="FbMethods" t="CaseInsensitiveHashtable" ckt="String" cvt="Guid">
-                <v>HasVisibilityAccess</v>
-                <v>30701c7d-977e-49b5-bb21-a0cecf1ead9e</v>
+                <v>AreAllElementsHidden</v>
+                <v>789e7e0a-ddcc-50a5-b9d9-2d7abf6576a2</v>
                 <v>ContainsPoint</v>
                 <v>64d72d51-c7db-4404-bae2-6d221f8a4519</v>
-                <v>HasInputAccess</v>
-                <v>4fd74a45-ea1a-4196-9703-ba786a24fb65</v>
-                <v>HasInputAccessIntern</v>
-                <v>af8ccc95-fff9-4fe4-9416-a0dfb29be3e1</v>
-                <v>GetTooltip</v>
-                <v>43177cf1-8f0b-4c8d-8e31-bc097eec686a</v>
-                <v>GetDialogInterfaceSize</v>
-                <v>55aa86c5-0918-4db4-add0-c14d3e10bd10</v>
-                <v>GetUpdateRects</v>
-                <v>5d9bea27-1ca8-4237-a5dd-2871f8cba4be</v>
-                <v>GetNamespace</v>
-                <v>b4b507c3-fab4-44d3-a4bf-8bb411356318</v>
-                <v>SetResult</v>
-                <v>3d8c34a5-a56d-49c2-bec2-0193ecdb04d8</v>
-                <v>GetTranslator</v>
-                <v>af152e4a-27d7-47e3-9ec7-009d8f822020</v>
-                <v>Update</v>
-                <v>3e518730-123c-436c-b9fa-f2a4d7b1bedd</v>
-                <v>SetClientData</v>
-                <v>79534304-3f33-4434-8fe5-447c29f883f2</v>
-                <v>HasVisibilityAccessIntern</v>
-                <v>d1f92235-4ac0-4e45-9519-7b09eda8f71b</v>
-                <v>GetInstance</v>
-                <v>bab24c33-7699-42b2-aecb-eae4d06946ba</v>
-                <v>GetClientData</v>
-                <v>af8f5dd8-f5a4-4a14-8b21-f3909d6d9e17</v>
-                <v>Paint</v>
-                <v>9a3477b7-0a87-43c4-b113-fae7c81e40d5</v>
-                <v>GetElementArray</v>
-                <v>14b1f8c7-5b9b-418d-9da5-8c2103b68aa4</v>
-                <v>SetVisuFlagsInternal</v>
-                <v>beb99a32-43df-4be4-bd05-2ed7033ab1fb</v>
-                <v>GetText</v>
-                <v>f6448f69-60e9-4c0d-b47b-c95c649a0a1e</v>
-                <v>GetTextProperties</v>
-                <v>92c953f5-cb0d-4f1b-9ad0-6f00f1be0217</v>
-                <v>Initialize</v>
-                <v>6b50d36a-e27e-4aa8-8e09-34acfbfdddbe</v>
                 <v>Destruct</v>
                 <v>278b4e73-b2b6-4e4e-a29e-df9f9243725f</v>
-                <v>SetStaticState</v>
-                <v>f70ff323-614c-45b7-a312-0594be5bd320</v>
-                <v>GetSurroundingRect</v>
-                <v>7361ce2b-ad02-452c-a585-935c78b9613e</v>
-                <v>GetResult</v>
-                <v>8317aaba-0bb5-48f9-8b2e-9d0b5c9c65a8</v>
+                <v>ElementInfo</v>
+                <v>864206f7-8f61-45ac-a91b-23cae6e958d8</v>
+                <v>FB_Exit</v>
+                <v>b48af9a2-f9f9-4da6-a795-9f6460b9b338</v>
+                <v>FB_Reinit</v>
+                <v>b8beb673-16cf-4161-9ae8-c2f5f416bf51</v>
+                <v>GetCallerNamespace</v>
+                <v>dc926fbe-1cc7-5972-842d-41a5b963a461</v>
+                <v>GetClientData</v>
+                <v>af8f5dd8-f5a4-4a14-8b21-f3909d6d9e17</v>
+                <v>GetDialogInterface</v>
+                <v>7e1d236b-c16b-42a3-a3cd-dd0554f112a2</v>
+                <v>GetDialogInterfaceSize</v>
+                <v>55aa86c5-0918-4db4-add0-c14d3e10bd10</v>
+                <v>GetElementArray</v>
+                <v>14b1f8c7-5b9b-418d-9da5-8c2103b68aa4</v>
+                <v>GetElementIdArray</v>
+                <v>a5ca5f52-0a7a-4bed-a5a1-8439dd60c0c5</v>
+                <v>GetElementName</v>
+                <v>8849652c-0197-53ed-bdcc-e38a7d9d2394</v>
+                <v>GetInitializeVersion</v>
+                <v>8b36687e-f4e1-4b90-b2fa-8e9bf4f189bb</v>
+                <v>GetInstance</v>
+                <v>bab24c33-7699-42b2-aecb-eae4d06946ba</v>
                 <v>GetLocalUsergroup</v>
                 <v>5f86cd98-4bf2-45c6-9549-2f4347ceb4bb</v>
                 <v>GetName</v>
                 <v>0f083e46-2059-4367-9572-a8e305da0fa0</v>
+                <v>GetNamespace</v>
+                <v>b4b507c3-fab4-44d3-a4bf-8bb411356318</v>
+                <v>GetResult</v>
+                <v>8317aaba-0bb5-48f9-8b2e-9d0b5c9c65a8</v>
                 <v>GetSize</v>
                 <v>94a70895-e058-4e16-8112-c616e7c7a9a4</v>
-                <v>SetDialogInterface</v>
-                <v>b2251b97-aa73-4f6f-bc20-0c510ad15f97</v>
-                <v>FB_Reinit</v>
-                <v>b8beb673-16cf-4161-9ae8-c2f5f416bf51</v>
-                <v>FB_Exit</v>
-                <v>b48af9a2-f9f9-4da6-a795-9f6460b9b338</v>
-                <v>GetInitializeVersion</v>
-                <v>8b36687e-f4e1-4b90-b2fa-8e9bf4f189bb</v>
-                <v>GetDialogInterface</v>
-                <v>7e1d236b-c16b-42a3-a3cd-dd0554f112a2</v>
-                <v>GetElementIdArray</v>
-                <v>a5ca5f52-0a7a-4bed-a5a1-8439dd60c0c5</v>
+                <v>GetSurroundingRect</v>
+                <v>7361ce2b-ad02-452c-a585-935c78b9613e</v>
+                <v>GetTabOrderIdArray</v>
+                <v>28a3c06d-16d8-53a2-847a-55b98661f668</v>
+                <v>GetText</v>
+                <v>f6448f69-60e9-4c0d-b47b-c95c649a0a1e</v>
+                <v>GetTextProperties</v>
+                <v>92c953f5-cb0d-4f1b-9ad0-6f00f1be0217</v>
+                <v>GetTooltip</v>
+                <v>43177cf1-8f0b-4c8d-8e31-bc097eec686a</v>
+                <v>GetTranslator</v>
+                <v>af152e4a-27d7-47e3-9ec7-009d8f822020</v>
+                <v>GetUpdateRects</v>
+                <v>5d9bea27-1ca8-4237-a5dd-2871f8cba4be</v>
                 <v>HandleInput</v>
                 <v>3b347ea6-12e3-4e3a-9b73-ab3ec97ee6b1</v>
-                <v>ElementInfo</v>
-                <v>864206f7-8f61-45ac-a91b-23cae6e958d8</v>
+                <v>HasInputAccess</v>
+                <v>4fd74a45-ea1a-4196-9703-ba786a24fb65</v>
+                <v>HasInputAccessIntern</v>
+                <v>af8ccc95-fff9-4fe4-9416-a0dfb29be3e1</v>
+                <v>HasVisibilityAccess</v>
+                <v>30701c7d-977e-49b5-bb21-a0cecf1ead9e</v>
+                <v>HasVisibilityAccessIntern</v>
+                <v>d1f92235-4ac0-4e45-9519-7b09eda8f71b</v>
+                <v>Initialize</v>
+                <v>6b50d36a-e27e-4aa8-8e09-34acfbfdddbe</v>
+                <v>IsAntialiasingInactive</v>
+                <v>48353928-c267-53f9-9ef5-caa05162ae18</v>
+                <v>Paint</v>
+                <v>9a3477b7-0a87-43c4-b113-fae7c81e40d5</v>
+                <v>SetClientData</v>
+                <v>79534304-3f33-4434-8fe5-447c29f883f2</v>
+                <v>SetContainerSize</v>
+                <v>243eadb3-613f-56e4-8af8-8b5208489847</v>
+                <v>SetDialogInterface</v>
+                <v>b2251b97-aa73-4f6f-bc20-0c510ad15f97</v>
+                <v>SetResult</v>
+                <v>3d8c34a5-a56d-49c2-bec2-0193ecdb04d8</v>
+                <v>SetStaticState</v>
+                <v>f70ff323-614c-45b7-a312-0594be5bd320</v>
+                <v>SetVisuFlagsInternal</v>
+                <v>beb99a32-43df-4be4-bd05-2ed7033ab1fb</v>
+                <v>Update</v>
+                <v>3e518730-123c-436c-b9fa-f2a4d7b1bedd</v>
+              </d>
+              <d n="FbProperties" t="CaseInsensitiveHashtable" ckt="String" cvt="Guid">
+                <v>__getContainer</v>
+                <v>052b17c0-086d-55cb-9b59-d9a254160774</v>
+                <v>__getVisu</v>
+                <v>fb60359d-983a-5f9e-a48c-91d55a93f01f</v>
               </d>
               <v n="FbName">"NotImportant"</v>
               <v n="FbGuid">{98c8ae72-e756-4d11-b6a5-5914882e2424}</v>
@@ -16974,13 +18088,14 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
             <d n="GeneratedAllElementsEntries" t="Hashtable" />
             <o n="VisuRegDesc" t="GenericFbDescription">
               <d n="FbMethods" t="CaseInsensitiveHashtable" ckt="String" cvt="Guid">
+                <v>FB_Exit</v>
+                <v>95930a16-400d-44f0-9930-76888846236f</v>
                 <v>FB_Init</v>
                 <v>13be6eec-7fc2-4282-abbf-b24b2da58ba8</v>
                 <v>FB_Reinit</v>
                 <v>639e5dca-e06b-4c9e-8c1b-9a863c3c34f7</v>
-                <v>FB_Exit</v>
-                <v>95930a16-400d-44f0-9930-76888846236f</v>
               </d>
+              <d n="FbProperties" t="CaseInsensitiveHashtable" />
               <v n="FbName">"NotImportant"</v>
               <v n="FbGuid">{a9f37f15-844b-497f-805b-d8708d84591d}</v>
             </o>
@@ -16989,79 +18104,53 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
             <n n="MemManPou" />
             <o n="InputsPou" t="GenericFbDescription">
               <d n="FbMethods" t="CaseInsensitiveHashtable" ckt="String" cvt="Guid">
-                <v>ExecuteLooseCapture</v>
-                <v>56b1806d-c914-46e5-8a33-dace94e57cd0</v>
-                <v>ExecuteMouseDblClick</v>
-                <v>f552ae4e-fd0e-48e2-82cc-d500655a8931</v>
-                <v>ExecuteMouseDown</v>
-                <v>3b5837a4-0c1f-4158-b537-628266342351</v>
-                <v>ExecuteMouseUp</v>
-                <v>0cc8df63-037f-4a38-94e9-b0c4a64ed8b6</v>
-                <v>GetElementInfo</v>
-                <v>52bed324-4599-466c-84e6-802071489169</v>
                 <v>abstrGetDefaultCursor</v>
                 <v>ff9bca38-15c8-4f11-b5aa-778d858e9010</v>
                 <v>ExecuteDialogClosed</v>
                 <v>ef6b96c1-fe45-4688-a0de-6d6490b8b537</v>
-                <v>ExecuteKeyUp</v>
-                <v>4e5757c7-0ed6-4fbf-9913-d7b5fe42f0a9</v>
                 <v>ExecuteKeyDown</v>
                 <v>ab3576d6-e6eb-41a7-a1d6-4deaae2eed06</v>
-                <v>ExecuteMouseMove</v>
-                <v>3dff894a-4d53-440d-bb97-8da676b7e4f4</v>
-                <v>Initialize</v>
-                <v>3e77324a-692f-4a7a-84b6-aa7bcd8e7cb2</v>
+                <v>ExecuteKeyUp</v>
+                <v>4e5757c7-0ed6-4fbf-9913-d7b5fe42f0a9</v>
+                <v>ExecuteLooseCapture</v>
+                <v>56b1806d-c914-46e5-8a33-dace94e57cd0</v>
+                <v>ExecuteMouseClick</v>
+                <v>decfae59-5adb-4719-9e89-4dd63a5af073</v>
+                <v>ExecuteMouseDblClick</v>
+                <v>f552ae4e-fd0e-48e2-82cc-d500655a8931</v>
+                <v>ExecuteMouseDown</v>
+                <v>3b5837a4-0c1f-4158-b537-628266342351</v>
                 <v>ExecuteMouseEnter</v>
                 <v>31fa0ab6-580d-4d65-9f06-2a7e826d3b12</v>
                 <v>ExecuteMouseLeave</v>
                 <v>f0ee13ef-bf51-47dc-8860-29a13e13ba32</v>
-                <v>ExecuteMouseClick</v>
-                <v>decfae59-5adb-4719-9e89-4dd63a5af073</v>
+                <v>ExecuteMouseMove</v>
+                <v>3dff894a-4d53-440d-bb97-8da676b7e4f4</v>
+                <v>ExecuteMouseUp</v>
+                <v>0cc8df63-037f-4a38-94e9-b0c4a64ed8b6</v>
+                <v>ExecuteValueChanged</v>
+                <v>d406fc86-b40a-42e9-99b0-6067ecc8240b</v>
+                <v>GetElementInfo</v>
+                <v>52bed324-4599-466c-84e6-802071489169</v>
+                <v>Initialize</v>
+                <v>3e77324a-692f-4a7a-84b6-aa7bcd8e7cb2</v>
               </d>
+              <d n="FbProperties" t="CaseInsensitiveHashtable" />
               <v n="FbName">"NotImportant"</v>
               <v n="FbGuid">{04c23115-cafe-424a-8d84-a1484698e7d9}</v>
             </o>
             <v n="DialogDut">{922df0df-545b-4a6e-ab04-d027f2e1dfa1}</v>
           </o>
-          <v n="LastUsedIdForIdentifier">482</v>
+          <v n="LastUsedIdForIdentifier">488</v>
           <o n="TextDocument" t="TextDocument">
-            <a n="TextLines" cet="TextLine">
-              <o>
-                <v n="Id">8L</v>
-                <n n="Tag" />
-                <v n="Text">"VAR_IN_OUT"</v>
-              </o>
-              <o>
-                <v n="Id">9L</v>
-                <n n="Tag" />
-                <v n="Text">"   "</v>
-              </o>
-              <o>
-                <v n="Id">10L</v>
-                <n n="Tag" />
-                <v n="Text">"END_VAR"</v>
-              </o>
-              <o>
-                <v n="Id">11L</v>
-                <n n="Tag" />
-                <v n="Text">""</v>
-              </o>
-              <o>
-                <v n="Id">12L</v>
-                <n n="Tag" />
-                <v n="Text">"VAR"</v>
-              </o>
-              <o>
-                <v n="Id">13L</v>
-                <n n="Tag" />
-                <v n="Text">"   "</v>
-              </o>
-              <o>
-                <v n="Id">7L</v>
-                <n n="Tag" />
-                <v n="Text">"END_VAR"</v>
-              </o>
-            </a>
+            <v n="TextBlobForSerialisation">"VAR_IN_OUT
+   
+END_VAR
+
+VAR
+   
+END_VAR"</v>
+            <n n="LineInfoPersistence" />
           </o>
           <v n="GvlCreated">false</v>
           <n n="LMEntry" />
@@ -17088,15 +18177,22 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <v n="Width">1073</v>
                 <v n="Height">702</v>
               </o>
+              <v>2</v>
+              <o>
+                <v n="Width">1073</v>
+                <v n="Height">702</v>
+              </o>
             </d2>
-            <v n="Version">1</v>
+            <v n="Version">2</v>
           </o>
+          <n n="FrameInterfaceDataModel" />
         </o>
       </Data>
       <TypeList>
         <Type n="ArrayList">System.Collections.ArrayList</Type>
         <Type n="BackgroundSettings">{1038f12c-dd4b-4f96-87a3-a350fe8f3552}</Type>
         <Type n="Boolean">System.Boolean</Type>
+        <Type n="Byte">System.Byte</Type>
         <Type n="CaseInsensitiveHashtable">{7df88604-7ac5-4e36-91c4-55e4fdad3e68}</Type>
         <Type n="CompilerMessage">{bc2be951-49f6-4f0f-b731-e31e36606f1e}</Type>
         <Type n="ComplexInput">{1de566f6-72a7-494c-9353-9a418172c96e}</Type>
@@ -17108,9 +18204,9 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
         <Type n="Guid">System.Guid</Type>
         <Type n="Hashtable">System.Collections.Hashtable</Type>
         <Type n="HotkeyConfiguration">{6b108d46-58af-4e41-a3f4-174d8f160cc4}</Type>
-        <Type n="IInputAction[]">_3S.CoDeSys.VisualElem.IInputAction[], VisualElem, Version=3.5.13.0, Culture=neutral, PublicKeyToken=null</Type>
+        <Type n="IInputAction[]">_3S.CoDeSys.VisualElem.IInputAction[], VisualElem, Version=4.8.0.0, Culture=neutral, PublicKeyToken=null</Type>
         <Type n="InputBoxInputAction">{e8e7e747-f76f-4dee-ab1c-b9637e41ac26}</Type>
-        <Type n="InputBoxInputAction[]">_3S.CoDeSys.VisualElem.InputBoxInputAction[], VisualElem.plugin, Version=3.5.13.32, Culture=neutral, PublicKeyToken=null</Type>
+        <Type n="InputBoxInputAction[]">_3S.CoDeSys.VisualElem.InputBoxInputAction[], VisualElem.plugin, Version=4.8.0.0, Culture=neutral, PublicKeyToken=null</Type>
         <Type n="Int16">System.Int16</Type>
         <Type n="Int32">System.Int32</Type>
         <Type n="Int64">System.Int64</Type>
@@ -17118,12 +18214,11 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
         <Type n="NamedStyleFont">{9e842eb2-1463-4af2-b605-4fbb17044f94}</Type>
         <Type n="String">System.String</Type>
         <Type n="STSnippetInputAction">{6302d3fe-6ea5-4c42-819a-a9734a133b3d}</Type>
-        <Type n="STSnippetInputAction[]">_3S.CoDeSys.VisualElem.STSnippetInputAction[], VisualElem.plugin, Version=3.5.13.32, Culture=neutral, PublicKeyToken=null</Type>
+        <Type n="STSnippetInputAction[]">_3S.CoDeSys.VisualElem.STSnippetInputAction[], VisualElem.plugin, Version=4.8.0.0, Culture=neutral, PublicKeyToken=null</Type>
         <Type n="TextDocument">{f3878285-8e4f-490b-bb1b-9acbb7eb04db}</Type>
-        <Type n="TextLine">{a5de0b0b-1cb5-4913-ac21-9d70293ec00d}</Type>
         <Type n="TextListEnumerationInfo">{dac349f5-1aa4-42ed-9997-bd76e930a734}</Type>
         <Type n="ToggleVarInputAction">{9dcc475d-e53e-4dd3-abd9-995bf52d466f}</Type>
-        <Type n="ToggleVarInputAction[]">_3S.CoDeSys.VisualElem.ToggleVarInputAction[], VisualElem.plugin, Version=3.5.13.32, Culture=neutral, PublicKeyToken=null</Type>
+        <Type n="ToggleVarInputAction[]">_3S.CoDeSys.VisualElem.ToggleVarInputAction[], VisualElem.plugin, Version=4.8.0.0, Culture=neutral, PublicKeyToken=null</Type>
         <Type n="UInt16">System.UInt16</Type>
         <Type n="UInt32">System.UInt32</Type>
         <Type n="UserdefType">{8499b87a-2b75-4c62-8657-e4aa9316c18b}</Type>
