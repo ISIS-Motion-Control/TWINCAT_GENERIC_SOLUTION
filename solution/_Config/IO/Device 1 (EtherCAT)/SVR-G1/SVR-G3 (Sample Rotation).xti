@@ -20,15 +20,6 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000007}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..6] OF BIT</Name>
-			<BitSize>7</BitSize>
-			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
-			<ArrayInfo>
-				<LBound>0</LBound>
-				<Elements>7</Elements>
-			</ArrayInfo>
-		</DataType>
-		<DataType>
 			<Name GUID="{18071995-0000-0000-0000-002000000005}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..4] OF BIT</Name>
 			<BitSize>5</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
@@ -640,21 +631,21 @@
 									</CoE>
 								</Calc>
 							</Feedback>
-							<Load MoveStyle="Linear">
+							<Load MoveStyle="Rotary">
 								<IsMotorRotary>true</IsMotorRotary>
 								<Name>InverterChannelTypeBlockLoad</Name>
 								<ProjectGUID>00000000-0000-0000-0000-000000000000</ProjectGUID>
 								<Parameter>
 									<PropertyName>FeedConstantUnit</PropertyName>
-									<Value>mm</Value>
+									<Value>°</Value>
 								</Parameter>
 								<Parameter>
 									<PropertyName>FeedConstant</PropertyName>
-									<Value>60</Value>
+									<Value>360</Value>
 								</Parameter>
 								<Parameter>
 									<PropertyName>GearRatioMotorSide</PropertyName>
-									<Value>1</Value>
+									<Value>1000</Value>
 								</Parameter>
 								<Parameter>
 									<PropertyName>GearRatioLoadSide</PropertyName>
@@ -678,7 +669,7 @@
 								</Parameter>
 								<Parameter>
 									<PropertyName>MaxApplicationTorqueForce</PropertyName>
-									<Value>57.2</Value>
+									<Value>4.004</Value>
 								</Parameter>
 								<Parameter>
 									<PropertyName>MaxApplicationSpeed</PropertyName>
@@ -843,6 +834,8 @@
 			<MBoxUserCmdData>020003000c0000003b000000000000000000000000000000000000000000000020ed6001040000000100000043682041204164646974696f6e616c206765617220726174696f207368616674207265766f6c7574696f6e73202f20537562496e6465782030303100</MBoxUserCmdData>
 			<MBoxUserCmdData>020003000c00000029000000000000000000000000000000000000000000000020916001040000000100000043682041204765617220726174696f202f204d6f746f72207368616674207265766f6c7574696f6e7300</MBoxUserCmdData>
 			<MBoxUserCmdData>020003000c0000002b000000000000000000000000000000000000000000000020916002040000000100000043682041204765617220726174696f202f2044726976696e67207368616674207265766f6c7574696f6e7300</MBoxUserCmdData>
+			<MBoxUserCmdData>020003000a0000004e0000000000000000000000000000000000000000000000200730020200000002004368204120417869734d61696e20706172616d657465727320706f736974696f6e206f6666736574202f204f666673657420706f736974696f6e2061637475616c2076616c756520736f7572636500</MBoxUserCmdData>
+			<MBoxUserCmdData>020003000a00000025000000000000000000000000000000000000000000000020726000020000005e0143682041204269706f6c617220746f727175652f666f726365206c696d69742076616c756500</MBoxUserCmdData>
 			<Pdo Name="DeviceMain Inputs" Index="#x1a00" Flags="#x0280"/>
 			<Pdo Name="DeviceMain Dynamic Inputs" Index="#x1ae0" Flags="#x0280" SyncUnit="1"/>
 			<Pdo Name="DeviceMain Outputs" Index="#x1600" InOut="1" Flags="#x0280" SyncMan="2">
@@ -934,8 +927,11 @@
 				<Entry Name="Standard Out Var 5" BitLen="1" Index="#xf606" Sub="#x01">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry BitLen="7">
-					<Type GUID="{18071995-0000-0000-0000-002000000007}">ARRAY [0..6] OF BIT</Type>
+				<Entry Name="Standard Out Var 6" BitLen="1" Index="#xf606" Sub="#x02">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry BitLen="6">
+					<Type GUID="{18071995-0000-0000-0000-002000000006}">ARRAY [0..5] OF BIT</Type>
 				</Entry>
 			</Pdo>
 			<Pdo Name="Function Block Info Data" Index="#x1bf1" Flags="#x0080" SyncUnit="2"/>

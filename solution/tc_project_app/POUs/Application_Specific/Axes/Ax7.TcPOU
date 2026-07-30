@@ -1,27 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
-  <POU Name="Ax19" Id="{9b6828f9-a82a-412e-8426-d13ab35b9a80}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM Ax19
+  <POU Name="Ax7" Id="{46130b17-40a1-4690-bc14-8240edfa58c7}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Ax7
 VAR
-//Outputs: Power for Limit switches, Home Sensors, etc.
-    //bPowerSwitchesAxis1 AT %Q*: BOOL:= TRUE;
-
-//Hardware interlocks
-    //bInterlockFwdOK AT %I*: BOOL;
-	
-	iAxisNumber : INT := E_AxisNames.Collimator_North_Y;
+	iAxisNumber : INT := E_AxisNames.Sample_Stack_X_Translation;
 	iGroupNumber : INT := 3;
 	
 	stoRTrig : R_Trig;
-	
-	
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[//Initial parameters of an Axis
 IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
     //Initial default values:
-    GVL.astAxes[iAxisNumber].stHomingConfig.eHomeSeq := 1 ;
+    GVL.astAxes[iAxisNumber].stHomingConfig.eHomeSeq :=E_HomingRoutines.eHomeToRef_Bwd;
     GVL.astAxes[iAxisNumber].stHomingConfig.fHomePosition := 0.0;
     GVL.astAxes[iAxisNumber].stHomingConfig.fHomeFinishDistance := 0.0;
     GVL.astAxes[iAxisNumber].stConfig.eRestorePosition := E_RestorePosition.eRestoreWithoutHome;

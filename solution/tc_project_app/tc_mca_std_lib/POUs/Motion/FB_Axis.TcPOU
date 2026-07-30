@@ -211,7 +211,7 @@ IF _stAxis.Axis.Status.Moving THEN
 	_stAxis.stStatus.bMoveInProgress := TRUE;
 END_IF
 
-IF _stAxis.Axis.Status.NotMoving THEN
+IF _stAxis.Axis.Status.NotMoving AND _stAxis.Axis.Status.InTargetPosition THEN
 	_stAxis.stStatus.bMoveInProgress := FALSE;
 END_IF
 

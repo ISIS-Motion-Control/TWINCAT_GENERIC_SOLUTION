@@ -714,7 +714,139 @@
 									</CoE>
 								</Calc>
 							</Feedback>
-							<Load MoveStyle="Linear">
+							<Feedback DataSource="1">
+								<DatabaseType>
+									<OrderCode>Reni#RL26Bxx50nm-5V-BiSS_C</OrderCode>
+									<VendorName>Renishaw</VendorName>
+									<IsRotary>false</IsRotary>
+									<AbsolutePosInterface>6</AbsolutePosInterface>
+									<GroupType>Reni#RL-BiSS_C</GroupType>
+									<ElectricFeedbackType>BiSS_C-RL26Bxx50nm-5V</ElectricFeedbackType>
+								</DatabaseType>
+								<DatabaseParameters>
+									<Parameter>
+										<Comment LcId="1033">cf: AbsolutePositionInterfaceType 0: No interface 1: BiSS B 2: EnDat2.1 3: EnDat2.2 4: Hiperface 5: BiSS C 6: BiSS C 7: Hiperface DSL 8: Resolver 9: MES 10: SSI binary 11: SSI gray 12: EnDat3.0 2-wire 100: Electrical analog commutation channel: sin(x) and sin(x-120) 102: Mechanical analog commutation channel: cos and sin 103: Electrical analog commutation channel: cos and sin</Comment>
+										<Name>AbsolutePositionInterface</Name>
+										<Data type="int8">6</Data>
+									</Parameter>
+									<Parameter>
+										<Comment LcId="1033">cf: KindType 0: rotary 1: linear</Comment>
+										<Name>Kind</Name>
+										<Data type="int8">1</Data>
+									</Parameter>
+									<Parameter>
+										<Comment LcId="1033">cf. PowerSupplyType 0: No voltage 1: 11 V without sense 2: 5 V with sense 3: 5 V without sense 4: 3.5 V ~ 14 V</Comment>
+										<Name>PowerManagement_PowerSupply</Name>
+										<Data type="int8" unitSiNumerator="second">3</Data>
+									</Parameter>
+									<Parameter>
+										<Name>PowerManagement_DelayTimeAfterPowerUp</Name>
+										<Data type="real64" unitSiNumerator="second">0.7</Data>
+									</Parameter>
+									<Parameter>
+										<Name>RelativePositonData_LengthPerSignalPeriod</Name>
+										<Data type="real64" unitPrefix="-9" unitSiNumerator="metre">20000</Data>
+									</Parameter>
+									<Parameter>
+										<Name>AbsolutePositionData_ResolutionSinglePos</Name>
+										<Data type="int16">26</Data>
+									</Parameter>
+									<Parameter>
+										<Name>AbsolutePositionData_NumberOfClockCyclesForSinglePos</Name>
+										<Data type="int16">26</Data>
+									</Parameter>
+									<Parameter>
+										<Name>AbsolutePositionData_LinearResolution_Numerator</Name>
+										<Data type="real64" unitPrefix="-9" unitSiNumerator="metre">50</Data>
+									</Parameter>
+									<Parameter>
+										<Name>AbsolutePositionData_LinearResolution_Denominator</Name>
+										<Data type="real64">1</Data>
+									</Parameter>
+									<Parameter>
+										<Comment LcId="1033">cf: AbsolutePositionData_SensorMode_DataLayout 0: Msb first, left aligned, multiposition-singleposition-status-crc-mcd; 1: Msb first, right aligned, multiposition-singleposition-status-crc</Comment>
+										<Name>AbsolutePositionData_SensorMode_DataLayout</Name>
+										<Data type="real64">1</Data>
+									</Parameter>
+									<Parameter>
+										<Name>AbsolutePositionData_SensorMode_CrcPolynomial</Name>
+										<Data type="real64">67</Data>
+									</Parameter>
+									<Parameter>
+										<Name>AbsolutePositionData_SensorMode_InvertedCrc</Name>
+										<Data type="real64">1</Data>
+									</Parameter>
+									<Parameter>
+										<Name>AbsolutePositionData_SensorMode_MaxClockSpeed</Name>
+										<Data type="real64" unitSiNumerator="hertz">10000000</Data>
+									</Parameter>
+									<Parameter>
+										<Name>AbsolutePositionData_MaxPositionCalculationTime</Name>
+										<Data type="real64" unitPrefix="-6" unitSiNumerator="second">20</Data>
+									</Parameter>
+									<Parameter>
+										<Comment LcId="1033">maximal allowed continuous speed</Comment>
+										<Name>MaxContinousOperationSpeed</Name>
+										<Data type="real64" unitSiNumerator="metre" unitSiDenominator="second">65</Data>
+									</Parameter>
+									<Parameter>
+										<Comment LcId="1033">maximal  allowed temperature</Comment>
+										<Name>MaxTemperature</Name>
+										<Data type="real64" unitSiNumerator="degreeCelsius">0</Data>
+									</Parameter>
+								</DatabaseParameters>
+								<FeedbackUse>Feedback2</FeedbackUse>
+								<Calc>
+									<CoE>
+										<InitCmd>
+											<Transition>PS</Transition>
+											<Comment>Ch A SecondaryFeedbackSlot BiSS-C Linear encoder parameter / Power supply</Comment>
+											<Timeout>0</Timeout>
+											<Ccs>1</Ccs>
+											<Index>13071</Index>
+											<SubIndex>2</SubIndex>
+											<Data>00000000</Data>
+										</InitCmd>
+										<InitCmd>
+											<Transition>PS</Transition>
+											<Comment>Ch A SecondaryFeedbackSlot BiSS-C Linear encoder parameter / Data layout</Comment>
+											<Timeout>0</Timeout>
+											<Ccs>1</Ccs>
+											<Index>13071</Index>
+											<SubIndex>6</SubIndex>
+											<Data>00</Data>
+										</InitCmd>
+										<InitCmd>
+											<Transition>PS</Transition>
+											<Comment>Ch A SecondaryFeedbackSlot BiSS-C Linear encoder parameter / Fill bit count left</Comment>
+											<Timeout>0</Timeout>
+											<Ccs>1</Ccs>
+											<Index>13071</Index>
+											<SubIndex>7</SubIndex>
+											<Data>00</Data>
+										</InitCmd>
+										<InitCmd>
+											<Transition>PS</Transition>
+											<Comment>Ch A SecondaryFeedbackSlot BiSS-C Linear encoder parameter / Fill bit count right</Comment>
+											<Timeout>0</Timeout>
+											<Ccs>1</Ccs>
+											<Index>13071</Index>
+											<SubIndex>8</SubIndex>
+											<Data>00</Data>
+										</InitCmd>
+										<InitCmd>
+											<Transition>PS</Transition>
+											<Comment>Ch A AxisMain parameters encoder direction / Secondary encoder direction</Comment>
+											<Timeout>0</Timeout>
+											<Ccs>1</Ccs>
+											<Index>12296</Index>
+											<SubIndex>1</SubIndex>
+											<Data>00</Data>
+										</InitCmd>
+									</CoE>
+								</Calc>
+							</Feedback>
+							<Load MoveStyle="Linear" IsOnlyLinearMoveAllowed="true">
 								<IsMotorRotary>true</IsMotorRotary>
 								<Name>InverterChannelTypeBlockLoad</Name>
 								<ProjectGUID>00000000-0000-0000-0000-000000000000</ProjectGUID>
@@ -752,12 +884,16 @@
 								</Parameter>
 								<Parameter>
 									<PropertyName>MaxApplicationTorqueForce</PropertyName>
-									<Value>57.2</Value>
+									<Value>9.9528</Value>
 								</Parameter>
 								<Parameter>
 									<PropertyName>MaxApplicationSpeed</PropertyName>
 									<Value>895.35391</Value>
 								</Parameter>
+								<FeedConstantUnitValueDic>
+									<UnitValuePair Unit="mm" Value="0.001"/>
+									<UnitValuePair Unit="m" Value="1E-06"/>
+								</FeedConstantUnitValueDic>
 							</Load>
 							<Controller/>
 						</Block>
@@ -914,6 +1050,23 @@
 			<MBoxUserCmdData>020003000a00000046000000000000000000000000000000000000000000000020c0320f020000000100436820412053796e6368726f6e6f75734d6f746f7220706172616d6574657273202f204d6f746f722074656d70657261747572652073656e736f7220636f6e6e656374696f6e00</MBoxUserCmdData>
 			<MBoxUserCmdData>020003000a0000002d000000000000000000000000000000000000000000000020433104020000000400436820412056656c6f63697479436f6e74726f6c206f62736572766572202f204f62736572766572207479706500</MBoxUserCmdData>
 			<MBoxUserCmdData>02000300090000004600000000000000000000000000000000000000000000002008300201000000004368204120417869734d61696e20706172616d657465727320656e636f64657220646972656374696f6e202f205072696d61727920656e636f64657220646972656374696f6e00</MBoxUserCmdData>
+			<MBoxUserCmdData>020003000a0000002500000000000000000000000000000000000000000000002072600002000000660343682041204269706f6c617220746f727175652f666f726365206c696d69742076616c756500</MBoxUserCmdData>
+			<MBoxUserCmdData>020003000a0000004e0000000000000000000000000000000000000000000000200730020200000002004368204120417869734d61696e20706172616d657465727320706f736974696f6e206f6666736574202f204f666673657420706f736974696f6e2061637475616c2076616c756520736f7572636500</MBoxUserCmdData>
+			<MBoxUserCmdData>0200030010000000520000000000000000000000000000000000000000000000200f33030800000050c300000000000043682041205365636f6e64617279466565646261636b536c6f7420426953532d43204c696e65617220656e636f64657220706172616d65746572202f204d6561737572696e672073746570206c656e67746800</MBoxUserCmdData>
+			<MBoxUserCmdData>020003000c0000005a0000000000000000000000000000000000000000000000200f3304040000000100000043682041205365636f6e64617279466565646261636b536c6f7420426953532d43204c696e65617220656e636f64657220706172616d65746572202f204d6561737572696e672073746570206c656e6774682064697669736f7200</MBoxUserCmdData>
+			<MBoxUserCmdData>02000300090000004f0000000000000000000000000000000000000000000000200f3305010000001a43682041205365636f6e64617279466565646261636b536c6f7420426953532d43204c696e65617220656e636f64657220706172616d65746572202f20506f736974696f6e2062697420636f756e7400</MBoxUserCmdData>
+			<MBoxUserCmdData>020003000a000000580000000000000000000000000000000000000000000000200f330a02000000102743682041205365636f6e64617279466565646261636b536c6f7420426953532d43204c696e65617220656e636f64657220706172616d65746572202f204d617820656e636f64657220636c6f636b206672657175656e637900</MBoxUserCmdData>
+			<MBoxUserCmdData>020003000a000000560000000000000000000000000000000000000000000000200f330b02000000bc0243682041205365636f6e64617279466565646261636b536c6f7420426953532d43204c696e65617220656e636f64657220706172616d65746572202f2044656c61792074696d6520616674657220706f77657220757000</MBoxUserCmdData>
+			<MBoxUserCmdData>020003000a0000004d0000000000000000000000000000000000000000000000200f330c02000000c80043682041205365636f6e64617279466565646261636b536c6f7420426953532d43204c696e65617220656e636f64657220706172616d65746572202f2043616c63756c6174696f6e2074696d6500</MBoxUserCmdData>
+			<MBoxUserCmdData>0200030009000000490000000000000000000000000000000000000000000000200f330d010000004343682041205365636f6e64617279466565646261636b536c6f7420426953532d43204c696e65617220656e636f64657220706172616d65746572202f2043524320706f6c796e6f6d6500</MBoxUserCmdData>
+			<MBoxUserCmdData>02000300090000004e0000000000000000000000000000000000000000000000200f330e010000000143682041205365636f6e64617279466565646261636b536c6f7420426953532d43204c696e65617220656e636f64657220706172616d65746572202f20435243206461746120696e76657274656400</MBoxUserCmdData>
+			<MBoxUserCmdData>020003000c000000490000000000000000000000000000000000000000000000200f3302040000000000000043682041205365636f6e64617279466565646261636b536c6f7420426953532d43204c696e65617220656e636f64657220706172616d65746572202f20506f77657220737570706c7900</MBoxUserCmdData>
+			<MBoxUserCmdData>0200030009000000480000000000000000000000000000000000000000000000200f3306010000000043682041205365636f6e64617279466565646261636b536c6f7420426953532d43204c696e65617220656e636f64657220706172616d65746572202f2044617461206c61796f757400</MBoxUserCmdData>
+			<MBoxUserCmdData>0200030009000000500000000000000000000000000000000000000000000000200f3307010000000043682041205365636f6e64617279466565646261636b536c6f7420426953532d43204c696e65617220656e636f64657220706172616d65746572202f2046696c6c2062697420636f756e74206c65667400</MBoxUserCmdData>
+			<MBoxUserCmdData>0200030009000000510000000000000000000000000000000000000000000000200f3308010000000043682041205365636f6e64617279466565646261636b536c6f7420426953532d43204c696e65617220656e636f64657220706172616d65746572202f2046696c6c2062697420636f756e7420726967687400</MBoxUserCmdData>
+			<MBoxUserCmdData>02000300090000004800000000000000000000000000000000000000000000002008300101000000004368204120417869734d61696e20706172616d657465727320656e636f64657220646972656374696f6e202f205365636f6e6461727920656e636f64657220646972656374696f6e00</MBoxUserCmdData>
+			<MBoxUserCmdData>020003000c0000003b000000000000000000000000000000000000000000000020e8600104000000f401000043682041204164646974696f6e616c206765617220726174696f206d6f746f72207265766f6c7574696f6e73202f20537562496e6465782030303100</MBoxUserCmdData>
+			<MBoxUserCmdData>020003000c0000003b000000000000000000000000000000000000000000000020ed6001040000000300000043682041204164646974696f6e616c206765617220726174696f207368616674207265766f6c7574696f6e73202f20537562496e6465782030303100</MBoxUserCmdData>
 			<Pdo Name="DeviceMain Inputs" Index="#x1a00" Flags="#x0280"/>
 			<Pdo Name="DeviceMain Dynamic Inputs" Index="#x1ae0" Flags="#x0280" SyncUnit="1"/>
 			<Pdo Name="DeviceMain Outputs" Index="#x1600" InOut="1" Flags="#x0280" SyncMan="2">
@@ -1230,6 +1383,8 @@
 			<Pdo Name="Ch A SynchronousMotor Dynamic Inputs" Index="#x1b16" Flags="#x0280" SyncUnit="1"/>
 			<Pdo Name="Ch A [SL] OCT Hiperface DSL Rotary Inputs" Index="#x1a37" Flags="#x0280"/>
 			<Pdo Name="Ch A [SL] OCT Hiperface DSL Rotary Dynamic Inputs" Index="#x1b17" Flags="#x0280" SyncUnit="1"/>
+			<Pdo Name="Ch A [SL] BiSS-C Linear Inputs" Index="#x1a38" Flags="#x0280"/>
+			<Pdo Name="Ch A [SL] BiSS-C Linear Dynamic Inputs" Index="#x1b18" Flags="#x0280" SyncUnit="1"/>
 			<CoeProfile ProfileNo="402" DisplayName="Ch A"/>
 			<Slot Name="DeviceMainSlot">
 				<SlotData>0000010001000600010000002000000800000000000000000000000000000000</SlotData>
@@ -1801,6 +1956,13 @@
 				<ModuleIdent>7035356</ModuleIdent>
 				<ModuleIdent>7035359</ModuleIdent>
 				<ModuleIdent>7035360</ModuleIdent>
+				<Module Id="#x0309008a" Type="BiSS-C Linear" Class="">
+					<Name>Ch A</Name>
+					<ImageId>563</ImageId>
+					<ModuleData>02000000e0596b00000004000000000000000000000000000000000000000000</ModuleData>
+					<PdoIndex>6712</PdoIndex>
+					<PdoIndex>6936</PdoIndex>
+				</Module>
 			</Slot>
 			<Slot Name="Empty Slot">
 				<SlotData>0100010001000600000000000000000000000000000000000000000000000000</SlotData>

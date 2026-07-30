@@ -8,7 +8,9 @@ TYPE E_AxisNames :
 	None := 0,
 	IncSlits_X_Translation := 1,
 	IncSlits_Z_Translation :=2,
-	
+	Sample_Stack_X_Translation := 7,
+	Sample_Stack_Z_Translation :=16,
+	Sample_Stack_Z_Rotation :=17,
 	Collimator_North_X :=18,
 	Collimator_North_Y :=19,
 	Collimator_South_X :=20,

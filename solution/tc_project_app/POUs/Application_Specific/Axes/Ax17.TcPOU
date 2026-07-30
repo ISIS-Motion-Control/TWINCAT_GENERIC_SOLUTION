@@ -1,20 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
-  <POU Name="Ax19" Id="{9b6828f9-a82a-412e-8426-d13ab35b9a80}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM Ax19
+  <POU Name="Ax17" Id="{df820d5d-1e95-4c87-9f24-8a4d9adf5ed4}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Ax17
 VAR
-//Outputs: Power for Limit switches, Home Sensors, etc.
-    //bPowerSwitchesAxis1 AT %Q*: BOOL:= TRUE;
-
-//Hardware interlocks
-    //bInterlockFwdOK AT %I*: BOOL;
-	
-	iAxisNumber : INT := E_AxisNames.Collimator_North_Y;
+	iAxisNumber : INT := E_AxisNames.Sample_Stack_Z_Rotation;
 	iGroupNumber : INT := 3;
 	
 	stoRTrig : R_Trig;
-	
-	
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -40,7 +32,6 @@ END_IF
 IF SAFETY.STOP_MOTION THEN
 	GVL.astAxes[iAxisNumber].stControl.bHalt:= TRUE;
 END_IF
-
 
 //Define ACTIONS() or write exclusive code for an specific axis.
 (*Eg. Stop when temperature reaches certain values, reduce speed if  a signal is activated, etc.

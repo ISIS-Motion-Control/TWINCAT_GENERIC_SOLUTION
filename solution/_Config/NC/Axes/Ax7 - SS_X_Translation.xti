@@ -1427,9 +1427,16 @@ External Setpoint Generation:
 	<Axis Id="7" CreateSymbols="true" AxisType="1">
 		<Name>__FILENAME__</Name>
 		<AxisPara>
+			<Dynamic AccelerationMaximum="100" DecelerationMaximum="100" Acceleration="17.751" Deceleration="17.751" Jerk="53.253"/>
+			<Velo RefSearch="0.11834" RefSync="0.11834" SlowManual="0.5917" FastManual="3.5502" Fast="11.834" Maximum="11.834"/>
+			<PositionAreaControl Enable="false"/>
+			<TargetPosControl Range="0.005" Time="0.5"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 		</AxisPara>
-		<Encoder Name="Enc" EncType="1">
+		<Encoder Name="Enc" EncType="19">
+			<EncPara ScaleFactorNumerator="5e-05" Offset="535.4036" Inverse="true" MaxCount="#xffffffff" ReferenceSystem="1">
+				<Inc RefSoftSyncMask="#x03ffffff"/>
+			</EncPara>
 			<Vars VarGrpType="1">
 				<Name>Inputs</Name>
 				<Var>
@@ -1486,9 +1493,10 @@ External Setpoint Generation:
 				</Var>
 			</Vars>
 		</Encoder>
-		<Drive Name="Drive" DrvType="5">
-			<DrvPara>
-				<Analog TorqueSetpointScale="10" ScaleFactorActTorque="0.1"/>
+		<Drive Name="Drive" DrvType="16">
+			<DrvPara MaxCount="#xffffffff" DriveControlDWord="#x00020000">
+				<Analog VeloReferenz="13.0174" VeloScale="100000" TorqueSetpointScale="10" ScaleFactorActTorque="0.1"/>
+				<TimeComp TaskDelayCycles="1"/>
 			</DrvPara>
 			<Vars VarGrpType="1">
 				<Name>Inputs</Name>
@@ -1526,22 +1534,6 @@ External Setpoint Generation:
 					<SubVar TypeFormatIndex="2">
 						<Name>nDataOut2</Name>
 					</SubVar>
-					<SubVar>
-						<Name>nCtrl2</Name>
-						<Comment><![CDATA[Digital Outputs Setpoint Generator:
-0x41 (0100 0001) = Minus (0x42 for inverse motor polarity)
-0x42 (0100 0010) = Plus (0x41 for inverse motor polarity)
-0x80 (1000 0000) = Stop
-]]></Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nCtrl3</Name>
-						<Comment><![CDATA[Digital Outputs (Setpoint Generator + Position Controller):
-0x41 (0100 0001) = Minus (0x42 for inverse motor polarity)
-0x42 (0100 0010) = Plus (0x41 for inverse motor polarity)
-0x80 (1000 0000) = Stop
-]]></Comment>
-					</SubVar>
 					<SubVar TypeFormatIndex="2">
 						<Name>nDataOut3</Name>
 					</SubVar>
@@ -1559,6 +1551,8 @@ External Setpoint Generation:
 		</Drive>
 		<Controller Name="Ctrl" CtrType="1">
 			<CtrPara PriorControlFactor="1">
+				<PosDiffControl Range="2"/>
+				<PID PosKp="10"/>
 				<Observer BandWidth="20"/>
 			</CtrPara>
 		</Controller>
@@ -1577,4 +1571,31 @@ External Setpoint Generation:
 			</Var>
 		</Vars>
 	</Axis>
+	<Mappings>
+		<OwnerA>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR1-BC1^MR1-CD7">
+				<Link VarA="Drive^Inputs^In^nDataIn1" VarB="DRV Following error actual value Channel 1^Following error actual value"/>
+				<Link VarA="Drive^Inputs^In^nDcOutputTime" VarB="InfoData^DcOutputShift"/>
+				<Link VarA="Drive^Inputs^In^nState1" VarB="DRV Statusword Channel 1^Statusword" Size="8"/>
+				<Link VarA="Drive^Inputs^In^nState2" VarB="DRV Statusword Channel 1^Statusword" Size="8" OffsB="8"/>
+				<Link VarA="Drive^Inputs^In^nState4" VarB="WcState^InputToggle" Size="1" OffsA="1"/>
+				<Link VarA="Drive^Inputs^In^nState4" VarB="WcState^WcState" Size="1"/>
+				<Link VarA="Drive^Outputs^Out^nCtrl1" VarB="DRV Controlword Channel 1^Controlword" Size="8"/>
+				<Link VarA="Drive^Outputs^Out^nCtrl2" VarB="DRV Controlword Channel 1^Controlword" Size="8" OffsB="8"/>
+				<Link VarA="Drive^Outputs^Out^nDataOut1" VarB="DRV Target position Channel 1^Target position"/>
+				<Link VarA="Drive^Outputs^Out^nDataOut2" VarB="DRV Target velocity Channel 1^Target velocity"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR1-BC1^MR1-PM7">
+				<Link VarA="Enc^Inputs^In^nDataIn1" VarB="FB Inputs Channel 1 compact^Position"/>
+				<Link VarA="Enc^Inputs^In^nState1" VarB="FB Inputs Channel 1 compact^Error" Size="1" OffsA="1"/>
+				<Link VarA="Enc^Inputs^In^nState1" VarB="FB Inputs Channel 1 compact^Ready" Size="1" OffsA="2"/>
+				<Link VarA="Enc^Inputs^In^nState1" VarB="FB Inputs Channel 1 compact^Warning" Size="1"/>
+				<Link VarA="Enc^Inputs^In^nState2" VarB="FB Inputs Channel 1 compact^Diag" Size="1" OffsA="4"/>
+				<Link VarA="Enc^Inputs^In^nState2" VarB="FB Inputs Channel 1 compact^Input cycle counter" Size="2" OffsA="6"/>
+				<Link VarA="Enc^Inputs^In^nState2" VarB="FB Inputs Channel 1 compact^TxPDO State" Size="1" OffsA="5"/>
+				<Link VarA="Enc^Inputs^In^nState4" VarB="WcState^InputToggle" Size="1" OffsA="1"/>
+				<Link VarA="Enc^Inputs^In^nState4" VarB="WcState^WcState" Size="1"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
 </TcSmItem>

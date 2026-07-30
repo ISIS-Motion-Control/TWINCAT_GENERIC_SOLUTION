@@ -982,8 +982,8 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 	</DataTypes>
-	<Project GUID="{FB261665-FD20-4BF2-97F8-2854C82B752D}" Name="tc_project_app" PrjFilePath="..\..\tc_project_app\tc_project_app.plcproj" TmcFilePath="..\..\tc_project_app\tc_project_app.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{A57F80F9-929B-DADC-A05F-3A3A003DBED6}" TmcPath="tc_project_app\tc_project_app.tmc">
+	<Project GUID="{FB261665-FD20-4BF2-97F8-2854C82B752D}" Name="tc_project_app" PrjFilePath="..\..\tc_project_app\tc_project_app.plcproj" TmcFilePath="..\..\tc_project_app\tc_project_app.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" ClearInvalidPersist="true" SymbolicMapping="true">
+		<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{DA00676D-073A-0B95-C1A2-5111585E705D}" TmcPath="tc_project_app\tc_project_app.tmc">
 			<Name>tc_project_app Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="8" AreaNo="4">
@@ -2838,272 +2838,6 @@ External Setpoint Generation:
 					<Type>USINT</Type>
 				</Var>
 				<Var>
-					<Name>SAFETY.PendantEnable.Ch1</Name>
-					<Type>BIT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.PendantEnable.Ch2</Name>
-					<Type>BIT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.PendantEnable.inError</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.PendantEnable.Output</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SearchAndLock.Ch1</Name>
-					<Type>BIT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SearchAndLock.Ch2</Name>
-					<Type>BIT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SearchAndLock.inError</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SearchAndLock.Output</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.Hmi_Maintenance.Ch1</Name>
-					<Type>BIT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.Hmi_Maintenance.Ch2</Name>
-					<Type>BIT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.Hmi_Maintenance.inError</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.Hmi_Maintenance.Output</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.Q1Q2</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.Q3Q4</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SPB1</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SPB2</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.HmiRb</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.HmiLocal</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.HmiNormal</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.Q1</Name>
-					<Comment><![CDATA[out]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.Q2</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.Q3</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.Q4</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SB1</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SB2</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.MSS1_1</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.MSS1_2</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.MSS2_1</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.MSS2_2</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.MSS3_1</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.MSS3_2</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.RCU</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.HmiRbLight</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.HmiTripped</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.HmiMaintenance</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.EstopsHealthy</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.inMode_Maintenance</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.inMode_Local</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.MOTION_PERMIT</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.NON_SAMPLE_MOTION_PERMIT</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.EDMErr_NonSampleArea</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.EDMErr_SampleArea</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.HMI_ErrorAckButton</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.inMode_Normal</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.inMode_SearchedAndLocked</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SampleAreaSearched_Downstream</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SampleAreaSearched_Upstream</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.AccessPointCrossed</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.AccessPointsMuted</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.PendantMuted</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.PendantResetReq</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SLS_Muted</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.STOP_ALL_MOTION</Name>
-					<Comment><![CDATA[signal from the sto control to send a stop command]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB1.Status</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB2.Status</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB3.Status</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB4.Status</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB5.Status</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB6.Status</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB7.Status</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB8.Status</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB9.Status</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB10.Status</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB11.Status</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB12.Status</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB13.Status</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>SAFETY.MS1.Ch1</Name>
 					<Type>BIT</Type>
 				</Var>
@@ -3277,6 +3011,276 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>SAFETY.GS1.Output</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.EstopsHealthy</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.inMode_Maintenance</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.inMode_Local</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.inMode_Normal</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.inMode_SearchedAndLocked</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SampleAreaSearched_Downstream</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SampleAreaSearched_Upstream</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SampleStackZRotationSLSHealthy</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.AccessPointCrossed</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.AccessPointsMuted</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.PendantMuted</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.PendantResetReq</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SLS_Muted</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SAMPLE_MOTION_PERMIT</Name>
+					<Comment><![CDATA[signal from the sto control to send a stop command]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MOTION_PERMIT</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.NON_SAMPLE_MOTION_PERMIT</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.EDMErr_NonSampleArea</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.EDMErr_SampleArea</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.PendantEnable.Ch1</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.PendantEnable.Ch2</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.PendantEnable.inError</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.PendantEnable.Output</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SearchAndLock.Ch1</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SearchAndLock.Ch2</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SearchAndLock.inError</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SearchAndLock.Output</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.Hmi_Maintenance.Ch1</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.Hmi_Maintenance.Ch2</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.Hmi_Maintenance.inError</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.Hmi_Maintenance.Output</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.Q1Q2</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.Q3Q4</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SPB1</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SPB2</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.HmiRb</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.HmiLocal</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.HmiNormal</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.Q1</Name>
+					<Comment><![CDATA[out]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.Q2</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.Q3</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.Q4</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SB1</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SB2</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MSS1_1</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MSS1_2</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MSS2_1</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MSS2_2</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MSS3_1</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.MSS3_2</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.RCU</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.HmiRbLight</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.HmiTripped</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.HmiMaintenance</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.HMI_ErrorAckButton</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB1.Status</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB2.Status</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB3.Status</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB4.Status</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB5.Status</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB6.Status</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB7.Status</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB8.Status</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB9.Status</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB10.Status</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB11.Status</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB12.Status</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB13.Status</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -4210,6 +4214,11 @@ External Setpoint Generation:
 	</Project>
 	<Mappings>
 		<OwnerA Name="tc_project_app Instance">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR1-BC1^MR1-DI7">
+				<Link VarA="PlcTask Inputs^GVL.astAxes[7].stInputs.bHomeSensor" VarB="Channel 3^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[7].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[7].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
+			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-BC2 (Collimators)^ColNorthX">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[18].stInputs.bLimitBwd" VarB="DI Inputs^Input 2" Size="1"/>
 				<Link VarA="PlcTask Inputs^GVL.astAxes[18].stInputs.bLimitFwd" VarB="DI Inputs^Input 1" Size="1"/>
@@ -4266,7 +4275,19 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Outputs^SAFETY.ERRACK" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^Standard In Var 3" Size="1"/>
 				<Link VarA="PlcTask Outputs^SAFETY.RUN" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^Standard In Var 2" Size="1"/>
 			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR3-BC1^MR3-DI10">
+				<Link VarA="PlcTask Inputs^GVL.astAxes[17].stInputs.bHomeSensor" VarB="Channel 3^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[17].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[17].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR3-BC1^MR3-DI9">
+				<Link VarA="PlcTask Inputs^GVL.astAxes[16].stInputs.bHomeSensor" VarB="Channel 3^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[16].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[16].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
+			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MSR-BC1^MSR-A1">
+				<Link VarA="PlcTask Inputs^GVL.astAxes[16].stStatus.bSTOActive" VarB="StandardInputs^Standard Out Var 85" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[17].stStatus.bSTOActive" VarB="StandardInputs^Standard Out Var 82" Size="1"/>
 				<Link VarA="PlcTask Inputs^GVL.astAxes[18].stStatus.bSTOActive" VarB="StandardInputs^Standard Out Var 90" Size="1"/>
 				<Link VarA="PlcTask Inputs^GVL.astAxes[19].stStatus.bSTOActive" VarB="StandardInputs^Standard Out Var 91" Size="1"/>
 				<Link VarA="PlcTask Inputs^GVL.astAxes[20].stStatus.bSTOActive" VarB="StandardInputs^Standard Out Var 92" Size="1"/>
@@ -4351,12 +4372,12 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^SAFETY.Q3Q4" VarB="Connection Info Data^Message_73 Info Data^Input Safe Data Q3_Q4_In" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.Q4" VarB="Connection Info Data^Message_77 Info Data^Output Safe Data Q4_Out" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.RCU" VarB="Connection Info Data^Message_80 Info Data^Output Safe Data RCU_Out" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SAMPLE_MOTION_PERMIT" VarB="StandardInputs^Standard Out Var 59" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.SB1" VarB="Connection Info Data^Message_76 Info Data^Output Safe Data SB1_Out" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.SB2" VarB="Connection Info Data^Message_77 Info Data^Output Safe Data SB2_Out" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.SLS_Muted" VarB="StandardInputs^Standard Out Var 46" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.SPB1" VarB="Connection Info Data^Message_73 Info Data^Input Safe Data SPB1_In" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.SPB2" VarB="Connection Info Data^Message_73 Info Data^Input Safe Data SPB2_In" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.STOP_ALL_MOTION" VarB="StandardInputs^Standard Out Var 59" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].CRC" VarB="Device Info Data^Project CRC"/>
 				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].SERIAL" VarB="Device Info Data^Serial Number"/>
 				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[1].DIAG" VarB="TwinSAFE Group Info Data^DecoupleInput Info Data^Diag"/>
@@ -4458,8 +4479,17 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[3].aSafetyGroups[3].STATE" VarB="Device (Safety)^Group Info Data^ChA_STO_SS1_ErrorHandling Info Data^State"/>
 				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[3].aSafetyGroups[4].DIAG" VarB="Device (Safety)^Group Info Data^ChA_Connection_Output Info Data^Diag"/>
 				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[3].aSafetyGroups[4].STATE" VarB="Device (Safety)^Group Info Data^ChA_Connection_Output Info Data^State"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SampleStackZRotationSLSHealthy" VarB="Device (Safety)^Standard Inputdata^Standard Out Var 6" Size="1"/>
 				<Link VarA="PlcTask Outputs^SAFETY.ERRACK" VarB="Device (Safety)^Standard Outputdata^Standard In Var 3" Size="1"/>
 				<Link VarA="PlcTask Outputs^SAFETY.RUN" VarB="Device (Safety)^Standard Outputdata^Standard In Var 2" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax16 - SS_Z_Translation">
+				<Link VarA="PlcTask Inputs^GVL.astAxes[16].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL.astAxes[16].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax17 - SS_Z_Rotation">
+				<Link VarA="PlcTask Inputs^GVL.astAxes[17].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL.astAxes[17].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax18 - ColNorth_X">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[18].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
@@ -4476,6 +4506,10 @@ External Setpoint Generation:
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax21 - ColSouth_Y">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[21].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
 				<Link VarA="PlcTask Outputs^GVL.astAxes[21].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax7 - SS_X_Translation">
+				<Link VarA="PlcTask Inputs^GVL.astAxes[7].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL.astAxes[7].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 1">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[1].Axis.NcToPlc" VarB="Outputs^ToPlc"/>

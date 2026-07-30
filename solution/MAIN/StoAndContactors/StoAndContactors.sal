@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<safetyApplication Crc="40552497" xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.5.0.0" Id="675263aa-bf27-4faa-b2db-866d935baadd" name="" mapState="true" mapDiag="true" groupOrderId="7" passificationAllowed="false" temporaryDeactivationAllowed="false" permamentDeactivationAllowed="false" xmlid="0" analogFBOutputReplacementValues="Zero" verifyAnalogFBInputsIfStart="false" userFbId="00000000-0000-0000-0000-000000000000" xmlns="http://schemas.microsoft.com/dsltools/SafetyApplicationLanguage">
+<safetyApplication Crc="455183235" xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.5.0.0" Id="675263aa-bf27-4faa-b2db-866d935baadd" name="" mapState="true" mapDiag="true" groupOrderId="7" passificationAllowed="false" temporaryDeactivationAllowed="false" permamentDeactivationAllowed="false" xmlid="0" analogFBOutputReplacementValues="Zero" verifyAnalogFBInputsIfStart="false" userFbId="00000000-0000-0000-0000-000000000000" xmlns="http://schemas.microsoft.com/dsltools/SafetyApplicationLanguage">
   <comments>
     <comment Id="7d3096cb-11b4-4db5-8152-4a7d0ad54556" text="sample area separate blocks for EDM" currentNetworkOrderId="0">
       <networks>
@@ -782,38 +782,6 @@
         </targetUsages>
       </variable>
     </safetyApplicationHasVariables>
-    <safetyApplicationHasVariables Id="e2e02321-6120-4942-87ee-650057b7482e">
-      <variable Id="1a6f6c34-0e0d-4f7e-9769-ad21bb1f4159" name="StopAllMotion" isLocal="false">
-        <sourceUsages>
-          <variableHasSourceUsages Id="fcc1fada-be84-44ba-bef1-61b2af80ad2e">
-            <variableUsages Id="44ae6796-3c0b-475f-9644-e4a385be82fe">
-              <usages>
-                <variableUsagesHasUsages Id="877d7062-8f20-4840-a2a2-ffdda694d109">
-                  <fbPortUsage Id="f76e9c8d-5852-4563-ac7d-0e923dc7eee1">
-                    <functionBlockPort>
-                      <fbPortUsageReferencesFunctionBlockPort Id="101dab65-a864-49dc-8072-067444e59b76">
-                        <outPortMoniker name="//Network2/FBMon1/MonOut" />
-                      </fbPortUsageReferencesFunctionBlockPort>
-                    </functionBlockPort>
-                  </fbPortUsage>
-                </variableUsagesHasUsages>
-              </usages>
-            </variableUsages>
-          </variableHasSourceUsages>
-        </sourceUsages>
-        <targetUsages>
-          <variableHasTargetUsages Id="fdba9786-aef1-4d7f-b0e1-f50ffd76aad6">
-            <variableUsages Id="3a60e24b-9a46-4662-982d-527d091d1fda">
-              <usages>
-                <variableUsagesHasUsages Id="1372235f-47f0-4b96-a2ce-84f4f4b7edd6">
-                  <aliasDeviceIoUsage Id="2c045cf6-407e-4b59-844c-1d0793f33fd2" sdsId="59" channelId="1" functionId="1131179972" />
-                </variableUsagesHasUsages>
-              </usages>
-            </variableUsages>
-          </variableHasTargetUsages>
-        </targetUsages>
-      </variable>
-    </safetyApplicationHasVariables>
     <safetyApplicationHasVariables Id="2600873b-8a51-4c9b-8ad4-d3d31909767c">
       <variable Id="a8e85a22-b9ca-4ca5-bf20-7f2ea2a07d59" name="MotionPermit" isLocal="false">
         <sourceUsages>
@@ -991,6 +959,38 @@
               <usages>
                 <variableUsagesHasUsages Id="20fcf50b-6925-48f1-992d-ecf29b95c6ee">
                   <aliasDeviceIoUsage Id="14c7ad62-971c-4894-8c71-ed9e9096c6a5" sdsId="119" channelId="1" functionId="1131179972" />
+                </variableUsagesHasUsages>
+              </usages>
+            </variableUsages>
+          </variableHasTargetUsages>
+        </targetUsages>
+      </variable>
+    </safetyApplicationHasVariables>
+    <safetyApplicationHasVariables Id="c1396201-fe2b-466d-ae36-be5b987a3c9d">
+      <variable Id="608b3fc4-ed73-423a-adef-12ea73f42c11" name="SampleMotionEnabled" isLocal="false">
+        <sourceUsages>
+          <variableHasSourceUsages Id="c1f170cf-7b71-4809-b1f2-2999114c583b">
+            <variableUsages Id="c7f7fedd-f188-44ea-90da-6c33ae37c2fc">
+              <usages>
+                <variableUsagesHasUsages Id="2af29ff0-565f-428b-a504-e397ecb9c772">
+                  <fbPortUsage Id="a9e7c387-8059-4abd-a4c8-f55017b37968">
+                    <functionBlockPort>
+                      <fbPortUsageReferencesFunctionBlockPort Id="0d25593f-0894-4c4d-9fec-4887eebf0f5d">
+                        <outPortMoniker name="//Network2/FBMon1/MonOut" />
+                      </fbPortUsageReferencesFunctionBlockPort>
+                    </functionBlockPort>
+                  </fbPortUsage>
+                </variableUsagesHasUsages>
+              </usages>
+            </variableUsages>
+          </variableHasSourceUsages>
+        </sourceUsages>
+        <targetUsages>
+          <variableHasTargetUsages Id="8c8bdc78-c182-4ed1-bec6-ef8cc0002bff">
+            <variableUsages Id="f8153ab1-4522-4a93-8d4c-76053e75befb">
+              <usages>
+                <variableUsagesHasUsages Id="77d9a45b-8ad8-48ae-bf3e-38ccf638ac72">
+                  <aliasDeviceIoUsage Id="8773f8d4-f59a-4260-a0a4-47150d7f03f3" sdsId="59" channelId="1" functionId="1131179972" />
                 </variableUsagesHasUsages>
               </usages>
             </variableUsages>

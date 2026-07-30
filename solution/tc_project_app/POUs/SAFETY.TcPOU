@@ -40,6 +40,7 @@ SafetyTargets : ARRAY [1..7] OF ST_SafetyTargetDevice:=
 	inMode_SearchedAndLocked AT %I* : BOOL;
 	SampleAreaSearched_Downstream AT %I* : BOOL;
 	SampleAreaSearched_Upstream AT %I* : BOOL;
+	SampleStackZRotationSLSHealthy AT %I* : BOOL;
 	
 	AccessPointCrossed AT %I* : BOOL;
 	AccessPointsMuted AT %I* : BOOL;
@@ -50,7 +51,7 @@ SafetyTargets : ARRAY [1..7] OF ST_SafetyTargetDevice:=
 	Reset_Pendant AT %Q* : BOOL;
 	Mute_SLS AT %Q* : BOOL;
 	SLS_Muted AT %I* : BOOL;
-	STOP_ALL_MOTION AT %I* : BOOL; //signal from the sto control to send a stop command
+	SAMPLE_MOTION_PERMIT AT %I* : BOOL; //signal from the sto control to send a stop command
 	MOTION_PERMIT AT %I* : BOOL;
 	NON_SAMPLE_MOTION_PERMIT  AT %I* : BOOL;
 	EDMErr_NonSampleArea AT %I* : BOOL;
@@ -88,12 +89,23 @@ SafetyTargets : ARRAY [1..7] OF ST_SafetyTargetDevice:=
 	
 	HMI_ErrorAckButton AT %I* : BOOL;
 	
+	lostSamplePermit : F_TRIG;
 	
 END_VAR
-]]></Declaration>
+VAR_OUTPUT
+	STOP_MOTION : BOOL;
+	
+END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[ERRACK := HMI_ErrorAckButton;
 
+lostSamplePermit(CLK:= SAMPLE_MOTION_PERMIT);
+STOP_MOTION:= lostSamplePermit.Q;
+
+IF NOT inMode_Maintenance THEN
+	Mute_AccessPoints := FALSE;
+	Mute_PendantEnable := FALSE;
+END_IF
 //FOR i:=1 TO 7 DO
 	
 //END_FOR]]></ST>

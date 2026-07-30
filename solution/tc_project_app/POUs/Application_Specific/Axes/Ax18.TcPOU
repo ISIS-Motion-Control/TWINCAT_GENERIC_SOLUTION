@@ -18,6 +18,7 @@ IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
     GVL.astAxes[iAxisNumber].stHomingConfig.fHomeFinishDistance := 0.0;
     GVL.astAxes[iAxisNumber].stConfig.eRestorePosition := E_RestorePosition.eRestoreWithoutHome;
 	GVL.astAxes[iAxisNumber].stControl.bAutoEnableDisable := TRUE;
+	GVL.astAxes[iAxisNumber].stControl.tMoveFinishedDelay := T#0.1S;
 	//Set which group this axis belongs to
 	GVL.astAxes[iAxisNumber].stDescription.iGroupNumber := iGroupNumber;
 	GVL.astAxes[iAxisNumber].Commissioning := TRUE;
@@ -28,6 +29,9 @@ IF stoRTrig.Q THEN
 	GVL.astAxes[iAxisNumber].stControl.bReset:= TRUE;
 END_IF
 
+IF SAFETY.STOP_MOTION THEN
+	GVL.astAxes[iAxisNumber].stControl.bHalt:= TRUE;
+END_IF
 
 //Define ACTIONS() or write exclusive code for an specific axis.
 (*Eg. Stop when temperature reaches certain values, reduce speed if  a signal is activated, etc.

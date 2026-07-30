@@ -154,7 +154,9 @@ GVL.fbGetCurTaskIndex();
 
 //Safety initial parameters and program
 //Safety_Template();
-
+Ax7();
+Ax16();
+Ax17();
 Ax18();
 Ax19();
 Ax20();

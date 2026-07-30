@@ -1586,7 +1586,7 @@ External Setpoint Generation:
 		<Axis File="Axis 4.xti" Id="4"/>
 		<Axis File="Axis 5.xti" Id="5"/>
 		<Axis File="Axis 6.xti" Id="6"/>
-		<Axis File="Axis 7.xti" Id="7"/>
+		<Axis File="Ax7 - SS_X_Translation.xti" Id="7"/>
 		<Axis File="Axis 8.xti" Id="8"/>
 		<Axis File="Axis 9.xti" Id="9"/>
 		<Axis File="Axis 10.xti" Id="10"/>
