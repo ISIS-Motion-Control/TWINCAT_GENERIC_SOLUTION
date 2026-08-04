@@ -1,11 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
   <DUT Name="ST_AxisHomingConfig" Id="{78e2389d-78cb-4bac-b225-48b73ae33806}">
     <Declaration><![CDATA[TYPE ST_AxisHomingConfig :
 STRUCT
 	fHomePosition: LREAL := 0; //The position that the axis should be set to once homing is completed
     fHomeFinishDistance: LREAL := 0; //Distrance that the axis should move back into the working zone after homing is finished
     eHomeSeq: E_HomingRoutines; //Homing sequence to perform
+	fHomeAbsPosition : LREAL:= 0;
+	fHomeMidRelativeMove : LREAL:= 1;
+	
 	
 	//General Advanced Homing Configuration
     bDisableDriveAccess: BOOL := TRUE; //Disables the drive access to drives. Standard for stepper motors. If supported in drive, can be set to FALSE, e.g. for AX5106.

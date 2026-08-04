@@ -20,45 +20,39 @@ SafetyTargets : ARRAY [1..7] OF ST_SafetyTargetDevice:=
 	RUN AT %Q* : BOOL := TRUE;
 	ERRACK AT %Q* : BOOL;
 	
+	//ESTOP Devices
+	{ attribute 'TcHmiSymbol.AddSymbol' }
 	MS1 : ST_DeviceDualChannelInput;
+	{ attribute 'TcHmiSymbol.AddSymbol' }
 	MS2 : ST_DeviceDualChannelInput;
+	{ attribute 'TcHmiSymbol.AddSymbol' }
 	MS3 : ST_DeviceDualChannelInput;
+	{ attribute 'TcHmiSymbol.AddSymbol' }
 	MS4 : ST_DeviceDualChannelInput;
+	{ attribute 'TcHmiSymbol.AddSymbol' }
 	MS5 : ST_DeviceDualChannelInput;
+	{ attribute 'TcHmiSymbol.AddSymbol' }
 	MS6 : ST_DeviceDualChannelInput;
+	{ attribute 'TcHmiSymbol.AddSymbol' }
 	MS7 : ST_DeviceDualChannelInput;
 	
+	
+	//ACCESS POINT Devices
+	{ attribute 'TcHmiSymbol.AddSymbol' }
 	LC1 : ST_DeviceDualChannelInput;
+	{ attribute 'TcHmiSymbol.AddSymbol' }
 	LC2 : ST_DeviceDualChannelInput;
+	{ attribute 'TcHmiSymbol.AddSymbol' }
 	LC3 : ST_DeviceDualChannelInput;
+	{ attribute 'TcHmiSymbol.AddSymbol' }
 	GS1 : ST_DeviceDualChannelInput;
 	
-	EstopsHealthy AT %I* : BOOL;
-	inMode_Maintenance AT %I* : BOOL;
-	inMode_Local AT %I* : BOOL;
-	inMode_Normal AT %I* : BOOL;
-	inMode_SearchedAndLocked AT %I* : BOOL;
-	SampleAreaSearched_Downstream AT %I* : BOOL;
-	SampleAreaSearched_Upstream AT %I* : BOOL;
-	SampleStackZRotationSLSHealthy AT %I* : BOOL;
-	
-	AccessPointCrossed AT %I* : BOOL;
-	AccessPointsMuted AT %I* : BOOL;
-	PendantMuted AT %I* : BOOL;
-	PendantResetReq AT %I* : BOOL;
-	Mute_AccessPoints AT %Q* : BOOL;
-	Mute_PendantEnable AT %Q* : BOOL;
-	Reset_Pendant AT %Q* : BOOL;
-	Mute_SLS AT %Q* : BOOL;
-	SLS_Muted AT %I* : BOOL;
-	SAMPLE_MOTION_PERMIT AT %I* : BOOL; //signal from the sto control to send a stop command
-	MOTION_PERMIT AT %I* : BOOL;
-	NON_SAMPLE_MOTION_PERMIT  AT %I* : BOOL;
-	EDMErr_NonSampleArea AT %I* : BOOL;
-	EDMErr_SampleArea AT %I* : BOOL;
-	
+	//Misc devices
+	{ attribute 'TcHmiSymbol.AddSymbol' }
 	PendantEnable : ST_DeviceDualChannelInput;
+	{ attribute 'TcHmiSymbol.AddSymbol' }
 	SearchAndLock : ST_DeviceDualChannelInput;
+	{ attribute 'TcHmiSymbol.AddSymbol' }
 	Hmi_Maintenance  : ST_DeviceDualChannelInput;
 	
 	Q1Q2 AT %I* : BOOL;
@@ -69,7 +63,48 @@ SafetyTargets : ARRAY [1..7] OF ST_SafetyTargetDevice:=
 	HmiLocal AT %I* : BOOL;
 	HmiNormal AT %I* : BOOL;
 	
-	//out
+	//Status Signals
+	EstopsHealthy AT %I* : BOOL;
+	inMode_Maintenance AT %I* : BOOL;
+	inMode_Local AT %I* : BOOL;
+	inMode_Normal AT %I* : BOOL;
+	inMode_SearchedAndLocked AT %I* : BOOL;
+	
+	SampleAreaSearched_Downstream AT %I* : BOOL;
+	SampleAreaSearched_Upstream AT %I* : BOOL;
+	
+	SampleStackZRotationSLSHealthy AT %I* : BOOL;
+	
+	EDMErr_NonSampleArea AT %I* : BOOL;
+	EDMErr_SampleArea AT %I* : BOOL;
+	
+	//Pendant statuses
+	AccessPointCrossed AT %I* : BOOL;
+	AccessPointsMuted AT %I* : BOOL;
+	PendantMuted AT %I* : BOOL;
+	SLS_Muted AT %I* : BOOL;
+	PendantResetReq AT %I* : BOOL;
+	Reset_Pendant AT %Q* : BOOL;
+	
+	//Maintenance muting
+	Mute_AccessPoints AT %Q* : BOOL;
+	Mute_PendantEnable AT %Q* : BOOL;
+	Mute_SLS AT %Q* : BOOL;
+	
+	
+	
+	
+	
+	SAMPLE_MOTION_PERMIT AT %I* : BOOL; //signal from the sto control to send a stop command
+	MOTION_PERMIT AT %I* : BOOL;	//Not in use?
+	NON_SAMPLE_MOTION_PERMIT  AT %I* : BOOL;
+	
+	
+	
+	
+	
+	
+	//Output Devices
 	Q1 AT %I* : BOOL;
 	Q2 AT %I* : BOOL;
 	Q3 AT %I* : BOOL;
@@ -87,6 +122,7 @@ SafetyTargets : ARRAY [1..7] OF ST_SafetyTargetDevice:=
 	HmiTripped AT %I* : BOOL;
 	HmiMaintenance AT %I* : BOOL;
 	
+	//Physical input device
 	HMI_ErrorAckButton AT %I* : BOOL;
 	
 	lostSamplePermit : F_TRIG;
@@ -94,6 +130,8 @@ SafetyTargets : ARRAY [1..7] OF ST_SafetyTargetDevice:=
 END_VAR
 VAR_OUTPUT
 	STOP_MOTION : BOOL;
+	NON_SAMPLE_PERMIT : BOOL;
+	SAMPLE_PERMIT : BOOL;
 	
 END_VAR]]></Declaration>
     <Implementation>
@@ -101,6 +139,8 @@ END_VAR]]></Declaration>
 
 lostSamplePermit(CLK:= SAMPLE_MOTION_PERMIT);
 STOP_MOTION:= lostSamplePermit.Q;
+NON_SAMPLE_PERMIT := NON_SAMPLE_MOTION_PERMIT;
+SAMPLE_PERMIT := SAMPLE_MOTION_PERMIT;
 
 IF NOT inMode_Maintenance THEN
 	Mute_AccessPoints := FALSE;

@@ -24,11 +24,19 @@ IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
 	GVL.astAxes[iAxisNumber].Commissioning := TRUE;
 END_IF
 
+
+//Test Code to prevent moves
+IF NOT SAFETY.SAMPLE_PERMIT THEN
+	GVL.astAxes[iAxisNumber].stControl.bExecute:= FALSE;
+END_IF
+
+//STO auto reset
 stoRTrig(CLK:=GVL.astAxes[iAxisNumber].stStatus.bSTOActive);
 IF stoRTrig.Q THEN
 	GVL.astAxes[iAxisNumber].stControl.bReset:= TRUE;
 END_IF
 
+//Safety call to stop
 IF SAFETY.STOP_MOTION THEN
 	GVL.astAxes[iAxisNumber].stControl.bHalt:= TRUE;
 END_IF

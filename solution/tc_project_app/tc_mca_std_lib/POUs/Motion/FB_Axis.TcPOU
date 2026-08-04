@@ -339,13 +339,21 @@ MC_ExtSetPointGenFeed(
 END_IF
 
 IF _stAxis.stControl.eCommand = E_MotionFunctions.eHome THEN
-    fbHome.bExecute := _stAxis.stControl.bExecute;
+    //fbHome.bExecute := _stAxis.stControl.bExecute;
+	IF _stAxis.stStatus.bReadyToMove THEN
+		fbHome.bExecute := _stAxis.stStatus.bMoveRequested;
+		IF _stAxis.stStatus.bMoveRequested THEN
+			_stAxis.stStatus.bMoveRequested := FALSE;
+		END_IF
+	END_IF
 END_IF
 
 
 fbHome.eHomeSeq := _stAxis.stHomingConfig.eHomeSeq;
 fbHome.fHomePosition := _stAxis.stHomingConfig.fHomePosition;
 fbHome.fHomeFinishDistance := _stAxis.stHomingConfig.fHomeFinishDistance;
+fbHome.fHomeAbsPosition:= _stAxis.stHomingConfig.fHomeAbsPosition;
+fbHome.fHomeMidRelativeMove := _stAxis.stHomingConfig.fHomeMidRelativeMove;
 fbHome(
     Axis := _stAxis.Axis,
     bLimitBwd := _stAxis.stInputs.bLimitBwd,

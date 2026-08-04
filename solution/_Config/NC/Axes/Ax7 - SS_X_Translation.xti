@@ -1435,6 +1435,7 @@ External Setpoint Generation:
 		</AxisPara>
 		<Encoder Name="Enc" EncType="19">
 			<EncPara ScaleFactorNumerator="5e-05" Offset="535.4036" Inverse="true" MaxCount="#xffffffff" ReferenceSystem="1">
+				<FilterTime TVelo="0.02"/>
 				<Inc RefSoftSyncMask="#x03ffffff"/>
 			</EncPara>
 			<Vars VarGrpType="1">
@@ -1494,8 +1495,8 @@ External Setpoint Generation:
 			</Vars>
 		</Encoder>
 		<Drive Name="Drive" DrvType="16">
-			<DrvPara MaxCount="#xffffffff" DriveControlDWord="#x00020000">
-				<Analog VeloReferenz="13.0174" VeloScale="100000" TorqueSetpointScale="10" ScaleFactorActTorque="0.1"/>
+			<DrvPara MaxCount="#xffffffff" DriveControlDWord="#x00020100">
+				<Analog VeloReferenz="13.0174" VeloScale="32" TorqueSetpointScale="10" ScaleFactorActTorque="0.1"/>
 				<TimeComp TaskDelayCycles="1"/>
 			</DrvPara>
 			<Vars VarGrpType="1">
@@ -1552,7 +1553,7 @@ External Setpoint Generation:
 		<Controller Name="Ctrl" CtrType="1">
 			<CtrPara PriorControlFactor="1">
 				<PosDiffControl Range="2"/>
-				<PID PosKp="10"/>
+				<PID PosKp="5"/>
 				<Observer BandWidth="20"/>
 			</CtrPara>
 		</Controller>

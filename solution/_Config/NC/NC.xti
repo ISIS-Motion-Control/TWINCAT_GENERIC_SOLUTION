@@ -1587,7 +1587,7 @@ External Setpoint Generation:
 		<Axis File="Axis 5.xti" Id="5"/>
 		<Axis File="Axis 6.xti" Id="6"/>
 		<Axis File="Ax7 - SS_X_Translation.xti" Id="7"/>
-		<Axis File="Axis 8.xti" Id="8"/>
+		<Axis File="Ax8 - SS_Y_Translation.xti" Id="8"/>
 		<Axis File="Axis 9.xti" Id="9"/>
 		<Axis File="Axis 10.xti" Id="10"/>
 		<Axis File="Axis 11.xti" Id="11"/>
@@ -1607,8 +1607,8 @@ External Setpoint Generation:
 		<Axis File="Axis 25.xti" Id="25"/>
 		<Axis File="Axis 26.xti" Id="26"/>
 		<Axis File="Axis 27.xti" Id="27"/>
-		<Axis File="Axis 28.xti" Id="28"/>
-		<Axis File="Axis 29.xti" Id="29"/>
+		<Axis File="Ax28 - Slit 2 North.xti" Id="28"/>
+		<Axis File="Ax29 - Slit 2 South.xti" Id="29"/>
 		<Axis File="Axis 30.xti" Id="30"/>
 		<Axis File="Axis 31.xti" Id="31"/>
 		<Axis File="Axis 32.xti" Id="32"/>

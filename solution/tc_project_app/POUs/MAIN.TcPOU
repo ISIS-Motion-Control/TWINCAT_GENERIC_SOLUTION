@@ -155,12 +155,17 @@ GVL.fbGetCurTaskIndex();
 //Safety initial parameters and program
 //Safety_Template();
 Ax7();
+Ax8();
 Ax16();
 Ax17();
 Ax18();
 Ax19();
 Ax20();
-Ax21();]]></ST>
+Ax21();
+
+//Slit 2
+Ax28();
+Ax29();]]></ST>
       </Implementation>
     </Action>
     <Action Name="RESTORE_POSITIONS" Id="{0c7ee537-7bd9-4833-b428-c17cbb57e893}" FolderPath="POSITION_RECOVERY\">
