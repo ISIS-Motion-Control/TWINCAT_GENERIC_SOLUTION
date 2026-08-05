@@ -983,7 +983,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{FB261665-FD20-4BF2-97F8-2854C82B752D}" Name="tc_project_app" PrjFilePath="..\..\tc_project_app\tc_project_app.plcproj" TmcFilePath="..\..\tc_project_app\tc_project_app.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" ClearInvalidPersist="true" SymbolicMapping="true">
-		<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{6206E204-8D89-1BF7-8BC7-4CCF45D21A7E}" TmcPath="tc_project_app\tc_project_app.tmc">
+		<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{D202EF50-70DD-4753-8CC6-99FB0986DAA2}" TmcPath="tc_project_app\tc_project_app.tmc">
 			<Name>tc_project_app Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="8" AreaNo="4">
@@ -4229,6 +4229,10 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^GVL.astAxes[8].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
 				<Link VarA="PlcTask Inputs^GVL.astAxes[8].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
 			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-BC2 (Collimators)^ColNorth-IO">
+				<Link VarA="PlcTask Inputs^GVL.astAxes[18].stInputs.bHomeSensor" VarB="DIG Inputs Channel 1^Input 2" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[19].stInputs.bHomeSensor" VarB="DIG Inputs Channel 1^Input 1" Size="1"/>
+			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-BC2 (Collimators)^ColNorthX">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[18].stInputs.bLimitBwd" VarB="DI Inputs^Input 2" Size="1"/>
 				<Link VarA="PlcTask Inputs^GVL.astAxes[18].stInputs.bLimitFwd" VarB="DI Inputs^Input 1" Size="1"/>
@@ -4256,6 +4260,10 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[5].aSafetyGroups[3].STATE" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Output Info Data^State"/>
 				<Link VarA="PlcTask Outputs^SAFETY.ERRACK" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^Standard In Var 3" Size="1"/>
 				<Link VarA="PlcTask Outputs^SAFETY.RUN" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^Standard In Var 2" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-BC2 (Collimators)^ColSouth-IO">
+				<Link VarA="PlcTask Inputs^GVL.astAxes[20].stInputs.bHomeSensor" VarB="DIG Inputs Channel 1^Input 2" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[21].stInputs.bHomeSensor" VarB="DIG Inputs Channel 1^Input 1" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-BC2 (Collimators)^ColSouthX">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[20].stInputs.bLimitBwd" VarB="DI Inputs^Input 1" Size="1"/>

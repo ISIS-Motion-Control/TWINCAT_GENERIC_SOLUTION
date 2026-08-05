@@ -5,7 +5,7 @@
       <Data>
         <o xml:space="preserve" t="VisualObject">
           <n n="LastVisuLanguageModelEntry" />
-          <v n="UniqueIdGenerator">"118"</v>
+          <v n="UniqueIdGenerator">"153"</v>
           <o n="VisualElemList" t="VisualElemList">
             <l n="VisualElementList" t="VisualElemCollection" cet="GenericVisualElem">
               <o>
@@ -1157,7 +1157,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     <v n="VisualElementIdentifier">"GenElemInst_495"</v>
                     <n n="VisualElementOfflinePaintCommands" />
                     <n n="VisualElementFrameInformation" />
-                    <d n="VisualElementInputActions" t="Hashtable" ckt="String" cvt="IInputAction[]">
+                    <d n="VisualElementInputActions" t="Hashtable" ckt="String" cvt="STSnippetInputAction[]">
                       <v>OnMouseClick</v>
                       <a cet="STSnippetInputAction">
                         <o>
@@ -1334,7 +1334,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     <v n="VisualElementIdentifier">"GenElemInst_496"</v>
                     <n n="VisualElementOfflinePaintCommands" />
                     <n n="VisualElementFrameInformation" />
-                    <d n="VisualElementInputActions" t="Hashtable" ckt="String" cvt="IInputAction[]">
+                    <d n="VisualElementInputActions" t="Hashtable" ckt="String" cvt="InputBoxInputAction[]">
                       <v>OnMouseClick</v>
                       <a cet="InputBoxInputAction">
                         <o>
@@ -1885,7 +1885,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     <v n="VisualElementIdentifier">"GenElemInst_499"</v>
                     <n n="VisualElementOfflinePaintCommands" />
                     <n n="VisualElementFrameInformation" />
-                    <d n="VisualElementInputActions" t="Hashtable" ckt="String" cvt="IInputAction[]">
+                    <d n="VisualElementInputActions" t="Hashtable" ckt="String" cvt="InputBoxInputAction[]">
                       <v>OnMouseClick</v>
                       <a cet="InputBoxInputAction">
                         <o>
@@ -6023,7 +6023,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <v n="VisualElementIdentifier">"GenElemInst_124"</v>
                 <n n="VisualElementOfflinePaintCommands" />
                 <n n="VisualElementFrameInformation" />
-                <d n="VisualElementInputActions" t="Hashtable" ckt="String" cvt="STSnippetInputAction[]">
+                <d n="VisualElementInputActions" t="Hashtable" ckt="String">
                   <v>OnMouseClick</v>
                   <a cet="STSnippetInputAction">
                     <o>
@@ -6035,7 +6035,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                   <a cet="STSnippetInputAction">
                     <o>
                       <v n="STSnippet">"GVL.astAxes[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eMoveVelocity;
-GVL.astAxes[Main.hmiAxisSelection].stControl.fVelocity:=-ABS(GVL.astAxes[Main.hmiAxisSelection].stControl.fJogVelocity)
+GVL.astAxes[Main.hmiAxisSelection].stControl.fVelocity:= -ABS(GVL.astAxes[Main.hmiAxisSelection].stControl.fJogVelocity);
 GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     </o>
                   </a>
@@ -6229,7 +6229,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                 <v n="VisualElementIdentifier">"GenElemInst_126"</v>
                 <n n="VisualElementOfflinePaintCommands" />
                 <n n="VisualElementFrameInformation" />
-                <d n="VisualElementInputActions" t="Hashtable" ckt="String" cvt="STSnippetInputAction[]">
+                <d n="VisualElementInputActions" t="Hashtable" ckt="String">
                   <v>OnMouseClick</v>
                   <a cet="STSnippetInputAction">
                     <o>
@@ -6241,7 +6241,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                   <a cet="STSnippetInputAction">
                     <o>
                       <v n="STSnippet">"GVL.astAxes[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eMoveVelocity;
-GVL.astAxes[Main.hmiAxisSelection].stControl.fVelocity:=ABS(GVL.astAxes[Main.hmiAxisSelection].stControl.fJogVelocity)
+GVL.astAxes[Main.hmiAxisSelection].stControl.fVelocity:=ABS(GVL.astAxes[Main.hmiAxisSelection].stControl.fJogVelocity);
 GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                     </o>
                   </a>

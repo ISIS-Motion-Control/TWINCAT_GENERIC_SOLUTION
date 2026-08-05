@@ -7,6 +7,7 @@ VAR
 	iGroupNumber : INT := 3;
 	
 	stoRTrig : R_Trig;
+	stoDelay : TON;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -25,13 +26,14 @@ IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
 END_IF
 
 
-//Test Code to prevent moves
+(*//Test Code to prevent moves
 IF NOT SAFETY.SAMPLE_PERMIT THEN
 	GVL.astAxes[iAxisNumber].stControl.bExecute:= FALSE;
-END_IF
+END_IF*)
 
 //STO auto reset
-stoRTrig(CLK:=GVL.astAxes[iAxisNumber].stStatus.bSTOActive);
+stoDelay(IN:= GVL.astAxes[iAxisNumber].stStatus.bSTOActive,PT:=T#0.05S);
+stoRTrig(CLK:=stoDelay.Q);
 IF stoRTrig.Q THEN
 	GVL.astAxes[iAxisNumber].stControl.bReset:= TRUE;
 END_IF

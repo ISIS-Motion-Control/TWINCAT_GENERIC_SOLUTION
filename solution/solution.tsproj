@@ -21,6 +21,11 @@
 				<Cpu CpuId="1"/>
 				<IoIdleTask Priority="6"/>
 			</Settings>
+			<Licenses>
+				<Target>
+					<ManualSelect>{2752D285-16AD-4E89-AE6C-80E72784D264}</ManualSelect>
+				</Target>
+			</Licenses>
 			<Tasks>
 				<Task Id="4" Priority="10" CycleTime="100000" AmsPort="351" AdtTasks="true">
 					<Name>PlcTask</Name>
