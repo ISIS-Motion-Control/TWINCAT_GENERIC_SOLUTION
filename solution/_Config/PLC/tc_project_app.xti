@@ -983,7 +983,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{FB261665-FD20-4BF2-97F8-2854C82B752D}" Name="tc_project_app" PrjFilePath="..\..\tc_project_app\tc_project_app.plcproj" TmcFilePath="..\..\tc_project_app\tc_project_app.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" ClearInvalidPersist="true" SymbolicMapping="true">
-		<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{D202EF50-70DD-4753-8CC6-99FB0986DAA2}" TmcPath="tc_project_app\tc_project_app.tmc">
+		<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{816D6E0C-430C-B931-9754-3F42065F95D9}" TmcPath="tc_project_app\tc_project_app.tmc">
 			<Name>tc_project_app Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="8" AreaNo="4">
@@ -1775,59 +1775,11 @@ External Setpoint Generation:
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>SAFETY.SafetyTargets[1].RUN</Name>
+					<Name>SAFETY.HMI_ErrorAckLight</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>SAFETY.SafetyTargets[1].ERROR_ACK</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[2].RUN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[2].ERROR_ACK</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[3].RUN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[3].ERROR_ACK</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[4].RUN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[4].ERROR_ACK</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[5].RUN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[5].ERROR_ACK</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[6].RUN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[6].ERROR_ACK</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[7].RUN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[7].ERROR_ACK</Name>
+					<Name>SAFETY.HMI_SafetyRunLight</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2079,764 +2031,68 @@ External Setpoint Generation:
 					<Name>GVL.astAxes[43].Axis.PlcToNc</Name>
 					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].RUN</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].ERROR_ACK</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].RUN</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].ERROR_ACK</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].RUN</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].ERROR_ACK</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].RUN</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].ERROR_ACK</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].RUN</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].ERROR_ACK</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].RUN</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].ERROR_ACK</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].RUN</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].ERROR_ACK</Name>
+					<Type>BOOL</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="1">
 				<Name>PlcTask Inputs</Name>
 				<Var>
-					<Name>SAFETY.SafetyTargets[1].SERIAL</Name>
-					<Type>UDINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[1].CRC</Name>
-					<Type>WORD</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[1].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[1].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[2].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[2].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[3].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[3].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[4].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[4].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[5].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[5].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[6].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[6].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[7].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[7].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[8].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[8].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[9].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[9].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[10].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[10].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[2].SERIAL</Name>
-					<Type>UDINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[2].CRC</Name>
-					<Type>WORD</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[1].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[1].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[2].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[2].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[3].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[3].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[4].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[4].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[5].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[5].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[6].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[6].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[7].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[7].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[8].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[8].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[9].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[9].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[10].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[10].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[3].SERIAL</Name>
-					<Type>UDINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[3].CRC</Name>
-					<Type>WORD</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[1].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[1].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[2].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[2].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[3].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[3].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[4].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[4].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[5].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[5].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[6].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[6].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[7].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[7].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[8].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[8].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[9].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[9].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[10].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[10].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[4].SERIAL</Name>
-					<Type>UDINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[4].CRC</Name>
-					<Type>WORD</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[1].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[1].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[2].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[2].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[3].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[3].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[4].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[4].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[5].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[5].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[6].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[6].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[7].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[7].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[8].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[8].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[9].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[9].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[10].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[10].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[5].SERIAL</Name>
-					<Type>UDINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[5].CRC</Name>
-					<Type>WORD</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[1].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[1].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[2].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[2].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[3].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[3].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[4].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[4].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[5].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[5].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[6].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[6].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[7].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[7].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[8].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[8].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[9].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[9].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[10].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[10].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[6].SERIAL</Name>
-					<Type>UDINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[6].CRC</Name>
-					<Type>WORD</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[1].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[1].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[2].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[2].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[3].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[3].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[4].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[4].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[5].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[5].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[6].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[6].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[7].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[7].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[8].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[8].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[9].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[9].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[10].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[10].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[7].SERIAL</Name>
-					<Type>UDINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[7].CRC</Name>
-					<Type>WORD</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[1].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[1].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[2].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[2].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[3].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[3].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[4].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[4].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[5].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[5].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[6].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[6].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[7].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[7].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[8].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[8].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[9].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[9].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[10].STATE</Name>
-					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
-					<Type>USINT</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[10].DIAG</Name>
-					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
-					<Type>USINT</Type>
+					<Name>SAFETY.IncidentSlitsSwitch</Name>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>SAFETY.MS1.Ch1</Name>
@@ -4191,6 +3447,767 @@ External Setpoint Generation:
 					<Name>GVL.astAxes[43].Axis.NcToPlc</Name>
 					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 				</Var>
+				<Var>
+					<Name>SAFETY.MotionIsolator</Name>
+					<Comment><![CDATA[Physical isolator on side of panel]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].SERIAL</Name>
+					<Type>UDINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].CRC</Name>
+					<Type>WORD</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[1].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[1].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[2].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[2].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[3].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[3].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[4].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[4].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[5].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[5].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[6].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[6].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[7].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[7].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[8].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[8].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[9].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[9].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[10].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].aSafetyGroups[10].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].SERIAL</Name>
+					<Type>UDINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].CRC</Name>
+					<Type>WORD</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[1].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[1].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[2].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[2].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[3].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[3].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[4].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[4].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[5].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[5].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[6].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[6].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[7].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[7].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[8].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[8].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[9].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[9].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[10].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].aSafetyGroups[10].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].SERIAL</Name>
+					<Type>UDINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].CRC</Name>
+					<Type>WORD</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[1].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[1].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[2].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[2].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[3].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[3].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[4].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[4].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[5].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[5].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[6].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[6].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[7].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[7].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[8].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[8].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[9].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[9].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[10].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].aSafetyGroups[10].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].SERIAL</Name>
+					<Type>UDINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].CRC</Name>
+					<Type>WORD</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[1].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[1].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[2].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[2].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[3].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[3].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[4].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[4].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[5].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[5].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[6].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[6].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[7].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[7].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[8].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[8].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[9].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[9].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[10].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].aSafetyGroups[10].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].SERIAL</Name>
+					<Type>UDINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].CRC</Name>
+					<Type>WORD</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[1].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[1].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[2].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[2].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[3].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[3].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[4].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[4].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[5].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[5].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[6].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[6].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[7].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[7].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[8].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[8].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[9].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[9].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[10].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].aSafetyGroups[10].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].SERIAL</Name>
+					<Type>UDINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].CRC</Name>
+					<Type>WORD</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[1].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[1].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[2].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[2].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[3].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[3].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[4].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[4].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[5].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[5].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[6].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[6].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[7].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[7].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[8].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[8].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[9].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[9].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[10].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].aSafetyGroups[10].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].SERIAL</Name>
+					<Type>UDINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].CRC</Name>
+					<Type>WORD</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[1].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[1].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[2].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[2].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[3].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[3].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[4].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[4].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[5].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[5].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[6].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[6].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[7].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[7].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[8].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[8].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[9].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[9].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[10].STATE</Name>
+					<Comment><![CDATA[1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].aSafetyGroups[10].DIAG</Name>
+					<Comment><![CDATA[0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr]]></Comment>
+					<Type>USINT</Type>
+				</Var>
 			</Vars>
 			<UnrestoredVarLinks ImportTime="2025-02-28T14:46:00">
 				<OwnerA Name="OutputSrc" Prefix="TIPC^tc_project_app^tc_project_app Instance" Type="2">
@@ -4443,6 +4460,11 @@ External Setpoint Generation:
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MSR-BC1^MSR-DI1">
 				<Link VarA="PlcTask Inputs^SAFETY.HMI_ErrorAckButton" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.IncidentSlitsSwitch" VarB="Channel 3^Input" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^MSR-BC1^MSR-DO1">
+				<Link VarA="PlcTask Outputs^SAFETY.HMI_ErrorAckLight" VarB="Channel 3^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^SAFETY.HMI_SafetyRunLight" VarB="Channel 1^Output" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^PLCR-A2^PLCR-DI1">
 				<Link VarA="PlcTask Inputs^PANEL.ECB10.Status" VarB="Channel 4^Input" Size="1"/>
@@ -4464,6 +4486,7 @@ External Setpoint Generation:
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^PLCR-A2^PLCR-DI4">
 				<Link VarA="PlcTask Inputs^PANEL.ECB12.Status" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MotionIsolator" VarB="Channel 1^Input" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^PLCR-A2^PLCR-DO1">
 				<Link VarA="PlcTask Outputs^PANEL.ECB12.Reset" VarB="Channel 6^Output" Size="1"/>

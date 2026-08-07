@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<safetyApplication Crc="2431014532" xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.5.0.0" Id="0eb56aeb-9c89-4a40-93c5-b71975eb0337" name="" mapState="true" mapDiag="true" groupOrderId="1" passificationAllowed="false" temporaryDeactivationAllowed="false" permamentDeactivationAllowed="false" xmlid="0" analogFBOutputReplacementValues="Zero" verifyAnalogFBInputsIfStart="false" userFbId="00000000-0000-0000-0000-000000000000" xmlns="http://schemas.microsoft.com/dsltools/SafetyApplicationLanguage">
+<safetyApplication Crc="1997877784" xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.5.0.0" Id="0eb56aeb-9c89-4a40-93c5-b71975eb0337" name="" mapState="true" mapDiag="true" groupOrderId="1" passificationAllowed="false" temporaryDeactivationAllowed="false" permamentDeactivationAllowed="false" xmlid="0" analogFBOutputReplacementValues="Zero" verifyAnalogFBInputsIfStart="false" userFbId="00000000-0000-0000-0000-000000000000" xmlns="http://schemas.microsoft.com/dsltools/SafetyApplicationLanguage">
   <networks>
     <safetyApplicationHasNetworks Id="b401f8e4-7c6f-44ee-b6c5-59959116b20b">
       <Network Id="0cee6987-ca19-4fe6-8f68-1a342abbef75" name="Network1" networkName="MotionEmergencyStops" intId="1" networkOrderId="0">
@@ -833,7 +833,7 @@
                   <inPort Id="8189f233-7492-4e1f-9662-234036ce667e" name="Restart" portName="Restart" portNum="2" objectIndex="0" varId="1" filter="3" portDataType="1" maxDeviation="0" resetTime="0" />
                 </functioBlockHasInPorts>
                 <functioBlockHasInPorts Id="6d0e7c4f-7aed-4990-827f-f720932f5373">
-                  <inPort Id="93df5983-d391-4b76-b0bf-35d9a18c48bd" name="MonIn1" portName="MonIn1" portNum="4" objectIndex="8" varId="4" filter="2" portDataType="1" channelInterface="Single-Channel Both Activated" deactivate1="Break Contact (NC)" deactivate2="Break Contact (NC)" maxDeviation="0" resetTime="0">
+                  <inPort Id="93df5983-d391-4b76-b0bf-35d9a18c48bd" name="MonIn1" portName="MonIn1" portNum="4" objectIndex="8" varId="4" filter="2" portDataType="1" channelInterface="Two-Channel" discrepancyTime="100" deactivate1="Break Contact (NC)" deactivate2="Break Contact (NC)" maxDeviation="0" resetTime="0">
                     <fbPortGlobalVariableReferences>
                       <functionBlockPortHasFbPortGlobalVariableReferences Id="6d084369-10fb-4ba5-b607-6efce58b6d52">
                         <fbPortGlobalVariableReference Id="c5d063c1-9c40-4955-a3ab-2d2a3e932b2b" variableId="44be7422-be9b-43e3-bec2-da8818ec290d" lastKnownPath="gInput.Pendant_Enable_In1" />
@@ -906,7 +906,7 @@
                   <inPort Id="4ceccb8a-1f97-474b-95cf-1d9a12ccea9b" name="Restart" portName="Restart" portNum="2" objectIndex="0" varId="1" filter="3" portDataType="1" maxDeviation="0" resetTime="0" />
                 </functioBlockHasInPorts>
                 <functioBlockHasInPorts Id="c0f61c61-8965-4066-b1f2-9fbb326277eb">
-                  <inPort Id="2a6a2c84-dc12-4177-91fd-221dde830ff5" name="MonIn1" portName="MonIn1" portNum="4" objectIndex="8" varId="4" filter="2" portDataType="1" channelInterface="Single-Channel Both Activated" deactivate1="Break Contact (NC)" deactivate2="Break Contact (NC)" maxDeviation="0" resetTime="0">
+                  <inPort Id="2a6a2c84-dc12-4177-91fd-221dde830ff5" name="MonIn1" portName="MonIn1" portNum="4" objectIndex="8" varId="4" filter="2" portDataType="1" channelInterface="Two-Channel" discrepancyTime="100" deactivate1="Break Contact (NC)" deactivate2="Break Contact (NC)" maxDeviation="0" resetTime="0">
                     <fbPortGlobalVariableReferences>
                       <functionBlockPortHasFbPortGlobalVariableReferences Id="cadd3998-5987-4972-8972-4ca6bc9ebbfd">
                         <fbPortGlobalVariableReference Id="cb9b35ba-b5ce-459c-964f-eef1867359a0" variableId="bf41f1c4-d115-468a-8cd6-df7c1ddf4f1c" lastKnownPath="gInput.SL_In1" />

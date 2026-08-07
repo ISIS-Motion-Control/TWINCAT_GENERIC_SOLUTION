@@ -15,6 +15,7 @@ SafetyTargets : ARRAY [1..7] OF ST_SafetyTargetDevice:=
 ]
 ;
 	i : INT;
+	j : INT;
 	iGroup : INT;
 	
 	RUN AT %Q* : BOOL := TRUE;
@@ -70,6 +71,8 @@ SafetyTargets : ARRAY [1..7] OF ST_SafetyTargetDevice:=
 	inMode_Normal AT %I* : BOOL;
 	inMode_SearchedAndLocked AT %I* : BOOL;
 	
+	IncidentSlitsSwitch AT %I* : BOOL;
+	
 	SampleAreaSearched_Downstream AT %I* : BOOL;
 	SampleAreaSearched_Upstream AT %I* : BOOL;
 	
@@ -77,6 +80,9 @@ SafetyTargets : ARRAY [1..7] OF ST_SafetyTargetDevice:=
 	
 	EDMErr_NonSampleArea AT %I* : BOOL;
 	EDMErr_SampleArea AT %I* : BOOL;
+	
+	upstreamSearchReq : BOOL;
+	downstreamSearchReq : BOOL;
 	
 	//Pendant statuses
 	AccessPointCrossed AT %I* : BOOL;
@@ -98,6 +104,8 @@ SafetyTargets : ARRAY [1..7] OF ST_SafetyTargetDevice:=
 	SAMPLE_MOTION_PERMIT AT %I* : BOOL; //signal from the sto control to send a stop command
 	MOTION_PERMIT AT %I* : BOOL;	//Not in use?
 	NON_SAMPLE_MOTION_PERMIT  AT %I* : BOOL;
+	
+	MotionIsolator AT %I* : BOOL; //Physical isolator on side of panel
 	
 	
 	
@@ -124,8 +132,18 @@ SafetyTargets : ARRAY [1..7] OF ST_SafetyTargetDevice:=
 	
 	//Physical input device
 	HMI_ErrorAckButton AT %I* : BOOL;
+	ErrorAckLightState : BOOL;
+	HMI_ErrorAckLight AT %Q* : BOOL;
+	HMI_SafetyRunLight AT %Q* : BOOL;
 	
 	lostSamplePermit : F_TRIG;
+	//screen blackout
+	fbStartWindowsCommand : NT_StartProcess; // Start Windows Command
+	sPath : T_MaxString := 'C:\Windows\System32\cmd.exe' ;
+	sDirName : T_MaxString := 'C:\Windows\System32' ;
+	sCommandLine : T_MaxString := 'cmd /c scrnsave.scr /s'; 
+	bStartWindowsCommand : BOOL;
+	searchRTrig : R_TRIG;
 	
 END_VAR
 VAR_OUTPUT
@@ -146,9 +164,79 @@ IF NOT inMode_Maintenance THEN
 	Mute_AccessPoints := FALSE;
 	Mute_PendantEnable := FALSE;
 END_IF
-//FOR i:=1 TO 7 DO
+FOR i:=1 TO 7 DO
+	SafetyTargets[i].Diag:=0;
+	SafetyTargets[i].State:=1;
+	FOR j:=1 TO 10 DO
+		IF SafetyTargets[i].aSafetyGroups[j].Connected THEN
+			IF SafetyTargets[i].aSafetyGroups[j].STATE <> 1 THEN
+				SafetyTargets[i].State:=SafetyTargets[i].aSafetyGroups[j].STATE;
+				SafetyTargets[i].Diag:=SafetyTargets[i].aSafetyGroups[j].DIAG;
+				EXIT;
+			END_IF
+		END_IF			
+	END_FOR
 	
-//END_FOR]]></ST>
+	CASE SafetyTargets[i].Diag OF
+		0:	SafetyTargets[i].Diag_String:= 'No Error';
+		1:	SafetyTargets[i].Diag_String:= 'FB Error';
+		2:	SafetyTargets[i].Diag_String:= 'Comm Error';
+		3:	SafetyTargets[i].Diag_String:= 'Module Error';
+		4:	SafetyTargets[i].Diag_String:= 'CMP Error';
+		5:	SafetyTargets[i].Diag_String:= 'Deactive';
+		6:	SafetyTargets[i].Diag_String:= 'Restart Error';
+	END_CASE
+	CASE SafetyTargets[i].State OF
+		1: SafetyTargets[i].State_String:= 'Run';
+		2: SafetyTargets[i].State_String:= 'Stop';
+		4: SafetyTargets[i].State_String:= 'Error';
+		5: SafetyTargets[i].State_String:= 'Reset';
+		6: SafetyTargets[i].State_String:= 'Start';
+		7: SafetyTargets[i].State_String:= 'Stop Err';
+		16: SafetyTargets[i].State_String:= 'Deactive';
+		17: SafetyTargets[i].State_String:= 'Wait Comm Err';
+	END_CASE
+END_FOR
+
+//Error ack light
+ErrorAckLightState:= FALSE;
+FOR i:=1 TO 7 DO
+	IF SafetyTargets[i].State <> 1 THEN
+		ErrorAckLightState:= TRUE;
+	END_IF
+END_FOR
+HMI_ErrorAckLight := ErrorAckLightState;
+HMI_SafetyRunLight := RUN;
+
+//Blackout screen
+searchRTrig(CLK:= inMode_SearchedAndLocked);
+bStartWindowsCommand:= searchRTrig.Q;
+fbStartWindowsCommand(
+        NETID:= '', 
+        PATHSTR:= sPath, 
+        DIRNAME:= sDirName, 
+        COMNDLINE:= sCommandLine, 
+        START:= bStartWindowsCommand, 
+        TMOUT:= T#5S, 
+        BUSY=> , 
+        ERR=> , 
+        ERRID=> );
+
+IF inMode_Normal THEN
+	IF NOT SampleAreaSearched_Downstream THEN
+		downstreamSearchReq := TRUE;
+	ELSE
+		downstreamSearchReq := FALSE;
+	END_IF
+	IF NOT SampleAreaSearched_Upstream THEN
+		upstreamSearchReq := TRUE;
+	ELSE
+		upstreamSearchReq := FALSE;
+	END_IF
+ELSE
+	upstreamSearchReq := FALSE;
+	downstreamSearchReq := FALSE;
+END_IF]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

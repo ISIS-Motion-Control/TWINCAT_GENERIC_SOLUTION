@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TargetSystemConfig Crc="224137590" Version="1.5">
+<TargetSystemConfig Crc="1192295685" Version="1.5">
   <TargetSystemType>HSafetyPLC</TargetSystemType>
   <TargetSystemSubType>AX891x</TargetSystemSubType>
   <IsExternalDevice>false</IsExternalDevice>
@@ -7,7 +7,7 @@
   <TargetSystemObjectName>SVR-G3 (Sample Rotation)</TargetSystemObjectName>
   <SoftwareVersion>05 (V01.17)     </SoftwareVersion>
   <SerialNumber>4762346</SerialNumber>
-  <ProjectCRC>4096</ProjectCRC>
+  <ProjectCRC>1330</ProjectCRC>
   <MapProjectCRC>true</MapProjectCRC>
   <MapSerialNumber>true</MapSerialNumber>
   <VersionNumber>1</VersionNumber>

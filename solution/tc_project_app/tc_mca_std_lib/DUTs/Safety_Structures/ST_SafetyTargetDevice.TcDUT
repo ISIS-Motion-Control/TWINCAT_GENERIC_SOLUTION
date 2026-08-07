@@ -12,6 +12,10 @@ STRUCT
 	ERROR_ACK AT %Q* : BOOL;
 	Global_ERROR_ACK : BOOL:= TRUE;
 	aSafetyGroups : ARRAY [1..10] OF ST_SafetyGroup;
+	State : USINT; //summary of group mode operation
+	Diag : USINT; //summary of group mode diagnostics
+	State_String : STRING;
+	Diag_String : STRING;
 	
 	
 END_STRUCT

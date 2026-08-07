@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TargetSystemConfig Crc="686257526" Version="1.5">
+<TargetSystemConfig Crc="32905801" Version="1.5">
   <TargetSystemType>HSafetyPLC</TargetSystemType>
   <TargetSystemSubType>AMI891x</TargetSystemSubType>
   <IsExternalDevice>false</IsExternalDevice>
@@ -7,7 +7,7 @@
   <TargetSystemObjectName>ColNorthX</TargetSystemObjectName>
   <SoftwareVersion>01 (V01.01)     </SoftwareVersion>
   <SerialNumber>3016726</SerialNumber>
-  <ProjectCRC>18172</ProjectCRC>
+  <ProjectCRC>49190</ProjectCRC>
   <MapProjectCRC>true</MapProjectCRC>
   <MapSerialNumber>true</MapSerialNumber>
   <VersionNumber>1</VersionNumber>

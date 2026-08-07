@@ -24,6 +24,7 @@
 			<Licenses>
 				<Target>
 					<ManualSelect>{2752D285-16AD-4E89-AE6C-80E72784D264}</ManualSelect>
+					<ManualSelect>{CB3D4492-5E9E-43BC-AB3B-27CF3896EEC2}</ManualSelect>
 				</Target>
 			</Licenses>
 			<Tasks>
@@ -42,7 +43,7 @@
 			<Project File="Collimation.xti"/>
 			<Project File="MAIN.xti"/>
 			<Project File="SampleStackZRotation.xti"/>
-			<Project File="ZHeight.xti"/>
+			<Project File="SampleStackZTranslation.xti"/>
 		</Safety>
 		<Io>
 			<Device File="Device 1 (EtherCAT).xti" Id="1"/>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<safetyApplication Crc="1810601387" xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.5.0.0" Id="eea2df82-8837-423b-8b7c-adee7b3bd735" name="" mapState="true" mapDiag="true" groupOrderId="2" passificationAllowed="false" temporaryDeactivationAllowed="false" permamentDeactivationAllowed="false" xmlid="0" analogFBOutputReplacementValues="Zero" verifyAnalogFBInputsIfStart="false" userFbId="00000000-0000-0000-0000-000000000000" xmlns="http://schemas.microsoft.com/dsltools/SafetyApplicationLanguage">
+<safetyApplication Crc="2933800804" xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.5.0.0" Id="eea2df82-8837-423b-8b7c-adee7b3bd735" name="" mapState="true" mapDiag="true" groupOrderId="2" passificationAllowed="false" temporaryDeactivationAllowed="false" permamentDeactivationAllowed="false" xmlid="0" analogFBOutputReplacementValues="Zero" verifyAnalogFBInputsIfStart="false" userFbId="00000000-0000-0000-0000-000000000000" xmlns="http://schemas.microsoft.com/dsltools/SafetyApplicationLanguage">
   <networks>
     <safetyApplicationHasNetworks Id="b66284ed-a593-4113-a61f-ad56973b22a6">
       <Network Id="428f4f83-f2dd-44eb-9505-a9979502ef8c" name="STO_SS1_1" networkName="STO_SS1_1" intId="1" networkOrderId="0">
@@ -409,7 +409,7 @@
               </outPorts>
               <parameterPorts>
                 <functionBlockHasParamPorts Id="d2191382-a2aa-4cc9-85da-324f294ac42a">
-                  <parameterPort Id="dd68d9c8-4dad-4bb5-83c8-5e12ffde2a9e" name="Delay Time (ms)" portName="Delay Time (ms)" portNum="8" objectIndex="0" varId="0" filter="0" portDataType="0" timing="1000" userFbPortName="Delay Time (ms)" useInUserFb="false" />
+                  <parameterPort Id="dd68d9c8-4dad-4bb5-83c8-5e12ffde2a9e" name="Delay Time (ms)" portName="Delay Time (ms)" portNum="8" objectIndex="0" varId="0" filter="0" portDataType="0" timing="250" userFbPortName="Delay Time (ms)" useInUserFb="false" />
                 </functionBlockHasParamPorts>
               </parameterPorts>
             </fBMon>

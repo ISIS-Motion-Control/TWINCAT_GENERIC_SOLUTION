@@ -6,7 +6,6 @@ STRUCT
 	Connected : BOOL:= FALSE; //User to set
 	STATE AT %I* : USINT; //1 - run, 2 - stop, 4 - error, 5 - reset, 6 - start, 7 - stoperror, 16 - deactive, 17 - waitcommerr
 	DIAG AT %I* : USINT;//0 - no error, 1 - FbErr, 2 - CommErr, 3-ModuleError 4- CMPErr, 5 - Deactive, 6 - RestartErr
-	
 END_STRUCT
 END_TYPE
 ]]></Declaration>
