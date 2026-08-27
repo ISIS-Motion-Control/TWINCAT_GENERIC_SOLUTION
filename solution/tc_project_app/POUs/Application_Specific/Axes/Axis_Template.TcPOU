@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
   <POU Name="Axis_Template" Id="{1a43acb4-bd2e-4637-97fb-9976d47292b6}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Axis_Template
 VAR
@@ -20,12 +20,12 @@ END_VAR
 (*
 IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
     //Initial default values:
-    GVL.astAxes[iAxisNumber].stHomingConfig.eHomeSeq := 1 ;
-    GVL.astAxes[iAxisNumber].stHomingConfig.fHomePosition := 0.0;
-    GVL.astAxes[iAxisNumber].stHomingConfig.fHomeFinishDistance := 0.0;
-    GVL.astAxes[iAxisNumber].stConfig.eRestorePosition := E_RestorePosition.eRestoreWithoutHome;
-	GVL.astAxes[iAxisNumber].stControl.bAutoEnableDisable := TRUE;
-	GVL.astAxes[iAxisNumber].stDescription.iGroupNumber := iGroupNumber;
+    GVL.astAxesLocal[iAxisNumber].stHomingConfig.eHomeSeq := 1 ;
+    GVL.astAxesLocal[iAxisNumber].stHomingConfig.fHomePosition := 0.0;
+    GVL.astAxesLocal[iAxisNumber].stHomingConfig.fHomeFinishDistance := 0.0;
+    GVL.astAxesLocal[iAxisNumber].stConfig.eRestorePosition := E_RestorePosition.eRestoreWithoutHome;
+	GVL.astAxesLocal[iAxisNumber].stControl.bAutoEnableDisable := TRUE;
+	GVL.astAxesLocal[iAxisNumber].stDescription.iGroupNumber := iGroupNumber;
 END_IF
 *)
 
@@ -33,18 +33,8 @@ END_IF
 
 //Define ACTIONS() or write exclusive code for an specific axis.
 (*Eg. Stop when temperature reaches certain values, reduce speed if  a signal is activated, etc.
-Eg. GVL.astAxes[x].stControl.bInterlockFwd := NOT bInterlockFwdOK;*)
+Eg. GVL.astAxesLocal[x].stControl.bInterlockFwd := NOT bInterlockFwdOK;*)
 ]]></ST>
     </Implementation>
-    <LineIds Name="Axis_Template">
-      <LineId Id="31" Count="0" />
-      <LineId Id="46" Count="0" />
-      <LineId Id="32" Count="6" />
-      <LineId Id="40" Count="1" />
-      <LineId Id="47" Count="0" />
-      <LineId Id="29" Count="1" />
-      <LineId Id="16" Count="3" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

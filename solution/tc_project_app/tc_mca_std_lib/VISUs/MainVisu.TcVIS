@@ -5,7 +5,7 @@
       <Data>
         <o xml:space="preserve" t="VisualObject">
           <n n="LastVisuLanguageModelEntry" />
-          <v n="UniqueIdGenerator">"167"</v>
+          <v n="UniqueIdGenerator">"209"</v>
           <o n="VisualElemList" t="VisualElemList">
             <l n="VisualElementList" t="VisualElemCollection" cet="GenericVisualElem">
               <o>
@@ -409,7 +409,7 @@
                           <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
                             <o>
                               <v n="Id">1186196937L</v>
-                              <v n="Value">"GVL.astAxes[Main.hmiAxisSelection].stControl.bHalt"</v>
+                              <v n="Value">"GVL.astAxesLocal[Main.hmiAxisSelection].stControl.bHalt"</v>
                             </o>
                           </l>
                         </o>
@@ -460,7 +460,7 @@
                         </o>
                         <o>
                           <v n="Id">1647042231L</v>
-                          <v n="Value">"GVL.astAxes[Main.hmiAxisSelection].stControl.bHalt"</v>
+                          <v n="Value">"GVL.astAxesLocal[Main.hmiAxisSelection].stControl.bHalt"</v>
                         </o>
                         <o>
                           <v n="Id">2812299069L</v>
@@ -776,8 +776,10 @@
                       <v>OnMouseClick</v>
                       <a cet="STSnippetInputAction">
                         <o>
-                          <v n="STSnippet">"GVL.astAxes[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eHome;
-GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
+                          <v n="STSnippet">"GVL.astAxesLocal[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eHome;
+GVL.astAxesLocal[Main.hmiAxisSelection].stControl.bExecute:=TRUE;
+
+"</v>
                         </o>
                       </a>
                     </d>
@@ -968,9 +970,12 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                       <v>OnMouseClick</v>
                       <a cet="STSnippetInputAction">
                         <o>
-                          <v n="STSnippet">"GVL.astAxes[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eHome;
-GVL.astAxes[Main.hmiAxisSelection].stHomingConfig.eHomeSeq:=E_HomingRoutines.eHomeToBlock_Bwd;
-GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
+                          <v n="STSnippet">"GVL.astAxesLocal[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eHome;
+GVL.astAxesLocal[Main.hmiAxisSelection].stHomingConfig.eHomeSeq:=E_HomingRoutines.eHomeToBlock_Bwd;
+GVL.astAxesLocal[Main.hmiAxisSelection].stControl.bExecute:=TRUE;
+
+
+"</v>
                         </o>
                       </a>
                     </d>
@@ -1161,9 +1166,12 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                       <v>OnMouseClick</v>
                       <a cet="STSnippetInputAction">
                         <o>
-                          <v n="STSnippet">"GVL.astAxes[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eHome;
-GVL.astAxes[Main.hmiAxisSelection].stHomingConfig.eHomeSeq:=E_HomingRoutines.eHomeToEncPulse_Bwd_FAST;
-GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
+                          <v n="STSnippet">"GVL.astAxesLocal[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eHome;
+GVL.astAxesLocal[Main.hmiAxisSelection].stHomingConfig.eHomeSeq:=E_HomingRoutines.eHomeToEncPulse_Bwd_FAST;
+GVL.astAxesLocal[Main.hmiAxisSelection].stControl.bExecute:=TRUE;
+
+
+"</v>
                         </o>
                       </a>
                     </d>
@@ -1308,7 +1316,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                         </o>
                         <o>
                           <v n="Id">2477733581L</v>
-                          <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stHomingConfig.fHomeMidRelativeMove"</v>
+                          <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stHomingConfig.fHomeMidRelativeMove"</v>
                         </o>
                         <o>
                           <v n="Id">2597686782L</v>
@@ -1338,7 +1346,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                       <v>OnMouseClick</v>
                       <a cet="InputBoxInputAction">
                         <o>
-                          <v n="InputBoxVariable">"GVL.astAxes[MAIN.hmiAxisSelection].stHomingConfig.fHomeMidRelativeMove"</v>
+                          <v n="InputBoxVariable">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stHomingConfig.fHomeMidRelativeMove"</v>
                           <v n="InputType">"Default"</v>
                           <v n="InputBoxMin">""</v>
                           <v n="InputBoxMax">""</v>
@@ -1859,7 +1867,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                         </o>
                         <o>
                           <v n="Id">2477733581L</v>
-                          <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stHomingConfig.fHomeAbsPosition"</v>
+                          <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stHomingConfig.fHomeAbsPosition"</v>
                         </o>
                         <o>
                           <v n="Id">2597686782L</v>
@@ -1889,7 +1897,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                       <v>OnMouseClick</v>
                       <a cet="InputBoxInputAction">
                         <o>
-                          <v n="InputBoxVariable">"GVL.astAxes[MAIN.hmiAxisSelection].stHomingConfig.fHomeAbsPosition"</v>
+                          <v n="InputBoxVariable">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stHomingConfig.fHomeAbsPosition"</v>
                           <v n="InputType">"Default"</v>
                           <v n="InputBoxMin">""</v>
                           <v n="InputBoxMax">""</v>
@@ -2088,13 +2096,16 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     <v n="VisualElementIdentifier">"GenElemInst_500"</v>
                     <n n="VisualElementOfflinePaintCommands" />
                     <n n="VisualElementFrameInformation" />
-                    <d n="VisualElementInputActions" t="Hashtable" ckt="String" cvt="IInputAction[]">
+                    <d n="VisualElementInputActions" t="Hashtable" ckt="String" cvt="STSnippetInputAction[]">
                       <v>OnMouseClick</v>
                       <a cet="STSnippetInputAction">
                         <o>
-                          <v n="STSnippet">"GVL.astAxes[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eHome;
-GVL.astAxes[Main.hmiAxisSelection].stHomingConfig.eHomeSeq:=E_HomingRoutines.eHomeToEncPulse_Fwd_FAST;
-GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
+                          <v n="STSnippet">"GVL.astAxesLocal[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eHome;
+GVL.astAxesLocal[Main.hmiAxisSelection].stHomingConfig.eHomeSeq:=E_HomingRoutines.eHomeToEncPulse_Fwd_FAST;
+GVL.astAxesLocal[Main.hmiAxisSelection].stControl.bExecute:=TRUE;
+
+
+"</v>
                         </o>
                       </a>
                     </d>
@@ -3111,7 +3122,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                         </o>
                         <o>
                           <v n="Id">743958181L</v>
-                          <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stInputs.bLimitFwd"</v>
+                          <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stInputs.bLimitFwd"</v>
                         </o>
                         <o>
                           <v n="Id">3719097617L</v>
@@ -3229,7 +3240,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                         </o>
                         <o>
                           <v n="Id">743958181L</v>
-                          <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stInputs.bLimitBwd"</v>
+                          <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stInputs.bLimitBwd"</v>
                         </o>
                         <o>
                           <v n="Id">3719097617L</v>
@@ -3715,7 +3726,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                         </o>
                         <o>
                           <v n="Id">743958181L</v>
-                          <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stControl.bEnable"</v>
+                          <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stControl.bEnable"</v>
                         </o>
                         <o>
                           <v n="Id">3719097617L</v>
@@ -3833,7 +3844,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                         </o>
                         <o>
                           <v n="Id">743958181L</v>
-                          <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stControl.bInterlockFwd"</v>
+                          <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stControl.bInterlockFwd"</v>
                         </o>
                         <o>
                           <v n="Id">3719097617L</v>
@@ -3951,7 +3962,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                         </o>
                         <o>
                           <v n="Id">743958181L</v>
-                          <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stControl.bInterlockBwd"</v>
+                          <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stControl.bInterlockBwd"</v>
                         </o>
                         <o>
                           <v n="Id">3719097617L</v>
@@ -5253,8 +5264,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                   <v>OnMouseClick</v>
                   <a cet="STSnippetInputAction">
                     <o>
-                      <v n="STSnippet">"GVL.astAxes[MAIN.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eMoveAbsolute;
-GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
+                      <v n="STSnippet">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eMoveAbsolute;
+GVL.astAxesLocal[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;
+
+"</v>
                     </o>
                   </a>
                 </d>
@@ -5445,8 +5458,10 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                   <v>OnMouseClick</v>
                   <a cet="STSnippetInputAction">
                     <o>
-                      <v n="STSnippet">"GVL.astAxes[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eMoveVelocity;
-GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
+                      <v n="STSnippet">"GVL.astAxesLocal[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eMoveVelocity;
+GVL.astAxesLocal[Main.hmiAxisSelection].stControl.bExecute:=TRUE;
+
+"</v>
                     </o>
                   </a>
                 </d>
@@ -5637,8 +5652,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                   <v>OnMouseClick</v>
                   <a cet="STSnippetInputAction">
                     <o>
-                      <v n="STSnippet">"GVL.astAxes[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eMoveRelative;
-GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
+                      <v n="STSnippet">"GVL.astAxesLocal[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eMoveRelative;
+GVL.astAxesLocal[Main.hmiAxisSelection].stControl.bExecute:=TRUE;
+
+"</v>
                     </o>
                   </a>
                 </d>
@@ -5829,8 +5846,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                   <v>OnMouseClick</v>
                   <a cet="STSnippetInputAction">
                     <o>
-                      <v n="STSnippet">"GVL.astAxes[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eMoveModulo;
-GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
+                      <v n="STSnippet">"GVL.astAxesLocal[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eMoveModulo;
+GVL.astAxesLocal[Main.hmiAxisSelection].stControl.bExecute:=TRUE;
+
+"</v>
                     </o>
                   </a>
                 </d>
@@ -5853,7 +5872,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                       <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
                         <o>
                           <v n="Id">1186196937L</v>
-                          <v n="Value">"GVL.astAxes[Main.hmiAxisSelection].stControl.bStop"</v>
+                          <v n="Value">"GVL.astAxesLocal[Main.hmiAxisSelection].stControl.bStop"</v>
                         </o>
                       </l>
                     </o>
@@ -5904,7 +5923,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     </o>
                     <o>
                       <v n="Id">1647042231L</v>
-                      <v n="Value">"GVL.astAxes[Main.hmiAxisSelection].stControl.bStop"</v>
+                      <v n="Value">"GVL.astAxesLocal[Main.hmiAxisSelection].stControl.bStop"</v>
                     </o>
                     <o>
                       <v n="Id">2812299069L</v>
@@ -6227,15 +6246,20 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                   <v>OnMouseDown</v>
                   <a cet="STSnippetInputAction">
                     <o>
-                      <v n="STSnippet">"GVL.astAxes[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eMoveVelocity;
-GVL.astAxes[Main.hmiAxisSelection].stControl.fVelocity:= -ABS(GVL.astAxes[Main.hmiAxisSelection].stControl.fJogVelocity);
-GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
+                      <v n="STSnippet">"GVL.astAxesLocal[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eMoveVelocity;
+GVL.astAxesLocal[Main.hmiAxisSelection].stControl.fVelocity:= -ABS(GVL.astAxesLocal[Main.hmiAxisSelection].stControl.fJogVelocity);
+GVL.astAxesLocal[Main.hmiAxisSelection].stControl.bExecute:= TRUE;
+
+
+
+"</v>
                     </o>
                   </a>
                   <v>OnMouseUp</v>
                   <a cet="STSnippetInputAction">
                     <o>
-                      <v n="STSnippet">"GVL.astAxes[Main.hmiAxisSelection].stControl.bHalt:= TRUE;"</v>
+                      <v n="STSnippet">"GVL.astAxesLocal[Main.hmiAxisSelection].stControl.bHalt:= TRUE;
+"</v>
                     </o>
                   </a>
                 </d>
@@ -6433,15 +6457,20 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                   <v>OnMouseDown</v>
                   <a cet="STSnippetInputAction">
                     <o>
-                      <v n="STSnippet">"GVL.astAxes[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eMoveVelocity;
-GVL.astAxes[Main.hmiAxisSelection].stControl.fVelocity:=ABS(GVL.astAxes[Main.hmiAxisSelection].stControl.fJogVelocity);
-GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
+                      <v n="STSnippet">"GVL.astAxesLocal[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eMoveVelocity;
+GVL.astAxesLocal[Main.hmiAxisSelection].stControl.fVelocity:=ABS(GVL.astAxesLocal[Main.hmiAxisSelection].stControl.fJogVelocity);
+GVL.astAxesLocal[Main.hmiAxisSelection].stControl.bExecute:= TRUE;
+
+
+
+"</v>
                     </o>
                   </a>
                   <v>OnMouseUp</v>
                   <a cet="STSnippetInputAction">
                     <o>
-                      <v n="STSnippet">"GVL.astAxes[Main.hmiAxisSelection].stControl.bHalt:= TRUE;"</v>
+                      <v n="STSnippet">"GVL.astAxesLocal[Main.hmiAxisSelection].stControl.bHalt:= TRUE;
+"</v>
                     </o>
                   </a>
                 </d>
@@ -6966,7 +6995,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                         </o>
                         <o>
                           <v n="Id">2477733581L</v>
-                          <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stStatus.nErrorID"</v>
+                          <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stStatus.nErrorID"</v>
                         </o>
                         <o>
                           <v n="Id">2597686782L</v>
@@ -7068,7 +7097,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                         </o>
                         <o>
                           <v n="Id">743958181L</v>
-                          <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stStatus.bError"</v>
+                          <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stStatus.bError"</v>
                         </o>
                         <o>
                           <v n="Id">2597686782L</v>
@@ -7332,7 +7361,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                         </o>
                         <o>
                           <v n="Id">1647042231L</v>
-                          <v n="Value">"GVL.astAxes[Main.hmiAxisSelection].stControl.bReset"</v>
+                          <v n="Value">"GVL.astAxesLocal[Main.hmiAxisSelection].stControl.bReset"</v>
                         </o>
                         <o>
                           <v n="Id">2812299069L</v>
@@ -7464,7 +7493,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                       <v>OnMouseClick</v>
                       <a cet="ToggleVarInputAction">
                         <o>
-                          <v n="ToggleVariable">"GVL.astAxes[Main.hmiAxisSelection].stControl.bReset"</v>
+                          <v n="ToggleVariable">"GVL.astAxesLocal[Main.hmiAxisSelection].stControl.bReset"</v>
                           <n n="Error" />
                         </o>
                       </a>
@@ -7924,7 +7953,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                         </o>
                         <o>
                           <v n="Id">743958181L</v>
-                          <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stStatus.bEnabled"</v>
+                          <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stStatus.bEnabled"</v>
                         </o>
                         <o>
                           <v n="Id">2597686782L</v>
@@ -8212,7 +8241,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                         </o>
                         <o>
                           <v n="Id">743958181L</v>
-                          <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stStatus.bCommandAborted"</v>
+                          <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stStatus.bCommandAborted"</v>
                         </o>
                         <o>
                           <v n="Id">2597686782L</v>
@@ -8682,7 +8711,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                         </o>
                         <o>
                           <v n="Id">743958181L</v>
-                          <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stStatus.bDone"</v>
+                          <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stStatus.bDone"</v>
                         </o>
                         <o>
                           <v n="Id">2597686782L</v>
@@ -8970,7 +8999,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                         </o>
                         <o>
                           <v n="Id">743958181L</v>
-                          <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stStatus.bHomed"</v>
+                          <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stStatus.bHomed"</v>
                         </o>
                         <o>
                           <v n="Id">2597686782L</v>
@@ -9258,7 +9287,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                         </o>
                         <o>
                           <v n="Id">743958181L</v>
-                          <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stStatus.bFwEnabled AND NOT GVL.astAxes[MAIN.hmiAxisSelection].stStatus.bInterlockedFwd"</v>
+                          <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stStatus.bFwEnabled AND NOT GVL.astAxesLocal[MAIN.hmiAxisSelection].stStatus.bInterlockedFwd"</v>
                         </o>
                         <o>
                           <v n="Id">2597686782L</v>
@@ -9364,7 +9393,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                         </o>
                         <o>
                           <v n="Id">743958181L</v>
-                          <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stStatus.bBwEnabled AND NOT GVL.astAxes[MAIN.hmiAxisSelection].stStatus.bInterlockedBwd"</v>
+                          <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stStatus.bBwEnabled AND NOT GVL.astAxesLocal[MAIN.hmiAxisSelection].stStatus.bInterlockedBwd"</v>
                         </o>
                         <o>
                           <v n="Id">2597686782L</v>
@@ -9834,7 +9863,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                         </o>
                         <o>
                           <v n="Id">743958181L</v>
-                          <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stStatus.bBusy"</v>
+                          <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stStatus.bBusy"</v>
                         </o>
                         <o>
                           <v n="Id">2597686782L</v>
@@ -9940,7 +9969,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                         </o>
                         <o>
                           <v n="Id">743958181L</v>
-                          <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stInputs.bHomeSensor"</v>
+                          <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stInputs.bHomeSensor"</v>
                         </o>
                         <o>
                           <v n="Id">2597686782L</v>
@@ -10666,7 +10695,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                         </o>
                         <o>
                           <v n="Id">2477733581L</v>
-                          <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stControl.fVelocity"</v>
+                          <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stControl.fVelocity"</v>
                         </o>
                         <o>
                           <v n="Id">2597686782L</v>
@@ -10696,7 +10725,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                       <v>OnMouseClick</v>
                       <a cet="InputBoxInputAction">
                         <o>
-                          <v n="InputBoxVariable">"GVL.astAxes[MAIN.hmiAxisSelection].stConfig.fVelocity"</v>
+                          <v n="InputBoxVariable">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stConfig.fVelocity"</v>
                           <v n="InputType">"Default"</v>
                           <v n="InputBoxMin">""</v>
                           <v n="InputBoxMax">""</v>
@@ -11035,7 +11064,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                         </o>
                         <o>
                           <v n="Id">2477733581L</v>
-                          <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stControl.fAcceleration"</v>
+                          <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stControl.fAcceleration"</v>
                         </o>
                         <o>
                           <v n="Id">2597686782L</v>
@@ -11404,7 +11433,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                         </o>
                         <o>
                           <v n="Id">2477733581L</v>
-                          <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stControl.fDeceleration"</v>
+                          <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stControl.fDeceleration"</v>
                         </o>
                         <o>
                           <v n="Id">2597686782L</v>
@@ -11773,7 +11802,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                         </o>
                         <o>
                           <v n="Id">2477733581L</v>
-                          <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stControl.fPosition"</v>
+                          <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stControl.fPosition"</v>
                         </o>
                         <o>
                           <v n="Id">2597686782L</v>
@@ -11960,7 +11989,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                         </o>
                         <o>
                           <v n="Id">2477733581L</v>
-                          <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stStatus.fActPosition"</v>
+                          <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stStatus.fActPosition"</v>
                         </o>
                         <o>
                           <v n="Id">2597686782L</v>
@@ -12488,7 +12517,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                         </o>
                         <o>
                           <v n="Id">2477733581L</v>
-                          <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stStatus.fActVelocity"</v>
+                          <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stStatus.fActVelocity"</v>
                         </o>
                         <o>
                           <v n="Id">2597686782L</v>
@@ -12876,9 +12905,12 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:= TRUE;"</v>
                   <v>OnMouseClick</v>
                   <a cet="STSnippetInputAction">
                     <o>
-                      <v n="STSnippet">"GVL.astAxes[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eHome;
-GVL.astAxes[Main.hmiAxisSelection].stHomingConfig.eHomeSeq:=E_HomingRoutines.eHomeToRef_Bwd;
-GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
+                      <v n="STSnippet">"GVL.astAxesLocal[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eHome;
+GVL.astAxesLocal[Main.hmiAxisSelection].stHomingConfig.eHomeSeq:=E_HomingRoutines.eHomeToRef_Bwd;
+GVL.astAxesLocal[Main.hmiAxisSelection].stControl.bExecute:=TRUE;
+
+
+"</v>
                     </o>
                   </a>
                 </d>
@@ -13069,9 +13101,12 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                   <v>OnMouseClick</v>
                   <a cet="STSnippetInputAction">
                     <o>
-                      <v n="STSnippet">"GVL.astAxes[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eHome;
-GVL.astAxes[Main.hmiAxisSelection].stHomingConfig.eHomeSeq:=E_HomingRoutines.eHomeToRef_Fwd;
-GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
+                      <v n="STSnippet">"GVL.astAxesLocal[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eHome;
+GVL.astAxesLocal[Main.hmiAxisSelection].stHomingConfig.eHomeSeq:=E_HomingRoutines.eHomeToRef_Fwd;
+GVL.astAxesLocal[Main.hmiAxisSelection].stControl.bExecute:=TRUE;
+
+
+"</v>
                     </o>
                   </a>
                 </d>
@@ -13262,9 +13297,12 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                   <v>OnMouseClick</v>
                   <a cet="STSnippetInputAction">
                     <o>
-                      <v n="STSnippet">"GVL.astAxes[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eHome;
-GVL.astAxes[Main.hmiAxisSelection].stHomingConfig.eHomeSeq:=E_HomingRoutines.eHomeToEncPulse_Bwd;
-GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
+                      <v n="STSnippet">"GVL.astAxesLocal[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eHome;
+GVL.astAxesLocal[Main.hmiAxisSelection].stHomingConfig.eHomeSeq:=E_HomingRoutines.eHomeToEncPulse_Bwd;
+GVL.astAxesLocal[Main.hmiAxisSelection].stControl.bExecute:=TRUE;
+
+
+"</v>
                     </o>
                   </a>
                 </d>
@@ -13455,9 +13493,12 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                   <v>OnMouseClick</v>
                   <a cet="STSnippetInputAction">
                     <o>
-                      <v n="STSnippet">"GVL.astAxes[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eHome;
-GVL.astAxes[Main.hmiAxisSelection].stHomingConfig.eHomeSeq:=E_HomingRoutines.eHomeToEncPulse_Fwd;
-GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
+                      <v n="STSnippet">"GVL.astAxesLocal[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eHome;
+GVL.astAxesLocal[Main.hmiAxisSelection].stHomingConfig.eHomeSeq:=E_HomingRoutines.eHomeToEncPulse_Fwd;
+GVL.astAxesLocal[Main.hmiAxisSelection].stControl.bExecute:=TRUE;
+
+
+"</v>
                     </o>
                   </a>
                 </d>
@@ -13648,9 +13689,12 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                   <v>OnMouseClick</v>
                   <a cet="STSnippetInputAction">
                     <o>
-                      <v n="STSnippet">"GVL.astAxes[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eHome;
-GVL.astAxes[Main.hmiAxisSelection].stHomingConfig.eHomeSeq:=E_HomingRoutines.eHomeDirect;
-GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
+                      <v n="STSnippet">"GVL.astAxesLocal[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eHome;
+GVL.astAxesLocal[Main.hmiAxisSelection].stHomingConfig.eHomeSeq:=E_HomingRoutines.eHomeDirect;
+GVL.astAxesLocal[Main.hmiAxisSelection].stControl.bExecute:=TRUE;
+
+
+"</v>
                     </o>
                   </a>
                 </d>
@@ -13841,9 +13885,12 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                   <v>OnMouseClick</v>
                   <a cet="STSnippetInputAction">
                     <o>
-                      <v n="STSnippet">"GVL.astAxes[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eHome;
-GVL.astAxes[Main.hmiAxisSelection].stHomingConfig.eHomeSeq:=E_HomingRoutines.eHomeToLimit_Bwd;
-GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
+                      <v n="STSnippet">"GVL.astAxesLocal[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eHome;
+GVL.astAxesLocal[Main.hmiAxisSelection].stHomingConfig.eHomeSeq:=E_HomingRoutines.eHomeToLimit_Bwd;
+GVL.astAxesLocal[Main.hmiAxisSelection].stControl.bExecute:=TRUE;
+
+
+"</v>
                     </o>
                   </a>
                 </d>
@@ -14034,9 +14081,12 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                   <v>OnMouseClick</v>
                   <a cet="STSnippetInputAction">
                     <o>
-                      <v n="STSnippet">"GVL.astAxes[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eHome;
-GVL.astAxes[Main.hmiAxisSelection].stHomingConfig.eHomeSeq:=E_HomingRoutines.eHomeToLimit_Fwd;
-GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
+                      <v n="STSnippet">"GVL.astAxesLocal[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eHome;
+GVL.astAxesLocal[Main.hmiAxisSelection].stHomingConfig.eHomeSeq:=E_HomingRoutines.eHomeToLimit_Fwd;
+GVL.astAxesLocal[Main.hmiAxisSelection].stControl.bExecute:=TRUE;
+
+
+"</v>
                     </o>
                   </a>
                 </d>
@@ -14181,7 +14231,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     </o>
                     <o>
                       <v n="Id">2477733581L</v>
-                      <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stHomingConfig.fHomePosition"</v>
+                      <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stHomingConfig.fHomePosition"</v>
                     </o>
                     <o>
                       <v n="Id">2597686782L</v>
@@ -14211,7 +14261,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                   <v>OnMouseClick</v>
                   <a cet="InputBoxInputAction">
                     <o>
-                      <v n="InputBoxVariable">"GVL.astAxes[MAIN.hmiAxisSelection].stHomingConfig.fHomePosition"</v>
+                      <v n="InputBoxVariable">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stHomingConfig.fHomePosition"</v>
                       <v n="InputType">"Default"</v>
                       <v n="InputBoxMin">""</v>
                       <v n="InputBoxMax">""</v>
@@ -14414,9 +14464,12 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                   <v>OnMouseClick</v>
                   <a cet="STSnippetInputAction">
                     <o>
-                      <v n="STSnippet">"GVL.astAxes[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eHome;
-GVL.astAxes[Main.hmiAxisSelection].stHomingConfig.eHomeSeq:=E_HomingRoutines.eHomeToEncPulse_viaBwdLimit;
-GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
+                      <v n="STSnippet">"GVL.astAxesLocal[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eHome;
+GVL.astAxesLocal[Main.hmiAxisSelection].stHomingConfig.eHomeSeq:=E_HomingRoutines.eHomeToEncPulse_viaBwdLimit;
+GVL.astAxesLocal[Main.hmiAxisSelection].stControl.bExecute:=TRUE;
+
+
+"</v>
                     </o>
                   </a>
                 </d>
@@ -14607,9 +14660,12 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                   <v>OnMouseClick</v>
                   <a cet="STSnippetInputAction">
                     <o>
-                      <v n="STSnippet">"GVL.astAxes[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eHome;
-GVL.astAxes[Main.hmiAxisSelection].stHomingConfig.eHomeSeq:=E_HomingRoutines.eHomeToEncPulse_viaFwdLimit;
-GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
+                      <v n="STSnippet">"GVL.astAxesLocal[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eHome;
+GVL.astAxesLocal[Main.hmiAxisSelection].stHomingConfig.eHomeSeq:=E_HomingRoutines.eHomeToEncPulse_viaFwdLimit;
+GVL.astAxesLocal[Main.hmiAxisSelection].stControl.bExecute:=TRUE;
+
+
+"</v>
                     </o>
                   </a>
                 </d>
@@ -14754,7 +14810,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     </o>
                     <o>
                       <v n="Id">2477733581L</v>
-                      <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stHomingConfig.fHomeFinishDistance"</v>
+                      <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stHomingConfig.fHomeFinishDistance"</v>
                     </o>
                     <o>
                       <v n="Id">2597686782L</v>
@@ -14788,7 +14844,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                   <v>OnMouseClick</v>
                   <a cet="InputBoxInputAction">
                     <o>
-                      <v n="InputBoxVariable">"GVL.astAxes[MAIN.hmiAxisSelection].stHomingConfig.fHomeFinishDistance"</v>
+                      <v n="InputBoxVariable">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stHomingConfig.fHomeFinishDistance"</v>
                       <v n="InputType">"Default"</v>
                       <v n="InputBoxMin">""</v>
                       <v n="InputBoxMax">""</v>
@@ -16013,8 +16069,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                   <v>OnMouseClick</v>
                   <a cet="STSnippetInputAction">
                     <o>
-                      <v n="STSnippet">"GVL.astAxes[MAIN.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eWriteParameter;
-GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
+                      <v n="STSnippet">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eWriteParameter;
+GVL.astAxesLocal[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;
+
+"</v>
                     </o>
                   </a>
                 </d>
@@ -16160,7 +16218,7 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     <o>
                       <v n="Id">2477733581L</v>
                       <o n="Value" t="TextListEnumerationInfo">
-                        <v n="TextListEnumerationName">"astAxes[MAIN.hmiAxisSelection].stConfig.eAxisParameters"</v>
+                        <v n="TextListEnumerationName">"astAxesLocal[MAIN.hmiAxisSelection].stConfig.eAxisParameters"</v>
                         <o n="TextListEnumerationType" t="UserdefType">
                           <o n="TypeDef" t="VariableExpression">
                             <n n="Type" />
@@ -16172,7 +16230,7 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                             <a n="MessagesToSave" et="CompilerMessage" />
                             <v n="Name">"E_AxisParameters"</v>
                           </o>
-                          <v n="SignatureId">1289</v>
+                          <v n="SignatureId">771</v>
                           <v n="ScopeId">-1</v>
                           <v n="Compiled">false</v>
                         </o>
@@ -16209,7 +16267,7 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                   <v>OnMouseClick</v>
                   <a cet="InputBoxInputAction">
                     <o>
-                      <v n="InputBoxVariable">"GVL.astAxes[MAIN.hmiAxisSelection].stConfig.eAxisParameters"</v>
+                      <v n="InputBoxVariable">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stConfig.eAxisParameters"</v>
                       <v n="InputType">"Default"</v>
                       <v n="InputBoxMin">""</v>
                       <v n="InputBoxMax">""</v>
@@ -16548,7 +16606,7 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     </o>
                     <o>
                       <v n="Id">2477733581L</v>
-                      <v n="Value">"astAxes[MAIN.hmiAxisSelection].stConfig.fWriteAxisParameter"</v>
+                      <v n="Value">"astAxesLocal[MAIN.hmiAxisSelection].stConfig.fWriteAxisParameter"</v>
                     </o>
                     <o>
                       <v n="Id">2597686782L</v>
@@ -16578,7 +16636,7 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                   <v>OnMouseClick</v>
                   <a cet="InputBoxInputAction">
                     <o>
-                      <v n="InputBoxVariable">"GVL.astAxes[MAIN.hmiAxisSelection].stConfig.fWriteAxisParameter"</v>
+                      <v n="InputBoxVariable">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stConfig.fWriteAxisParameter"</v>
                       <v n="InputType">"Default"</v>
                       <v n="InputBoxMin">""</v>
                       <v n="InputBoxMax">""</v>
@@ -16735,7 +16793,7 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     </o>
                     <o>
                       <v n="Id">2477733581L</v>
-                      <v n="Value">"astAxes[MAIN.hmiAxisSelection].stConfig.fReadAxisParameter"</v>
+                      <v n="Value">"astAxesLocal[MAIN.hmiAxisSelection].stConfig.fReadAxisParameter"</v>
                     </o>
                     <o>
                       <v n="Id">2597686782L</v>
@@ -16765,7 +16823,7 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                   <v>OnMouseClick</v>
                   <a cet="InputBoxInputAction">
                     <o>
-                      <v n="InputBoxVariable">"GVL.astAxes[MAIN.hmiAxisSelection].stConfig.fReadAxisParameter"</v>
+                      <v n="InputBoxVariable">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stConfig.fReadAxisParameter"</v>
                       <v n="InputType">"Default"</v>
                       <v n="InputBoxMin">""</v>
                       <v n="InputBoxMax">""</v>
@@ -17150,8 +17208,10 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                   <v>OnMouseClick</v>
                   <a cet="STSnippetInputAction">
                     <o>
-                      <v n="STSnippet">"GVL.astAxes[MAIN.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eReadParameter;
-GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
+                      <v n="STSnippet">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eReadParameter;
+GVL.astAxesLocal[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;
+
+"</v>
                     </o>
                   </a>
                 </d>
@@ -17332,7 +17392,7 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     <o>
                       <v n="Id">397264524L</v>
                       <o n="Value" t="TextListEnumerationInfo">
-                        <v n="TextListEnumerationName">"GVL.astAxes[MAIN.hmiAxisSelection].stConfig.eAxisParameters"</v>
+                        <v n="TextListEnumerationName">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stConfig.eAxisParameters"</v>
                         <o n="TextListEnumerationType" t="UserdefType">
                           <o n="TypeDef" t="VariableExpression">
                             <n n="Type" />
@@ -17344,7 +17404,7 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                             <a n="MessagesToSave" et="CompilerMessage" />
                             <v n="Name">"E_AxisParameters"</v>
                           </o>
-                          <v n="SignatureId">900</v>
+                          <v n="SignatureId">771</v>
                           <v n="ScopeId">-1</v>
                           <v n="Compiled">false</v>
                         </o>
@@ -17731,9 +17791,12 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                   <v>OnMouseClick</v>
                   <a cet="STSnippetInputAction">
                     <o>
-                      <v n="STSnippet">"GVL.astAxes[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eHome;
-GVL.astAxes[Main.hmiAxisSelection].stHomingConfig.eHomeSeq:=E_HomingRoutines.eHomeToBlock_Fwd;
-GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
+                      <v n="STSnippet">"GVL.astAxesLocal[Main.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eHome;
+GVL.astAxesLocal[Main.hmiAxisSelection].stHomingConfig.eHomeSeq:=E_HomingRoutines.eHomeToBlock_Fwd;
+GVL.astAxesLocal[Main.hmiAxisSelection].stControl.bExecute:=TRUE;
+
+
+"</v>
                     </o>
                   </a>
                 </d>
@@ -17998,7 +18061,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     </o>
                     <o>
                       <v n="Id">743958181L</v>
-                      <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stStatus.SPGEnabled"</v>
+                      <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stStatus.SPGEnabled"</v>
                     </o>
                     <o>
                       <v n="Id">2597686782L</v>
@@ -18080,7 +18143,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     </o>
                     <o>
                       <v n="Id">1647042231L</v>
-                      <v n="Value">"GVL.astAxes[Main.hmiAxisSelection].stControl.bReset"</v>
+                      <v n="Value">"GVL.astAxesLocal[Main.hmiAxisSelection].stControl.bReset"</v>
                     </o>
                     <o>
                       <v n="Id">2812299069L</v>
@@ -18212,7 +18275,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                   <v>OnMouseClick</v>
                   <a cet="ToggleVarInputAction">
                     <o>
-                      <v n="ToggleVariable">"GVL.astAxes[Main.hmiAxisSelection].stSpg.EnableSPG"</v>
+                      <v n="ToggleVariable">"GVL.astAxesLocal[Main.hmiAxisSelection].stSpg.EnableSPG"</v>
                       <n n="Error" />
                     </o>
                   </a>
@@ -18272,7 +18335,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     </o>
                     <o>
                       <v n="Id">1647042231L</v>
-                      <v n="Value">"GVL.astAxes[Main.hmiAxisSelection].stControl.bReset"</v>
+                      <v n="Value">"GVL.astAxesLocal[Main.hmiAxisSelection].stControl.bReset"</v>
                     </o>
                     <o>
                       <v n="Id">2812299069L</v>
@@ -18404,7 +18467,7 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                   <v>OnMouseClick</v>
                   <a cet="ToggleVarInputAction">
                     <o>
-                      <v n="ToggleVariable">"GVL.astAxes[Main.hmiAxisSelection].stSpg.DisableSPG"</v>
+                      <v n="ToggleVariable">"GVL.astAxesLocal[Main.hmiAxisSelection].stSpg.DisableSPG"</v>
                       <n n="Error" />
                     </o>
                   </a>
@@ -18596,8 +18659,10 @@ GVL.astAxes[Main.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                   <v>OnMouseClick</v>
                   <a cet="STSnippetInputAction">
                     <o>
-                      <v n="STSnippet">"GVL.astAxes[MAIN.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eSetPosition;
-GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
+                      <v n="STSnippet">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stControl.eCommand:=E_MotionFunctions.eSetPosition;
+GVL.astAxesLocal[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;
+
+"</v>
                     </o>
                   </a>
                 </d>
@@ -18748,7 +18813,7 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     </o>
                     <o>
                       <v n="Id">2477733581L</v>
-                      <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stDescription.sAxisName"</v>
+                      <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stDescription.sAxisName"</v>
                     </o>
                     <o>
                       <v n="Id">1782330054L</v>
@@ -18882,7 +18947,7 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     </o>
                     <o>
                       <v n="Id">743958181L</v>
-                      <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].Commissioning"</v>
+                      <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].Commissioning"</v>
                     </o>
                     <o>
                       <v n="Id">2597686782L</v>
@@ -19038,7 +19103,7 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     </o>
                     <o>
                       <v n="Id">2477733581L</v>
-                      <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stControl.fSetPosition"</v>
+                      <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stControl.fSetPosition"</v>
                     </o>
                     <o>
                       <v n="Id">2597686782L</v>
@@ -19068,7 +19133,7 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                   <v>OnMouseClick</v>
                   <a cet="InputBoxInputAction">
                     <o>
-                      <v n="InputBoxVariable">"GVL.astAxes[MAIN.hmiAxisSelection].stControl.fSetPosition"</v>
+                      <v n="InputBoxVariable">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stControl.fSetPosition"</v>
                       <v n="InputType">"Default"</v>
                       <v n="InputBoxMin">""</v>
                       <v n="InputBoxMax">""</v>
@@ -19559,7 +19624,7 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                     </o>
                     <o>
                       <v n="Id">743958181L</v>
-                      <v n="Value">"GVL.astAxes[MAIN.hmiAxisSelection].stControl.bAutoEnableDisable"</v>
+                      <v n="Value">"GVL.astAxesLocal[MAIN.hmiAxisSelection].stControl.bAutoEnableDisable"</v>
                     </o>
                     <o>
                       <v n="Id">2597686782L</v>
@@ -19949,6 +20014,124 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
                 <v n="ElementVersion" t="Byte">0</v>
                 <n n="TabOrder" />
               </o>
+              <o>
+                <a n="ConfiguredComplexInputs" et="ComplexInput" />
+                <l n="Elements" t="ArrayList" />
+                <n n="VisualElementDescription" />
+                <o n="VisualElemMemberList" t="VisualElemMemberList">
+                  <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
+                    <o>
+                      <v n="Id">1931512087L</v>
+                      <v n="Value">"TOGGLE"</v>
+                    </o>
+                    <o>
+                      <v n="Id">300685745L</v>
+                      <v n="Value">false</v>
+                    </o>
+                    <o>
+                      <v n="Id">2812299069L</v>
+                      <v n="Value">4294967295U</v>
+                    </o>
+                    <o>
+                      <v n="Id">494569607L</v>
+                      <v n="Value">4278190080U</v>
+                    </o>
+                    <o>
+                      <v n="Id">1649127785L</v>
+                      <v n="Value">1021</v>
+                    </o>
+                    <o>
+                      <v n="Id">357335551L</v>
+                      <v n="Value">61</v>
+                    </o>
+                    <o>
+                      <v n="Id">2422045748L</v>
+                      <v n="Value">50</v>
+                    </o>
+                    <o>
+                      <v n="Id">2134141914L</v>
+                      <v n="Value">53</v>
+                    </o>
+                    <o>
+                      <v n="Id">4062784938L</v>
+                      <v n="Value">"Element-Switch-PowerSwitch-Green"</v>
+                    </o>
+                    <o>
+                      <v n="Id">493260384L</v>
+                      <v n="Value">4294967295U</v>
+                    </o>
+                    <o>
+                      <v n="Id">135947015L</v>
+                      <v n="Value">4278190080U</v>
+                    </o>
+                    <o>
+                      <v n="Id">2678395525L</v>
+                      <v n="Value">1U</v>
+                    </o>
+                    <o>
+                      <v n="Id">2340015797L</v>
+                      <v n="Value">"HCENTER"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2565699834L</v>
+                      <v n="Value">"VCENTER"</v>
+                    </o>
+                    <o>
+                      <v n="Id">296037572L</v>
+                      <v n="Value">""</v>
+                    </o>
+                    <o>
+                      <v n="Id">390574330L</v>
+                      <v n="Value">""</v>
+                    </o>
+                    <o>
+                      <v n="Id">571893170L</v>
+                      <v n="Value">""</v>
+                    </o>
+                    <o>
+                      <v n="Id">2597686782L</v>
+                      <v n="Value">false</v>
+                    </o>
+                    <o>
+                      <v n="Id">743958181L</v>
+                      <v n="Value">"MAIN.allowRemote"</v>
+                    </o>
+                    <o>
+                      <v n="Id">3719097617L</v>
+                      <v n="Value">0</v>
+                    </o>
+                    <o>
+                      <v n="Id">2496894244L</v>
+                      <v n="Value">""</v>
+                    </o>
+                    <o>
+                      <v n="Id">550940142L</v>
+                      <v n="Value">1011</v>
+                    </o>
+                    <o>
+                      <v n="Id">1473355128L</v>
+                      <v n="Value">23</v>
+                    </o>
+                  </l>
+                </o>
+                <v n="VisualElementName">"PowerSwitch"</v>
+                <v n="VisualElementTypeName">"VisuFbElemPowerSwitch"</v>
+                <v n="VisualElementIsRectangle">true</v>
+                <v n="VisualElementIdentifier">"GenElemInst_501"</v>
+                <n n="VisualElementOfflinePaintCommands" />
+                <n n="VisualElementFrameInformation" />
+                <d n="VisualElementInputActions" t="Hashtable" />
+                <v n="VisualElementIdentification">{aaf654d7-5b26-4722-8dda-0304e436363b}</v>
+                <v n="VisualElementOwningObjectGuid">{98c8ae72-e756-4d11-b6a5-5914882e2424}</v>
+                <a n="LMGuids" et="Guid" />
+                <d n="SubElements" t="Hashtable" />
+                <v n="VisualElementId">517</v>
+                <l n="UserManagementAccessRights" t="ArrayList" />
+                <v n="AnimationDuration">"0"</v>
+                <v n="BringToForeground">""</v>
+                <v n="ElementVersion" t="Byte">0</v>
+                <n n="TabOrder" />
+              </o>
             </l>
             <v n="BackgroundBitmapId">""</v>
             <v n="BackgroundColor">16777215</v>
@@ -20119,7 +20302,7 @@ GVL.astAxes[MAIN.hmiAxisSelection].stControl.bExecute:=TRUE;"</v>
             </o>
             <v n="DialogDut">{922df0df-545b-4a6e-ab04-d027f2e1dfa1}</v>
           </o>
-          <v n="LastUsedIdForIdentifier">500</v>
+          <v n="LastUsedIdForIdentifier">501</v>
           <o n="TextDocument" t="TextDocument">
             <v n="TextBlobForSerialisation">"VAR_IN_OUT
    
@@ -20182,7 +20365,6 @@ END_VAR"</v>
         <Type n="Guid">System.Guid</Type>
         <Type n="Hashtable">System.Collections.Hashtable</Type>
         <Type n="HotkeyConfiguration">{6b108d46-58af-4e41-a3f4-174d8f160cc4}</Type>
-        <Type n="IInputAction[]">_3S.CoDeSys.VisualElem.IInputAction[], VisualElem, Version=4.8.0.0, Culture=neutral, PublicKeyToken=null</Type>
         <Type n="InputBoxInputAction">{e8e7e747-f76f-4dee-ab1c-b9637e41ac26}</Type>
         <Type n="InputBoxInputAction[]">_3S.CoDeSys.VisualElem.InputBoxInputAction[], VisualElem.plugin, Version=4.8.0.0, Culture=neutral, PublicKeyToken=null</Type>
         <Type n="Int16">System.Int16</Type>

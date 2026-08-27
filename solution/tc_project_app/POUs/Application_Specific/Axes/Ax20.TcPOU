@@ -12,29 +12,34 @@ END_VAR
       <ST><![CDATA[//Initial parameters of an Axis
 IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
     //Initial default values:
-    GVL.astAxes[iAxisNumber].stHomingConfig.eHomeSeq := 1 ;
-    GVL.astAxes[iAxisNumber].stHomingConfig.fHomePosition := 0.0;
-    GVL.astAxes[iAxisNumber].stHomingConfig.fHomeFinishDistance := 0.0;
-    GVL.astAxes[iAxisNumber].stConfig.eRestorePosition := E_RestorePosition.eRestoreWithoutHome;
-	GVL.astAxes[iAxisNumber].stControl.bAutoEnableDisable := TRUE;
-	GVL.astAxes[iAxisNumber].stControl.tMoveFinishedDelay := T#0.1S;
+    GVL.astAxesLocal[iAxisNumber].stHomingConfig.eHomeSeq := 1 ;
+    GVL.astAxesLocal[iAxisNumber].stHomingConfig.fHomePosition := 0.0;
+    GVL.astAxesLocal[iAxisNumber].stHomingConfig.fHomeFinishDistance := 0.0;
+    GVL.astAxesLocal[iAxisNumber].stConfig.eRestorePosition := E_RestorePosition.eRestoreWithoutHome;
+	GVL.astAxesLocal[iAxisNumber].stControl.bAutoEnableDisable := TRUE;
+	GVL.astAxesLocal[iAxisNumber].stControl.tMoveFinishedDelay := T#0.1S;
 	//Set which group this axis belongs to
-	GVL.astAxes[iAxisNumber].stDescription.iGroupNumber := iGroupNumber;
-	GVL.astAxes[iAxisNumber].Commissioning := TRUE;
+	GVL.astAxesLocal[iAxisNumber].stDescription.iGroupNumber := iGroupNumber;
+	GVL.astAxesLocal[iAxisNumber].Commissioning := TRUE;
 END_IF
 
-stoRTrig(CLK:=GVL.astAxes[iAxisNumber].stStatus.bSTOActive);
-IF stoRTrig.Q THEN
-	GVL.astAxes[iAxisNumber].stControl.bReset:= TRUE;
-END_IF
+//Permit
+GVL.astAxesLocal[iAxisNumber].stInputs.bPermit := SAFETY.SAMPLE_PERMIT;
 
+//Safety stop motion
 IF SAFETY.STOP_MOTION THEN
-	GVL.astAxes[iAxisNumber].stControl.bHalt:= TRUE;
+	GVL.astAxesLocal[iAxisNumber].stControl.bHalt:= TRUE;
 END_IF
+
+stoRTrig(CLK:=GVL.astAxesLocal[iAxisNumber].stStatus.bSTOActive);
+IF stoRTrig.Q THEN
+	GVL.astAxesLocal[iAxisNumber].stControl.bReset:= TRUE;
+END_IF
+
 
 //Define ACTIONS() or write exclusive code for an specific axis.
 (*Eg. Stop when temperature reaches certain values, reduce speed if  a signal is activated, etc.
-Eg. GVL.astAxes[x].stControl.bInterlockFwd := NOT bInterlockFwdOK;*)
+Eg. GVL.astAxesLocal[x].stControl.bInterlockFwd := NOT bInterlockFwdOK;*)
 ]]></ST>
     </Implementation>
   </POU>

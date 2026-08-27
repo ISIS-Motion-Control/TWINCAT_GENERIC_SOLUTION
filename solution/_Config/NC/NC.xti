@@ -1425,8 +1425,9 @@ External Setpoint Generation:
 		<Axis Id="1" CreateSymbols="true" AxisType="1">
 			<Name>Ax1 - Inc Slits X Translation</Name>
 			<AxisPara>
-				<Dynamic DecelerationMaximum="1500000" Acceleration="80" Deceleration="80" Jerk="200"/>
-				<Velo RefSearch="10" RefSync="0.25" SlowManual="5.45455" FastManual="32.7273" Fast="109.091" Maximum="109.091"/>
+				<Dynamic AccelerationMaximum="150" DecelerationMaximum="150" Acceleration="80" Deceleration="80" Jerk="200"/>
+				<Velo RefSearch="10" RefSync="0.25" SlowManual="5" FastManual="20" Fast="109.091" Maximum="40"/>
+				<TargetPosControl Range="0.25" Time="0.2"/>
 				<OtherSettings AllowMotionCmdToSlave="true"/>
 			</AxisPara>
 			<Encoder Name="Enc" EncType="19">
@@ -1548,6 +1549,7 @@ External Setpoint Generation:
 			</Drive>
 			<Controller Name="Ctrl" CtrType="1">
 				<CtrPara PriorControlFactor="1">
+					<PosDiffControl Range="2"/>
 					<Observer BandWidth="20"/>
 				</CtrPara>
 			</Controller>

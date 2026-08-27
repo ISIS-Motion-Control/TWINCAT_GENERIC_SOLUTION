@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
   <POU Name="FB_AxisGroups" Id="{3d34cf0c-94a1-435c-a681-8b8d3300efd6}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_AxisGroups
 VAR_INPUT
@@ -30,8 +30,8 @@ FOR iGroupedAxis := 1 TO GVL.nMAX_AXES_PER_GROUP DO
 		END_IF
 		RETURN;
 	END_IF
-	_stAxisGroup.stFlag.iDisabled := _stAxisGroup.stFlag.iDisabled + BOOL_TO_INT(NOT astAxes[_stAxisGroup.aAxesInGroup[iGroupedAxis]].stStatus.bEnabled) * iGroupedAxis;
-	_stAxisGroup.stFlag.iNumberOfAxisDisabled := _stAxisGroup.stFlag.iNumberOfAxisDisabled + BOOL_TO_INT(NOT astAxes[_stAxisGroup.aAxesInGroup[iGroupedAxis]].stStatus.bEnabled);
+	_stAxisGroup.stFlag.iDisabled := _stAxisGroup.stFlag.iDisabled + BOOL_TO_INT(NOT astAxesLocal[_stAxisGroup.aAxesInGroup[iGroupedAxis]].stStatus.bEnabled) * iGroupedAxis;
+	_stAxisGroup.stFlag.iNumberOfAxisDisabled := _stAxisGroup.stFlag.iNumberOfAxisDisabled + BOOL_TO_INT(NOT astAxesLocal[_stAxisGroup.aAxesInGroup[iGroupedAxis]].stStatus.bEnabled);
 END_FOR]]></ST>
       </Implementation>
     </Method>
@@ -52,8 +52,8 @@ FOR iGroupedAxis := 1 TO GVL.nMAX_AXES_PER_GROUP DO
 		END_IF
 		RETURN;
 	END_IF
-	_stAxisGroup.stFlag.iError := _stAxisGroup.stFlag.iError + BOOL_TO_INT(astAxes[_stAxisGroup.aAxesInGroup[iGroupedAxis]].stStatus.bError) * (100 + iGroupedAxis);
-	_stAxisGroup.stFlag.iNumberOfAxisInError := _stAxisGroup.stFlag.iNumberOfAxisInError + BOOL_TO_INT(astAxes[_stAxisGroup.aAxesInGroup[iGroupedAxis]].stStatus.bError);
+	_stAxisGroup.stFlag.iError := _stAxisGroup.stFlag.iError + BOOL_TO_INT(astAxesLocal[_stAxisGroup.aAxesInGroup[iGroupedAxis]].stStatus.bError) * (100 + iGroupedAxis);
+	_stAxisGroup.stFlag.iNumberOfAxisInError := _stAxisGroup.stFlag.iNumberOfAxisInError + BOOL_TO_INT(astAxesLocal[_stAxisGroup.aAxesInGroup[iGroupedAxis]].stStatus.bError);
 END_FOR]]></ST>
       </Implementation>
     </Method>
@@ -98,29 +98,5 @@ END_VAR
         </Implementation>
       </Set>
     </Property>
-    <LineIds Name="FB_AxisGroups">
-      <LineId Id="5" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_AxisGroups.mStatus_GroupEnabled">
-      <LineId Id="6" Count="12" />
-    </LineIds>
-    <LineIds Name="FB_AxisGroups.mStatus_GroupError">
-      <LineId Id="6" Count="13" />
-    </LineIds>
-    <LineIds Name="FB_AxisGroups.mStatus_GroupState">
-      <LineId Id="5" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_AxisGroups.Run">
-      <LineId Id="6" Count="1" />
-      <LineId Id="5" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_AxisGroups.stAxisGroup.Get">
-      <LineId Id="5" Count="0" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_AxisGroups.stAxisGroup.Set">
-      <LineId Id="5" Count="0" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

@@ -42,7 +42,7 @@
 			<Project File="Collimation.xti"/>
 			<Project File="MAIN.xti"/>
 			<Project File="SampleStackZRotation.xti"/>
-			<Project File="ZHeight.xti"/>
+			<Project File="SampleStackZTranslation.xti"/>
 		</Safety>
 		<Io>
 			<Device File="Device 1 (EtherCAT).xti" Id="1"/>

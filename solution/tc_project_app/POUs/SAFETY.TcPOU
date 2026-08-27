@@ -140,6 +140,7 @@ SafetyTargets : ARRAY [1..7] OF ST_SafetyTargetDevice:=
 	HMI_SafetyRunLight AT %Q* : BOOL;
 	
 	lostSamplePermit : F_TRIG;
+	lostNonSamplePermit : F_TRIG;
 	//screen blackout
 	fbStartWindowsCommand : NT_StartProcess; // Start Windows Command
 	sPath : T_MaxString := 'C:\Windows\System32\cmd.exe' ;
@@ -153,6 +154,7 @@ VAR_OUTPUT
 	STOP_MOTION : BOOL;
 	NON_SAMPLE_PERMIT : BOOL;
 	SAMPLE_PERMIT : BOOL;
+	STOP_NON_SAMPLE_MOTION : BOOL;
 	
 END_VAR]]></Declaration>
     <Implementation>
@@ -160,6 +162,8 @@ END_VAR]]></Declaration>
 
 lostSamplePermit(CLK:= SAMPLE_MOTION_PERMIT);
 STOP_MOTION:= lostSamplePermit.Q;
+lostNonSamplePermit(CLK:= NON_SAMPLE_MOTION_PERMIT);
+STOP_NON_SAMPLE_MOTION:= lostNonSamplePermit.Q;
 NON_SAMPLE_PERMIT := NON_SAMPLE_MOTION_PERMIT;
 SAMPLE_PERMIT := SAMPLE_MOTION_PERMIT;
 
