@@ -271,6 +271,16 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"906"</v>
+              <v n="TextDefault">"eHomeToEncPulse_Bwd_FaSt"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"960"</v>
+              <v n="TextDefault">"eHomeToEncPulse_Bwd_Fast"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"220"</v>
               <v n="TextDefault">"eHomeToEncPulse_Bw_d_FASE"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -278,6 +288,16 @@
             <o>
               <v n="TextID">"510"</v>
               <v n="TextDefault">"eHomeToEncPulse_Fwd"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"1302"</v>
+              <v n="TextDefault">"eHomeToEncPulse_Fwd_FaSt"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"971"</v>
+              <v n="TextDefault">"eHomeToEncPulse_Fwd_Fast"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>

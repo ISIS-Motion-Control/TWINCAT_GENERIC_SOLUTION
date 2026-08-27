@@ -21,6 +21,8 @@ SafetyTargets : ARRAY [1..7] OF ST_SafetyTargetDevice:=
 	RUN AT %Q* : BOOL := TRUE;
 	ERRACK AT %Q* : BOOL;
 	
+	BannerMessage : STRING;
+	
 	//ESTOP Devices
 	{ attribute 'TcHmiSymbol.AddSymbol' }
 	MS1 : ST_DeviceDualChannelInput;
@@ -72,6 +74,7 @@ SafetyTargets : ARRAY [1..7] OF ST_SafetyTargetDevice:=
 	inMode_SearchedAndLocked AT %I* : BOOL;
 	
 	IncidentSlitsSwitch AT %I* : BOOL;
+	CollisionDetected : BOOL;
 	
 	SampleAreaSearched_Downstream AT %I* : BOOL;
 	SampleAreaSearched_Upstream AT %I* : BOOL;
@@ -160,6 +163,8 @@ STOP_MOTION:= lostSamplePermit.Q;
 NON_SAMPLE_PERMIT := NON_SAMPLE_MOTION_PERMIT;
 SAMPLE_PERMIT := SAMPLE_MOTION_PERMIT;
 
+CollisionDetected := NOT IncidentSlitsSwitch;
+
 IF NOT inMode_Maintenance THEN
 	Mute_AccessPoints := FALSE;
 	Mute_PendantEnable := FALSE;
@@ -200,13 +205,16 @@ END_FOR
 
 //Error ack light
 ErrorAckLightState:= FALSE;
-FOR i:=1 TO 7 DO
-	IF SafetyTargets[i].State <> 1 THEN
-		ErrorAckLightState:= TRUE;
-	END_IF
-END_FOR
+IF NOT inMode_SearchedAndLocked THEN	//We don't turn on light in S&L
+	FOR i:=1 TO 7 DO
+		IF SafetyTargets[i].State <> 1 THEN
+			ErrorAckLightState:= TRUE;
+		END_IF
+	END_FOR
+END_IF
+
 HMI_ErrorAckLight := ErrorAckLightState;
-HMI_SafetyRunLight := RUN;
+HMI_SafetyRunLight := RUN AND NOT inMode_SearchedAndLocked;
 
 //Blackout screen
 searchRTrig(CLK:= inMode_SearchedAndLocked);
@@ -236,6 +244,41 @@ IF inMode_Normal THEN
 ELSE
 	upstreamSearchReq := FALSE;
 	downstreamSearchReq := FALSE;
+END_IF
+
+//Banner message logic
+IF SafetyTargets[1].State = 4 THEN
+	BannerMessage:= 'Safety in error';
+ELSIF SafetyTargets[1].State <> 1 THEN
+	BannerMessage:= 'EL6910 Safety not running';
+ELSIF SafetyTargets[2].State <>1 OR SafetyTargets[3].State <> 1 OR SafetyTargets[4].State <> 1 OR SafetyTargets[5].State <> 1 OR SafetyTargets[6].State <> 1 OR SafetyTargets[7].State <> 1 THEN
+	BannerMessage:= 'Drive safety project not running';
+ELSIF NOT EstopsHealthy  THEN
+	BannerMessage:= 'Estop pressed';
+ELSIF NOT LC1.Output THEN
+	BannerMessage:= 'LC1 access point not healthy';
+ELSIF NOT LC2.Output THEN
+	BannerMessage:= 'LC2 access point not healthy';
+ELSIF NOT LC3.Output THEN
+	BannerMessage:= 'LC3 access point not healthy';
+ELSIF NOT GS1.Output THEN
+	BannerMessage:= 'GS1 access point not healthy';	
+ELSIF NOT SampleStackZRotationSLSHealthy THEN
+	BannerMessage:= 'Sample stack rotation SLS tripped';
+ELSIF HmiRbLight THEN
+	BannerMessage:= 'Reset required';
+ELSIF upstreamSearchReq AND downstreamSearchReq AND inMode_Normal THEN
+	BannerMessage:= 'Sample area upstream and downstream require search';
+ELSIF upstreamSearchReq AND inMode_Normal THEN
+	BannerMessage:= 'Sample area upstream requires search';
+ELSIF downstreamSearchReq AND inMode_Normal THEN
+	BannerMessage:= 'Sample area downstream requires search';
+ELSIF inMode_Local THEN
+	BannerMessage:= 'Only control from pendant permitted';
+ELSIF inMode_Normal AND CollisionDetected THEN
+	BannerMessage:= 'Collision detected, control only possible in local mode';
+ELSE
+	BannerMessage:= '';
 END_IF]]></ST>
     </Implementation>
   </POU>

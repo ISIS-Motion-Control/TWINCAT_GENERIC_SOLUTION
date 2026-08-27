@@ -625,7 +625,7 @@ IF _stAxis.stControl.eCommand = E_MotionFunctions.eMoveRelative THEN
 	END_IF
 END_IF
 
-fbMoveRelative.Distance := _stAxis.stControl.fPosition;
+fbMoveRelative.Distance := _stAxis.stControl.fRelativePosition;
 fbMoveRelative.Velocity := ABS(_stAxis.stControl.fVelocity);
 fbMoveRelative.Acceleration := _stAxis.stControl.fAcceleration;
 fbMoveRelative.Deceleration := _stAxis.stControl.fDeceleration;

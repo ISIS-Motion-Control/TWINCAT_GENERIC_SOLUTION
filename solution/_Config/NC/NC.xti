@@ -1423,13 +1423,14 @@ External Setpoint Generation:
 			<Name>NC-Task 1 SVB</Name>
 		</SvbTask>
 		<Axis Id="1" CreateSymbols="true" AxisType="1">
-			<Name>Axis 1</Name>
+			<Name>Ax1 - Inc Slits X Translation</Name>
 			<AxisPara>
-				<Dynamic DecelerationMaximum="1500000" Deceleration="150000" Jerk="225000"/>
+				<Dynamic DecelerationMaximum="1500000" Acceleration="80" Deceleration="80" Jerk="200"/>
+				<Velo RefSearch="10" RefSync="0.25" SlowManual="5.45455" FastManual="32.7273" Fast="109.091" Maximum="109.091"/>
 				<OtherSettings AllowMotionCmdToSlave="true"/>
 			</AxisPara>
-			<Encoder Name="Enc" EncType="1">
-				<EncPara>
+			<Encoder Name="Enc" EncType="19">
+				<EncPara ScaleFactorNumerator="20" ScaleFactorDenominator="1048576" Inverse="true" MaxCount="#xffffffff">
 					<SoftEndMinControl Enable="true" Range="-300"/>
 					<SoftEndMaxControl Enable="true" Range="300"/>
 				</EncPara>
@@ -1489,9 +1490,9 @@ External Setpoint Generation:
 					</Var>
 				</Vars>
 			</Encoder>
-			<Drive Name="Drive" DrvType="5">
-				<DrvPara>
-					<Analog TorqueSetpointScale="10" ScaleFactorActTorque="0.1"/>
+			<Drive Name="Drive" DrvType="16">
+				<DrvPara Inverse="true" MaxCount="#xffffffff" DriveControlDWord="#x00020100">
+					<Analog VeloReferenz="120.0001" VeloScale="32" TorqueSetpointScale="10" ScaleFactorActTorque="0.1"/>
 					<TimeComp TaskDelayCycles="1"/>
 				</DrvPara>
 				<Vars VarGrpType="1">
@@ -1530,22 +1531,6 @@ External Setpoint Generation:
 						<SubVar TypeFormatIndex="2">
 							<Name>nDataOut2</Name>
 						</SubVar>
-						<SubVar>
-							<Name>nCtrl2</Name>
-							<Comment><![CDATA[Digital Outputs Setpoint Generator:
-0x41 (0100 0001) = Minus (0x42 for inverse motor polarity)
-0x42 (0100 0010) = Plus (0x41 for inverse motor polarity)
-0x80 (1000 0000) = Stop
-]]></Comment>
-						</SubVar>
-						<SubVar>
-							<Name>nCtrl3</Name>
-							<Comment><![CDATA[Digital Outputs (Setpoint Generator + Position Controller):
-0x41 (0100 0001) = Minus (0x42 for inverse motor polarity)
-0x42 (0100 0010) = Plus (0x41 for inverse motor polarity)
-0x80 (1000 0000) = Stop
-]]></Comment>
-						</SubVar>
 						<SubVar TypeFormatIndex="2">
 							<Name>nDataOut3</Name>
 						</SubVar>
@@ -1581,16 +1566,16 @@ External Setpoint Generation:
 				</Var>
 			</Vars>
 		</Axis>
-		<Axis File="Axis 2.xti" Id="2"/>
-		<Axis File="Axis 3.xti" Id="3"/>
-		<Axis File="Axis 4.xti" Id="4"/>
-		<Axis File="Axis 5.xti" Id="5"/>
-		<Axis File="Axis 6.xti" Id="6"/>
+		<Axis File="Ax2 - Inc Slits Z Translation.xti" Id="2"/>
+		<Axis File="Ax3 - Inc Slits North.xti" Id="3"/>
+		<Axis File="Ax4 - Inc Slits South.xti" Id="4"/>
+		<Axis File="Ax5 - Inc Slits East.xti" Id="5"/>
+		<Axis File="Ax6 - Inc Slits West.xti" Id="6"/>
 		<Axis File="Ax7 - SS_X_Translation.xti" Id="7"/>
 		<Axis File="Ax8 - SS_Y_Translation.xti" Id="8"/>
-		<Axis File="Axis 9.xti" Id="9"/>
-		<Axis File="Axis 10.xti" Id="10"/>
-		<Axis File="Axis 11.xti" Id="11"/>
+		<Axis File="Ax9 - Tom_Phi Rotation.xti" Id="9"/>
+		<Axis File="Ax10 - Tom_Chi Lower.xti" Id="10"/>
+		<Axis File="Ax11 - Tom_Theta Upper.xti" Id="11"/>
 		<Axis File="Axis 12.xti" Id="12"/>
 		<Axis File="Axis 13.xti" Id="13"/>
 		<Axis File="Axis 14.xti" Id="14"/>
@@ -1601,27 +1586,66 @@ External Setpoint Generation:
 		<Axis File="Ax19 - ColNorth_Y.xti" Id="19"/>
 		<Axis File="Ax20 - ColSouth_X.xti" Id="20"/>
 		<Axis File="Ax21 - ColSouth_Y.xti" Id="21"/>
-		<Axis File="Axis 22.xti" Id="22"/>
-		<Axis File="Axis 23.xti" Id="23"/>
-		<Axis File="Axis 24.xti" Id="24"/>
-		<Axis File="Axis 25.xti" Id="25"/>
-		<Axis File="Axis 26.xti" Id="26"/>
-		<Axis File="Axis 27.xti" Id="27"/>
+		<Axis File="Ax22 - Pinhole selector.xti" Id="22"/>
+		<Axis File="Ax23 - Monitor 5.xti" Id="23"/>
+		<Axis File="Ax24 - Slit 1 North.xti" Id="24"/>
+		<Axis File="Ax25 - Slit 1 South.xti" Id="25"/>
+		<Axis File="Ax26 - Slit 1 East.xti" Id="26"/>
+		<Axis File="Ax27 - Slit 1 West.xti" Id="27"/>
 		<Axis File="Ax28 - Slit 2 North.xti" Id="28"/>
 		<Axis File="Ax29 - Slit 2 South.xti" Id="29"/>
-		<Axis File="Axis 30.xti" Id="30"/>
-		<Axis File="Axis 31.xti" Id="31"/>
-		<Axis File="Axis 32.xti" Id="32"/>
-		<Axis File="Axis 33.xti" Id="33"/>
-		<Axis File="Axis 34.xti" Id="34"/>
-		<Axis File="Axis 35.xti" Id="35"/>
-		<Axis File="Axis 36.xti" Id="36"/>
-		<Axis File="Axis 37.xti" Id="37"/>
-		<Axis File="Axis 38.xti" Id="38"/>
-		<Axis File="Axis 39.xti" Id="39"/>
-		<Axis File="Axis 40.xti" Id="40"/>
-		<Axis File="Axis 41.xti" Id="41"/>
-		<Axis File="Axis 42.xti" Id="42"/>
-		<Axis File="Axis 43.xti" Id="43"/>
+		<Axis File="Ax30 - Slit 2 East.xti" Id="30"/>
+		<Axis File="Ax31 - Slit 2 West.xti" Id="31"/>
+		<Axis File="Ax32 - Slit 3 North.xti" Id="32"/>
+		<Axis File="Ax33 - Slit 3 South.xti" Id="33"/>
+		<Axis File="Ax34 - Slit 3 East.xti" Id="34"/>
+		<Axis File="Ax35 - Slit 3 West.xti" Id="35"/>
+		<Axis File="Ax36 - Slit 4 North.xti" Id="36"/>
+		<Axis File="Ax37 - Slit 4 South.xti" Id="37"/>
+		<Axis File="Ax38 - Slit 4 East.xti" Id="38"/>
+		<Axis File="Ax39 - Slit 4 West.xti" Id="39"/>
+		<Axis File="Ax40 - Slit 5 North.xti" Id="40"/>
+		<Axis File="Ax41 - Slit 5 South.xti" Id="41"/>
+		<Axis File="Ax42 - Slit 5 East.xti" Id="42"/>
+		<Axis File="Ax43 - Slit 5 West.xti" Id="43"/>
 	</NC>
+	<Mappings>
+		<OwnerA Name="Axes^Ax1 - Inc Slits X Translation">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR1-BC1^MR1-CD1">
+				<Link VarA="Drive^Inputs^In^nDataIn1" VarB="DRV Following error actual value Channel 1^Following error actual value"/>
+				<Link VarA="Drive^Inputs^In^nDataIn3[0]" VarB="DRV Torque actual value Channel 1^Torque actual value"/>
+				<Link VarA="Drive^Inputs^In^nDcOutputTime" VarB="InfoData^DcOutputShift"/>
+				<Link VarA="Drive^Inputs^In^nState1" VarB="DRV Statusword Channel 1^Statusword" Size="8"/>
+				<Link VarA="Drive^Inputs^In^nState2" VarB="DRV Statusword Channel 1^Statusword" Size="8" OffsB="8"/>
+				<Link VarA="Drive^Inputs^In^nState4" VarB="WcState^InputToggle" Size="1" OffsA="1"/>
+				<Link VarA="Drive^Inputs^In^nState4" VarB="WcState^WcState" Size="1"/>
+				<Link VarA="Drive^Outputs^Out^nCtrl1" VarB="DRV Controlword Channel 1^Controlword" Size="8"/>
+				<Link VarA="Drive^Outputs^Out^nCtrl2" VarB="DRV Controlword Channel 1^Controlword" Size="8" OffsB="8"/>
+				<Link VarA="Drive^Outputs^Out^nDataOut1" VarB="DRV Target position Channel 1^Target position"/>
+				<Link VarA="Enc^Inputs^In^nDataIn1" VarB="FB Position Channel 1^Position"/>
+				<Link VarA="Enc^Inputs^In^nDataIn3" VarB="FB Touch probe 1 pos position Channel 1^TP1 Pos position"/>
+				<Link VarA="Enc^Inputs^In^nDcInputTime" VarB="InfoData^DcInputShift"/>
+				<Link VarA="Enc^Inputs^In^nState4" VarB="WcState^InputToggle" Size="1" OffsA="1"/>
+				<Link VarA="Enc^Inputs^In^nState4" VarB="WcState^WcState" Size="1"/>
+				<Link VarA="Enc^Inputs^In^nState5" VarB="FB Touch probe status Channel 1^Touch probe status^TP1 Enable" Size="1"/>
+				<Link VarA="Enc^Inputs^In^nState5" VarB="FB Touch probe status Channel 1^Touch probe status^TP1 Input" Size="1" OffsA="7"/>
+				<Link VarA="Enc^Inputs^In^nState5" VarB="FB Touch probe status Channel 1^Touch probe status^TP1 Neg value stored" Size="1" OffsA="2"/>
+				<Link VarA="Enc^Inputs^In^nState5" VarB="FB Touch probe status Channel 1^Touch probe status^TP1 Pos value stored" Size="1" OffsA="1"/>
+				<Link VarA="Enc^Inputs^In^nState6" VarB="FB Touch probe status Channel 1^Touch probe status^TP2 Enable" Size="1"/>
+				<Link VarA="Enc^Inputs^In^nState6" VarB="FB Touch probe status Channel 1^Touch probe status^TP2 Input" Size="1" OffsA="7"/>
+				<Link VarA="Enc^Inputs^In^nState6" VarB="FB Touch probe status Channel 1^Touch probe status^TP2 Neg value stored" Size="1" OffsA="2"/>
+				<Link VarA="Enc^Inputs^In^nState6" VarB="FB Touch probe status Channel 1^Touch probe status^TP2 Pos value stored" Size="1" OffsA="1"/>
+				<Link VarA="Enc^Outputs^Out^nCtrl5" VarB="FB Touch probe control Channel 1^Touch probe function^TP1 Continous" Size="1" OffsA="1"/>
+				<Link VarA="Enc^Outputs^Out^nCtrl5" VarB="FB Touch probe control Channel 1^Touch probe function^TP1 Enable" Size="1"/>
+				<Link VarA="Enc^Outputs^Out^nCtrl5" VarB="FB Touch probe control Channel 1^Touch probe function^TP1 Enable neg edge" Size="1" OffsA="5"/>
+				<Link VarA="Enc^Outputs^Out^nCtrl5" VarB="FB Touch probe control Channel 1^Touch probe function^TP1 Enable pos edge" Size="1" OffsA="4"/>
+				<Link VarA="Enc^Outputs^Out^nCtrl5" VarB="FB Touch probe control Channel 1^Touch probe function^TP1 Trigger mode" Size="2" OffsA="2"/>
+				<Link VarA="Enc^Outputs^Out^nCtrl6" VarB="FB Touch probe control Channel 1^Touch probe function^TP2 Continous" Size="1" OffsA="1"/>
+				<Link VarA="Enc^Outputs^Out^nCtrl6" VarB="FB Touch probe control Channel 1^Touch probe function^TP2 Enable" Size="1"/>
+				<Link VarA="Enc^Outputs^Out^nCtrl6" VarB="FB Touch probe control Channel 1^Touch probe function^TP2 Enable neg edge" Size="1" OffsA="5"/>
+				<Link VarA="Enc^Outputs^Out^nCtrl6" VarB="FB Touch probe control Channel 1^Touch probe function^TP2 Enable pos edge" Size="1" OffsA="4"/>
+				<Link VarA="Enc^Outputs^Out^nCtrl6" VarB="FB Touch probe control Channel 1^Touch probe function^TP2 Trigger mode" Size="2" OffsA="2"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
 </TcSmItem>

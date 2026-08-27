@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <POU Name="HMI" Id="{059d275e-4870-4167-960e-2a5c721e374f}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM HMI
+VAR
+	astHmiControl: ARRAY [1..GVL_APP.nAXIS_NUM] OF ST_HmiControl;
+	eHmiControl : E_HmiControl;
+	eSWLimitControl : E_SWLimitControl;
+	iHmiAxisSelection : INT;
+	iKeyPressedValue : INT := -1;
+	iSelectedAxis : INT := -1;
+	aiUsedKeys : ARRAY[1..12] OF INT := [E_HmiControl.JogFwd, E_HmiControl.JogBwd,
+    E_HmiControl.SmallTweakFwd, E_HmiControl.SmallTweakBwd, E_HmiControl.MediumTweakFwd, 
+	E_HmiControl.MediumTweakBwd, E_HmiControl.BigTweakFwd, E_HmiControl.BigTweakBwd, 
+	E_HmiControl.AbsMove, E_HmiControl.Stop, E_HmiControl.SlowJogFwd, E_HmiControl.SlowJogBwd];
+	iUsedKeysIndex : INT;
+	iSmallTweakDistance : REAL := 0.1;	
+	iMediumTweakDistance : REAL := 1;
+	iBigTweakDistance : REAL := 5;
+	iHmiAxisCounter : INT;
+	bResetParameters : BOOL := FALSE;
+	
+	bLocalMode: BOOL;
+	fbLocalModeRTrig: R_TRIG;;
+	
+	bSWLimitsOn : BOOL := FALSE; //False for off, true for on
+END_VAR
+
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbLocalModeRTrig(CLK := bLocalMode);
+
+IF bResetParameters THEN
+	ResetParameters();
+END_IF
+
+
+IF ketop.keys[E_HmiControl.Stop] OR NOT ketop.enSwitch1 OR NOT ketop.enSwitch2 OR NOT bLocalMode THEN
+	eHmiControl := E_HmiControl.Stop;
+END_IF
+
+
+CASE eHmiControl OF
+	E_HmiControl.Default:
+		iKeyPressedValue := -1;
+		iSelectedAxis := -1;
+		IF iHmiAxisSelection > 0 AND iHmiAxisSelection <= UINT_TO_INT(GVL_APP.nAXIS_NUM) THEN
+			FOR iUsedKeysIndex := 1 TO (SIZEOF(aiUsedKeys)/SIZEOF(UINT)) DO
+				IF KeTop.keys[aiUsedKeys[iUsedKeysIndex]] = TRUE THEN
+					iKeyPressedValue := aiUsedKeys[iUsedKeysIndex];
+					iSelectedAxis := iHmiAxisSelection;
+					eHmiControl := iKeyPressedValue;
+				END_IF
+			END_FOR
+		END_IF
+		
+	E_HmiControl.JogFwd:
+		astAxes[iSelectedAxis].stControl.fVelocity := ABS(astAxes[iSelectedAxis].stControl.fJogVelocity);
+		Jog();
+		eHmiControl := E_HmiControl.WaitForJogFinish;
+	
+	E_HmiControl.JogBwd:
+		astAxes[iSelectedAxis].stControl.fVelocity := -ABS(astAxes[iSelectedAxis].stControl.fJogVelocity);
+		Jog();
+		eHmiControl := E_HmiControl.WaitForJogFinish;	
+		
+	E_HmiControl.SlowJogFwd:
+		astAxes[iSelectedAxis].stControl.fVelocity := ABS(astAxes[iSelectedAxis].stControl.fJogVelocity);
+		SlowJog();
+		eHmiControl := E_HmiControl.WaitForJogFinish;		
+		
+	E_HmiControl.SlowJogBwd:
+		astAxes[iSelectedAxis].stControl.fVelocity := -ABS(astAxes[iSelectedAxis].stControl.fJogVelocity);
+		SlowJog();
+		eHmiControl := E_HmiControl.WaitForJogFinish;		
+		
+	E_HmiControl.WaitForJogFinish:
+		IF Ketop.keys[iKeyPressedValue] = FALSE THEN
+			astAxes[iSelectedAxis].stControl.bHalt := TRUE;
+			eHmiControl := E_HmiControl.Default;
+		END_IF
+
+	E_HmiControl.SmallTweakFwd:
+		astAxes[iSelectedAxis].stControl.fRelativePosition := ABS(iSmallTweakDistance);
+		Tweak();
+		eHmiControl := E_HmiControl.WaitForTweakFinish;
+
+	E_HmiControl.SmallTweakBwd:
+		astAxes[iSelectedAxis].stControl.fRelativePosition := -ABS(iSmallTweakDistance);
+		Tweak();
+		eHmiControl := E_HmiControl.WaitForTweakFinish;
+	
+	E_HmiControl.MediumTweakFwd:
+		astAxes[iSelectedAxis].stControl.fRelativePosition := ABS(iMediumTweakDistance);
+		Tweak();
+		eHmiControl := E_HmiControl.WaitForTweakFinish;
+
+	E_HmiControl.MediumTweakBwd:
+		astAxes[iSelectedAxis].stControl.fRelativePosition := -ABS(iMediumTweakDistance);
+		Tweak();
+		eHmiControl := E_HmiControl.WaitForTweakFinish;
+		
+	E_HmiControl.BigTweakFwd:
+		astAxes[iSelectedAxis].stControl.fRelativePosition := ABS(iBigTweakDistance);
+		Tweak();
+		eHmiControl := E_HmiControl.WaitForTweakFinish;
+
+	E_HmiControl.BigTweakBwd:
+		astAxes[iSelectedAxis].stControl.fRelativePosition := -ABS(iBigTweakDistance);
+		Tweak();
+		eHmiControl := E_HmiControl.WaitForTweakFinish;
+		
+	E_HmiControl.WaitForTweakFinish:
+		IF Ketop.keys[iKeyPressedValue] = FALSE AND astAxes[iSelectedAxis].stStatus.bMoving = FALSE THEN
+			eHmiControl := E_HmiControl.Default;
+		END_IF
+		
+	E_HmiControl.AbsMove:
+		astAxes[iSelectedAxis].stConfig.fOverride := astHmiControl[iSelectedAxis].fVelocity;
+		astAxes[iSelectedAxis].stControl.fPosition := astHmiControl[iSelectedAxis].fTargetPosition;
+		astAxes[iSelectedAxis].stControl.eCommand := E_MotionFunctions.eMoveAbsolute;
+		astAxes[iSelectedAxis].stControl.bExecute := TRUE; 
+		eHmiControl := E_HmiControl.WaitForAbsoluteFinish;
+	
+	E_HmiControl.WaitForAbsoluteFinish:
+		IF astAxes[iSelectedAxis].stStatus.bMoving = FALSE THEN
+			eHmiControl := E_HmiControl.Default;	
+		END_IF
+	
+	E_HmiControl.Stop:
+		IF iSelectedAxis > 0 THEN
+			astAxes[iSelectedAxis].stControl.bHalt := TRUE;
+			IF ketop.keys[E_HmiControl.Stop] = FALSE AND astAxes[iSelectedAxis].stStatus.bMoving = FALSE THEN
+				eHmiControl := E_HmiControl.Default;
+				FOR iUsedKeysIndex := 1 TO (SIZEOF(aiUsedKeys)/SIZEOF(UINT)) DO
+					IF KeTop.keys[aiUsedKeys[iUsedKeysIndex]] = TRUE THEN
+						eHmiControl := E_HmiControl.Stop;
+					END_IF
+				END_FOR
+			END_IF	
+		END_IF
+		IF iSelectedAxis = -1 AND bLocalMode THEN
+			eHmiControl := E_HmiControl.Default;
+		END_IF
+		IF NOT ketop.enSwitch1 OR NOT ketop.enSwitch2 THEN
+			eHmiControl := E_HmiControl.Stop; 
+		END_IF	
+END_CASE
+
+CASE eSWLimitControl OF
+	E_SWLimitControl.Default:
+		IF fbLocalModeRTrig.Q THEN
+			eSWLimitControl := E_SWLimitControl.EnableSWLimits;
+		END_IF
+	
+	E_SWLimitControl.EnableSWLimits:
+		bSWLimitsOn := TRUE;
+		KeTop.screenBrightness := 100;
+		FOR iHmiAxisCounter := 1 TO GVL_APP.nAXIS_NUM DO
+			ToggleSWLimits();	
+		END_FOR
+		eSWLimitControl := E_SWLimitControl.Default;
+	
+	E_SWLimitControl.DisableSWLimits:
+		bSWLimitsOn := FALSE;
+		FOR iHmiAxisCounter := 1 TO GVL_APP.nAXIS_NUM DO
+			ToggleSWLimits();	
+		END_FOR
+		eSWLimitControl := E_SWLimitControl.Default;
+	
+	E_SWLimitControl.WriteFwdLimit:
+		IF bLocalMode THEN
+			astAxes[iHmiAxisSelection].stConfig.eAxisParameters := E_AxisParameters.SWLimitForward;
+			astAxes[iHmiAxisSelection].stConfig.fWriteAxisParameter := astHmiControl[iHmiAxisSelection].fFwdLimit;
+			WriteToSWLimit();
+		END_IF
+		eSWLimitControl := E_SWLimitControl.Default;
+	
+	E_SWLimitControl.WriteBwdLimit:
+		IF bLocalMode THEN
+			astAxes[iHmiAxisSelection].stConfig.eAxisParameters := E_AxisParameters.SWLimitBackward;
+			astAxes[iHmiAxisSelection].stConfig.fWriteAxisParameter := astHmiControl[iHmiAxisSelection].fBwdLimit;
+			WriteToSWLimit();	
+		END_IF
+		eSWLimitControl := E_SWLimitControl.Default;
+	
+END_CASE]]></ST>
+    </Implementation>
+    <Action Name="Jog" Id="{2d9faa29-a67d-4f8a-b37a-a557e7933e49}">
+      <Implementation>
+        <ST><![CDATA[astAxes[iSelectedAxis].stConfig.fOverride := astHmiControl[iSelectedAxis].fVelocity;
+astAxes[iSelectedAxis].stControl.eCommand:=E_MotionFunctions.eMoveVelocity;
+astAxes[iSelectedAxis].stControl.bExecute:= TRUE;]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="ResetParameters" Id="{ede581f7-17f2-47ed-bf91-d81c7a0e26c6}">
+      <Implementation>
+        <ST><![CDATA[FOR iHmiAxisCounter := 1 TO GVL_APP.nAXIS_NUM DO
+	astHmiControl[iHmiAxisCounter].fTargetPosition := 0;
+	astHmiControl[iHmiAxisCounter].fVelocity := 100;	
+END_FOR
+bResetParameters := FALSE;]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="SlowJog" Id="{33ce1cbc-b4b1-46b5-b825-a87821a62702}">
+      <Implementation>
+        <ST><![CDATA[astAxes[iSelectedAxis].stConfig.fOverride := 0.2 * astHmiControl[iSelectedAxis].fVelocity;
+astAxes[iSelectedAxis].stControl.eCommand:=E_MotionFunctions.eMoveVelocity;
+astAxes[iSelectedAxis].stControl.bExecute:= TRUE;]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="ToggleSWLimits" Id="{00f2d6f2-ec9f-43a1-b3f7-222658b8123f}">
+      <Implementation>
+        <ST><![CDATA[astAxes[iHmiAxisCounter].stControl.eCommand := E_MotionFunctions.eWriteToggleSWLimits;
+astAxes[iHmiAxisCounter].stConfig.fWriteAxisBoolParameter := bSWLimitsOn;
+astAxes[iHmiAxisCounter].stControl.bExecute := TRUE;]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="Tweak" Id="{c4790568-4bdb-42f1-af17-a2e57a787c0e}">
+      <Implementation>
+        <ST><![CDATA[astAxes[iSelectedAxis].stConfig.fOverride := astHmiControl[iSelectedAxis].fVelocity;
+astAxes[iSelectedAxis].stControl.eCommand:=E_MotionFunctions.eMoveRelative;
+astAxes[iSelectedAxis].stControl.bExecute:=TRUE;]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="WriteToSWLimit" Id="{a474f6c3-01a0-4eec-83a2-dbe3d219df3f}">
+      <Implementation>
+        <ST><![CDATA[astAxes[iHmiAxisSelection].stControl.eCommand := E_MotionFunctions.eWriteParameter;
+astAxes[iHmiAxisSelection].stControl.bExecute := TRUE;]]></ST>
+      </Implementation>
+    </Action>
+  </POU>
+</TcPlcObject>

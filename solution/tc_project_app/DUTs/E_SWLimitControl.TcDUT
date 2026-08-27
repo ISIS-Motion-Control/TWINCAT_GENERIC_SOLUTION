@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <DUT Name="E_SWLimitControl" Id="{a042c5fd-657c-4584-b68e-530dd8f8bdd7}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+TYPE E_SWLimitControl :
+(
+	Default := 0,
+	WriteFwdLimit := 1,
+	WriteBwdLimit := 2,
+	EnableSWLimits := 3,
+	DisableSWLimits := 4
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

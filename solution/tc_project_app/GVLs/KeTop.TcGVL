@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <GVL Name="KeTop" Id="{db95ffbb-1730-4aed-9972-0ce49835d746}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL 
+    alive : UINT; 
+    buzzer : UINT; 
+    connectionBoxAddress : UINT; 
+    enSwitch : UINT; 
+    handWheelPosition : DINT; 
+    handWheelPressed : BOOL; 
+    keyCount : ARRAY [0..127] OF UINT; 
+    keys : ARRAY [ 0..127] OF BOOL; 
+    keySwitch : BYTE; 
+    leds : ARRAY [0..15] OF BYTE ; 
+    pushButton : BYTE; 
+    PushButtonLed : BYTE; 
+    pushSwitch : BYTE; 
+    pushSwitchLed : BYTE; 
+    rotSwitch : BYTE; 
+    screenBrightness : UINT := 100; 
+    screenTimeout : UINT; 
+    selSwitch : BYTE; 
+    typePlate : ARRAY [0..5] OF UINT; 
+	enSwitch1 AT %I*: BOOL; 
+	enSwitch2 AT %I*: BOOL; 
+END_VAR
+]]></Declaration>
+  </GVL>
+</TcPlcObject>

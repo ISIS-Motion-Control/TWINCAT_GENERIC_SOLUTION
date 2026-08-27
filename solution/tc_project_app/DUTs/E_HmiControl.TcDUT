@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <DUT Name="E_HmiControl" Id="{53d4856a-6fd2-4337-8927-d023770e2e27}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+TYPE E_HmiControl :
+(
+	Default := 0,
+	JogFwd := 33,
+	JogBwd := 32,
+	SmallTweakFwd := 19,
+	SmallTweakBwd := 25,
+	MediumTweakFwd := 45,
+	MediumTweakBwd := 47,
+	BigTweakFwd := 5,
+	BigTweakBwd := 3,	
+	AbsMove := 15,
+	Stop := 12,
+    SlowJogFwd := 38,
+    SlowJogBwd := 36,
+	WaitForAbsoluteFinish := 127,
+	WaitForJogFinish := 128,
+    WaitForTweakFinish := 129,
+	Error := 150
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

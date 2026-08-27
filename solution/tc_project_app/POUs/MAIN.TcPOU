@@ -16,11 +16,13 @@ VAR
     afbPneumaticAxes: ARRAY [1..GVL_APP.nPNEUMATIC_AXIS_NUM] OF FB_PneumaticAxis;
     hmiAxisSelection: INT := 1; //Not possible to use local hmi variables for array indexes
     hmiPneumaticAxisSelection: INT := 1;
+	retainHandlerPresent : BOOL := TRUE;	//Set true if Novram present, otherwise relying on 1s UPS
+	
 //Startup, Shutdown and UPS
     fbUPS: FB_S_UPS_CX51x0;
     eUpsMode: E_S_UPS_Mode := eSUPS_WrPersistData_Shutdown;
     eStartUp: (eColdStart, eReadAxisFeedbackType, eCheckReadDone, eExecuteRestore, eCheckRestore, eFinishRestore);
-    bPositionRestoreDone: BOOL := FALSE;
+    bAllEncRefValid : BOOL:= FALSE;
     bRestoreExecute: BOOL := FALSE;
 	restoreCounter : UINT:=0;
 	restoreCounterMax: UINT:=10;
@@ -37,25 +39,14 @@ VAR
 	
 END_VAR
 
-VAR PERSISTENT
+VAR RETAIN
     bRestoreOnStartup: BOOL := TRUE;
+	bPositionRestoreDone: BOOL := FALSE;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[//POSITION_RECOVERY();
 RESTORE_POSITIONS();
-
-IF astAxes[1].stStatus.fActPosition>100 THEN
-	astAxes[1].stInputs.bLimitFwd := FALSE;
-ELSE
-	astAxes[1].stInputs.bLimitFwd := TRUE;
-END_IF
-
-IF astAxes[1].stStatus.fActPosition<-100 THEN
-	astAxes[1].stInputs.bLimitBwd := FALSE;
-ELSE
-	astAxes[1].stInputs.bLimitBwd := TRUE;
-END_IF
 
 
 IF bPositionRestoreDone THEN
@@ -111,6 +102,12 @@ FOR iAxes := 1 TO GVL_APP.nAXIS_NUM DO
     END_IF
 END_FOR
 
+IF retainHandlerPresent AND bPositionRestoreDone THEN
+	bRestoreOnStartup := TRUE;
+    STORE_PERSISTENT();
+    RETURN;
+END_IF
+
 IF eGlobalSUpsState = eSUPS_PowerFailure THEN
     //first cycle of powerfailure
     //execute code that should only be done once with each powerfailure, i.e. increase powerfailure counter
@@ -154,8 +151,23 @@ GVL.fbGetCurTaskIndex();
 
 //Safety initial parameters and program
 //Safety_Template();
-Ax7();
-Ax8();
+
+//Incident Slits
+Ax01();
+Ax02();
+Ax03();
+Ax04();
+Ax05();
+Ax06();
+
+//Sample Stack
+Ax07();
+Ax08();
+Ax09();
+Ax10();
+Ax11();
+
+
 Ax16();
 Ax17();
 Ax18();
@@ -163,9 +175,41 @@ Ax19();
 Ax20();
 Ax21();
 
+//Pinhole selector
+Ax22();
+
+//Monitor 5
+Ax23();
+
+//Slit 1
+Ax24();
+Ax25();
+Ax26();
+Ax27();
+
 //Slit 2
 Ax28();
-Ax29();]]></ST>
+Ax29();
+Ax30();
+Ax31();
+
+//Slit 3
+Ax32();
+Ax33();
+Ax34();
+Ax35();
+
+//Slit 4
+Ax36();
+Ax37();
+Ax38();
+Ax39();
+
+//Slit 5
+Ax40();
+Ax41();
+Ax42();
+Ax43();]]></ST>
       </Implementation>
     </Action>
     <Action Name="RESTORE_POSITIONS" Id="{0c7ee537-7bd9-4833-b428-c17cbb57e893}" FolderPath="POSITION_RECOVERY\">
@@ -192,10 +236,6 @@ IF NOT bPositionRestoreDone THEN
 	bRestoreExecute := TRUE;
 END_IF
 
-//IF bRestoreOnStartup AND eGlobalSUpsState = eSUPS_PowerOK THEN
-//    bRestoreOnStartup := FALSE;
-//    bRestoreExecute := TRUE;
-//END_IF
 
 //Upon startup bPositionRestoreDone will be set to FALSE, after successfully completing the following code it will be set TRUE
 //and should stay TRUE for the rest of the time the PLC is operational, thus this routine should only be completed once.
@@ -224,6 +264,9 @@ IF bRestoreExecute AND NOT bPositionRestoreDone THEN
         eColdStart:
             //First cycle of the PLC, do nothing just give one cycle for variables to initialise
             IF NOT bPositionRestoreDone THEN
+				FOR iAxes := 1 TO GVL_APP.nAXIS_NUM DO
+					afbReadEncRefSys[iAxes].Enable := FALSE;                         
+            	END_FOR
                 eStartUp := eReadAxisFeedbackType;
                 nRetry := 0;
             END_IF
@@ -231,16 +274,29 @@ IF bRestoreExecute AND NOT bPositionRestoreDone THEN
         eReadAxisFeedbackType:
             //Exectute the function blocks to read the encoder reference system (0=inc OR 1=ABS)
             FOR iAxes := 1 TO GVL_APP.nAXIS_NUM DO
-                afbReadEncRefSys[iAxes].Enable := TRUE;
-                eStartUp := eCheckReadDone;
+				
+				IF NOT afbReadEncRefSys[iAxes].Valid THEN
+					afbReadEncRefSys[iAxes].Enable := TRUE; 
+				END_IF
+					                        
             END_FOR
+			eStartUp := eCheckReadDone;
 
         eCheckReadDone:
             //Check the encoder reference system has been read for all axis -> if busy then continue with PLC cycle and check again next time.
             //If afbReadEncRefSys not started then go back a step.
             //If any axes result in an error the code will get stuck here, this happens if GVL_APP.nAXIS_NUM is not set correctly
+			bAllEncRefValid:= TRUE;
             FOR iAxes := 1 TO GVL_APP.nAXIS_NUM DO
-                IF NOT afbReadEncRefSys[iAxes].Valid THEN
+				IF afbReadEncRefSys[iAxes].Valid THEN
+					bAllEncRefValid:= bAllEncRefValid AND TRUE;
+				ELSIF NOT afbReadEncRefSys[iAxes].Busy AND NOT afbReadEncRefSys[iAxes].Valid THEN
+					 afbReadEncRefSys[iAxes].Enable := NOT  afbReadEncRefSys[iAxes].Enable;
+					 bAllEncRefValid:= FALSE;
+				ELSIF afbReadEncRefSys[iAxes].Busy THEN
+					bAllEncRefValid:= FALSE;
+				END_IF
+                (*IF NOT afbReadEncRefSys[iAxes].Valid THEN
                     IF afbReadEncRefSys[iAxes].Busy THEN
                         //Exit MAIN.STARTUP Action and wait till next cycle, needs to cycle through whole program in order for data to update
                         RETURN;
@@ -253,10 +309,15 @@ IF bRestoreExecute AND NOT bPositionRestoreDone THEN
                         nRetry := nRetry + 1; //counter used for troubleshooting to see how many cycles it takes before afbReadEncRefSys function blocks are read correctly
                         RETURN;
                     END_IF
-                END_IF
+                END_IF*)
             END_FOR
             //If the code gets here all axes have .valid=TRUE for all axes
-            eStartUp := eExecuteRestore;
+			IF bAllEncRefValid THEN
+				eStartUp := eExecuteRestore;
+			ELSE
+				eStartUp:= eReadAxisFeedbackType;
+			END_IF
+            
 
         eExecuteRestore:
             //Execute position and encoder BIAS restore by setting Execute = TRUE
@@ -272,8 +333,6 @@ IF bRestoreExecute AND NOT bPositionRestoreDone THEN
                     //Restore encoder position BIAS for absolute encoders
 
                     END_IF
-                ELSE
-                    RETURN;
                 END_IF
             END_FOR
 			restoreCounter:= restoreCounter+1;
