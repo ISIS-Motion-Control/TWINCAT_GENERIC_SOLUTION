@@ -12,12 +12,12 @@ END_VAR
 IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
 	GVL.iAxesGroupIndex := 1;
 	FOR GVL.iAxis := 1 TO GVL_APP.nAXIS_NUM DO
-		IF astAxesLocal[GVL.iAxis].stDescription.iGroupNumber = iSetGroupNumber THEN
-			GVL.astAxesLocalGroup[iSetGroupNumber].aAxesInGroup[GVL.iAxesGroupIndex] := UINT_TO_INT(GVL.iAxis);
+		IF astAxes[GVL.iAxis].stDescription.iGroupNumber = iSetGroupNumber THEN
+			GVL.astAxesGroup[iSetGroupNumber].aAxesInGroup[GVL.iAxesGroupIndex] := UINT_TO_INT(GVL.iAxis);
 			GVL.iAxesGroupIndex := GVL.iAxesGroupIndex + 1;
 		END_IF
 	END_FOR
-	GVL.astAxesLocalGroup[iSetGroupNumber].stDescription.iAxesInGroup := GVL.iAxesGroupIndex -1;
+	GVL.astAxesGroup[iSetGroupNumber].stDescription.iAxesInGroup := GVL.iAxesGroupIndex -1;
 END_IF
 *)]]></ST>
     </Implementation>

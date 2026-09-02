@@ -7,36 +7,64 @@ VAR
 	iGroupNumber : INT := 3;
 	
 	stoRTrig : R_Trig;
+	
+	//Automatic reset on permit
+	startReset : BOOL;
+	resetDelay : TON;
+	startDisable : BOOL;
+	disableDelay : TON;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[//Initial parameters of an Axis
 IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
     //Initial default values:
-    GVL.astAxesLocal[iAxisNumber].stHomingConfig.eHomeSeq :=E_HomingRoutines.eHomeToEncPulse_viaBwdLimit;
-	GVL.astAxesLocal[iAxisNumber].stHomingConfig.fHomeAbsPosition:= 50;
-	GVL.astAxesLocal[iAxisNumber].stHomingConfig.fHomeMidRelativeMove:=0;
-    GVL.astAxesLocal[iAxisNumber].stHomingConfig.fHomePosition := 0;
-    GVL.astAxesLocal[iAxisNumber].stHomingConfig.fHomeFinishDistance := 0.0;
-    GVL.astAxesLocal[iAxisNumber].stConfig.eRestorePosition := E_RestorePosition.eRestoreWithoutHome;
-	GVL.astAxesLocal[iAxisNumber].stControl.bAutoEnableDisable := TRUE;
-	GVL.astAxesLocal[iAxisNumber].stControl.tMoveFinishedDelay := T#0.1S;
+    GVL.astAxes[iAxisNumber].stHomingConfig.eHomeSeq :=E_HomingRoutines.eHomeToEncPulse_viaBwdLimit;
+	GVL.astAxes[iAxisNumber].stHomingConfig.fHomeAbsPosition:= 50;
+	GVL.astAxes[iAxisNumber].stHomingConfig.fHomeMidRelativeMove:=0;
+    GVL.astAxes[iAxisNumber].stHomingConfig.fHomePosition := 0;
+    GVL.astAxes[iAxisNumber].stHomingConfig.fHomeFinishDistance := 0.0;
+    GVL.astAxes[iAxisNumber].stConfig.eRestorePosition := E_RestorePosition.eRestoreWithoutHome;
+	GVL.astAxes[iAxisNumber].stControl.bAutoEnableDisable := TRUE;
+	GVL.astAxes[iAxisNumber].stControl.tMoveFinishedDelay := T#0.1S;
 	//Set which group this axis belongs to
-	GVL.astAxesLocal[iAxisNumber].stDescription.iGroupNumber := iGroupNumber;
-	GVL.astAxesLocal[iAxisNumber].Commissioning := FALSE;
+	GVL.astAxes[iAxisNumber].stDescription.iGroupNumber := iGroupNumber;
+	GVL.astAxes[iAxisNumber].Commissioning := FALSE;
+END_IF
+
+GVL.astAxes[iAxisNumber].stInputs.bAllowRemoteControl:= NOT SAFETY.inLocalMode;
+
+//Do an automatic reset on regaining permit;
+IF SAFETY.SAMPLE_PERMIT_R_EDGE THEN
+	startReset:= TRUE;
+END_IF
+resetDelay(IN:= startReset, PT:= T#0.5S);
+IF resetDelay.Q THEN
+	startReset := FALSE;
+	GVL.astAxes[iAxisNumber].stControl.bReset:= TRUE;
+END_IF
+
+//Disable axis if no permit
+IF SAFETY.STOP_MOTION THEN
+	startDisable := TRUE;
+END_IF
+disableDelay(IN:= startDisable, PT:= T#1S);
+IF disableDelay.Q THEN
+	startDisable:= FALSE;
+	GVL.astAxes[iAxisNumber].stControl.bEnable:= FALSE;
 END_IF
 
 //Permit
-GVL.astAxesLocal[iAxisNumber].stInputs.bPermit := SAFETY.SAMPLE_PERMIT;
+GVL.astAxes[iAxisNumber].stInputs.bPermit := SAFETY.SAMPLE_PERMIT;
 
 //Safety stop motion
 IF SAFETY.STOP_MOTION THEN
-	GVL.astAxesLocal[iAxisNumber].stControl.bHalt:= TRUE;
+	GVL.astAxes[iAxisNumber].stControl.bHalt:= TRUE;
 END_IF
 
-stoRTrig(CLK:=GVL.astAxesLocal[iAxisNumber].stStatus.bSTOActive);
+stoRTrig(CLK:=GVL.astAxes[iAxisNumber].stStatus.bSTOActive);
 IF stoRTrig.Q THEN
-	GVL.astAxesLocal[iAxisNumber].stControl.bReset:= TRUE;
+	GVL.astAxes[iAxisNumber].stControl.bReset:= TRUE;
 END_IF
 
 
@@ -44,7 +72,7 @@ END_IF
 
 //Define ACTIONS() or write exclusive code for an specific axis.
 (*Eg. Stop when temperature reaches certain values, reduce speed if  a signal is activated, etc.
-Eg. GVL.astAxesLocal[x].stControl.bInterlockFwd := NOT bInterlockFwdOK;*)
+Eg. GVL.astAxes[x].stControl.bInterlockFwd := NOT bInterlockFwdOK;*)
 ]]></ST>
     </Implementation>
   </POU>

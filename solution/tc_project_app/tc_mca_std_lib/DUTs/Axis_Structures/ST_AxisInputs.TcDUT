@@ -7,6 +7,7 @@ STRUCT
     bLimitBwd AT %I*: BOOL;
     bHomeSensor AT %I*: BOOL; //Reference signal for homing
 	bPermit : BOOL :=TRUE; //Permit signal to block moves if safety does not allow - used to prevent queuing commands, default as true, set in axis prog
+	bAllowRemoteControl : BOOL;
 END_STRUCT
 END_TYPE
 ]]></Declaration>

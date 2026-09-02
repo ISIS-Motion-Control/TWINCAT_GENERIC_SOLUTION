@@ -20,12 +20,12 @@ END_VAR
 (*
 IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
     //Initial default values:
-    GVL.astAxesLocal[iAxisNumber].stHomingConfig.eHomeSeq := 1 ;
-    GVL.astAxesLocal[iAxisNumber].stHomingConfig.fHomePosition := 0.0;
-    GVL.astAxesLocal[iAxisNumber].stHomingConfig.fHomeFinishDistance := 0.0;
-    GVL.astAxesLocal[iAxisNumber].stConfig.eRestorePosition := E_RestorePosition.eRestoreWithoutHome;
-	GVL.astAxesLocal[iAxisNumber].stControl.bAutoEnableDisable := TRUE;
-	GVL.astAxesLocal[iAxisNumber].stDescription.iGroupNumber := iGroupNumber;
+    GVL.astAxes[iAxisNumber].stHomingConfig.eHomeSeq := 1 ;
+    GVL.astAxes[iAxisNumber].stHomingConfig.fHomePosition := 0.0;
+    GVL.astAxes[iAxisNumber].stHomingConfig.fHomeFinishDistance := 0.0;
+    GVL.astAxes[iAxisNumber].stConfig.eRestorePosition := E_RestorePosition.eRestoreWithoutHome;
+	GVL.astAxes[iAxisNumber].stControl.bAutoEnableDisable := TRUE;
+	GVL.astAxes[iAxisNumber].stDescription.iGroupNumber := iGroupNumber;
 END_IF
 *)
 
@@ -33,7 +33,7 @@ END_IF
 
 //Define ACTIONS() or write exclusive code for an specific axis.
 (*Eg. Stop when temperature reaches certain values, reduce speed if  a signal is activated, etc.
-Eg. GVL.astAxesLocal[x].stControl.bInterlockFwd := NOT bInterlockFwdOK;*)
+Eg. GVL.astAxes[x].stControl.bInterlockFwd := NOT bInterlockFwdOK;*)
 ]]></ST>
     </Implementation>
   </POU>

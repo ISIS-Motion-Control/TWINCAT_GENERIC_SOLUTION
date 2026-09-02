@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<safetyApplication Crc="3150512491" xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.5.0.0" Id="dd04b945-eb61-4149-b4f6-51138af84975" name="" mapState="true" mapDiag="true" groupOrderId="0" passificationAllowed="false" temporaryDeactivationAllowed="false" permamentDeactivationAllowed="false" xmlid="0" analogFBOutputReplacementValues="Zero" verifyAnalogFBInputsIfStart="false" userFbId="00000000-0000-0000-0000-000000000000" xmlns="http://schemas.microsoft.com/dsltools/SafetyApplicationLanguage">
+<safetyApplication Crc="3250895328" xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.5.0.0" Id="dd04b945-eb61-4149-b4f6-51138af84975" name="" mapState="true" mapDiag="true" groupOrderId="0" passificationAllowed="false" temporaryDeactivationAllowed="false" permamentDeactivationAllowed="false" xmlid="0" analogFBOutputReplacementValues="Zero" verifyAnalogFBInputsIfStart="false" userFbId="00000000-0000-0000-0000-000000000000" xmlns="http://schemas.microsoft.com/dsltools/SafetyApplicationLanguage">
   <networks>
     <safetyApplicationHasNetworks Id="3ad48cdd-9f3f-457a-8aa9-8ba6f6ba828c">
       <Network Id="cfdadaf9-3cd7-4eec-a534-3b44ded966f7" name="Network1" networkName="MotionEmergencyStops" intId="1" networkOrderId="0">
@@ -2392,8 +2392,8 @@
           <variableHasSourceUsages Id="6eec482c-325c-405c-ba56-ab08c1e9daee">
             <variableUsages Id="75d22e76-f0a2-4678-b6e8-db66c2f66255">
               <usages>
-                <variableUsagesHasUsages Id="4f4e40e6-b86a-4c9b-829e-da17e06d7f84">
-                  <aliasDeviceIoUsage Id="0f16374f-b4f4-4e92-ae56-948ee659d6fa" sdsId="96" channelId="1" functionId="-865114196" />
+                <variableUsagesHasUsages Id="29d16c74-4167-4d47-b9ed-422ed95c8a46">
+                  <aliasDeviceIoUsage Id="fb33cb9d-6c3d-41ad-b0e9-26c5c58f1f6c" sdsId="94" channelId="1" functionId="-865114196" />
                 </variableUsagesHasUsages>
               </usages>
             </variableUsages>
@@ -2456,8 +2456,8 @@
           <variableHasSourceUsages Id="68b17761-c887-45e4-9012-06ad0ea55d59">
             <variableUsages Id="e95aa0c2-0e5f-432a-bd93-a68b75f208f4">
               <usages>
-                <variableUsagesHasUsages Id="58570b9b-c5b2-45b3-bf81-f70b67fca4b9">
-                  <aliasDeviceIoUsage Id="9bf02559-2096-4900-976d-cc87d35d6ae8" sdsId="94" channelId="1" functionId="-865114196" />
+                <variableUsagesHasUsages Id="e85feb24-7dd9-4d7a-a0ca-9f9b919e531b">
+                  <aliasDeviceIoUsage Id="e38690eb-cde1-40e1-84ea-04cf3d7938f2" sdsId="96" channelId="1" functionId="-865114196" />
                 </variableUsagesHasUsages>
               </usages>
             </variableUsages>

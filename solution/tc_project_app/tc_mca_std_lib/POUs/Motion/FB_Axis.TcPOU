@@ -22,12 +22,22 @@ VAR
     fbMoveAbsolute: MC_MoveAbsolute;
     fbMoveAbsolute2: MC_MoveAbsolute;
     stMcStatusMoveAbsolute: ST_McStatus;
+	
+	fbLocalMoveAbsolute: MC_MoveAbsolute;
+    fbLocalMoveAbsolute2: MC_MoveAbsolute;
+    stMcStatusLocalMoveAbsolute: ST_McStatus;
 
     fbMoveRelative: MC_MoveRelative;
     stMcStatusMoveRelative: ST_McStatus;
+	
+	fbLocalMoveRelative: MC_MoveRelative;
+    stMcStatusLocalMoveRelative: ST_McStatus;
 
     fbMoveVelocity: MC_MoveVelocity;
     stMcStatusMoveVelocity: ST_McStatus;
+	
+	fbLocalMoveVelocity: MC_MoveVelocity;
+    stMcStatusLocalMoveVelocity: ST_McStatus;
 
     fbMoveModulo: MC_MoveModulo;
     fbMoveModulo2: MC_MoveModulo;
@@ -90,6 +100,8 @@ VAR
     fbResetFinishedRiseEdge: R_TRIG;
     fbAbsMovDyn1RiseEdge: R_TRIG;
     fbAbsMovDyn2RiseEdge: R_TRIG;
+	fbLocalAbsMovDyn1RiseEdge: R_TRIG;
+    fbLocalAbsMovDyn2RiseEdge: R_TRIG;
     fbModMovDyn1RiseEdge: R_TRIG;
     fbModMovDyn2RiseEdge: R_TRIG;
 	
@@ -98,6 +110,9 @@ VAR
 	fbNewMoveRTrig : R_TRIG;
 	bStartOfMove : BOOL;
 	bEndOfMove : BOOL;
+	
+	fbBwdLimitFTrig : F_TRIG;
+	fbFwdLimitFTrig : F_TRIG;
 	
 	bSpgEnableReq : BOOL;
 	bSpgDisableReq : BOOL;
@@ -116,6 +131,7 @@ END_VAR
       <ST><![CDATA[]]></ST>
     </Implementation>
     <Folder Name="Control Methods" Id="{3b682814-2204-47bf-b34b-22f553c02eb5}" />
+    <Folder Name="Local Move Methods" Id="{0b6d547d-0f76-45d9-a1f7-08fbe0d5fecd}" />
     <Folder Name="Move Methods" Id="{8d11b711-3bcb-4652-94a2-500d372b162a}" />
     <Folder Name="Parameter Methods" Id="{f4f4664c-7df7-46e3-971d-7b879f0f84c5}" />
     <Folder Name="Status Methods" Id="{707fd0b2-cc74-45e4-8048-859a2a8b8922}" />
@@ -161,11 +177,14 @@ END_VAR
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[//Has a move been requested?
-IF _stAxis.stControl.eCommand = E_MotionFunctions.eMoveAbsolute OR 
-	_stAxis.stControl.eCommand = E_MotionFunctions.eMoveModulo OR
-	_stAxis.stControl.eCommand = E_MotionFunctions.eMoveRelative OR
-	_stAxis.stControl.eCommand = E_MotionFunctions.eMoveVelocity OR
-	_stAxis.stControl.eCommand = E_MotionFunctions.eHome THEN
+IF (_stAxis.stControl.eCommand = E_MotionFunctions.eMoveAbsolute AND _stAxis.stInputs.bAllowRemoteControl) OR 
+	(_stAxis.stControl.eCommand = E_MotionFunctions.eMoveModulo AND _stAxis.stInputs.bAllowRemoteControl) OR
+	(_stAxis.stControl.eCommand = E_MotionFunctions.eMoveRelative AND _stAxis.stInputs.bAllowRemoteControl) OR
+	(_stAxis.stControl.eCommand = E_MotionFunctions.eMoveVelocity AND _stAxis.stInputs.bAllowRemoteControl) OR
+	(_stAxis.stControl.eCommand = E_MotionFunctions.eHome AND _stAxis.stInputs.bAllowRemoteControl) OR
+	(_stAxis.stControl.eCommand = E_MotionFunctions.eLocalMoveAbsolute AND NOT _stAxis.stInputs.bAllowRemoteControl) OR
+	(_stAxis.stControl.eCommand = E_MotionFunctions.eLocalMoveRelative AND NOT _stAxis.stInputs.bAllowRemoteControl) OR
+	(_stAxis.stControl.eCommand = E_MotionFunctions.eLocalMoveVelocity AND NOT _stAxis.stInputs.bAllowRemoteControl) THEN
 	IF _stAxis.stControl.bExecute AND _stAxis.stStatus.bMoveRequested = FALSE AND _stAxis.stInputs.bPermit THEN
 		//new logic here to stop commands queuing with axes disabled if not meant to autoenable/disable
  		IF _stAxis.stStatus.bEnabled = FALSE AND _stAxis.stControl.bAutoEnableDisable = FALSE THEN
@@ -211,7 +230,7 @@ IF _stAxis.Axis.Status.Moving THEN
 	_stAxis.stStatus.bMoveInProgress := TRUE;
 END_IF
 
-IF _stAxis.Axis.Status.NotMoving AND _stAxis.Axis.Status.InTargetPosition THEN
+IF _stAxis.Axis.Status.NotMoving AND (_stAxis.Axis.Status.InTargetPosition OR NOT _stAxis.stInputs.bLimitBwd OR NOT _stAxis.stInputs.bLimitFwd) THEN
 	_stAxis.stStatus.bMoveInProgress := FALSE;
 END_IF
 
@@ -374,6 +393,22 @@ END_IF
 ]]></ST>
       </Implementation>
     </Method>
+    <Method Name="mControl_LimitEdge" Id="{c8b08a88-4a15-4b3f-8882-1b82e5345110}" FolderPath="Control Methods\">
+      <Declaration><![CDATA[METHOD mControl_LimitEdge : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF NOT _stAxis.Axis.Status.Homing THEN
+	fbBwdLimitFTrig(CLK:= _stAxis.stInputs.bLimitBwd);
+	fbFwdLimitFTrig(CLK:= _stAxis.stInputs.bLimitFwd);
+END_IF
+
+IF fbBwdLimitFTrig.Q OR fbFwdLimitFTrig.Q THEN
+	_stAxis.stControl.bReset:= TRUE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
     <Method Name="mControl_LimitHitTimer" Id="{51e73611-510a-4261-9221-982b675bdd5e}" FolderPath="Control Methods\">
       <Declaration><![CDATA[METHOD mControl_LimitHitTimer : BOOL
 ]]></Declaration>
@@ -459,6 +494,137 @@ END_IF
 fbResetFinishedRiseEdge(CLK:=fbReset.Done OR fbReset.Error);
 IF fbResetFinishedRiseEdge.Q OR fbReset.Done THEN
     _stAxis.stControl.bReset := FALSE;
+END_IF
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mLocalMove_MoveAbsolute" Id="{e3f9d3f6-82dd-427b-bce7-f17f261c35eb}" FolderPath="Local Move Methods\">
+      <Declaration><![CDATA[METHOD mLocalMove_MoveAbsolute : ST_McStatus
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF _stAxis.stControl.eCommand = E_MotionFunctions.eLocalMoveAbsolute THEN
+	IF _stAxis.stStatus.bReadyToMove THEN
+		fbLocalMoveAbsolute.Execute := _stAxis.stStatus.bMoveRequested;
+		IF _stAxis.stStatus.bMoveRequested THEN
+			_stAxis.stStatus.bMoveRequested := FALSE;
+		END_IF
+    	IF fbLocalMoveAbsolute.Execute AND fbMoveAbsolute.Busy THEN
+        	fbLocalMoveAbsolute2.Execute := TRUE;
+    	END_IF
+	END_IF    
+END_IF
+
+// Parameters
+fbLocalMoveAbsolute.Position := _stAxis.stControl.fPosition;
+fbLocalMoveAbsolute.Velocity := ABS(_stAxis.stControl.fVelocity);
+fbLocalMoveAbsolute.Acceleration := _stAxis.stControl.fAcceleration;
+fbLocalMoveAbsolute.Deceleration := _stAxis.stControl.fDeceleration;
+
+fbLocalMoveAbsolute2.Position := _stAxis.stControl.fPosition;
+fbLocalMoveAbsolute2.Velocity := ABS(_stAxis.stControl.fVelocity);
+fbLocalMoveAbsolute2.Acceleration := _stAxis.stControl.fAcceleration;
+fbLocalMoveAbsolute2.Deceleration := _stAxis.stControl.fDeceleration;
+
+
+// Call both move absolute FB
+fbLocalMoveAbsolute(Axis := _stAxis.Axis);
+fbLocalMoveAbsolute2(Axis := _stAxis.Axis);
+
+//Reset Execute bits
+fbLocalMoveAbsolute.Execute := FALSE;
+fbLocalMoveAbsolute2.Execute := FALSE;
+
+
+// STATUS bits
+mLocalMove_MoveAbsolute.Active := fbLocalMoveAbsolute.Active OR fbLocalMoveAbsolute2.Active;
+mLocalMove_MoveAbsolute.Done := fbLocalMoveAbsolute.Done OR fbLocalMoveAbsolute2.Done;
+mLocalMove_MoveAbsolute.Busy := fbLocalMoveAbsolute.Busy OR fbLocalMoveAbsolute2.Busy;
+mLocalMove_MoveAbsolute.Error := fbLocalMoveAbsolute.Error OR fbLocalMoveAbsolute2.Error;
+
+
+// Capture the CommandAborted for first scan if the other absolute move overtakes the current
+fbLocalAbsMovDyn1RiseEdge(CLK:= fbLocalMoveAbsolute.Busy AND fbLocalMoveAbsolute2.CommandAborted, Q=>);
+fbLocalAbsMovDyn2RiseEdge(CLK:= fbLocalMoveAbsolute2.Busy AND fbLocalMoveAbsolute.CommandAborted, Q=>);
+mLocalMove_MoveAbsolute.CommandAborted := (fbLocalMoveAbsolute.CommandAborted AND NOT fbLocalAbsMovDyn2RiseEdge.Q)
+                                    OR (fbLocalMoveAbsolute2.CommandAborted AND NOT fbLocalAbsMovDyn1RiseEdge.Q);
+
+// Error IDs
+IF fbLocalMoveAbsolute.Error THEN
+    _stAxis.stError.nLocalMoveAbsoluteErrorID := fbLocalMoveAbsolute.ErrorID; //Set the error
+    mLocalMove_MoveAbsolute.ErrorID := fbLocalMoveAbsolute.ErrorID;
+END_IF
+IF fbLocalMoveAbsolute2.Error THEN
+    _stAxis.stError.nLocalMoveAbsoluteErrorID := fbLocalMoveAbsolute2.ErrorID; //Set the error
+    mLocalMove_MoveAbsolute.ErrorID := fbLocalMoveAbsolute2.ErrorID;
+END_IF
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mLocalMove_MoveRelative" Id="{6c354afc-d454-42de-bb61-2afdc1f98f2f}" FolderPath="Local Move Methods\">
+      <Declaration><![CDATA[METHOD mLocalMove_MoveRelative : ST_McStatus
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[
+IF _stAxis.stControl.eCommand = E_MotionFunctions.eLocalMoveRelative THEN
+	IF _stAxis.stStatus.bReadyToMove THEN
+		fbLocalMoveRelative.Execute := _stAxis.stStatus.bMoveRequested;
+		IF _stAxis.stStatus.bMoveRequested THEN
+			_stAxis.stStatus.bMoveRequested := FALSE;
+		END_IF
+	END_IF
+END_IF
+
+fbLocalMoveRelative.Distance := _stAxis.stControl.fRelativePosition;
+fbLocalMoveRelative.Velocity := ABS(_stAxis.stControl.fVelocity);
+fbLocalMoveRelative.Acceleration := _stAxis.stControl.fAcceleration;
+fbLocalMoveRelative.Deceleration := _stAxis.stControl.fDeceleration;
+
+fbLocalMoveRelative(Axis := _stAxis.Axis);
+fbLocalMoveRelative.Execute := FALSE;
+
+mLocalMove_MoveRelative.Active := fbLocalMoveRelative.Active;
+mLocalMove_MoveRelative.Done := fbLocalMoveRelative.Done;
+mLocalMove_MoveRelative.Busy := fbLocalMoveRelative.Busy;
+mLocalMove_MoveRelative.Error := fbLocalMoveRelative.Error;
+mLocalMove_MoveRelative.ErrorID := fbLocalMoveRelative.ErrorID;
+mLocalMove_MoveRelative.CommandAborted := fbLocalMoveRelative.CommandAborted;
+
+IF fbLocalMoveRelative.Error THEN
+    _stAxis.stError.nLocalMoveRelativeErrorID := fbLocalMoveRelative.ErrorID; //Set the error
+END_IF
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mLocalMove_MoveVelocity" Id="{a3c9d384-606a-404a-92d7-5b4f15a1c5b5}" FolderPath="Local Move Methods\">
+      <Declaration><![CDATA[METHOD mLocalMove_MoveVelocity : ST_McStatus
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF _stAxis.stControl.eCommand = E_MotionFunctions.eLocalMoveVelocity THEN
+	IF _stAxis.stStatus.bReadyToMove THEN
+		fbLocalMoveVelocity.Execute := _stAxis.stStatus.bMoveRequested;
+		IF _stAxis.stStatus.bMoveRequested THEN
+			_stAxis.stStatus.bMoveRequested := FALSE;
+		END_IF
+	END_IF
+END_IF
+
+fbLocalMoveVelocity.Direction := SEL(_stAxis.stControl.fVelocity < 0, MC_Positive_Direction, MC_Negative_Direction);
+fbLocalMoveVelocity.Velocity := ABS(_stAxis.stControl.fVelocity);
+fbLocalMoveVelocity.Acceleration := _stAxis.stControl.fAcceleration;
+fbLocalMoveVelocity.Deceleration := _stAxis.stControl.fDeceleration;
+
+fbLocalMoveVelocity(Axis := _stAxis.Axis);
+fbLocalMoveVelocity.Execute:= FALSE;
+
+mLocalMove_MoveVelocity.Active := fbLocalMoveVelocity.Active;
+mLocalMove_MoveVelocity.InVelocity := fbLocalMoveVelocity.InVelocity;
+mLocalMove_MoveVelocity.Busy := fbLocalMoveVelocity.Busy;
+mLocalMove_MoveVelocity.Error := fbLocalMoveVelocity.Error;
+mLocalMove_MoveVelocity.ErrorID := fbLocalMoveVelocity.ErrorID;
+mLocalMove_MoveVelocity.CommandAborted := fbLocalMoveVelocity.CommandAborted;
+
+IF fbLocalMoveVelocity.Error THEN
+    _stAxis.stError.nLocalMoveVelocityErrorID := fbLocalMoveVelocity.ErrorID; //Set the error
 END_IF
 ]]></ST>
       </Implementation>
@@ -1234,6 +1400,7 @@ stMcStatusWriteSWLimits := mParameters_WriteSWLimits();
 
 mControl_LimitHitTimer();
 mControl_LimitLinking();
+mControl_LimitEdge();
 stMcStatusPower := mControl_Power();
 mControl_AutoEnableDisable();
 
@@ -1250,6 +1417,10 @@ stMcStatusMoveAbsolute := mMove_MoveAbsolute();
 stMcStatusMoveRelative := mMove_MoveRelative();
 stMcStatusMoveModulo := mMove_MoveModulo();
 stMcStatusMoveVelocity := mMove_MoveVelocity();
+
+stMcStatusLocalMoveAbsolute := mLocalMove_MoveAbsolute();
+stMcStatusLocalMoveRelative := mLocalMove_MoveRelative();
+stMcStatusLocalMoveVelocity := mLocalMove_MoveVelocity();
 
 stMcStatusHome := mControl_Home();
 

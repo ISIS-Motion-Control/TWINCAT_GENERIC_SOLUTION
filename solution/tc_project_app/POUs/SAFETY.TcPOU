@@ -141,6 +141,8 @@ SafetyTargets : ARRAY [1..7] OF ST_SafetyTargetDevice:=
 	
 	lostSamplePermit : F_TRIG;
 	lostNonSamplePermit : F_TRIG;
+	gotSamplePermit : R_TRIG;
+	gotNonSamplePermit : R_TRIG;
 	//screen blackout
 	fbStartWindowsCommand : NT_StartProcess; // Start Windows Command
 	sPath : T_MaxString := 'C:\Windows\System32\cmd.exe' ;
@@ -155,10 +157,14 @@ VAR_OUTPUT
 	NON_SAMPLE_PERMIT : BOOL;
 	SAMPLE_PERMIT : BOOL;
 	STOP_NON_SAMPLE_MOTION : BOOL;
+	SAMPLE_PERMIT_R_EDGE : BOOL;
+	NON_SAMPLE_PERMIT_R_EDGE : BOOL;
+	inLocalMode : BOOL;
 	
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[ERRACK := HMI_ErrorAckButton;
+      <ST><![CDATA[inLocalMode := inMode_Local OR inMode_Maintenance;
+ERRACK := HMI_ErrorAckButton;
 
 lostSamplePermit(CLK:= SAMPLE_MOTION_PERMIT);
 STOP_MOTION:= lostSamplePermit.Q;
@@ -166,6 +172,11 @@ lostNonSamplePermit(CLK:= NON_SAMPLE_MOTION_PERMIT);
 STOP_NON_SAMPLE_MOTION:= lostNonSamplePermit.Q;
 NON_SAMPLE_PERMIT := NON_SAMPLE_MOTION_PERMIT;
 SAMPLE_PERMIT := SAMPLE_MOTION_PERMIT;
+
+gotSamplePermit(CLK:= SAMPLE_MOTION_PERMIT);
+gotNonSamplePermit(CLK:=NON_SAMPLE_MOTION_PERMIT);
+SAMPLE_PERMIT_R_EDGE:= gotSamplePermit.Q;
+NON_SAMPLE_PERMIT_R_EDGE:= gotNonSamplePermit.Q;
 
 CollisionDetected := NOT IncidentSlitsSwitch;
 

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project Crc="3823509106" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+<Project Crc="2086725700" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
@@ -18,6 +18,17 @@
     <SPlcProjVersion>1.8.0.0</SPlcProjVersion>
     <NextSdsId>121</NextSdsId>
     <SortMode>2</SortMode>
+    <DocuEditor>Simon Cooper</DocuEditor>
+    <PlotDate>2026-08-28</PlotDate>
+    <CompanyName>UKRI STFC ISIS Neutron and Muon Source</CompanyName>
+    <CompanyLogo>C:\Users\bem74844\Downloads\UKRI LOGO.png</CompanyLogo>
+    <FbPerPage>2</FbPerPage>
+    <AddUserAdministrationPages>False</AddUserAdministrationPages>
+    <AddProjectVersionHistoryPages>False</AddProjectVersionHistoryPages>
+    <AddCustomPages>False</AddCustomPages>
+    <TextBox />
+    <AddMultiSettingDocuments>False</AddMultiSettingDocuments>
+    <AddHashValueTablePages>False</AddHashValueTablePages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DebugSymbols>false</DebugSymbols>

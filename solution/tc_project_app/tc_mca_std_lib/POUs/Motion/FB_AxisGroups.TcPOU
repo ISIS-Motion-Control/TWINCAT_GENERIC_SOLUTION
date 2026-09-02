@@ -30,8 +30,8 @@ FOR iGroupedAxis := 1 TO GVL.nMAX_AXES_PER_GROUP DO
 		END_IF
 		RETURN;
 	END_IF
-	_stAxisGroup.stFlag.iDisabled := _stAxisGroup.stFlag.iDisabled + BOOL_TO_INT(NOT astAxesLocal[_stAxisGroup.aAxesInGroup[iGroupedAxis]].stStatus.bEnabled) * iGroupedAxis;
-	_stAxisGroup.stFlag.iNumberOfAxisDisabled := _stAxisGroup.stFlag.iNumberOfAxisDisabled + BOOL_TO_INT(NOT astAxesLocal[_stAxisGroup.aAxesInGroup[iGroupedAxis]].stStatus.bEnabled);
+	_stAxisGroup.stFlag.iDisabled := _stAxisGroup.stFlag.iDisabled + BOOL_TO_INT(NOT astAxes[_stAxisGroup.aAxesInGroup[iGroupedAxis]].stStatus.bEnabled) * iGroupedAxis;
+	_stAxisGroup.stFlag.iNumberOfAxisDisabled := _stAxisGroup.stFlag.iNumberOfAxisDisabled + BOOL_TO_INT(NOT astAxes[_stAxisGroup.aAxesInGroup[iGroupedAxis]].stStatus.bEnabled);
 END_FOR]]></ST>
       </Implementation>
     </Method>
@@ -52,8 +52,8 @@ FOR iGroupedAxis := 1 TO GVL.nMAX_AXES_PER_GROUP DO
 		END_IF
 		RETURN;
 	END_IF
-	_stAxisGroup.stFlag.iError := _stAxisGroup.stFlag.iError + BOOL_TO_INT(astAxesLocal[_stAxisGroup.aAxesInGroup[iGroupedAxis]].stStatus.bError) * (100 + iGroupedAxis);
-	_stAxisGroup.stFlag.iNumberOfAxisInError := _stAxisGroup.stFlag.iNumberOfAxisInError + BOOL_TO_INT(astAxesLocal[_stAxisGroup.aAxesInGroup[iGroupedAxis]].stStatus.bError);
+	_stAxisGroup.stFlag.iError := _stAxisGroup.stFlag.iError + BOOL_TO_INT(astAxes[_stAxisGroup.aAxesInGroup[iGroupedAxis]].stStatus.bError) * (100 + iGroupedAxis);
+	_stAxisGroup.stFlag.iNumberOfAxisInError := _stAxisGroup.stFlag.iNumberOfAxisInError + BOOL_TO_INT(astAxes[_stAxisGroup.aAxesInGroup[iGroupedAxis]].stStatus.bError);
 END_FOR]]></ST>
       </Implementation>
     </Method>

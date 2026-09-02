@@ -3,50 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\POUs\\SAFETY.TcPOU||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}",
-      "RelativeMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|solutionrelative:solution\\tc_project_app\\POUs\\SAFETY.TcPOU||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\tc_mca_std_lib\\VISUs\\MainVisu.TcVIS||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}",
-      "RelativeMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|solutionrelative:solution\\tc_project_app\\tc_mca_std_lib\\VISUs\\MainVisu.TcVIS||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\POUs\\Application_Specific\\Axes\\Ax22.TcPOU||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}",
-      "RelativeMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|solutionrelative:solution\\tc_project_app\\POUs\\Application_Specific\\Axes\\Ax22.TcPOU||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\tc_mca_std_lib\\DUTs\\Axis_Structures\\ST_AxisStruct.TcDUT||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}",
-      "RelativeMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|solutionrelative:solution\\tc_project_app\\tc_mca_std_lib\\DUTs\\Axis_Structures\\ST_AxisStruct.TcDUT||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}"
+      "AbsoluteMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\tc_mca_std_lib\\GVLs\\GVL.TcGVL||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}",
+      "RelativeMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|solutionrelative:solution\\tc_project_app\\tc_mca_std_lib\\GVLs\\GVL.TcGVL||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\POUs\\Application_Specific\\Applications\\HMI.TcPOU||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}",
       "RelativeMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|solutionrelative:solution\\tc_project_app\\POUs\\Application_Specific\\Applications\\HMI.TcPOU||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\POUs\\MAIN.TcPOU||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}",
-      "RelativeMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|solutionrelative:solution\\tc_project_app\\POUs\\MAIN.TcPOU||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}"
+      "AbsoluteMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\tc_mca_std_lib\\VISUs\\MainVisu.TcVIS||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}",
+      "RelativeMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|solutionrelative:solution\\tc_project_app\\tc_mca_std_lib\\VISUs\\MainVisu.TcVIS||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\POUs\\MAIN.TcPOU@REMOTE||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}",
-      "RelativeMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|solutionrelative:solution\\tc_project_app\\POUs\\MAIN.TcPOU@REMOTE||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}"
+      "AbsoluteMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\POUs\\SAFETY.TcPOU||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}",
+      "RelativeMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|solutionrelative:solution\\tc_project_app\\POUs\\SAFETY.TcPOU||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\POUs\\MAIN.TcPOU@REMOTE_ENDOFCYCLE||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}",
-      "RelativeMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|solutionrelative:solution\\tc_project_app\\POUs\\MAIN.TcPOU@REMOTE_ENDOFCYCLE||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}"
+      "AbsoluteMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\tc_mca_std_lib\\DUTs\\Axis_Structures\\ST_AxisControl.TcDUT||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}",
+      "RelativeMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|solutionrelative:solution\\tc_project_app\\tc_mca_std_lib\\DUTs\\Axis_Structures\\ST_AxisControl.TcDUT||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\POUs\\MAIN.TcPOU@AXES||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}",
-      "RelativeMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|solutionrelative:solution\\tc_project_app\\POUs\\MAIN.TcPOU@AXES||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}"
+      "AbsoluteMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\POUs\\Application_Specific\\Axes\\Ax01.TcPOU||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}",
+      "RelativeMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|solutionrelative:solution\\tc_project_app\\POUs\\Application_Specific\\Axes\\Ax01.TcPOU||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\POUs\\Application_Specific\\Applications\\HMI.TcPOU@ToggleSWLimits||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}",
+      "RelativeMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|solutionrelative:solution\\tc_project_app\\POUs\\Application_Specific\\Applications\\HMI.TcPOU@ToggleSWLimits||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\POUs\\Application_Specific\\Applications\\HMI.TcPOU@WriteToSWLimit||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}",
+      "RelativeMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|solutionrelative:solution\\tc_project_app\\POUs\\Application_Specific\\Applications\\HMI.TcPOU@WriteToSWLimit||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\tc_mca_std_lib\\DUTs\\E_MotionFunctions.TcDUT||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}",
+      "RelativeMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|solutionrelative:solution\\tc_project_app\\tc_mca_std_lib\\DUTs\\E_MotionFunctions.TcDUT||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\POUs\\MAIN.TcPOU@PROG||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}",
       "RelativeMoniker": "D:0:0:{FB261665-FD20-4BF2-97F8-2854C82B752D}|solution\\tc_project_app\\tc_project_app.plcproj|solutionrelative:solution\\tc_project_app\\POUs\\MAIN.TcPOU@PROG||{CFF47BB1-5559-4BDE-A2AF-06B30BC64F6C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB789D52-2B39-4DC9-B966-EC080040FF2B}|..\\..\\..\\TcXaeShell\\IMAT HMI Separate project\\TcHmiProject1\\TcHmiProject1.hmiproj|C:\\Users\\bem74844\\Documents\\TcXaeShell\\IMAT HMI Separate project\\TcHmiProject1\\PendantContents\\Collimators\\Collimator1x.content||{5D9FBDFB-BFD6-4B5F-871D-4B35C4B2E6E2}|Html"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB789D52-2B39-4DC9-B966-EC080040FF2B}|..\\..\\..\\TcXaeShell\\IMAT HMI Separate project\\TcHmiProject1\\TcHmiProject1.hmiproj|C:\\Users\\bem74844\\Documents\\TcXaeShell\\IMAT HMI Separate project\\TcHmiProject1\\Properties\\tchmipublish.config.json||{98BA924B-FDDE-443F-9DC0-5E748A994C0E}"
     }
   ],
   "DocumentGroupContainers": [
@@ -56,65 +50,94 @@
       "DocumentGroups": [
         {
           "DockedWidth": 217,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Ax22",
-              "DocumentMoniker": "C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\POUs\\Application_Specific\\Axes\\Ax22.TcPOU",
-              "RelativeDocumentMoniker": "solution\\tc_project_app\\POUs\\Application_Specific\\Axes\\Ax22.TcPOU",
-              "ToolTip": "Ax22 [solution.tc_project_app]",
+              "DocumentIndex": 4,
+              "Title": "ST_AxisControl",
+              "DocumentMoniker": "C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\tc_mca_std_lib\\DUTs\\Axis_Structures\\ST_AxisControl.TcDUT",
+              "RelativeDocumentMoniker": "solution\\tc_project_app\\tc_mca_std_lib\\DUTs\\Axis_Structures\\ST_AxisControl.TcDUT",
+              "ToolTip": "ST_AxisControl [solution.tc_project_app]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-08-27T14:33:59.547Z",
+              "WhenOpened": "2026-09-02T14:06:05.834Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
+              "Title": "Ax01",
+              "DocumentMoniker": "C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\POUs\\Application_Specific\\Axes\\Ax01.TcPOU",
+              "RelativeDocumentMoniker": "solution\\tc_project_app\\POUs\\Application_Specific\\Axes\\Ax01.TcPOU",
+              "ToolTip": "Ax01 [solution.tc_project_app]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-09-02T14:02:08.012Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "SAFETY",
               "DocumentMoniker": "C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\POUs\\SAFETY.TcPOU",
               "RelativeDocumentMoniker": "solution\\tc_project_app\\POUs\\SAFETY.TcPOU",
               "ToolTip": "SAFETY [solution.tc_project_app]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-08-27T14:19:15.966Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:3:0:{94c070b9-db0b-4415-9311-bac4eef266f5}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "HMI",
-              "DocumentMoniker": "C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\POUs\\Application_Specific\\Applications\\HMI.TcPOU",
-              "RelativeDocumentMoniker": "solution\\tc_project_app\\POUs\\Application_Specific\\Applications\\HMI.TcPOU",
-              "ToolTip": "HMI [solution.tc_project_app]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-08-27T10:15:10.539Z",
+              "WhenOpened": "2026-09-02T13:59:11.028Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "MAIN.REMOTE_ENDOFCYCLE",
-              "DocumentMoniker": "C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\POUs\\MAIN.TcPOU@REMOTE_ENDOFCYCLE",
-              "RelativeDocumentMoniker": "solution\\tc_project_app\\POUs\\MAIN.TcPOU@REMOTE_ENDOFCYCLE",
-              "ToolTip": "REMOTE_ENDOFCYCLE [solution.tc_project_app.MAIN]",
+              "Title": "HMI.WriteToSWLimit",
+              "DocumentMoniker": "C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\POUs\\Application_Specific\\Applications\\HMI.TcPOU@WriteToSWLimit",
+              "RelativeDocumentMoniker": "solution\\tc_project_app\\POUs\\Application_Specific\\Applications\\HMI.TcPOU@WriteToSWLimit",
+              "ToolTip": "WriteToSWLimit [solution.tc_project_app.HMI]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-08-27T10:09:10.777Z",
+              "WhenOpened": "2026-09-02T13:56:54.629Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "MAIN.REMOTE",
-              "DocumentMoniker": "C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\POUs\\MAIN.TcPOU@REMOTE",
-              "RelativeDocumentMoniker": "solution\\tc_project_app\\POUs\\MAIN.TcPOU@REMOTE",
-              "ToolTip": "REMOTE [solution.tc_project_app.MAIN]",
+              "Title": "HMI.ToggleSWLimits",
+              "DocumentMoniker": "C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\POUs\\Application_Specific\\Applications\\HMI.TcPOU@ToggleSWLimits",
+              "RelativeDocumentMoniker": "solution\\tc_project_app\\POUs\\Application_Specific\\Applications\\HMI.TcPOU@ToggleSWLimits",
+              "ToolTip": "ToggleSWLimits [solution.tc_project_app.HMI]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-08-27T10:05:50.004Z",
+              "WhenOpened": "2026-09-02T13:56:50.782Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HMI",
+              "DocumentMoniker": "C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\POUs\\Application_Specific\\Applications\\HMI.TcPOU",
+              "RelativeDocumentMoniker": "solution\\tc_project_app\\POUs\\Application_Specific\\Applications\\HMI.TcPOU",
+              "ToolTip": "HMI [solution.tc_project_app]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-09-02T12:21:52.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "E_MotionFunctions",
+              "DocumentMoniker": "C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\tc_mca_std_lib\\DUTs\\E_MotionFunctions.TcDUT",
+              "RelativeDocumentMoniker": "solution\\tc_project_app\\tc_mca_std_lib\\DUTs\\E_MotionFunctions.TcDUT",
+              "ToolTip": "E_MotionFunctions [solution.tc_project_app]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-09-02T12:20:19.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GVL",
+              "DocumentMoniker": "C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\tc_mca_std_lib\\GVLs\\GVL.TcGVL",
+              "RelativeDocumentMoniker": "solution\\tc_project_app\\tc_mca_std_lib\\GVLs\\GVL.TcGVL",
+              "ToolTip": "GVL [solution.tc_project_app]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-09-02T10:15:51.049Z",
               "EditorCaption": ""
             },
             {
@@ -126,64 +149,6 @@
               "ToolTip": "PROG [solution.tc_project_app.MAIN]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2026-08-27T10:05:32.157Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ST_AxisStruct",
-              "DocumentMoniker": "C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\tc_mca_std_lib\\DUTs\\Axis_Structures\\ST_AxisStruct.TcDUT",
-              "RelativeDocumentMoniker": "solution\\tc_project_app\\tc_mca_std_lib\\DUTs\\Axis_Structures\\ST_AxisStruct.TcDUT",
-              "ToolTip": "ST_AxisStruct [solution.tc_project_app]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-08-27T10:03:56.01Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MAIN.AXES",
-              "DocumentMoniker": "C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\POUs\\MAIN.TcPOU@AXES",
-              "RelativeDocumentMoniker": "solution\\tc_project_app\\POUs\\MAIN.TcPOU@AXES",
-              "ToolTip": "AXES [solution.tc_project_app.MAIN]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-08-27T10:00:35.388Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MAIN",
-              "DocumentMoniker": "C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\POUs\\MAIN.TcPOU",
-              "RelativeDocumentMoniker": "solution\\tc_project_app\\POUs\\MAIN.TcPOU",
-              "ToolTip": "MAIN [solution.tc_project_app]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-08-27T10:00:31.001Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "tchmipublish.config.json[TcHmiProject1]",
-              "DocumentMoniker": "C:\\Users\\bem74844\\Documents\\TcXaeShell\\IMAT HMI Separate project\\TcHmiProject1\\Properties\\tchmipublish.config.json",
-              "RelativeDocumentMoniker": "..\\..\\..\\TcXaeShell\\IMAT HMI Separate project\\TcHmiProject1\\Properties\\tchmipublish.config.json",
-              "ToolTip": "C:\\Users\\bem74844\\Documents\\TcXaeShell\\IMAT HMI Separate project\\TcHmiProject1\\Properties\\tchmipublish.config.json[TcHmiProject1]",
-              "RelativeToolTip": "..\\..\\..\\TcXaeShell\\IMAT HMI Separate project\\TcHmiProject1\\Properties\\tchmipublish.config.json[TcHmiProject1]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-08-26T13:36:41.06Z",
-              "EditorCaption": "[TcHmiProject1]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Collimator1x.content",
-              "DocumentMoniker": "C:\\Users\\bem74844\\Documents\\TcXaeShell\\IMAT HMI Separate project\\TcHmiProject1\\PendantContents\\Collimators\\Collimator1x.content",
-              "RelativeDocumentMoniker": "..\\..\\..\\TcXaeShell\\IMAT HMI Separate project\\TcHmiProject1\\PendantContents\\Collimators\\Collimator1x.content",
-              "ToolTip": "C:\\Users\\bem74844\\Documents\\TcXaeShell\\IMAT HMI Separate project\\TcHmiProject1\\PendantContents\\Collimators\\Collimator1x.content",
-              "RelativeToolTip": "..\\..\\..\\TcXaeShell\\IMAT HMI Separate project\\TcHmiProject1\\PendantContents\\Collimators\\Collimator1x.content",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-08-27T09:42:40.126Z",
               "EditorCaption": ""
             }
           ]
@@ -209,7 +174,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MainVisu",
               "DocumentMoniker": "C:\\Users\\bem74844\\Documents\\TwinCAT Projects\\4026 Imat for Reference\\TWINCAT_GENERIC_SOLUTION\\solution\\tc_project_app\\tc_mca_std_lib\\VISUs\\MainVisu.TcVIS",
               "RelativeDocumentMoniker": "solution\\tc_project_app\\tc_mca_std_lib\\VISUs\\MainVisu.TcVIS",

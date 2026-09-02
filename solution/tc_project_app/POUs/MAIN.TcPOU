@@ -52,10 +52,10 @@ RESTORE_POSITIONS();
 IF bPositionRestoreDone THEN
 	STORE_PERSISTENT();
 END_IF
-REMOTE();
+
 PROG();
 AXES();
-REMOTE_ENDOFCYCLE();
+
 
 
 	
@@ -68,12 +68,12 @@ REMOTE_ENDOFCYCLE();
         <ST><![CDATA[//First cycle, assign FB_axis to interface array
 IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
     FOR GVL.iAxis := 1 TO GVL_APP.nAXIS_NUM DO
-        afbAxes[GVL.iAxis].stAxis REF= astAxesLocal[GVL.iAxis];
+        afbAxes[GVL.iAxis].stAxis REF= astAxes[GVL.iAxis];
         aIAxes[GVL.iAxis] := afbAxes[GVL.iAxis];
     END_FOR
     //Custom axis types defined and linked to aiAxes here
       //FB_CustomAxis extends FB_axis
-        //fbCustomAxis.stAxis REF= astAxesLocal[x];
+        //fbCustomAxis.stAxis REF= astAxes[x];
         //aIAxes[x] := fbCustomAxis;
 END_IF
 
@@ -95,8 +95,8 @@ END_FOR
 
 FOR iAxes := 1 TO GVL_APP.nAXIS_NUM DO
     //Read encoder position BIAS
-    IF astAxesLocal[iAxes].stStatus.bAxisInitialized THEN
-        afbReadPositionBias[iAxes](Axis := GVL.astAxesLocal[iAxes].Axis,
+    IF astAxes[iAxes].stStatus.bAxisInitialized THEN
+        afbReadPositionBias[iAxes](Axis := GVL.astAxes[iAxes].Axis,
                         Enable := TRUE,
                         ReadMode:= READMODE_CYCLIC,
                         ParameterNumber := E_AxisParameters.AxisEncoderOffset);
@@ -213,34 +213,6 @@ Ax42();
 Ax43();]]></ST>
       </Implementation>
     </Action>
-    <Action Name="REMOTE" Id="{4236ed44-4f0d-40a3-912e-488ca5ea9344}">
-      <Implementation>
-        <ST><![CDATA[FOR GVL.iAxis := 1 TO GVL_APP.nAXIS_NUM DO
-	IF allowRemote THEN
-		astAxesLocal[GVL.iAxis].stControl := astAxes[GVL.iAxis].stControl;
-		astAxesLocal[GVL.iAxis].stConfig := astAxes[GVL.iAxis].stConfig;
-		astAxesLocal[GVL.iAxis].stHomingConfig := astAxes[GVL.iAxis].stHomingConfig;
-	ELSE
-		astAxes[GVL.iAxis].stControl := astAxesLocal[GVL.iAxis].stControl;
-		astAxes[GVL.iAxis].stConfig := astAxesLocal[GVL.iAxis].stConfig;
-		astAxes[GVL.iAxis].stHomingConfig := astAxesLocal[GVL.iAxis].stHomingConfig;
-	END_IF   
-END_FOR]]></ST>
-      </Implementation>
-    </Action>
-    <Action Name="REMOTE_ENDOFCYCLE" Id="{162e9346-ba4a-4108-a9b2-6c78ce34a4a0}">
-      <Implementation>
-        <ST><![CDATA[FOR GVL.iAxis := 1 TO GVL_APP.nAXIS_NUM DO
-		astAxes[GVL.iAxis].stControl := astAxesLocal[GVL.iAxis].stControl;
-		astAxes[GVL.iAxis].stStatus := astAxesLocal[GVL.iAxis].stStatus;
-		astAxes[GVL.iAxis].stConfig := astAxesLocal[GVL.iAxis].stConfig;
-		astAxes[GVL.iAxis].stError := astAxesLocal[GVL.iAxis].stError;
-		astAxes[GVL.iAxis].stInputs := astAxesLocal[GVL.iAxis].stInputs;
-		astAxes[GVL.iAxis].stDescription := astAxesLocal[GVL.iAxis].stDescription;
-		astAxes[GVL.iAxis].stHomingConfig := astAxesLocal[GVL.iAxis].stHomingConfig;
-END_FOR]]></ST>
-      </Implementation>
-    </Action>
     <Action Name="RESTORE_POSITIONS" Id="{0c7ee537-7bd9-4833-b428-c17cbb57e893}" FolderPath="POSITION_RECOVERY\">
       <Implementation>
         <ST><![CDATA[//This ACT will restore the position of an incremental axis on startup with the act position it read before losing power.
@@ -272,7 +244,7 @@ IF bRestoreExecute AND NOT bPositionRestoreDone THEN
     //Cycle through function blocks that read the encoder reference system i.e. whether axis is incremental or absolute
     FOR iAxes := 1 TO GVL_APP.nAXIS_NUM DO
          afbReadEncRefSys[iAxes](
-            Axis := GVL.astAxesLocal[iAxes].Axis,
+            Axis := GVL.astAxes[iAxes].Axis,
             ParameterNumber := MC_AxisParameter.AxisEncoderReferenceSystem,
             ReadMode := E_READMODE.READMODE_ONCE);
     END_FOR
@@ -280,13 +252,13 @@ IF bRestoreExecute AND NOT bPositionRestoreDone THEN
     //Cycle through set position and MC_WritePArameter function blocks for each axis
     FOR iAxes := 1 TO GVL_APP.nAXIS_NUM DO
         afbSetPosition[iAxes](
-            Axis := GVL.astAxesLocal[iAxes].Axis,
-            Position := astAxesLocalPersistent[iAxes].fPositionAtShutdown);
+            Axis := GVL.astAxes[iAxes].Axis,
+            Position := astAxesPersistent[iAxes].fPositionAtShutdown);
 
         afbWritePositionBias[iAxes](
-            Axis:= GVL.astAxesLocal[iAxes].Axis,
+            Axis:= GVL.astAxes[iAxes].Axis,
             ParameterNumber:= E_AxisParameters.AxisEncoderOffset,
-            Value:= astAxesLocalPersistent[iAxes].fEncoderBiasAtShutdown);
+            Value:= astAxesPersistent[iAxes].fEncoderBiasAtShutdown);
     END_FOR
 
     CASE eStartUp OF
@@ -351,13 +323,13 @@ IF bRestoreExecute AND NOT bPositionRestoreDone THEN
         eExecuteRestore:
             //Execute position and encoder BIAS restore by setting Execute = TRUE
            FOR iAxes := 1 TO GVL_APP.nAXIS_NUM DO
-                IF GVL.astAxesLocal[iAxes].stConfig.eRestorePosition = E_RestorePosition.eRestoreWithoutHome THEN
+                IF GVL.astAxes[iAxes].stConfig.eRestorePosition = E_RestorePosition.eRestoreWithoutHome THEN
                     //Restore position value for incremental encoders
                     IF afbReadEncRefSys[iAxes].Value = 1 OR
                     afbReadEncRefSys[iAxes].Value = 3 OR
                     afbReadEncRefSys[iAxes].Value = 5 THEN
                        afbWritePositionBias[iAxes].Execute := TRUE;
-					ELSIF NOT astAxesLocalPersistent[iAxes].bMovingAtShutdown THEN
+					ELSIF NOT astAxesPersistent[iAxes].bMovingAtShutdown THEN
                        afbSetPosition[iAxes].Execute := TRUE;
                     //Restore encoder position BIAS for absolute encoders
 
@@ -379,7 +351,7 @@ IF bRestoreExecute AND NOT bPositionRestoreDone THEN
             eStartUp:= eFinishRestore;
 			FOR iAxes := 1 TO GVL_APP.nAXIS_NUM DO
 
-                IF GVL.astAxesLocal[iAxes].stConfig.eRestorePosition = E_RestorePosition.eRestoreWithoutHome THEN
+                IF GVL.astAxes[iAxes].stConfig.eRestorePosition = E_RestorePosition.eRestoreWithoutHome THEN
                     IF afbReadEncRefSys[iAxes].Value = 1 OR
                      afbReadEncRefSys[iAxes].Value = 3 OR
                      afbReadEncRefSys[iAxes].Value = 5 THEN
@@ -388,7 +360,7 @@ IF bRestoreExecute AND NOT bPositionRestoreDone THEN
                             eStartUp := eExecuteRestore;
                             RETURN;
                         END_IF
-					ELSIF NOT astAxesLocalPersistent[iAxes].bMovingAtShutdown THEN
+					ELSIF NOT astAxesPersistent[iAxes].bMovingAtShutdown THEN
                         IF NOT afbSetPosition[iAxes].Done THEN
                             afbSetPosition[iAxes].Execute := FALSE;
                             eStartUp := eExecuteRestore;
@@ -439,16 +411,16 @@ END_FOR
       <Implementation>
         <ST><![CDATA[FOR iAxes := 1 TO GVL_APP.nAXIS_NUM DO
     //Store Position beofre shutdown
-    astAxesLocalPersistent[iAxes].fPositionAtShutdown := GVL.astAxesLocal[iAxes].Axis.NcToPlc.ActPos;
+    astAxesPersistent[iAxes].fPositionAtShutdown := GVL.astAxes[iAxes].Axis.NcToPlc.ActPos;
 
     //Store encoder position BIAS at shutdown
-    astAxesLocalPersistent[iAxes].fEncoderBiasAtShutdown := afbReadPositionBias[iAxes].Value;
+    astAxesPersistent[iAxes].fEncoderBiasAtShutdown := afbReadPositionBias[iAxes].Value;
 
     //Store value of moving at shutdown
-    IF GVL.astAxesLocal[iAxes].Axis.Status.StandStill OR GVL.astAxesLocal[iAxes].Axis.Status.Disabled THEN
-        astAxesLocalPersistent[iAxes].bMovingAtShutdown := FALSE;
+    IF GVL.astAxes[iAxes].Axis.Status.StandStill OR GVL.astAxes[iAxes].Axis.Status.Disabled THEN
+        astAxesPersistent[iAxes].bMovingAtShutdown := FALSE;
     ELSE
-        astAxesLocalPersistent[iAxes].bMovingAtShutdown := TRUE;
+        astAxesPersistent[iAxes].bMovingAtShutdown := TRUE;
     END_IF
 END_FOR
 ]]></ST>

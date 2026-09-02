@@ -48,8 +48,8 @@ Care needs to be taken with scaling and setup of both real and virtual axes to e
 *)
 
 //Configure homing routine of virtual axes
-GVL.astAxesLocal[iGapSize].stConfig.eHomeSeq := E_HomingRoutines.eHomeDirect;
-GVL.astAxesLocal[iGapCentre].stConfig.eHomeSeq := E_HomingRoutines.eHomeDirect;
+GVL.astAxes[iGapSize].stConfig.eHomeSeq := E_HomingRoutines.eHomeDirect;
+GVL.astAxes[iGapCentre].stConfig.eHomeSeq := E_HomingRoutines.eHomeDirect;
 
 //Run actions for slit set
 actErrorHandling(); //Error handling subroutine
@@ -58,8 +58,8 @@ actVirtualAxisPositions(); //Virtual axis encoder position subroutine
 actRunMethods(); //Update statuses
 
 //Mc_Home FBs configured to clear homing signal
-mcHomeGapSize(Axis := astAxesLocal[iGapSize].Axis, HomingMode:=MC_HomingMode.MC_ResetCalibration);
-mcHomeGapCentre(Axis:=astAxesLocal[iGapCentre].Axis, HomingMode:=MC_HomingMode.MC_ResetCalibration);
+mcHomeGapSize(Axis := astAxes[iGapSize].Axis, HomingMode:=MC_HomingMode.MC_ResetCalibration);
+mcHomeGapCentre(Axis:=astAxes[iGapCentre].Axis, HomingMode:=MC_HomingMode.MC_ResetCalibration);
 mcHomeGapSize.Execute := FALSE;
 mcHomeGapCentre.Execute := FALSE;
 
@@ -86,10 +86,10 @@ CASE eSlitPairState OF
         END_IF
 
     E_SlitPairStates.HOME_BLADES: //Initiate homing of blade axes. Homing routine must be pre-configured by user
-        GVL.astAxesLocal[iBladeNegative].stControl.eCommand := E_MotionFunctions.eHome;
-        GVL.astAxesLocal[iBladePositive].stControl.eCommand := E_MotionFunctions.eHome;
-        GVL.astAxesLocal[iBladeNegative].stControl.bExecute := TRUE;
-        GVL.astAxesLocal[iBladePositive].stControl.bExecute := TRUE;
+        GVL.astAxes[iBladeNegative].stControl.eCommand := E_MotionFunctions.eHome;
+        GVL.astAxes[iBladePositive].stControl.eCommand := E_MotionFunctions.eHome;
+        GVL.astAxes[iBladeNegative].stControl.bExecute := TRUE;
+        GVL.astAxes[iBladePositive].stControl.bExecute := TRUE;
         bHoming := TRUE;
         eSlitPairState := E_SlitPairStates.CHECK_BLADE_HOME_COMPLETE;
 
@@ -100,14 +100,14 @@ CASE eSlitPairState OF
         END_IF
 
     E_SlitPairStates.HOME_GAP: //"Home" the virtual axes
-        GVL.astAxesLocal[iGapSize].stConfig.eHomeSeq := E_HomingRoutines.eHomeDirect;
-        GVL.astAxesLocal[iGapCentre].stConfig.eHomeSeq := E_HomingRoutines.eHomeDirect;
-        GVL.astAxesLocal[iGapSize].stConfig.fHomePosition := fGapSizePosition;
-        GVL.astAxesLocal[iGapCentre].stConfig.fHomePosition := fGapCentrePosition;
-        GVL.astAxesLocal[iGapSize].stControl.eCommand := E_MotionFunctions.eHome;
-        GVL.astAxesLocal[iGapCentre].stControl.eCommand := E_MotionFunctions.eHome;
-        GVL.astAxesLocal[iGapSize].stControl.bExecute := TRUE;
-        GVL.astAxesLocal[iGapCentre].stControl.bExecute := TRUE;
+        GVL.astAxes[iGapSize].stConfig.eHomeSeq := E_HomingRoutines.eHomeDirect;
+        GVL.astAxes[iGapCentre].stConfig.eHomeSeq := E_HomingRoutines.eHomeDirect;
+        GVL.astAxes[iGapSize].stConfig.fHomePosition := fGapSizePosition;
+        GVL.astAxes[iGapCentre].stConfig.fHomePosition := fGapCentrePosition;
+        GVL.astAxes[iGapSize].stControl.eCommand := E_MotionFunctions.eHome;
+        GVL.astAxes[iGapCentre].stControl.eCommand := E_MotionFunctions.eHome;
+        GVL.astAxes[iGapSize].stControl.bExecute := TRUE;
+        GVL.astAxes[iGapCentre].stControl.bExecute := TRUE;
         eSlitPairState := E_SlitPairStates.CHECK_GAP_HOME_COMPLETE;
 
     E_SlitPairStates.CHECK_GAP_HOME_COMPLETE: //Wait for virtual homing completion
@@ -126,7 +126,7 @@ CASE eSlitPairState OF
 
     E_SlitPairStates.SLITS_OPERATIONAL: //SLITS OPERATIONAL - Monitor for any gear outs and re-gear when no busy blades
         bEnabled := TRUE;
-        IF NOT bBladesCoupled AND NOT GVL.astAxesLocal[iBladeNegative].stStatus.bBusy AND NOT GVL.astAxesLocal[iBladePositive].stStatus.bBusy THEN
+        IF NOT bBladesCoupled AND NOT GVL.astAxes[iBladeNegative].stStatus.bBusy AND NOT GVL.astAxes[iBladePositive].stStatus.bBusy THEN
             eSlitPairState := E_SlitPairStates.GEAROUT_BLADES;
         END_IF
 
@@ -165,10 +165,10 @@ CASE eSlitPairState OF
         END_IF
 
     E_SlitPairStates.ERROR_RESET_AXES: //RESET ALL AXES
-        GVL.astAxesLocal[iBladeNegative].stControl.bReset := TRUE;
-        GVL.astAxesLocal[iBladePositive].stControl.bReset := TRUE;
-        GVL.astAxesLocal[iGapSize].stControl.bReset := TRUE;
-        GVL.astAxesLocal[iGapCentre].stControl.bReset := TRUE;
+        GVL.astAxes[iBladeNegative].stControl.bReset := TRUE;
+        GVL.astAxes[iBladePositive].stControl.bReset := TRUE;
+        GVL.astAxes[iGapSize].stControl.bReset := TRUE;
+        GVL.astAxes[iGapCentre].stControl.bReset := TRUE;
         resetCounterTimeout := resetCounterTimeout + 1;
         eSlitPairState := E_SlitPairStates.ERROR_RESET_CHECK;
 
@@ -192,10 +192,10 @@ bReset := FALSE;
     <Action Name="actClearSlitGearing" Id="{e01ab92a-20cf-48ae-913a-9b4bc1f3c9a3}">
       <Implementation>
         <ST><![CDATA[//Action to send gearOut command to blade axes
-GVL.astAxesLocal[iBladeNegative].stControl.eCommand := E_MotionFunctions.eGearOut;
-GVL.astAxesLocal[iBladePositive].stControl.eCommand := E_MotionFunctions.eGearOut;
-GVL.astAxesLocal[iBladeNegative].stControl.bExecute := TRUE;
-GVL.astAxesLocal[iBladePositive].stControl.bExecute := TRUE;
+GVL.astAxes[iBladeNegative].stControl.eCommand := E_MotionFunctions.eGearOut;
+GVL.astAxes[iBladePositive].stControl.eCommand := E_MotionFunctions.eGearOut;
+GVL.astAxes[iBladeNegative].stControl.bExecute := TRUE;
+GVL.astAxes[iBladePositive].stControl.bExecute := TRUE;
 ]]></ST>
       </Implementation>
     </Action>
@@ -224,10 +224,10 @@ END_IF
     <Action Name="actGapLimits" Id="{25d5c061-b303-4e71-ae15-49914f4789a8}">
       <Implementation>
         <ST><![CDATA[//Set Virtual axis inputs to TRUE to enable movement
-GVL.astAxesLocal[iGapSize].stInputs.bLimitBwd := TRUE;
-GVL.astAxesLocal[iGapSize].stInputs.bLimitFwd := TRUE;
-GVL.astAxesLocal[iGapCentre].stInputs.bLimitBwd := TRUE;
-GVL.astAxesLocal[iGapCentre].stInputs.bLimitFwd := TRUE;
+GVL.astAxes[iGapSize].stInputs.bLimitBwd := TRUE;
+GVL.astAxes[iGapSize].stInputs.bLimitFwd := TRUE;
+GVL.astAxes[iGapCentre].stInputs.bLimitBwd := TRUE;
+GVL.astAxes[iGapCentre].stInputs.bLimitFwd := TRUE;
 ]]></ST>
       </Implementation>
     </Action>
@@ -245,18 +245,18 @@ checkErrorState(bOutput => bFunctionInErrorState);
     </Action>
     <Action Name="actSetupSlitGearing" Id="{8c35be5d-8704-40d0-99d8-cf48bc76a94c}">
       <Implementation>
-        <ST><![CDATA[GVL.astAxesLocal[iBladeNegative].stControl.eCommand := E_MotionFunctions.eGearInMultiMaster;
-GVL.astAxesLocal[iBladeNegative].stConfig.astMultiMasterAxis[1].nIndex := iGapSize;
-GVL.astAxesLocal[iBladeNegative].stConfig.astMultiMasterAxis[1].fRatio := -0.5;
-GVL.astAxesLocal[iBladeNegative].stConfig.astMultiMasterAxis[2].nIndex := iGapCentre;
-GVL.astAxesLocal[iBladeNegative].stConfig.astMultiMasterAxis[2].fRatio := 1;
-GVL.astAxesLocal[iBladePositive].stControl.eCommand := E_MotionFunctions.eGearInMultiMaster;
-GVL.astAxesLocal[iBladePositive].stConfig.astMultiMasterAxis[1].nIndex := iGapSize;
-GVL.astAxesLocal[iBladePositive].stConfig.astMultiMasterAxis[1].fRatio := 0.5;
-GVL.astAxesLocal[iBladePositive].stConfig.astMultiMasterAxis[2].nIndex := iGapCentre;
-GVL.astAxesLocal[iBladePositive].stConfig.astMultiMasterAxis[2].fRatio := 1;
-GVL.astAxesLocal[iBladeNegative].stControl.bExecute := TRUE;
-GVL.astAxesLocal[iBladePositive].stControl.bExecute := TRUE;
+        <ST><![CDATA[GVL.astAxes[iBladeNegative].stControl.eCommand := E_MotionFunctions.eGearInMultiMaster;
+GVL.astAxes[iBladeNegative].stConfig.astMultiMasterAxis[1].nIndex := iGapSize;
+GVL.astAxes[iBladeNegative].stConfig.astMultiMasterAxis[1].fRatio := -0.5;
+GVL.astAxes[iBladeNegative].stConfig.astMultiMasterAxis[2].nIndex := iGapCentre;
+GVL.astAxes[iBladeNegative].stConfig.astMultiMasterAxis[2].fRatio := 1;
+GVL.astAxes[iBladePositive].stControl.eCommand := E_MotionFunctions.eGearInMultiMaster;
+GVL.astAxes[iBladePositive].stConfig.astMultiMasterAxis[1].nIndex := iGapSize;
+GVL.astAxes[iBladePositive].stConfig.astMultiMasterAxis[1].fRatio := 0.5;
+GVL.astAxes[iBladePositive].stConfig.astMultiMasterAxis[2].nIndex := iGapCentre;
+GVL.astAxes[iBladePositive].stConfig.astMultiMasterAxis[2].fRatio := 1;
+GVL.astAxes[iBladeNegative].stControl.bExecute := TRUE;
+GVL.astAxes[iBladePositive].stControl.bExecute := TRUE;
 ]]></ST>
       </Implementation>
     </Action>
@@ -268,8 +268,8 @@ If this is not done, it can cause overflow when connected to the encoder input a
 To preserve decimal position data of the LREAL (i.e. anything <1mm) it is necessary to scale the value before converting to UDINT.
 This can be reversed with the correct scaling at the NC encoder level.
 *)
-fGapSizePosition := GVL.astAxesLocal[iBladePositive].stStatus.fActPosition - GVL.astAxesLocal[iBladeNegative].stStatus.fActPosition;
-fGapCentrePosition := (GVL.astAxesLocal[iBladePositive].stStatus.fActPosition + GVL.astAxesLocal[iBladeNegative].stStatus.fActPosition) / 2;
+fGapSizePosition := GVL.astAxes[iBladePositive].stStatus.fActPosition - GVL.astAxes[iBladeNegative].stStatus.fActPosition;
+fGapCentrePosition := (GVL.astAxes[iBladePositive].stStatus.fActPosition + GVL.astAxes[iBladeNegative].stStatus.fActPosition) / 2;
 
 IF bBladesHomed THEN
     IF ABS(fGapSizePosition) < 100000 THEN
@@ -291,16 +291,16 @@ VAR_OUTPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[IF NOT GVL.astAxesLocal[iBladeNegative].stStatus.bEnabled THEN
+        <ST><![CDATA[IF NOT GVL.astAxes[iBladeNegative].stStatus.bEnabled THEN
     bOutput := FALSE;
 END_IF
-IF NOT GVL.astAxesLocal[iBladePositive].stStatus.bEnabled THEN
+IF NOT GVL.astAxes[iBladePositive].stStatus.bEnabled THEN
     bOutput := FALSE;
 END_IF
-IF NOT GVL.astAxesLocal[iGapSize].stStatus.bEnabled THEN
+IF NOT GVL.astAxes[iGapSize].stStatus.bEnabled THEN
     bOutput := FALSE;
 END_IF
-IF NOT GVL.astAxesLocal[iGapCentre].stStatus.bEnabled THEN
+IF NOT GVL.astAxes[iGapCentre].stStatus.bEnabled THEN
     bOutput := FALSE;
 END_IF
 ]]></ST>
@@ -315,16 +315,16 @@ VAR_OUTPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[IF GVL.astAxesLocal[iGapSize].stStatus.bError THEN
+        <ST><![CDATA[IF GVL.astAxes[iGapSize].stStatus.bError THEN
     bOutput := TRUE;
 END_IF
-IF GVL.astAxesLocal[iGapCentre].stStatus.bError THEN
+IF GVL.astAxes[iGapCentre].stStatus.bError THEN
     bOutput := TRUE;
 END_IF
-IF GVL.astAxesLocal[iBladeNegative].stStatus.bError THEN
+IF GVL.astAxes[iBladeNegative].stStatus.bError THEN
     bOutput := TRUE;
 END_IF
-IF GVL.astAxesLocal[iBladePositive].stStatus.bError THEN
+IF GVL.astAxes[iBladePositive].stStatus.bError THEN
     bOutput := TRUE;
 END_IF
 ]]></ST>
@@ -339,10 +339,10 @@ VAR_OUTPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[IF NOT GVL.astAxesLocal[iBladeNegative].stStatus.bGeared THEN
+        <ST><![CDATA[IF NOT GVL.astAxes[iBladeNegative].stStatus.bGeared THEN
     bOutput := FALSE;
 END_IF
-IF NOT GVL.astAxesLocal[iBladePositive].stStatus.bGeared THEN
+IF NOT GVL.astAxes[iBladePositive].stStatus.bGeared THEN
     bOutput := FALSE;
 END_IF
 ]]></ST>
@@ -357,10 +357,10 @@ VAR_OUTPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[IF NOT GVL.astAxesLocal[iBladeNegative].stStatus.bHomed THEN
+        <ST><![CDATA[IF NOT GVL.astAxes[iBladeNegative].stStatus.bHomed THEN
     bOutput := FALSE;
 END_IF
-IF NOT GVL.astAxesLocal[iBladePositive].stStatus.bHomed THEN
+IF NOT GVL.astAxes[iBladePositive].stStatus.bHomed THEN
     bOutput := FALSE;
 END_IF
 ]]></ST>
@@ -375,10 +375,10 @@ VAR_OUTPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[IF GVL.astAxesLocal[iBladeNegative].stStatus.bGeared THEN
+        <ST><![CDATA[IF GVL.astAxes[iBladeNegative].stStatus.bGeared THEN
     bOutput := FALSE;
 END_IF
-IF GVL.astAxesLocal[iBladePositive].stStatus.bGeared THEN
+IF GVL.astAxes[iBladePositive].stStatus.bGeared THEN
     bOutput := FALSE;
 END_IF
 ]]></ST>
@@ -418,10 +418,10 @@ VAR_OUTPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[IF NOT GVL.astAxesLocal[iGapSize].stStatus.bHomed THEN
+        <ST><![CDATA[IF NOT GVL.astAxes[iGapSize].stStatus.bHomed THEN
     bOutput := FALSE;
 END_IF
-IF NOT GVL.astAxesLocal[iGapCentre].stStatus.bHomed THEN
+IF NOT GVL.astAxes[iGapCentre].stStatus.bHomed THEN
     bOutput := FALSE;
 END_IF
 ]]></ST>
