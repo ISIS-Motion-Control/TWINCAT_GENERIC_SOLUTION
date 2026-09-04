@@ -24,6 +24,8 @@ STRUCT
 	fRelativePosition: LREAL; //Position for relative moves
 	fSetPosition : LREAL;
 	bReinitialiseNcParameters : BOOL;
+	bWaitBeforeEnable : BOOL:= FALSE; //Code to allow 'other things' to happen before enabling axis when working with autoenabledisable logic
+	bReadyToEnable : BOOL; //trigger signal for the above
 	
 	bOverrideLimits : BOOL;
 	

@@ -41,7 +41,7 @@ END_IF
 GVL.astAxes[iAxisNumber].stInputs.bAllowRemoteControl:= NOT SAFETY.inLocalMode;
 
 //Permit
-GVL.astAxes[iAxisNumber].stInputs.bPermit := SAFETY.SAMPLE_PERMIT;
+GVL.astAxes[iAxisNumber].stInputs.bPermit := (SAFETY.SAMPLE_PERMIT AND NOT SAFETY.CollisionDetected) OR (SAFETY.SAMPLE_PERMIT AND (safety.inMode_Local OR safety.inMode_Maintenance));
 
 //Do an automatic reset on regaining permit;
 IF SAFETY.SAMPLE_PERMIT_R_EDGE THEN
@@ -67,6 +67,10 @@ END_IF
 IF SAFETY.STOP_MOTION THEN
 	GVL.astAxes[iAxisNumber].stControl.bHalt:= TRUE;
 END_IF
+IF SAFETY.collisionDetected_R_Edge THEN
+	GVL.astAxes[iAxisNumber].stControl.bHalt:= TRUE;
+END_IF
+
 
 stoRTrig(CLK:=GVL.astAxes[iAxisNumber].stStatus.bSTOActive);
 IF stoRTrig.Q THEN

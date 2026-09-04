@@ -65,6 +65,9 @@
     <Compile Include="POUs\Application_Specific\Axes\Ax11.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Application_Specific\Axes\Ax13.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Application_Specific\Axes\Ax22.TcPOU">
       <SubType>Code</SubType>
     </Compile>

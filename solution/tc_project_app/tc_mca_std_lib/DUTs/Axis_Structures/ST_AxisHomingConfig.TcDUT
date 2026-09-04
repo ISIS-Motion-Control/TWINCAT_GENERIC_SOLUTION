@@ -9,6 +9,9 @@ STRUCT
 	fHomeAbsPosition : LREAL:= 0;
 	fHomeMidRelativeMove : LREAL:= 1;
 	
+	bGoToFwdFirst : BOOL; //Takes priority over bwd bool, optional command to go to fwd limit before homing
+	bGoToBwdFirst : BOOL; //optional command to go to bwd limit before homing
+	
 	
 	//General Advanced Homing Configuration
     bDisableDriveAccess: BOOL := TRUE; //Disables the drive access to drives. Standard for stepper motors. If supported in drive, can be set to FALSE, e.g. for AX5106.

@@ -70,12 +70,12 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000002}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..1] OF BIT</Name>
-			<BitSize>2</BitSize>
+			<Name GUID="{18071995-0000-0000-0000-002000000003}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..2] OF BIT</Name>
+			<BitSize>3</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
 				<LBound>0</LBound>
-				<Elements>2</Elements>
+				<Elements>3</Elements>
 			</ArrayInfo>
 		</DataType>
 		<DataType>
@@ -199,7 +199,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{E303639D-250A-3501-D5DD-8DDC1BB63DFC}" AutoDeleteType="true">INFODATA_655090064</Name>
+			<Name GUID="{55A98DE5-A08D-761F-CA72-301D2F539075}" AutoDeleteType="true">INFODATA_4035524623</Name>
 			<BitSize>24</BitSize>
 			<SubItem>
 				<Name>State</Name>
@@ -226,7 +226,7 @@
 				<BitOffs>17</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>Input Safe Data SPARE</Name>
+				<Name>Input Safe Data Pendant_Reset_In</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
 				<BitSize>1</BitSize>
 				<BitOffs>18</BitOffs>
@@ -479,7 +479,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{A56FDBF9-FBC4-A4CA-E4C1-D2EF71C21F44}" AutoDeleteType="true">INFODATA_3963945440</Name>
+			<Name GUID="{8D65D7B5-598A-A9DA-4849-DB397A90CD6A}" AutoDeleteType="true">INFODATA_4122016951</Name>
 			<BitSize>24</BitSize>
 			<SubItem>
 				<Name>State</Name>
@@ -512,7 +512,7 @@
 				<BitOffs>18</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>Output Safe Data SPARE</Name>
+				<Name>Output Safe Data Pendant_Reset_Out</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
 				<BitSize>1</BitSize>
 				<BitOffs>19</BitOffs>
@@ -872,107 +872,104 @@
 				<Entry Name="Standard Out Var 56" Index="#x7000" Sub="#x15">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 58" Index="#x7000" Sub="#x16">
+				<Entry Name="Standard Out Var 59" Index="#x7000" Sub="#x16">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 59" Index="#x7000" Sub="#x17">
+				<Entry Name="Standard Out Var 81" Index="#x7000" Sub="#x17">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 81" Index="#x7000" Sub="#x18">
+				<Entry Name="Standard Out Var 82" Index="#x7000" Sub="#x18">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 82" Index="#x7000" Sub="#x19">
+				<Entry Name="Standard Out Var 83" Index="#x7000" Sub="#x19">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 83" Index="#x7000" Sub="#x1a">
+				<Entry Name="Standard Out Var 84" Index="#x7000" Sub="#x1a">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 84" Index="#x7000" Sub="#x1b">
+				<Entry Name="Standard Out Var 85" Index="#x7000" Sub="#x1b">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 85" Index="#x7000" Sub="#x1c">
+				<Entry Name="Standard Out Var 90" Index="#x7000" Sub="#x1c">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 90" Index="#x7000" Sub="#x1d">
+				<Entry Name="Standard Out Var 91" Index="#x7000" Sub="#x1d">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 91" Index="#x7000" Sub="#x1e">
+				<Entry Name="Standard Out Var 92" Index="#x7000" Sub="#x1e">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 92" Index="#x7000" Sub="#x1f">
+				<Entry Name="Standard Out Var 93" Index="#x7000" Sub="#x1f">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 93" Index="#x7000" Sub="#x20">
+				<Entry Name="Standard Out Var 99" Index="#x7000" Sub="#x20">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 99" Index="#x7000" Sub="#x21">
+				<Entry Name="Standard Out Var 100" Index="#x7000" Sub="#x21">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 100" Index="#x7000" Sub="#x22">
+				<Entry Name="Standard Out Var 101" Index="#x7000" Sub="#x22">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 101" Index="#x7000" Sub="#x23">
+				<Entry Name="Standard Out Var 102" Index="#x7000" Sub="#x23">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 102" Index="#x7000" Sub="#x24">
+				<Entry Name="Standard Out Var 103" Index="#x7000" Sub="#x24">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 103" Index="#x7000" Sub="#x25">
+				<Entry Name="Standard Out Var 104" Index="#x7000" Sub="#x25">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 104" Index="#x7000" Sub="#x26">
+				<Entry Name="Standard Out Var 105" Index="#x7000" Sub="#x26">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 105" Index="#x7000" Sub="#x27">
+				<Entry Name="Standard Out Var 106" Index="#x7000" Sub="#x27">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 106" Index="#x7000" Sub="#x28">
+				<Entry Name="Standard Out Var 107" Index="#x7000" Sub="#x28">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 107" Index="#x7000" Sub="#x29">
+				<Entry Name="Standard Out Var 108" Index="#x7000" Sub="#x29">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 108" Index="#x7000" Sub="#x2a">
+				<Entry Name="Standard Out Var 109" Index="#x7000" Sub="#x2a">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 109" Index="#x7000" Sub="#x2b">
+				<Entry Name="Standard Out Var 110" Index="#x7000" Sub="#x2b">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 110" Index="#x7000" Sub="#x2c">
+				<Entry Name="Standard Out Var 111" Index="#x7000" Sub="#x2c">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 111" Index="#x7000" Sub="#x2d">
+				<Entry Name="Standard Out Var 112" Index="#x7000" Sub="#x2d">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 112" Index="#x7000" Sub="#x2e">
+				<Entry Name="Standard Out Var 113" Index="#x7000" Sub="#x2e">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 113" Index="#x7000" Sub="#x2f">
+				<Entry Name="Standard Out Var 114" Index="#x7000" Sub="#x2f">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 114" Index="#x7000" Sub="#x30">
+				<Entry Name="Standard Out Var 115" Index="#x7000" Sub="#x30">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 115" Index="#x7000" Sub="#x31">
+				<Entry Name="Standard Out Var 116" Index="#x7000" Sub="#x31">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 116" Index="#x7000" Sub="#x32">
+				<Entry Name="Standard Out Var 117" Index="#x7000" Sub="#x32">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 117" Index="#x7000" Sub="#x33">
+				<Entry Name="Standard Out Var 118" Index="#x7000" Sub="#x33">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 118" Index="#x7000" Sub="#x34">
+				<Entry Name="Standard Out Var 119" Index="#x7000" Sub="#x34">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard Out Var 119" Index="#x7000" Sub="#x35">
-					<Type>BIT</Type>
-				</Entry>
-				<Entry Name="Standard Out Var 120" Index="#x7000" Sub="#x36">
+				<Entry Name="Standard Out Var 120" Index="#x7000" Sub="#x35">
 					<Type>BIT</Type>
 				</Entry>
 				<Entry>
-					<Type GUID="{18071995-0000-0000-0000-002000000002}">ARRAY [0..1] OF BIT</Type>
+					<Type GUID="{18071995-0000-0000-0000-002000000003}">ARRAY [0..2] OF BIT</Type>
 				</Entry>
 			</Pdo>
 			<Pdo Name="StandardOutputs" Index="#x17f0" InOut="1" Flags="#x2011" SyncMan="2">
@@ -991,11 +988,8 @@
 				<Entry Name="Standard In Var 55" Index="#x6000" Sub="#x05">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Standard In Var 57" Index="#x6000" Sub="#x06">
-					<Type>BIT</Type>
-				</Entry>
 				<Entry>
-					<Type GUID="{18071995-0000-0000-0000-002000000002}">ARRAY [0..1] OF BIT</Type>
+					<Type GUID="{18071995-0000-0000-0000-002000000003}">ARRAY [0..2] OF BIT</Type>
 				</Entry>
 			</Pdo>
 			<Pdo Name="Connection Info Data" Index="#x1bf9" Flags="#x2011" SyncMan="3">
@@ -1009,7 +1003,7 @@
 					<Type GUID="{E54BFC11-11BB-7FB6-FB23-7D4DFADB655F}">INFODATA_161245108</Type>
 				</Entry>
 				<Entry Name="Message_69 Info Data" Index="#x7000" Sub="#x04">
-					<Type GUID="{E303639D-250A-3501-D5DD-8DDC1BB63DFC}">INFODATA_655090064</Type>
+					<Type GUID="{55A98DE5-A08D-761F-CA72-301D2F539075}">INFODATA_4035524623</Type>
 				</Entry>
 				<Entry Name="Message_70 Info Data" Index="#x7000" Sub="#x05">
 					<Type GUID="{CE43CCEE-37C5-5536-3A58-F96D3216C502}">INFODATA_3656885226</Type>
@@ -1030,7 +1024,7 @@
 					<Type GUID="{90BF2661-B6D2-D3EA-098B-68DD8732A17B}">INFODATA_1998480022</Type>
 				</Entry>
 				<Entry Name="Message_76 Info Data" Index="#x7000" Sub="#x0b">
-					<Type GUID="{A56FDBF9-FBC4-A4CA-E4C1-D2EF71C21F44}">INFODATA_3963945440</Type>
+					<Type GUID="{8D65D7B5-598A-A9DA-4849-DB397A90CD6A}">INFODATA_4122016951</Type>
 				</Entry>
 				<Entry Name="Message_77 Info Data" Index="#x7000" Sub="#x0c">
 					<Type GUID="{B3F40D1A-92AF-E63B-676D-2464FEC4B3B3}">INFODATA_2053396730</Type>

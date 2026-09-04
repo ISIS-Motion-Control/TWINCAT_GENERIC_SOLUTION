@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<GlobalVariables Crc="1751964028" Id="15eba6a6-22ad-44a6-996a-b23bd5402b31" FileFormatVersion="1.0">
+<GlobalVariables Crc="3248206162" Id="15eba6a6-22ad-44a6-996a-b23bd5402b31" FileFormatVersion="1.0">
   <Variable Id="21788be6-958d-45ad-8ca1-c41161dd07f7">
     <Name>SB1_Out</Name>
     <SourceUsages>
@@ -218,6 +218,19 @@
     <TargetUsages>
       <FbPortUsage Id="53fd46f8-60f4-4b7a-a858-e963bdde3a40">
         <ModelElementId>a28428aa-3c56-47e7-a9a6-83fd7ec6dbfb</ModelElementId>
+      </FbPortUsage>
+    </TargetUsages>
+  </Variable>
+  <Variable Id="7452c14d-a063-4d8d-ae6b-0cc04a5990b6">
+    <Name>Pendant_Reset_Out</Name>
+    <SourceUsages>
+      <FbPortUsage Id="fd4bbb9b-9a5f-4917-9719-09ebca08d0ba">
+        <ModelElementId>d05839b9-f3d8-4e32-a2d3-6550ef783a14</ModelElementId>
+      </FbPortUsage>
+    </SourceUsages>
+    <TargetUsages>
+      <FbPortUsage Id="550e7854-c541-4614-9a4c-49e5daff464d">
+        <ModelElementId>205fa480-3ce1-4b11-a05f-626e9f77e00f</ModelElementId>
       </FbPortUsage>
     </TargetUsages>
   </Variable>

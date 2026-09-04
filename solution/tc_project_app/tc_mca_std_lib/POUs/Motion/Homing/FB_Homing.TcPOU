@@ -3,7 +3,8 @@
   <POU Name="FB_Homing" Id="{427b1d22-ef01-4bbb-ab89-ec8be67f3887}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_Homing
 VAR_IN_OUT
-    Axis: Axis_Ref;
+    stAxis: st_AxisStruct;
+	
 END_VAR
 VAR_INPUT
     bExecute: BOOL;
@@ -17,6 +18,9 @@ VAR_INPUT
 	fHomeMidRelativeMove : LREAL;
     stConfig: ST_AxisConfig;
 	stHomingConfig : ST_AxisHomingConfig;
+	bGoToFwdLimitFirst : BOOL;
+	bGoToBwdLimitFirst : BOOL;
+	fFastVelocity : LREAL;
 END_VAR
 VAR_OUTPUT
     bDone : BOOL;
@@ -39,6 +43,7 @@ VAR
     fbAbortHoming: MC_AbortHoming;
 	fbMoveRelative : MC_MoveRelative;
 	fbMoveAbsolute : MC_MoveAbsolute;
+	fbMoveVelocity : MC_MoveVelocity;
     //Hardware Signals
     eLimitSwitchMode: MC_Switch_Mode := mcRisingEdge;
     stLimitSwitchSignal: MC_Ref_Signal_Ref;
@@ -59,7 +64,7 @@ VAR
     fbExecute: R_TRIG;
     bViaLimitSwitch: BOOL;
 	bViaFastEncPulse : BOOL;
-    eHomingState: (eWaitForRequest := 0, ePreparation := 1, eDetection := 2, eSetPos := 3, eFinishHoming := 4, eMoveRelative:=5, eAbsMove:=6, eAbortHoming := 20);
+    eHomingState: (eWaitForRequest := 0, ePreparation := 1, eDetection := 2, eSetPos := 3, eFinishHoming := 4, eMoveRelative:=5, eAbsMove:=6, eAbortHoming := 20, eGoToFwd:=7, eGoToBwd:=8, eWaitForFwd:=9,eWaitForBwd:=10);
     iErrorId: UDINT;
     bDetectionFB_Execute: BOOL;
     bDetectionFB_Done: BOOL;
@@ -72,7 +77,7 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[
+      <ST><![CDATA[stAxis.stStatus.bInHomingSeq:= FALSE;
 //Hardware signals
 stLimitSwitchSignal.SignalSource := SignalSource_Default;
 stLimitSwitchSignal.TouchProbe := PlcEvent;
@@ -83,22 +88,22 @@ stEncPulseSignal.SignalSource := SignalSource_ZeroPulse;
 stEncPulseSignal.TouchProbe := TouchProbe1;
 
 fbMoveRelative(
-	Axis:= Axis, Velocity:= fVelocityFromCam);
+	Axis:= stAxis.Axis, Velocity:= fVelocityFromCam);
 	fbMoveRelative.Execute:= FALSE;
 
 fbMoveAbsolute(
-	Axis:= Axis, Velocity:= fVelocityToCam, Position:= fHomeAbsPosition);
+	Axis:= stAxis.Axis, Velocity:= fVelocityToCam, Position:= fHomeAbsPosition);
 	fbMoveAbsolute.Execute:= FALSE;
 
 //Constantly read the NC for homing velocities so they are available when a homing is executed
 fbVelocityToCam(
-    Axis := Axis,
+    Axis := stAxis.Axis,
     Enable := TRUE,
     ParameterNumber := E_AxisParameters.AxisVelocityToCam,
     ReadMode := READMODE_CYCLIC);
 
 fbVelocityFromCam(
-    Axis := Axis,
+    Axis := stAxis.Axis,
     Enable := TRUE,
     ParameterNumber := E_AxisParameters.AxisVelocityFromCam,
     ReadMode := READMODE_CYCLIC);
@@ -130,7 +135,7 @@ stOptions3.DisableDriveAccess := stHomingConfig.bDisableDriveAccess;
 
 fbStepLimitSwitchPreparation.Options.DisableDriveAccess := stOptions.DisableDriveAccess;
 fbStepLimitSwitchPreparation(
-    Axis := Axis,
+    Axis := stAxis.Axis,
     Parameter := stHomingParameter,
     Direction := stPreparationDirection,
     LimitSwitchMode:= eLimitSwitchMode,
@@ -140,18 +145,21 @@ fbStepLimitSwitchPreparation(
 
 
 fbSetPos(
-    Axis := Axis,
-    Position := Axis.NcToPlc.ActPos - fRecordedPositionLatched + fHomePosition);
+    Axis := stAxis.Axis,
+    Position := stAxis.Axis.NcToPlc.ActPos - fRecordedPositionLatched + fHomePosition);
 
 fbFinishHoming.Options.DisableDriveAccess := stOptions.DisableDriveAccess;
 fbFinishHoming(
-    Axis := Axis,
+    Axis := stAxis.Axis,
     Parameter := stHomingParameter,
     Velocity := fVelocityFromCam);
 
+fbMoveVelocity(Axis:= stAxis.Axis, Velocity:= ABS(fFastVelocity));
+	fbMoveVelocity.Execute:= FALSE;
+
 fbAbortHoming.Options.DisableDriveAccess := stOptions.DisableDriveAccess;
 fbAbortHoming(
-    Axis := Axis,
+    Axis := stAxis.Axis,
     Parameter := stHomingParameter);
 
 //ACTs contain function blocks custom to each individual routine for the detection stage
@@ -208,11 +216,47 @@ CASE eHomingState OF
 
         IF fbExecute.Q AND NOT(eHomeSeq = E_HomingRoutines.eNoHoming)THEN
             bBusy:= TRUE;
-            eHomingState:= ePreparation;
+			IF bGoToFwdLimitFirst THEN
+				eHomingState:= eGoToFwd;
+			ELSIF bGoToBwdLimitFirst THEN
+				eHomingState:= eGoToBwd;
+			ELSE
+				eHomingState:= ePreparation;
+			END_IF            
         END_IF
 
+	eGoToFwd:
+		fbMoveVelocity.Execute:= TRUE;
+		fbMoveVelocity.Direction:= MC_Direction.MC_Positive_Direction;
+		eHomingState:= eWaitForFwd;
+		stAxis.stStatus.bInHomingSeq:= TRUE;
+		
+	eWaitForFwd:
+		IF NOT bLimitFwd THEN
+			eHomingState:= ePreparation;
+		END_IF
+		stAxis.stStatus.bInHomingSeq:= TRUE;
+		//IF NOT fbMoveVelocity.Active THEN
+		//	eHomingState:= eAbortHoming;
+		//END_IF
+		
+	eGoToBwd:
+		fbMoveVelocity.Direction:= MC_Direction.MC_Negative_Direction;
+		fbMoveVelocity.Execute:= TRUE;
+		eHomingState:= eWaitForBwd;
+		stAxis.stStatus.bInHomingSeq:= TRUE;
+		
+	eWaitForBwd:
+		IF NOT bLimitBwd THEN
+			eHomingState:= ePreparation;
+		END_IF
+		stAxis.stStatus.bInHomingSeq:= TRUE;
+		//IF NOT fbMoveVelocity.Active THEN
+		//	eHomingState:= eAbortHoming;
+		//END_IF
 
     ePreparation: //If bViaLimitSwitch is set TRUE then go first to a limit otherwise skip this step
+		stAxis.stStatus.bInHomingSeq:= TRUE;
         IF bViaLimitSwitch THEN
             fbStepLimitSwitchPreparation.Execute := TRUE;
         ELSIF bViaFastEncPulse THEN
@@ -244,6 +288,7 @@ CASE eHomingState OF
 		END_IF
 		
 	eMoveRelative:
+		stAxis.stStatus.bInHomingSeq:= TRUE;
 		fbMoveRelative.Execute:= TRUE;
 		IF NOT fbMoveRelative.Busy AND fbMoveRelative.Done THEN
             	fbMoveRelative.Execute := FALSE;
@@ -256,6 +301,7 @@ CASE eHomingState OF
 
 
     eDetection: //Use bDetectionFB_<BOOL Variables> to interact with different detection FBs located in ACTs
+		stAxis.stStatus.bInHomingSeq:= TRUE;
         bDetectionFB_Execute := TRUE;
 
         IF NOT bDetectionFB_Busy AND bDetectionFB_Done THEN
@@ -279,6 +325,7 @@ CASE eHomingState OF
 
 
     eSetPos:
+		stAxis.stStatus.bInHomingSeq:= TRUE;
         fbSetPos.Execute := TRUE;
 
         fbSetPos.Options.ClearPositionLag := TRUE;
@@ -298,6 +345,7 @@ CASE eHomingState OF
         END_IF
 	
 	eAbsMove:
+		stAxis.stStatus.bInHomingSeq:= TRUE;
 		fbMoveAbsolute.Execute:= TRUE;
 		IF NOT fbMoveAbsolute.Busy AND fbMoveAbsolute.Done THEN
             fbMoveAbsolute.Execute := FALSE;
@@ -309,6 +357,7 @@ CASE eHomingState OF
         END_IF
 
     eFinishHoming:
+		stAxis.stStatus.bInHomingSeq:= TRUE;
         fbFinishHoming.Execute := TRUE;
 
         IF NOT fbFinishHoming.Busy AND fbFinishHoming.Done THEN
@@ -324,6 +373,7 @@ CASE eHomingState OF
 
 
     eAbortHoming:
+		stAxis.stStatus.bInHomingSeq:= TRUE;
         fbAbortHoming.Execute := TRUE;
 
         IF NOT fbAbortHoming.Busy AND fbAbortHoming.Done THEN
@@ -353,7 +403,7 @@ END_CASE
 bViaLimitSwitch := FALSE;
 
 fbHomeDirect(
-    Axis := Axis,
+    Axis := stAxis.Axis,
     Parameter := stHomingParameter,
     Execute := bDetectionFB_Execute,
     SetPosition := fHomePosition,
@@ -379,7 +429,7 @@ END_CASE
 bViaLimitSwitch:=FALSE;
 
 fbStepBlockLagDetection(
-    Axis := Axis,
+    Axis := stAxis.Axis,
     Execute := bDetectionFB_Execute,
     Parameter := stHomingParameter,
     Direction := stDetectDirection,
@@ -446,7 +496,7 @@ END_CASE
 
 fbStepReferencePulsePreparation.Options.DisableDriveAccess := stOptions.DisableDriveAccess;
 fbStepReferencePulsePreparation(
-    Axis := Axis,
+    Axis := stAxis.Axis,
     Parameter := stHomingParameter,
     Direction := stDetectDirection,
     ReferenceSignal := stEncPulseSignal,
@@ -456,7 +506,7 @@ fbStepReferencePulsePreparation(
 
 fbStepReferencePulseDetection.Options.DisableDriveAccess:= stOptions.DisableDriveAccess;
 fbStepReferencePulseDetection(
-    Axis := Axis,
+    Axis := stAxis.Axis,
     Execute := bDetectionFB_Execute,
     Parameter := stHomingParameter,
     Direction := stDetectDirection,
@@ -492,7 +542,7 @@ bViaLimitSwitch:=FALSE;
 
 fbStepLimitSwitchDetection.Options.DisableDriveAccess:= stOptions.DisableDriveAccess;
 fbStepLimitSwitchDetection(
-    Axis := Axis,
+    Axis := stAxis.Axis,
     Execute := bDetectionFB_Execute,
     Parameter := stHomingParameter,
     Direction := stDetectDirection,
@@ -524,7 +574,7 @@ bViaLimitSwitch := FALSE;
 
 fbStepAbsoluteSwitchDetection.Options.DisableDriveAccess := stOptions.DisableDriveAccess;
 fbStepAbsoluteSwitchDetection(
-    Axis := Axis,
+    Axis := stAxis.Axis,
     Execute := bDetectionFB_Execute,
     Parameter := stHomingParameter,
     Direction := stDetectDirection,

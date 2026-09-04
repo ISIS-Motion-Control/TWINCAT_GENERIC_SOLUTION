@@ -983,11 +983,21 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{FB261665-FD20-4BF2-97F8-2854C82B752D}" Name="tc_project_app" PrjFilePath="..\..\tc_project_app\tc_project_app.plcproj" TmcFilePath="..\..\tc_project_app\tc_project_app.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" ClearInvalidPersist="true" SymbolicMapping="true">
-		<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{BF66CD10-6946-FB4F-00E0-A253456FDAA8}" TmcPath="tc_project_app\tc_project_app.tmc">
+		<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{E28B0F45-3523-1A16-ED2D-D729C8D13684}" TmcPath="tc_project_app\tc_project_app.tmc">
 			<Name>tc_project_app Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="8" AreaNo="4">
 				<Name>PlcTask Retains</Name>
+				<Var>
+					<Name>MAIN.bRestoreOnStartup</Name>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>MAIN.bPositionRestoreDone</Name>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
 				<Var>
 					<Name>GVL.astAxesPersistent[1].fPositionAtShutdown</Name>
 					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
@@ -1762,16 +1772,6 @@ External Setpoint Generation:
 					<Type>BOOL</Type>
 					<InOut>7</InOut>
 				</Var>
-				<Var>
-					<Name>MAIN.bRestoreOnStartup</Name>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>MAIN.bPositionRestoreDone</Name>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
 			</Vars>
 			<Vars VarGrpType="2" AreaNo="1">
 				<Name>PlcTask Outputs</Name>
@@ -2021,10 +2021,6 @@ External Setpoint Generation:
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>SAFETY.Reset_Pendant</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>SAFETY.Mute_AccessPoints</Name>
 					<Comment><![CDATA[Maintenance muting]]></Comment>
 					<Type>BOOL</Type>
@@ -2095,6 +2091,14 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>PANEL.ECB13.Reset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Ax13.encoderPower</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Ax13.LASER_ON</Name>
 					<Type>BOOL</Type>
 				</Var>
 			</Vars>
@@ -4074,10 +4078,6 @@ External Setpoint Generation:
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>SAFETY.PendantResetReq</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>SAFETY.SAMPLE_MOTION_PERMIT</Name>
 					<Comment><![CDATA[signal from the sto control to send a stop command]]></Comment>
 					<Type>BOOL</Type>
@@ -4279,16 +4279,16 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^GVL.astAxes[3].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR1-BC1^MR1-DI4">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[4].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[4].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[4].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[4].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR1-BC1^MR1-DI5">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[5].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
 				<Link VarA="PlcTask Inputs^GVL.astAxes[5].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR1-BC1^MR1-DI6">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[6].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[6].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[6].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[6].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR1-BC1^MR1-DI7">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[7].stInputs.bHomeSensor" VarB="Channel 3^Input" Size="1"/>
@@ -4379,6 +4379,14 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^GVL.astAxes[11].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
 				<Link VarA="PlcTask Inputs^GVL.astAxes[11].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
 			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-DI5">
+				<Link VarA="PlcTask Inputs^GVL.astAxes[13].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[13].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-DO5">
+				<Link VarA="PlcTask Outputs^Ax13.LASER_ON" VarB="Channel 2^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^Ax13.encoderPower" VarB="Channel 1^Output" Size="1"/>
+			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR3-BC1^MR3-DI1">
 				<Link VarA="PlcTask Inputs^Ax22.HomeSw_HighPrecision" VarB="Channel 3^Input" Size="1"/>
 				<Link VarA="PlcTask Inputs^Ax22.HomeSw_LowPrecision" VarB="Channel 1^Input" Size="1"/>
@@ -4398,24 +4406,24 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^GVL.astAxes[24].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR3-BC1^MR3-DI4">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[25].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[25].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[25].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[25].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR3-BC1^MR3-DI5">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[26].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
 				<Link VarA="PlcTask Inputs^GVL.astAxes[26].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR3-BC1^MR3-DI6">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[27].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[27].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[27].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[27].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR3-BC1^MR3-DI7">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[28].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
 				<Link VarA="PlcTask Inputs^GVL.astAxes[28].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR3-BC1^MR3-DI8">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[29].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[29].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[29].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[29].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR3-BC1^MR3-DI9">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[16].stInputs.bHomeSensor" VarB="Channel 3^Input" Size="1"/>
@@ -4427,56 +4435,56 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^GVL.astAxes[30].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR4-BC1^MR4-DI2">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[31].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[31].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[31].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[31].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR4-BC1^MR4-DI3">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[32].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
 				<Link VarA="PlcTask Inputs^GVL.astAxes[32].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR4-BC1^MR4-DI4">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[33].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[33].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[33].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[33].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR4-BC1^MR4-DI5">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[34].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
 				<Link VarA="PlcTask Inputs^GVL.astAxes[34].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR4-BC1^MR4-DI6">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[35].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[35].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[35].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[35].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR4-BC1^MR4-DI7">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[36].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
 				<Link VarA="PlcTask Inputs^GVL.astAxes[36].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR4-BC1^MR4-DI8">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[37].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[37].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[37].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[37].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR5-BC1^MR5-DI1">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[38].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
 				<Link VarA="PlcTask Inputs^GVL.astAxes[38].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR5-BC1^MR5-DI2">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[39].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[39].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[39].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[39].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR5-BC1^MR5-DI3">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[40].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
 				<Link VarA="PlcTask Inputs^GVL.astAxes[40].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR5-BC1^MR5-DI4">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[41].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[41].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[41].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[41].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR5-BC1^MR5-DI5">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[42].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
 				<Link VarA="PlcTask Inputs^GVL.astAxes[42].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR5-BC1^MR5-DI6">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[43].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[43].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[43].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[43].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MSR-BC1^MSR-A1">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[16].stStatus.bSTOActive" VarB="StandardInputs^Standard Out Var 85" Size="1"/>
@@ -4533,8 +4541,6 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^SAFETY.MS4.Ch2" VarB="Connection Info Data^Message_68 Info Data^Input Safe Data MS4_In2"/>
 				<Link VarA="PlcTask Inputs^SAFETY.MS4.Output" VarB="StandardInputs^Standard Out Var 107" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.MS4.inError" VarB="StandardInputs^Standard Out Var 14" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS5.Ch1" VarB="Connection Info Data^Message_69 Info Data^Input Safe Data MS5_In1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS5.Ch2" VarB="Connection Info Data^Message_69 Info Data^Input Safe Data MS5_In2"/>
 				<Link VarA="PlcTask Inputs^SAFETY.MS5.Output" VarB="StandardInputs^Standard Out Var 108" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.MS5.inError" VarB="StandardInputs^Standard Out Var 15" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.MS6.Ch1" VarB="Connection Info Data^Message_71 Info Data^Input Safe Data Pendant_MS6_In1"/>
@@ -4557,16 +4563,12 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^SAFETY.PendantEnable.Output" VarB="StandardInputs^Standard Out Var 111" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.PendantEnable.inError" VarB="StandardInputs^Standard Out Var 37" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.PendantMuted" VarB="StandardInputs^Standard Out Var 56" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.PendantResetReq" VarB="StandardInputs^Standard Out Var 58" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.Q1" VarB="Connection Info Data^Message_76 Info Data^Output Safe Data Q1_Out" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.Q1Q2" VarB="Connection Info Data^Message_72 Info Data^Input Safe Data Q1_Q2_In" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.Q2" VarB="Connection Info Data^Message_77 Info Data^Output Safe Data Q2_Out" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.Q3" VarB="Connection Info Data^Message_76 Info Data^Output Safe Data Q3_Out" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.Q3Q4" VarB="Connection Info Data^Message_73 Info Data^Input Safe Data Q3_Q4_In" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.Q4" VarB="Connection Info Data^Message_77 Info Data^Output Safe Data Q4_Out" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.RCU" VarB="Connection Info Data^Message_80 Info Data^Output Safe Data RCU_Out" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.SAMPLE_MOTION_PERMIT" VarB="StandardInputs^Standard Out Var 59" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SB1" VarB="Connection Info Data^Message_76 Info Data^Output Safe Data SB1_Out" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.SB2" VarB="Connection Info Data^Message_77 Info Data^Output Safe Data SB2_Out" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.SLS_Muted" VarB="StandardInputs^Standard Out Var 46" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.SPB1" VarB="Connection Info Data^Message_73 Info Data^Input Safe Data SPB1_In" Size="1"/>
@@ -4606,7 +4608,6 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Outputs^SAFETY.Mute_PendantEnable" VarB="StandardOutputs^Standard In Var 55" Size="1"/>
 				<Link VarA="PlcTask Outputs^SAFETY.Mute_SLS" VarB="StandardOutputs^Standard In Var 42" Size="1"/>
 				<Link VarA="PlcTask Outputs^SAFETY.RUN" VarB="StandardOutputs^Standard In Var 7" Size="1"/>
-				<Link VarA="PlcTask Outputs^SAFETY.Reset_Pendant" VarB="StandardOutputs^Standard In Var 57" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MSR-BC1^MSR-DI1">
 				<Link VarA="PlcTask Inputs^SAFETY.HMI_ErrorAckButton" VarB="Channel 2^Input" Size="1"/>
@@ -4827,6 +4828,10 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^GVL.astAxes[11].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
 				<Link VarA="PlcTask Outputs^GVL.astAxes[11].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax13 - Camera Lens Adj">
+				<Link VarA="PlcTask Inputs^GVL.astAxes[13].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL.astAxes[13].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax16 - SS_Z_Translation">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[16].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
 				<Link VarA="PlcTask Outputs^GVL.astAxes[16].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
@@ -4974,10 +4979,6 @@ External Setpoint Generation:
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 12">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[12].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
 				<Link VarA="PlcTask Outputs^GVL.astAxes[12].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 13">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[13].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[13].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 14">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[14].Axis.NcToPlc" VarB="Outputs^ToPlc"/>

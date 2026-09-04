@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
-  <POU Name="Ax07" Id="{46130b17-40a1-4690-bc14-8240edfa58c7}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM Ax07
+  <POU Name="Ax13" Id="{ebaa9e5e-72f4-4cbd-8073-9e132b624835}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Ax13
 VAR
-	iAxisNumber : INT := E_AxisNames.Sample_Stack_X_Translation;
+	iAxisNumber : INT := E_AxisNames.Camera_LensAdj;
 	iGroupNumber : INT := 3;
 	
 	stoRTrig : R_Trig;
@@ -13,6 +13,15 @@ VAR
 	resetDelay : TON;
 	startDisable : BOOL;
 	disableDelay : TON;
+	encoderPower AT %Q* : BOOL;
+	encoderDelay : TON;
+	encoderDelayRTrig: R_TRIG;
+	readyDelay : TON;
+	readyDelayRTrig : R_TRIG;
+	enableOffRTrig : R_TRIG;
+	enableOffDelay : TON;
+	
+	LASER_ON AT %Q* : BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -28,12 +37,41 @@ IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
 	//Set which group this axis belongs to
 	GVL.astAxes[iAxisNumber].stDescription.iGroupNumber := iGroupNumber;
 	GVL.astAxes[iAxisNumber].Commissioning := TRUE;
+	//GVL.astAxes[iAxisNumber].stControl.bOverrideReadyToMove:= TRUE;
+	
 END_IF
+IF GVL.astAxes[iAxisNumber].stStatus.bMoveRequested THEN
+	encoderPower:= TRUE;
+END_IF
+encoderDelay(IN:= encoderPower, PT:=T#1S);
+encoderDelayRTrig(CLK:= encoderDelay.Q);
+IF encoderDelayRTrig.Q THEN
+	//GVL.astAxes[iAxisNumber].stControl.bReset:= TRUE;
+	GVL.astAxes[iAxisNumber].stControl.bReadyToEnable := TRUE;
+END_IF
+//readyDelay(IN:= encoderDelay.Q, PT:=T#0.25S);
+//readyDelayRTrig(CLK:= readyDelay.Q);
+//IF readyDelayRTrig.Q THEN
+//	GVL.astAxes[iAxisNumber].stControl.bExtReadyToMove:= TRUE;
+//END_IF
+enableOffDelay(IN:= NOT GVL.astAxes[iAxisNumber].stControl.bEnable, PT:= T#1S);
+enableOffRTrig(CLK:= enableOffDelay.Q);
+//Turn off encoder power with bEnable
+IF enableOffRTrig.Q THEN
+	encoderPower:= FALSE;
+END_IF
+
+//Prevent bEnable if encoder not on
+IF NOT encoderPower THEN
+	GVL.astAxes[iAxisNumber].stControl.bEnable := FALSE;
+END_IF
+
+
 
 GVL.astAxes[iAxisNumber].stInputs.bAllowRemoteControl:= NOT SAFETY.inLocalMode;
 
 //Permit
-GVL.astAxes[iAxisNumber].stInputs.bPermit := (SAFETY.SAMPLE_PERMIT AND NOT SAFETY.CollisionDetected) OR (SAFETY.SAMPLE_PERMIT AND (safety.inMode_Local OR safety.inMode_Maintenance));
+GVL.astAxes[iAxisNumber].stInputs.bPermit := SAFETY.SAMPLE_PERMIT;
 
 //Do an automatic reset on regaining permit;
 IF SAFETY.SAMPLE_PERMIT_R_EDGE THEN
@@ -49,6 +87,10 @@ END_IF
 IF SAFETY.STOP_MOTION THEN
 	startDisable := TRUE;
 END_IF
+IF SAFETY.collisionDetected_R_Edge THEN
+	GVL.astAxes[iAxisNumber].stControl.bHalt:= TRUE;
+END_IF
+
 disableDelay(IN:= startDisable, PT:= T#1S);
 IF disableDelay.Q THEN
 	startDisable:= FALSE;
@@ -59,14 +101,12 @@ END_IF
 IF SAFETY.STOP_MOTION THEN
 	GVL.astAxes[iAxisNumber].stControl.bHalt:= TRUE;
 END_IF
-IF SAFETY.collisionDetected_R_Edge THEN
-	GVL.astAxes[iAxisNumber].stControl.bHalt:= TRUE;
-END_IF
 
 stoRTrig(CLK:=GVL.astAxes[iAxisNumber].stStatus.bSTOActive);
 IF stoRTrig.Q THEN
 	GVL.astAxes[iAxisNumber].stControl.bReset:= TRUE;
 END_IF
+
 
 
 

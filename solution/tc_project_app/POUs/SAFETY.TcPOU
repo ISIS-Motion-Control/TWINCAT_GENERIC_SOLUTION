@@ -74,7 +74,7 @@ SafetyTargets : ARRAY [1..7] OF ST_SafetyTargetDevice:=
 	inMode_SearchedAndLocked AT %I* : BOOL;
 	
 	IncidentSlitsSwitch AT %I* : BOOL;
-	CollisionDetected : BOOL;
+	
 	
 	SampleAreaSearched_Downstream AT %I* : BOOL;
 	SampleAreaSearched_Upstream AT %I* : BOOL;
@@ -92,8 +92,6 @@ SafetyTargets : ARRAY [1..7] OF ST_SafetyTargetDevice:=
 	AccessPointsMuted AT %I* : BOOL;
 	PendantMuted AT %I* : BOOL;
 	SLS_Muted AT %I* : BOOL;
-	PendantResetReq AT %I* : BOOL;
-	Reset_Pendant AT %Q* : BOOL;
 	
 	//Maintenance muting
 	Mute_AccessPoints AT %Q* : BOOL;
@@ -150,6 +148,7 @@ SafetyTargets : ARRAY [1..7] OF ST_SafetyTargetDevice:=
 	sCommandLine : T_MaxString := 'cmd /c scrnsave.scr /s'; 
 	bStartWindowsCommand : BOOL;
 	searchRTrig : R_TRIG;
+	collisionDetectedRTrig : R_Trig;
 	
 END_VAR
 VAR_OUTPUT
@@ -160,7 +159,8 @@ VAR_OUTPUT
 	SAMPLE_PERMIT_R_EDGE : BOOL;
 	NON_SAMPLE_PERMIT_R_EDGE : BOOL;
 	inLocalMode : BOOL;
-	
+	CollisionDetected : BOOL;
+	collisionDetected_R_Edge : BOOL;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[inLocalMode := inMode_Local OR inMode_Maintenance;
@@ -179,6 +179,8 @@ SAMPLE_PERMIT_R_EDGE:= gotSamplePermit.Q;
 NON_SAMPLE_PERMIT_R_EDGE:= gotNonSamplePermit.Q;
 
 CollisionDetected := NOT IncidentSlitsSwitch;
+collisionDetectedRTrig(Clk:=CollisionDetected);
+collisionDetected_R_Edge:= collisionDetectedRTrig.Q;
 
 IF NOT inMode_Maintenance THEN
 	Mute_AccessPoints := FALSE;

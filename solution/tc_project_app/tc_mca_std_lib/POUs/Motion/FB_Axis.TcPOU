@@ -202,7 +202,8 @@ ELSE
 	_stAxis.stStatus.bReadyToMove := _stAxis.stStatus.bEnabled;
 END_IF
 
-IF fbMoveInProgressFTrig.Q THEN
+//prevent the turn off if homing
+IF fbMoveInProgressFTrig.Q AND NOT _stAxis.stStatus.bInHomingSeq THEN
 	//start end move timer
 	bEndOfMove:= TRUE;
 	_stAxis.stControl.bExtReadyToMove:= FALSE;
@@ -217,9 +218,16 @@ fbMoveInProgressEndTimer(IN:= bEndOfMove,PT:= _stAxis.stControl.tMoveFinishedDel
 //If we want autoenabledisable
 IF _stAxis.stControl.bAutoEnableDisable THEN
 	//and a move has been requested and we are not enabled
-	IF _stAxis.stStatus.bMoveRequested AND _stAxis.stStatus.bEnabled = FALSE THEN
+	IF _stAxis.stStatus.bMoveRequested AND NOT _stAxis.stControl.bWaitBeforeEnable THEN
+		IF _stAxis.stStatus.bMoveRequested AND _stAxis.stStatus.bEnabled = FALSE THEN
+			_stAxis.stControl.bEnable:= TRUE;
+		END_IF
+	ELSIF _stAxis.stStatus.bMoveRequested AND _stAxis.stControl.bWaitBeforeEnable AND _stAxis.stStatus.bEnabled = FALSE AND _stAxis.stControl.bReadyToEnable THEN
 		_stAxis.stControl.bEnable:= TRUE;
+		_stAxis.stControl.bReadyToEnable:= FALSE;
 	END_IF
+	
+	
 	IF _stAxis.stStatus.bMoveRequested = FALSE AND fbMoveInProgressEndTimer.Q THEN
 	_stAxis.stControl.bEnable:= FALSE;
 	bEndOfMove := FALSE;
@@ -373,8 +381,11 @@ fbHome.fHomePosition := _stAxis.stHomingConfig.fHomePosition;
 fbHome.fHomeFinishDistance := _stAxis.stHomingConfig.fHomeFinishDistance;
 fbHome.fHomeAbsPosition:= _stAxis.stHomingConfig.fHomeAbsPosition;
 fbHome.fHomeMidRelativeMove := _stAxis.stHomingConfig.fHomeMidRelativeMove;
+fbHome.bGoToBwdLimitFirst:= _stAxis.stHomingConfig.bGoToBwdFirst;
+fbHome.bGoToFwdLimitFirst:= _stAxis.stHomingConfig.bGoToFwdFirst;
+fbHome.fFastVelocity:= _stAxis.stControl.fVelocity;
 fbHome(
-    Axis := _stAxis.Axis,
+    stAxis := _stAxis,
     bLimitBwd := _stAxis.stInputs.bLimitBwd,
     bLimitFwd := _stAxis.stInputs.bLimitFwd,
     bHomeSensor := _stAxis.stInputs.bHomeSensor,

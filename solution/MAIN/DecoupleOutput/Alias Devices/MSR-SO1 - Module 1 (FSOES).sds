@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SafetyDeviceDesc Crc="1693234377" FileFormatVersion="1.9">
+<SafetyDeviceDesc Crc="3312957176" FileFormatVersion="1.9">
   <AliasDeviceType>
     <Type>4</Type>
     <SubType>290</SubType>
@@ -73,7 +73,7 @@
           <BitOffsData>2</BitOffsData>
         </IO>
         <IO>
-          <Name>SPARE</Name>
+          <Name>Pendant_Reset_Out</Name>
           <Index>28673</Index>
           <SubIndex>4</SubIndex>
           <DataType>BIT</DataType>

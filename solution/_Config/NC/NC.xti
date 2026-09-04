@@ -1407,7 +1407,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<NC>
-		<SafTask Priority="4" CycleTime="20000" AmsPort="501" IoAtBegin="true" SafTaskInfo="2">
+		<SafTask Priority="4" CycleTime="20000" AmsPort="501" IoAtBegin="true" SafTaskInfo="3">
 			<Name>NC-Task 1 SAF</Name>
 			<Vars VarGrpType="1" InsertType="1">
 				<Name>Inputs</Name>
@@ -1579,7 +1579,7 @@ External Setpoint Generation:
 		<Axis File="Ax10 - Tom_Chi Lower.xti" Id="10"/>
 		<Axis File="Ax11 - Tom_Theta Upper.xti" Id="11"/>
 		<Axis File="Axis 12.xti" Id="12"/>
-		<Axis File="Axis 13.xti" Id="13"/>
+		<Axis File="Ax13 - Camera Lens Adj.xti" Id="13"/>
 		<Axis File="Axis 14.xti" Id="14"/>
 		<Axis File="Axis 15.xti" Id="15"/>
 		<Axis File="Ax16 - SS_Z_Translation.xti" Id="16"/>
