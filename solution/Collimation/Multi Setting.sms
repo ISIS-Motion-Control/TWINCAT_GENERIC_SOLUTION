@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<MultiSetting Crc="677793558" Version="1.2">
+<MultiSetting Crc="1307490982" Version="1.2">
   <ProjectData>
     <Id>1</Id>
     <TargetSystem>
@@ -20,7 +20,7 @@
         <FbId>8cc917e9-02c0-47c5-94b1-e16d11a45cf7</FbId>
         <FbParameter>
           <PortId>d053f778-eba6-4550-be23-284857e184cd</PortId>
-          <Value><![CDATA[2000]]></Value>
+          <Value><![CDATA[250]]></Value>
         </FbParameter>
       </Fb>
     </Application>
@@ -46,7 +46,7 @@
         <FbId>8cc917e9-02c0-47c5-94b1-e16d11a45cf7</FbId>
         <FbParameter>
           <PortId>d053f778-eba6-4550-be23-284857e184cd</PortId>
-          <Value><![CDATA[2000]]></Value>
+          <Value><![CDATA[250]]></Value>
         </FbParameter>
       </Fb>
     </Application>
@@ -71,7 +71,7 @@
         <FbId>8cc917e9-02c0-47c5-94b1-e16d11a45cf7</FbId>
         <FbParameter>
           <PortId>d053f778-eba6-4550-be23-284857e184cd</PortId>
-          <Value><![CDATA[2000]]></Value>
+          <Value><![CDATA[250]]></Value>
         </FbParameter>
       </Fb>
     </Application>
@@ -96,7 +96,7 @@
         <FbId>8cc917e9-02c0-47c5-94b1-e16d11a45cf7</FbId>
         <FbParameter>
           <PortId>d053f778-eba6-4550-be23-284857e184cd</PortId>
-          <Value><![CDATA[2000]]></Value>
+          <Value><![CDATA[250]]></Value>
         </FbParameter>
       </Fb>
     </Application>

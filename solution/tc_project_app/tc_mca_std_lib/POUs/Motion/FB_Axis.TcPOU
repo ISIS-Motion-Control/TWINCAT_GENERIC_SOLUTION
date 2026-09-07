@@ -384,13 +384,15 @@ fbHome.fHomeMidRelativeMove := _stAxis.stHomingConfig.fHomeMidRelativeMove;
 fbHome.bGoToBwdLimitFirst:= _stAxis.stHomingConfig.bGoToBwdFirst;
 fbHome.bGoToFwdLimitFirst:= _stAxis.stHomingConfig.bGoToFwdFirst;
 fbHome.fFastVelocity:= _stAxis.stControl.fVelocity;
+
 fbHome(
-    stAxis := _stAxis,
+	AxisRef:= _stAxis.Axis,
     bLimitBwd := _stAxis.stInputs.bLimitBwd,
     bLimitFwd := _stAxis.stInputs.bLimitFwd,
     bHomeSensor := _stAxis.stInputs.bHomeSensor,
     stConfig := _stAxis.stConfig);
 fbHome.bExecute := FALSE;
+_stAxis.stStatus.bInHomingSeq:= fbHome.bInHomingSequence;
 
 mControl_Home.Busy := fbHome.bBusy;
 mControl_Home.CommandAborted := fbHome.bCommandAborted;

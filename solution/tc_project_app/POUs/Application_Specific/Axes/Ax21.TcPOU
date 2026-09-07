@@ -26,7 +26,8 @@ IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
 	GVL.astAxes[iAxisNumber].stControl.tMoveFinishedDelay := T#0.1S;
 	//Set which group this axis belongs to
 	GVL.astAxes[iAxisNumber].stDescription.iGroupNumber := iGroupNumber;
-	GVL.astAxes[iAxisNumber].Commissioning := TRUE;
+	GVL.astAxes[iAxisNumber].Commissioning := FALSE;
+	GVL.astAxes[iAxisNumber].stDescription.sUnits:= 'mm';
 END_IF
 
 GVL.astAxes[iAxisNumber].stInputs.bAllowRemoteControl:= NOT SAFETY.inLocalMode;

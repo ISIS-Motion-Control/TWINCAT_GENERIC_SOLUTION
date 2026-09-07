@@ -20,7 +20,7 @@ END_VAR
 IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
     //Initial default values:
     GVL.astAxes[iAxisNumber].stHomingConfig.eHomeSeq :=E_HomingRoutines.eHomeToEncPulse_viaBwdLimit;
-	GVL.astAxes[iAxisNumber].stHomingConfig.fHomeAbsPosition:= 20;
+	GVL.astAxes[iAxisNumber].stHomingConfig.fHomeAbsPosition:= 0;
 	GVL.astAxes[iAxisNumber].stHomingConfig.fHomeMidRelativeMove:=1;
     GVL.astAxes[iAxisNumber].stHomingConfig.fHomePosition := 0;
     GVL.astAxes[iAxisNumber].stHomingConfig.fHomeFinishDistance := 0.0;
@@ -30,6 +30,7 @@ IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
 	//Set which group this axis belongs to
 	GVL.astAxes[iAxisNumber].stDescription.iGroupNumber := iGroupNumber;
 	GVL.astAxes[iAxisNumber].Commissioning := FALSE;
+	GVL.astAxes[iAxisNumber].stDescription.sUnits:= 'mm';
 END_IF
 
 //Permit

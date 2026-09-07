@@ -3,6 +3,9 @@
   <POU Name="MAIN" Id="{33eb6f49-7781-4211-a70b-87ada6d80cb7}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
+	run1 : BOOL;
+	run2 : BOOL;
+
 	//TEMP
 	RUN AT %Q* : BOOL:= TRUE;
 	ErrAck AT %Q* : BOOL;
@@ -39,22 +42,26 @@ VAR
 	
 END_VAR
 
-VAR RETAIN
+VAR
     bRestoreOnStartup: BOOL := TRUE;
 	bPositionRestoreDone: BOOL := FALSE;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[//POSITION_RECOVERY();
-RESTORE_POSITIONS();
 
-
-IF bPositionRestoreDone THEN
-	STORE_PERSISTENT();
-END_IF
 
 PROG();
 AXES();
+
+//IF run1 THEN
+	RESTORE_POSITIONS();
+//END_IF
+//IF run2 THEN
+	IF bPositionRestoreDone THEN
+		STORE_PERSISTENT();
+	END_IF
+//END_IF
 
 
 
@@ -170,7 +177,8 @@ Ax11();
 
 //Camera
 Ax13();
-
+Ax14();
+Ax15();
 
 Ax16();
 Ax17();

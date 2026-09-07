@@ -983,21 +983,11 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{FB261665-FD20-4BF2-97F8-2854C82B752D}" Name="tc_project_app" PrjFilePath="..\..\tc_project_app\tc_project_app.plcproj" TmcFilePath="..\..\tc_project_app\tc_project_app.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" ClearInvalidPersist="true" SymbolicMapping="true">
-		<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{E28B0F45-3523-1A16-ED2D-D729C8D13684}" TmcPath="tc_project_app\tc_project_app.tmc">
+		<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{4C3996F1-94C1-16F4-D3B9-4843AB77A81C}" TmcPath="tc_project_app\tc_project_app.tmc">
 			<Name>tc_project_app Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="8" AreaNo="4">
 				<Name>PlcTask Retains</Name>
-				<Var>
-					<Name>MAIN.bRestoreOnStartup</Name>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>MAIN.bPositionRestoreDone</Name>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
 				<Var>
 					<Name>GVL.astAxesPersistent[1].fPositionAtShutdown</Name>
 					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
@@ -1785,6 +1775,151 @@ External Setpoint Generation:
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>SAFETY.RUN</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].RUN</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[1].ERROR_ACK</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].RUN</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[2].ERROR_ACK</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].RUN</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[3].ERROR_ACK</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].RUN</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[4].ERROR_ACK</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].RUN</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[5].ERROR_ACK</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].RUN</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[6].ERROR_ACK</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].RUN</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.SafetyTargets[7].ERROR_ACK</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.ERRACK</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.Mute_AccessPoints</Name>
+					<Comment><![CDATA[Maintenance muting]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.Mute_PendantEnable</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.Mute_SLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.HMI_ErrorAckLight</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.HMI_SafetyRunLight</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB1.Reset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB2.Reset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB3.Reset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB4.Reset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB5.Reset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB6.Reset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB7.Reset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB8.Reset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB9.Reset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB10.Reset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB11.Reset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB12.Reset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PANEL.ECB13.Reset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Ax13.encoderPower</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Ax13.LASER_ON</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL.astAxes[1].Axis.PlcToNc</Name>
 					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
@@ -1956,1057 +2091,9 @@ External Setpoint Generation:
 					<Name>GVL.astAxes[43].Axis.PlcToNc</Name>
 					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
-				<Var>
-					<Name>SAFETY.RUN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[1].RUN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[1].ERROR_ACK</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[2].RUN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[2].ERROR_ACK</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[3].RUN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[3].ERROR_ACK</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[4].RUN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[4].ERROR_ACK</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[5].RUN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[5].ERROR_ACK</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[6].RUN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[6].ERROR_ACK</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[7].RUN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.SafetyTargets[7].ERROR_ACK</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.ERRACK</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.Mute_AccessPoints</Name>
-					<Comment><![CDATA[Maintenance muting]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.Mute_PendantEnable</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.Mute_SLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.HMI_ErrorAckLight</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.HMI_SafetyRunLight</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB1.Reset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB2.Reset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB3.Reset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB4.Reset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB5.Reset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB6.Reset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB7.Reset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB8.Reset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB9.Reset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB10.Reset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB11.Reset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB12.Reset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB13.Reset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>Ax13.encoderPower</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>Ax13.LASER_ON</Name>
-					<Type>BOOL</Type>
-				</Var>
 			</Vars>
 			<Vars VarGrpType="1">
 				<Name>PlcTask Inputs</Name>
-				<Var>
-					<Name>GVL.astAxes[1].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[1].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[1].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[1].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[1].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[2].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[2].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[2].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[2].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[2].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[3].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[3].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[3].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[3].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[3].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[4].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[4].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[4].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[4].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[4].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[5].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[5].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[5].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[5].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[5].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[6].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[6].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[6].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[6].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[6].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[7].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[7].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[7].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[7].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[7].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[8].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[8].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[8].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[8].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[8].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[9].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[9].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[9].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[9].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[9].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[10].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[10].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[10].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[10].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[10].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[11].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[11].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[11].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[11].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[11].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[12].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[12].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[12].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[12].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[12].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[13].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[13].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[13].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[13].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[13].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[14].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[14].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[14].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[14].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[14].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[15].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[15].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[15].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[15].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[15].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[16].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[16].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[16].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[16].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[16].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[17].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[17].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[17].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[17].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[17].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[18].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[18].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[18].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[18].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[18].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[19].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[19].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[19].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[19].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[19].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[20].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[20].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[20].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[20].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[20].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[21].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[21].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[21].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[21].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[21].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[22].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[22].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[22].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[22].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[22].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[23].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[23].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[23].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[23].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[23].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[24].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[24].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[24].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[24].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[24].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[25].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[25].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[25].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[25].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[25].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[26].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[26].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[26].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[26].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[26].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[27].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[27].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[27].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[27].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[27].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[28].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[28].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[28].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[28].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[28].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[29].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[29].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[29].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[29].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[29].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[30].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[30].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[30].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[30].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[30].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[31].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[31].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[31].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[31].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[31].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[32].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[32].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[32].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[32].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[32].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[33].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[33].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[33].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[33].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[33].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[34].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[34].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[34].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[34].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[34].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[35].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[35].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[35].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[35].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[35].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[36].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[36].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[36].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[36].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[36].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[37].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[37].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[37].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[37].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[37].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[38].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[38].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[38].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[38].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[38].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[39].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[39].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[39].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[39].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[39].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[40].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[40].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[40].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[40].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[40].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[41].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[41].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[41].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[41].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[41].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[42].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[42].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[42].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[42].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[42].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[43].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[43].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[43].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[43].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[43].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
 				<Var>
 					<Name>SAFETY.SafetyTargets[1].SERIAL</Name>
 					<Type>UDINT</Type>
@@ -4229,6 +3316,909 @@ External Setpoint Generation:
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL.astAxes[1].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[1].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[1].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[1].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[1].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[2].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[2].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[2].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[2].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[2].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[3].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[3].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[3].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[3].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[3].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[4].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[4].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[4].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[4].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[4].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[5].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[5].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[5].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[5].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[5].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[6].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[6].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[6].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[6].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[6].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[7].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[7].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[7].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[7].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[7].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[8].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[8].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[8].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[8].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[8].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[9].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[9].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[9].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[9].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[9].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[10].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[10].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[10].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[10].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[10].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[11].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[11].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[11].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[11].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[11].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[12].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[12].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[12].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[12].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[12].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[13].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[13].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[13].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[13].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[13].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[14].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[14].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[14].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[14].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[14].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[15].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[15].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[15].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[15].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[15].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[16].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[16].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[16].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[16].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[16].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[17].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[17].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[17].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[17].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[17].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[18].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[18].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[18].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[18].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[18].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[19].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[19].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[19].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[19].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[19].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[20].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[20].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[20].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[20].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[20].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[21].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[21].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[21].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[21].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[21].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[22].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[22].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[22].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[22].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[22].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[23].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[23].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[23].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[23].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[23].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[24].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[24].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[24].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[24].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[24].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[25].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[25].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[25].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[25].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[25].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[26].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[26].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[26].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[26].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[26].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[27].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[27].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[27].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[27].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[27].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[28].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[28].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[28].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[28].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[28].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[29].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[29].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[29].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[29].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[29].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[30].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[30].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[30].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[30].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[30].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[31].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[31].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[31].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[31].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[31].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[32].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[32].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[32].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[32].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[32].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[33].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[33].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[33].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[33].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[33].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[34].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[34].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[34].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[34].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[34].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[35].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[35].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[35].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[35].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[35].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[36].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[36].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[36].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[36].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[36].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[37].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[37].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[37].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[37].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[37].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[38].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[38].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[38].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[38].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[38].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[39].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[39].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[39].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[39].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[39].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[40].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[40].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[40].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[40].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[40].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[41].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[41].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[41].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[41].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[41].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[42].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[42].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[42].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[42].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[42].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[43].stStatus.bSTOActive</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[43].stInputs.bLimitFwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[43].stInputs.bLimitBwd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[43].stInputs.bHomeSensor</Name>
+					<Comment><![CDATA[Reference signal for homing]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.astAxes[43].Axis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
 					<Name>KeTop.enSwitch1</Name>
 					<Type>BOOL</Type>
 				</Var>
@@ -4382,6 +4372,14 @@ External Setpoint Generation:
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-DI5">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[13].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
 				<Link VarA="PlcTask Inputs^GVL.astAxes[13].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-DI6">
+				<Link VarA="PlcTask Inputs^GVL.astAxes[14].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[14].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-DI7">
+				<Link VarA="PlcTask Inputs^GVL.astAxes[15].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL.astAxes[15].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-DO5">
 				<Link VarA="PlcTask Outputs^Ax13.LASER_ON" VarB="Channel 2^Output" Size="1"/>
@@ -4813,8 +4811,6 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[9].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[9].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
 				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[9].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[9].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
 				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[9].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[9].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^MAIN.bPositionRestoreDone" VarB="Retains^MAIN.bPositionRestoreDone_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^MAIN.bRestoreOnStartup" VarB="Retains^MAIN.bRestoreOnStartup_[852]" AutoLink="true" PeerAutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax1 - Inc Slits X Translation">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[1].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
@@ -4831,6 +4827,14 @@ External Setpoint Generation:
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax13 - Camera Lens Adj">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[13].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
 				<Link VarA="PlcTask Outputs^GVL.astAxes[13].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax14 - Camera Flip">
+				<Link VarA="PlcTask Inputs^GVL.astAxes[14].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL.astAxes[14].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax15 - Camera Tilt">
+				<Link VarA="PlcTask Inputs^GVL.astAxes[15].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL.astAxes[15].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax16 - SS_Z_Translation">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[16].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
@@ -4979,14 +4983,6 @@ External Setpoint Generation:
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 12">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[12].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
 				<Link VarA="PlcTask Outputs^GVL.astAxes[12].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 14">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[14].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[14].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 15">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[15].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[15].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

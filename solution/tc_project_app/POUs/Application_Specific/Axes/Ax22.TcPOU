@@ -32,6 +32,7 @@ IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
 	//Set which group this axis belongs to
 	GVL.astAxes[iAxisNumber].stDescription.iGroupNumber := iGroupNumber;
 	GVL.astAxes[iAxisNumber].Commissioning := FALSE;
+	GVL.astAxes[iAxisNumber].stDescription.sUnits:= 'deg';
 END_IF
 
 GVL.astAxes[iAxisNumber].stInputs.bAllowRemoteControl:= TRUE;

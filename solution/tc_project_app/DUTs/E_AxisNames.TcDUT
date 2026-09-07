@@ -19,7 +19,7 @@ TYPE E_AxisNames :
 	Tomography_Theta := 11,
 	SampleEnv_ExtraAxes := 12,
 	Camera_LensAdj := 13,
-	Camera_Flip := 14, // check correct
+	Camera_FlipRot := 14, // check correct
 	Camera_Tilt := 15, //check correct
 	Sample_Stack_Z_Translation :=16,
 	Sample_Stack_Z_Rotation :=17,

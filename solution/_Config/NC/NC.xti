@@ -1580,8 +1580,8 @@ External Setpoint Generation:
 		<Axis File="Ax11 - Tom_Theta Upper.xti" Id="11"/>
 		<Axis File="Axis 12.xti" Id="12"/>
 		<Axis File="Ax13 - Camera Lens Adj.xti" Id="13"/>
-		<Axis File="Axis 14.xti" Id="14"/>
-		<Axis File="Axis 15.xti" Id="15"/>
+		<Axis File="Ax14 - Camera Flip.xti" Id="14"/>
+		<Axis File="Ax15 - Camera Tilt.xti" Id="15"/>
 		<Axis File="Ax16 - SS_Z_Translation.xti" Id="16"/>
 		<Axis File="Ax17 - SS_Z_Rotation.xti" Id="17"/>
 		<Axis File="Ax18 - ColNorth_X.xti" Id="18"/>

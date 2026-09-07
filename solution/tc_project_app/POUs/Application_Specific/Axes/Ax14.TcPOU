@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
-  <POU Name="Ax33" Id="{4f7c79b8-766a-4e60-93d4-0f949b294a21}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM Ax33
+  <POU Name="Ax14" Id="{fba1611a-dbf6-4c4b-b25a-f85659e280cc}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Ax14
 VAR
-	iAxisNumber : INT := E_AxisNames.Slit_3_South;
+	iAxisNumber : INT := E_AxisNames.Camera_FlipRot;
 	iGroupNumber : INT := 3;
 	
 	stoRTrig : R_Trig;
@@ -19,29 +19,25 @@ END_VAR
       <ST><![CDATA[//Initial parameters of an Axis
 IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
     //Initial default values:
-    GVL.astAxes[iAxisNumber].stHomingConfig.eHomeSeq :=E_HomingRoutines.eHomeToEncPulse_BWD_FAST;
-	GVL.astAxes[iAxisNumber].stHomingConfig.bGoToFwdFirst := TRUE;
-	GVL.astAxes[iAxisNumber].stHomingConfig.fHomeAbsPosition:= 50;
-	GVL.astAxes[iAxisNumber].stHomingConfig.fHomeMidRelativeMove:=1;
-    GVL.astAxes[iAxisNumber].stHomingConfig.fHomePosition := 48.899;
+    GVL.astAxes[iAxisNumber].stHomingConfig.eHomeSeq :=E_HomingRoutines.eHomeToRef_Bwd;
+    GVL.astAxes[iAxisNumber].stHomingConfig.fHomePosition := 0.0;
     GVL.astAxes[iAxisNumber].stHomingConfig.fHomeFinishDistance := 0.0;
-	GVL.astAxes[iAxisNumber].stHomingConfig.bGoToBwdFirst := TRUE;
     GVL.astAxes[iAxisNumber].stConfig.eRestorePosition := E_RestorePosition.eRestoreWithoutHome;
 	GVL.astAxes[iAxisNumber].stControl.bAutoEnableDisable := TRUE;
 	GVL.astAxes[iAxisNumber].stControl.tMoveFinishedDelay := T#0.1S;
 	//Set which group this axis belongs to
 	GVL.astAxes[iAxisNumber].stDescription.iGroupNumber := iGroupNumber;
-	GVL.astAxes[iAxisNumber].Commissioning := FALSE;
+	GVL.astAxes[iAxisNumber].Commissioning := TRUE;
 	GVL.astAxes[iAxisNumber].stDescription.sUnits:= 'mm';
 END_IF
 
-GVL.astAxes[iAxisNumber].stInputs.bAllowRemoteControl:= TRUE;
+GVL.astAxes[iAxisNumber].stInputs.bAllowRemoteControl:= NOT SAFETY.inLocalMode;
 
 //Permit
-GVL.astAxes[iAxisNumber].stInputs.bPermit := SAFETY.NON_SAMPLE_PERMIT;
+GVL.astAxes[iAxisNumber].stInputs.bPermit := SAFETY.SAMPLE_PERMIT;
 
 //Do an automatic reset on regaining permit;
-IF SAFETY.NON_SAMPLE_PERMIT_R_EDGE THEN
+IF SAFETY.SAMPLE_PERMIT_R_EDGE THEN
 	startReset:= TRUE;
 END_IF
 resetDelay(IN:= startReset, PT:= T#0.5S);
@@ -51,9 +47,13 @@ IF resetDelay.Q THEN
 END_IF
 
 //Disable axis if no permit
-IF SAFETY.STOP_NON_SAMPLE_MOTION THEN
+IF SAFETY.STOP_MOTION THEN
 	startDisable := TRUE;
 END_IF
+IF SAFETY.collisionDetected_R_Edge THEN
+	GVL.astAxes[iAxisNumber].stControl.bHalt:= TRUE;
+END_IF
+
 disableDelay(IN:= startDisable, PT:= T#1S);
 IF disableDelay.Q THEN
 	startDisable:= FALSE;
@@ -61,7 +61,7 @@ IF disableDelay.Q THEN
 END_IF
 
 //Safety stop motion
-IF SAFETY.STOP_NON_SAMPLE_MOTION THEN
+IF SAFETY.STOP_MOTION THEN
 	GVL.astAxes[iAxisNumber].stControl.bHalt:= TRUE;
 END_IF
 

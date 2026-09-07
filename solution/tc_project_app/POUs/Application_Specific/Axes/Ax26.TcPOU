@@ -19,10 +19,11 @@ END_VAR
       <ST><![CDATA[//Initial parameters of an Axis
 IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
     //Initial default values:
-    GVL.astAxes[iAxisNumber].stHomingConfig.eHomeSeq :=E_HomingRoutines.eHomeToEncPulse_FWD_FAST;
-	GVL.astAxes[iAxisNumber].stHomingConfig.fHomeAbsPosition:= 10;
+    GVL.astAxes[iAxisNumber].stHomingConfig.eHomeSeq :=E_HomingRoutines.eHomeToEncPulse_BWD_FAST;
+	GVL.astAxes[iAxisNumber].stHomingConfig.bGoToFwdFirst := TRUE;
+	GVL.astAxes[iAxisNumber].stHomingConfig.fHomeAbsPosition:= 50;
 	GVL.astAxes[iAxisNumber].stHomingConfig.fHomeMidRelativeMove:=1;
-    GVL.astAxes[iAxisNumber].stHomingConfig.fHomePosition := 0;
+    GVL.astAxes[iAxisNumber].stHomingConfig.fHomePosition := 55.67;
     GVL.astAxes[iAxisNumber].stHomingConfig.fHomeFinishDistance := 0.0;
 	GVL.astAxes[iAxisNumber].stHomingConfig.bGoToBwdFirst := TRUE;
     GVL.astAxes[iAxisNumber].stConfig.eRestorePosition := E_RestorePosition.eRestoreWithoutHome;
@@ -31,6 +32,7 @@ IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
 	//Set which group this axis belongs to
 	GVL.astAxes[iAxisNumber].stDescription.iGroupNumber := iGroupNumber;
 	GVL.astAxes[iAxisNumber].Commissioning := FALSE;
+	GVL.astAxes[iAxisNumber].stDescription.sUnits:= 'mm';
 END_IF
 
 GVL.astAxes[iAxisNumber].stInputs.bAllowRemoteControl:= TRUE;
@@ -67,6 +69,7 @@ stoRTrig(CLK:=GVL.astAxes[iAxisNumber].stStatus.bSTOActive);
 IF stoRTrig.Q THEN
 	GVL.astAxes[iAxisNumber].stControl.bReset:= TRUE;
 END_IF
+
 
 
 

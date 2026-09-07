@@ -21,6 +21,9 @@ VAR
 	enableOffRTrig : R_TRIG;
 	enableOffDelay : TON;
 	
+	latchedTurnOffPosition : LREAL;
+	cycleDelay : BOOL;
+	
 	LASER_ON AT %Q* : BOOL;
 END_VAR
 ]]></Declaration>
@@ -37,6 +40,7 @@ IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
 	//Set which group this axis belongs to
 	GVL.astAxes[iAxisNumber].stDescription.iGroupNumber := iGroupNumber;
 	GVL.astAxes[iAxisNumber].Commissioning := TRUE;
+	GVL.astAxes[iAxisNumber].stDescription.sUnits:= 'mm';
 	//GVL.astAxes[iAxisNumber].stControl.bOverrideReadyToMove:= TRUE;
 	
 END_IF
@@ -59,6 +63,18 @@ enableOffRTrig(CLK:= enableOffDelay.Q);
 //Turn off encoder power with bEnable
 IF enableOffRTrig.Q THEN
 	encoderPower:= FALSE;
+	latchedTurnOffPosition:= GVL.astAxes[iAxisNumber].stStatus.fActPosition;
+END_IF
+
+//position fix logic :(
+
+IF ABS(GVL.astAxes[iAxisNumber].stStatus.fActPosition-latchedTurnOffPosition)>0.02 AND NOT GVL.astAxes[iAxisNumber].stControl.bEnable AND NOT cycleDelay THEN
+	GVL.astAxes[iAxisNumber].stControl.eCommand:= E_MotionFunctions.eSetPosition;
+	GVL.astAxes[iAxisNumber].stControl.fSetPosition:= latchedTurnOffPosition;
+	GVL.astAxes[iAxisNumber].stControl.bExecute:= TRUE;
+	cycleDelay:=TRUE;
+ELSIF cycleDelay THEN
+	cycleDelay := FALSE;
 END_IF
 
 //Prevent bEnable if encoder not on
