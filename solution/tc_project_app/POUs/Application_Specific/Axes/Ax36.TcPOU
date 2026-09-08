@@ -22,6 +22,7 @@ IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
     GVL.astAxes[iAxisNumber].stHomingConfig.eHomeSeq :=E_HomingRoutines.eHomeToEncPulse_BWD_FAST;
 	GVL.astAxes[iAxisNumber].stHomingConfig.bGoToFwdFirst := TRUE;
 	GVL.astAxes[iAxisNumber].stHomingConfig.fHomeAbsPosition:= 50;
+	GVL.astAxes[iAxisNumber].stHomingConfig.bDoAbsoluteMoveAtEnd:= TRUE;
 	GVL.astAxes[iAxisNumber].stHomingConfig.fHomeMidRelativeMove:=1;
     GVL.astAxes[iAxisNumber].stHomingConfig.fHomePosition := 55.653;
     GVL.astAxes[iAxisNumber].stHomingConfig.fHomeFinishDistance := 0.0;

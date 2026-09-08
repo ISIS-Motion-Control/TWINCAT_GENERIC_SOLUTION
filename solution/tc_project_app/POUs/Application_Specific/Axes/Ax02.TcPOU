@@ -36,7 +36,14 @@ END_IF
 //Permit
 GVL.astAxes[iAxisNumber].stInputs.bPermit := (SAFETY.SAMPLE_PERMIT AND NOT SAFETY.CollisionDetected) OR (SAFETY.SAMPLE_PERMIT AND (safety.inMode_Local OR safety.inMode_Maintenance));
 
-GVL.astAxes[iAxisNumber].stInputs.bAllowRemoteControl:= NOT SAFETY.inLocalMode;
+//Remote operation toggle
+IF SAFETY.inMode_Local THEN
+	GVL.astAxes[iAxisNumber].stInputs.bAllowRemoteControl:= FALSE;
+ELSIF SAFETY.inMode_Maintenance AND NOT SAFETY.maintenanceAllowRemote THEN
+	GVL.astAxes[iAxisNumber].stInputs.bAllowRemoteControl:= FALSE;
+ELSE
+	GVL.astAxes[iAxisNumber].stInputs.bAllowRemoteControl:= TRUE;
+END_IF
 
 //Do an automatic reset on regaining permit;
 IF SAFETY.SAMPLE_PERMIT_R_EDGE THEN

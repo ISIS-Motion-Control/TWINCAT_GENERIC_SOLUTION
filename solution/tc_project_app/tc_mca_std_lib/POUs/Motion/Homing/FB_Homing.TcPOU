@@ -15,6 +15,7 @@ VAR_INPUT
     fHomePosition: LREAL;
     fHomeFinishDistance: LREAL;
 	fHomeAbsPosition : LREAL;
+	bDoAbsoluteMove : BOOL;
 	fHomeMidRelativeMove : LREAL;
     stConfig: ST_AxisConfig;
 	stHomingConfig : ST_AxisHomingConfig;
@@ -35,6 +36,7 @@ VAR
     fbStepLimitSwitchPreparation: MC_StepLimitSwitchDetection;
     fbStepLimitSwitchDetection: MC_StepLimitSwitchDetection;
     fbStepAbsoluteSwitchDetection: MC_StepAbsoluteSwitchDetection;
+	fbStepAbsoluteSwitchPreparation: MC_StepAbsoluteSwitchDetection;
 	fbStepReferencePulsePreparation: MC_StepReferencePulseDetection;
     fbStepReferencePulseDetection: MC_StepReferencePulseDetection;
     fbStepBlockLagDetection: MC_StepBlockLagBasedDetection;
@@ -65,6 +67,7 @@ VAR
     fbExecute: R_TRIG;
     bViaLimitSwitch: BOOL;
 	bViaFastEncPulse : BOOL;
+	bViaFastRef : BOOL;
     eHomingState: (eWaitForRequest := 0, ePreparation := 1, eDetection := 2, eSetPos := 3, eFinishHoming := 4, eMoveRelative:=5, eAbsMove:=6, eAbortHoming := 20, eGoToFwd:=7, eGoToBwd:=8, eWaitForFwd:=9,eWaitForBwd:=10);
     iErrorId: UDINT;
     bDetectionFB_Execute: BOOL;
@@ -170,6 +173,8 @@ CASE eHomeSeq OF
         actHomeToLimit();
 
     E_HomingRoutines.eHomeToRef_Bwd,
+	E_HomingRoutines.eHomeToRef_Bwd_Fast,
+	E_HomingRoutines.eHomeToRef_Fwd_Fast,
     E_HomingRoutines.eHomeToRef_Fwd:
         actHomeToRef();
 
@@ -262,6 +267,8 @@ CASE eHomingState OF
             fbStepLimitSwitchPreparation.Execute := TRUE;
         ELSIF bViaFastEncPulse THEN
 			fbStepReferencePulsePreparation.Execute := TRUE;
+		ELSIF bViaFastRef THEN
+			fbStepAbsoluteSwitchPreparation.Execute:= TRUE;
 		ELSE
             eHomingState := eDetection;
         END_IF
@@ -284,8 +291,17 @@ CASE eHomingState OF
             	iErrorID := fbStepReferencePulsePreparation.ErrorID;
             	fbStepReferencePulsePreparation.Execute := FALSE;
             	eHomingState := eAbortHoming;
-        	END_IF
-			
+        	END_IF			
+		END_IF
+		IF bViaFastRef THEN
+			IF NOT fbStepAbsoluteSwitchPreparation.Busy AND fbStepAbsoluteSwitchPreparation.Done THEN
+            	fbStepAbsoluteSwitchPreparation.Execute := FALSE;
+            	eHomingState := eMoveRelative;
+        	ELSIF NOT fbStepAbsoluteSwitchPreparation.Busy AND (fbStepAbsoluteSwitchPreparation.Error OR fbStepAbsoluteSwitchPreparation.CommandAborted) THEN
+            	iErrorID := fbStepAbsoluteSwitchPreparation.ErrorID;
+            	fbStepAbsoluteSwitchPreparation.Execute := FALSE;
+            	eHomingState := eAbortHoming;
+        	END_IF			
 		END_IF
 		
 	eMoveRelative:
@@ -332,10 +348,10 @@ CASE eHomingState OF
         fbSetPos.Options.ClearPositionLag := TRUE;
         IF NOT fbSetPos.Busy AND fbSetPos.Done THEN
             fbSetPos.Execute := FALSE;
-			IF fHomeAbsPosition = 0 THEN
-				eHomingState := eFinishHoming;
+			IF bDoAbsoluteMove THEN
+				eHomingState := eAbsMove;
 			ELSE
-				 eHomingState := eAbsMove;
+				 eHomingState := eFinishHoming;
 			END_IF
 			
            
@@ -460,11 +476,13 @@ CASE eHomeSeq OF
         fbFinishHoming.Distance := fHomeFinishDistance;
         bViaLimitSwitch := FALSE;
 		bViaFastEncPulse:= FALSE;
+		bViaFastRef := FALSE;
     E_HomingRoutines.eHomeToEncPulse_Fwd:
         stDetectDirection := mcPositiveDirection;
         fbFinishHoming.Distance := -fHomeFinishDistance;
         bViaLimitSwitch := FALSE;
 		bViaFastEncPulse:= FALSE;
+		bViaFastRef := FALSE;
     E_HomingRoutines.eHomeToEncPulse_viaBwdLimit:
         stDetectDirection := mcPositiveDirection;
         fbFinishHoming.Distance := fHomeFinishDistance;
@@ -472,6 +490,7 @@ CASE eHomeSeq OF
         stLimitSwitchSignal.Level := NOT(bLimitBwd);
         bViaLimitSwitch := TRUE;
 		bViaFastEncPulse:= FALSE;
+		bViaFastRef := FALSE;
     E_HomingRoutines.eHomeToEncPulse_viaFwdLimit:
         stDetectDirection := mcNegativeDirection;
         fbFinishHoming.Distance := -fHomeFinishDistance;
@@ -479,12 +498,14 @@ CASE eHomeSeq OF
         stLimitSwitchSignal.Level := NOT(bLimitFwd);
         bViaLimitSwitch := TRUE;
 		bViaFastEncPulse:= FALSE;
+		bViaFastRef := FALSE;
 	
 	E_HomingRoutines.eHomeToEncPulse_BWD_FAST:
 		stDetectDirection := mcNegativeDirection;
         fbFinishHoming.Distance := fHomeFinishDistance;
         bViaLimitSwitch := FALSE;
 		bViaFastEncPulse:= TRUE;
+		bViaFastRef := FALSE;
 		fbMoveRelative.Distance:= ABS(fHomeMidRelativeMove);
 	
 	E_HomingRoutines.eHomeToEncPulse_FWD_FAST:
@@ -567,9 +588,33 @@ CASE eHomeSeq OF
     E_HomingRoutines.eHomeToRef_Bwd:
         stDetectDirection := mcNegativeDirection;
         fbFinishHoming.Distance := fHomeFinishDistance;
+		bViaFastRef := FALSE;
+		bViaLimitSwitch := FALSE;
+		bViaFastEncPulse:= FALSE;
+		
     E_HomingRoutines.eHomeToRef_Fwd:
         stDetectDirection := mcPositiveDirection;
         fbFinishHoming.Distance := -fHomeFinishDistance;
+		bViaFastRef := FALSE;
+		bViaLimitSwitch := FALSE;
+		bViaFastEncPulse:= FALSE;
+		
+	E_HomingRoutines.eHomeToRef_Bwd_Fast:
+        stDetectDirection := mcNegativeDirection;
+        fbFinishHoming.Distance := fHomeFinishDistance;
+		fbMoveRelative.Distance:= ABS(fHomeMidRelativeMove);
+		bViaFastRef := TRUE;
+		bViaLimitSwitch := FALSE;
+		bViaFastEncPulse:= FALSE;
+		
+    E_HomingRoutines.eHomeToRef_Fwd_Fast:
+        stDetectDirection := mcPositiveDirection;
+        fbFinishHoming.Distance := -fHomeFinishDistance;
+		fbMoveRelative.Distance:= -ABS(fHomeMidRelativeMove);
+		bViaFastRef := TRUE;
+		bViaLimitSwitch := FALSE;
+		bViaFastEncPulse:= FALSE;
+		
 END_CASE
 bViaLimitSwitch := FALSE;
 
@@ -591,6 +636,18 @@ fbStepAbsoluteSwitchDetection(
     Error => bDetectionFB_Error,
     ErrorID => nDetectionFB_ErrorID,
     RecordedPosition => fRecordedPosition);
+	
+fbStepAbsoluteSwitchPreparation.Options.DisableDriveAccess := stOptions.DisableDriveAccess;
+fbStepAbsoluteSwitchPreparation(
+    Axis := AxisRef,
+    Parameter := stHomingParameter,
+    Direction := stDetectDirection,
+    SwitchMode := eRefSwitchMode,
+    ReferenceSignal := stRefSwitchSignal,
+    Velocity := fVelocityToCam,
+    PositiveLimitSwitch := NOT(bLimitFwd),
+    NegativeLimitSwitch := NOT(bLimitBwd),
+    Options := stOptions);
 ]]></ST>
       </Implementation>
     </Action>

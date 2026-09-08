@@ -983,7 +983,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{FB261665-FD20-4BF2-97F8-2854C82B752D}" Name="tc_project_app" PrjFilePath="..\..\tc_project_app\tc_project_app.plcproj" TmcFilePath="..\..\tc_project_app\tc_project_app.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" ClearInvalidPersist="true" SymbolicMapping="true">
-		<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{4C3996F1-94C1-16F4-D3B9-4843AB77A81C}" TmcPath="tc_project_app\tc_project_app.tmc">
+		<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{5136B189-D583-5BB8-9CEE-E049EBE3B203}" TmcPath="tc_project_app\tc_project_app.tmc">
 			<Name>tc_project_app Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="8" AreaNo="4">
@@ -4539,6 +4539,8 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^SAFETY.MS4.Ch2" VarB="Connection Info Data^Message_68 Info Data^Input Safe Data MS4_In2"/>
 				<Link VarA="PlcTask Inputs^SAFETY.MS4.Output" VarB="StandardInputs^Standard Out Var 107" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.MS4.inError" VarB="StandardInputs^Standard Out Var 14" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS5.Ch1" VarB="Connection Info Data^Message_69 Info Data^Input Safe Data MS5_In1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.MS5.Ch2" VarB="Connection Info Data^Message_69 Info Data^Input Safe Data MS5_In2"/>
 				<Link VarA="PlcTask Inputs^SAFETY.MS5.Output" VarB="StandardInputs^Standard Out Var 108" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.MS5.inError" VarB="StandardInputs^Standard Out Var 15" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.MS6.Ch1" VarB="Connection Info Data^Message_71 Info Data^Input Safe Data Pendant_MS6_In1"/>
@@ -4561,12 +4563,15 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^SAFETY.PendantEnable.Output" VarB="StandardInputs^Standard Out Var 111" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.PendantEnable.inError" VarB="StandardInputs^Standard Out Var 37" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.PendantMuted" VarB="StandardInputs^Standard Out Var 56" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.Q1" VarB="Connection Info Data^Message_76 Info Data^Output Safe Data Q1_Out" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.Q1Q2" VarB="Connection Info Data^Message_72 Info Data^Input Safe Data Q1_Q2_In" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.Q2" VarB="Connection Info Data^Message_77 Info Data^Output Safe Data Q2_Out" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.Q3" VarB="Connection Info Data^Message_76 Info Data^Output Safe Data Q3_Out" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.Q3Q4" VarB="Connection Info Data^Message_73 Info Data^Input Safe Data Q3_Q4_In" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.Q4" VarB="Connection Info Data^Message_77 Info Data^Output Safe Data Q4_Out" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.RCU" VarB="Connection Info Data^Message_80 Info Data^Output Safe Data RCU_Out" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.SAMPLE_MOTION_PERMIT" VarB="StandardInputs^Standard Out Var 59" Size="1"/>
+				<Link VarA="PlcTask Inputs^SAFETY.SB1" VarB="Connection Info Data^Message_76 Info Data^Output Safe Data SB1_Out" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.SB2" VarB="Connection Info Data^Message_77 Info Data^Output Safe Data SB2_Out" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.SLS_Muted" VarB="StandardInputs^Standard Out Var 46" Size="1"/>
 				<Link VarA="PlcTask Inputs^SAFETY.SPB1" VarB="Connection Info Data^Message_73 Info Data^Input Safe Data SPB1_In" Size="1"/>

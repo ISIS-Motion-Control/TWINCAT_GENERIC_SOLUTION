@@ -11,6 +11,7 @@ STRUCT
 	
 	bGoToFwdFirst : BOOL; //Takes priority over bwd bool, optional command to go to fwd limit before homing
 	bGoToBwdFirst : BOOL; //optional command to go to bwd limit before homing
+	bDoAbsoluteMoveAtEnd : BOOL;
 	
 	
 	//General Advanced Homing Configuration

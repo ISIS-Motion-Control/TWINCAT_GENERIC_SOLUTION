@@ -18,7 +18,7 @@ END_VAR
       <ST><![CDATA[//Initial parameters of an Axis
 IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
     //Initial default values:
-    GVL.astAxes[iAxisNumber].stHomingConfig.eHomeSeq :=E_HomingRoutines.eHomeToRef_Bwd;
+    GVL.astAxes[iAxisNumber].stHomingConfig.eHomeSeq :=E_HomingRoutines.eNoHoming;//Abs offset of -18.2997
     GVL.astAxes[iAxisNumber].stHomingConfig.fHomePosition := 0.0;
     GVL.astAxes[iAxisNumber].stHomingConfig.fHomeFinishDistance := 0.0;
     GVL.astAxes[iAxisNumber].stConfig.eRestorePosition := E_RestorePosition.eRestoreWithoutHome;
@@ -30,7 +30,14 @@ IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
 	GVL.astAxes[iAxisNumber].stDescription.sUnits:= 'deg';
 END_IF
 
-GVL.astAxes[iAxisNumber].stInputs.bAllowRemoteControl:= NOT SAFETY.inLocalMode;
+//Remote operation toggle
+IF SAFETY.inMode_Local THEN
+	GVL.astAxes[iAxisNumber].stInputs.bAllowRemoteControl:= FALSE;
+ELSIF SAFETY.inMode_Maintenance AND NOT SAFETY.maintenanceAllowRemote THEN
+	GVL.astAxes[iAxisNumber].stInputs.bAllowRemoteControl:= FALSE;
+ELSE
+	GVL.astAxes[iAxisNumber].stInputs.bAllowRemoteControl:= TRUE;
+END_IF
 
 //Permit
 GVL.astAxes[iAxisNumber].stInputs.bPermit := (SAFETY.SAMPLE_PERMIT AND NOT SAFETY.CollisionDetected) OR (SAFETY.SAMPLE_PERMIT AND (safety.inMode_Local OR safety.inMode_Maintenance));

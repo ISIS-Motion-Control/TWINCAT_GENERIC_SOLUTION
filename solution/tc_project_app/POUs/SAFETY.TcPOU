@@ -149,6 +149,7 @@ SafetyTargets : ARRAY [1..7] OF ST_SafetyTargetDevice:=
 	bStartWindowsCommand : BOOL;
 	searchRTrig : R_TRIG;
 	collisionDetectedRTrig : R_Trig;
+	maintenanceAllowRemote : BOOL:= FALSE;
 	
 END_VAR
 VAR_OUTPUT

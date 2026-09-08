@@ -1434,7 +1434,7 @@ External Setpoint Generation:
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="19">
-			<EncPara ScaleFactorNumerator="5e-05" Offset="535.4036" Inverse="true" MaxCount="#xffffffff" ReferenceSystem="1">
+			<EncPara ScaleFactorNumerator="5e-05" Offset="547.463" Inverse="true" MaxCount="#xffffffff" ReferenceSystem="1">
 				<FilterTime TVelo="0.02"/>
 				<Inc RefSoftSyncMask="#x03ffffff"/>
 			</EncPara>

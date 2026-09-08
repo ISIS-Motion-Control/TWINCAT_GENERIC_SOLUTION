@@ -384,6 +384,7 @@ fbHome.fHomeMidRelativeMove := _stAxis.stHomingConfig.fHomeMidRelativeMove;
 fbHome.bGoToBwdLimitFirst:= _stAxis.stHomingConfig.bGoToBwdFirst;
 fbHome.bGoToFwdLimitFirst:= _stAxis.stHomingConfig.bGoToFwdFirst;
 fbHome.fFastVelocity:= _stAxis.stControl.fVelocity;
+fbHome.bDoAbsoluteMove:= _stAxis.stHomingConfig.bDoAbsoluteMoveAtEnd;
 
 fbHome(
 	AxisRef:= _stAxis.Axis,

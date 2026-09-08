@@ -23,8 +23,9 @@ END_VAR
       <ST><![CDATA[//Initial parameters of an Axis
 IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
     //Initial default values:
-    GVL.astAxes[iAxisNumber].stHomingConfig.eHomeSeq := E_HomingRoutines.eHomeToRef_Fwd ;
-    GVL.astAxes[iAxisNumber].stHomingConfig.fHomePosition := 0.0;
+    GVL.astAxes[iAxisNumber].stHomingConfig.eHomeSeq := E_HomingRoutines.eHomeToRef_Fwd_Fast;
+	GVL.astAxes[iAxisNumber].stHomingConfig.fHomeMidRelativeMove := 4;
+    GVL.astAxes[iAxisNumber].stHomingConfig.fHomePosition := -29.862;
     GVL.astAxes[iAxisNumber].stHomingConfig.fHomeFinishDistance := 0.0;
     GVL.astAxes[iAxisNumber].stConfig.eRestorePosition := E_RestorePosition.eRestoreWithoutHome;
 	GVL.astAxes[iAxisNumber].stControl.bAutoEnableDisable := TRUE;
