@@ -143,15 +143,12 @@ GVL.fbGetCurTaskIndex();
 
 //Axes initial parameters and program
 //Axis_Template();
-//Axis_1();
-//GROUP_3();
+//Group_Template();
 //Pneumatics_Template();
 
 //Application program calls
 //Application_Template();
 
-//Safety initial parameters and program
-//Safety_Template();
 
 
 Axis1();

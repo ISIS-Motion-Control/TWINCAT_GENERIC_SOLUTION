@@ -197,7 +197,7 @@ IF (_stAxis.stControl.eCommand = E_MotionFunctions.eMoveAbsolute AND _stAxis.stI
 ELSIF _stAxis.stControl.bExecute THEN
 	ADSLOGSTR(
 		msgCtrlMask := ADSLOG_MSGTYPE_ERROR,
-		msgFmtStr := 'To do that move you must set stInputs.bAllowRemoteControl to the opposite of %s',
+		msgFmtStr := 'To move you must set stInputs.bAllowRemoteControl to the opposite of %s',
 		strArg := BOOL_TO_STRING(_stAxis.stInputs.bAllowRemoteControl)
 	);	
 END_IF
