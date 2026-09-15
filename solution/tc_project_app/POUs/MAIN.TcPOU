@@ -6,16 +6,9 @@ VAR
 	run1 : BOOL;
 	run2 : BOOL;
 
-	//TEMP
-	RUN AT %Q* : BOOL:= TRUE;
-	ErrAck AT %Q* : BOOL;
-	//TEMP
-	allowRemote : BOOL; //IBEX LOCKOUT
     sVersion: STRING := '1.0.0';
     aIAxes: ARRAY [1..GVL_APP.nAXIS_NUM] OF I_Axis;
     afbAxes: ARRAY [1..GVL_APP.nAXIS_NUM] OF FB_Axis;
-	aISafety: ARRAY [1..GVL_APP.nSAFETY_NUM] OF I_Safety;
-	afbSafety: ARRAY [1..GVL_APP.nSAFETY_NUM] OF FB_Safety;
     afbPneumaticAxes: ARRAY [1..GVL_APP.nPNEUMATIC_AXIS_NUM] OF FB_PneumaticAxis;
     hmiAxisSelection: INT := 1; //Not possible to use local hmi variables for array indexes
     hmiPneumaticAxisSelection: INT := 1;
@@ -160,68 +153,9 @@ GVL.fbGetCurTaskIndex();
 //Safety initial parameters and program
 //Safety_Template();
 
-//Incident Slits
-Ax01();
-Ax02();
-Ax03();
-Ax04();
-Ax05();
-Ax06();
 
-//Sample Stack
-Ax07();
-Ax08();
-Ax09();
-Ax10();
-Ax11();
-
-//Camera
-Ax13();
-Ax14();
-Ax15();
-
-Ax16();
-Ax17();
-Ax18();
-Ax19();
-Ax20();
-Ax21();
-
-//Pinhole selector
-Ax22();
-
-//Monitor 5
-Ax23();
-
-//Slit 1
-Ax24();
-Ax25();
-Ax26();
-Ax27();
-
-//Slit 2
-Ax28();
-Ax29();
-Ax30();
-Ax31();
-
-//Slit 3
-Ax32();
-Ax33();
-Ax34();
-Ax35();
-
-//Slit 4
-Ax36();
-Ax37();
-Ax38();
-Ax39();
-
-//Slit 5
-Ax40();
-Ax41();
-Ax42();
-Ax43();]]></ST>
+Axis1();
+]]></ST>
       </Implementation>
     </Action>
     <Action Name="RESTORE_POSITIONS" Id="{0c7ee537-7bd9-4833-b428-c17cbb57e893}" FolderPath="POSITION_RECOVERY\">
@@ -393,28 +327,6 @@ IF bRestoreExecute AND NOT bPositionRestoreDone THEN
             END_FOR
     END_CASE
 END_IF
-]]></ST>
-      </Implementation>
-    </Action>
-    <Action Name="SAFETY" Id="{54c1d7d9-4cc5-4099-8c99-7400b13aa18b}">
-      <Implementation>
-        <ST><![CDATA[//First cycle, assign FB_axis to interface array
-IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
-    FOR GVL.iSafety := 1 TO GVL_APP.nSAFETY_NUM DO
-		afbSafety[GVL.iSafety].stSafety REF= astSafety[GVL.iSafety];
-        aISafety[GVL.iSafety] := afbSafety[GVL.iSafety];
-    END_FOR
-    //Custom safety types defined and linked to aiSafety here
-      //FB_CustomSafety extends FB_Safety
-        //aISafety[x] := fbCustomSafety;
-
-END_IF
-
-//Execute FB_Safety logic if there is any
-FOR GVL.iSafety := 1 TO GVL_APP.nSAFETY_NUM DO
-    aISafety[GVL.iSafety].Run();
-END_FOR
-
 ]]></ST>
       </Implementation>
     </Action>

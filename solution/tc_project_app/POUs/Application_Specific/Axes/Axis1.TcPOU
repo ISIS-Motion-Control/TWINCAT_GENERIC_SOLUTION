@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
-  <POU Name="Ax42" Id="{a9985aae-2106-48f0-8a20-bc82593a4b09}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM Ax42
+  <POU Name="Axis1" Id="{f9d90818-737e-4f74-b25b-e6117c0ecfa0}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Axis1
 VAR
-	iAxisNumber : INT := E_AxisNames.Slit_5_East;
-	iGroupNumber : INT := 3;
+	iAxisNumber : INT := E_AxisNames.Axis1;
+	iGroupNumber : INT := 1;
 	
 	stoRTrig : R_Trig;
 	
@@ -13,21 +13,17 @@ VAR
 	resetDelay : TON;
 	startDisable : BOOL;
 	disableDelay : TON;
-
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[//Initial parameters of an Axis
 IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
     //Initial default values:
-    GVL.astAxes[iAxisNumber].stHomingConfig.eHomeSeq :=E_HomingRoutines.eHomeToEncPulse_BWD_FAST;
-	GVL.astAxes[iAxisNumber].stHomingConfig.bGoToFwdFirst := TRUE;
-	GVL.astAxes[iAxisNumber].stHomingConfig.fHomeAbsPosition:= 50;
-	GVL.astAxes[iAxisNumber].stHomingConfig.bDoAbsoluteMoveAtEnd:= TRUE;
+    GVL.astAxes[iAxisNumber].stHomingConfig.eHomeSeq :=E_HomingRoutines.eHomeToEncPulse_viaBwdLimit;
+	GVL.astAxes[iAxisNumber].stHomingConfig.fHomeAbsPosition:= 0;
 	GVL.astAxes[iAxisNumber].stHomingConfig.fHomeMidRelativeMove:=1;
-    GVL.astAxes[iAxisNumber].stHomingConfig.fHomePosition := 56.494;
+    GVL.astAxes[iAxisNumber].stHomingConfig.fHomePosition := 0;
     GVL.astAxes[iAxisNumber].stHomingConfig.fHomeFinishDistance := 0.0;
-	GVL.astAxes[iAxisNumber].stHomingConfig.bGoToBwdFirst := TRUE;
     GVL.astAxes[iAxisNumber].stConfig.eRestorePosition := E_RestorePosition.eRestoreWithoutHome;
 	GVL.astAxes[iAxisNumber].stControl.bAutoEnableDisable := TRUE;
 	GVL.astAxes[iAxisNumber].stControl.tMoveFinishedDelay := T#0.1S;
@@ -37,13 +33,22 @@ IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
 	GVL.astAxes[iAxisNumber].stDescription.sUnits:= 'mm';
 END_IF
 
-GVL.astAxes[iAxisNumber].stInputs.bAllowRemoteControl:= TRUE;
-
 //Permit
-GVL.astAxes[iAxisNumber].stInputs.bPermit := SAFETY.NON_SAMPLE_PERMIT;
+GVL.astAxes[iAxisNumber].stInputs.bPermit := TRUE; //(SAFETY.SAMPLE_PERMIT AND NOT SAFETY.CollisionDetected) OR (SAFETY.SAMPLE_PERMIT AND (safety.inMode_Local OR safety.inMode_Maintenance));
+
+//Remote operation toggle
+(*
+IF SAFETY.inMode_Local THEN
+	GVL.astAxes[iAxisNumber].stInputs.bAllowRemoteControl:= FALSE;
+ELSIF SAFETY.inMode_Maintenance AND NOT SAFETY.maintenanceAllowRemote THEN
+	GVL.astAxes[iAxisNumber].stInputs.bAllowRemoteControl:= FALSE;
+ELSE
+	GVL.astAxes[iAxisNumber].stInputs.bAllowRemoteControl:= TRUE;
+END_IF*)
 
 //Do an automatic reset on regaining permit;
-IF SAFETY.NON_SAMPLE_PERMIT_R_EDGE THEN
+(*
+IF SAFETY.SAMPLE_PERMIT_R_EDGE THEN
 	startReset:= TRUE;
 END_IF
 resetDelay(IN:= startReset, PT:= T#0.5S);
@@ -51,9 +56,11 @@ IF resetDelay.Q THEN
 	startReset := FALSE;
 	GVL.astAxes[iAxisNumber].stControl.bReset:= TRUE;
 END_IF
+*)
 
 //Disable axis if no permit
-IF SAFETY.STOP_NON_SAMPLE_MOTION THEN
+(*
+IF SAFETY.STOP_MOTION THEN
 	startDisable := TRUE;
 END_IF
 disableDelay(IN:= startDisable, PT:= T#1S);
@@ -61,9 +68,15 @@ IF disableDelay.Q THEN
 	startDisable:= FALSE;
 	GVL.astAxes[iAxisNumber].stControl.bEnable:= FALSE;
 END_IF
+*)
+
 
 //Safety stop motion
-IF SAFETY.STOP_NON_SAMPLE_MOTION THEN
+(*
+IF SAFETY.STOP_MOTION THEN
+	GVL.astAxes[iAxisNumber].stControl.bHalt:= TRUE;
+END_IF
+IF SAFETY.collisionDetected_R_Edge THEN
 	GVL.astAxes[iAxisNumber].stControl.bHalt:= TRUE;
 END_IF
 
@@ -71,13 +84,8 @@ stoRTrig(CLK:=GVL.astAxes[iAxisNumber].stStatus.bSTOActive);
 IF stoRTrig.Q THEN
 	GVL.astAxes[iAxisNumber].stControl.bReset:= TRUE;
 END_IF
+*)
 
-
-
-
-//Define ACTIONS() or write exclusive code for an specific axis.
-(*Eg. Stop when temperature reaches certain values, reduce speed if  a signal is activated, etc.
-Eg. GVL.astAxes[x].stControl.bInterlockFwd := NOT bInterlockFwdOK;*)
 ]]></ST>
     </Implementation>
   </POU>

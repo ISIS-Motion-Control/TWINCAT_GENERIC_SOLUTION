@@ -983,7 +983,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{FB261665-FD20-4BF2-97F8-2854C82B752D}" Name="tc_project_app" PrjFilePath="..\..\tc_project_app\tc_project_app.plcproj" TmcFilePath="..\..\tc_project_app\tc_project_app.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" ClearInvalidPersist="true" SymbolicMapping="true">
-		<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{5136B189-D583-5BB8-9CEE-E049EBE3B203}" TmcPath="tc_project_app\tc_project_app.tmc">
+		<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{58E41762-99C5-0D80-5DE9-73FF6F254DA7}" TmcPath="tc_project_app\tc_project_app.tmc">
 			<Name>tc_project_app Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="8" AreaNo="4">
@@ -1006,774 +1006,9 @@ External Setpoint Generation:
 					<Type>BOOL</Type>
 					<InOut>7</InOut>
 				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[2].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[2].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[2].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[3].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[3].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[3].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[4].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[4].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[4].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[5].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[5].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[5].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[6].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[6].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[6].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[7].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[7].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[7].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[8].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[8].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[8].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[9].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[9].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[9].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[10].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[10].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[10].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[11].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[11].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[11].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[12].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[12].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[12].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[13].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[13].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[13].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[14].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[14].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[14].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[15].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[15].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[15].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[16].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[16].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[16].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[17].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[17].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[17].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[18].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[18].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[18].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[19].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[19].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[19].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[20].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[20].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[20].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[21].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[21].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[21].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[22].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[22].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[22].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[23].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[23].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[23].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[24].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[24].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[24].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[25].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[25].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[25].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[26].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[26].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[26].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[27].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[27].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[27].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[28].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[28].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[28].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[29].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[29].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[29].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[30].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[30].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[30].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[31].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[31].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[31].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[32].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[32].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[32].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[33].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[33].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[33].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[34].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[34].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[34].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[35].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[35].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[35].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[36].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[36].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[36].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[37].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[37].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[37].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[38].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[38].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[38].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[39].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[39].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[39].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[40].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[40].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[40].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[41].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[41].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[41].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[42].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[42].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[42].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[43].fPositionAtShutdown</Name>
-					<Comment><![CDATA[The position that the axis was at when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[43].fEncoderBiasAtShutdown</Name>
-					<Comment><![CDATA[Encoder position BIAS value when CPU shut down]]></Comment>
-					<Type>LREAL</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>GVL.astAxesPersistent[43].bMovingAtShutdown</Name>
-					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
 			</Vars>
 			<Vars VarGrpType="2" AreaNo="1">
 				<Name>PlcTask Outputs</Name>
-				<Var>
-					<Name>MAIN.RUN</Name>
-					<Comment><![CDATA[TEMP]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.ErrAck</Name>
-					<Type>BOOL</Type>
-				</Var>
 				<Var>
 					<Name>SAFETY.RUN</Name>
 					<Type>BOOL</Type>
@@ -1912,183 +1147,7 @@ External Setpoint Generation:
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>Ax13.encoderPower</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>Ax13.LASER_ON</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>GVL.astAxes[1].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[2].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[3].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[4].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[5].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[6].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[7].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[8].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[9].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[10].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[11].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[12].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[13].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[14].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[15].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[16].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[17].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[18].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[19].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[20].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[21].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[22].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[23].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[24].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[25].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[26].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[27].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[28].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[29].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[30].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[31].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[32].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[33].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[34].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[35].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[36].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[37].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[38].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[39].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[40].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[41].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[42].Axis.PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[43].Axis.PlcToNc</Name>
 					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 			</Vars>
@@ -3306,16 +2365,6 @@ External Setpoint Generation:
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>Ax22.HomeSw_LowPrecision</Name>
-					<Comment><![CDATA[Switch]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>Ax22.HomeSw_HighPrecision</Name>
-					<Comment><![CDATA[Fibre]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>GVL.astAxes[1].stStatus.bSTOActive</Name>
 					<Type>BOOL</Type>
 				</Var>
@@ -3337,888 +2386,6 @@ External Setpoint Generation:
 					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>GVL.astAxes[2].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[2].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[2].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[2].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[2].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[3].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[3].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[3].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[3].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[3].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[4].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[4].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[4].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[4].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[4].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[5].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[5].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[5].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[5].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[5].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[6].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[6].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[6].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[6].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[6].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[7].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[7].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[7].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[7].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[7].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[8].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[8].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[8].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[8].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[8].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[9].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[9].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[9].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[9].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[9].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[10].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[10].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[10].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[10].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[10].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[11].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[11].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[11].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[11].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[11].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[12].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[12].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[12].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[12].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[12].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[13].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[13].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[13].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[13].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[13].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[14].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[14].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[14].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[14].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[14].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[15].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[15].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[15].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[15].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[15].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[16].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[16].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[16].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[16].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[16].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[17].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[17].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[17].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[17].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[17].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[18].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[18].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[18].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[18].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[18].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[19].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[19].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[19].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[19].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[19].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[20].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[20].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[20].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[20].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[20].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[21].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[21].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[21].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[21].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[21].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[22].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[22].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[22].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[22].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[22].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[23].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[23].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[23].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[23].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[23].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[24].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[24].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[24].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[24].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[24].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[25].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[25].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[25].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[25].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[25].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[26].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[26].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[26].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[26].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[26].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[27].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[27].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[27].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[27].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[27].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[28].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[28].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[28].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[28].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[28].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[29].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[29].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[29].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[29].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[29].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[30].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[30].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[30].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[30].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[30].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[31].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[31].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[31].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[31].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[31].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[32].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[32].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[32].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[32].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[32].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[33].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[33].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[33].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[33].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[33].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[34].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[34].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[34].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[34].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[34].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[35].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[35].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[35].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[35].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[35].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[36].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[36].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[36].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[36].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[36].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[37].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[37].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[37].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[37].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[37].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[38].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[38].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[38].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[38].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[38].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[39].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[39].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[39].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[39].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[39].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[40].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[40].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[40].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[40].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[40].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[41].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[41].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[41].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[41].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[41].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[42].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[42].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[42].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[42].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[42].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[43].stStatus.bSTOActive</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[43].stInputs.bLimitFwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[43].stInputs.bLimitBwd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[43].stInputs.bHomeSensor</Name>
-					<Comment><![CDATA[Reference signal for homing]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.astAxes[43].Axis.NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
 					<Name>KeTop.enSwitch1</Name>
 					<Type>BOOL</Type>
 				</Var>
@@ -4231,6 +2398,326 @@ External Setpoint Generation:
 				<OwnerA Name="OutputSrc" Prefix="TIPC^tc_project_app^tc_project_app Instance" Type="2">
 					<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 1">
 						<Link VarA="MAIN.encPosition" TypeA="DINT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000009}" VarB="Enc^Inputs^In^nDataIn1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+				</OwnerA>
+			</UnrestoredVarLinks>
+			<UnrestoredVarLinks ImportTime="2026-09-14T10:36:49">
+				<OwnerA Name="PlcTask Retains" Prefix="TIPC^tc_project_app^tc_project_app Instance" Type="8">
+					<OwnerB Name="TIID^Device 6 (NOV-DP-RAM)^Box 140 (Retain Handler)">
+						<Link VarA="GVL.astAxesPersistent[10].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[10].fEncoderBiasAtShutdown_[852]" IdB="24660" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[10].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[10].fPositionAtShutdown_[852]" IdB="24659" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[11].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[11].bMovingAtShutdown_[852]" IdB="24664" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[11].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[11].fEncoderBiasAtShutdown_[852]" IdB="24663" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[11].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[11].fPositionAtShutdown_[852]" IdB="24662" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[12].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[12].bMovingAtShutdown_[852]" IdB="24667" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[12].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[12].fEncoderBiasAtShutdown_[852]" IdB="24666" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[12].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[12].fPositionAtShutdown_[852]" IdB="24665" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[13].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[13].bMovingAtShutdown_[852]" IdB="24670" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[13].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[13].fEncoderBiasAtShutdown_[852]" IdB="24669" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[13].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[13].fPositionAtShutdown_[852]" IdB="24668" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[14].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[14].bMovingAtShutdown_[852]" IdB="24673" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[14].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[14].fEncoderBiasAtShutdown_[852]" IdB="24672" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[14].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[14].fPositionAtShutdown_[852]" IdB="24671" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[15].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[15].bMovingAtShutdown_[852]" IdB="24676" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[15].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[15].fEncoderBiasAtShutdown_[852]" IdB="24675" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[15].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[15].fPositionAtShutdown_[852]" IdB="24674" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[16].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[16].bMovingAtShutdown_[852]" IdB="24679" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[16].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[16].fEncoderBiasAtShutdown_[852]" IdB="24678" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[16].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[16].fPositionAtShutdown_[852]" IdB="24677" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[17].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[17].bMovingAtShutdown_[852]" IdB="24682" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[17].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[17].fEncoderBiasAtShutdown_[852]" IdB="24681" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[17].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[17].fPositionAtShutdown_[852]" IdB="24680" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[18].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[18].bMovingAtShutdown_[852]" IdB="24685" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[18].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[18].fEncoderBiasAtShutdown_[852]" IdB="24684" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[18].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[18].fPositionAtShutdown_[852]" IdB="24683" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[19].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[19].bMovingAtShutdown_[852]" IdB="24688" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[19].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[19].fEncoderBiasAtShutdown_[852]" IdB="24687" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[19].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[19].fPositionAtShutdown_[852]" IdB="24686" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[20].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[20].bMovingAtShutdown_[852]" IdB="24691" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[20].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[20].fEncoderBiasAtShutdown_[852]" IdB="24690" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[20].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[20].fPositionAtShutdown_[852]" IdB="24689" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[21].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[21].bMovingAtShutdown_[852]" IdB="24694" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[21].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[21].fEncoderBiasAtShutdown_[852]" IdB="24693" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[21].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[21].fPositionAtShutdown_[852]" IdB="24692" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[22].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[22].bMovingAtShutdown_[852]" IdB="24697" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[22].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[22].fEncoderBiasAtShutdown_[852]" IdB="24696" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[22].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[22].fPositionAtShutdown_[852]" IdB="24695" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[23].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[23].bMovingAtShutdown_[852]" IdB="24700" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[23].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[23].fEncoderBiasAtShutdown_[852]" IdB="24699" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[23].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[23].fPositionAtShutdown_[852]" IdB="24698" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[24].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[24].bMovingAtShutdown_[852]" IdB="24703" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[24].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[24].fEncoderBiasAtShutdown_[852]" IdB="24702" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[24].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[24].fPositionAtShutdown_[852]" IdB="24701" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[25].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[25].bMovingAtShutdown_[852]" IdB="24706" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[25].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[25].fEncoderBiasAtShutdown_[852]" IdB="24705" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[25].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[25].fPositionAtShutdown_[852]" IdB="24704" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[26].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[26].bMovingAtShutdown_[852]" IdB="24709" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[26].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[26].fEncoderBiasAtShutdown_[852]" IdB="24708" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[26].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[26].fPositionAtShutdown_[852]" IdB="24707" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[27].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[27].bMovingAtShutdown_[852]" IdB="24712" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[27].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[27].fEncoderBiasAtShutdown_[852]" IdB="24711" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[27].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[27].fPositionAtShutdown_[852]" IdB="24710" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[28].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[28].bMovingAtShutdown_[852]" IdB="24715" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[28].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[28].fEncoderBiasAtShutdown_[852]" IdB="24714" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[28].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[28].fPositionAtShutdown_[852]" IdB="24713" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[29].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[29].bMovingAtShutdown_[852]" IdB="24718" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[29].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[29].fEncoderBiasAtShutdown_[852]" IdB="24717" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[29].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[29].fPositionAtShutdown_[852]" IdB="24716" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[2].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[2].bMovingAtShutdown_[852]" IdB="24637" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[2].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[2].fEncoderBiasAtShutdown_[852]" IdB="24636" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[2].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[2].fPositionAtShutdown_[852]" IdB="24635" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[30].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[30].bMovingAtShutdown_[852]" IdB="24721" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[30].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[30].fEncoderBiasAtShutdown_[852]" IdB="24720" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[30].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[30].fPositionAtShutdown_[852]" IdB="24719" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[31].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[31].bMovingAtShutdown_[852]" IdB="24724" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[31].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[31].fEncoderBiasAtShutdown_[852]" IdB="24723" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[31].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[31].fPositionAtShutdown_[852]" IdB="24722" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[32].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[32].bMovingAtShutdown_[852]" IdB="24727" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[32].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[32].fEncoderBiasAtShutdown_[852]" IdB="24726" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[32].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[32].fPositionAtShutdown_[852]" IdB="24725" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[33].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[33].bMovingAtShutdown_[852]" IdB="24730" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[33].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[33].fEncoderBiasAtShutdown_[852]" IdB="24729" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[33].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[33].fPositionAtShutdown_[852]" IdB="24728" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[34].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[34].bMovingAtShutdown_[852]" IdB="24733" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[34].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[34].fEncoderBiasAtShutdown_[852]" IdB="24732" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[34].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[34].fPositionAtShutdown_[852]" IdB="24731" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[35].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[35].bMovingAtShutdown_[852]" IdB="24736" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[35].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[35].fEncoderBiasAtShutdown_[852]" IdB="24735" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[35].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[35].fPositionAtShutdown_[852]" IdB="24734" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[36].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[36].bMovingAtShutdown_[852]" IdB="24739" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[36].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[36].fEncoderBiasAtShutdown_[852]" IdB="24738" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[36].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[36].fPositionAtShutdown_[852]" IdB="24737" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[37].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[37].bMovingAtShutdown_[852]" IdB="24742" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[37].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[37].fEncoderBiasAtShutdown_[852]" IdB="24741" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[37].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[37].fPositionAtShutdown_[852]" IdB="24740" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[38].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[38].bMovingAtShutdown_[852]" IdB="24745" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[38].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[38].fEncoderBiasAtShutdown_[852]" IdB="24744" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[38].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[38].fPositionAtShutdown_[852]" IdB="24743" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[39].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[39].bMovingAtShutdown_[852]" IdB="24748" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[39].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[39].fEncoderBiasAtShutdown_[852]" IdB="24747" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[39].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[39].fPositionAtShutdown_[852]" IdB="24746" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[3].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[3].bMovingAtShutdown_[852]" IdB="24640" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[3].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[3].fEncoderBiasAtShutdown_[852]" IdB="24639" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[3].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[3].fPositionAtShutdown_[852]" IdB="24638" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[40].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[40].bMovingAtShutdown_[852]" IdB="24751" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[40].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[40].fEncoderBiasAtShutdown_[852]" IdB="24750" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[40].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[40].fPositionAtShutdown_[852]" IdB="24749" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[41].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[41].bMovingAtShutdown_[852]" IdB="24754" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[41].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[41].fEncoderBiasAtShutdown_[852]" IdB="24753" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[41].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[41].fPositionAtShutdown_[852]" IdB="24752" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[42].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[42].bMovingAtShutdown_[852]" IdB="24757" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[42].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[42].fEncoderBiasAtShutdown_[852]" IdB="24756" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[42].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[42].fPositionAtShutdown_[852]" IdB="24755" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[43].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[43].bMovingAtShutdown_[852]" IdB="24760" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[43].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[43].fEncoderBiasAtShutdown_[852]" IdB="24759" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[43].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[43].fPositionAtShutdown_[852]" IdB="24758" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[4].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[4].bMovingAtShutdown_[852]" IdB="24643" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[4].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[4].fEncoderBiasAtShutdown_[852]" IdB="24642" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[4].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[4].fPositionAtShutdown_[852]" IdB="24641" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[5].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[5].bMovingAtShutdown_[852]" IdB="24646" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[5].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[5].fEncoderBiasAtShutdown_[852]" IdB="24645" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[5].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[5].fPositionAtShutdown_[852]" IdB="24644" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[6].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[6].bMovingAtShutdown_[852]" IdB="24649" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[6].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[6].fEncoderBiasAtShutdown_[852]" IdB="24648" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[6].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[6].fPositionAtShutdown_[852]" IdB="24647" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[7].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[7].bMovingAtShutdown_[852]" IdB="24652" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[7].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[7].fEncoderBiasAtShutdown_[852]" IdB="24651" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[7].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[7].fPositionAtShutdown_[852]" IdB="24650" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[8].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[8].bMovingAtShutdown_[852]" IdB="24655" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[8].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[8].fEncoderBiasAtShutdown_[852]" IdB="24654" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[8].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[8].fPositionAtShutdown_[852]" IdB="24653" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[9].bMovingAtShutdown" TypeA="BOOL" InOutA="7" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Retains^GVL.astAxesPersistent[9].bMovingAtShutdown_[852]" IdB="24658" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[9].fEncoderBiasAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[9].fEncoderBiasAtShutdown_[852]" IdB="24657" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxesPersistent[9].fPositionAtShutdown" TypeA="LREAL" InOutA="7" GuidA="{18071995-0000-0000-0000-00000000000E}" VarB="Retains^GVL.astAxesPersistent[9].fPositionAtShutdown_[852]" IdB="24656" AutoLink="true" PeerAutoLink="true" RestoreInfo="ANotFound"/>
+					</OwnerB>
+				</OwnerA>
+				<OwnerA Name="InputDst" Prefix="TIPC^tc_project_app^tc_project_app Instance" Type="1">
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR1-BC1^MR1-DI2">
+						<Link VarA="GVL.astAxes[2].stInputs.bHomeSensor" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[2].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[2].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR1-BC1^MR1-DI3">
+						<Link VarA="GVL.astAxes[3].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[3].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR1-BC1^MR1-DI4">
+						<Link VarA="GVL.astAxes[4].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[4].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR1-BC1^MR1-DI5">
+						<Link VarA="GVL.astAxes[5].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[5].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR1-BC1^MR1-DI6">
+						<Link VarA="GVL.astAxes[6].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[6].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR1-BC1^MR1-DI7">
+						<Link VarA="GVL.astAxes[7].stInputs.bHomeSensor" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[7].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[7].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR1-BC1^MR1-DI8">
+						<Link VarA="GVL.astAxes[8].stInputs.bHomeSensor" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[8].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[8].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-BC2 (Collimators)^ColNorth-IO">
+						<Link VarA="GVL.astAxes[18].stInputs.bHomeSensor" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="DIG Inputs Channel 1^Input 2" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[19].stInputs.bHomeSensor" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="DIG Inputs Channel 1^Input 1" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-BC2 (Collimators)^ColNorthX">
+						<Link VarA="GVL.astAxes[18].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="DI Inputs^Input 2" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[18].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="DI Inputs^Input 1" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-BC2 (Collimators)^ColNorthY">
+						<Link VarA="GVL.astAxes[19].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="DI Inputs^Input 1" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[19].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="DI Inputs^Input 2" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-BC2 (Collimators)^ColSouth-IO">
+						<Link VarA="GVL.astAxes[20].stInputs.bHomeSensor" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="DIG Inputs Channel 1^Input 2" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[21].stInputs.bHomeSensor" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="DIG Inputs Channel 1^Input 1" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-BC2 (Collimators)^ColSouthX">
+						<Link VarA="GVL.astAxes[20].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="DI Inputs^Input 1" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[20].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="DI Inputs^Input 2" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-BC2 (Collimators)^ColSouthY">
+						<Link VarA="GVL.astAxes[21].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="DI Inputs^Input 2" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[21].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="DI Inputs^Input 1" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-DI1">
+						<Link VarA="GVL.astAxes[9].stInputs.bHomeSensor" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[9].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[9].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-DI2">
+						<Link VarA="GVL.astAxes[10].stInputs.bHomeSensor" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[10].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[10].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-DI3">
+						<Link VarA="GVL.astAxes[11].stInputs.bHomeSensor" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[11].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[11].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-DI5">
+						<Link VarA="GVL.astAxes[13].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[13].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-DI6">
+						<Link VarA="GVL.astAxes[14].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[14].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-DI7">
+						<Link VarA="GVL.astAxes[15].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[15].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR3-BC1^MR3-DI1">
+						<Link VarA="GVL.astAxes[22].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR3-BC1^MR3-DI10">
+						<Link VarA="GVL.astAxes[17].stInputs.bHomeSensor" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[17].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[17].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR3-BC1^MR3-DI2">
+						<Link VarA="GVL.astAxes[23].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[23].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR3-BC1^MR3-DI3">
+						<Link VarA="GVL.astAxes[24].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[24].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR3-BC1^MR3-DI4">
+						<Link VarA="GVL.astAxes[25].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[25].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR3-BC1^MR3-DI5">
+						<Link VarA="GVL.astAxes[26].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[26].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR3-BC1^MR3-DI6">
+						<Link VarA="GVL.astAxes[27].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[27].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR3-BC1^MR3-DI7">
+						<Link VarA="GVL.astAxes[28].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[28].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR3-BC1^MR3-DI8">
+						<Link VarA="GVL.astAxes[29].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[29].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR3-BC1^MR3-DI9">
+						<Link VarA="GVL.astAxes[16].stInputs.bHomeSensor" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[16].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[16].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR4-BC1^MR4-DI1">
+						<Link VarA="GVL.astAxes[30].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[30].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR4-BC1^MR4-DI2">
+						<Link VarA="GVL.astAxes[31].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[31].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR4-BC1^MR4-DI3">
+						<Link VarA="GVL.astAxes[32].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[32].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR4-BC1^MR4-DI4">
+						<Link VarA="GVL.astAxes[33].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[33].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR4-BC1^MR4-DI5">
+						<Link VarA="GVL.astAxes[34].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[34].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR4-BC1^MR4-DI6">
+						<Link VarA="GVL.astAxes[35].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[35].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR4-BC1^MR4-DI7">
+						<Link VarA="GVL.astAxes[36].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[36].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR4-BC1^MR4-DI8">
+						<Link VarA="GVL.astAxes[37].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[37].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR5-BC1^MR5-DI1">
+						<Link VarA="GVL.astAxes[38].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[38].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR5-BC1^MR5-DI2">
+						<Link VarA="GVL.astAxes[39].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[39].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR5-BC1^MR5-DI3">
+						<Link VarA="GVL.astAxes[40].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[40].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR5-BC1^MR5-DI4">
+						<Link VarA="GVL.astAxes[41].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[41].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR5-BC1^MR5-DI5">
+						<Link VarA="GVL.astAxes[42].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[42].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MR5-BC1^MR5-DI6">
+						<Link VarA="GVL.astAxes[43].stInputs.bLimitBwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[43].stInputs.bLimitFwd" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^MSR-BC1^MSR-A1">
+						<Link VarA="GVL.astAxes[16].stStatus.bSTOActive" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="StandardInputs^Standard Out Var 85" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[17].stStatus.bSTOActive" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="StandardInputs^Standard Out Var 82" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[18].stStatus.bSTOActive" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="StandardInputs^Standard Out Var 90" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[19].stStatus.bSTOActive" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="StandardInputs^Standard Out Var 91" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[20].stStatus.bSTOActive" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="StandardInputs^Standard Out Var 92" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL.astAxes[21].stStatus.bSTOActive" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="StandardInputs^Standard Out Var 93" Size="1" RestoreInfo="ANotFound"/>
 					</OwnerB>
 				</OwnerA>
 			</UnrestoredVarLinks>
@@ -4254,740 +2741,9 @@ External Setpoint Generation:
 	</Project>
 	<Mappings>
 		<OwnerA Name="tc_project_app Instance">
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR1-BC1^MR1-DI1">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[1].stInputs.bHomeSensor" VarB="Channel 3^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[1].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[1].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR1-BC1^MR1-DI2">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[2].stInputs.bHomeSensor" VarB="Channel 3^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[2].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[2].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR1-BC1^MR1-DI3">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[3].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[3].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR1-BC1^MR1-DI4">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[4].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[4].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR1-BC1^MR1-DI5">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[5].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[5].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR1-BC1^MR1-DI6">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[6].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[6].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR1-BC1^MR1-DI7">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[7].stInputs.bHomeSensor" VarB="Channel 3^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[7].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[7].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR1-BC1^MR1-DI8">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[8].stInputs.bHomeSensor" VarB="Channel 3^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[8].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[8].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-BC2 (Collimators)^ColNorth-IO">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[18].stInputs.bHomeSensor" VarB="DIG Inputs Channel 1^Input 2" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[19].stInputs.bHomeSensor" VarB="DIG Inputs Channel 1^Input 1" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-BC2 (Collimators)^ColNorthX">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[18].stInputs.bLimitBwd" VarB="DI Inputs^Input 2" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[18].stInputs.bLimitFwd" VarB="DI Inputs^Input 1" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[4].CRC" VarB="Module 1 (SAFETY)^SAFETY Device Info Data^Project CRC"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[4].SERIAL" VarB="Module 1 (SAFETY)^SAFETY Device Info Data^Serial Number"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[4].aSafetyGroups[1].DIAG" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Input Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[4].aSafetyGroups[1].STATE" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Input Info Data^State"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[4].aSafetyGroups[2].DIAG" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_STO_SS1_ErrorHandling Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[4].aSafetyGroups[2].STATE" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_STO_SS1_ErrorHandling Info Data^State"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[4].aSafetyGroups[3].DIAG" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Output Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[4].aSafetyGroups[3].STATE" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Output Info Data^State"/>
-				<Link VarA="PlcTask Outputs^SAFETY.ERRACK" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^Standard In Var 3" Size="1"/>
-				<Link VarA="PlcTask Outputs^SAFETY.RUN" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^Standard In Var 2" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-BC2 (Collimators)^ColNorthY">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[19].stInputs.bLimitBwd" VarB="DI Inputs^Input 1" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[19].stInputs.bLimitFwd" VarB="DI Inputs^Input 2" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[5].CRC" VarB="Module 1 (SAFETY)^SAFETY Device Info Data^Project CRC"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[5].SERIAL" VarB="Module 1 (SAFETY)^SAFETY Device Info Data^Serial Number"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[5].aSafetyGroups[1].DIAG" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Input Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[5].aSafetyGroups[1].STATE" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Input Info Data^State"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[5].aSafetyGroups[2].DIAG" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_STO_SS1_ErrorHandling Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[5].aSafetyGroups[2].STATE" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_STO_SS1_ErrorHandling Info Data^State"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[5].aSafetyGroups[3].DIAG" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Output Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[5].aSafetyGroups[3].STATE" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Output Info Data^State"/>
-				<Link VarA="PlcTask Outputs^SAFETY.ERRACK" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^Standard In Var 3" Size="1"/>
-				<Link VarA="PlcTask Outputs^SAFETY.RUN" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^Standard In Var 2" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-BC2 (Collimators)^ColSouth-IO">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[20].stInputs.bHomeSensor" VarB="DIG Inputs Channel 1^Input 2" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[21].stInputs.bHomeSensor" VarB="DIG Inputs Channel 1^Input 1" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-BC2 (Collimators)^ColSouthX">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[20].stInputs.bLimitBwd" VarB="DI Inputs^Input 1" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[20].stInputs.bLimitFwd" VarB="DI Inputs^Input 2" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[6].CRC" VarB="Module 1 (SAFETY)^SAFETY Device Info Data^Project CRC"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[6].SERIAL" VarB="Module 1 (SAFETY)^SAFETY Device Info Data^Serial Number"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[6].aSafetyGroups[1].DIAG" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Input Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[6].aSafetyGroups[1].STATE" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Input Info Data^State"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[6].aSafetyGroups[2].DIAG" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_STO_SS1_ErrorHandling Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[6].aSafetyGroups[2].STATE" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_STO_SS1_ErrorHandling Info Data^State"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[6].aSafetyGroups[3].DIAG" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Output Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[6].aSafetyGroups[3].STATE" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Output Info Data^State"/>
-				<Link VarA="PlcTask Outputs^SAFETY.ERRACK" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^Standard In Var 3" Size="1"/>
-				<Link VarA="PlcTask Outputs^SAFETY.RUN" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^Standard In Var 2" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-BC2 (Collimators)^ColSouthY">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[21].stInputs.bLimitBwd" VarB="DI Inputs^Input 2" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[21].stInputs.bLimitFwd" VarB="DI Inputs^Input 1" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[7].CRC" VarB="Module 1 (SAFETY)^SAFETY Device Info Data^Project CRC"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[7].SERIAL" VarB="Module 1 (SAFETY)^SAFETY Device Info Data^Serial Number"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[7].aSafetyGroups[1].DIAG" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Input Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[7].aSafetyGroups[1].STATE" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Input Info Data^State"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[7].aSafetyGroups[2].DIAG" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_STO_SS1_ErrorHandling Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[7].aSafetyGroups[2].STATE" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_STO_SS1_ErrorHandling Info Data^State"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[7].aSafetyGroups[3].DIAG" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Output Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[7].aSafetyGroups[3].STATE" VarB="Module 1 (SAFETY)^SAFETY Group Info Data^ChA_Connection_Output Info Data^State"/>
-				<Link VarA="PlcTask Outputs^SAFETY.ERRACK" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^Standard In Var 3" Size="1"/>
-				<Link VarA="PlcTask Outputs^SAFETY.RUN" VarB="Module 1 (SAFETY)^SAFETY Standard Outputdata^Standard In Var 2" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-DI1">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[9].stInputs.bHomeSensor" VarB="Channel 3^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[9].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[9].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-DI2">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[10].stInputs.bHomeSensor" VarB="Channel 3^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[10].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[10].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-DI3">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[11].stInputs.bHomeSensor" VarB="Channel 3^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[11].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[11].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-DI5">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[13].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[13].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-DI6">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[14].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[14].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-DI7">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[15].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[15].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR2-BC1^MR2-DO5">
-				<Link VarA="PlcTask Outputs^Ax13.LASER_ON" VarB="Channel 2^Output" Size="1"/>
-				<Link VarA="PlcTask Outputs^Ax13.encoderPower" VarB="Channel 1^Output" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR3-BC1^MR3-DI1">
-				<Link VarA="PlcTask Inputs^Ax22.HomeSw_HighPrecision" VarB="Channel 3^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^Ax22.HomeSw_LowPrecision" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[22].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR3-BC1^MR3-DI10">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[17].stInputs.bHomeSensor" VarB="Channel 3^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[17].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[17].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR3-BC1^MR3-DI2">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[23].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[23].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR3-BC1^MR3-DI3">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[24].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[24].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR3-BC1^MR3-DI4">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[25].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[25].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR3-BC1^MR3-DI5">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[26].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[26].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR3-BC1^MR3-DI6">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[27].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[27].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR3-BC1^MR3-DI7">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[28].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[28].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR3-BC1^MR3-DI8">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[29].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[29].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR3-BC1^MR3-DI9">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[16].stInputs.bHomeSensor" VarB="Channel 3^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[16].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[16].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR4-BC1^MR4-DI1">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[30].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[30].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR4-BC1^MR4-DI2">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[31].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[31].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR4-BC1^MR4-DI3">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[32].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[32].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR4-BC1^MR4-DI4">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[33].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[33].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR4-BC1^MR4-DI5">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[34].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[34].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR4-BC1^MR4-DI6">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[35].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[35].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR4-BC1^MR4-DI7">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[36].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[36].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR4-BC1^MR4-DI8">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[37].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[37].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR5-BC1^MR5-DI1">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[38].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[38].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR5-BC1^MR5-DI2">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[39].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[39].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR5-BC1^MR5-DI3">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[40].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[40].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR5-BC1^MR5-DI4">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[41].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[41].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR5-BC1^MR5-DI5">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[42].stInputs.bLimitBwd" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[42].stInputs.bLimitFwd" VarB="Channel 2^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MR5-BC1^MR5-DI6">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[43].stInputs.bLimitBwd" VarB="Channel 2^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[43].stInputs.bLimitFwd" VarB="Channel 1^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MSR-BC1^MSR-A1">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[16].stStatus.bSTOActive" VarB="StandardInputs^Standard Out Var 85" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[17].stStatus.bSTOActive" VarB="StandardInputs^Standard Out Var 82" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[18].stStatus.bSTOActive" VarB="StandardInputs^Standard Out Var 90" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[19].stStatus.bSTOActive" VarB="StandardInputs^Standard Out Var 91" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[20].stStatus.bSTOActive" VarB="StandardInputs^Standard Out Var 92" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL.astAxes[21].stStatus.bSTOActive" VarB="StandardInputs^Standard Out Var 93" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.AccessPointCrossed" VarB="StandardInputs^Standard Out Var 27" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.AccessPointsMuted" VarB="StandardInputs^Standard Out Var 54" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.EDMErr_NonSampleArea" VarB="StandardInputs^Standard Out Var 119" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.EDMErr_SampleArea" VarB="StandardInputs^Standard Out Var 120" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.EstopsHealthy" VarB="StandardInputs^Standard Out Var 20" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.GS1.Ch1" VarB="Connection Info Data^Message_70 Info Data^Input Safe Data GS1_OSSD1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.GS1.Ch2" VarB="Connection Info Data^Message_70 Info Data^Input Safe Data GS1_OSSD2"/>
-				<Link VarA="PlcTask Inputs^SAFETY.GS1.Output" VarB="StandardInputs^Standard Out Var 99" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.GS1.inError" VarB="StandardInputs^Standard Out Var 35" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.HmiLocal" VarB="Connection Info Data^Message_75 Info Data^Input Safe Data HMI_ModeLocal_In" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.HmiMaintenance" VarB="Connection Info Data^Message_80 Info Data^Output Safe Data HMI_Maintenance_Out" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.HmiNormal" VarB="Connection Info Data^Message_75 Info Data^Input Safe Data HMI_ModeNormal_In" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.HmiRb" VarB="Connection Info Data^Message_74 Info Data^Input Safe Data HMI_RB_In" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.HmiRbLight" VarB="Connection Info Data^Message_80 Info Data^Output Safe Data HMI_RB_Out" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.HmiTripped" VarB="Connection Info Data^Message_80 Info Data^Output Safe Data HMI_Tripped_Out" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.Hmi_Maintenance.Ch1" VarB="Connection Info Data^Message_75 Info Data^Input Safe Data HMI_ModeMaintenance_In1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.Hmi_Maintenance.Ch2" VarB="Connection Info Data^Message_75 Info Data^Input Safe Data HMI_ModeMaintenance_In2"/>
-				<Link VarA="PlcTask Inputs^SAFETY.Hmi_Maintenance.Output" VarB="StandardInputs^Standard Out Var 100" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.Hmi_Maintenance.inError" VarB="StandardInputs^Standard Out Var 36" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.LC1.Ch1" VarB="Connection Info Data^Message_66 Info Data^Input Safe Data LC1_OSSD1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.LC1.Ch2" VarB="Connection Info Data^Message_66 Info Data^Input Safe Data LC1_OSSD2"/>
-				<Link VarA="PlcTask Inputs^SAFETY.LC1.Output" VarB="StandardInputs^Standard Out Var 101" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.LC1.inError" VarB="StandardInputs^Standard Out Var 32" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.LC2.Ch1" VarB="Connection Info Data^Message_66 Info Data^Input Safe Data LC2_OSSD1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.LC2.Ch2" VarB="Connection Info Data^Message_66 Info Data^Input Safe Data LC2_OSSD2"/>
-				<Link VarA="PlcTask Inputs^SAFETY.LC2.Output" VarB="StandardInputs^Standard Out Var 102" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.LC2.inError" VarB="StandardInputs^Standard Out Var 33" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.LC3.Ch1" VarB="Connection Info Data^Message_70 Info Data^Input Safe Data LC3_OSSD1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.LC3.Ch2" VarB="Connection Info Data^Message_70 Info Data^Input Safe Data LC3_OSSD2"/>
-				<Link VarA="PlcTask Inputs^SAFETY.LC3.Output" VarB="StandardInputs^Standard Out Var 103" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.LC3.inError" VarB="StandardInputs^Standard Out Var 34" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MOTION_PERMIT" VarB="StandardInputs^Standard Out Var 117" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS1.Ch1" VarB="Connection Info Data^Message_67 Info Data^Input Safe Data MS1_In1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS1.Ch2" VarB="Connection Info Data^Message_67 Info Data^Input Safe Data MS1_In2"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS1.Output" VarB="StandardInputs^Standard Out Var 104" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS1.inError" VarB="StandardInputs^Standard Out Var 11" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS2.Ch1" VarB="Connection Info Data^Message_67 Info Data^Input Safe Data MS2_In1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS2.Ch2" VarB="Connection Info Data^Message_67 Info Data^Input Safe Data MS2_In2"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS2.Output" VarB="StandardInputs^Standard Out Var 105" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS2.inError" VarB="StandardInputs^Standard Out Var 12" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS3.Ch1" VarB="Connection Info Data^Message_68 Info Data^Input Safe Data MS3_In1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS3.Ch2" VarB="Connection Info Data^Message_68 Info Data^Input Safe Data MS3_In2"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS3.Output" VarB="StandardInputs^Standard Out Var 106" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS3.inError" VarB="StandardInputs^Standard Out Var 13" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS4.Ch1" VarB="Connection Info Data^Message_68 Info Data^Input Safe Data MS4_In1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS4.Ch2" VarB="Connection Info Data^Message_68 Info Data^Input Safe Data MS4_In2"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS4.Output" VarB="StandardInputs^Standard Out Var 107" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS4.inError" VarB="StandardInputs^Standard Out Var 14" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS5.Ch1" VarB="Connection Info Data^Message_69 Info Data^Input Safe Data MS5_In1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS5.Ch2" VarB="Connection Info Data^Message_69 Info Data^Input Safe Data MS5_In2"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS5.Output" VarB="StandardInputs^Standard Out Var 108" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS5.inError" VarB="StandardInputs^Standard Out Var 15" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS6.Ch1" VarB="Connection Info Data^Message_71 Info Data^Input Safe Data Pendant_MS6_In1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS6.Ch2" VarB="Connection Info Data^Message_71 Info Data^Input Safe Data Pendant_MS6_In2"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS6.Output" VarB="StandardInputs^Standard Out Var 109" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS6.inError" VarB="StandardInputs^Standard Out Var 16" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS7.Ch1" VarB="Connection Info Data^Message_74 Info Data^Input Safe Data HMI_MS7_In1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS7.Ch2" VarB="Connection Info Data^Message_74 Info Data^Input Safe Data HMI_MS7_In2"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS7.Output" VarB="StandardInputs^Standard Out Var 110" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MS7.inError" VarB="StandardInputs^Standard Out Var 17" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MSS1_1" VarB="Connection Info Data^Message_78 Info Data^Output Safe Data MSS1_Out1" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MSS1_2" VarB="Connection Info Data^Message_78 Info Data^Output Safe Data MSS1_Out2" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MSS2_1" VarB="Connection Info Data^Message_78 Info Data^Output Safe Data MSS2_Out1" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MSS2_2" VarB="Connection Info Data^Message_78 Info Data^Output Safe Data MSS2_Out2" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MSS3_1" VarB="Connection Info Data^Message_79 Info Data^Output Safe Data MSS3_Out1" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MSS3_2" VarB="Connection Info Data^Message_79 Info Data^Output Safe Data MSS3_Out2" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.NON_SAMPLE_MOTION_PERMIT" VarB="StandardInputs^Standard Out Var 118" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.PendantEnable.Ch1" VarB="Connection Info Data^Message_71 Info Data^Input Safe Data Pendant_Enable_In1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.PendantEnable.Ch2" VarB="Connection Info Data^Message_71 Info Data^Input Safe Data Pendant_Enable_In2"/>
-				<Link VarA="PlcTask Inputs^SAFETY.PendantEnable.Output" VarB="StandardInputs^Standard Out Var 111" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.PendantEnable.inError" VarB="StandardInputs^Standard Out Var 37" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.PendantMuted" VarB="StandardInputs^Standard Out Var 56" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.Q1" VarB="Connection Info Data^Message_76 Info Data^Output Safe Data Q1_Out" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.Q1Q2" VarB="Connection Info Data^Message_72 Info Data^Input Safe Data Q1_Q2_In" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.Q2" VarB="Connection Info Data^Message_77 Info Data^Output Safe Data Q2_Out" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.Q3" VarB="Connection Info Data^Message_76 Info Data^Output Safe Data Q3_Out" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.Q3Q4" VarB="Connection Info Data^Message_73 Info Data^Input Safe Data Q3_Q4_In" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.Q4" VarB="Connection Info Data^Message_77 Info Data^Output Safe Data Q4_Out" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.RCU" VarB="Connection Info Data^Message_80 Info Data^Output Safe Data RCU_Out" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SAMPLE_MOTION_PERMIT" VarB="StandardInputs^Standard Out Var 59" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SB1" VarB="Connection Info Data^Message_76 Info Data^Output Safe Data SB1_Out" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SB2" VarB="Connection Info Data^Message_77 Info Data^Output Safe Data SB2_Out" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SLS_Muted" VarB="StandardInputs^Standard Out Var 46" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SPB1" VarB="Connection Info Data^Message_73 Info Data^Input Safe Data SPB1_In" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SPB2" VarB="Connection Info Data^Message_73 Info Data^Input Safe Data SPB2_In" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].CRC" VarB="Device Info Data^Project CRC"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].SERIAL" VarB="Device Info Data^Serial Number"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[1].DIAG" VarB="TwinSAFE Group Info Data^DecoupleInput Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[1].STATE" VarB="TwinSAFE Group Info Data^DecoupleInput Info Data^State"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[2].DIAG" VarB="TwinSAFE Group Info Data^DeviceMonitoring Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[2].STATE" VarB="TwinSAFE Group Info Data^DeviceMonitoring Info Data^State"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[3].DIAG" VarB="TwinSAFE Group Info Data^ModeSelect Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[3].STATE" VarB="TwinSAFE Group Info Data^ModeSelect Info Data^State"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[4].DIAG" VarB="TwinSAFE Group Info Data^SF1_NormalControl Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[4].STATE" VarB="TwinSAFE Group Info Data^SF1_NormalControl Info Data^State"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[5].DIAG" VarB="TwinSAFE Group Info Data^SF3_LocalControl Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[5].STATE" VarB="TwinSAFE Group Info Data^SF3_LocalControl Info Data^State"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[6].DIAG" VarB="TwinSAFE Group Info Data^MaintenanceSLSMuting Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[6].STATE" VarB="TwinSAFE Group Info Data^MaintenanceSLSMuting Info Data^State"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[7].DIAG" VarB="TwinSAFE Group Info Data^StoAndContactors Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[7].STATE" VarB="TwinSAFE Group Info Data^StoAndContactors Info Data^State"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[8].DIAG" VarB="TwinSAFE Group Info Data^ResetControl Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[8].STATE" VarB="TwinSAFE Group Info Data^ResetControl Info Data^State"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[9].DIAG" VarB="TwinSAFE Group Info Data^DecoupleOutput Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[1].aSafetyGroups[9].STATE" VarB="TwinSAFE Group Info Data^DecoupleOutput Info Data^State"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SampleAreaSearched_Downstream" VarB="StandardInputs^Standard Out Var 24" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SampleAreaSearched_Upstream" VarB="StandardInputs^Standard Out Var 23" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SearchAndLock.Ch1" VarB="Connection Info Data^Message_72 Info Data^Input Safe Data SL_In1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SearchAndLock.Ch2" VarB="Connection Info Data^Message_72 Info Data^Input Safe Data SL_In2"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SearchAndLock.Output" VarB="StandardInputs^Standard Out Var 112" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SearchAndLock.inError" VarB="StandardInputs^Standard Out Var 38" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.inMode_Local" VarB="StandardInputs^Standard Out Var 115" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.inMode_Maintenance" VarB="StandardInputs^Standard Out Var 116" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.inMode_Normal" VarB="StandardInputs^Standard Out Var 114" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.inMode_SearchedAndLocked" VarB="StandardInputs^Standard Out Var 113" Size="1"/>
-				<Link VarA="PlcTask Outputs^SAFETY.ERRACK" VarB="StandardOutputs^Standard In Var 6" Size="1"/>
-				<Link VarA="PlcTask Outputs^SAFETY.Mute_AccessPoints" VarB="StandardOutputs^Standard In Var 53" Size="1"/>
-				<Link VarA="PlcTask Outputs^SAFETY.Mute_PendantEnable" VarB="StandardOutputs^Standard In Var 55" Size="1"/>
-				<Link VarA="PlcTask Outputs^SAFETY.Mute_SLS" VarB="StandardOutputs^Standard In Var 42" Size="1"/>
-				<Link VarA="PlcTask Outputs^SAFETY.RUN" VarB="StandardOutputs^Standard In Var 7" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MSR-BC1^MSR-DI1">
-				<Link VarA="PlcTask Inputs^SAFETY.HMI_ErrorAckButton" VarB="Channel 2^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.IncidentSlitsSwitch" VarB="Channel 3^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^MSR-BC1^MSR-DO1">
-				<Link VarA="PlcTask Outputs^SAFETY.HMI_ErrorAckLight" VarB="Channel 3^Output" Size="1"/>
-				<Link VarA="PlcTask Outputs^SAFETY.HMI_SafetyRunLight" VarB="Channel 1^Output" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^PLCR-A2^PLCR-DI1">
-				<Link VarA="PlcTask Inputs^PANEL.ECB10.Status" VarB="Channel 4^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^PANEL.ECB2.Status" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^PANEL.ECB3.Status" VarB="Channel 2^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^PANEL.ECB4.Status" VarB="Channel 3^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^PLCR-A2^PLCR-DI2">
-				<Link VarA="PlcTask Inputs^PANEL.ECB1.Status" VarB="Channel 4^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^PANEL.ECB11.Status" VarB="Channel 3^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^PANEL.ECB13.Status" VarB="Channel 2^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^PANEL.ECB5.Status" VarB="Channel 1^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^PLCR-A2^PLCR-DI3">
-				<Link VarA="PlcTask Inputs^PANEL.ECB6.Status" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^PANEL.ECB7.Status" VarB="Channel 2^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^PANEL.ECB8.Status" VarB="Channel 3^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^PANEL.ECB9.Status" VarB="Channel 4^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^PLCR-A2^PLCR-DI4">
-				<Link VarA="PlcTask Inputs^PANEL.ECB12.Status" VarB="Channel 2^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^SAFETY.MotionIsolator" VarB="Channel 1^Input" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^PLCR-A2^PLCR-DO1">
-				<Link VarA="PlcTask Outputs^PANEL.ECB12.Reset" VarB="Channel 6^Output" Size="1"/>
-				<Link VarA="PlcTask Outputs^PANEL.ECB13.Reset" VarB="Channel 4^Output" Size="1"/>
-				<Link VarA="PlcTask Outputs^PANEL.ECB2.Reset" VarB="Channel 1^Output" Size="1"/>
-				<Link VarA="PlcTask Outputs^PANEL.ECB3.Reset" VarB="Channel 2^Output" Size="1"/>
-				<Link VarA="PlcTask Outputs^PANEL.ECB4.Reset" VarB="Channel 3^Output" Size="1"/>
-				<Link VarA="PlcTask Outputs^PANEL.ECB5.Reset" VarB="Channel 5^Output" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^PLCR-A2^PLCR-DO2">
-				<Link VarA="PlcTask Outputs^PANEL.ECB1.Reset" VarB="Channel 6^Output" Size="1"/>
-				<Link VarA="PlcTask Outputs^PANEL.ECB10.Reset" VarB="Channel 2^Output" Size="1"/>
-				<Link VarA="PlcTask Outputs^PANEL.ECB11.Reset" VarB="Channel 4^Output" Size="1"/>
-				<Link VarA="PlcTask Outputs^PANEL.ECB6.Reset" VarB="Channel 1^Output" Size="1"/>
-				<Link VarA="PlcTask Outputs^PANEL.ECB7.Reset" VarB="Channel 3^Output" Size="1"/>
-				<Link VarA="PlcTask Outputs^PANEL.ECB8.Reset" VarB="Channel 5^Output" Size="1"/>
-				<Link VarA="PlcTask Outputs^PANEL.ECB9.Reset" VarB="Channel 7^Output" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^SVR-G1^SVR-G2 (Sample Height)">
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[2].CRC" VarB="Device (Safety)^Device Info Data^Project CRC"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[2].SERIAL" VarB="Device (Safety)^Device Info Data^Serial Number"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[2].aSafetyGroups[1].DIAG" VarB="Device (Safety)^Group Info Data^ChA_Connection_Input Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[2].aSafetyGroups[1].STATE" VarB="Device (Safety)^Group Info Data^ChA_Connection_Input Info Data^State"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[2].aSafetyGroups[2].DIAG" VarB="Device (Safety)^Group Info Data^ChA_STO_SS1_ErrorHandling Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[2].aSafetyGroups[2].STATE" VarB="Device (Safety)^Group Info Data^ChA_STO_SS1_ErrorHandling Info Data^State"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[2].aSafetyGroups[3].DIAG" VarB="Device (Safety)^Group Info Data^ChA_Connection_Output Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[2].aSafetyGroups[3].STATE" VarB="Device (Safety)^Group Info Data^ChA_Connection_Output Info Data^State"/>
-				<Link VarA="PlcTask Outputs^SAFETY.ERRACK" VarB="Device (Safety)^Standard Outputdata^Standard In Var 3" Size="1"/>
-				<Link VarA="PlcTask Outputs^SAFETY.RUN" VarB="Device (Safety)^Standard Outputdata^Standard In Var 2" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^SVR-G1^SVR-G3 (Sample Rotation)">
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[3].CRC" VarB="Device (Safety)^Device Info Data^Project CRC"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[3].SERIAL" VarB="Device (Safety)^Device Info Data^Serial Number"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[3].aSafetyGroups[1].DIAG" VarB="Device (Safety)^Group Info Data^ChA_Connection_Input Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[3].aSafetyGroups[1].STATE" VarB="Device (Safety)^Group Info Data^ChA_Connection_Input Info Data^State"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[3].aSafetyGroups[2].DIAG" VarB="Device (Safety)^Group Info Data^ChA_SLS_1 Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[3].aSafetyGroups[2].STATE" VarB="Device (Safety)^Group Info Data^ChA_SLS_1 Info Data^State"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[3].aSafetyGroups[3].DIAG" VarB="Device (Safety)^Group Info Data^ChA_STO_SS1_ErrorHandling Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[3].aSafetyGroups[3].STATE" VarB="Device (Safety)^Group Info Data^ChA_STO_SS1_ErrorHandling Info Data^State"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[3].aSafetyGroups[4].DIAG" VarB="Device (Safety)^Group Info Data^ChA_Connection_Output Info Data^Diag"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SafetyTargets[3].aSafetyGroups[4].STATE" VarB="Device (Safety)^Group Info Data^ChA_Connection_Output Info Data^State"/>
-				<Link VarA="PlcTask Inputs^SAFETY.SampleStackZRotationSLSHealthy" VarB="Device (Safety)^Standard Inputdata^Standard Out Var 6" Size="1"/>
-				<Link VarA="PlcTask Outputs^SAFETY.ERRACK" VarB="Device (Safety)^Standard Outputdata^Standard In Var 3" Size="1"/>
-				<Link VarA="PlcTask Outputs^SAFETY.RUN" VarB="Device (Safety)^Standard Outputdata^Standard In Var 2" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 6 (NOV-DP-RAM)^Box 140 (Retain Handler)">
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[10].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[10].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[10].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[10].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[10].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[10].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[11].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[11].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[11].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[11].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[11].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[11].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[12].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[12].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[12].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[12].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[12].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[12].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[13].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[13].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[13].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[13].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[13].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[13].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[14].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[14].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[14].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[14].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[14].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[14].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[15].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[15].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[15].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[15].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[15].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[15].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[16].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[16].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[16].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[16].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[16].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[16].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[17].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[17].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[17].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[17].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[17].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[17].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[18].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[18].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[18].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[18].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[18].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[18].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[19].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[19].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[19].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[19].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[19].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[19].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[1].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[1].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[1].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[1].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[1].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[1].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[20].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[20].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[20].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[20].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[20].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[20].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[21].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[21].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[21].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[21].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[21].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[21].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[22].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[22].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[22].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[22].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[22].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[22].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[23].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[23].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[23].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[23].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[23].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[23].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[24].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[24].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[24].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[24].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[24].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[24].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[25].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[25].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[25].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[25].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[25].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[25].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[26].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[26].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[26].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[26].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[26].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[26].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[27].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[27].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[27].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[27].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[27].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[27].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[28].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[28].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[28].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[28].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[28].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[28].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[29].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[29].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[29].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[29].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[29].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[29].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[2].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[2].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[2].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[2].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[2].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[2].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[30].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[30].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[30].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[30].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[30].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[30].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[31].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[31].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[31].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[31].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[31].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[31].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[32].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[32].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[32].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[32].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[32].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[32].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[33].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[33].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[33].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[33].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[33].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[33].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[34].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[34].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[34].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[34].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[34].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[34].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[35].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[35].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[35].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[35].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[35].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[35].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[36].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[36].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[36].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[36].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[36].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[36].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[37].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[37].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[37].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[37].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[37].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[37].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[38].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[38].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[38].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[38].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[38].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[38].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[39].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[39].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[39].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[39].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[39].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[39].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[3].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[3].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[3].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[3].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[3].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[3].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[40].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[40].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[40].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[40].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[40].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[40].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[41].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[41].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[41].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[41].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[41].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[41].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[42].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[42].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[42].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[42].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[42].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[42].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[43].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[43].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[43].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[43].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[43].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[43].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[4].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[4].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[4].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[4].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[4].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[4].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[5].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[5].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[5].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[5].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[5].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[5].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[6].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[6].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[6].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[6].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[6].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[6].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[7].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[7].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[7].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[7].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[7].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[7].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[8].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[8].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[8].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[8].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[8].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[8].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[9].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[9].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[9].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[9].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[9].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[9].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax1 - Inc Slits X Translation">
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis1">
 				<Link VarA="PlcTask Inputs^GVL.astAxes[1].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
 				<Link VarA="PlcTask Outputs^GVL.astAxes[1].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax10 - Tom_Chi Lower">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[10].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[10].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax11 - Tom_Theta Upper">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[11].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[11].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax13 - Camera Lens Adj">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[13].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[13].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax14 - Camera Flip">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[14].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[14].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax15 - Camera Tilt">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[15].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[15].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax16 - SS_Z_Translation">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[16].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[16].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax17 - SS_Z_Rotation">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[17].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[17].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax18 - ColNorth_X">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[18].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[18].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax19 - ColNorth_Y">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[19].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[19].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax2 - Inc Slits Z Translation">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[2].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[2].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax20 - ColSouth_X">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[20].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[20].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax21 - ColSouth_Y">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[21].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[21].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax22 - Pinhole selector">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[22].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[22].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax23 - Monitor 5">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[23].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[23].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax24 - Slit 1 North">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[24].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[24].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax25 - Slit 1 South">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[25].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[25].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax26 - Slit 1 East">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[26].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[26].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax27 - Slit 1 West">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[27].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[27].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax28 - Slit 2 North">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[28].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[28].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax29 - Slit 2 South">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[29].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[29].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax3 - Inc Slits North">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[3].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[3].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax30 - Slit 2 East">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[30].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[30].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax31 - Slit 2 West">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[31].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[31].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax32 - Slit 3 North">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[32].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[32].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax33 - Slit 3 South">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[33].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[33].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax34 - Slit 3 East">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[34].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[34].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax35 - Slit 3 West">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[35].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[35].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax36 - Slit 4 North">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[36].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[36].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax37 - Slit 4 South">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[37].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[37].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax38 - Slit 4 East">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[38].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[38].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax39 - Slit 4 West">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[39].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[39].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax4 - Inc Slits South">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[4].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[4].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax40 - Slit 5 North">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[40].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[40].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax41 - Slit 5 South">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[41].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[41].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax42 - Slit 5 East">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[42].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[42].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax43 - Slit 5 West">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[43].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[43].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax5 - Inc Slits East">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[5].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[5].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax6 - Inc Slits West">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[6].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[6].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax7 - SS_X_Translation">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[7].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[7].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax8 - SS_Y_Translation">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[8].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[8].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Ax9 - Tom_Phi Rotation">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[9].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[9].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 12">
-				<Link VarA="PlcTask Inputs^GVL.astAxes[12].Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL.astAxes[12].Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

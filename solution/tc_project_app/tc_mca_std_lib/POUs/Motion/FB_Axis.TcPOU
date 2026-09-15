@@ -193,7 +193,13 @@ IF (_stAxis.stControl.eCommand = E_MotionFunctions.eMoveAbsolute AND _stAxis.stI
 			_stAxis.stStatus.bMoveRequested := TRUE;
 		END_IF
 		//_stAxis.stStatus.bMoveRequested := TRUE;
-	END_IF	
+	END_IF
+ELSIF _stAxis.stControl.bExecute THEN
+	ADSLOGSTR(
+		msgCtrlMask := ADSLOG_MSGTYPE_ERROR,
+		msgFmtStr := 'To do that move you must set stInputs.bAllowRemoteControl to the opposite of %s',
+		strArg := BOOL_TO_STRING(_stAxis.stInputs.bAllowRemoteControl)
+	);	
 END_IF
 
 IF _stAxis.stControl.bOverrideReadyToMove THEN
