@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<GlobalVariables Crc="3248206162" Id="15eba6a6-22ad-44a6-996a-b23bd5402b31" FileFormatVersion="1.0">
+<GlobalVariables Crc="1381344104" Id="15eba6a6-22ad-44a6-996a-b23bd5402b31" FileFormatVersion="1.0">
   <Variable Id="21788be6-958d-45ad-8ca1-c41161dd07f7">
     <Name>SB1_Out</Name>
     <SourceUsages>
@@ -81,8 +81,8 @@
   <Variable Id="9264cb9f-dad4-4b5c-a524-e852484afec6">
     <Name>RB_Out</Name>
     <SourceUsages>
-      <FbPortUsage Id="fb5b7a7a-a53a-4c32-a8fd-bd65982471fe">
-        <ModelElementId>e2fdeddd-18a9-4a86-bfe3-fff8e62ada93</ModelElementId>
+      <FbPortUsage Id="a5d58ab1-36db-4bd0-b861-ae83cd90521c">
+        <ModelElementId>a6467f0b-816c-41cd-942c-8f01d6c7784a</ModelElementId>
       </FbPortUsage>
     </SourceUsages>
     <TargetUsages>

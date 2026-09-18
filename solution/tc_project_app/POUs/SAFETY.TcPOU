@@ -186,7 +186,10 @@ collisionDetected_R_Edge:= collisionDetectedRTrig.Q;
 IF NOT inMode_Maintenance THEN
 	Mute_AccessPoints := FALSE;
 	Mute_PendantEnable := FALSE;
+	Mute_SLS := FALSE;
+	maintenanceAllowRemote := FALSE;
 END_IF
+
 FOR i:=1 TO 7 DO
 	SafetyTargets[i].Diag:=0;
 	SafetyTargets[i].State:=1;

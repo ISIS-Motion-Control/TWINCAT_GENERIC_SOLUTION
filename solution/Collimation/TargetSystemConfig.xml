@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TargetSystemConfig Crc="32905801" Version="1.5">
+<TargetSystemConfig Crc="3335555757" Version="1.5">
   <TargetSystemType>HSafetyPLC</TargetSystemType>
   <TargetSystemSubType>AMI891x</TargetSystemSubType>
   <IsExternalDevice>false</IsExternalDevice>
   <TargetSystemObjectId>50462797</TargetSystemObjectId>
   <TargetSystemObjectName>ColNorthX</TargetSystemObjectName>
-  <SoftwareVersion>01 (V01.01)     </SoftwareVersion>
-  <SerialNumber>3016726</SerialNumber>
+  <SoftwareVersion />
+  <SerialNumber />
   <ProjectCRC>49190</ProjectCRC>
   <MapProjectCRC>true</MapProjectCRC>
   <MapSerialNumber>true</MapSerialNumber>
   <VersionNumber>1</VersionNumber>
   <FSOEAddress>702</FSOEAddress>
-  <DipSwitch>702</DipSwitch>
+  <DipSwitch />
   <AmsNetID>10.1.176.94.2.1</AmsNetID>
   <AmsPort>1076</AmsPort>
   <ConnectionInfoDataConfigOld>false</ConnectionInfoDataConfigOld>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<safetyApplication Crc="2418340083" xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.5.0.0" Id="dd04b945-eb61-4149-b4f6-51138af84975" name="" mapState="true" mapDiag="true" groupOrderId="0" passificationAllowed="false" temporaryDeactivationAllowed="false" permamentDeactivationAllowed="false" xmlid="0" analogFBOutputReplacementValues="Zero" verifyAnalogFBInputsIfStart="false" userFbId="00000000-0000-0000-0000-000000000000" xmlns="http://schemas.microsoft.com/dsltools/SafetyApplicationLanguage">
+<safetyApplication Crc="1963174743" xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.5.0.0" Id="dd04b945-eb61-4149-b4f6-51138af84975" name="" mapState="true" mapDiag="true" groupOrderId="0" passificationAllowed="false" temporaryDeactivationAllowed="false" permamentDeactivationAllowed="false" xmlid="0" analogFBOutputReplacementValues="Zero" verifyAnalogFBInputsIfStart="false" userFbId="00000000-0000-0000-0000-000000000000" xmlns="http://schemas.microsoft.com/dsltools/SafetyApplicationLanguage">
   <networks>
     <safetyApplicationHasNetworks Id="3ad48cdd-9f3f-457a-8aa9-8ba6f6ba828c">
       <Network Id="cfdadaf9-3cd7-4eec-a534-3b44ded966f7" name="Network1" networkName="MotionEmergencyStops" intId="1" networkOrderId="0">
@@ -1849,7 +1849,7 @@
       </variable>
     </safetyApplicationHasVariables>
     <safetyApplicationHasVariables Id="74e3db89-f743-4129-8499-980eb67991f8">
-      <variable Id="c420ef37-e8bb-447a-ba28-35fc31d942d3" name="HMI_ModeMaintenance_In_NO" isLocal="false">
+      <variable Id="c420ef37-e8bb-447a-ba28-35fc31d942d3" name="HMI_ModeMaintenance_In_2" isLocal="false">
         <sourceUsages>
           <variableHasSourceUsages Id="11795a3b-0fad-4288-bfe4-940e1a3d4e4b">
             <variableUsages Id="2ae5d6c4-b461-4b9f-b0ea-ea2c27d5b67d">
@@ -1865,11 +1865,11 @@
           <variableHasTargetUsages Id="f25379ab-78d9-4ab5-9741-2c68faa6b515">
             <variableUsages Id="32158151-778f-46a2-9eb5-f7b98be46f9e">
               <usages>
-                <variableUsagesHasUsages Id="66a1ceb9-cc9e-4c7a-9734-6544d8976398">
-                  <fbPortUsage Id="635c2744-b42b-4662-b0e7-a5ef5da507f2">
+                <variableUsagesHasUsages Id="40fe4521-33e1-45c6-a5b7-05b191dfdc7c">
+                  <fbPortUsage Id="9e5ae6a7-e250-4834-a6c7-773861b638c3">
                     <functionBlockPort>
-                      <fbPortUsageReferencesFunctionBlockPort Id="74f7445d-b6ac-4a32-9226-92b2c0013c85">
-                        <inPortMoniker name="//Network3/FBDecouple1/DecIn4" />
+                      <fbPortUsageReferencesFunctionBlockPort Id="6a2070f7-a16a-47bd-a6de-bb251a8947f2">
+                        <inPortMoniker name="//Network3/FBDecouple1/DecIn5" />
                       </fbPortUsageReferencesFunctionBlockPort>
                     </functionBlockPort>
                   </fbPortUsage>
@@ -1881,7 +1881,7 @@
       </variable>
     </safetyApplicationHasVariables>
     <safetyApplicationHasVariables Id="aef56a2e-68df-41fd-8da3-b725bd2a0049">
-      <variable Id="a42ebef5-a200-4c59-908c-40e1d1d7ee3e" name="HMI_ModeMaintenance_In_NC" isLocal="false">
+      <variable Id="a42ebef5-a200-4c59-908c-40e1d1d7ee3e" name="HMI_ModeMaintenance_In_1" isLocal="false">
         <sourceUsages>
           <variableHasSourceUsages Id="40fdfee4-fb1e-4d58-9688-24c6e432892d">
             <variableUsages Id="c51cf761-a8cf-4707-8933-72d5c739dedf">
@@ -1897,11 +1897,11 @@
           <variableHasTargetUsages Id="4824ccad-d30a-4145-8cd1-e90f31fd0d35">
             <variableUsages Id="b4d9e977-d67d-4b12-8324-08b01c133b1e">
               <usages>
-                <variableUsagesHasUsages Id="e15019ac-1596-422a-8db2-2c6fc547b73f">
-                  <fbPortUsage Id="20d1c7ce-3701-4823-ad76-18a7425b87c0">
+                <variableUsagesHasUsages Id="a7cca06d-203c-49e1-8c63-66f7eeb67306">
+                  <fbPortUsage Id="f6d7b897-bd63-4c0a-89f3-c6047d4bd3c5">
                     <functionBlockPort>
-                      <fbPortUsageReferencesFunctionBlockPort Id="99d8ac53-f867-4168-851b-1d439cb53a55">
-                        <inPortMoniker name="//Network3/FBDecouple1/DecIn5" />
+                      <fbPortUsageReferencesFunctionBlockPort Id="e0c84fc2-0fcd-4ed2-86ac-8fdca662d381">
+                        <inPortMoniker name="//Network3/FBDecouple1/DecIn4" />
                       </fbPortUsageReferencesFunctionBlockPort>
                     </functionBlockPort>
                   </fbPortUsage>
