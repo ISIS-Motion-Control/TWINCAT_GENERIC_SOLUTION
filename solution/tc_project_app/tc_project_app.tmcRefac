@@ -2,9 +2,19 @@
 <Refactors>
   <Renames>
     <RenamedType>
-      <Type guid="ea6efe96-e111-4606-9756-291b72388e7e">AXIS_TEMPLATE_1</Type>
-      <From>Axis_Template_1</From>
-      <To>Axis_Safety_Template</To>
+      <Type guid="53d4856a-6fd2-4337-8927-d023770e2e27">E_HMICONTROL</Type>
+      <From>E_HmiControl</From>
+      <To>E_PendantControl</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="af3cd7ba-0cc2-4c79-b8f0-e738ae733380">ST_HMICONTROL</Type>
+      <From>ST_HmiControl</From>
+      <To>ST_PendantControl</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="059d275e-4870-4167-960e-2a5c721e374f">HMI</Type>
+      <From>HMI</From>
+      <To>Pendant</To>
     </RenamedType>
   </Renames>
 </Refactors>

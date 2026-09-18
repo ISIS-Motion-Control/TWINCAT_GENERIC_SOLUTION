@@ -1,0 +1,109 @@
+{
+  "$schema": "../../TcHmiSrv/schema/ExtensionSettings.Schema.json",
+  "version": "23.0.275.0",
+  "configVersion": "1.0.1.2",
+  "guid": "63A51718-33F7-4F6B-851A-963E4F3F74BD",
+  "visibility": "AlwaysShow",
+  "policies": [
+    "StrictPropertyValidation"
+  ],
+  "symbols": {
+    "ListEnabledTargetSystems": {
+      "userGroups": [
+        "__SystemUsers"
+      ],
+      "readValue": {
+        "function": true,
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "ClearLoggedEvents": {
+      "readValue": {
+        "function": true
+      },
+      "writeValue": {
+        "type": "object",
+        "properties": {
+          "targetName": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "targetName"
+        ]
+      }
+    },
+    "Diagnostics": {
+      "userGroups": [
+        "__SystemUsers"
+      ],
+      "readValue": {
+        "function": true,
+        "type": "object",
+        "properties": {
+          "TARGET_SYSTEMS": {
+            "type": "object",
+            "configDescription": "DESC_TARGET_SYSTEM",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "connectionState": {
+                  "propertyOrder": 1,
+                  "type": "string"
+                },
+                "connectError": {
+                  "propertyOrder": 2,
+                  "type": "string"
+                },
+                "importedEventsCount": {
+                  "propertyOrder": 3,
+                  "type": "integer"
+                },
+                "importedMessagesCount": {
+                  "propertyOrder": 4,
+                  "type": "integer"
+                },
+                "importedAlarmsCount": {
+                  "propertyOrder": 5,
+                  "type": "integer"
+                },
+                "importedInvalidAlarmsCount": {
+                  "propertyOrder": 6,
+                  "type": "integer"
+                },
+                "cachedMessagesCount": {
+                  "propertyOrder": 7,
+                  "type": "integer",
+                  "visibility": "HideInEngineering"
+                },
+                "cachedAlarmsCount": {
+                  "propertyOrder": 8,
+                  "type": "integer",
+                  "visibility": "HideInEngineering"
+                },
+                "cachedInvalidAlarmsCount": {
+                  "propertyOrder": 9,
+                  "type": "integer",
+                  "visibility": "HideInEngineering"
+                },
+                "activeAlarmsCount": {
+                  "propertyOrder": 10,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "connectionState"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "packageVersion": "23.0.275",
+  "productVersion": "23.0.275",
+  "signature": "EwP++NARkbhUzwqI/NQyvpLBjBN+v649G8cso+wBwueNERQd1y6hC5n937Hqd3TwZqnmYHY5cLQo/VP3tuvBhBQv7iIr7UIBrmwqexR8kTzMEFOBwFziy2PEpQ85EnjkD2yEF6qDIZnMz22FIO5x3t6si1i5Y5IjhAnER1W/sIvGk1KU4Y+7W6kTA02W+CB19uZHYrbeSMBZgGw+2Jim5nwq0f2SM+fTBBqQmqHQ8ZHPf8GVSOivQDO/qO9R0x7AgiMZ8wQf4C/MflEJFMFlUcioHmeJVpgfMyzB/W+RW5cbq8TQCpsgXRwuRM9mmmN6A6KEp2HAwubwLnMJaME3HQ=="
+}

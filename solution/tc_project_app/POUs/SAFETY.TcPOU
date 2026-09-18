@@ -5,7 +5,7 @@
 VAR
 SafetyTargets : ARRAY [1..7] OF ST_SafetyTargetDevice:=
 [
-(ProjectName:='MAIN', Device:='EL6910',aSafetyGroups:=[(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE)]),
+//(ProjectName:='MAIN', Device:='EL6910',aSafetyGroups:=[(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE)]),
 (ProjectName:='SampleStackZ', Device:='AX891x',aSafetyGroups:=[(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE)]),
 (ProjectName:='SampleStackRotation', Device:='AX891x',aSafetyGroups:=[(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE)]),
 (ProjectName:='CollimationNorthX', Device:='AMI891x',aSafetyGroups:=[(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE)]),

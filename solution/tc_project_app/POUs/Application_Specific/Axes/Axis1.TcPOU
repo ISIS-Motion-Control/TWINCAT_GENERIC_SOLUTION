@@ -17,6 +17,7 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[//Initial parameters of an Axis
+
 IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
     //Initial default values:
     GVL.astAxes[iAxisNumber].stHomingConfig.eHomeSeq :=E_HomingRoutines.eHomeToEncPulse_viaBwdLimit;
@@ -34,7 +35,59 @@ IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
 END_IF
 
 //Permit
-GVL.astAxes[iAxisNumber].stInputs.bPermit := TRUE;]]></ST>
+GVL.astAxes[iAxisNumber].stInputs.bPermit := TRUE;//(SAFETY.SAMPLE_PERMIT AND NOT SAFETY.CollisionDetected) OR (SAFETY.SAMPLE_PERMIT AND (safety.inMode_Local OR safety.inMode_Maintenance));
+
+//Remote operation toggle
+
+IF SAFETY.inMode_Local THEN
+	GVL.astAxes[iAxisNumber].stInputs.bAllowRemoteControl:= FALSE;
+ELSIF SAFETY.inMode_Maintenance AND NOT SAFETY.maintenanceAllowRemote THEN
+	GVL.astAxes[iAxisNumber].stInputs.bAllowRemoteControl:= FALSE;
+ELSE
+	GVL.astAxes[iAxisNumber].stInputs.bAllowRemoteControl:= TRUE;
+END_IF
+
+//Do an automatic reset on regaining permit;
+
+IF SAFETY.SAMPLE_PERMIT_R_EDGE THEN
+	startReset:= TRUE;
+END_IF
+resetDelay(IN:= startReset, PT:= T#0.5S);
+IF resetDelay.Q THEN
+	startReset := FALSE;
+	GVL.astAxes[iAxisNumber].stControl.bReset:= TRUE;
+END_IF
+
+
+//Disable axis if no permit
+
+IF SAFETY.STOP_MOTION THEN
+	startDisable := TRUE;
+END_IF
+disableDelay(IN:= startDisable, PT:= T#1S);
+IF disableDelay.Q THEN
+	startDisable:= FALSE;
+	GVL.astAxes[iAxisNumber].stControl.bEnable:= FALSE;
+END_IF
+
+
+
+//Safety stop motion
+
+IF SAFETY.STOP_MOTION THEN
+	GVL.astAxes[iAxisNumber].stControl.bHalt:= TRUE;
+END_IF
+IF SAFETY.collisionDetected_R_Edge THEN
+	GVL.astAxes[iAxisNumber].stControl.bHalt:= TRUE;
+END_IF
+
+stoRTrig(CLK:=GVL.astAxes[iAxisNumber].stStatus.bSTOActive);
+IF stoRTrig.Q THEN
+	GVL.astAxes[iAxisNumber].stControl.bReset:= TRUE;
+END_IF
+
+
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

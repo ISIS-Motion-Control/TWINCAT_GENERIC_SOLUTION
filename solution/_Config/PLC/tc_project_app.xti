@@ -983,7 +983,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{FB261665-FD20-4BF2-97F8-2854C82B752D}" Name="tc_project_app" PrjFilePath="..\..\tc_project_app\tc_project_app.plcproj" TmcFilePath="..\..\tc_project_app\tc_project_app.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" ClearInvalidPersist="true" SymbolicMapping="true">
-		<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{58E41762-99C5-0D80-5DE9-73FF6F254DA7}" TmcPath="tc_project_app\tc_project_app.tmc">
+		<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{F3E45839-3605-2CE4-335C-C8D3B6E32048}" TmcPath="tc_project_app\tc_project_app.tmc">
 			<Name>tc_project_app Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="8" AreaNo="4">
@@ -1009,10 +1009,6 @@ External Setpoint Generation:
 			</Vars>
 			<Vars VarGrpType="2" AreaNo="1">
 				<Name>PlcTask Outputs</Name>
-				<Var>
-					<Name>SAFETY.RUN</Name>
-					<Type>BOOL</Type>
-				</Var>
 				<Var>
 					<Name>SAFETY.SafetyTargets[1].RUN</Name>
 					<Type>BOOL</Type>
@@ -1070,6 +1066,10 @@ External Setpoint Generation:
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>SAFETY.RUN</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>SAFETY.ERRACK</Name>
 					<Type>BOOL</Type>
 				</Var>
@@ -1092,58 +1092,6 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>SAFETY.HMI_SafetyRunLight</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB1.Reset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB2.Reset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB3.Reset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB4.Reset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB5.Reset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB6.Reset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB7.Reset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB8.Reset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB9.Reset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB10.Reset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB11.Reset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB12.Reset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB13.Reset</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -1910,6 +1858,10 @@ External Setpoint Generation:
 					<Type>USINT</Type>
 				</Var>
 				<Var>
+					<Name>SAFETY.Q1Q2</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>SAFETY.MS1.Ch1</Name>
 					<Type>BIT</Type>
 				</Var>
@@ -2134,10 +2086,6 @@ External Setpoint Generation:
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>SAFETY.Q1Q2</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>SAFETY.Q3Q4</Name>
 					<Type>BOOL</Type>
 				</Var>
@@ -2313,58 +2261,6 @@ External Setpoint Generation:
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PANEL.ECB1.Status</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB2.Status</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB3.Status</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB4.Status</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB5.Status</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB6.Status</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB7.Status</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB8.Status</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB9.Status</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB10.Status</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB11.Status</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB12.Status</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PANEL.ECB13.Status</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>GVL.astAxes[1].stStatus.bSTOActive</Name>
 					<Type>BOOL</Type>
 				</Var>
@@ -2384,14 +2280,6 @@ External Setpoint Generation:
 				<Var>
 					<Name>GVL.astAxes[1].Axis.NcToPlc</Name>
 					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>KeTop.enSwitch1</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>KeTop.enSwitch2</Name>
-					<Type>BOOL</Type>
 				</Var>
 			</Vars>
 			<UnrestoredVarLinks ImportTime="2025-02-28T14:46:00">
