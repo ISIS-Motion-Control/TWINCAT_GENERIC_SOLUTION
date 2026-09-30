@@ -624,6 +624,9 @@ END_IF
 
 fbLocalMoveVelocity.Direction := SEL(_stAxis.stControl.fVelocity < 0, MC_Positive_Direction, MC_Negative_Direction);
 fbLocalMoveVelocity.Velocity := ABS(_stAxis.stControl.fVelocity);
+IF fbLocalMoveVelocity.Execute THEN
+	_stAxis.stControl.fVelocity := ABS(_stAxis.stControl.fVelocity);
+END_IF
 fbLocalMoveVelocity.Acceleration := _stAxis.stControl.fAcceleration;
 fbLocalMoveVelocity.Deceleration := _stAxis.stControl.fDeceleration;
 
@@ -842,6 +845,11 @@ END_IF
 
 fbMoveVelocity.Direction := SEL(_stAxis.stControl.fVelocity < 0, MC_Positive_Direction, MC_Negative_Direction);
 fbMoveVelocity.Velocity := ABS(_stAxis.stControl.fVelocity);
+
+IF fbMoveVelocity.Execute THEN
+	_stAxis.stControl.fVelocity := ABS(_stAxis.stControl.fVelocity);
+END_IF
+
 fbMoveVelocity.Acceleration := _stAxis.stControl.fAcceleration;
 fbMoveVelocity.Deceleration := _stAxis.stControl.fDeceleration;
 

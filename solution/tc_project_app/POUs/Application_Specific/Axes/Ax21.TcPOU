@@ -3,7 +3,7 @@
   <POU Name="Ax21" Id="{6e3d1538-6e73-48f8-8cf5-450b7422df1a}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Ax21
 VAR
-	iAxisNumber : INT := E_AxisNames.Collimator_South_Y;
+	iAxisNumber : INT := E_AxisNames.Coll_South_Y;
 	iGroupNumber : INT := 3;
 	stoRTrig : R_Trig;	
 	

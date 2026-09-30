@@ -59,58 +59,53 @@ CASE eHmiControl OF
 		
 	E_HmiControl.JogFwd:
 		astAxes[iSelectedAxis].stControl.fVelocity := ABS(astAxes[iSelectedAxis].stControl.fVelocity);
-		Jog();
+		Jog(fOverride:= astHmiControl[iSelectedAxis].fVelocity);
 		eHmiControl := E_HmiControl.WaitForJogFinish;
 	
 	E_HmiControl.JogBwd:
 		astAxes[iSelectedAxis].stControl.fVelocity := -ABS(astAxes[iSelectedAxis].stControl.fVelocity);
-		Jog();
-		eHmiControl := E_HmiControl.WaitForJogFinish;	
+		Jog(fOverride:= astHmiControl[iSelectedAxis].fVelocity);
+		eHmiControl := E_HmiControl.WaitForJogFinish;
 		
 	E_HmiControl.SlowJogFwd:
 		astAxes[iSelectedAxis].stControl.fVelocity := ABS(astAxes[iSelectedAxis].stControl.fVelocity);
-		SlowJog();
+		Jog(fOverride:= 0.2*astHmiControl[iSelectedAxis].fVelocity);
 		eHmiControl := E_HmiControl.WaitForJogFinish;		
 		
 	E_HmiControl.SlowJogBwd:
 		astAxes[iSelectedAxis].stControl.fVelocity := -ABS(astAxes[iSelectedAxis].stControl.fVelocity);
-		SlowJog();
-		eHmiControl := E_HmiControl.WaitForJogFinish;		
-		
+		Jog(fOverride:= 0.2*astHmiControl[iSelectedAxis].fVelocity);
+		eHmiControl := E_HmiControl.WaitForJogFinish;	
+	
 	E_HmiControl.WaitForJogFinish:
 		IF Ketop.keys[iKeyPressedValue] = FALSE THEN
 			astAxes[iSelectedAxis].stControl.bHalt := TRUE;
+			astAxes[iSelectedAxis].stControl.fVelocity := ABS(astAxes[iSelectedAxis].stControl.fVelocity);
 			eHmiControl := E_HmiControl.Default;
 		END_IF
 
 	E_HmiControl.SmallTweakFwd:
-		astAxes[iSelectedAxis].stControl.fRelativePosition := ABS(iSmallTweakDistance);
-		Tweak();
+		Tweak(iSmallTweakDistance);
 		eHmiControl := E_HmiControl.WaitForTweakFinish;
 
 	E_HmiControl.SmallTweakBwd:
-		astAxes[iSelectedAxis].stControl.fRelativePosition := -ABS(iSmallTweakDistance);
-		Tweak();
+		Tweak(-iSmallTweakDistance);
 		eHmiControl := E_HmiControl.WaitForTweakFinish;
 	
 	E_HmiControl.MediumTweakFwd:
-		astAxes[iSelectedAxis].stControl.fRelativePosition := ABS(iMediumTweakDistance);
-		Tweak();
+		Tweak(iMediumTweakDistance);
 		eHmiControl := E_HmiControl.WaitForTweakFinish;
 
 	E_HmiControl.MediumTweakBwd:
-		astAxes[iSelectedAxis].stControl.fRelativePosition := -ABS(iMediumTweakDistance);
-		Tweak();
+		Tweak(-iMediumTweakDistance);
 		eHmiControl := E_HmiControl.WaitForTweakFinish;
 		
 	E_HmiControl.BigTweakFwd:
-		astAxes[iSelectedAxis].stControl.fRelativePosition := ABS(iBigTweakDistance);
-		Tweak();
+		Tweak(iBigTweakDistance);
 		eHmiControl := E_HmiControl.WaitForTweakFinish;
 
 	E_HmiControl.BigTweakBwd:
-		astAxes[iSelectedAxis].stControl.fRelativePosition := -ABS(iBigTweakDistance);
-		Tweak();
+		Tweak(-iBigTweakDistance);
 		eHmiControl := E_HmiControl.WaitForTweakFinish;
 		
 	E_HmiControl.WaitForTweakFinish:
@@ -190,13 +185,18 @@ CASE eSWLimitControl OF
 	
 END_CASE]]></ST>
     </Implementation>
-    <Action Name="Jog" Id="{2d9faa29-a67d-4f8a-b37a-a557e7933e49}">
+    <Method Name="Jog" Id="{1ac9d73a-3fde-4d7c-ab9f-a89280ff125b}">
+      <Declaration><![CDATA[METHOD Jog
+VAR_INPUT
+	fOverride : LREAL;
+END_VAR
+]]></Declaration>
       <Implementation>
-        <ST><![CDATA[astAxes[iSelectedAxis].stConfig.fOverride := 100;
+        <ST><![CDATA[astAxes[iSelectedAxis].stConfig.fOverride := fOverride;
 astAxes[iSelectedAxis].stControl.eCommand:= E_MotionFunctions.eLocalMoveVelocity;
 astAxes[iSelectedAxis].stControl.bExecute:= TRUE;]]></ST>
       </Implementation>
-    </Action>
+    </Method>
     <Action Name="ResetParameters" Id="{ede581f7-17f2-47ed-bf91-d81c7a0e26c6}">
       <Implementation>
         <ST><![CDATA[FOR iHmiAxisCounter := 1 TO GVL_APP.nAXIS_NUM DO
@@ -206,13 +206,6 @@ END_FOR
 bResetParameters := FALSE;]]></ST>
       </Implementation>
     </Action>
-    <Action Name="SlowJog" Id="{33ce1cbc-b4b1-46b5-b825-a87821a62702}">
-      <Implementation>
-        <ST><![CDATA[astAxes[iSelectedAxis].stConfig.fOverride := 20;
-astAxes[iSelectedAxis].stControl.eCommand:=E_MotionFunctions.eLocalMoveVelocity;
-astAxes[iSelectedAxis].stControl.bExecute:= TRUE;]]></ST>
-      </Implementation>
-    </Action>
     <Action Name="ToggleSWLimits" Id="{00f2d6f2-ec9f-43a1-b3f7-222658b8123f}">
       <Implementation>
         <ST><![CDATA[astAxes[iHmiAxisCounter].stControl.eCommand := E_MotionFunctions.eWriteToggleSWLimits;
@@ -220,13 +213,19 @@ astAxes[iHmiAxisCounter].stConfig.fWriteAxisBoolParameter := bSWLimitsOn;
 astAxes[iHmiAxisCounter].stControl.bExecute := TRUE;]]></ST>
       </Implementation>
     </Action>
-    <Action Name="Tweak" Id="{c4790568-4bdb-42f1-af17-a2e57a787c0e}">
+    <Method Name="Tweak" Id="{7c4ad566-6209-4d9e-849a-b4a915c383eb}">
+      <Declaration><![CDATA[METHOD Tweak
+VAR_INPUT
+	TweakDistance : LREAL;
+END_VAR
+]]></Declaration>
       <Implementation>
         <ST><![CDATA[astAxes[iSelectedAxis].stConfig.fOverride :=100;
+astAxes[iSelectedAxis].stControl.fRelativePosition := TweakDistance;
 astAxes[iSelectedAxis].stControl.eCommand:=E_MotionFunctions.eLocalMoveRelative;
 astAxes[iSelectedAxis].stControl.bExecute:=TRUE;]]></ST>
       </Implementation>
-    </Action>
+    </Method>
     <Action Name="WriteToSWLimit" Id="{a474f6c3-01a0-4eec-83a2-dbe3d219df3f}">
       <Implementation>
         <ST><![CDATA[astAxes[iHmiAxisSelection].stControl.eCommand := E_MotionFunctions.eWriteParameter;

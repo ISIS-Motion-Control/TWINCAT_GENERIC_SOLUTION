@@ -907,6 +907,13 @@
 				<InOut>7</InOut>
 				<UserHandle>33620032</UserHandle>
 			</Var>
+			<Var NotLinkable="true">
+				<Name>Ax13.latchedTurnOffPosition_[852]</Name>
+				<Type>LREAL</Type>
+				<BitOffs>5848</BitOffs>
+				<InOut>7</InOut>
+				<UserHandle>33620032</UserHandle>
+			</Var>
 		</Vars>
 		<Retain AreaSize="131072" DataSize="65504" ContextCnt="4"/>
 	</Box>

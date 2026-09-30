@@ -983,7 +983,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{FB261665-FD20-4BF2-97F8-2854C82B752D}" Name="tc_project_app" PrjFilePath="..\..\tc_project_app\tc_project_app.plcproj" TmcFilePath="..\..\tc_project_app\tc_project_app.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" ClearInvalidPersist="true" SymbolicMapping="true">
-		<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{5136B189-D583-5BB8-9CEE-E049EBE3B203}" TmcPath="tc_project_app\tc_project_app.tmc">
+		<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{8552E177-C344-6269-2989-864C8F8EF061}" TmcPath="tc_project_app\tc_project_app.tmc">
 			<Name>tc_project_app Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="8" AreaNo="4">
@@ -1760,6 +1760,11 @@ External Setpoint Generation:
 					<Name>GVL.astAxesPersistent[43].bMovingAtShutdown</Name>
 					<Comment><![CDATA[True if the axis was moving at shutdown, False otherwise]]></Comment>
 					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>Ax13.latchedTurnOffPosition</Name>
+					<Type>LREAL</Type>
 					<InOut>7</InOut>
 				</Var>
 			</Vars>
@@ -4687,6 +4692,7 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Outputs^SAFETY.RUN" VarB="Device (Safety)^Standard Outputdata^Standard In Var 2" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 6 (NOV-DP-RAM)^Box 140 (Retain Handler)">
+				<Link VarA="PlcTask Retains^Ax13.latchedTurnOffPosition" VarB="Retains^Ax13.latchedTurnOffPosition_[852]" AutoLink="true" PeerAutoLink="true"/>
 				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[10].bMovingAtShutdown" VarB="Retains^GVL.astAxesPersistent[10].bMovingAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
 				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[10].fEncoderBiasAtShutdown" VarB="Retains^GVL.astAxesPersistent[10].fEncoderBiasAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
 				<Link VarA="PlcTask Retains^GVL.astAxesPersistent[10].fPositionAtShutdown" VarB="Retains^GVL.astAxesPersistent[10].fPositionAtShutdown_[852]" AutoLink="true" PeerAutoLink="true"/>
