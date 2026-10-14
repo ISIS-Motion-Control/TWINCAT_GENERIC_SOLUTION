@@ -86,6 +86,17 @@ IF stoRTrig.Q THEN
 	GVL.astAxes[iAxisNumber].stControl.bReset:= TRUE;
 END_IF
 
+IF GVL.astAxes[1].stStatus.fActPosition >= 50 THEN
+	GVL.astAxes[1].stInputs.bLimitFwd := FALSE;
+ELSE
+	GVL.astAxes[1].stInputs.bLimitFwd := TRUE;
+END_IF
+
+IF GVL.astAxes[1].stStatus.fActPosition <= -50 THEN
+	GVL.astAxes[1].stInputs.bLimitBwd := FALSE;
+ELSE
+	GVL.astAxes[1].stInputs.bLimitBwd := TRUE;
+END_IF
 
 ]]></ST>
     </Implementation>
