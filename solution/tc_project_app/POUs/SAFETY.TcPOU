@@ -3,17 +3,20 @@
   <POU Name="SAFETY" Id="{7cebf818-ea4e-4eb2-b205-cc395cfced66}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM SAFETY
 VAR
-SafetyTargets : ARRAY [1..7] OF ST_SafetyTargetDevice:=
-[
-//(ProjectName:='MAIN', Device:='EL6910',aSafetyGroups:=[(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE)]),
-(ProjectName:='SampleStackZ', Device:='AX891x',aSafetyGroups:=[(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE)]),
-(ProjectName:='SampleStackRotation', Device:='AX891x',aSafetyGroups:=[(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE)]),
-(ProjectName:='CollimationNorthX', Device:='AMI891x',aSafetyGroups:=[(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE)]),
-(ProjectName:='CollimationNorthY', Device:='AMI891x',aSafetyGroups:=[(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE)]),
-(ProjectName:='CollimationSouthX', Device:='AMI891x',aSafetyGroups:=[(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE)]),
-(ProjectName:='CollimationSouthY', Device:='AMI891x',aSafetyGroups:=[(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE)])
-]
-;
+	aPreviousDiag : ARRAY[1..7] OF BYTE := [0];
+	aPreviousState : ARRAY[1..7] OF BYTE := [0];
+	
+	SafetyTargets : ARRAY [1..7] OF ST_SafetyTargetDevice:=
+	[
+	//(ProjectName:='MAIN', Device:='EL6910',aSafetyGroups:=[(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE)]),
+	(ProjectName:='SampleStackZ', Device:='AX891x',aSafetyGroups:=[(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE)]),
+	(ProjectName:='SampleStackRotation', Device:='AX891x',aSafetyGroups:=[(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE)]),
+	(ProjectName:='CollimationNorthX', Device:='AMI891x',aSafetyGroups:=[(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE)]),
+	(ProjectName:='CollimationNorthY', Device:='AMI891x',aSafetyGroups:=[(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE)]),
+	(ProjectName:='CollimationSouthX', Device:='AMI891x',aSafetyGroups:=[(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE)]),
+	(ProjectName:='CollimationSouthY', Device:='AMI891x',aSafetyGroups:=[(Connected:=TRUE),(Connected:=TRUE),(Connected:=TRUE)])
+	]
+	;
 	i : INT;
 	j : INT;
 	iGroup : INT;
@@ -208,6 +211,8 @@ FOR i:=1 TO 7 DO
 		4:	SafetyTargets[i].Diag_String:= 'CMP Error';
 		5:	SafetyTargets[i].Diag_String:= 'Deactive';
 		6:	SafetyTargets[i].Diag_String:= 'Restart Error';
+	ELSE
+    	SafetyTargets[i].Diag_String := 'Unknown Error';
 	END_CASE
 	CASE SafetyTargets[i].State OF
 		1: SafetyTargets[i].State_String:= 'Run';
@@ -218,7 +223,28 @@ FOR i:=1 TO 7 DO
 		7: SafetyTargets[i].State_String:= 'Stop Err';
 		16: SafetyTargets[i].State_String:= 'Deactive';
 		17: SafetyTargets[i].State_String:= 'Wait Comm Err';
+	ELSE
+		SafetyTargets[i].State_String := 'Unknown State';
 	END_CASE
+	
+	
+	IF SafetyTargets[i].State <> aPreviousState[i] THEN
+		IF SafetyTargets[i].State <> 1 THEN
+			fbEventLogger.LogError(CONCAT(SafetyTargets[i].ProjectName,
+				CONCAT(' is in state:  ', SafetyTargets[i].State_String))
+			);
+		END_IF
+		aPreviousState[i] := SafetyTargets[i].State;
+	END_IF
+	
+	IF SafetyTargets[i].Diag <> aPreviousDiag[i] THEN
+		IF SafetyTargets[i].Diag <> 0 THEN
+			fbEventLogger.LogError(CONCAT(SafetyTargets[i].ProjectName,
+				CONCAT(' is in error with error: ', SafetyTargets[i].Diag_String))
+			);
+		END_IF
+		aPreviousDiag[i] := SafetyTargets[i].Diag;
+	END_IF
 END_FOR
 
 //Error ack light
