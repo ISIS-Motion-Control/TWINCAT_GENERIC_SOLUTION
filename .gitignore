@@ -22,3 +22,5 @@ tools/linux/getADSState/getADSState.bin
 # TwinCAT HMI, filter downloaded JSON schema files
 json-schema.org
 
+# TwinCAT HMI project
+/TcHmiProject1/

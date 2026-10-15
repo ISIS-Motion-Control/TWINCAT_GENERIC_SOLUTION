@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <POU Name="FB_CustomEventLogger" Id="{98ccbd73-35b4-43e4-a7b3-ba2b69e0d9d3}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_CustomEventLogger
+VAR CONSTANT
+    iArraySize : INT := 20;
+END_VAR
+VAR
+    // Events
+    fbEventError : FB_TcMessage;
+    bInitialised : BOOL := FALSE;
+
+    // Event buffer
+    aEventBuffer : ARRAY[0..iArraySize - 1] OF STRING(255);
+    iBufferWriteIndex : INT := 0;
+    iBufferReadIndex : INT := 0;
+    iEventCount : INT := 0;
+
+    // Event status
+    hrErrorEventCreateStatus : HRESULT;
+    hrErrorEventSendStatus : HRESULT;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF NOT bInitialised THEN
+    hrErrorEventCreateStatus := fbEventError.CreateEx(TC_EVENTS.PLC_Messages.Error, 0);
+
+    bInitialised := hrErrorEventCreateStatus = 0;
+END_IF
+
+IF bInitialised AND iEventCount > 0 THEN
+    WriteMessage();
+END_IF]]></ST>
+    </Implementation>
+    <Method Name="LogError" Id="{7f15a9b0-2928-4ca0-9048-a4f939d50ece}">
+      <Declaration><![CDATA[METHOD PUBLIC LogError : BOOL
+VAR_INPUT
+	sEventError : STRING(255);
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[LogError := FALSE;
+
+IF iEventCount < iArraySize THEN
+    aEventBuffer[iBufferWriteIndex] := sEventError;
+
+    iBufferWriteIndex := iBufferWriteIndex + 1;
+
+    IF iBufferWriteIndex >= iArraySize THEN
+        iBufferWriteIndex := 0;
+    END_IF
+
+    iEventCount := iEventCount + 1;
+    LogError := TRUE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="WriteMessage" Id="{b2a7a56e-62a7-4591-9808-9434bdaca5ec}">
+      <Declaration><![CDATA[METHOD Private WriteMessage : BOOL
+VAR
+    sEventMessage : STRING(255);
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[WriteMessage := FALSE;
+
+sEventMessage := aEventBuffer[iBufferReadIndex];
+
+fbEventError.ipArguments.Clear().AddString(sEventMessage);
+hrErrorEventSendStatus := fbEventError.Send(0);
+
+IF hrErrorEventSendStatus = 0 THEN
+	iBufferReadIndex := iBufferReadIndex + 1;
+
+	IF iBufferReadIndex >= iArraySize THEN
+		iBufferReadIndex := 0;
+	END_IF
+
+	iEventCount := iEventCount - 1;
+	WriteMessage := TRUE;
+END_IF
+]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

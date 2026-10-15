@@ -151,7 +151,7 @@ GVL.fbGetCurTaskIndex();
 //Application_Template();
 
 
-
+fbEventLogger();
 Axis1();
 ]]></ST>
       </Implementation>

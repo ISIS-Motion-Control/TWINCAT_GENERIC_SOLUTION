@@ -14,6 +14,18 @@
 				<Hide GUID="{E73CD731-FF3A-4C1B-9583-15F59191D4FC}"/>
 			</Hides>
 		</DataType>
+		<DataType>
+			<Name GUID="{5B97C916-DE1E-449C-A386-350B10996B98}" PersistentType="true">PLC_Messages</Name>
+			<DisplayName TxtId=""><![CDATA[Class for sending custom PLC messages]]></DisplayName>
+			<EventId>
+				<Name Id="1">Error</Name>
+				<DisplayName TxtId=""><![CDATA[{0}]]></DisplayName>
+				<Severity>Error</Severity>
+			</EventId>
+			<Hides>
+				<Hide GUID="{A4D79283-4D21-4FE8-80F4-82991D4515BF}"/>
+			</Hides>
+		</DataType>
 	</DataTypes>
 	<Project ProjectGUID="{9CF97348-B9D3-4938-B1F2-5F0B0B6AA66A}" Target64Bit="true" ShowHideConfigurations="#x106">
 		<System>

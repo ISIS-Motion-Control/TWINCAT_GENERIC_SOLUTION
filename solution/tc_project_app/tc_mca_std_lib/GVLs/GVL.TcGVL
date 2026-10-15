@@ -18,6 +18,7 @@
 	astAxesPersistent: ARRAY [1..GVL_APP.nAXIS_NUM] OF ST_AxisPersistent;
 	astAxesGroup: ARRAY [1..GVL_APP.nAXIS_GROUPS_NUM] OF ST_AxisGroupStruct;
 	iAxesGroupIndex : INT;
+	fbEventLogger : FB_CustomEventLogger;
 END_VAR
 
 VAR_GLOBAL CONSTANT
