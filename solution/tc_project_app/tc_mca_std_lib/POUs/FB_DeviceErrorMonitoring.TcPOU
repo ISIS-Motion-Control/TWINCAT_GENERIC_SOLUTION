@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <POU Name="FB_DeviceErrorMonitoring" Id="{1df58971-17a8-4adf-a36a-2785bed96d1c}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_DeviceErrorMonitoring
+VAR
+	fbErrorRTrig : R_TRIG;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="CheckError" Id="{ecec82be-a5e7-4019-9baa-3cf800130e1e}">
+      <Declaration><![CDATA[METHOD CheckError : BOOL
+VAR_INPUT
+	bInError : BOOL;
+	sDeviceName : STRING;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fbErrorRTrig(CLK := bInError);
+IF fbErrorRTrig.Q THEN
+	fbEventLogger.LogError(Concat(sDeviceName, ' has a discrepancy fault'));
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

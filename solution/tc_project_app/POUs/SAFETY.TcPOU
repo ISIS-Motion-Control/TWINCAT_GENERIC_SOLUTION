@@ -61,6 +61,9 @@ VAR
 	{ attribute 'TcHmiSymbol.AddSymbol' }
 	Hmi_Maintenance  : ST_DeviceDualChannelInput;
 	
+	//Dual Channel error logging example
+	fbMS1ErrorMonitoring : FB_DeviceErrorMonitoring;
+	
 	Q1Q2 AT %I* : BOOL;
 	Q3Q4 AT %I* : BOOL;
 	SPB1 AT %I* : BOOL;
@@ -323,7 +326,10 @@ ELSIF inMode_Normal AND CollisionDetected THEN
 	BannerMessage:= 'Collision detected, control only possible in local mode';
 ELSE
 	BannerMessage:= '';
-END_IF]]></ST>
+END_IF
+
+//Dual Channel error logging
+fbMS1ErrorMonitoring.CheckError(MS1.inError, 'MS1');]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

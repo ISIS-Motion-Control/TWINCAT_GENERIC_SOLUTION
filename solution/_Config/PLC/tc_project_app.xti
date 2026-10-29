@@ -983,7 +983,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{FB261665-FD20-4BF2-97F8-2854C82B752D}" Name="tc_project_app" PrjFilePath="..\..\tc_project_app\tc_project_app.plcproj" TmcFilePath="..\..\tc_project_app\tc_project_app.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" ClearInvalidPersist="true" SymbolicMapping="true">
-		<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{AA99E3B3-7503-3644-AE13-F7D62BE8EC22}" TmcPath="tc_project_app\tc_project_app.tmc">
+		<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{0637DF9A-96E6-66ED-7DF3-77853783AC6B}" TmcPath="tc_project_app\tc_project_app.tmc">
 			<Name>tc_project_app Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="8" AreaNo="4">
@@ -1009,6 +1009,10 @@ External Setpoint Generation:
 			</Vars>
 			<Vars VarGrpType="2" AreaNo="1">
 				<Name>PlcTask Outputs</Name>
+				<Var>
+					<Name>SAFETY.RUN</Name>
+					<Type>BOOL</Type>
+				</Var>
 				<Var>
 					<Name>SAFETY.SafetyTargets[1].RUN</Name>
 					<Type>BOOL</Type>
@@ -1063,10 +1067,6 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>SAFETY.SafetyTargets[7].ERROR_ACK</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>SAFETY.RUN</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -1858,10 +1858,6 @@ External Setpoint Generation:
 					<Type>USINT</Type>
 				</Var>
 				<Var>
-					<Name>SAFETY.Q1Q2</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>SAFETY.MS1.Ch1</Name>
 					<Type>BIT</Type>
 				</Var>
@@ -2083,6 +2079,10 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>SAFETY.Hmi_Maintenance.Output</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>SAFETY.Q1Q2</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>

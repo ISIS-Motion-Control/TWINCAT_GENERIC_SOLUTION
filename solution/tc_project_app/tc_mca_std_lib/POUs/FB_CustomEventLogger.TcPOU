@@ -6,30 +6,48 @@ VAR CONSTANT
     iArraySize : INT := 20;
 END_VAR
 VAR
-    // Events
+	//Event logger message instances
     fbEventError : FB_TcMessage;
-    bInitialised : BOOL := FALSE;
+    fbEventWarning : FB_TcMessage;
+    fbEventInfo : FB_TcMessage;	
 
-    // Event buffer
-    aEventBuffer : ARRAY[0..iArraySize - 1] OF STRING(255);
+    // Event array
+	astEventBuffer : ARRAY[0..iArraySize - 1] OF ST_EventMessage;
     iBufferWriteIndex : INT := 0;
     iBufferReadIndex : INT := 0;
     iEventCount : INT := 0;
-
+	
     // Event status
+	bErrorInitialised : BOOL := FALSE;
+	bWarningInitialised : BOOL := FALSE;
+	bInfoInitialised : BOOL := FALSE;
     hrErrorEventCreateStatus : HRESULT;
     hrErrorEventSendStatus : HRESULT;
+	hrWarningEventCreateStatus : HRESULT;
+    hrWarningEventSendStatus : HRESULT;
+	hrInfoEventCreateStatus : HRESULT;
+    hrInfoEventSendStatus : HRESULT;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF NOT bInitialised THEN
+      <ST><![CDATA[IF NOT bErrorInitialised THEN
     hrErrorEventCreateStatus := fbEventError.CreateEx(TC_EVENTS.PLC_Messages.Error, 0);
-
-    bInitialised := hrErrorEventCreateStatus = 0;
+    bErrorInitialised := hrErrorEventCreateStatus = 0;
 END_IF
 
-IF bInitialised AND iEventCount > 0 THEN
+IF NOT bWarningInitialised THEN
+    hrWarningEventCreateStatus := fbEventWarning.CreateEx(TC_EVENTS.PLC_Messages.Warning, 0);
+    bWarningInitialised := hrWarningEventCreateStatus = 0;
+END_IF
+
+IF NOT bInfoInitialised THEN
+    hrInfoEventCreateStatus := fbEventInfo.CreateEx(TC_EVENTS.PLC_Messages.Info, 0);
+    bInfoInitialised := hrInfoEventCreateStatus = 0;
+END_IF
+
+IF bErrorInitialised AND bWarningInitialised AND bInfoInitialised AND iEventCount >0 THEN
     WriteMessage();
-END_IF]]></ST>
+END_IF
+]]></ST>
     </Implementation>
     <Method Name="LogError" Id="{7f15a9b0-2928-4ca0-9048-a4f939d50ece}">
       <Declaration><![CDATA[METHOD PUBLIC LogError : BOOL
@@ -41,7 +59,32 @@ END_VAR
         <ST><![CDATA[LogError := FALSE;
 
 IF iEventCount < iArraySize THEN
-    aEventBuffer[iBufferWriteIndex] := sEventError;
+    astEventBuffer[iBufferWriteIndex].sMessage := sEventError;
+    astEventBuffer[iBufferWriteIndex].eSeverity := E_EventSeverity.Error;
+
+    iBufferWriteIndex := iBufferWriteIndex + 1;
+
+    IF iBufferWriteIndex >= iArraySize THEN
+    	iBufferWriteIndex := 0;
+	END_IF
+	
+    iEventCount := iEventCount + 1;
+    LogError := TRUE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="LogInfo" Id="{9b6e75ef-d311-4b05-ae03-efe708c54118}">
+      <Declaration><![CDATA[METHOD LogInfo : BOOL
+VAR_INPUT
+	sEventInfo : STRING(255);
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[LogInfo := FALSE;
+
+IF iEventCount < iArraySize THEN
+    astEventBuffer[iBufferWriteIndex].sMessage := sEventInfo;
+    astEventBuffer[iBufferWriteIndex].eSeverity := E_EventSeverity.Info;
 
     iBufferWriteIndex := iBufferWriteIndex + 1;
 
@@ -50,32 +93,76 @@ IF iEventCount < iArraySize THEN
     END_IF
 
     iEventCount := iEventCount + 1;
-    LogError := TRUE;
+    LogInfo := TRUE;
 END_IF]]></ST>
       </Implementation>
     </Method>
-    <Method Name="WriteMessage" Id="{b2a7a56e-62a7-4591-9808-9434bdaca5ec}">
-      <Declaration><![CDATA[METHOD Private WriteMessage : BOOL
+    <Method Name="LogWarning" Id="{73d3faa0-c269-4999-a745-b5531a23e5d8}">
+      <Declaration><![CDATA[METHOD LogWarning : BOOL
+VAR_INPUT
+	sEventWarning : STRING(255);
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[LogWarning := FALSE;
+
+IF iEventCount < iArraySize THEN
+    astEventBuffer[iBufferWriteIndex].sMessage := sEventWarning;
+    astEventBuffer[iBufferWriteIndex].eSeverity := E_EventSeverity.Warning;
+
+    iBufferWriteIndex := iBufferWriteIndex + 1;
+
+    IF iBufferWriteIndex >= iArraySize THEN
+        iBufferWriteIndex := 0;
+    END_IF
+
+    iEventCount := iEventCount + 1;
+    LogWarning := TRUE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="WriteMessage" Id="{91c1e5fb-f28b-4d9e-9265-592aa951f876}">
+      <Declaration><![CDATA[METHOD WriteMessage : BOOL
 VAR
-    sEventMessage : STRING(255);
-END_VAR]]></Declaration>
+	sEventMessage : STRING(255);
+END_VAR
+]]></Declaration>
       <Implementation>
         <ST><![CDATA[WriteMessage := FALSE;
 
-sEventMessage := aEventBuffer[iBufferReadIndex];
+sEventMessage := astEventBuffer[iBufferReadIndex].sMessage;
 
-fbEventError.ipArguments.Clear().AddString(sEventMessage);
-hrErrorEventSendStatus := fbEventError.Send(0);
+CASE astEventBuffer[iBufferReadIndex].eSeverity OF
 
-IF hrErrorEventSendStatus = 0 THEN
-	iBufferReadIndex := iBufferReadIndex + 1;
+    E_EventSeverity.Error:
+        IF bErrorInitialised THEN
+            fbEventError.ipArguments.Clear().AddString(sEventMessage);
+            hrErrorEventSendStatus := fbEventError.Send(0);
+            WriteMessage := hrErrorEventSendStatus = 0;
+        END_IF
 
+    E_EventSeverity.Warning:
+        IF bWarningInitialised THEN
+            fbEventWarning.ipArguments.Clear().AddString(sEventMessage);
+            hrWarningEventSendStatus := fbEventWarning.Send(0);
+            WriteMessage := hrWarningEventSendStatus = 0;
+        END_IF
+
+    E_EventSeverity.Info:
+        IF bInfoInitialised THEN
+            fbEventInfo.ipArguments.Clear().AddString(sEventMessage);
+            hrInfoEventSendStatus := fbEventInfo.Send(0);
+            WriteMessage := hrInfoEventSendStatus = 0;
+        END_IF
+
+END_CASE
+
+IF WriteMessage THEN
+    iBufferReadIndex := iBufferReadIndex + 1;
 	IF iBufferReadIndex >= iArraySize THEN
 		iBufferReadIndex := 0;
 	END_IF
-
-	iEventCount := iEventCount - 1;
-	WriteMessage := TRUE;
+    iEventCount := iEventCount - 1;
 END_IF
 ]]></ST>
       </Implementation>

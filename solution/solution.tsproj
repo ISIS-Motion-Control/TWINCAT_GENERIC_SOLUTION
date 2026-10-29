@@ -15,15 +15,26 @@
 			</Hides>
 		</DataType>
 		<DataType>
-			<Name GUID="{5B97C916-DE1E-449C-A386-350B10996B98}" PersistentType="true">PLC_Messages</Name>
+			<Name GUID="{C8E6D357-D3BE-455C-88B0-8383C9BC4022}" PersistentType="true">PLC_Messages</Name>
 			<DisplayName TxtId=""><![CDATA[Class for sending custom PLC messages]]></DisplayName>
 			<EventId>
 				<Name Id="1">Error</Name>
 				<DisplayName TxtId=""><![CDATA[{0}]]></DisplayName>
 				<Severity>Error</Severity>
 			</EventId>
+			<EventId>
+				<Name Id="2">Warning</Name>
+				<DisplayName TxtId=""><![CDATA[{0}]]></DisplayName>
+				<Severity>Warning</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="3">Info</Name>
+				<DisplayName TxtId=""><![CDATA[{0}]]></DisplayName>
+				<Severity>Info</Severity>
+			</EventId>
 			<Hides>
 				<Hide GUID="{A4D79283-4D21-4FE8-80F4-82991D4515BF}"/>
+				<Hide GUID="{5B97C916-DE1E-449C-A386-350B10996B98}"/>
 			</Hides>
 		</DataType>
 	</DataTypes>
