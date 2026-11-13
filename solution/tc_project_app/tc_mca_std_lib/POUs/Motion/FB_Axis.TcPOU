@@ -255,7 +255,18 @@ IF fbNewMoveRTrig.Q THEN
 END_IF
 fbMoveInProgressFTrig(CLK:= _stAxis.stStatus.bMoveInProgress OR spgDisableCommand);
 //No move requested and no move in progress
-]]></ST>
+
+IF 	((_stAxis.stControl.eCommand = E_MotionFunctions.eMoveAbsolute AND NOT _stAxis.stInputs.bAllowRemoteControl) OR 
+	(_stAxis.stControl.eCommand = E_MotionFunctions.eMoveModulo AND NOT _stAxis.stInputs.bAllowRemoteControl) OR
+	(_stAxis.stControl.eCommand = E_MotionFunctions.eMoveRelative AND NOT _stAxis.stInputs.bAllowRemoteControl) OR
+	(_stAxis.stControl.eCommand = E_MotionFunctions.eMoveVelocity AND NOT _stAxis.stInputs.bAllowRemoteControl) OR
+	(_stAxis.stControl.eCommand = E_MotionFunctions.eHome AND NOT _stAxis.stInputs.bAllowRemoteControl) OR
+	(_stAxis.stControl.eCommand = E_MotionFunctions.eLocalMoveAbsolute AND _stAxis.stInputs.bAllowRemoteControl) OR
+	(_stAxis.stControl.eCommand = E_MotionFunctions.eLocalMoveRelative AND _stAxis.stInputs.bAllowRemoteControl) OR
+	(_stAxis.stControl.eCommand = E_MotionFunctions.eLocalMoveVelocity AND _stAxis.stInputs.bAllowRemoteControl)) AND
+	_stAxis.stControl.bExecute THEN
+		fbEventLogger.LogError(CONCAT('bAllowRemoteControl blocking move. Set value to: ', TO_STRING(NOT(_stAxis.stInputs.bAllowRemoteControl))));
+END_IF]]></ST>
       </Implementation>
     </Method>
     <Method Name="mControl_DisableSPG" Id="{f7c5f83c-597e-487b-a5d6-3936cabd6380}" FolderPath="Control Methods\">
