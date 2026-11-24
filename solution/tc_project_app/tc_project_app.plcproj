@@ -19,14 +19,13 @@
     <GenerateTpy>false</GenerateTpy>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DUTs\E_AxisNames.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GlobalTextList.TcGTLO">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GVLs\GVL_APP.TcGVL">
-      <SubType>Code</SubType>
-      <LinkAlways>true</LinkAlways>
-    </Compile>
-    <Compile Include="GVLs\GVL_AxisNames.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
