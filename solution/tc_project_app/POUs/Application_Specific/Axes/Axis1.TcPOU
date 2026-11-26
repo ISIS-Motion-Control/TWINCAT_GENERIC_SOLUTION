@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.12">
   <POU Name="Axis1" Id="{f9d90818-737e-4f74-b25b-e6117c0ecfa0}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Axis1
 VAR
@@ -86,19 +86,12 @@ IF stoRTrig.Q THEN
 	GVL.astAxes[iAxisNumber].stControl.bReset:= TRUE;
 END_IF
 
-IF GVL.astAxes[1].stStatus.fActPosition >= 50 THEN
-	GVL.astAxes[1].stInputs.bLimitFwd := FALSE;
-ELSE
-	GVL.astAxes[1].stInputs.bLimitFwd := TRUE;
-END_IF
-
-IF GVL.astAxes[1].stStatus.fActPosition <= -50 THEN
-	GVL.astAxes[1].stInputs.bLimitBwd := FALSE;
-ELSE
-	GVL.astAxes[1].stInputs.bLimitBwd := TRUE;
-END_IF
-
 ]]></ST>
     </Implementation>
+    <LineIds Name="Axis1">
+      <LineId Id="3" Count="68" />
+      <LineId Id="84" Count="0" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

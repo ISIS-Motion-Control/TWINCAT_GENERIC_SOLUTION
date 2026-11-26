@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.12">
+  <POU Name="FB_WriteNcParameter" Id="{a5f5e296-9e60-4f35-8592-09262b5b728a}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_WriteNcParameter
+VAR_INPUT
+	
+	ParameterNumber: INT;
+	Value : LREAL;
+END_VAR
+VAR_OUTPUT
+	bDoneWriting	: BOOL;
+	bError			: BOOL;
+END_VAR
+VAR
+	bExecute		: BOOL;
+	
+	eWriteState	: (INIT, TRIGGER, WRITE, DONE);
+	fbNcWrite		: MC_WriteParameter;
+END_VAR
+
+VAR_IN_OUT
+	Axis: AXIS_REF;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[CASE eWriteState OF
+	
+	INIT:
+		bDoneWriting := FALSE;
+		eWriteState:= TRIGGER;
+	
+	TRIGGER:
+		bExecute := TRUE;
+		eWriteState:= WRITE;
+		
+	WRITE:
+		fbNcWrite(
+			Axis:= Axis, 
+			Execute:= bExecute, 
+			ParameterNumber:= ParameterNumber, 
+			Value:= Value);
+			
+		bExecute:= NOT bExecute;
+		
+		IF NOT fbNcWrite.Busy THEN
+			eWriteState:= DONE;
+		END_IF
+		
+	DONE:
+		
+		IF fbNcWrite.Error THEN
+			bError:= TRUE;
+		ELSE
+			bError:= FALSE;
+		END_IF
+		fbNcWrite(
+			Axis:= Axis, 
+			Execute:= FALSE, 
+			ParameterNumber:= ParameterNumber, 
+			Value:= Value);
+		bDoneWriting := TRUE;
+		eWriteState:= INIT;
+		
+END_CASE]]></ST>
+    </Implementation>
+    <LineIds Name="FB_WriteNcParameter">
+      <LineId Id="1" Count="38" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

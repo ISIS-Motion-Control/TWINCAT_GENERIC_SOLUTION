@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.12">
   <DUT Name="E_MotionFunctions" Id="{7dfb6efd-1034-45c3-ba43-5dc10decbfbc}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 {attribute 'strict'}
@@ -15,6 +15,7 @@ TYPE E_MotionFunctions :
 	eLocalMoveVelocity := 7,
 
     eHome := 10, //Run the homing routine for the axis
+	eLocalHome := 11,
     eWriteParameter := 50, //Writes the set value to the set parameter once bExecute goes high
     eReadParameter := 60, //Reads a single Parameter
 	eWriteToggleSWLimits := 70

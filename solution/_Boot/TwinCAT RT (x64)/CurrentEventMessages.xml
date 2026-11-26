@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<TcEventSources Version="2">
+	<Translations>
+		<Text TxtId="Class for sending custom PLC messages"/>
+		<Text TxtId="{0}"/>
+	</Translations>
+	<Source>
+		<GUID>{C8E6D357-D3BE-455C-88B0-8383C9BC4022}</GUID>
+		<Name>Class for sending custom PLC messages</Name>
+		<Event>
+			<Id>1</Id>
+			<Message>{0}</Message>
+		</Event>
+		<Event>
+			<Id>2</Id>
+			<Message>{0}</Message>
+		</Event>
+		<Event>
+			<Id>3</Id>
+			<Message>{0}</Message>
+		</Event>
+	</Source>
+</TcEventSources>

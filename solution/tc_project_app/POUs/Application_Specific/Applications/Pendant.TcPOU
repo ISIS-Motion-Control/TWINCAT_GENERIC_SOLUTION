@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.12">
   <POU Name="Pendant" Id="{059d275e-4870-4167-960e-2a5c721e374f}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Pendant
 VAR
@@ -25,6 +25,8 @@ VAR
 	fbLocalModeFTrig: F_TRIG;
 	
 	bSWLimitsOn : BOOL := FALSE; //False for off, true for on
+	stateDelay :TON;
+	iStopIndex : UINT;
 END_VAR
 
 ]]></Declaration>
@@ -38,6 +40,12 @@ IF bResetParameters THEN
 END_IF
 
 
+IF ketop.keys[E_PendantControl.Stop] OR NOT bLocalMode THEN
+	eHmiControl := E_PendantControl.Stop;
+END_IF
+
+
+//This is dumb code, sort it out cause stop only runs in local mode anyway
 IF ketop.keys[E_PendantControl.Stop] OR NOT bLocalMode THEN
 	eHmiControl := E_PendantControl.Stop;
 END_IF
@@ -60,28 +68,44 @@ CASE eHmiControl OF
 	E_PendantControl.JogFwd:
 		astAxes[iSelectedAxis].stControl.fVelocity := ABS(astAxes[iSelectedAxis].stControl.fVelocity);
 		Jog(astHmiControl[iSelectedAxis].fVelocity);
-		eHmiControl := E_PendantControl.WaitForJogFinish;
+		stateDelay.IN:= TRUE;
+		IF stateDelay.Q THEN
+			eHmiControl := E_PendantControl.WaitForJogFinish;
+		END_IF
+		
 	
 	E_PendantControl.JogBwd:
 		astAxes[iSelectedAxis].stControl.fVelocity := -ABS(astAxes[iSelectedAxis].stControl.fVelocity);
-		Jog(astHmiControl[iSelectedAxis].fVelocity);
-		eHmiControl := E_PendantControl.WaitForJogFinish;	
+		Jog(fOverride:= astHmiControl[iSelectedAxis].fVelocity);
+		stateDelay.IN:= TRUE;
+		IF stateDelay.Q THEN
+			eHmiControl := E_PendantControl.WaitForJogFinish;
+		END_IF	
 		
 	E_PendantControl.SlowJogFwd:
 		astAxes[iSelectedAxis].stControl.fVelocity := ABS(astAxes[iSelectedAxis].stControl.fVelocity);
-		Jog(0.2 * astHmiControl[iSelectedAxis].fVelocity);
-		eHmiControl := E_PendantControl.WaitForJogFinish;		
+		Jog(fOverride:= 0.2*astHmiControl[iSelectedAxis].fVelocity);
+		stateDelay.IN:= TRUE;
+		IF stateDelay.Q THEN
+			eHmiControl := E_PendantControl.WaitForJogFinish;
+		END_IF				
 		
 	E_PendantControl.SlowJogBwd:
 		astAxes[iSelectedAxis].stControl.fVelocity := -ABS(astAxes[iSelectedAxis].stControl.fVelocity);
-		Jog(0.2 * astHmiControl[iSelectedAxis].fVelocity);
-		eHmiControl := E_PendantControl.WaitForJogFinish;		
+		Jog(fOverride:= 0.2*astHmiControl[iSelectedAxis].fVelocity);
+		stateDelay.IN:= TRUE;
+		IF stateDelay.Q THEN
+			eHmiControl := E_PendantControl.WaitForJogFinish;
+		END_IF		
 		
 	E_PendantControl.WaitForJogFinish:
 		IF Ketop.keys[iKeyPressedValue] = FALSE THEN
-			astAxes[iSelectedAxis].stControl.bHalt := TRUE;
+			astAxes[iSelectedAxis].stControl.bHalt := NOT astAxes[iSelectedAxis].stControl.bHalt;
 			astAxes[iSelectedAxis].stControl.fVelocity := ABS(astAxes[iSelectedAxis].stControl.fVelocity);
-			eHmiControl := E_PendantControl.Default;
+			IF astAxes[iSelectedAxis].Axis.Status.NotMoving THEN
+				eHmiControl := E_PendantControl.Default;
+			END_IF
+			
 		END_IF
 
 	E_PendantControl.SmallTweakFwd:
@@ -126,23 +150,20 @@ CASE eHmiControl OF
 		END_IF
 	
 	E_PendantControl.Stop:
-		IF iSelectedAxis > 0 THEN
-			astAxes[iSelectedAxis].stControl.bHalt := TRUE;
-			IF ketop.keys[E_PendantControl.Stop] = FALSE AND astAxes[iSelectedAxis].stStatus.bMoving = FALSE THEN
+		IF bLocalMode THEN
+			FOR iStopIndex:= 1 TO 21 DO
+				astAxes[iStopIndex].stControl.bHalt := NOT astAxes[iStopIndex].stControl.bHalt;
+			END_FOR
+			IF ketop.keys[E_PendantControl.Stop] = FALSE THEN
 				eHmiControl := E_PendantControl.Default;
-				FOR iUsedKeysIndex := 1 TO (SIZEOF(aiUsedKeys)/SIZEOF(UINT)) DO
-					IF KeTop.keys[aiUsedKeys[iUsedKeysIndex]] = TRUE THEN
-						eHmiControl := E_PendantControl.Stop;
-					END_IF
-				END_FOR
-			END_IF	
-		END_IF
-		IF iSelectedAxis = -1 AND bLocalMode THEN
-			eHmiControl := E_PendantControl.Default;
+			ELSE 
+				eHmiControl := E_PendantControl.Stop;
+			END_IF
 		END_IF
 
 END_CASE
 
+//Is this used?
 CASE eSWLimitControl OF
 	E_SWLimitControl.Default:
 		IF fbLocalModeRTrig.Q THEN
@@ -232,5 +253,54 @@ astAxes[iSelectedAxis].stControl.bExecute:=TRUE;]]></ST>
 astAxes[iHmiAxisSelection].stControl.bExecute := TRUE;]]></ST>
       </Implementation>
     </Action>
+    <LineIds Name="Pendant">
+      <LineId Id="3" Count="11" />
+      <LineId Id="297" Count="1" />
+      <LineId Id="293" Count="0" />
+      <LineId Id="295" Count="1" />
+      <LineId Id="294" Count="0" />
+      <LineId Id="15" Count="2" />
+      <LineId Id="179" Count="0" />
+      <LineId Id="190" Count="9" />
+      <LineId Id="29" Count="2" />
+      <LineId Id="210" Count="1" />
+      <LineId Id="213" Count="2" />
+      <LineId Id="212" Count="0" />
+      <LineId Id="34" Count="2" />
+      <LineId Id="221" Count="4" />
+      <LineId Id="39" Count="2" />
+      <LineId Id="226" Count="4" />
+      <LineId Id="44" Count="2" />
+      <LineId Id="231" Count="4" />
+      <LineId Id="49" Count="2" />
+      <LineId Id="236" Count="6" />
+      <LineId Id="56" Count="43" />
+      <LineId Id="243" Count="8" />
+      <LineId Id="113" Count="2" />
+      <LineId Id="292" Count="0" />
+      <LineId Id="116" Count="0" />
+      <LineId Id="252" Count="39" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="Pendant.Jog">
+      <LineId Id="3" Count="1" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="Pendant.ResetParameters">
+      <LineId Id="2" Count="3" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="Pendant.ToggleSWLimits">
+      <LineId Id="2" Count="1" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="Pendant.Tweak">
+      <LineId Id="3" Count="2" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="Pendant.WriteToSWLimit">
+      <LineId Id="2" Count="0" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

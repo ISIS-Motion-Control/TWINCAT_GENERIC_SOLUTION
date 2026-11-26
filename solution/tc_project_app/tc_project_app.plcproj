@@ -74,6 +74,18 @@
     <Compile Include="POUs\SAFETY.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="tc_mca_std_lib\CoeRW\FB_ReadCOE.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tc_mca_std_lib\CoeRW\FB_WriteAndCheckCOE.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tc_mca_std_lib\CoeRW\FB_WriteCOE.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tc_mca_std_lib\CoeRW\FB_WriteNcParameter.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="tc_mca_std_lib\DUTs\Axis_Group_Structures\ST_AxisGroupDescription.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -247,6 +259,7 @@
     <Folder Include="POUs\Application_Specific\Applications" />
     <Folder Include="POUs\Application_Specific\Axes" />
     <Folder Include="POUs\Application_Specific\Groups" />
+    <Folder Include="tc_mca_std_lib\CoeRW" />
     <Folder Include="tc_mca_std_lib\DUTs\Axis_Structures" />
     <Folder Include="tc_mca_std_lib\DUTs\EventLogging" />
     <Folder Include="tc_mca_std_lib\DUTs\Panel_Infrastructure" />

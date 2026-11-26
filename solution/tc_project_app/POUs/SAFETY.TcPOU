@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.12">
   <POU Name="SAFETY" Id="{7cebf818-ea4e-4eb2-b205-cc395cfced66}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM SAFETY
 VAR
@@ -168,6 +168,15 @@ VAR_OUTPUT
 	inLocalMode : BOOL;
 	CollisionDetected : BOOL;
 	collisionDetected_R_Edge : BOOL;
+	
+	bTestSLS : BOOL; //Command bool to override SS Zrotation temporarily to test SLS SF
+	iSlsTestState: INT :=0;
+	fSlsLatchVelo : LREAL;
+	fSlsLatchMaxVelo : LREAL;
+	tonSlsDelay : TON;
+	tonSlsTest : TON;
+	retryCounter : INT;
+	bErrorRestoreVelo: BOOL;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[inLocalMode := inMode_Local OR inMode_Maintenance;
@@ -329,7 +338,106 @@ ELSE
 END_IF
 
 //Dual Channel error logging
-fbMS1ErrorMonitoring.CheckError(MS1.inError, 'MS1');]]></ST>
+fbMS1ErrorMonitoring.CheckError(MS1.inError, 'MS1');
+
+//Action to enable testing of SLS safety function
+TestSLS();]]></ST>
     </Implementation>
+    <Action Name="TestSLS" Id="{0036eb02-c2c2-49d6-9262-59fff856a52c}">
+      <Implementation>
+        <ST><![CDATA[(*IF bTestSLS AND NOT inMode_Maintenance THEN
+	bTestSLS:= FALSE;	//don't allow this command to run if not in maintenance mode
+END_IF
+tonSlsDelay(PT:=T#200MS);
+tonSlsTest(PT:=T#1S);
+CASE iSlsTestState OF
+	0:	//Check for bTestSLS
+		IF bTestSLS THEN
+			iSlsTestState := 1;
+			fSlsLatchVelo := astAxes[17].stControl.fVelocity;
+			fSlsLatchMaxVelo := astAxes[17].stConfig.fVeloMax;
+			retryCounter:= 0;
+			bErrorRestoreVelo:= FALSE;
+		END_IF
+		
+		
+	1: //Override max velo
+		GVL.astAxes[17].stControl.eCommand:= E_MotionFunctions.eWriteParameter;
+		GVL.astAxes[17].stConfig.eAxisParameters:= E_AxisParameters.AxisMaxVelocity;
+		GVL.astAxes[17].stConfig.fWriteAxisParameter := 3.5;
+		GVL.astAxes[17].stControl.bExecute:= TRUE;
+		tonSlsDelay.IN:= TRUE;
+		iSlsTestState:= 2;
+		
+		
+	2: //Wait for max velo override
+		IF tonSlsDelay.Q THEN
+			tonSlsDelay.IN:= FALSE;
+			GVL.astAxes[17].stControl.bReinitialiseNcParameters:= TRUE;
+			iSlsTestState:= 3;					
+		END_IF
+		
+	3:	//Send move command
+		GVL.astAxes[17].stControl.fVelocity:= 3.4;
+		GVL.astAxes[17].stControl.eCommand:= E_MotionFunctions.eLocalMoveVelocity;
+		GVL.astAxes[17].stControl.bExecute:= TRUE;
+		tonSlsTest.IN:= TRUE;
+		iSlsTestState:= 4;
+
+	4:
+		IF tonSlsTest.Q THEN
+			tonSlsTest.IN:= FALSE;
+			GVL.astAxes[17].stControl.bHalt:= TRUE;	//Stop the move (if it didn't trip SLS
+			iSlsTestState:= 5;					
+		END_IF
+		
+	5: //Set MAX velo back
+		GVL.astAxes[17].stControl.eCommand:= E_MotionFunctions.eWriteParameter;
+		GVL.astAxes[17].stConfig.eAxisParameters:= E_AxisParameters.AxisMaxVelocity;
+		GVL.astAxes[17].stConfig.fWriteAxisParameter := fSlsLatchMaxVelo;
+		GVL.astAxes[17].stControl.fVelocity:= fSlsLatchVelo;
+		GVL.astAxes[17].stControl.bExecute:= TRUE;
+		tonSlsDelay.IN:= TRUE;
+		iSlsTestState:= 6;
+	
+	6:
+		IF tonSlsDelay.Q THEN
+			tonSlsDelay.IN:= FALSE;
+			iSlsTestState:= 7;					
+		END_IF
+		
+	7:
+		GVL.astAxes[17].stControl.eCommand:= E_MotionFunctions.eReadParameter;
+		GVL.astAxes[17].stConfig.eAxisParameters:= E_AxisParameters.AxisMaxVelocity;		
+		GVL.astAxes[17].stControl.bExecute:= TRUE;
+		tonSlsDelay.IN:= TRUE;
+		iSlsTestState:= 8;
+		
+	8:		
+		IF tonSlsDelay.Q THEN
+			tonSlsDelay.IN:= FALSE;
+			iSlsTestState:= 9;					
+		END_IF
+		
+	9: 
+		bTestSLS:= FALSE;
+		GVL.astAxes[17].stControl.bReinitialiseNcParameters:= TRUE;
+		iSlsTestState:= 0;
+		IF NOT (GVL.astAxes[17].stConfig.fReadAxisParameter = fSlsLatchMaxVelo) THEN
+			bErrorRestoreVelo:= TRUE;
+		END_IF
+END_CASE
+*)]]></ST>
+      </Implementation>
+    </Action>
+    <LineIds Name="SAFETY">
+      <LineId Id="3" Count="158" />
+      <LineId Id="2" Count="0" />
+      <LineId Id="163" Count="1" />
+      <LineId Id="162" Count="0" />
+    </LineIds>
+    <LineIds Name="SAFETY.TestSLS">
+      <LineId Id="1" Count="82" />
+    </LineIds>
   </POU>
 </TcPlcObject>

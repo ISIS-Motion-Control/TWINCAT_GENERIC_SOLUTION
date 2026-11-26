@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.12">
+  <POU Name="FB_WriteCOE" Id="{03f2495f-46b9-4f31-a5c0-b2d302dae32c}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_WriteCOE
+VAR_INPUT
+	bWrite 			: POINTER TO BOOL; //Set high to do write
+	sNetId			: T_AmsNetId;
+	nSlaveAddr		: UINT;
+	nIndex			: WORD;
+	nIndexOffset	: BYTE;
+	nParameter		: DWORD;
+END_VAR
+VAR_OUTPUT
+	bDoneWriting	: BOOL;
+	bError			: BOOL;
+END_VAR
+VAR
+	bExecute		: BOOL;
+	fbCoeWrite		: FB_EcCoESDoWrite;
+	eCoEWriteState	: (INIT, TRIGGER, WRITE, DONE);
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bWrite^ THEN
+	CASE eCoEWriteState OF	
+		INIT:
+			bDoneWriting := FALSE;
+			eCoEWriteState:= TRIGGER;
+		
+		TRIGGER:
+			bExecute := TRUE;
+			eCoEWriteState:= WRITE;
+			
+		WRITE:
+			fbCoeWrite(
+				sNetId:= sNetId, 
+				nSlaveAddr:= nSlaveAddr, 
+				nSubIndex:= nIndexOffset, 
+				nIndex:= nIndex, 
+				pSrcBuf:= ADR(nParameter), 
+				cbBufLen:= SIZEOF(nParameter),
+				bExecute:= bExecute);
+				
+			bExecute:= NOT bExecute;
+			
+			IF NOT fbCoeWrite.bBusy THEN
+				eCoeWriteState:= DONE;
+			END_IF
+			
+		DONE:
+			IF fbCoeWrite.bError THEN
+				bError:= TRUE;
+			ELSE
+				bError:= FALSE;
+			END_IF
+			fbCoeWrite();	//Called with execute false
+			bDoneWriting := TRUE;
+			eCoEWriteState:= INIT;
+			bWrite^:= FALSE;
+	END_CASE
+END_IF
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="FB_WriteCOE">
+      <LineId Id="1" Count="39" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

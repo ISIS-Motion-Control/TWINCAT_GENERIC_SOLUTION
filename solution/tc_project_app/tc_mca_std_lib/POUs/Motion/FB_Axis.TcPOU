@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.12">
   <POU Name="FB_Axis" Id="{45901cd0-c6d2-4114-b7cf-de832171219f}" SpecialFunc="None">
     <Declaration><![CDATA[//Function block to run a virtual drive with Nc
 FUNCTION_BLOCK FB_Axis IMPLEMENTS I_axis
@@ -51,6 +51,7 @@ VAR
 
     fbHome: FB_Homing;
     stMcStatusHome: ST_McStatus;
+	stMcStatusLocalHome : ST_McStatus;
 
     fbReadParameter: MC_ReadParameter;
     stMcStatusReadParameter: ST_McStatus;
@@ -185,6 +186,7 @@ IF (_stAxis.stControl.eCommand = E_MotionFunctions.eMoveAbsolute AND _stAxis.stI
 	(_stAxis.stControl.eCommand = E_MotionFunctions.eMoveRelative AND _stAxis.stInputs.bAllowRemoteControl) OR
 	(_stAxis.stControl.eCommand = E_MotionFunctions.eMoveVelocity AND _stAxis.stInputs.bAllowRemoteControl) OR
 	(_stAxis.stControl.eCommand = E_MotionFunctions.eHome AND _stAxis.stInputs.bAllowRemoteControl) OR
+	(_stAxis.stControl.eCommand = E_MotionFunctions.eLocalHome AND NOT _stAxis.stInputs.bAllowRemoteControl) OR
 	(_stAxis.stControl.eCommand = E_MotionFunctions.eLocalMoveAbsolute AND NOT _stAxis.stInputs.bAllowRemoteControl) OR
 	(_stAxis.stControl.eCommand = E_MotionFunctions.eLocalMoveRelative AND NOT _stAxis.stInputs.bAllowRemoteControl) OR
 	(_stAxis.stControl.eCommand = E_MotionFunctions.eLocalMoveVelocity AND NOT _stAxis.stInputs.bAllowRemoteControl) THEN
@@ -467,6 +469,55 @@ _stAxis.stStatus.bBwEnabled := _stAxis.stInputs.bLimitBwd OR _stAxis.stControl.b
 _stAxis.stStatus.bInterlockedFwd := _stAxis.stControl.bInterlockFwd;
 _stAxis.stStatus.bInterlockedBwd := _stAxis.stControl.bInterlockBwd;
 
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mControl_LocalHome" Id="{e59d7c33-9687-43a0-a742-9df7d8161d8f}" FolderPath="Control Methods\">
+      <Declaration><![CDATA[METHOD mControl_LocalHome : ST_McStatus
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF _stAxis.stHomingConfig.eHomeSeq = E_HomingRoutines.eNoHoming THEN
+    _stAxis.stStatus.bHomed := TRUE;
+END_IF
+
+IF _stAxis.stControl.eCommand = E_MotionFunctions.eLocalHome THEN
+	IF _stAxis.stStatus.bReadyToMove THEN
+		fbHome.bExecute := _stAxis.stStatus.bMoveRequested;
+		IF _stAxis.stStatus.bMoveRequested THEN
+			_stAxis.stStatus.bMoveRequested := FALSE;
+		END_IF
+	END_IF
+END_IF
+
+
+fbHome.eHomeSeq := _stAxis.stHomingConfig.eHomeSeq;
+fbHome.fHomePosition := _stAxis.stHomingConfig.fHomePosition;
+fbHome.fHomeFinishDistance := _stAxis.stHomingConfig.fHomeFinishDistance;
+fbHome.fHomeAbsPosition:= _stAxis.stHomingConfig.fHomeAbsPosition;
+fbHome.fHomeMidRelativeMove := _stAxis.stHomingConfig.fHomeMidRelativeMove;
+fbHome.bGoToBwdLimitFirst:= _stAxis.stHomingConfig.bGoToBwdFirst;
+fbHome.bGoToFwdLimitFirst:= _stAxis.stHomingConfig.bGoToFwdFirst;
+fbHome.fFastVelocity:= _stAxis.stControl.fVelocity;
+fbHome.bDoAbsoluteMove:= _stAxis.stHomingConfig.bDoAbsoluteMoveAtEnd;
+
+fbHome(
+	AxisRef:= _stAxis.Axis,
+    bLimitBwd := _stAxis.stInputs.bLimitBwd,
+    bLimitFwd := _stAxis.stInputs.bLimitFwd,
+    bHomeSensor := _stAxis.stInputs.bHomeSensor,
+    stConfig := _stAxis.stConfig);
+
+_stAxis.stStatus.bInHomingSeq:= fbHome.bInHomingSequence OR fbHome.bInHomingSequence;
+
+mControl_LocalHome.Busy := fbHome.bBusy;
+mControl_LocalHome.CommandAborted := fbHome.bCommandAborted;
+mControl_LocalHome.Done := fbHome.bDone;
+mControl_LocalHome.Error := fbHome.bError;
+mControl_LocalHome.ErrorID := fbHome.nErrorId;
+
+IF fbHome.bError THEN
+    _stAxis.stError.nLocalHomeErrorID := fbHome.nErrorID; //Set the error
+END_IF
 ]]></ST>
       </Implementation>
     </Method>
@@ -973,7 +1024,7 @@ bReadValid is used TO halt that trasnfer UNTIL the parameters have been
 read successfully. It may take a couple OF cycles once the PLC starts up.*)
 
 
-IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadAxisVeloManSlow.Valid THEN
+IF (NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadAxisVeloManSlow.Valid) OR _stAxis.stControl.bReinitialiseNcParameters THEN
 	//Slow jogging Velocity
 	fbReadAxisVeloManSlow(Axis := _stAxis.Axis,
                         Enable := TRUE,
@@ -982,7 +1033,7 @@ IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadAxisVeloManSlow.Val
                         Value => _stAxis.stConfig.fVelocityDefaultSlow);
 END_IF
 
-IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadAxisVeloManFast.Valid THEN
+IF (NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadAxisVeloManFast.Valid) OR _stAxis.stControl.bReinitialiseNcParameters THEN
 //Fast jogging velocity
 fbReadAxisVeloManFast(Axis := _stAxis.Axis,
                         Enable := TRUE,
@@ -990,7 +1041,8 @@ fbReadAxisVeloManFast(Axis := _stAxis.Axis,
                         ParameterNumber := E_AxisParameters.AxisManualVelocityFast,
                         Value => _stAxis.stConfig.fVelocityDefaultFast);
 END_IF
-IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadHomingVelToCam.Valid THEN
+
+IF (NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadHomingVelToCam.Valid) OR _stAxis.stControl.bReinitialiseNcParameters THEN
 //Homing velocity to Cam
 fbReadHomingVelToCam(Axis := _stAxis.Axis,
                         Enable := TRUE,
@@ -998,7 +1050,8 @@ fbReadHomingVelToCam(Axis := _stAxis.Axis,
                         ParameterNumber := E_AxisParameters.AxisVelocityToCam,
                         Value => _stAxis.stHomingConfig.fHomingVelToCam);
 END_IF
-IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadHomingVelFromCam.Valid THEN
+
+IF (NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadHomingVelFromCam.Valid) OR _stAxis.stControl.bReinitialiseNcParameters THEN
 //Homing velocity from Cam
 fbReadHomingVelFromCam(Axis := _stAxis.Axis,
                         Enable := TRUE,
@@ -1006,7 +1059,8 @@ fbReadHomingVelFromCam(Axis := _stAxis.Axis,
                         ParameterNumber := E_AxisParameters.AxisVelocityFromCam,
                         Value => _stAxis.stHomingConfig.fHomingVelFromCam);
 END_IF
-IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadAxisVeloMax.Valid THEN
+
+IF (NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadAxisVeloMax.Valid) OR _stAxis.stControl.bReinitialiseNcParameters THEN
 //Max velocity
 fbReadAxisVeloMax(Axis := _stAxis.Axis,
                         Enable := TRUE,
@@ -1014,7 +1068,8 @@ fbReadAxisVeloMax(Axis := _stAxis.Axis,
                         ParameterNumber := E_AxisParameters.AxisMaxVelocity,
                         Value => _stAxis.stConfig.fVeloMax);
 END_IF
-IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadAxisMaxAcc.Valid THEN
+
+IF (NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadAxisMaxAcc.Valid) OR _stAxis.stControl.bReinitialiseNcParameters THEN
 //Max acceleration
 fbReadAxisMaxAcc(Axis := _stAxis.Axis,
                         Enable := TRUE,
@@ -1022,7 +1077,7 @@ fbReadAxisMaxAcc(Axis := _stAxis.Axis,
                         ParameterNumber := E_AxisParameters.AxisMaximumAcceleration,
                         Value => _stAxis.stConfig.fMaxAcc);
 END_IF
-IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadAxisMaxDec.Valid THEN
+IF (NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadAxisMaxDec.Valid) OR _stAxis.stControl.bReinitialiseNcParameters THEN
 //Max deceleration
 fbReadAxisMaxDec(Axis := _stAxis.Axis,
                         Enable := TRUE,
@@ -1030,7 +1085,7 @@ fbReadAxisMaxDec(Axis := _stAxis.Axis,
                         ParameterNumber := E_AxisParameters.AxisMaximumDeceleration,
                         Value => _stAxis.stConfig.fMaxDec);
 END_IF
-IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadAxisAcc.Valid THEN
+IF (NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadAxisAcc.Valid) OR _stAxis.stControl.bReinitialiseNcParameters THEN
 //Default acceleration
 fbReadAxisAcc(Axis := _stAxis.Axis,
                         Enable := TRUE,
@@ -1038,7 +1093,7 @@ fbReadAxisAcc(Axis := _stAxis.Axis,
                         ParameterNumber := E_AxisParameters.AxisDefaultAcceleration,
                         Value => _stAxis.stConfig.fDefaultAcc);
 END_IF
-IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadAxisDec.Valid THEN
+IF (NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadAxisDec.Valid) OR _stAxis.stControl.bReinitialiseNcParameters THEN
 //Default deceleration
 fbReadAxisDec(Axis := _stAxis.Axis,
                         Enable := TRUE,
@@ -1047,7 +1102,7 @@ fbReadAxisDec(Axis := _stAxis.Axis,
                         Value => _stAxis.stConfig.fDefaultDec);
 
 END_IF
-IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadEnMinSoftPosLimit.Valid THEN
+IF (NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadEnMinSoftPosLimit.Valid) OR _stAxis.stControl.bReinitialiseNcParameters THEN
 //Soft limits enabled
 fbReadEnMinSoftPosLimit(Axis := _stAxis.Axis,
                         Enable := TRUE,
@@ -1056,7 +1111,7 @@ fbReadEnMinSoftPosLimit(Axis := _stAxis.Axis,
 _stAxis.stConfig.bEnMinSoftPosLimit := LREAL_TO_BOOL(fbReadEnMinSoftPosLimit.Value);
 
 END_IF
-IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadEnMaxSoftPosLimit.Valid THEN
+IF (NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadEnMaxSoftPosLimit.Valid) OR _stAxis.stControl.bReinitialiseNcParameters THEN
 fbReadEnMaxSoftPosLimit(Axis := _stAxis.Axis,
                         Enable := TRUE,
                         ReadMode := READMODE_CYCLIC,
@@ -1064,7 +1119,7 @@ fbReadEnMaxSoftPosLimit(Axis := _stAxis.Axis,
 _stAxis.stConfig.bEnMaxSoftPosLimit := LREAL_TO_BOOL(fbReadEnMaxSoftPosLimit.Value);
 
 END_IF
-IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadMinSoftPosLimit.Valid THEN
+IF (NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadMinSoftPosLimit.Valid) OR _stAxis.stControl.bReinitialiseNcParameters THEN
 //Soft limit values
 fbReadMinSoftPosLimit(Axis := _stAxis.Axis,
                         Enable := TRUE,
@@ -1073,7 +1128,7 @@ fbReadMinSoftPosLimit(Axis := _stAxis.Axis,
                         Value => _stAxis.stConfig.fMinSoftPosLimit);
 
 END_IF
-IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadMaxSoftPosLimit.Valid THEN
+IF (NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadMaxSoftPosLimit.Valid) OR _stAxis.stControl.bReinitialiseNcParameters THEN
 fbReadMaxSoftPosLimit(Axis := _stAxis.Axis,
                         Enable := TRUE,
                         ReadMode := READMODE_CYCLIC,
@@ -1081,7 +1136,7 @@ fbReadMaxSoftPosLimit(Axis := _stAxis.Axis,
                         Value => _stAxis.stConfig.fMaxSoftPosLimit);
 
 END_IF
-IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadEnPositionLagMonitoring.Valid THEN
+IF (NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadEnPositionLagMonitoring.Valid) OR _stAxis.stControl.bReinitialiseNcParameters THEN
 //Position Lag Monitoring
 fbReadEnPositionLagMonitoring(Axis := _stAxis.Axis,
                         Enable := TRUE,
@@ -1090,7 +1145,7 @@ fbReadEnPositionLagMonitoring(Axis := _stAxis.Axis,
 _stAxis.stConfig.bEnPositionLagMonitoring := LREAL_TO_BOOL(fbReadEnPositionLagMonitoring.Value);
 
 END_IF
-IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadAxisMaxPosLagValue.Valid THEN
+IF (NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadAxisMaxPosLagValue.Valid) OR _stAxis.stControl.bReinitialiseNcParameters THEN
 fbReadAxisMaxPosLagValue(Axis := _stAxis.Axis,
                         Enable := TRUE,
                         ReadMode := READMODE_CYCLIC,
@@ -1098,7 +1153,7 @@ fbReadAxisMaxPosLagValue(Axis := _stAxis.Axis,
                         Value => _stAxis.stConfig.fMaxPosLagValue);
 
 END_IF
-IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadEnTargetPositionMonitoring.Valid THEN
+IF (NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadEnTargetPositionMonitoring.Valid) OR _stAxis.stControl.bReinitialiseNcParameters THEN
 // Target Position Monitoring
 fbReadEnTargetPositionMonitoring(Axis := _stAxis.Axis,
                         Enable := TRUE,
@@ -1107,7 +1162,7 @@ fbReadEnTargetPositionMonitoring(Axis := _stAxis.Axis,
 _stAxis.stConfig.bEnTargetPositionMonitoring := LREAL_TO_BOOL(fbReadEnTargetPositionMonitoring.Value);
 
 END_IF
-IF NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadTargetPositionWindow.Valid THEN
+IF (NOT _stAxis.stConfig.bReadMcParametersValid AND NOT fbReadTargetPositionWindow.Valid) OR _stAxis.stControl.bReinitialiseNcParameters THEN
 fbReadTargetPositionWindow(Axis := _stAxis.Axis,
                         Enable := TRUE,
                         ReadMode := READMODE_CYCLIC,
@@ -1148,7 +1203,10 @@ _stAxis.stConfig.bReadMcParametersError := fbReadAxisVeloManSlow.Error OR
     fbReadAxisMaxPosLagValue.Error OR
     fbReadEnTargetPositionMonitoring.Error OR
     fbReadTargetPositionWindow.Error;
-]]></ST>
+
+IF _stAxis.stControl.bReinitialiseNcParameters THEN
+	_stAxis.stControl.bReinitialiseNcParameters:= FALSE;
+END_IF]]></ST>
       </Implementation>
     </Method>
     <Method Name="mParameters_ReadParameter" Id="{9ba530fc-a89c-4fce-9b38-6ddc045d04c9}" FolderPath="Parameter Methods\">
@@ -1211,6 +1269,9 @@ END_IF
         <ST><![CDATA[IF _stAxis.stControl.eCommand = E_MotionFunctions.eWriteToggleSWLimits THEN
     fbWriteSWLimitMax.Execute := _stAxis.stControl.bExecute;
 	fbWriteSWLimitMin.Execute := _stAxis.stControl.bExecute;
+	IF _stAxis.stControl.bExecute THEN
+		_stAxis.stControl.bReinitialiseNcParameters := TRUE;
+	END_IF
 END_IF
 
 fbWriteSWLimitMax.ParameterNumber := E_AxisParameters.EnableLimitForward;
@@ -1465,6 +1526,8 @@ stMcStatusLocalMoveRelative := mLocalMove_MoveRelative();
 stMcStatusLocalMoveVelocity := mLocalMove_MoveVelocity();
 
 stMcStatusHome := mControl_Home();
+stMcStatusLocalHome := mControl_LocalHome();
+fbHome.bExecute := FALSE;
 
 mStatus_NewCommand();
 mStatus_Done();
@@ -1504,5 +1567,171 @@ END_VAR
         </Implementation>
       </Set>
     </Property>
+    <LineIds Name="FB_Axis">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.EndOfCycle">
+      <LineId Id="3" Count="1" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.FB_init">
+      <LineId Id="3" Count="14" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mControl_AutoEnableDisable">
+      <LineId Id="3" Count="5" />
+      <LineId Id="90" Count="0" />
+      <LineId Id="9" Count="80" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mControl_DisableSPG">
+      <LineId Id="3" Count="27" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mControl_EnableSPG">
+      <LineId Id="3" Count="22" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mControl_FeedSPG">
+      <LineId Id="3" Count="23" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mControl_Home">
+      <LineId Id="3" Count="42" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mControl_LimitEdge">
+      <LineId Id="3" Count="6" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mControl_LimitHitTimer">
+      <LineId Id="3" Count="8" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mControl_LimitLinking">
+      <LineId Id="3" Count="5" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mControl_LocalHome">
+      <LineId Id="1" Count="42" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mControl_Power">
+      <LineId Id="3" Count="16" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mControl_Reset">
+      <LineId Id="3" Count="25" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mLocalMove_MoveAbsolute">
+      <LineId Id="3" Count="54" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mLocalMove_MoveRelative">
+      <LineId Id="3" Count="27" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mLocalMove_MoveVelocity">
+      <LineId Id="3" Count="31" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mMove_Halt">
+      <LineId Id="3" Count="20" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mMove_MoveAbsolute">
+      <LineId Id="3" Count="54" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mMove_MoveModulo">
+      <LineId Id="3" Count="50" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mMove_MoveRelative">
+      <LineId Id="3" Count="27" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mMove_MoveVelocity">
+      <LineId Id="3" Count="32" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mMove_SetPosition">
+      <LineId Id="3" Count="16" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mMove_Stop">
+      <LineId Id="3" Count="20" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mParameters_Init">
+      <LineId Id="3" Count="13" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mParameters_ReadNc">
+      <LineId Id="186" Count="189" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mParameters_ReadParameter">
+      <LineId Id="3" Count="19" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mParameters_WriteParameter">
+      <LineId Id="3" Count="18" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mParameters_WriteSWLimits">
+      <LineId Id="3" Count="2" />
+      <LineId Id="27" Count="1" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="6" Count="19" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mStatus_AxisStatus">
+      <LineId Id="3" Count="19" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mStatus_Busy">
+      <LineId Id="3" Count="4" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mStatus_CommandAborted">
+      <LineId Id="3" Count="8" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mStatus_Done">
+      <LineId Id="3" Count="8" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mStatus_Error">
+      <LineId Id="3" Count="25" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mStatus_InVelocity">
+      <LineId Id="3" Count="12" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mStatus_Name">
+      <LineId Id="3" Count="7" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.mStatus_NewCommand">
+      <LineId Id="3" Count="19" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.Run">
+      <LineId Id="3" Count="31" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="49" Count="0" />
+      <LineId Id="35" Count="13" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.stAxis.Get">
+      <LineId Id="3" Count="0" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Axis.stAxis.Set">
+      <LineId Id="3" Count="0" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

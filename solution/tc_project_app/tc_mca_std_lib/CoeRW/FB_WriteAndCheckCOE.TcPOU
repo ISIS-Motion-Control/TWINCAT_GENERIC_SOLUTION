@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.12">
+  <POU Name="FB_WriteAndCheckCOE" Id="{37a8306b-9a05-4ddb-8083-4b0b7fb134f0}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_WriteAndCheckCOE
+VAR_INPUT
+	bWrite 			: POINTER TO BOOL; //Set high to do write
+	sNetId			: T_AmsNetId;
+	nSlaveAddr		: UINT;
+	nIndex			: WORD;
+	nIndexOffset	: BYTE;
+	nParameter		: DWORD;
+END_VAR
+VAR_OUTPUT
+	nParameterOut		: DWORD;
+	bDoneWriting	: BOOL;
+	bError			: BOOL;
+	sMessage 		: STRING;
+END_VAR
+VAR
+	bExecute		: BOOL;
+	fbWrite			: FB_WriteCOE;
+	fbRead			:FB_ReadCOE;
+	eCoEWriteReadState	: (INIT, TRIGGER_WRITE, WRITE, CHECK_WRITE_STATE, TRIGGER_CHECK, READ, CHECK_READ_STATE, CHECK_MATCH, DONE, FAIL);
+	bWriteInternal	: BOOL;
+	bReadInternal : BOOL;
+	timeOut : TON;
+	retryCounter : INT;	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bWrite^ THEN
+	CASE eCoEWriteReadState OF
+		INIT:
+			bDoneWriting:= FALSE;
+			bWriteInternal:= FALSE;
+			bReadInternal:= FALSE;
+			timeOut.IN:= TRUE;
+			eCoEWriteReadState:= TRIGGER_WRITE;			
+			
+		TRIGGER_WRITE:
+			bWriteInternal:= TRUE;
+			eCoEWriteReadState:= WRITE;
+			
+		WRITE:							
+			IF NOT bWriteInternal THEN
+				eCoEWriteReadState:= CHECK_WRITE_STATE;
+			END_IF
+			
+		CHECK_WRITE_STATE:
+			IF fbWrite.bDoneWriting AND NOT fbWrite.bError THEN
+				//Write success, do check
+				retryCounter:= 0;
+				eCoEWriteReadState:= TRIGGER_CHECK;
+			ELSIF fbWrite.bDoneWriting AND fbWrite.bError THEN
+				//Write error, do something else
+				retryCounter:= retryCounter+1;
+				eCoEWriteReadState:= TRIGGER_WRITE;
+				IF retryCounter>10 THEN
+					eCoEWriteReadState:= FAIL;
+					sMessage:= 'Failed to write value';
+				END_IF
+			END_IF
+			
+		TRIGGER_CHECK:
+			bReadInternal:= TRUE;
+			eCoEWriteReadState:= READ;
+			
+		READ:
+			IF NOT bReadInternal THEN
+				eCoEWriteReadState:= CHECK_READ_STATE;
+			END_IF
+			
+		CHECK_READ_STATE:
+			nParameterOut:= fbRead.nParameter;
+			IF fbRead.bDoneReading AND NOT fbRead.bError THEN
+				//Write success, do check
+				eCoEWriteReadState:= CHECK_MATCH;
+			ELSIF fbRead.bDoneReading AND fbRead.bError THEN
+				//Read error, do something else
+				retryCounter:= retryCounter+1;
+				eCoEWriteReadState:= TRIGGER_CHECK;
+				IF retryCounter>10 THEN
+					eCoEWriteReadState:= FAIL;
+					sMessage:= 'Failed to read value';
+				END_IF
+			END_IF
+			
+		CHECK_MATCH:
+			IF fbRead.nParameter= nParameter THEN
+				sMessage:= 'Write-read success';
+				eCoEWriteReadState:= DONE;
+			ELSE
+				sMessage:= 'Parameter read-write mismatch';
+				eCoEWriteReadState:= FAIL;
+			END_IF
+			
+		DONE:
+			bDoneWriting:= TRUE;
+			bWrite^:= FALSE;
+			eCoEWriteReadState:= INIT;
+				
+		
+		FAIL:
+			timeOut.IN:= FALSE;
+			bError:= TRUE;
+			bDoneWriting:= FALSE;
+			eCoEWriteReadState:= INIT;
+			bWrite^:= FALSE;
+			
+		
+	END_CASE
+END_IF
+
+timeOut(PT:= T#2S);
+IF timeOut.Q THEN
+	sMessage:= 'Write/Read timeout';
+	timeOut.IN:= FALSE;
+	eCoEWriteReadState:= INIT;
+	bWrite^ := FALSE;
+	retryCounter:= 0;
+END_IF
+
+fbWrite( 
+	bWrite:= ADR(bWriteInternal),
+	sNetId:= sNetId,
+	nSlaveAddr:= nSlaveAddr,
+	nIndex:= nIndex,
+	nIndexOffset:= nIndexOffset,
+	nParameter:= nParameter);	
+	
+fbRead( 
+	bRead:= ADR(bReadInternal),
+	sNetId:= sNetId,
+	nSlaveAddr:= nSlaveAddr,
+	nIndex:= nIndex,
+	nIndexOffset:= nIndexOffset);]]></ST>
+    </Implementation>
+    <LineIds Name="FB_WriteAndCheckCOE">
+      <LineId Id="1" Count="105" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

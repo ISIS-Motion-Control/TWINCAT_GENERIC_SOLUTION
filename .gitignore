@@ -10,17 +10,11 @@
 .epics.*
 UpgradeLog.htm
 \#*#
-_Boot/
-_CompileInfo/
-_Libraries/
+
 LineIDs.dbg
 logs.0*
 solution/TrialLicense.tclrs
 tools/linux/ADS/
 tools/linux/getADSState/getADSState.bin
 
-# TwinCAT HMI, filter downloaded JSON schema files
-json-schema.org
-
-# TwinCAT HMI project
-/TcHmiProject1/
+\.vs
